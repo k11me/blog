@@ -1,0 +1,1588 @@
+
+<!doctype html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html class="theme-next muse use-motion" lang="en">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/assets/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/assets/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/assets/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="日记,php,swagger,yubikey,laravel," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Keleven.Me" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/assets/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="小结 swagger 学习用时2天，天宫一号预计在2018年03月31日到2018年04月01日坠落地球，碎片坠落地点未知。 天宫一号的坠落，可以说我朝近年的航天成果全灭。 报道断章取义…… 陨落只是时间问题。小额外汇貌似限制了，实际未测试。 使用DarkaOnLine/L5-Swagger可以在代码中以注释形势直接编写API文档非常方便。 注释中的语法要使用Swagger-php样式，SWAGGER VERSION 3.0 DarkaOnLine/L5-Swagger安装 项目使用的是laravel 5.5 对应 darkaonline/l5-swagger:5.5.* composer require &quot;darkaonline/l5-swagger:5.5.*&quot; 复制设置与视图文件 php artisan vendor:publish --provider &quot;L5Swagger\L5SwaggerServiceProvider&quot; SWAGGER VERSION 3.0支持 composer require &quot;zircote/swagger-php:3.x-dev&quot; 设置.env文件 L5_SWAGGER_GENERATE_ALWAYS=true为每次打开页面是都进行重新渲染，设计阶段非常好用。 SWAGGER_VERSION=3.0 L5_SWAGGER_GENERATE_ALWAYS=true 基础文件设置 基本用法 swagger-v3.php 用于设置一些基本API信息，在页面最上方显示。 /** * @OAS\OpenApi( * @OAS\Info( * version=&quot;1.0.0&quot;, * title=&quot;Test Api&quot;, * description=&quot;描述&quot;, * termsOfService=&quot;https://Test.dev/terms/&quot;, * @OAS\contact( * email=&quot;test@test.dev&quot;, * name=&quot;test&quot;, * url=&quot;https://test.dev&quot; * ), * @OAS\License( * name=&quot;Apache 2.0&quot;, * url=&quot;http://www.apache.org/licenses/LICENSE-2.0.html&quot; * ) * ), * @OAS\Server( * description=&quot;OpenApi host&quot;, * url=&quot;https://test.dev/api&quot; * ), * @OAS\Server( * description=&quot;OpenApi host&quot;, * url=&quot;https://test.dev/api/v2&quot; * ), * @OAS\ExternalDocumentation( * description=&quot;OpenApi host&quot;, * url=&quot;https://test.dev/api/Doc&quot; * ) * ) */ @OAS 为使用前缀，用于读取swagger的设置 名头 解释 是否必要 其他说明 OpenApi swagger 初始化 必要 唯一并位于全部设置最顶端 Info Api说明 必要 设置中的title与version为必要项 Server Api 前置路径 非必要 多连接时，可以并行设置 ExternalDocumentation 扩展文档 非必要 只能设置description与url paths 连接地址 必要 可以在控制器位置设置 tags 主标签 必要 与laravel一起使用时，独立设置方便管理。可以设置name、description、ExternalDocumentation tags.php 用于设置用户标签 /** * @OAS\Tag( * name=&quot;2fa&quot;, * description=&quot;Google 2FA&quot;, * @OAS\ExternalDocumentation( * description=&quot;more&quot;, * url=&quot;https://test.test/docs&quot; * ) * ) * @OAS\Tag( * name=&quot;store&quot;, * description=&quot;Access to Petstore orders&quot; * ) * @OAS\Tag( * name=&quot;user&quot;, * description=&quot;Operations about user&quot; * ) */ path 部分 直接使用注释形势写入控制器 /** * @OAS\Get( * path=&quot;/test&quot;, // API 路由地址 * tags={&quot;test&quot;}, // 对应Tag * sumary=&quot;get test doc&quot;, // API概要 * description=&quot;get test doc more ........&quot;, // API描述 * operationId=&quot;test&quot;, // API请求时ID * deprecated=false, // API是否有效 * @OAS\Server( // 独立API连接设置 可以覆盖全局 * description=&quot;Server host&quot;, // 连接描述 * url=&quot;https://test.dev/api&quot; // 连接地址 * ), * @OAS\Parameter( // API参数, 非必要 * name=”id“, // 参数名 * in=&quot;query&quot;, // 参数位置 可以设置`query`、`header`、`path`、`cookie` * description=&quot;adout this id ......&quot;, // 描述 * required=true, // 是否必须填写，当in设置为path时，需要设置为true。 * style=&quot;from&quot;, // 设置参数序列化类型，非必要，自动根据in值设置。 * @OAS\Schema( * type=&quot;string&quot;, // 参数类型 * example=&quot;test example&quot;, // 参数例子 * ) * ), * @OAS\RequestBody( // 请求主体 content-type 下使用 适合传递多个参数 * description=&quot;adout this id ......&quot;, // 描述 * required=false, // 是否必须填写,默认为false * @OAS\MediaType( // 请求数据结构 * mediaType=&quot;application/json&quot;, // application/json 结构 * @OAS\Schema( * type=&quot;string&quot; * ref=&quot;#/components/schemas/User&quot; // 可以载入设置完成的参数,区分大小写 * ), * @OAS\Schema( * @OAS\Property( // 多参数设置 * property=&quot;otp&quot;, // 参数名称 * description=&quot;yubikey otp&quot;, // 参数描述 * type=&quot;string&quot;, // 参数类型 * example=&quot;cccccccccccccccccccccccccccccccccccccccccccc&quot; * // 参数例子 * ) * ) * ), * @OAS\MediaType( // 请求数据结构 * mediaType=&quot;application/xml&quot;, // application/xml 结构 * @OAS\Schema( * type=&quot;string&quot; * ref=&quot;#/components/schemas/User&quot; // 可以载入设置完成的参数,区分大小写 * ), * @OAS\Schema( * @OAS\Property( // 多参数设置 * property=&quot;otp&quot;, // 参数名称 * description=&quot;yubikey otp&quot;, // 参数描述 * type=&quot;string&quot;, // 参数类型 * example=&quot;cccccccccccccccccccccccccccccccccccccccccccc&quot; * // 参数例子 * ) * ) * ) * ), * @OAS\Response( // 响应,必须设置 * response=200, // 响应编号 * description=&quot;successful operation&quot;, // 响应描述 * @OAS\Header( * header=&quot;X-Rate-Limit&quot;, // 响应头 * description=&quot;calls per hour allowed by the user&quot;, * // 响应头描述 * @OAS\Schema( * type=&quot;integer&quot;, * format=&quot;int32&quot;, * default=&quot;64&quot;, // 默认 * example=&quot;12&quot; // 例子 * ) * ), * @OAS\MediaType( // 响应数据结构 * mediaType=&quot;application/json&quot;, * @OAS\Schema( * @OAS\Property( * property=&quot;message&quot;, // 响应参数头 * description=&quot;Response message&quot;, * type=&quot;string&quot;, // 响应参数数据类型 * example=&quot;true&quot; // 响应参数例子 * ) * ), * ) * ) * ) */ Model 数据参数 可以直接设置在class之上，使用ref=&quot;#/components/schemas/ClassName&quot;可以直接引用。 swagger默认载入位置#/components/schemas/。 /** * @OAS\Schema( * title=&quot;yubikey model&quot;, * description=&quot;yubikey model&quot;, * type=&quot;object&quot;, * @OAS\Property( * property=&quot;message&quot;, * description=&quot;Response message&quot;, * type=&quot;string&quot;, * default=&quot;true&quot;, * example=&quot;true&quot; * ), * @OAS\Property( * property=&quot;status&quot;, * description=&quot;Updated status&quot;, * type=&quot;string&quot;, * example=&quot;true&quot; * ), * @OAS\Property( * property=&quot;age&quot;, * description=&quot;Updated status of the pet&quot;, * type=&quot;integer&quot;, * minimum=&quot;0&quot; * ), * ) */ bitbeans/yubikey 的坑 控制器中不能正常获取Exception。所以不能使用下方代码 use YubiKey; try { $yubikey_auth = Yubikey::verify(Input::get(&apos;otp&apos;)); $yubikey_params = Yubikey::getParameters(); $yubikey_identity = Yubikey::getParameter(&apos;identity&apos;); } catch (\Exception $exception) { $error = $exception-&amp;gt;getMessage(); } 改写到App\Exceptions\Handler的render方法判断，使用Exception判断的packages不多。 switch($exception-&amp;gt;getMessage()) { case &apos;REPLAYED_OTP&apos;: return response()-&amp;gt;json([&apos;message&apos; =&amp;gt; $exception-&amp;gt;getMessage()]); case &apos;Could not parse Yubikey OTP&apos;: return response()-&amp;gt;json([&apos;message&apos; =&amp;gt; $exception-&amp;gt;getMessage()]); } 以上">
+<meta name="keywords" content="日记, php, swagger, yubikey, laravel">
+<meta property="og:type" content="article">
+<meta property="og:title" content="swagger-php 快速上手指南">
+<meta property="og:url" content="http://localhost:4000/living/2018/03/28/blog/">
+<meta property="og:site_name" content="Keleven.Me">
+<meta property="og:description" content="小结 swagger 学习用时2天，天宫一号预计在2018年03月31日到2018年04月01日坠落地球，碎片坠落地点未知。 天宫一号的坠落，可以说我朝近年的航天成果全灭。 报道断章取义…… 陨落只是时间问题。小额外汇貌似限制了，实际未测试。 使用DarkaOnLine/L5-Swagger可以在代码中以注释形势直接编写API文档非常方便。 注释中的语法要使用Swagger-php样式，SWAGGER VERSION 3.0 DarkaOnLine/L5-Swagger安装 项目使用的是laravel 5.5 对应 darkaonline/l5-swagger:5.5.* composer require &quot;darkaonline/l5-swagger:5.5.*&quot; 复制设置与视图文件 php artisan vendor:publish --provider &quot;L5Swagger\L5SwaggerServiceProvider&quot; SWAGGER VERSION 3.0支持 composer require &quot;zircote/swagger-php:3.x-dev&quot; 设置.env文件 L5_SWAGGER_GENERATE_ALWAYS=true为每次打开页面是都进行重新渲染，设计阶段非常好用。 SWAGGER_VERSION=3.0 L5_SWAGGER_GENERATE_ALWAYS=true 基础文件设置 基本用法 swagger-v3.php 用于设置一些基本API信息，在页面最上方显示。 /** * @OAS\OpenApi( * @OAS\Info( * version=&quot;1.0.0&quot;, * title=&quot;Test Api&quot;, * description=&quot;描述&quot;, * termsOfService=&quot;https://Test.dev/terms/&quot;, * @OAS\contact( * email=&quot;test@test.dev&quot;, * name=&quot;test&quot;, * url=&quot;https://test.dev&quot; * ), * @OAS\License( * name=&quot;Apache 2.0&quot;, * url=&quot;http://www.apache.org/licenses/LICENSE-2.0.html&quot; * ) * ), * @OAS\Server( * description=&quot;OpenApi host&quot;, * url=&quot;https://test.dev/api&quot; * ), * @OAS\Server( * description=&quot;OpenApi host&quot;, * url=&quot;https://test.dev/api/v2&quot; * ), * @OAS\ExternalDocumentation( * description=&quot;OpenApi host&quot;, * url=&quot;https://test.dev/api/Doc&quot; * ) * ) */ @OAS 为使用前缀，用于读取swagger的设置 名头 解释 是否必要 其他说明 OpenApi swagger 初始化 必要 唯一并位于全部设置最顶端 Info Api说明 必要 设置中的title与version为必要项 Server Api 前置路径 非必要 多连接时，可以并行设置 ExternalDocumentation 扩展文档 非必要 只能设置description与url paths 连接地址 必要 可以在控制器位置设置 tags 主标签 必要 与laravel一起使用时，独立设置方便管理。可以设置name、description、ExternalDocumentation tags.php 用于设置用户标签 /** * @OAS\Tag( * name=&quot;2fa&quot;, * description=&quot;Google 2FA&quot;, * @OAS\ExternalDocumentation( * description=&quot;more&quot;, * url=&quot;https://test.test/docs&quot; * ) * ) * @OAS\Tag( * name=&quot;store&quot;, * description=&quot;Access to Petstore orders&quot; * ) * @OAS\Tag( * name=&quot;user&quot;, * description=&quot;Operations about user&quot; * ) */ path 部分 直接使用注释形势写入控制器 /** * @OAS\Get( * path=&quot;/test&quot;, // API 路由地址 * tags={&quot;test&quot;}, // 对应Tag * sumary=&quot;get test doc&quot;, // API概要 * description=&quot;get test doc more ........&quot;, // API描述 * operationId=&quot;test&quot;, // API请求时ID * deprecated=false, // API是否有效 * @OAS\Server( // 独立API连接设置 可以覆盖全局 * description=&quot;Server host&quot;, // 连接描述 * url=&quot;https://test.dev/api&quot; // 连接地址 * ), * @OAS\Parameter( // API参数, 非必要 * name=”id“, // 参数名 * in=&quot;query&quot;, // 参数位置 可以设置`query`、`header`、`path`、`cookie` * description=&quot;adout this id ......&quot;, // 描述 * required=true, // 是否必须填写，当in设置为path时，需要设置为true。 * style=&quot;from&quot;, // 设置参数序列化类型，非必要，自动根据in值设置。 * @OAS\Schema( * type=&quot;string&quot;, // 参数类型 * example=&quot;test example&quot;, // 参数例子 * ) * ), * @OAS\RequestBody( // 请求主体 content-type 下使用 适合传递多个参数 * description=&quot;adout this id ......&quot;, // 描述 * required=false, // 是否必须填写,默认为false * @OAS\MediaType( // 请求数据结构 * mediaType=&quot;application/json&quot;, // application/json 结构 * @OAS\Schema( * type=&quot;string&quot; * ref=&quot;#/components/schemas/User&quot; // 可以载入设置完成的参数,区分大小写 * ), * @OAS\Schema( * @OAS\Property( // 多参数设置 * property=&quot;otp&quot;, // 参数名称 * description=&quot;yubikey otp&quot;, // 参数描述 * type=&quot;string&quot;, // 参数类型 * example=&quot;cccccccccccccccccccccccccccccccccccccccccccc&quot; * // 参数例子 * ) * ) * ), * @OAS\MediaType( // 请求数据结构 * mediaType=&quot;application/xml&quot;, // application/xml 结构 * @OAS\Schema( * type=&quot;string&quot; * ref=&quot;#/components/schemas/User&quot; // 可以载入设置完成的参数,区分大小写 * ), * @OAS\Schema( * @OAS\Property( // 多参数设置 * property=&quot;otp&quot;, // 参数名称 * description=&quot;yubikey otp&quot;, // 参数描述 * type=&quot;string&quot;, // 参数类型 * example=&quot;cccccccccccccccccccccccccccccccccccccccccccc&quot; * // 参数例子 * ) * ) * ) * ), * @OAS\Response( // 响应,必须设置 * response=200, // 响应编号 * description=&quot;successful operation&quot;, // 响应描述 * @OAS\Header( * header=&quot;X-Rate-Limit&quot;, // 响应头 * description=&quot;calls per hour allowed by the user&quot;, * // 响应头描述 * @OAS\Schema( * type=&quot;integer&quot;, * format=&quot;int32&quot;, * default=&quot;64&quot;, // 默认 * example=&quot;12&quot; // 例子 * ) * ), * @OAS\MediaType( // 响应数据结构 * mediaType=&quot;application/json&quot;, * @OAS\Schema( * @OAS\Property( * property=&quot;message&quot;, // 响应参数头 * description=&quot;Response message&quot;, * type=&quot;string&quot;, // 响应参数数据类型 * example=&quot;true&quot; // 响应参数例子 * ) * ), * ) * ) * ) */ Model 数据参数 可以直接设置在class之上，使用ref=&quot;#/components/schemas/ClassName&quot;可以直接引用。 swagger默认载入位置#/components/schemas/。 /** * @OAS\Schema( * title=&quot;yubikey model&quot;, * description=&quot;yubikey model&quot;, * type=&quot;object&quot;, * @OAS\Property( * property=&quot;message&quot;, * description=&quot;Response message&quot;, * type=&quot;string&quot;, * default=&quot;true&quot;, * example=&quot;true&quot; * ), * @OAS\Property( * property=&quot;status&quot;, * description=&quot;Updated status&quot;, * type=&quot;string&quot;, * example=&quot;true&quot; * ), * @OAS\Property( * property=&quot;age&quot;, * description=&quot;Updated status of the pet&quot;, * type=&quot;integer&quot;, * minimum=&quot;0&quot; * ), * ) */ bitbeans/yubikey 的坑 控制器中不能正常获取Exception。所以不能使用下方代码 use YubiKey; try { $yubikey_auth = Yubikey::verify(Input::get(&apos;otp&apos;)); $yubikey_params = Yubikey::getParameters(); $yubikey_identity = Yubikey::getParameter(&apos;identity&apos;); } catch (\Exception $exception) { $error = $exception-&amp;gt;getMessage(); } 改写到App\Exceptions\Handler的render方法判断，使用Exception判断的packages不多。 switch($exception-&amp;gt;getMessage()) { case &apos;REPLAYED_OTP&apos;: return response()-&amp;gt;json([&apos;message&apos; =&amp;gt; $exception-&amp;gt;getMessage()]); case &apos;Could not parse Yubikey OTP&apos;: return response()-&amp;gt;json([&apos;message&apos; =&amp;gt; $exception-&amp;gt;getMessage()]); } 以上">
+<meta property="og:locale" content="en">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="swagger-php 快速上手指南">
+<meta name="twitter:description" content="小结 swagger 学习用时2天，天宫一号预计在2018年03月31日到2018年04月01日坠落地球，碎片坠落地点未知。 天宫一号的坠落，可以说我朝近年的航天成果全灭。 报道断章取义…… 陨落只是时间问题。小额外汇貌似限制了，实际未测试。 使用DarkaOnLine/L5-Swagger可以在代码中以注释形势直接编写API文档非常方便。 注释中的语法要使用Swagger-php样式，SWAGGER VERSION 3.0 DarkaOnLine/L5-Swagger安装 项目使用的是laravel 5.5 对应 darkaonline/l5-swagger:5.5.* composer require &quot;darkaonline/l5-swagger:5.5.*&quot; 复制设置与视图文件 php artisan vendor:publish --provider &quot;L5Swagger\L5SwaggerServiceProvider&quot; SWAGGER VERSION 3.0支持 composer require &quot;zircote/swagger-php:3.x-dev&quot; 设置.env文件 L5_SWAGGER_GENERATE_ALWAYS=true为每次打开页面是都进行重新渲染，设计阶段非常好用。 SWAGGER_VERSION=3.0 L5_SWAGGER_GENERATE_ALWAYS=true 基础文件设置 基本用法 swagger-v3.php 用于设置一些基本API信息，在页面最上方显示。 /** * @OAS\OpenApi( * @OAS\Info( * version=&quot;1.0.0&quot;, * title=&quot;Test Api&quot;, * description=&quot;描述&quot;, * termsOfService=&quot;https://Test.dev/terms/&quot;, * @OAS\contact( * email=&quot;test@test.dev&quot;, * name=&quot;test&quot;, * url=&quot;https://test.dev&quot; * ), * @OAS\License( * name=&quot;Apache 2.0&quot;, * url=&quot;http://www.apache.org/licenses/LICENSE-2.0.html&quot; * ) * ), * @OAS\Server( * description=&quot;OpenApi host&quot;, * url=&quot;https://test.dev/api&quot; * ), * @OAS\Server( * description=&quot;OpenApi host&quot;, * url=&quot;https://test.dev/api/v2&quot; * ), * @OAS\ExternalDocumentation( * description=&quot;OpenApi host&quot;, * url=&quot;https://test.dev/api/Doc&quot; * ) * ) */ @OAS 为使用前缀，用于读取swagger的设置 名头 解释 是否必要 其他说明 OpenApi swagger 初始化 必要 唯一并位于全部设置最顶端 Info Api说明 必要 设置中的title与version为必要项 Server Api 前置路径 非必要 多连接时，可以并行设置 ExternalDocumentation 扩展文档 非必要 只能设置description与url paths 连接地址 必要 可以在控制器位置设置 tags 主标签 必要 与laravel一起使用时，独立设置方便管理。可以设置name、description、ExternalDocumentation tags.php 用于设置用户标签 /** * @OAS\Tag( * name=&quot;2fa&quot;, * description=&quot;Google 2FA&quot;, * @OAS\ExternalDocumentation( * description=&quot;more&quot;, * url=&quot;https://test.test/docs&quot; * ) * ) * @OAS\Tag( * name=&quot;store&quot;, * description=&quot;Access to Petstore orders&quot; * ) * @OAS\Tag( * name=&quot;user&quot;, * description=&quot;Operations about user&quot; * ) */ path 部分 直接使用注释形势写入控制器 /** * @OAS\Get( * path=&quot;/test&quot;, // API 路由地址 * tags={&quot;test&quot;}, // 对应Tag * sumary=&quot;get test doc&quot;, // API概要 * description=&quot;get test doc more ........&quot;, // API描述 * operationId=&quot;test&quot;, // API请求时ID * deprecated=false, // API是否有效 * @OAS\Server( // 独立API连接设置 可以覆盖全局 * description=&quot;Server host&quot;, // 连接描述 * url=&quot;https://test.dev/api&quot; // 连接地址 * ), * @OAS\Parameter( // API参数, 非必要 * name=”id“, // 参数名 * in=&quot;query&quot;, // 参数位置 可以设置`query`、`header`、`path`、`cookie` * description=&quot;adout this id ......&quot;, // 描述 * required=true, // 是否必须填写，当in设置为path时，需要设置为true。 * style=&quot;from&quot;, // 设置参数序列化类型，非必要，自动根据in值设置。 * @OAS\Schema( * type=&quot;string&quot;, // 参数类型 * example=&quot;test example&quot;, // 参数例子 * ) * ), * @OAS\RequestBody( // 请求主体 content-type 下使用 适合传递多个参数 * description=&quot;adout this id ......&quot;, // 描述 * required=false, // 是否必须填写,默认为false * @OAS\MediaType( // 请求数据结构 * mediaType=&quot;application/json&quot;, // application/json 结构 * @OAS\Schema( * type=&quot;string&quot; * ref=&quot;#/components/schemas/User&quot; // 可以载入设置完成的参数,区分大小写 * ), * @OAS\Schema( * @OAS\Property( // 多参数设置 * property=&quot;otp&quot;, // 参数名称 * description=&quot;yubikey otp&quot;, // 参数描述 * type=&quot;string&quot;, // 参数类型 * example=&quot;cccccccccccccccccccccccccccccccccccccccccccc&quot; * // 参数例子 * ) * ) * ), * @OAS\MediaType( // 请求数据结构 * mediaType=&quot;application/xml&quot;, // application/xml 结构 * @OAS\Schema( * type=&quot;string&quot; * ref=&quot;#/components/schemas/User&quot; // 可以载入设置完成的参数,区分大小写 * ), * @OAS\Schema( * @OAS\Property( // 多参数设置 * property=&quot;otp&quot;, // 参数名称 * description=&quot;yubikey otp&quot;, // 参数描述 * type=&quot;string&quot;, // 参数类型 * example=&quot;cccccccccccccccccccccccccccccccccccccccccccc&quot; * // 参数例子 * ) * ) * ) * ), * @OAS\Response( // 响应,必须设置 * response=200, // 响应编号 * description=&quot;successful operation&quot;, // 响应描述 * @OAS\Header( * header=&quot;X-Rate-Limit&quot;, // 响应头 * description=&quot;calls per hour allowed by the user&quot;, * // 响应头描述 * @OAS\Schema( * type=&quot;integer&quot;, * format=&quot;int32&quot;, * default=&quot;64&quot;, // 默认 * example=&quot;12&quot; // 例子 * ) * ), * @OAS\MediaType( // 响应数据结构 * mediaType=&quot;application/json&quot;, * @OAS\Schema( * @OAS\Property( * property=&quot;message&quot;, // 响应参数头 * description=&quot;Response message&quot;, * type=&quot;string&quot;, // 响应参数数据类型 * example=&quot;true&quot; // 响应参数例子 * ) * ), * ) * ) * ) */ Model 数据参数 可以直接设置在class之上，使用ref=&quot;#/components/schemas/ClassName&quot;可以直接引用。 swagger默认载入位置#/components/schemas/。 /** * @OAS\Schema( * title=&quot;yubikey model&quot;, * description=&quot;yubikey model&quot;, * type=&quot;object&quot;, * @OAS\Property( * property=&quot;message&quot;, * description=&quot;Response message&quot;, * type=&quot;string&quot;, * default=&quot;true&quot;, * example=&quot;true&quot; * ), * @OAS\Property( * property=&quot;status&quot;, * description=&quot;Updated status&quot;, * type=&quot;string&quot;, * example=&quot;true&quot; * ), * @OAS\Property( * property=&quot;age&quot;, * description=&quot;Updated status of the pet&quot;, * type=&quot;integer&quot;, * minimum=&quot;0&quot; * ), * ) */ bitbeans/yubikey 的坑 控制器中不能正常获取Exception。所以不能使用下方代码 use YubiKey; try { $yubikey_auth = Yubikey::verify(Input::get(&apos;otp&apos;)); $yubikey_params = Yubikey::getParameters(); $yubikey_identity = Yubikey::getParameter(&apos;identity&apos;); } catch (\Exception $exception) { $error = $exception-&amp;gt;getMessage(); } 改写到App\Exceptions\Handler的render方法判断，使用Exception判断的packages不多。 switch($exception-&amp;gt;getMessage()) { case &apos;REPLAYED_OTP&apos;: return response()-&amp;gt;json([&apos;message&apos; =&amp;gt; $exception-&amp;gt;getMessage()]); case &apos;Could not parse Yubikey OTP&apos;: return response()-&amp;gt;json([&apos;message&apos; =&amp;gt; $exception-&amp;gt;getMessage()]); } 以上">
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://localhost:4000/"/>
+
+
+
+
+
+  <title>swagger-php 快速上手指南 | Keleven.Me</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-111519029-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"> <div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Keleven.Me</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            About
+          </a>
+        </li>
+      
+        
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="Searching..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+<div id="posts" class="posts-expand">
+  
+  
+
+  
+
+  
+  
+  
+
+  <article class="post post-type- " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://localhost:4000/living/2018/03/28/blog/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="K11">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/assets/images/21040889_825385437640313_540035783206109184_a.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Keleven.Me">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+          
+          
+            swagger-php 快速上手指南
+          
+        </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-28T08:01:00+08:00">
+                2018-03-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/category/#/Living" itemprop="url" rel="index">
+                    <span itemprop="name">Living</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/living/2018/03/28/blog/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="/living/2018/03/28/blog/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+            
+                <div class="post-description">
+                    
+                </div>
+            
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <h1 id="小结">小结</h1>
+
+<p>swagger 学习用时2天，天宫一号预计在2018年03月31日到2018年04月01日坠落地球，碎片坠落地点未知。</p>
+
+<p>天宫一号的坠落，可以说我朝近年的航天成果全灭。</p>
+
+<p>报道断章取义…… 陨落只是时间问题。小额外汇貌似限制了，实际未测试。</p>
+
+<p>使用<code class="highlighter-rouge">DarkaOnLine/L5-Swagger</code>可以在代码中以注释形势直接编写<code class="highlighter-rouge">API</code>文档非常方便。</p>
+
+<p>注释中的语法要使用<code class="highlighter-rouge">Swagger-php</code>样式，<code class="highlighter-rouge">SWAGGER VERSION 3.0</code></p>
+
+<h2 id="darkaonlinel5-swagger安装"><a href="https://github.com/DarkaOnLine/L5-Swagger">DarkaOnLine/L5-Swagger</a>安装</h2>
+
+<p>项目使用的是<code class="highlighter-rouge">laravel 5.5</code> 对应 <code class="highlighter-rouge">darkaonline/l5-swagger:5.5.*</code></p>
+
+<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code>composer require "darkaonline/l5-swagger:5.5.*"
+</code></pre></td></tr></tbody></table></div>
+</div>
+
+<p>复制设置与视图文件</p>
+
+<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code>php artisan vendor:publish --provider "L5Swagger\L5SwaggerServiceProvider"
+</code></pre></td></tr></tbody></table></div>
+</div>
+
+<p><code class="highlighter-rouge">SWAGGER VERSION 3.0</code>支持</p>
+
+<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code>composer require "zircote/swagger-php:3.x-dev"
+</code></pre></td></tr></tbody></table></div>
+</div>
+
+<p>设置<code class="highlighter-rouge">.env</code>文件</p>
+
+<p><code class="highlighter-rouge">L5_SWAGGER_GENERATE_ALWAYS=true</code>为每次打开页面是都进行重新渲染，设计阶段非常好用。</p>
+
+<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2</pre></td><td class="code"><pre class="highlight"><code>SWAGGER_VERSION=3.0
+L5_SWAGGER_GENERATE_ALWAYS=true
+</code></pre></td></tr></tbody></table></div>
+</div>
+<h2 id="基础文件设置">基础文件设置</h2>
+
+<p><a href="https://github.com/OAI/OpenAPI-Specification/blob/v3.0.2-dev/versions/3.0.2.md">基本用法</a></p>
+
+<h3 id="swagger-v3php">swagger-v3.php</h3>
+
+<p>用于设置一些基本API信息，在页面最上方显示。</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9<br/>10<br/>11<br/>12<br/>13<br/>14<br/>15<br/>16<br/>17<br/>18<br/>19<br/>20<br/>21<br/>22<br/>23<br/>24<br/>25<br/>26<br/>27<br/>28<br/>29<br/>30<br/>31</pre></td><td class="code"><pre class="highlight"><code>/**
+* @OAS\OpenApi(
+*     @OAS\Info(
+*         version="1.0.0",
+*         title="Test Api",
+*         description="描述",
+*         termsOfService="https://Test.dev/terms/",
+*         @OAS\contact(
+*             email="test@test.dev",
+*             name="test",
+*             url="https://test.dev"
+*         ),
+*         @OAS\License(
+*             name="Apache 2.0",
+*             url="http://www.apache.org/licenses/LICENSE-2.0.html"
+*         )
+*     ),
+*     @OAS\Server(
+*         description="OpenApi host",
+*         url="https://test.dev/api"
+*     ),
+*     @OAS\Server(
+*         description="OpenApi host",
+*         url="https://test.dev/api/v2"
+*     ),
+*     @OAS\ExternalDocumentation(
+*         description="OpenApi host",
+*         url="https://test.dev/api/Doc"
+*     )
+* )
+*/
+</code></pre></td></tr></tbody></table></div>
+</div>
+<p>@OAS 为使用前缀，用于读取<code class="highlighter-rouge">swagger</code>的设置</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>名头</th>
+      <th>解释</th>
+      <th>是否必要</th>
+      <th>其他说明</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>OpenApi</td>
+      <td>swagger 初始化</td>
+      <td>必要</td>
+      <td>唯一并位于全部设置最顶端</td>
+    </tr>
+    <tr>
+      <td>Info</td>
+      <td>Api说明</td>
+      <td>必要</td>
+      <td>设置中的<code class="highlighter-rouge">title</code>与<code class="highlighter-rouge">version</code>为必要项</td>
+    </tr>
+    <tr>
+      <td>Server</td>
+      <td>Api 前置路径</td>
+      <td>非必要</td>
+      <td>多连接时，可以并行设置</td>
+    </tr>
+    <tr>
+      <td>ExternalDocumentation</td>
+      <td>扩展文档</td>
+      <td>非必要</td>
+      <td>只能设置<code class="highlighter-rouge">description</code>与<code class="highlighter-rouge">url</code></td>
+    </tr>
+    <tr>
+      <td>paths</td>
+      <td>连接地址</td>
+      <td>必要</td>
+      <td>可以在控制器位置设置</td>
+    </tr>
+    <tr>
+      <td>tags</td>
+      <td>主标签</td>
+      <td>必要</td>
+      <td>与<code class="highlighter-rouge">laravel</code>一起使用时，独立设置方便管理。可以设置<code class="highlighter-rouge">name</code>、<code class="highlighter-rouge">description</code>、<code class="highlighter-rouge">ExternalDocumentation</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="tagsphp">tags.php</h3>
+
+<p>用于设置用户标签</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9<br/>10<br/>11<br/>12<br/>13<br/>14<br/>15<br/>16<br/>17<br/>18</pre></td><td class="code"><pre class="highlight"><code>/**
+* @OAS\Tag(
+*     name="2fa",
+*     description="Google 2FA",
+*     @OAS\ExternalDocumentation(
+*         description="more",
+*         url="https://test.test/docs"
+*     )
+* )
+* @OAS\Tag(
+*     name="store",
+*     description="Access to Petstore orders"
+* )
+* @OAS\Tag(
+*     name="user",
+*     description="Operations about user"
+* )
+*/
+</code></pre></td></tr></tbody></table></div>
+</div>
+
+<h3 id="path-部分">path 部分</h3>
+
+<p>直接使用注释形势写入控制器</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9<br/>10<br/>11<br/>12<br/>13<br/>14<br/>15<br/>16<br/>17<br/>18<br/>19<br/>20<br/>21<br/>22<br/>23<br/>24<br/>25<br/>26<br/>27<br/>28<br/>29<br/>30<br/>31<br/>32<br/>33<br/>34<br/>35<br/>36<br/>37<br/>38<br/>39<br/>40<br/>41<br/>42<br/>43<br/>44<br/>45<br/>46<br/>47<br/>48<br/>49<br/>50<br/>51<br/>52<br/>53<br/>54<br/>55<br/>56<br/>57<br/>58<br/>59<br/>60<br/>61<br/>62<br/>63<br/>64<br/>65<br/>66<br/>67<br/>68<br/>69<br/>70<br/>71<br/>72<br/>73<br/>74<br/>75<br/>76<br/>77<br/>78<br/>79<br/>80<br/>81<br/>82<br/>83<br/>84<br/>85<br/>86<br/>87</pre></td><td class="code"><pre class="highlight"><code>/**
+* @OAS\Get(
+*     path="/test",                                 // API 路由地址
+*     tags={"test"},                                // 对应Tag
+*     sumary="get test doc",                        // API概要
+*     description="get test doc more ........",     // API描述
+*     operationId="test",                           // API请求时ID
+*     deprecated=false,                             // API是否有效
+*     @OAS\Server(                                  // 独立API连接设置 可以覆盖全局
+*         description="Server host",                // 连接描述
+*         url="https://test.dev/api"                // 连接地址
+*     ),
+*     @OAS\Parameter(                               // API参数, 非必要
+*         name=”id“,                                // 参数名
+*         in="query",                               // 参数位置 可以设置`query`、`header`、`path`、`cookie`
+*         description="adout this id ......",       // 描述
+*         required=true,                            // 是否必须填写，当in设置为path时，需要设置为true。
+*         style="from",                             // 设置参数序列化类型，非必要，自动根据in值设置。
+*         @OAS\Schema(
+*             type="string",                        // 参数类型
+*             example="test example",               // 参数例子
+*         )
+*     ),
+*     @OAS\RequestBody(                             // 请求主体 content-type 下使用 适合传递多个参数
+*         description="adout this id ......",       // 描述
+*         required=false,                           // 是否必须填写,默认为false
+*         @OAS\MediaType(                           // 请求数据结构
+*             mediaType="application/json",         // application/json 结构
+*             @OAS\Schema(
+*                 type="string"
+*                 ref="#/components/schemas/User"   // 可以载入设置完成的参数,区分大小写
+*             ),
+*             @OAS\Schema(
+*                 @OAS\Property(                    // 多参数设置
+*                     property="otp",               // 参数名称
+*                     description="yubikey otp",    // 参数描述
+*                     type="string",                // 参数类型
+*                     example="cccccccccccccccccccccccccccccccccccccccccccc"
+*                                                   // 参数例子
+*                 )
+*             )
+*         ),
+*         @OAS\MediaType(                           // 请求数据结构
+*             mediaType="application/xml",          // application/xml 结构
+*             @OAS\Schema(
+*                 type="string"
+*                 ref="#/components/schemas/User"   // 可以载入设置完成的参数,区分大小写
+*             ),
+*             @OAS\Schema(
+*                 @OAS\Property(                    // 多参数设置
+*                     property="otp",               // 参数名称
+*                     description="yubikey otp",    // 参数描述
+*                     type="string",                // 参数类型
+*                     example="cccccccccccccccccccccccccccccccccccccccccccc"
+*                                                   // 参数例子
+*                     )
+*             )		
+*         )
+*     ),
+*     @OAS\Response(                                // 响应,必须设置
+*         response=200,                             // 响应编号
+*         description="successful operation",       // 响应描述
+*         @OAS\Header(
+*             header="X-Rate-Limit",                // 响应头
+*             description="calls per hour allowed by the user",
+*                                                   // 响应头描述
+*             @OAS\Schema(
+*                 type="integer",
+*                 format="int32",
+*                 default="64",                     // 默认
+*                 example="12"                      // 例子
+*             )
+*         ),
+*         @OAS\MediaType(                           // 响应数据结构
+*             mediaType="application/json",
+*             @OAS\Schema(
+*                 @OAS\Property(
+*                     property="message",           // 响应参数头
+*                     description="Response message",
+*                     type="string",                // 响应参数数据类型
+*                     example="true"                // 响应参数例子
+*                 )
+*             ),
+*         )
+*     )
+* )
+*/
+</code></pre></td></tr></tbody></table></div>
+</div>
+<h3 id="model-数据参数">Model 数据参数</h3>
+
+<p>可以直接设置在class之上，使用<code class="highlighter-rouge">ref="#/components/schemas/ClassName"</code>可以直接引用。</p>
+
+<p><code class="highlighter-rouge">swagger</code>默认载入位置<code class="highlighter-rouge">#/components/schemas/</code>。</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9<br/>10<br/>11<br/>12<br/>13<br/>14<br/>15<br/>16<br/>17<br/>18<br/>19<br/>20<br/>21<br/>22<br/>23<br/>24<br/>25<br/>26</pre></td><td class="code"><pre class="highlight"><code>/**
+ * @OAS\Schema(
+ *     title="yubikey model",
+ *     description="yubikey model",
+ *     type="object",
+ *     @OAS\Property(
+ *         property="message",
+ *         description="Response message",
+ *         type="string",
+ *         default="true",  
+ *         example="true"
+ *     ),
+ *     @OAS\Property(
+ *         property="status",
+ *         description="Updated status",
+ *         type="string",
+ *         example="true"
+ *     ),
+ *     @OAS\Property(
+ *         property="age",
+ *         description="Updated status of the pet",
+ *         type="integer",
+ *         minimum="0"
+ *     ),
+ * )
+ */
+</code></pre></td></tr></tbody></table></div>
+</div>
+<h3 id="bitbeansyubikey-的坑">bitbeans/yubikey 的坑</h3>
+
+<p>控制器中不能正常获取<code class="highlighter-rouge">Exception</code>。所以不能使用下方代码</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9</pre></td><td class="code"><pre class="highlight"><code>use YubiKey;
+
+try {
+	$yubikey_auth = Yubikey::verify(Input::get('otp'));
+	$yubikey_params = Yubikey::getParameters();
+	$yubikey_identity = Yubikey::getParameter('identity');
+} catch (\Exception $exception) {
+	$error = $exception-&gt;getMessage();
+}
+</code></pre></td></tr></tbody></table></div>
+</div>
+
+<p>改写到<code class="highlighter-rouge">App\Exceptions\Handler</code>的<code class="highlighter-rouge">render</code>方法判断，使用<code class="highlighter-rouge">Exception</code>判断的<code class="highlighter-rouge">packages</code>不多。</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6</pre></td><td class="code"><pre class="highlight"><code>switch($exception-&gt;getMessage()) {
+    case 'REPLAYED_OTP':
+    return response()-&gt;json(['message' =&gt; $exception-&gt;getMessage()]);
+    case 'Could not parse Yubikey OTP':
+    return response()-&gt;json(['message' =&gt; $exception-&gt;getMessage()]);
+}
+</code></pre></td></tr></tbody></table></div>
+</div>
+
+<h2 id="以上">以上</h2>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            
+            <a href="/tag/#/%E6%97%A5%E8%AE%B0" rel="tag"># 日记</a>
+          
+            
+            <a href="/tag/#/php" rel="tag"># php</a>
+          
+            
+            <a href="/tag/#/swagger" rel="tag"># swagger</a>
+          
+            
+            <a href="/tag/#/yubikey" rel="tag"># yubikey</a>
+          
+            
+            <a href="/tag/#/laravel" rel="tag"># laravel</a>
+          
+        </div>
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+        <div class="post-nav" id="post-nav-id">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/living/2018/04/03/blog/" rel="next" title="2018年04月03日">
+                <i class="fa fa-chevron-left"></i> 2018年04月03日
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/living/2018/03/26/blog/" rel="prev" title="2018年03月26日">
+                2018年03月26日 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+      
+
+      
+    </footer>
+  </article>
+
+  <div class="post-spread">
+    
+  </div>
+</div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+        
+        
+        
+
+
+
+
+
+
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/assets/images/21040889_825385437640313_540035783206109184_a.jpg"
+               alt="K11" />
+          <p class="site-author-name" itemprop="name">K11</p>
+           
+              <p class="site-description motion-element" itemprop="description">千变万化的是世界</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">83</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">categories</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/">
+                <span class="site-state-item-count">26</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+        
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              
+              
+              <span class="links-of-author-item">
+                <a href="https://github.com/k11me" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              
+              
+              <span class="links-of-author-item">
+                <a href="https://www.instagram.com/_y.o_o.y_/" target="_blank" title="Instagram">
+                  
+                    <i class="fa fa-fw fa-instagram"></i>
+                  
+                  Instagram
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+
+
+
+
+
+
+
+            
+              <div class="post-toc-content">
+    <ol class=nav>
+      <li class="nav-item nav-level-1"> <a class="nav-link" href="#小结"> <span class="nav-number">1</span> <span class="nav-text">小结</span> </a> <ol class="nav-child"> <li class="nav-item nav-level-2"> <a class="nav-link" href="#darkaonlinel5-swagger安装"> <span class="nav-number">1.1</span> <span class="nav-text">DarkaOnLine/L5-Swagger安装</span> </a> </li> <li class="nav-item nav-level-2"> <a class="nav-link" href="#基础文件设置"> <span class="nav-number">1.2</span> <span class="nav-text">基础文件设置</span> </a> <ol class="nav-child"> <li class="nav-item nav-level-3"> <a class="nav-link" href="#swagger-v3php"> <span class="nav-number">1.2.1</span> <span class="nav-text">swagger-v3.php</span> </a> </li> <li class="nav-item nav-level-3"> <a class="nav-link" href="#tagsphp"> <span class="nav-number">1.2.2</span> <span class="nav-text">tags.php</span> </a> </li> <li class="nav-item nav-level-3"> <a class="nav-link" href="#path-部分"> <span class="nav-number">1.2.3</span> <span class="nav-text">path 部分</span> </a> </li> <li class="nav-item nav-level-3"> <a class="nav-link" href="#model-数据参数"> <span class="nav-number">1.2.4</span> <span class="nav-text">Model 数据参数</span> </a> </li> <li class="nav-item nav-level-3"> <a class="nav-link" href="#bitbeansyubikey-的坑"> <span class="nav-number">1.2.5</span> <span class="nav-text">bitbeans/yubikey 的坑</span> </a> </li> </ol> </li> <li class="nav-item nav-level-2"> <a class="nav-link" href="#以上"> <span class="nav-number">1.3</span> <span class="nav-text">以上</span> </a> </li> </ol> </li>
+    </ol>
+  </div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  
+  &copy;  2017 - 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">K11</span>
+</div>
+
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="https://jekyllrb.com">Jekyll</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/simpleyyt/jekyll-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+   
+  
+  
+  
+  
+  
+  <script type="text/javascript" src="/assets/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  
+  
+  
+  
+  <script type="text/javascript" src="/assets/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  
+  
+  
+  
+  <script type="text/javascript" src="/assets/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  
+  
+  
+  
+  <script type="text/javascript" src="/assets/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  
+  
+  
+  
+  <script type="text/javascript" src="/assets/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  
+  
+  
+  
+  <script type="text/javascript" src="/assets/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/assets/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/assets/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+  <script type="text/javascript" src="/assets/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/assets/js/src/post-details.js?v=5.1.1"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/assets/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://keleven.disqus.com/count.js" async></script>
+    
+
+    
+      
+      <script type="text/javascript">
+          var disqus_config = function () {
+              this.page.url = 'http://localhost:4000/living/2018/03/28/blog/';
+              this.page.identifier = '/living/2018/03/28/blog/';
+              this.page.title = 'swagger-php 快速上手指南';
+          };
+          var d = document, s = d.createElement('script');
+          s.src = 'https://keleven.disqus.com/embed.js';
+          s.setAttribute('data-timestamp', '' + +new Date());
+          (d.head || d.body).appendChild(s);
+      </script>
+      
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+  
+
+
+  
+
+  
+
+  
+
+</body>
+</html>
+

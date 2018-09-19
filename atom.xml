@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.5.2">Jekyll</generator><link href="http://localhost:4000/atom.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-09-20T05:54:59+08:00</updated><id>http://localhost:4000/</id><title type="html">Keleven.Me</title><subtitle>千变万化的是世界</subtitle><author><name>K11</name></author><entry><title type="html">vuex 提交后清空很重要！</title><link href="http://localhost:4000/living/2018/09/19/blog/" rel="alternate" type="text/html" title="vuex 提交后清空很重要！" /><published>2018-09-19T08:00:00+08:00</published><updated>2018-09-19T08:00:00+08:00</updated><id>http://localhost:4000/living/2018/09/19/blog</id><content type="html" xml:base="http://localhost:4000/living/2018/09/19/blog/">&lt;h1 id=&quot;18号的份&quot;&gt;18号的份&lt;/h1&gt;
+
+&lt;p&gt;使用&lt;code class=&quot;highlighter-rouge&quot;&gt;vuex&lt;/code&gt; 推送信息时 会让之前的消息一起发送变动&lt;/p&gt;
+
+&lt;p&gt;使用&lt;code class=&quot;highlighter-rouge&quot;&gt;vue&lt;/code&gt; 工具发现 &lt;code class=&quot;highlighter-rouge&quot;&gt;state&lt;/code&gt; 的数据被覆盖&lt;/p&gt;
+
+&lt;p&gt;使用手动输入框 更新 发现&lt;code class=&quot;highlighter-rouge&quot;&gt;state&lt;/code&gt;并没有更新只是视图上的变化&lt;/p&gt;
+
+&lt;p&gt;最后发现为 提交&lt;code class=&quot;highlighter-rouge&quot;&gt;active&lt;/code&gt;后没有清空数据导致……&lt;/p&gt;
+
+&lt;p&gt;之后需要分离信息提示部分 并使后端返回数据规整化&lt;/p&gt;
+
+&lt;p&gt;并能使用固定数字代码 进行快速返回&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;admin&lt;/code&gt; 安全部分要完工了~~ 撒花~~&lt;/p&gt;
+
+&lt;h1 id=&quot;20号的份&quot;&gt;20号的份&lt;/h1&gt;
+
+&lt;p&gt;使&lt;code class=&quot;highlighter-rouge&quot;&gt;code&lt;/code&gt;编码换用于信息的快速返回&lt;/p&gt;
+
+&lt;p&gt;当然也可以使用对应信息语句直接返回&lt;/p&gt;
+
+&lt;h2 id=&quot;vue-的坑&quot;&gt;vue 的坑&lt;/h2&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;vue&lt;/code&gt; 的&lt;code class=&quot;highlighter-rouge&quot;&gt;v-for&lt;/code&gt;一定要定义&lt;code class=&quot;highlighter-rouge&quot;&gt;key&lt;/code&gt;不然会出现渲染不正常 数据正常&lt;/p&gt;
+
+&lt;p&gt;重要的是并不会提示错误！！&lt;/p&gt;
+
+&lt;h2 id=&quot;laravel-的坑&quot;&gt;laravel 的坑&lt;/h2&gt;
+
+&lt;p&gt;使用&lt;code class=&quot;highlighter-rouge&quot;&gt;laravel markdown email&lt;/code&gt;时，不能独立定义&lt;code class=&quot;highlighter-rouge&quot;&gt;header&lt;/code&gt;与&lt;code class=&quot;highlighter-rouge&quot;&gt;footer&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;使用&lt;code class=&quot;highlighter-rouge&quot;&gt;@component('mail::button')&lt;/code&gt;时，前方要清除空白。 否则不能正常渲染&lt;/p&gt;
+
+&lt;p&gt;要支持&lt;code class=&quot;highlighter-rouge&quot;&gt;header&lt;/code&gt;与&lt;code class=&quot;highlighter-rouge&quot;&gt;footer&lt;/code&gt; ，将&lt;code class=&quot;highlighter-rouge&quot;&gt;@component('mail::message')&lt;/code&gt; 改为 &lt;code class=&quot;highlighter-rouge&quot;&gt;@component('mail::layout')&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;下方是修改后的例子，也可以直接复制&lt;code class=&quot;highlighter-rouge&quot;&gt;message.blade.php&lt;/code&gt;进行修改&lt;/p&gt;
+
+&lt;p&gt;找不到&lt;code class=&quot;highlighter-rouge&quot;&gt;message.blade.php&lt;/code&gt;时 运行&lt;code class=&quot;highlighter-rouge&quot;&gt;php artisan vendor:publish --tag=laravel-mail&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;之后可以在&lt;code class=&quot;highlighter-rouge&quot;&gt;vendor/mail/markdown&lt;/code&gt;下找到对应文件。&lt;/p&gt;
+
+&lt;div class=&quot;language-php highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;@component('mail::layout')
+
+@slot('header')
+@component('mail::header', ['url' =&amp;gt; config('app.url')])
+header
+@endcomponent
+@endslot
+
+# Introduction
+The body of your message.
+
+@component('mail::button', ['url' =&amp;gt; $url])
+button
+@endcomponent
+
+Thanks,&lt;span class=&quot;nt&quot;&gt;&amp;lt;br&amp;gt;&lt;/span&gt;
+
+@slot('footer')
+@component('mail::footer')
+© footer
+@endcomponent
+@endslot
+@endcomponent
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;</content><author><name>K11</name></author><category term="日记" /><category term="vue" /><category term="laravel" /><summary type="html">18号的份 使用vuex 推送信息时 会让之前的消息一起发送变动 使用vue 工具发现 state 的数据被覆盖 使用手动输入框 更新 发现state并没有更新只是视图上的变化 最后发现为 提交active后没有清空数据导致…… 之后需要分离信息提示部分 并使后端返回数据规整化 并能使用固定数字代码 进行快速返回 admin 安全部分要完工了~~ 撒花~~ 20号的份 使code编码换用于信息的快速返回 当然也可以使用对应信息语句直接返回 vue 的坑 vue 的v-for一定要定义key不然会出现渲染不正常 数据正常 重要的是并不会提示错误！！ laravel 的坑 使用laravel markdown email时，不能独立定义header与footer 使用@component('mail::button')时，前方要清除空白。 否则不能正常渲染 要支持header与footer ，将@component('mail::message') 改为 @component('mail::layout') 下方是修改后的例子，也可以直接复制message.blade.php进行修改 找不到message.blade.php时 运行php artisan vendor:publish --tag=laravel-mail 之后可以在vendor/mail/markdown下找到对应文件。 @component('mail::layout') @slot('header') @component('mail::header', ['url' =&amp;gt; config('app.url')]) header @endcomponent @endslot # Introduction The body of your message. @component('mail::button', ['url' =&amp;gt; $url]) button @endcomponent Thanks,&amp;lt;br&amp;gt; @slot('footer') @component('mail::footer') © footer @endcomponent @endslot @endcomponent</summary></entry><entry><title type="html">新键盘购入！</title><link href="http://localhost:4000/living/2018/09/16/blog/" rel="alternate" type="text/html" title="新键盘购入！" /><published>2018-09-16T08:00:00+08:00</published><updated>2018-09-16T08:00:00+08:00</updated><id>http://localhost:4000/living/2018/09/16/blog</id><content type="html" xml:base="http://localhost:4000/living/2018/09/16/blog/">&lt;h1 id=&quot;11号的份&quot;&gt;11号的份&lt;/h1&gt;
+
+&lt;h2 id=&quot;新键盘到了&quot;&gt;新键盘到了&lt;/h2&gt;
+
+&lt;p&gt;果然用习惯了&lt;code class=&quot;highlighter-rouge&quot;&gt;Microsoft Sculpt Ergonomic Desktop&lt;/code&gt;套装后&lt;/p&gt;
+
+&lt;p&gt;正常的布局的键盘难以适应…… 虽然新键盘的手感不错……&lt;/p&gt;
+
+&lt;p&gt;还是有点局促……&lt;/p&gt;
+
+&lt;h1 id=&quot;16号的份&quot;&gt;16号的份&lt;/h1&gt;
+
+&lt;h2 id=&quot;增加信息提示&quot;&gt;增加信息提示&lt;/h2&gt;
+
+&lt;p&gt;增加信息提示功能，将返回信息推入 &lt;code class=&quot;highlighter-rouge&quot;&gt;vuex&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;并可以同步移除。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://i.loli.net/2018/09/17/5b9ead3d4abbe.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;##其他&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;git&lt;/code&gt;居然有中文版了！&lt;/p&gt;</content><author><name>K11</name></author><category term="日记" /><summary type="html">11号的份 新键盘到了 果然用习惯了Microsoft Sculpt Ergonomic Desktop套装后 正常的布局的键盘难以适应…… 虽然新键盘的手感不错…… 还是有点局促…… 16号的份 增加信息提示 增加信息提示功能，将返回信息推入 vuex 并可以同步移除。 ##其他 git居然有中文版了！</summary></entry><entry><title type="html">Vuex技能点获得 (づ｡◕‿‿◕｡)づ</title><link href="http://localhost:4000/living/2018/09/08/blog/" rel="alternate" type="text/html" title="Vuex技能点获得 (づ｡◕‿‿◕｡)づ" /><published>2018-09-08T08:00:00+08:00</published><updated>2018-09-08T08:00:00+08:00</updated><id>http://localhost:4000/living/2018/09/08/blog</id><content type="html" xml:base="http://localhost:4000/living/2018/09/08/blog/">&lt;h1 id=&quot;随手&quot;&gt;随手&lt;/h1&gt;
+
+&lt;p&gt;项目复杂没有规划就是容易混乱呢……&lt;/p&gt;
+
+&lt;p&gt;看来&lt;code class=&quot;highlighter-rouge&quot;&gt;vuex&lt;/code&gt;的例子的代码，完全掌握了~~&lt;/p&gt;
+
+&lt;p&gt;还发现了其中的小bug 😁&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;vuex&lt;/code&gt;的主要用途&lt;/p&gt;
+
+&lt;p&gt;将多页的网页变为一页，同时方便多平台&lt;/p&gt;
+
+&lt;h1 id=&quot;附言&quot;&gt;附言&lt;/h1&gt;
+
+&lt;p&gt;问题被问了呢&lt;/p&gt;
+
+&lt;p&gt;想看礼服啊~&lt;/p&gt;
+
+&lt;p&gt;o(&lt;em&gt;////▽////&lt;/em&gt;)q&lt;/p&gt;
+
+&lt;p&gt;所以主驾位上的人呢&lt;/p&gt;
+
+&lt;p&gt;比起指针的更喜欢电子的&lt;/p&gt;
+
+&lt;p&gt;虽然很好看&lt;/p&gt;
+
+&lt;p&gt;上面的指纹&lt;/p&gt;
+
+&lt;p&gt;嗯……&lt;/p&gt;</content><author><name>K11</name></author><category term="日记" /><category term="vue" /><summary type="html">随手 项目复杂没有规划就是容易混乱呢…… 看来vuex的例子的代码，完全掌握了~~ 还发现了其中的小bug 😁 vuex的主要用途 将多页的网页变为一页，同时方便多平台 附言 问题被问了呢 想看礼服啊~ o(////▽////)q 所以主驾位上的人呢 比起指针的更喜欢电子的 虽然很好看 上面的指纹 嗯……</summary></entry><entry><title type="html">失败了………………😭</title><link href="http://localhost:4000/living/2018/09/04/blog/" rel="alternate" type="text/html" title="失败了………………😭" /><published>2018-09-04T08:00:00+08:00</published><updated>2018-09-04T08:00:00+08:00</updated><id>http://localhost:4000/living/2018/09/04/blog</id><content type="html" xml:base="http://localhost:4000/living/2018/09/04/blog/">&lt;h1 id=&quot;套餐有点烦&quot;&gt;套餐有点烦&lt;/h1&gt;
+
+&lt;p&gt;办宽带一定要开卡就没人管一管吗……&lt;/p&gt;
+
+&lt;p&gt;无奈更换旧手机的SIM卡槽 没错让我弄坏了……&lt;/p&gt;
+
+&lt;p&gt;在此之前都不敢卸下SIM卡也神奇……&lt;/p&gt;
+
+&lt;p&gt;元件直接淘宝还是很方便的&lt;/p&gt;
+
+&lt;p&gt;放在其他国家是难以想象…… 不过人家也没有这样恶心的套餐……&lt;/p&gt;
+
+&lt;h1 id=&quot;sim卡槽更换失败&quot;&gt;SIM卡槽更换失败&lt;/h1&gt;
+
+&lt;p&gt;SIM 卡槽更换失败 😭 😭 粘上后盖但是没上螺丝…… 心塞……&lt;/p&gt;
+
+&lt;p&gt;果然没有风枪是不行呢…… 找个风枪加入清单好了……&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.hakko.com/japan/products/hakko_fr702.html&quot;&gt;HAKKO FR-702&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;其他&quot;&gt;其他&lt;/h1&gt;
+
+&lt;p&gt;作息时间混乱，啊啊啊 好想正常一点啊……&lt;/p&gt;</content><author><name>K11</name></author><category term="日记" /><summary type="html">套餐有点烦 办宽带一定要开卡就没人管一管吗…… 无奈更换旧手机的SIM卡槽 没错让我弄坏了…… 在此之前都不敢卸下SIM卡也神奇…… 元件直接淘宝还是很方便的 放在其他国家是难以想象…… 不过人家也没有这样恶心的套餐…… SIM卡槽更换失败 SIM 卡槽更换失败 😭 😭 粘上后盖但是没上螺丝…… 心塞…… 果然没有风枪是不行呢…… 找个风枪加入清单好了…… HAKKO FR-702 其他 作息时间混乱，啊啊啊 好想正常一点啊……</summary></entry><entry><title type="html">彩虹~~</title><link href="http://localhost:4000/living/2018/09/03/blog/" rel="alternate" type="text/html" title="彩虹~~" /><published>2018-09-03T08:00:00+08:00</published><updated>2018-09-03T08:00:00+08:00</updated><id>http://localhost:4000/living/2018/09/03/blog</id><content type="html" xml:base="http://localhost:4000/living/2018/09/03/blog/">&lt;h2 id=&quot;出门看见彩虹了&quot;&gt;出门看见彩虹了~~&lt;/h2&gt;
+
+&lt;blockquote class=&quot;instagram-media&quot; data-instgrm-captioned=&quot;&quot; data-instgrm-permalink=&quot;https://www.instagram.com/p/BnRfC0EnQ0X/?utm_source=ig_embed&quot; data-instgrm-version=&quot;9&quot; style=&quot; background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);&quot;&gt;&lt;div style=&quot;padding:8px;&quot;&gt; &lt;div style=&quot; background:#F8F8F8; line-height:0; margin-top:40px; padding:50.0% 0; text-align:center; width:100%;&quot;&gt; &lt;div style=&quot; background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAMAAAApWqozAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAMUExURczMzPf399fX1+bm5mzY9AMAAADiSURBVDjLvZXbEsMgCES5/P8/t9FuRVCRmU73JWlzosgSIIZURCjo/ad+EQJJB4Hv8BFt+IDpQoCx1wjOSBFhh2XssxEIYn3ulI/6MNReE07UIWJEv8UEOWDS88LY97kqyTliJKKtuYBbruAyVh5wOHiXmpi5we58Ek028czwyuQdLKPG1Bkb4NnM+VeAnfHqn1k4+GPT6uGQcvu2h2OVuIf/gWUFyy8OWEpdyZSa3aVCqpVoVvzZZ2VTnn2wU8qzVjDDetO90GSy9mVLqtgYSy231MxrY6I2gGqjrTY0L8fxCxfCBbhWrsYYAAAAAElFTkSuQmCC); display:block; height:44px; margin:0 auto -44px; position:relative; top:-22px; width:44px;&quot;&gt;&lt;/div&gt;&lt;/div&gt; &lt;p style=&quot; margin:8px 0 0 0; padding:0 4px;&quot;&gt; &lt;a href=&quot;https://www.instagram.com/p/BnRfC0EnQ0X/?utm_source=ig_embed&quot; style=&quot; color:#000; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none; word-wrap:break-word;&quot; target=&quot;_blank&quot;&gt;🌈🌈&lt;/a&gt;&lt;/p&gt; &lt;p style=&quot; color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;&quot;&gt;@&lt;a href=&quot;https://www.instagram.com/_y.o_o.y_/?utm_source=ig_embed&quot; style=&quot; color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px;&quot; target=&quot;_blank&quot;&gt; _y.o_o.y_&lt;/a&gt; 分享的帖子 · &lt;time style=&quot; font-family:Arial,sans-serif; font-size:14px; line-height:17px;&quot; datetime=&quot;2018-09-03T17:58:58+00:00&quot;&gt;PDT 2018 年 9月 3 日 上午 10:58&lt;/time&gt;&lt;/p&gt;&lt;/div&gt;&lt;/blockquote&gt;
+&lt;script async=&quot;&quot; defer=&quot;&quot; src=&quot;//www.instagram.com/embed.js&quot;&gt;&lt;/script&gt;
+
+&lt;h2 id=&quot;集中精神干活了&quot;&gt;集中精神干活了&lt;/h2&gt;
+
+&lt;p&gt;添加信息提示，将信息反馈的更加直观&lt;/p&gt;
+
+&lt;p&gt;最让人愁的是胜利的判断方式，要最简单不能复杂……&lt;/p&gt;</content><author><name>K11</name></author><category term="日记" /><summary type="html">出门看见彩虹了~~ 🌈🌈 @ _y.o_o.y_ 分享的帖子 · PDT 2018 年 9月 3 日 上午 10:58 集中精神干活了 添加信息提示，将信息反馈的更加直观 最让人愁的是胜利的判断方式，要最简单不能复杂……</summary></entry><entry><title type="html">寒冬？不存在的~~</title><link href="http://localhost:4000/living/2018/09/01/blog/" rel="alternate" type="text/html" title="寒冬？不存在的~~" /><published>2018-09-01T08:00:00+08:00</published><updated>2018-09-01T08:00:00+08:00</updated><id>http://localhost:4000/living/2018/09/01/blog</id><content type="html" xml:base="http://localhost:4000/living/2018/09/01/blog/">&lt;h2 id=&quot;沸沸扬扬&quot;&gt;沸沸扬扬&lt;/h2&gt;
+
+&lt;p&gt;我朝文件震惊游戏行业，寒冬已至。&lt;/p&gt;
+
+&lt;p&gt;错估形势，将我朝当主要市场也是必然吧。&lt;/p&gt;
+
+&lt;p&gt;从架起GFW的那天开始，就注定没有未来。&lt;/p&gt;
+
+&lt;p&gt;最糟糕的时，境外公司不能对我朝个人付款。&lt;/p&gt;
+
+&lt;p&gt;看来HK是一定要再去一次了。&lt;/p&gt;
+
+&lt;p&gt;众筹的款项不能入手也是糟糕。&lt;/p&gt;
+
+&lt;p&gt;还有企业税加了到35% 贸易战还加企业税 也是666&lt;/p&gt;
+
+&lt;h2 id=&quot;其他&quot;&gt;其他&lt;/h2&gt;
+
+&lt;p&gt;mac的系统盘满了&lt;/p&gt;
+
+&lt;p&gt;希望可以在坚持几个月~~&lt;/p&gt;
+
+&lt;p&gt;群辉的购入也在计划之中……&lt;/p&gt;</content><author><name>K11</name></author><category term="日记" /><summary type="html">沸沸扬扬 我朝文件震惊游戏行业，寒冬已至。 错估形势，将我朝当主要市场也是必然吧。 从架起GFW的那天开始，就注定没有未来。 最糟糕的时，境外公司不能对我朝个人付款。 看来HK是一定要再去一次了。 众筹的款项不能入手也是糟糕。 还有企业税加了到35% 贸易战还加企业税 也是666 其他 mac的系统盘满了 希望可以在坚持几个月~~ 群辉的购入也在计划之中……</summary></entry><entry><title type="html">Update😍😍</title><link href="http://localhost:4000/living/2018/08/24/blog/" rel="alternate" type="text/html" title="Update😍😍" /><published>2018-08-24T08:00:00+08:00</published><updated>2018-08-24T08:00:00+08:00</updated><id>http://localhost:4000/living/2018/08/24/blog</id><content type="html" xml:base="http://localhost:4000/living/2018/08/24/blog/">&lt;h1 id=&quot;全球化语言&quot;&gt;全球化语言&lt;/h1&gt;
+
+&lt;p&gt;将 &lt;code class=&quot;highlighter-rouge&quot;&gt;laravel&lt;/code&gt; 返回语言指定&lt;/p&gt;
+
+&lt;p&gt;为库中的 对应语言 并 可以切换到其他语言&lt;/p&gt;
+
+&lt;p&gt;直接返回&lt;code class=&quot;highlighter-rouge&quot;&gt;lang&lt;/code&gt;行就可以 比如&lt;code class=&quot;highlighter-rouge&quot;&gt;auth.Login&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;vue&lt;/code&gt;中使用&lt;code class=&quot;highlighter-rouge&quot;&gt;Vue.i18n.translate(auth.Login)&lt;/code&gt; 就完成了&lt;/p&gt;
+
+&lt;p&gt;主要用来显示对用户的提示信息&lt;/p&gt;
+
+&lt;h1 id=&quot;以上&quot;&gt;以上&lt;/h1&gt;
+
+&lt;p&gt;鞋子 和 裙子 绝赞好评 ~~&lt;/p&gt;
+
+&lt;p&gt;忘了说  xbox one 的手柄真好用啊~~&lt;/p&gt;</content><author><name>K11</name></author><category term="日记" /><category term="vue" /><summary type="html">全球化语言 将 laravel 返回语言指定 为库中的 对应语言 并 可以切换到其他语言 直接返回lang行就可以 比如auth.Login vue中使用Vue.i18n.translate(auth.Login) 就完成了 主要用来显示对用户的提示信息 以上 鞋子 和 裙子 绝赞好评 ~~ 忘了说 xbox one 的手柄真好用啊~~</summary></entry><entry><title type="html">我回来了😁</title><link href="http://localhost:4000/living/2018/08/20/blog/" rel="alternate" type="text/html" title="我回来了😁" /><published>2018-08-20T08:00:00+08:00</published><updated>2018-08-20T08:00:00+08:00</updated><id>http://localhost:4000/living/2018/08/20/blog</id><content type="html" xml:base="http://localhost:4000/living/2018/08/20/blog/">&lt;h1 id=&quot;添加-instagram&quot;&gt;添加 Instagram&lt;/h1&gt;
+
+&lt;p&gt;为&lt;code class=&quot;highlighter-rouge&quot;&gt;blog&lt;/code&gt;添加的&lt;a href=&quot;https://www.instagram.com/_y.o_o.y_/&quot;&gt;Instagram&lt;/a&gt;连接&lt;/p&gt;
+
+&lt;p&gt;有兴趣可以点进去看看哦&lt;/p&gt;
+
+&lt;h1 id=&quot;旅行还是很开心的&quot;&gt;旅行还是很开心的&lt;/h1&gt;
+
+&lt;p&gt;自己逛逛澳门真的很有趣&lt;/p&gt;
+
+&lt;p&gt;与不合适的人在一起难免强颜欢笑~~~&lt;/p&gt;
+
+&lt;p&gt;莫名的想挑战下 一个人去游乐园 不过东西要精简一下 😁&lt;/p&gt;
+
+&lt;p&gt;在香港吃到了心心念念的&lt;code class=&quot;highlighter-rouge&quot;&gt;一籣&lt;/code&gt; 果然不错~ 只是叉烧有点薄……&lt;/p&gt;
+
+&lt;p&gt;人文环境 确实 好过大陆&lt;/p&gt;
+
+&lt;h1 id=&quot;回来要加油了&quot;&gt;回来要加油了&lt;/h1&gt;
+
+&lt;p&gt;局势有点不稳…… 不加油不行呢……&lt;/p&gt;</content><author><name>K11</name></author><category term="日记" /><summary type="html">添加 Instagram 为blog添加的Instagram连接 有兴趣可以点进去看看哦 旅行还是很开心的 自己逛逛澳门真的很有趣 与不合适的人在一起难免强颜欢笑~~~ 莫名的想挑战下 一个人去游乐园 不过东西要精简一下 😁 在香港吃到了心心念念的一籣 果然不错~ 只是叉烧有点薄…… 人文环境 确实 好过大陆 回来要加油了 局势有点不稳…… 不加油不行呢……</summary></entry><entry><title type="html">环保不是说说而已</title><link href="http://localhost:4000/living/2018/08/08/blog/" rel="alternate" type="text/html" title="环保不是说说而已" /><published>2018-08-08T08:00:00+08:00</published><updated>2018-08-08T08:00:00+08:00</updated><id>http://localhost:4000/living/2018/08/08/blog</id><content type="html" xml:base="http://localhost:4000/living/2018/08/08/blog/">&lt;h2 id=&quot;奥运10年&quot;&gt;奥运10年&lt;/h2&gt;
+
+&lt;p&gt;场馆荒废了 看着心疼&lt;/p&gt;
+
+&lt;h2 id=&quot;表弟回来了&quot;&gt;表弟回来了&lt;/h2&gt;
+
+&lt;p&gt;表弟回来了 嗯 考上的多大~~&lt;/p&gt;
+
+&lt;p&gt;略微的研究了一下公司注册的事儿~~&lt;/p&gt;
+
+&lt;p&gt;明天9号 要久违的出去旅行了~~&lt;/p&gt;
+
+&lt;p&gt;18号回来~~&lt;/p&gt;
+
+&lt;h2 id=&quot;来过这里的人&quot;&gt;来过这里的人&lt;/h2&gt;
+
+&lt;p&gt;这是这周的 等的人并没有来&lt;/p&gt;
+
+&lt;p&gt;看到某处亮了一下 还是有些期待的&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://i.loli.net/2018/08/08/5b6a9085dc603.png&quot; alt=&quot;屏幕快照 2018-08-08 14.39.04&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;查了一下真的是我想多了…………&lt;/p&gt;
+
+&lt;h2 id=&quot;laravel-中的-vuex&quot;&gt;laravel 中的 vuex&lt;/h2&gt;
+
+&lt;p&gt;将&lt;code class=&quot;highlighter-rouge&quot;&gt;vuex-i18n&lt;/code&gt;部分从&lt;code class=&quot;highlighter-rouge&quot;&gt;app.js&lt;/code&gt;移动到了&lt;code class=&quot;highlighter-rouge&quot;&gt;store\index.js&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;目的是确保&lt;code class=&quot;highlighter-rouge&quot;&gt;state&lt;/code&gt;中可以看到 &lt;code class=&quot;highlighter-rouge&quot;&gt;i18n&lt;/code&gt;的设置&lt;/p&gt;
+
+&lt;p&gt;并可以 直接设置&lt;code class=&quot;highlighter-rouge&quot;&gt;locale&lt;/code&gt; 变更语言&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://i.loli.net/2018/08/08/5b6a934f001fe.png&quot; alt=&quot;屏幕快照 2018-08-08 14.52.15&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;如果直接写在&lt;code class=&quot;highlighter-rouge&quot;&gt;app.js&lt;/code&gt; 中&lt;code class=&quot;highlighter-rouge&quot;&gt;i18n&lt;/code&gt; 就会被覆盖掉&lt;/p&gt;
+
+&lt;p&gt;其他部分就可以按照&lt;code class=&quot;highlighter-rouge&quot;&gt;vuex&lt;/code&gt;推荐的结构进行设置&lt;/p&gt;
+
+&lt;p&gt;但愿可以在&lt;code class=&quot;highlighter-rouge&quot;&gt;js&lt;/code&gt;路上越来越顺手 内心还是充满恐惧……&lt;/p&gt;
+
+&lt;h3 id=&quot;其他vue-打错&quot;&gt;其他vue 打错&lt;/h3&gt;
+
+&lt;p&gt;需要安装&lt;code class=&quot;highlighter-rouge&quot;&gt;vue-template-compiler&lt;/code&gt;包&lt;/p&gt;
+
+&lt;h2 id=&quot;l5-swagger-使用自定义auth登录&quot;&gt;l5-swagger 使用自定义auth登录&lt;/h2&gt;
+
+&lt;p&gt;修改&lt;code class=&quot;highlighter-rouge&quot;&gt;config\l5-swagger&lt;/code&gt; 中的&lt;code class=&quot;highlighter-rouge&quot;&gt;middleware&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;将&lt;code class=&quot;highlighter-rouge&quot;&gt;auth&lt;/code&gt; 修改为&lt;code class=&quot;highlighter-rouge&quot;&gt;auth:admin&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;注意要对应&lt;code class=&quot;highlighter-rouge&quot;&gt;config\auth&lt;/code&gt;中的&lt;code class=&quot;highlighter-rouge&quot;&gt;guards&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;修改后一般用户不能查看&lt;code class=&quot;highlighter-rouge&quot;&gt;api doc&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;admin&lt;/code&gt; 用户 登录后可以正常查看&lt;/p&gt;
+
+&lt;h2 id=&quot;以上&quot;&gt;以上&lt;/h2&gt;</content><author><name>K11</name></author><category term="日记" /><category term="vue" /><category term="laravel" /><summary type="html">奥运10年 场馆荒废了 看着心疼 表弟回来了 表弟回来了 嗯 考上的多大~~ 略微的研究了一下公司注册的事儿~~ 明天9号 要久违的出去旅行了~~ 18号回来~~ 来过这里的人 这是这周的 等的人并没有来 看到某处亮了一下 还是有些期待的 查了一下真的是我想多了………… laravel 中的 vuex 将vuex-i18n部分从app.js移动到了store\index.js 目的是确保state中可以看到 i18n的设置 并可以 直接设置locale 变更语言 如果直接写在app.js 中i18n 就会被覆盖掉 其他部分就可以按照vuex推荐的结构进行设置 但愿可以在js路上越来越顺手 内心还是充满恐惧…… 其他vue 打错 需要安装vue-template-compiler包 l5-swagger 使用自定义auth登录 修改config\l5-swagger 中的middleware 将auth 修改为auth:admin 注意要对应config\auth中的guards 修改后一般用户不能查看api doc admin 用户 登录后可以正常查看 以上</summary></entry><entry><title type="html">i18n 全球化语言</title><link href="http://localhost:4000/living/2018/07/30/blog/" rel="alternate" type="text/html" title="i18n 全球化语言" /><published>2018-07-30T08:00:00+08:00</published><updated>2018-07-30T08:00:00+08:00</updated><id>http://localhost:4000/living/2018/07/30/blog</id><content type="html" xml:base="http://localhost:4000/living/2018/07/30/blog/">&lt;h1 id=&quot;i18n-全球化语言&quot;&gt;i18n 全球化语言&lt;/h1&gt;
+
+&lt;p&gt;@lang 与 &lt;code class=&quot;highlighter-rouge&quot;&gt;__('lange')&lt;/code&gt; 不能在vue中使用&lt;/p&gt;
+
+&lt;p&gt;于是找到&lt;code class=&quot;highlighter-rouge&quot;&gt;martinlindhe/laravel-vue-i18n-generator&lt;/code&gt;包&lt;/p&gt;
+
+&lt;p&gt;不过要注意的 README 有错误&lt;/p&gt;
+
+&lt;p&gt;使用&lt;code class=&quot;highlighter-rouge&quot;&gt;vue-i18n&lt;/code&gt; 后&lt;code class=&quot;highlighter-rouge&quot;&gt;$t('lang')&lt;/code&gt; 不能正常渲染 疑似&lt;code class=&quot;highlighter-rouge&quot;&gt;vue&lt;/code&gt;的bug&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;vuex-i18n&lt;/code&gt; 则正常&lt;/p&gt;
+
+&lt;p&gt;修改&lt;code class=&quot;highlighter-rouge&quot;&gt; resources/assets/js/app.js&lt;/code&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kr&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Vuex&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'vuex'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;kr&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;vuexI18n&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'vuex-i18n'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;kr&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Locales&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'./vue-i18n-locales.generated.js'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;Vue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;use&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Vuex&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;kr&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;store&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Vuex&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Store&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;Vue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;use&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;vuexI18n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;plugin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;store&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;Vue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i18n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;add&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'en'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Locales&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;en&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;Vue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i18n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;add&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'zh'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Locales&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;zh&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;Vue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i18n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;set&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'en'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+&lt;span class=&quot;kr&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;app&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Vue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;store&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;el&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'#app'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;之后就可以正常的使用&lt;code class=&quot;highlighter-rouge&quot;&gt;$t()&lt;/code&gt;了 同时也支持复数形式&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://medium.com/@konafets/localization-with-laravel-and-vuejs-e27068e68ee8&quot;&gt;参考地址&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;优点：不用设置后端后再设置前端 使用&lt;code class=&quot;highlighter-rouge&quot;&gt;php artisan vue-i18n:generate&lt;/code&gt;可以直接创建或更新&lt;code class=&quot;highlighter-rouge&quot;&gt;vue&lt;/code&gt;的语言设置&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;天朝上邦&quot;&gt;天朝上邦&lt;/h1&gt;
+
+&lt;p&gt;估计汇率1比20是早晚的事儿了&lt;/p&gt;
+
+&lt;p&gt;某不可描述的两物必须灭亡&lt;/p&gt;
+
+&lt;p&gt;也算死了 账也是要算的 逃不掉的&lt;/p&gt;
+
+&lt;p&gt;准备被人唾弃到世界终结吧&lt;/p&gt;</content><author><name>K11</name></author><category term="日记" /><category term="vue" /><category term="laravel" /><summary type="html">i18n 全球化语言 @lang 与 __('lange') 不能在vue中使用 于是找到martinlindhe/laravel-vue-i18n-generator包 不过要注意的 README 有错误 使用vue-i18n 后$t('lang') 不能正常渲染 疑似vue的bug vuex-i18n 则正常 修改 resources/assets/js/app.js import Vuex from 'vuex'; import vuexI18n from 'vuex-i18n'; import Locales from './vue-i18n-locales.generated.js'; Vue.use(Vuex); const store = new Vuex.Store(); Vue.use(vuexI18n.plugin, store); Vue.i18n.add('en', Locales.en); Vue.i18n.add('zh', Locales.zh); Vue.i18n.set('en'); const app = new Vue({ store, el: '#app', }); 之后就可以正常的使用$t()了 同时也支持复数形式 参考地址 优点：不用设置后端后再设置前端 使用php artisan vue-i18n:generate可以直接创建或更新vue的语言设置 天朝上邦 估计汇率1比20是早晚的事儿了 某不可描述的两物必须灭亡 也算死了 账也是要算的 逃不掉的 准备被人唾弃到世界终结吧</summary></entry></feed>
