@@ -1,4 +1,109 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.5.2">Jekyll</generator><link href="http://localhost:4000/atom.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-09-20T05:54:59+08:00</updated><id>http://localhost:4000/</id><title type="html">Keleven.Me</title><subtitle>千变万化的是世界</subtitle><author><name>K11</name></author><entry><title type="html">vuex 提交后清空很重要！</title><link href="http://localhost:4000/living/2018/09/19/blog/" rel="alternate" type="text/html" title="vuex 提交后清空很重要！" /><published>2018-09-19T08:00:00+08:00</published><updated>2018-09-19T08:00:00+08:00</updated><id>http://localhost:4000/living/2018/09/19/blog</id><content type="html" xml:base="http://localhost:4000/living/2018/09/19/blog/">&lt;h1 id=&quot;18号的份&quot;&gt;18号的份&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.5.2">Jekyll</generator><link href="http://localhost:4000/atom.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-09-29T04:01:46+08:00</updated><id>http://localhost:4000/</id><title type="html">Keleven.Me</title><subtitle>千变万化的是世界</subtitle><author><name>K11</name></author><entry><title type="html">记录</title><link href="http://localhost:4000/living/2018/09/28/blog/" rel="alternate" type="text/html" title="记录" /><published>2018-09-28T08:00:00+08:00</published><updated>2018-09-28T08:00:00+08:00</updated><id>http://localhost:4000/living/2018/09/28/blog</id><content type="html" xml:base="http://localhost:4000/living/2018/09/28/blog/">&lt;h1 id=&quot;记录&quot;&gt;记录&lt;/h1&gt;
+
+&lt;p&gt;工作指南&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Code Message UI 部分处理&lt;/li&gt;
+  &lt;li&gt;权限手动调整UI&lt;/li&gt;
+  &lt;li&gt;权限系统的全局化，将权限处理加入列队&lt;/li&gt;
+  &lt;li&gt;特定返回信息的响应&lt;/li&gt;
+  &lt;li&gt;二步验证 UI 部分&lt;/li&gt;
+  &lt;li&gt;语言全面本地化 【vuex-i18n】&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;code-message&quot;&gt;code message&lt;/h2&gt;
+
+&lt;p&gt;工作详解&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;将全局信息显示功能独立&lt;/li&gt;
+  &lt;li&gt;需要为信息增加分页显示&lt;/li&gt;
+  &lt;li&gt;搜索结果是否使用通用部分显示&lt;/li&gt;
+  &lt;li&gt;识别2fa验证信息并相应【全局模组】&lt;/li&gt;
+  &lt;li&gt;新建信息页面 【需要验证2FA】&lt;/li&gt;
+  &lt;li&gt;编辑信息页面 【需要验证2FA】&lt;/li&gt;
+  &lt;li&gt;删除信息页面 【需要验证2FA】&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;好在&lt;code class=&quot;highlighter-rouge&quot;&gt;2FA&lt;/code&gt;与 &lt;code class=&quot;highlighter-rouge&quot;&gt;code message&lt;/code&gt;可以使用代码手动添加，如果没先做后端真是难以想象，估计是灾难或者加班地狱吧&lt;/p&gt;
+
+&lt;p&gt;反而是语言本地化容易的，可以在休息时完成。&lt;/p&gt;
+
+&lt;p&gt;其他 貌似2FA的优先度比较高，但是信息提示也是非常重要&lt;/p&gt;
+
+&lt;p&gt;对功能分组编写非常重要！一人并行写是比较容易混乱 笔记是一定要的&lt;/p&gt;
+
+&lt;p&gt;好处是发现问题可以及时修正，也要考虑之后的多人协作的效率问题&lt;/p&gt;
+
+&lt;p&gt;多是交给组长处理吧&lt;/p&gt;
+
+&lt;h2 id=&quot;坑&quot;&gt;坑&lt;/h2&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;bootstrap 4.*&lt;/code&gt;是没有图标的 需要自己找&lt;/p&gt;
+
+&lt;p&gt;使用&lt;code class=&quot;highlighter-rouge&quot;&gt;fontawesome&lt;/code&gt; 解决了&lt;/p&gt;
+
+&lt;h2 id=&quot;23号的份&quot;&gt;23号的份&lt;/h2&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Code Message&lt;/code&gt;资源获取、更新、删除部分的UI完成。 调用与测试正常&lt;/p&gt;
+
+&lt;p&gt;想着将&lt;code class=&quot;highlighter-rouge&quot;&gt;laravel&lt;/code&gt; 自带的UI 使用 &lt;code class=&quot;highlighter-rouge&quot;&gt;vue&lt;/code&gt; 重构 最严重的问题还是在本地化语言上。&lt;/p&gt;
+
+&lt;p&gt;只能将使用的分离，其他的再做打算 😭&lt;/p&gt;
+
+&lt;p&gt;基本上这种感觉&lt;/p&gt;
+
+&lt;p&gt;分页显示也是有做的~&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://i.loli.net/2018/09/24/5ba7f4b0cbf57.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;26号的份&quot;&gt;26号的份&lt;/h2&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;code message&lt;/code&gt; 部分基本完成，之后要调整&lt;code class=&quot;highlighter-rouge&quot;&gt;code&lt;/code&gt;并修正一些细小的地方。&lt;/p&gt;
+
+&lt;p&gt;感到前端与后端的耦合度很高，这样之后是大麻烦，要不要全部使用&lt;code class=&quot;highlighter-rouge&quot;&gt;vuex&lt;/code&gt;呢……&lt;/p&gt;
+
+&lt;p&gt;之后 先处理&lt;code class=&quot;highlighter-rouge&quot;&gt;2fa&lt;/code&gt;与验证吧，&lt;code class=&quot;highlighter-rouge&quot;&gt;2fa&lt;/code&gt; 比如是全局的…… 不跨域使用&lt;code class=&quot;highlighter-rouge&quot;&gt;oauth&lt;/code&gt;的意义不大&lt;/p&gt;
+
+&lt;p&gt;不过使用&lt;code class=&quot;highlighter-rouge&quot;&gt;oauth&lt;/code&gt;容易啊~~ 啊啊啊啊啊~~~&lt;/p&gt;
+
+&lt;h2 id=&quot;28号的份&quot;&gt;28号的份&lt;/h2&gt;
+
+&lt;p&gt;添加&lt;code class=&quot;highlighter-rouge&quot;&gt;2fa ui&lt;/code&gt;了，没什么创造性的劳动……&lt;/p&gt;
+
+&lt;p&gt;使&lt;code class=&quot;highlighter-rouge&quot;&gt;button:hover&lt;/code&gt;文字与样式 随鼠标产生变化&lt;/p&gt;
+
+&lt;p&gt;注意定义&lt;code class=&quot;highlighter-rouge&quot;&gt;css&lt;/code&gt; 否则效果不会有变化&lt;/p&gt;
+
+&lt;p&gt;如果使用 &lt;code class=&quot;highlighter-rouge&quot;&gt;vuex-i18n&lt;/code&gt; 可以使用语言行替代 对应位置文字&lt;/p&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;button&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;button&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;btn btn-outline-success&quot;&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;v-on:mouseenter=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;button = 'in button'&quot;&lt;/span&gt; 
+&lt;span class=&quot;na&quot;&gt;v-on:mouseleave=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;button = 'out button'&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/button&amp;gt;&lt;/span&gt; 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
+	&lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+		&lt;span class=&quot;na&quot;&gt;button&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'out button'&lt;/span&gt;
+	&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;language-css highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nc&quot;&gt;.btn-outline-success&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;:hover&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;background-color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;red&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;nc&quot;&gt;.btn-outline-success&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;:not&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;:disabled&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;:not&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;.disabled&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;:active&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;background-color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;red&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;nc&quot;&gt;.btn-outline-success&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;:not&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;:disabled&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;:not&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;.disabled&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;:focus&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;box-shadow&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;none&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;</content><author><name>K11</name></author><category term="日记" /><category term="vue" /><category term="laravel" /><summary type="html">记录 工作指南 Code Message UI 部分处理 权限手动调整UI 权限系统的全局化，将权限处理加入列队 特定返回信息的响应 二步验证 UI 部分 语言全面本地化 【vuex-i18n】 code message 工作详解 将全局信息显示功能独立 需要为信息增加分页显示 搜索结果是否使用通用部分显示 识别2fa验证信息并相应【全局模组】 新建信息页面 【需要验证2FA】 编辑信息页面 【需要验证2FA】 删除信息页面 【需要验证2FA】 好在2FA与 code message可以使用代码手动添加，如果没先做后端真是难以想象，估计是灾难或者加班地狱吧 反而是语言本地化容易的，可以在休息时完成。 其他 貌似2FA的优先度比较高，但是信息提示也是非常重要 对功能分组编写非常重要！一人并行写是比较容易混乱 笔记是一定要的 好处是发现问题可以及时修正，也要考虑之后的多人协作的效率问题 多是交给组长处理吧 坑 bootstrap 4.*是没有图标的 需要自己找 使用fontawesome 解决了 23号的份 Code Message资源获取、更新、删除部分的UI完成。 调用与测试正常 想着将laravel 自带的UI 使用 vue 重构 最严重的问题还是在本地化语言上。 只能将使用的分离，其他的再做打算 😭 基本上这种感觉 分页显示也是有做的~ 26号的份 code message 部分基本完成，之后要调整code并修正一些细小的地方。 感到前端与后端的耦合度很高，这样之后是大麻烦，要不要全部使用vuex呢…… 之后 先处理2fa与验证吧，2fa 比如是全局的…… 不跨域使用oauth的意义不大 不过使用oauth容易啊~~ 啊啊啊啊啊~~~ 28号的份 添加2fa ui了，没什么创造性的劳动…… 使button:hover文字与样式 随鼠标产生变化 注意定义css 否则效果不会有变化 如果使用 vuex-i18n 可以使用语言行替代 对应位置文字 &amp;lt;button type=&quot;button&quot; class=&quot;btn btn-outline-success&quot; v-on:mouseenter=&quot;button = 'in button'&quot; v-on:mouseleave=&quot;button = 'out button'&quot;&amp;gt; &amp;lt;/button&amp;gt; data(){ return { button: 'out button' } } .btn-outline-success:hover{ background-color: red; } .btn-outline-success:not(:disabled):not(.disabled):active{ background-color: red; } .btn-outline-success:not(:disabled):not(.disabled):focus{ box-shadow: none; }</summary></entry><entry><title type="html">vuex 提交后清空很重要！</title><link href="http://localhost:4000/living/2018/09/19/blog/" rel="alternate" type="text/html" title="vuex 提交后清空很重要！" /><published>2018-09-19T08:00:00+08:00</published><updated>2018-09-19T08:00:00+08:00</updated><id>http://localhost:4000/living/2018/09/19/blog</id><content type="html" xml:base="http://localhost:4000/living/2018/09/19/blog/">&lt;h1 id=&quot;18号的份&quot;&gt;18号的份&lt;/h1&gt;
 
 &lt;p&gt;使用&lt;code class=&quot;highlighter-rouge&quot;&gt;vuex&lt;/code&gt; 推送信息时 会让之前的消息一起发送变动&lt;/p&gt;
 
@@ -259,52 +364,4 @@ Thanks,&lt;span class=&quot;nt&quot;&gt;&amp;lt;br&amp;gt;&lt;/span&gt;
 
 &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;admin&lt;/code&gt; 用户 登录后可以正常查看&lt;/p&gt;
 
-&lt;h2 id=&quot;以上&quot;&gt;以上&lt;/h2&gt;</content><author><name>K11</name></author><category term="日记" /><category term="vue" /><category term="laravel" /><summary type="html">奥运10年 场馆荒废了 看着心疼 表弟回来了 表弟回来了 嗯 考上的多大~~ 略微的研究了一下公司注册的事儿~~ 明天9号 要久违的出去旅行了~~ 18号回来~~ 来过这里的人 这是这周的 等的人并没有来 看到某处亮了一下 还是有些期待的 查了一下真的是我想多了………… laravel 中的 vuex 将vuex-i18n部分从app.js移动到了store\index.js 目的是确保state中可以看到 i18n的设置 并可以 直接设置locale 变更语言 如果直接写在app.js 中i18n 就会被覆盖掉 其他部分就可以按照vuex推荐的结构进行设置 但愿可以在js路上越来越顺手 内心还是充满恐惧…… 其他vue 打错 需要安装vue-template-compiler包 l5-swagger 使用自定义auth登录 修改config\l5-swagger 中的middleware 将auth 修改为auth:admin 注意要对应config\auth中的guards 修改后一般用户不能查看api doc admin 用户 登录后可以正常查看 以上</summary></entry><entry><title type="html">i18n 全球化语言</title><link href="http://localhost:4000/living/2018/07/30/blog/" rel="alternate" type="text/html" title="i18n 全球化语言" /><published>2018-07-30T08:00:00+08:00</published><updated>2018-07-30T08:00:00+08:00</updated><id>http://localhost:4000/living/2018/07/30/blog</id><content type="html" xml:base="http://localhost:4000/living/2018/07/30/blog/">&lt;h1 id=&quot;i18n-全球化语言&quot;&gt;i18n 全球化语言&lt;/h1&gt;
-
-&lt;p&gt;@lang 与 &lt;code class=&quot;highlighter-rouge&quot;&gt;__('lange')&lt;/code&gt; 不能在vue中使用&lt;/p&gt;
-
-&lt;p&gt;于是找到&lt;code class=&quot;highlighter-rouge&quot;&gt;martinlindhe/laravel-vue-i18n-generator&lt;/code&gt;包&lt;/p&gt;
-
-&lt;p&gt;不过要注意的 README 有错误&lt;/p&gt;
-
-&lt;p&gt;使用&lt;code class=&quot;highlighter-rouge&quot;&gt;vue-i18n&lt;/code&gt; 后&lt;code class=&quot;highlighter-rouge&quot;&gt;$t('lang')&lt;/code&gt; 不能正常渲染 疑似&lt;code class=&quot;highlighter-rouge&quot;&gt;vue&lt;/code&gt;的bug&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;vuex-i18n&lt;/code&gt; 则正常&lt;/p&gt;
-
-&lt;p&gt;修改&lt;code class=&quot;highlighter-rouge&quot;&gt; resources/assets/js/app.js&lt;/code&gt;&lt;/p&gt;
-
-&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kr&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Vuex&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'vuex'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;kr&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;vuexI18n&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'vuex-i18n'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;kr&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Locales&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'./vue-i18n-locales.generated.js'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;nx&quot;&gt;Vue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;use&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Vuex&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;kr&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;store&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Vuex&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Store&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;Vue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;use&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;vuexI18n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;plugin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;store&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-
-&lt;span class=&quot;nx&quot;&gt;Vue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i18n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;add&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'en'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Locales&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;en&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;Vue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i18n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;add&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'zh'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Locales&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;zh&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-
-&lt;span class=&quot;nx&quot;&gt;Vue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i18n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;set&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'en'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-
-&lt;span class=&quot;kr&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;app&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Vue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;store&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;el&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'#app'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;之后就可以正常的使用&lt;code class=&quot;highlighter-rouge&quot;&gt;$t()&lt;/code&gt;了 同时也支持复数形式&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://medium.com/@konafets/localization-with-laravel-and-vuejs-e27068e68ee8&quot;&gt;参考地址&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;优点：不用设置后端后再设置前端 使用&lt;code class=&quot;highlighter-rouge&quot;&gt;php artisan vue-i18n:generate&lt;/code&gt;可以直接创建或更新&lt;code class=&quot;highlighter-rouge&quot;&gt;vue&lt;/code&gt;的语言设置&lt;/strong&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;天朝上邦&quot;&gt;天朝上邦&lt;/h1&gt;
-
-&lt;p&gt;估计汇率1比20是早晚的事儿了&lt;/p&gt;
-
-&lt;p&gt;某不可描述的两物必须灭亡&lt;/p&gt;
-
-&lt;p&gt;也算死了 账也是要算的 逃不掉的&lt;/p&gt;
-
-&lt;p&gt;准备被人唾弃到世界终结吧&lt;/p&gt;</content><author><name>K11</name></author><category term="日记" /><category term="vue" /><category term="laravel" /><summary type="html">i18n 全球化语言 @lang 与 __('lange') 不能在vue中使用 于是找到martinlindhe/laravel-vue-i18n-generator包 不过要注意的 README 有错误 使用vue-i18n 后$t('lang') 不能正常渲染 疑似vue的bug vuex-i18n 则正常 修改 resources/assets/js/app.js import Vuex from 'vuex'; import vuexI18n from 'vuex-i18n'; import Locales from './vue-i18n-locales.generated.js'; Vue.use(Vuex); const store = new Vuex.Store(); Vue.use(vuexI18n.plugin, store); Vue.i18n.add('en', Locales.en); Vue.i18n.add('zh', Locales.zh); Vue.i18n.set('en'); const app = new Vue({ store, el: '#app', }); 之后就可以正常的使用$t()了 同时也支持复数形式 参考地址 优点：不用设置后端后再设置前端 使用php artisan vue-i18n:generate可以直接创建或更新vue的语言设置 天朝上邦 估计汇率1比20是早晚的事儿了 某不可描述的两物必须灭亡 也算死了 账也是要算的 逃不掉的 准备被人唾弃到世界终结吧</summary></entry></feed>
+&lt;h2 id=&quot;以上&quot;&gt;以上&lt;/h2&gt;</content><author><name>K11</name></author><category term="日记" /><category term="vue" /><category term="laravel" /><summary type="html">奥运10年 场馆荒废了 看着心疼 表弟回来了 表弟回来了 嗯 考上的多大~~ 略微的研究了一下公司注册的事儿~~ 明天9号 要久违的出去旅行了~~ 18号回来~~ 来过这里的人 这是这周的 等的人并没有来 看到某处亮了一下 还是有些期待的 查了一下真的是我想多了………… laravel 中的 vuex 将vuex-i18n部分从app.js移动到了store\index.js 目的是确保state中可以看到 i18n的设置 并可以 直接设置locale 变更语言 如果直接写在app.js 中i18n 就会被覆盖掉 其他部分就可以按照vuex推荐的结构进行设置 但愿可以在js路上越来越顺手 内心还是充满恐惧…… 其他vue 打错 需要安装vue-template-compiler包 l5-swagger 使用自定义auth登录 修改config\l5-swagger 中的middleware 将auth 修改为auth:admin 注意要对应config\auth中的guards 修改后一般用户不能查看api doc admin 用户 登录后可以正常查看 以上</summary></entry></feed>
