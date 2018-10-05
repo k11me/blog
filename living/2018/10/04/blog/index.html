@@ -83,7 +83,7 @@
 <link href="/assets/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="ubuntu," />
+  <meta name="keywords" content="日记,vue,laravel," />
 
 
 
@@ -111,17 +111,17 @@
 
 
 
-<meta name="description" content="about gulp 安装node sudo apt install nodejs 安装 nodejs-legacy sudo apt install nodejs-legacy 安装npm sudo apt install npm 安装gulp sudo npm install -g gulp 查看node 版本 node -v 查看npm 版本 npm -v 查看gulp 版本 gulp -v 测试gulp时，需要package.json与gulpfile.js文件 安装gulp-sass npm install gulp-sass">
-<meta name="keywords" content="ubuntu">
+<meta name="description" content="2FA 基本完成了 后端还缺权限的判断，与code message预制编码 前端缺特殊code message的代码响应 指的是2FA的强制验证 之后要加入批量导入功能 否则会累死~~ laravel model 的坑 使用get()去取到的数据是array 而不是object 可以手动转换 也可以直接使用 根据需求决定">
+<meta name="keywords" content="日记, vue, laravel">
 <meta property="og:type" content="article">
-<meta property="og:title" content="gulp 学习指南">
-<meta property="og:url" content="/ubuntu/2016/07/12/gulp/">
+<meta property="og:title" content="2FA 基本完成了">
+<meta property="og:url" content="/living/2018/10/04/blog/">
 <meta property="og:site_name" content="Keleven.Me">
-<meta property="og:description" content="about gulp 安装node sudo apt install nodejs 安装 nodejs-legacy sudo apt install nodejs-legacy 安装npm sudo apt install npm 安装gulp sudo npm install -g gulp 查看node 版本 node -v 查看npm 版本 npm -v 查看gulp 版本 gulp -v 测试gulp时，需要package.json与gulpfile.js文件 安装gulp-sass npm install gulp-sass">
+<meta property="og:description" content="2FA 基本完成了 后端还缺权限的判断，与code message预制编码 前端缺特殊code message的代码响应 指的是2FA的强制验证 之后要加入批量导入功能 否则会累死~~ laravel model 的坑 使用get()去取到的数据是array 而不是object 可以手动转换 也可以直接使用 根据需求决定">
 <meta property="og:locale" content="en">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="gulp 学习指南">
-<meta name="twitter:description" content="about gulp 安装node sudo apt install nodejs 安装 nodejs-legacy sudo apt install nodejs-legacy 安装npm sudo apt install npm 安装gulp sudo npm install -g gulp 查看node 版本 node -v 查看npm 版本 npm -v 查看gulp 版本 gulp -v 测试gulp时，需要package.json与gulpfile.js文件 安装gulp-sass npm install gulp-sass">
+<meta name="twitter:title" content="2FA 基本完成了">
+<meta name="twitter:description" content="2FA 基本完成了 后端还缺权限的判断，与code message预制编码 前端缺特殊code message的代码响应 指的是2FA的强制验证 之后要加入批量导入功能 否则会累死~~ laravel model 的坑 使用get()去取到的数据是array 而不是object 可以手动转换 也可以直接使用 根据需求决定">
 
 
 <script type="text/javascript" id="hexo.configurations">
@@ -154,7 +154,7 @@
 
 
 
-  <title>gulp 学习指南 | Keleven.Me</title>
+  <title>2FA 基本完成了 | Keleven.Me</title>
   
 
 
@@ -335,7 +335,7 @@
   
 
   <article class="post post-type- " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="/ubuntu/2016/07/12/gulp/">
+    <link itemprop="mainEntityOfPage" href="/living/2018/10/04/blog/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="K11">
@@ -355,7 +355,7 @@
           <h1 class="post-title" itemprop="name headline">
           
           
-            gulp 学习指南
+            2FA 基本完成了
           
         </h1>
         
@@ -369,8 +369,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-07-12T23:30:45+08:00">
-                2016-07-12
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-04T08:01:00+08:00">
+                2018-10-04
               </time>
             
 
@@ -393,8 +393,8 @@
               
                 
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/category/#/ubuntu" itemprop="url" rel="index">
-                    <span itemprop="name">ubuntu</span>
+                  <a href="/category/#/Living" itemprop="url" rel="index">
+                    <span itemprop="name">Living</span>
                   </a>
                 </span>
 
@@ -411,9 +411,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/ubuntu/2016/07/12/gulp/#comments" itemprop="discussionUrl">
+                <a href="/living/2018/10/04/blog/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="/ubuntu/2016/07/12/gulp/" itemprop="commentCount"></span>
+                        data-disqus-identifier="/living/2018/10/04/blog/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -459,57 +459,20 @@
 
 
 
-  <h1 id="about-gulp">about gulp</h1>
+  <h1 id="2fa-基本完成了">2FA 基本完成了</h1>
 
-<h2 id="安装node">安装node</h2>
+<p>后端还缺权限的判断，与<code class="highlighter-rouge">code message</code>预制编码</p>
 
-<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code>sudo apt install nodejs
-</code></pre></td></tr></tbody></table></div>
-</div>
+<p>前端缺特殊<code class="highlighter-rouge">code message</code>的代码响应 指的是2FA的强制验证</p>
 
-<h2 id="安装-nodejs-legacy">安装 nodejs-legacy</h2>
+<p>之后要加入批量导入功能 否则会累死~~</p>
 
-<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code>sudo apt install nodejs-legacy
-</code></pre></td></tr></tbody></table></div>
-</div>
+<h2 id="laravel-model-的坑">laravel model 的坑</h2>
 
-<h2 id="安装npm">安装npm</h2>
+<p>使用<code class="highlighter-rouge">get()</code>去取到的数据是<code class="highlighter-rouge">array</code> 而不是<code class="highlighter-rouge">object</code></p>
 
-<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code>sudo apt install npm
-</code></pre></td></tr></tbody></table></div>
-</div>
+<p>可以手动转换 也可以直接使用 根据需求决定</p>
 
-<h2 id="安装gulp">安装gulp</h2>
-
-<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code>sudo npm install -g gulp
-</code></pre></td></tr></tbody></table></div>
-</div>
-
-<h2 id="查看node-版本">查看node 版本</h2>
-
-<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code>node -v
-</code></pre></td></tr></tbody></table></div>
-</div>
-
-<h2 id="查看npm-版本">查看npm 版本</h2>
-
-<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code>npm -v
-</code></pre></td></tr></tbody></table></div>
-</div>
-
-<h2 id="查看gulp-版本">查看gulp 版本</h2>
-
-<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code>gulp -v
-</code></pre></td></tr></tbody></table></div>
-</div>
-
-<p>测试gulp时，需要<code class="highlighter-rouge">package.json</code>与<code class="highlighter-rouge">gulpfile.js</code>文件</p>
-
-<h2 id="安装gulp-sass">安装gulp-sass</h2>
-
-<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code>npm install gulp-sass
-</code></pre></td></tr></tbody></table></div>
-</div>
 
 
       
@@ -541,7 +504,13 @@
         <div class="post-tags">
           
             
-            <a href="/tag/#/ubuntu" rel="tag"># ubuntu</a>
+            <a href="/tag/#/%E6%97%A5%E8%AE%B0" rel="tag"># 日记</a>
+          
+            
+            <a href="/tag/#/vue" rel="tag"># vue</a>
+          
+            
+            <a href="/tag/#/laravel" rel="tag"># laravel</a>
           
         </div>
       
@@ -557,18 +526,14 @@
         <div class="post-nav" id="post-nav-id">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/ubuntu/2016/07/12/jekyll/" rel="next" title="jekyll 学习指南">
-                <i class="fa fa-chevron-left"></i> jekyll 学习指南
-              </a>
-            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/living/2016/07/12/blog/" rel="prev" title="2016年7月12日">
-                2016年7月12日 <i class="fa fa-chevron-right"></i>
+              <a href="/living/2018/10/01/blog/" rel="prev" title="十月的第一天">
+                十月的第一天 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -757,7 +722,7 @@
             
               <div class="post-toc-content">
     <ol class=nav>
-      <li class="nav-item nav-level-1"> <a class="nav-link" href="#about-gulp"> <span class="nav-number">1</span> <span class="nav-text">about gulp</span> </a> <ol class="nav-child"> <li class="nav-item nav-level-2"> <a class="nav-link" href="#安装node"> <span class="nav-number">1.1</span> <span class="nav-text">安装node</span> </a> </li> <li class="nav-item nav-level-2"> <a class="nav-link" href="#安装-nodejs-legacy"> <span class="nav-number">1.2</span> <span class="nav-text">安装 nodejs-legacy</span> </a> </li> <li class="nav-item nav-level-2"> <a class="nav-link" href="#安装npm"> <span class="nav-number">1.3</span> <span class="nav-text">安装npm</span> </a> </li> <li class="nav-item nav-level-2"> <a class="nav-link" href="#安装gulp"> <span class="nav-number">1.4</span> <span class="nav-text">安装gulp</span> </a> </li> <li class="nav-item nav-level-2"> <a class="nav-link" href="#查看node-版本"> <span class="nav-number">1.5</span> <span class="nav-text">查看node 版本</span> </a> </li> <li class="nav-item nav-level-2"> <a class="nav-link" href="#查看npm-版本"> <span class="nav-number">1.6</span> <span class="nav-text">查看npm 版本</span> </a> </li> <li class="nav-item nav-level-2"> <a class="nav-link" href="#查看gulp-版本"> <span class="nav-number">1.7</span> <span class="nav-text">查看gulp 版本</span> </a> </li> <li class="nav-item nav-level-2"> <a class="nav-link" href="#安装gulp-sass"> <span class="nav-number">1.8</span> <span class="nav-text">安装gulp-sass</span> </a> </li> </ol> </li>
+      <li class="nav-item nav-level-1"> <a class="nav-link" href="#2fa-基本完成了"> <span class="nav-number">1</span> <span class="nav-text">2FA 基本完成了</span> </a> <ol class="nav-child"> <li class="nav-item nav-level-2"> <a class="nav-link" href="#laravel-model-的坑"> <span class="nav-number">1.1</span> <span class="nav-text">laravel model 的坑</span> </a> </li> </ol> </li>
     </ol>
   </div>
             
@@ -926,9 +891,9 @@
       
       <script type="text/javascript">
           var disqus_config = function () {
-              this.page.url = '/ubuntu/2016/07/12/gulp/';
-              this.page.identifier = '/ubuntu/2016/07/12/gulp/';
-              this.page.title = 'gulp 学习指南';
+              this.page.url = '/living/2018/10/04/blog/';
+              this.page.identifier = '/living/2018/10/04/blog/';
+              this.page.title = '2FA 基本完成了';
           };
           var d = document, s = d.createElement('script');
           s.src = 'https://keleven.disqus.com/embed.js';

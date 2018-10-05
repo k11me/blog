@@ -1,4 +1,45 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.5.2">Jekyll</generator><link href="http://localhost:4000/atom.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-09-29T04:01:46+08:00</updated><id>http://localhost:4000/</id><title type="html">Keleven.Me</title><subtitle>千变万化的是世界</subtitle><author><name>K11</name></author><entry><title type="html">记录</title><link href="http://localhost:4000/living/2018/09/28/blog/" rel="alternate" type="text/html" title="记录" /><published>2018-09-28T08:00:00+08:00</published><updated>2018-09-28T08:00:00+08:00</updated><id>http://localhost:4000/living/2018/09/28/blog</id><content type="html" xml:base="http://localhost:4000/living/2018/09/28/blog/">&lt;h1 id=&quot;记录&quot;&gt;记录&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.5.2">Jekyll</generator><link href="/atom.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2018-10-06T03:18:51+08:00</updated><id>/</id><title type="html">Keleven.Me</title><subtitle>千变万化的是世界</subtitle><author><name>K11</name></author><entry><title type="html">2FA 基本完成了</title><link href="/living/2018/10/04/blog/" rel="alternate" type="text/html" title="2FA 基本完成了" /><published>2018-10-04T08:01:00+08:00</published><updated>2018-10-04T08:01:00+08:00</updated><id>/living/2018/10/04/blog</id><content type="html" xml:base="/living/2018/10/04/blog/">&lt;h1 id=&quot;2fa-基本完成了&quot;&gt;2FA 基本完成了&lt;/h1&gt;
+
+&lt;p&gt;后端还缺权限的判断，与&lt;code class=&quot;highlighter-rouge&quot;&gt;code message&lt;/code&gt;预制编码&lt;/p&gt;
+
+&lt;p&gt;前端缺特殊&lt;code class=&quot;highlighter-rouge&quot;&gt;code message&lt;/code&gt;的代码响应 指的是2FA的强制验证&lt;/p&gt;
+
+&lt;p&gt;之后要加入批量导入功能 否则会累死~~&lt;/p&gt;
+
+&lt;h2 id=&quot;laravel-model-的坑&quot;&gt;laravel model 的坑&lt;/h2&gt;
+
+&lt;p&gt;使用&lt;code class=&quot;highlighter-rouge&quot;&gt;get()&lt;/code&gt;去取到的数据是&lt;code class=&quot;highlighter-rouge&quot;&gt;array&lt;/code&gt; 而不是&lt;code class=&quot;highlighter-rouge&quot;&gt;object&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;可以手动转换 也可以直接使用 根据需求决定&lt;/p&gt;</content><author><name>K11</name></author><category term="日记" /><category term="vue" /><category term="laravel" /><summary type="html">2FA 基本完成了 后端还缺权限的判断，与code message预制编码 前端缺特殊code message的代码响应 指的是2FA的强制验证 之后要加入批量导入功能 否则会累死~~ laravel model 的坑 使用get()去取到的数据是array 而不是object 可以手动转换 也可以直接使用 根据需求决定</summary></entry><entry><title type="html">十月的第一天</title><link href="/living/2018/10/01/blog/" rel="alternate" type="text/html" title="十月的第一天" /><published>2018-10-01T08:01:00+08:00</published><updated>2018-10-01T08:01:00+08:00</updated><id>/living/2018/10/01/blog</id><content type="html" xml:base="/living/2018/10/01/blog/">&lt;h1 id=&quot;渐渐的上手了&quot;&gt;渐渐的上手了&lt;/h1&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;laravel&lt;/code&gt; 的错误信息 截取成功&lt;/p&gt;
+
+&lt;p&gt;标准化信息返回问题不大 方法是使用&lt;/p&gt;
+
+&lt;div class=&quot;language-php highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;try{
+	return 'something';
+}catch(\Exception $e){
+	return $e-&amp;gt;getMessage();
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;也可以在&lt;code class=&quot;highlighter-rouge&quot;&gt;App\Exceptions\Handler&lt;/code&gt; 的&lt;code class=&quot;highlighter-rouge&quot;&gt;render&lt;/code&gt;中做截取&lt;/p&gt;
+
+&lt;div class=&quot;language-php highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;switch($exception-&amp;gt;getMessage()){
+	case 'someMessage';
+	return 'someMessage';
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;再次感受到先做后端的重要性！！&lt;/p&gt;
+
+&lt;h2 id=&quot;laravel-model-的一些坑&quot;&gt;laravel model 的一些坑&lt;/h2&gt;
+
+&lt;p&gt;如果直接使用&lt;code class=&quot;highlighter-rouge&quot;&gt;find()&lt;/code&gt;后使用&lt;code class=&quot;highlighter-rouge&quot;&gt;delete()&lt;/code&gt;有返回&lt;code class=&quot;highlighter-rouge&quot;&gt;null&lt;/code&gt;的可能性&lt;/p&gt;
+
+&lt;p&gt;可以使用&lt;code class=&quot;highlighter-rouge&quot;&gt;where('id' , $id)&lt;/code&gt;后使用&lt;code class=&quot;highlighter-rouge&quot;&gt;delete()&lt;/code&gt; 就可以避免&lt;code class=&quot;highlighter-rouge&quot;&gt;null&lt;/code&gt;的问题&lt;/p&gt;</content><author><name>K11</name></author><category term="日记" /><category term="vue" /><category term="laravel" /><summary type="html">渐渐的上手了 laravel 的错误信息 截取成功 标准化信息返回问题不大 方法是使用 try{ return 'something'; }catch(\Exception $e){ return $e-&amp;gt;getMessage(); } 也可以在App\Exceptions\Handler 的render中做截取 switch($exception-&amp;gt;getMessage()){ case 'someMessage'; return 'someMessage'; } 再次感受到先做后端的重要性！！ laravel model 的一些坑 如果直接使用find()后使用delete()有返回null的可能性 可以使用where('id' , $id)后使用delete() 就可以避免null的问题</summary></entry><entry><title type="html">记录</title><link href="/living/2018/09/28/blog/" rel="alternate" type="text/html" title="记录" /><published>2018-09-28T08:00:00+08:00</published><updated>2018-09-28T08:00:00+08:00</updated><id>/living/2018/09/28/blog</id><content type="html" xml:base="/living/2018/09/28/blog/">&lt;h1 id=&quot;记录&quot;&gt;记录&lt;/h1&gt;
 
 &lt;p&gt;工作指南&lt;/p&gt;
 
@@ -103,7 +144,7 @@
     &lt;span class=&quot;nl&quot;&gt;box-shadow&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;none&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;</content><author><name>K11</name></author><category term="日记" /><category term="vue" /><category term="laravel" /><summary type="html">记录 工作指南 Code Message UI 部分处理 权限手动调整UI 权限系统的全局化，将权限处理加入列队 特定返回信息的响应 二步验证 UI 部分 语言全面本地化 【vuex-i18n】 code message 工作详解 将全局信息显示功能独立 需要为信息增加分页显示 搜索结果是否使用通用部分显示 识别2fa验证信息并相应【全局模组】 新建信息页面 【需要验证2FA】 编辑信息页面 【需要验证2FA】 删除信息页面 【需要验证2FA】 好在2FA与 code message可以使用代码手动添加，如果没先做后端真是难以想象，估计是灾难或者加班地狱吧 反而是语言本地化容易的，可以在休息时完成。 其他 貌似2FA的优先度比较高，但是信息提示也是非常重要 对功能分组编写非常重要！一人并行写是比较容易混乱 笔记是一定要的 好处是发现问题可以及时修正，也要考虑之后的多人协作的效率问题 多是交给组长处理吧 坑 bootstrap 4.*是没有图标的 需要自己找 使用fontawesome 解决了 23号的份 Code Message资源获取、更新、删除部分的UI完成。 调用与测试正常 想着将laravel 自带的UI 使用 vue 重构 最严重的问题还是在本地化语言上。 只能将使用的分离，其他的再做打算 😭 基本上这种感觉 分页显示也是有做的~ 26号的份 code message 部分基本完成，之后要调整code并修正一些细小的地方。 感到前端与后端的耦合度很高，这样之后是大麻烦，要不要全部使用vuex呢…… 之后 先处理2fa与验证吧，2fa 比如是全局的…… 不跨域使用oauth的意义不大 不过使用oauth容易啊~~ 啊啊啊啊啊~~~ 28号的份 添加2fa ui了，没什么创造性的劳动…… 使button:hover文字与样式 随鼠标产生变化 注意定义css 否则效果不会有变化 如果使用 vuex-i18n 可以使用语言行替代 对应位置文字 &amp;lt;button type=&quot;button&quot; class=&quot;btn btn-outline-success&quot; v-on:mouseenter=&quot;button = 'in button'&quot; v-on:mouseleave=&quot;button = 'out button'&quot;&amp;gt; &amp;lt;/button&amp;gt; data(){ return { button: 'out button' } } .btn-outline-success:hover{ background-color: red; } .btn-outline-success:not(:disabled):not(.disabled):active{ background-color: red; } .btn-outline-success:not(:disabled):not(.disabled):focus{ box-shadow: none; }</summary></entry><entry><title type="html">vuex 提交后清空很重要！</title><link href="http://localhost:4000/living/2018/09/19/blog/" rel="alternate" type="text/html" title="vuex 提交后清空很重要！" /><published>2018-09-19T08:00:00+08:00</published><updated>2018-09-19T08:00:00+08:00</updated><id>http://localhost:4000/living/2018/09/19/blog</id><content type="html" xml:base="http://localhost:4000/living/2018/09/19/blog/">&lt;h1 id=&quot;18号的份&quot;&gt;18号的份&lt;/h1&gt;
+&lt;/div&gt;</content><author><name>K11</name></author><category term="日记" /><category term="vue" /><category term="laravel" /><summary type="html">记录 工作指南 Code Message UI 部分处理 权限手动调整UI 权限系统的全局化，将权限处理加入列队 特定返回信息的响应 二步验证 UI 部分 语言全面本地化 【vuex-i18n】 code message 工作详解 将全局信息显示功能独立 需要为信息增加分页显示 搜索结果是否使用通用部分显示 识别2fa验证信息并相应【全局模组】 新建信息页面 【需要验证2FA】 编辑信息页面 【需要验证2FA】 删除信息页面 【需要验证2FA】 好在2FA与 code message可以使用代码手动添加，如果没先做后端真是难以想象，估计是灾难或者加班地狱吧 反而是语言本地化容易的，可以在休息时完成。 其他 貌似2FA的优先度比较高，但是信息提示也是非常重要 对功能分组编写非常重要！一人并行写是比较容易混乱 笔记是一定要的 好处是发现问题可以及时修正，也要考虑之后的多人协作的效率问题 多是交给组长处理吧 坑 bootstrap 4.*是没有图标的 需要自己找 使用fontawesome 解决了 23号的份 Code Message资源获取、更新、删除部分的UI完成。 调用与测试正常 想着将laravel 自带的UI 使用 vue 重构 最严重的问题还是在本地化语言上。 只能将使用的分离，其他的再做打算 😭 基本上这种感觉 分页显示也是有做的~ 26号的份 code message 部分基本完成，之后要调整code并修正一些细小的地方。 感到前端与后端的耦合度很高，这样之后是大麻烦，要不要全部使用vuex呢…… 之后 先处理2fa与验证吧，2fa 比如是全局的…… 不跨域使用oauth的意义不大 不过使用oauth容易啊~~ 啊啊啊啊啊~~~ 28号的份 添加2fa ui了，没什么创造性的劳动…… 使button:hover文字与样式 随鼠标产生变化 注意定义css 否则效果不会有变化 如果使用 vuex-i18n 可以使用语言行替代 对应位置文字 &amp;lt;button type=&quot;button&quot; class=&quot;btn btn-outline-success&quot; v-on:mouseenter=&quot;button = 'in button'&quot; v-on:mouseleave=&quot;button = 'out button'&quot;&amp;gt; &amp;lt;/button&amp;gt; data(){ return { button: 'out button' } } .btn-outline-success:hover{ background-color: red; } .btn-outline-success:not(:disabled):not(.disabled):active{ background-color: red; } .btn-outline-success:not(:disabled):not(.disabled):focus{ box-shadow: none; }</summary></entry><entry><title type="html">vuex 提交后清空很重要！</title><link href="/living/2018/09/19/blog/" rel="alternate" type="text/html" title="vuex 提交后清空很重要！" /><published>2018-09-19T08:00:00+08:00</published><updated>2018-09-19T08:00:00+08:00</updated><id>/living/2018/09/19/blog</id><content type="html" xml:base="/living/2018/09/19/blog/">&lt;h1 id=&quot;18号的份&quot;&gt;18号的份&lt;/h1&gt;
 
 &lt;p&gt;使用&lt;code class=&quot;highlighter-rouge&quot;&gt;vuex&lt;/code&gt; 推送信息时 会让之前的消息一起发送变动&lt;/p&gt;
 
@@ -169,7 +210,7 @@ Thanks,&lt;span class=&quot;nt&quot;&gt;&amp;lt;br&amp;gt;&lt;/span&gt;
 @endslot
 @endcomponent
 &lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;</content><author><name>K11</name></author><category term="日记" /><category term="vue" /><category term="laravel" /><summary type="html">18号的份 使用vuex 推送信息时 会让之前的消息一起发送变动 使用vue 工具发现 state 的数据被覆盖 使用手动输入框 更新 发现state并没有更新只是视图上的变化 最后发现为 提交active后没有清空数据导致…… 之后需要分离信息提示部分 并使后端返回数据规整化 并能使用固定数字代码 进行快速返回 admin 安全部分要完工了~~ 撒花~~ 20号的份 使code编码换用于信息的快速返回 当然也可以使用对应信息语句直接返回 vue 的坑 vue 的v-for一定要定义key不然会出现渲染不正常 数据正常 重要的是并不会提示错误！！ laravel 的坑 使用laravel markdown email时，不能独立定义header与footer 使用@component('mail::button')时，前方要清除空白。 否则不能正常渲染 要支持header与footer ，将@component('mail::message') 改为 @component('mail::layout') 下方是修改后的例子，也可以直接复制message.blade.php进行修改 找不到message.blade.php时 运行php artisan vendor:publish --tag=laravel-mail 之后可以在vendor/mail/markdown下找到对应文件。 @component('mail::layout') @slot('header') @component('mail::header', ['url' =&amp;gt; config('app.url')]) header @endcomponent @endslot # Introduction The body of your message. @component('mail::button', ['url' =&amp;gt; $url]) button @endcomponent Thanks,&amp;lt;br&amp;gt; @slot('footer') @component('mail::footer') © footer @endcomponent @endslot @endcomponent</summary></entry><entry><title type="html">新键盘购入！</title><link href="http://localhost:4000/living/2018/09/16/blog/" rel="alternate" type="text/html" title="新键盘购入！" /><published>2018-09-16T08:00:00+08:00</published><updated>2018-09-16T08:00:00+08:00</updated><id>http://localhost:4000/living/2018/09/16/blog</id><content type="html" xml:base="http://localhost:4000/living/2018/09/16/blog/">&lt;h1 id=&quot;11号的份&quot;&gt;11号的份&lt;/h1&gt;
+&lt;/div&gt;</content><author><name>K11</name></author><category term="日记" /><category term="vue" /><category term="laravel" /><summary type="html">18号的份 使用vuex 推送信息时 会让之前的消息一起发送变动 使用vue 工具发现 state 的数据被覆盖 使用手动输入框 更新 发现state并没有更新只是视图上的变化 最后发现为 提交active后没有清空数据导致…… 之后需要分离信息提示部分 并使后端返回数据规整化 并能使用固定数字代码 进行快速返回 admin 安全部分要完工了~~ 撒花~~ 20号的份 使code编码换用于信息的快速返回 当然也可以使用对应信息语句直接返回 vue 的坑 vue 的v-for一定要定义key不然会出现渲染不正常 数据正常 重要的是并不会提示错误！！ laravel 的坑 使用laravel markdown email时，不能独立定义header与footer 使用@component('mail::button')时，前方要清除空白。 否则不能正常渲染 要支持header与footer ，将@component('mail::message') 改为 @component('mail::layout') 下方是修改后的例子，也可以直接复制message.blade.php进行修改 找不到message.blade.php时 运行php artisan vendor:publish --tag=laravel-mail 之后可以在vendor/mail/markdown下找到对应文件。 @component('mail::layout') @slot('header') @component('mail::header', ['url' =&amp;gt; config('app.url')]) header @endcomponent @endslot # Introduction The body of your message. @component('mail::button', ['url' =&amp;gt; $url]) button @endcomponent Thanks,&amp;lt;br&amp;gt; @slot('footer') @component('mail::footer') © footer @endcomponent @endslot @endcomponent</summary></entry><entry><title type="html">新键盘购入！</title><link href="/living/2018/09/16/blog/" rel="alternate" type="text/html" title="新键盘购入！" /><published>2018-09-16T08:00:00+08:00</published><updated>2018-09-16T08:00:00+08:00</updated><id>/living/2018/09/16/blog</id><content type="html" xml:base="/living/2018/09/16/blog/">&lt;h1 id=&quot;11号的份&quot;&gt;11号的份&lt;/h1&gt;
 
 &lt;h2 id=&quot;新键盘到了&quot;&gt;新键盘到了&lt;/h2&gt;
 
@@ -191,7 +232,7 @@ Thanks,&lt;span class=&quot;nt&quot;&gt;&amp;lt;br&amp;gt;&lt;/span&gt;
 
 &lt;p&gt;##其他&lt;/p&gt;
 
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;git&lt;/code&gt;居然有中文版了！&lt;/p&gt;</content><author><name>K11</name></author><category term="日记" /><summary type="html">11号的份 新键盘到了 果然用习惯了Microsoft Sculpt Ergonomic Desktop套装后 正常的布局的键盘难以适应…… 虽然新键盘的手感不错…… 还是有点局促…… 16号的份 增加信息提示 增加信息提示功能，将返回信息推入 vuex 并可以同步移除。 ##其他 git居然有中文版了！</summary></entry><entry><title type="html">Vuex技能点获得 (づ｡◕‿‿◕｡)づ</title><link href="http://localhost:4000/living/2018/09/08/blog/" rel="alternate" type="text/html" title="Vuex技能点获得 (づ｡◕‿‿◕｡)づ" /><published>2018-09-08T08:00:00+08:00</published><updated>2018-09-08T08:00:00+08:00</updated><id>http://localhost:4000/living/2018/09/08/blog</id><content type="html" xml:base="http://localhost:4000/living/2018/09/08/blog/">&lt;h1 id=&quot;随手&quot;&gt;随手&lt;/h1&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;git&lt;/code&gt;居然有中文版了！&lt;/p&gt;</content><author><name>K11</name></author><category term="日记" /><summary type="html">11号的份 新键盘到了 果然用习惯了Microsoft Sculpt Ergonomic Desktop套装后 正常的布局的键盘难以适应…… 虽然新键盘的手感不错…… 还是有点局促…… 16号的份 增加信息提示 增加信息提示功能，将返回信息推入 vuex 并可以同步移除。 ##其他 git居然有中文版了！</summary></entry><entry><title type="html">Vuex技能点获得 (づ｡◕‿‿◕｡)づ</title><link href="/living/2018/09/08/blog/" rel="alternate" type="text/html" title="Vuex技能点获得 (づ｡◕‿‿◕｡)づ" /><published>2018-09-08T08:00:00+08:00</published><updated>2018-09-08T08:00:00+08:00</updated><id>/living/2018/09/08/blog</id><content type="html" xml:base="/living/2018/09/08/blog/">&lt;h1 id=&quot;随手&quot;&gt;随手&lt;/h1&gt;
 
 &lt;p&gt;项目复杂没有规划就是容易混乱呢……&lt;/p&gt;
 
@@ -219,7 +260,7 @@ Thanks,&lt;span class=&quot;nt&quot;&gt;&amp;lt;br&amp;gt;&lt;/span&gt;
 
 &lt;p&gt;上面的指纹&lt;/p&gt;
 
-&lt;p&gt;嗯……&lt;/p&gt;</content><author><name>K11</name></author><category term="日记" /><category term="vue" /><summary type="html">随手 项目复杂没有规划就是容易混乱呢…… 看来vuex的例子的代码，完全掌握了~~ 还发现了其中的小bug 😁 vuex的主要用途 将多页的网页变为一页，同时方便多平台 附言 问题被问了呢 想看礼服啊~ o(////▽////)q 所以主驾位上的人呢 比起指针的更喜欢电子的 虽然很好看 上面的指纹 嗯……</summary></entry><entry><title type="html">失败了………………😭</title><link href="http://localhost:4000/living/2018/09/04/blog/" rel="alternate" type="text/html" title="失败了………………😭" /><published>2018-09-04T08:00:00+08:00</published><updated>2018-09-04T08:00:00+08:00</updated><id>http://localhost:4000/living/2018/09/04/blog</id><content type="html" xml:base="http://localhost:4000/living/2018/09/04/blog/">&lt;h1 id=&quot;套餐有点烦&quot;&gt;套餐有点烦&lt;/h1&gt;
+&lt;p&gt;嗯……&lt;/p&gt;</content><author><name>K11</name></author><category term="日记" /><category term="vue" /><summary type="html">随手 项目复杂没有规划就是容易混乱呢…… 看来vuex的例子的代码，完全掌握了~~ 还发现了其中的小bug 😁 vuex的主要用途 将多页的网页变为一页，同时方便多平台 附言 问题被问了呢 想看礼服啊~ o(////▽////)q 所以主驾位上的人呢 比起指针的更喜欢电子的 虽然很好看 上面的指纹 嗯……</summary></entry><entry><title type="html">失败了………………😭</title><link href="/living/2018/09/04/blog/" rel="alternate" type="text/html" title="失败了………………😭" /><published>2018-09-04T08:00:00+08:00</published><updated>2018-09-04T08:00:00+08:00</updated><id>/living/2018/09/04/blog</id><content type="html" xml:base="/living/2018/09/04/blog/">&lt;h1 id=&quot;套餐有点烦&quot;&gt;套餐有点烦&lt;/h1&gt;
 
 &lt;p&gt;办宽带一定要开卡就没人管一管吗……&lt;/p&gt;
 
@@ -241,7 +282,7 @@ Thanks,&lt;span class=&quot;nt&quot;&gt;&amp;lt;br&amp;gt;&lt;/span&gt;
 
 &lt;h1 id=&quot;其他&quot;&gt;其他&lt;/h1&gt;
 
-&lt;p&gt;作息时间混乱，啊啊啊 好想正常一点啊……&lt;/p&gt;</content><author><name>K11</name></author><category term="日记" /><summary type="html">套餐有点烦 办宽带一定要开卡就没人管一管吗…… 无奈更换旧手机的SIM卡槽 没错让我弄坏了…… 在此之前都不敢卸下SIM卡也神奇…… 元件直接淘宝还是很方便的 放在其他国家是难以想象…… 不过人家也没有这样恶心的套餐…… SIM卡槽更换失败 SIM 卡槽更换失败 😭 😭 粘上后盖但是没上螺丝…… 心塞…… 果然没有风枪是不行呢…… 找个风枪加入清单好了…… HAKKO FR-702 其他 作息时间混乱，啊啊啊 好想正常一点啊……</summary></entry><entry><title type="html">彩虹~~</title><link href="http://localhost:4000/living/2018/09/03/blog/" rel="alternate" type="text/html" title="彩虹~~" /><published>2018-09-03T08:00:00+08:00</published><updated>2018-09-03T08:00:00+08:00</updated><id>http://localhost:4000/living/2018/09/03/blog</id><content type="html" xml:base="http://localhost:4000/living/2018/09/03/blog/">&lt;h2 id=&quot;出门看见彩虹了&quot;&gt;出门看见彩虹了~~&lt;/h2&gt;
+&lt;p&gt;作息时间混乱，啊啊啊 好想正常一点啊……&lt;/p&gt;</content><author><name>K11</name></author><category term="日记" /><summary type="html">套餐有点烦 办宽带一定要开卡就没人管一管吗…… 无奈更换旧手机的SIM卡槽 没错让我弄坏了…… 在此之前都不敢卸下SIM卡也神奇…… 元件直接淘宝还是很方便的 放在其他国家是难以想象…… 不过人家也没有这样恶心的套餐…… SIM卡槽更换失败 SIM 卡槽更换失败 😭 😭 粘上后盖但是没上螺丝…… 心塞…… 果然没有风枪是不行呢…… 找个风枪加入清单好了…… HAKKO FR-702 其他 作息时间混乱，啊啊啊 好想正常一点啊……</summary></entry><entry><title type="html">彩虹~~</title><link href="/living/2018/09/03/blog/" rel="alternate" type="text/html" title="彩虹~~" /><published>2018-09-03T08:00:00+08:00</published><updated>2018-09-03T08:00:00+08:00</updated><id>/living/2018/09/03/blog</id><content type="html" xml:base="/living/2018/09/03/blog/">&lt;h2 id=&quot;出门看见彩虹了&quot;&gt;出门看见彩虹了~~&lt;/h2&gt;
 
 &lt;blockquote class=&quot;instagram-media&quot; data-instgrm-captioned=&quot;&quot; data-instgrm-permalink=&quot;https://www.instagram.com/p/BnRfC0EnQ0X/?utm_source=ig_embed&quot; data-instgrm-version=&quot;9&quot; style=&quot; background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);&quot;&gt;&lt;div style=&quot;padding:8px;&quot;&gt; &lt;div style=&quot; background:#F8F8F8; line-height:0; margin-top:40px; padding:50.0% 0; text-align:center; width:100%;&quot;&gt; &lt;div style=&quot; background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAMAAAApWqozAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAMUExURczMzPf399fX1+bm5mzY9AMAAADiSURBVDjLvZXbEsMgCES5/P8/t9FuRVCRmU73JWlzosgSIIZURCjo/ad+EQJJB4Hv8BFt+IDpQoCx1wjOSBFhh2XssxEIYn3ulI/6MNReE07UIWJEv8UEOWDS88LY97kqyTliJKKtuYBbruAyVh5wOHiXmpi5we58Ek028czwyuQdLKPG1Bkb4NnM+VeAnfHqn1k4+GPT6uGQcvu2h2OVuIf/gWUFyy8OWEpdyZSa3aVCqpVoVvzZZ2VTnn2wU8qzVjDDetO90GSy9mVLqtgYSy231MxrY6I2gGqjrTY0L8fxCxfCBbhWrsYYAAAAAElFTkSuQmCC); display:block; height:44px; margin:0 auto -44px; position:relative; top:-22px; width:44px;&quot;&gt;&lt;/div&gt;&lt;/div&gt; &lt;p style=&quot; margin:8px 0 0 0; padding:0 4px;&quot;&gt; &lt;a href=&quot;https://www.instagram.com/p/BnRfC0EnQ0X/?utm_source=ig_embed&quot; style=&quot; color:#000; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none; word-wrap:break-word;&quot; target=&quot;_blank&quot;&gt;🌈🌈&lt;/a&gt;&lt;/p&gt; &lt;p style=&quot; color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;&quot;&gt;@&lt;a href=&quot;https://www.instagram.com/_y.o_o.y_/?utm_source=ig_embed&quot; style=&quot; color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px;&quot; target=&quot;_blank&quot;&gt; _y.o_o.y_&lt;/a&gt; 分享的帖子 · &lt;time style=&quot; font-family:Arial,sans-serif; font-size:14px; line-height:17px;&quot; datetime=&quot;2018-09-03T17:58:58+00:00&quot;&gt;PDT 2018 年 9月 3 日 上午 10:58&lt;/time&gt;&lt;/p&gt;&lt;/div&gt;&lt;/blockquote&gt;
 &lt;script async=&quot;&quot; defer=&quot;&quot; src=&quot;//www.instagram.com/embed.js&quot;&gt;&lt;/script&gt;
@@ -250,7 +291,7 @@ Thanks,&lt;span class=&quot;nt&quot;&gt;&amp;lt;br&amp;gt;&lt;/span&gt;
 
 &lt;p&gt;添加信息提示，将信息反馈的更加直观&lt;/p&gt;
 
-&lt;p&gt;最让人愁的是胜利的判断方式，要最简单不能复杂……&lt;/p&gt;</content><author><name>K11</name></author><category term="日记" /><summary type="html">出门看见彩虹了~~ 🌈🌈 @ _y.o_o.y_ 分享的帖子 · PDT 2018 年 9月 3 日 上午 10:58 集中精神干活了 添加信息提示，将信息反馈的更加直观 最让人愁的是胜利的判断方式，要最简单不能复杂……</summary></entry><entry><title type="html">寒冬？不存在的~~</title><link href="http://localhost:4000/living/2018/09/01/blog/" rel="alternate" type="text/html" title="寒冬？不存在的~~" /><published>2018-09-01T08:00:00+08:00</published><updated>2018-09-01T08:00:00+08:00</updated><id>http://localhost:4000/living/2018/09/01/blog</id><content type="html" xml:base="http://localhost:4000/living/2018/09/01/blog/">&lt;h2 id=&quot;沸沸扬扬&quot;&gt;沸沸扬扬&lt;/h2&gt;
+&lt;p&gt;最让人愁的是胜利的判断方式，要最简单不能复杂……&lt;/p&gt;</content><author><name>K11</name></author><category term="日记" /><summary type="html">出门看见彩虹了~~ 🌈🌈 @ _y.o_o.y_ 分享的帖子 · PDT 2018 年 9月 3 日 上午 10:58 集中精神干活了 添加信息提示，将信息反馈的更加直观 最让人愁的是胜利的判断方式，要最简单不能复杂……</summary></entry><entry><title type="html">寒冬？不存在的~~</title><link href="/living/2018/09/01/blog/" rel="alternate" type="text/html" title="寒冬？不存在的~~" /><published>2018-09-01T08:00:00+08:00</published><updated>2018-09-01T08:00:00+08:00</updated><id>/living/2018/09/01/blog</id><content type="html" xml:base="/living/2018/09/01/blog/">&lt;h2 id=&quot;沸沸扬扬&quot;&gt;沸沸扬扬&lt;/h2&gt;
 
 &lt;p&gt;我朝文件震惊游戏行业，寒冬已至。&lt;/p&gt;
 
@@ -272,7 +313,7 @@ Thanks,&lt;span class=&quot;nt&quot;&gt;&amp;lt;br&amp;gt;&lt;/span&gt;
 
 &lt;p&gt;希望可以在坚持几个月~~&lt;/p&gt;
 
-&lt;p&gt;群辉的购入也在计划之中……&lt;/p&gt;</content><author><name>K11</name></author><category term="日记" /><summary type="html">沸沸扬扬 我朝文件震惊游戏行业，寒冬已至。 错估形势，将我朝当主要市场也是必然吧。 从架起GFW的那天开始，就注定没有未来。 最糟糕的时，境外公司不能对我朝个人付款。 看来HK是一定要再去一次了。 众筹的款项不能入手也是糟糕。 还有企业税加了到35% 贸易战还加企业税 也是666 其他 mac的系统盘满了 希望可以在坚持几个月~~ 群辉的购入也在计划之中……</summary></entry><entry><title type="html">Update😍😍</title><link href="http://localhost:4000/living/2018/08/24/blog/" rel="alternate" type="text/html" title="Update😍😍" /><published>2018-08-24T08:00:00+08:00</published><updated>2018-08-24T08:00:00+08:00</updated><id>http://localhost:4000/living/2018/08/24/blog</id><content type="html" xml:base="http://localhost:4000/living/2018/08/24/blog/">&lt;h1 id=&quot;全球化语言&quot;&gt;全球化语言&lt;/h1&gt;
+&lt;p&gt;群辉的购入也在计划之中……&lt;/p&gt;</content><author><name>K11</name></author><category term="日记" /><summary type="html">沸沸扬扬 我朝文件震惊游戏行业，寒冬已至。 错估形势，将我朝当主要市场也是必然吧。 从架起GFW的那天开始，就注定没有未来。 最糟糕的时，境外公司不能对我朝个人付款。 看来HK是一定要再去一次了。 众筹的款项不能入手也是糟糕。 还有企业税加了到35% 贸易战还加企业税 也是666 其他 mac的系统盘满了 希望可以在坚持几个月~~ 群辉的购入也在计划之中……</summary></entry><entry><title type="html">Update😍😍</title><link href="/living/2018/08/24/blog/" rel="alternate" type="text/html" title="Update😍😍" /><published>2018-08-24T08:00:00+08:00</published><updated>2018-08-24T08:00:00+08:00</updated><id>/living/2018/08/24/blog</id><content type="html" xml:base="/living/2018/08/24/blog/">&lt;h1 id=&quot;全球化语言&quot;&gt;全球化语言&lt;/h1&gt;
 
 &lt;p&gt;将 &lt;code class=&quot;highlighter-rouge&quot;&gt;laravel&lt;/code&gt; 返回语言指定&lt;/p&gt;
 
@@ -288,80 +329,4 @@ Thanks,&lt;span class=&quot;nt&quot;&gt;&amp;lt;br&amp;gt;&lt;/span&gt;
 
 &lt;p&gt;鞋子 和 裙子 绝赞好评 ~~&lt;/p&gt;
 
-&lt;p&gt;忘了说  xbox one 的手柄真好用啊~~&lt;/p&gt;</content><author><name>K11</name></author><category term="日记" /><category term="vue" /><summary type="html">全球化语言 将 laravel 返回语言指定 为库中的 对应语言 并 可以切换到其他语言 直接返回lang行就可以 比如auth.Login vue中使用Vue.i18n.translate(auth.Login) 就完成了 主要用来显示对用户的提示信息 以上 鞋子 和 裙子 绝赞好评 ~~ 忘了说 xbox one 的手柄真好用啊~~</summary></entry><entry><title type="html">我回来了😁</title><link href="http://localhost:4000/living/2018/08/20/blog/" rel="alternate" type="text/html" title="我回来了😁" /><published>2018-08-20T08:00:00+08:00</published><updated>2018-08-20T08:00:00+08:00</updated><id>http://localhost:4000/living/2018/08/20/blog</id><content type="html" xml:base="http://localhost:4000/living/2018/08/20/blog/">&lt;h1 id=&quot;添加-instagram&quot;&gt;添加 Instagram&lt;/h1&gt;
-
-&lt;p&gt;为&lt;code class=&quot;highlighter-rouge&quot;&gt;blog&lt;/code&gt;添加的&lt;a href=&quot;https://www.instagram.com/_y.o_o.y_/&quot;&gt;Instagram&lt;/a&gt;连接&lt;/p&gt;
-
-&lt;p&gt;有兴趣可以点进去看看哦&lt;/p&gt;
-
-&lt;h1 id=&quot;旅行还是很开心的&quot;&gt;旅行还是很开心的&lt;/h1&gt;
-
-&lt;p&gt;自己逛逛澳门真的很有趣&lt;/p&gt;
-
-&lt;p&gt;与不合适的人在一起难免强颜欢笑~~~&lt;/p&gt;
-
-&lt;p&gt;莫名的想挑战下 一个人去游乐园 不过东西要精简一下 😁&lt;/p&gt;
-
-&lt;p&gt;在香港吃到了心心念念的&lt;code class=&quot;highlighter-rouge&quot;&gt;一籣&lt;/code&gt; 果然不错~ 只是叉烧有点薄……&lt;/p&gt;
-
-&lt;p&gt;人文环境 确实 好过大陆&lt;/p&gt;
-
-&lt;h1 id=&quot;回来要加油了&quot;&gt;回来要加油了&lt;/h1&gt;
-
-&lt;p&gt;局势有点不稳…… 不加油不行呢……&lt;/p&gt;</content><author><name>K11</name></author><category term="日记" /><summary type="html">添加 Instagram 为blog添加的Instagram连接 有兴趣可以点进去看看哦 旅行还是很开心的 自己逛逛澳门真的很有趣 与不合适的人在一起难免强颜欢笑~~~ 莫名的想挑战下 一个人去游乐园 不过东西要精简一下 😁 在香港吃到了心心念念的一籣 果然不错~ 只是叉烧有点薄…… 人文环境 确实 好过大陆 回来要加油了 局势有点不稳…… 不加油不行呢……</summary></entry><entry><title type="html">环保不是说说而已</title><link href="http://localhost:4000/living/2018/08/08/blog/" rel="alternate" type="text/html" title="环保不是说说而已" /><published>2018-08-08T08:00:00+08:00</published><updated>2018-08-08T08:00:00+08:00</updated><id>http://localhost:4000/living/2018/08/08/blog</id><content type="html" xml:base="http://localhost:4000/living/2018/08/08/blog/">&lt;h2 id=&quot;奥运10年&quot;&gt;奥运10年&lt;/h2&gt;
-
-&lt;p&gt;场馆荒废了 看着心疼&lt;/p&gt;
-
-&lt;h2 id=&quot;表弟回来了&quot;&gt;表弟回来了&lt;/h2&gt;
-
-&lt;p&gt;表弟回来了 嗯 考上的多大~~&lt;/p&gt;
-
-&lt;p&gt;略微的研究了一下公司注册的事儿~~&lt;/p&gt;
-
-&lt;p&gt;明天9号 要久违的出去旅行了~~&lt;/p&gt;
-
-&lt;p&gt;18号回来~~&lt;/p&gt;
-
-&lt;h2 id=&quot;来过这里的人&quot;&gt;来过这里的人&lt;/h2&gt;
-
-&lt;p&gt;这是这周的 等的人并没有来&lt;/p&gt;
-
-&lt;p&gt;看到某处亮了一下 还是有些期待的&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://i.loli.net/2018/08/08/5b6a9085dc603.png&quot; alt=&quot;屏幕快照 2018-08-08 14.39.04&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;查了一下真的是我想多了…………&lt;/p&gt;
-
-&lt;h2 id=&quot;laravel-中的-vuex&quot;&gt;laravel 中的 vuex&lt;/h2&gt;
-
-&lt;p&gt;将&lt;code class=&quot;highlighter-rouge&quot;&gt;vuex-i18n&lt;/code&gt;部分从&lt;code class=&quot;highlighter-rouge&quot;&gt;app.js&lt;/code&gt;移动到了&lt;code class=&quot;highlighter-rouge&quot;&gt;store\index.js&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;目的是确保&lt;code class=&quot;highlighter-rouge&quot;&gt;state&lt;/code&gt;中可以看到 &lt;code class=&quot;highlighter-rouge&quot;&gt;i18n&lt;/code&gt;的设置&lt;/p&gt;
-
-&lt;p&gt;并可以 直接设置&lt;code class=&quot;highlighter-rouge&quot;&gt;locale&lt;/code&gt; 变更语言&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://i.loli.net/2018/08/08/5b6a934f001fe.png&quot; alt=&quot;屏幕快照 2018-08-08 14.52.15&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;如果直接写在&lt;code class=&quot;highlighter-rouge&quot;&gt;app.js&lt;/code&gt; 中&lt;code class=&quot;highlighter-rouge&quot;&gt;i18n&lt;/code&gt; 就会被覆盖掉&lt;/p&gt;
-
-&lt;p&gt;其他部分就可以按照&lt;code class=&quot;highlighter-rouge&quot;&gt;vuex&lt;/code&gt;推荐的结构进行设置&lt;/p&gt;
-
-&lt;p&gt;但愿可以在&lt;code class=&quot;highlighter-rouge&quot;&gt;js&lt;/code&gt;路上越来越顺手 内心还是充满恐惧……&lt;/p&gt;
-
-&lt;h3 id=&quot;其他vue-打错&quot;&gt;其他vue 打错&lt;/h3&gt;
-
-&lt;p&gt;需要安装&lt;code class=&quot;highlighter-rouge&quot;&gt;vue-template-compiler&lt;/code&gt;包&lt;/p&gt;
-
-&lt;h2 id=&quot;l5-swagger-使用自定义auth登录&quot;&gt;l5-swagger 使用自定义auth登录&lt;/h2&gt;
-
-&lt;p&gt;修改&lt;code class=&quot;highlighter-rouge&quot;&gt;config\l5-swagger&lt;/code&gt; 中的&lt;code class=&quot;highlighter-rouge&quot;&gt;middleware&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;将&lt;code class=&quot;highlighter-rouge&quot;&gt;auth&lt;/code&gt; 修改为&lt;code class=&quot;highlighter-rouge&quot;&gt;auth:admin&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;注意要对应&lt;code class=&quot;highlighter-rouge&quot;&gt;config\auth&lt;/code&gt;中的&lt;code class=&quot;highlighter-rouge&quot;&gt;guards&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;修改后一般用户不能查看&lt;code class=&quot;highlighter-rouge&quot;&gt;api doc&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;admin&lt;/code&gt; 用户 登录后可以正常查看&lt;/p&gt;
-
-&lt;h2 id=&quot;以上&quot;&gt;以上&lt;/h2&gt;</content><author><name>K11</name></author><category term="日记" /><category term="vue" /><category term="laravel" /><summary type="html">奥运10年 场馆荒废了 看着心疼 表弟回来了 表弟回来了 嗯 考上的多大~~ 略微的研究了一下公司注册的事儿~~ 明天9号 要久违的出去旅行了~~ 18号回来~~ 来过这里的人 这是这周的 等的人并没有来 看到某处亮了一下 还是有些期待的 查了一下真的是我想多了………… laravel 中的 vuex 将vuex-i18n部分从app.js移动到了store\index.js 目的是确保state中可以看到 i18n的设置 并可以 直接设置locale 变更语言 如果直接写在app.js 中i18n 就会被覆盖掉 其他部分就可以按照vuex推荐的结构进行设置 但愿可以在js路上越来越顺手 内心还是充满恐惧…… 其他vue 打错 需要安装vue-template-compiler包 l5-swagger 使用自定义auth登录 修改config\l5-swagger 中的middleware 将auth 修改为auth:admin 注意要对应config\auth中的guards 修改后一般用户不能查看api doc admin 用户 登录后可以正常查看 以上</summary></entry></feed>
+&lt;p&gt;忘了说  xbox one 的手柄真好用啊~~&lt;/p&gt;</content><author><name>K11</name></author><category term="日记" /><category term="vue" /><summary type="html">全球化语言 将 laravel 返回语言指定 为库中的 对应语言 并 可以切换到其他语言 直接返回lang行就可以 比如auth.Login vue中使用Vue.i18n.translate(auth.Login) 就完成了 主要用来显示对用户的提示信息 以上 鞋子 和 裙子 绝赞好评 ~~ 忘了说 xbox one 的手柄真好用啊~~</summary></entry></feed>

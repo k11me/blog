@@ -115,7 +115,7 @@
 <meta name="keywords" content="日记, Android, Java">
 <meta property="og:type" content="article">
 <meta property="og:title" content="2018年02月22日">
-<meta property="og:url" content="http://localhost:4000/living/2018/02/22/blog/">
+<meta property="og:url" content="/living/2018/02/22/blog/">
 <meta property="og:site_name" content="Keleven.Me">
 <meta property="og:description" content="小记 quasar-cli升级到了0.15.1 与之前版本不兼容…… 不支持quasar-play 目录结构有所调整，比之前清晰多了，加上一次编程构建PWA、Cordova、Electron全平台大礼包。 和预想的一样，android就是坑多。 安装 JAVA 8 Android Studio依然不好下载。墙！墙！墙！ 略烦。 需要java……，直接使用brew cask install java安装是9.0+版本，不兼容Cordova需要装java8,方法如下 brew tap caskroom/versions brew cask install java8 使用/usr/libexec/java_home -V查看本机安装的JDK 安装jenv用于管理与切换java版本brew install jenv echo &apos;export PATH=&quot;$HOME/.jenv/bin:$PATH&quot;&apos; &amp;gt;&amp;gt; ~/.zshrc echo &apos;eval &quot;$(jenv init -)&quot;&apos; &amp;gt;&amp;gt; ~/.zshrc jenv add /Library/Java/JavaVirtualMachines/jdk-9.0.4.jdk/Contents/Home jenv add /Library/Java/JavaVirtualMachines/jdk1.8.0_162.jdk/Contents/Home jenv global 1.8.0.162 需要重启使用java -version检查设置 其他设置方法。 jenv local 1.8.0.162 jenv shell 1.8.0.162 安装 Android Studio brew cask install android-studio 之后还是要等…… zshrc 编辑~/.zshrc，并添加下方代码 export ANDROID_HOME=&quot;$HOME/Library/Android/sdk&quot; export PATH=$PATH:$ANDROID_HOME/tools export PATH=$PATH:$ANDROID_HOME/platform-tools Cordova 构建需要 gradle brew install gradle">
 <meta property="og:locale" content="en">
@@ -148,7 +148,7 @@
 
 
 
-  <link rel="canonical" href="http://localhost:4000/"/>
+  <link rel="canonical" href=""/>
 
 
 
@@ -335,7 +335,7 @@
   
 
   <article class="post post-type- " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://localhost:4000/living/2018/02/22/blog/">
+    <link itemprop="mainEntityOfPage" href="/living/2018/02/22/blog/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="K11">
@@ -680,7 +680,7 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">84</span>
+                <span class="site-state-item-count">86</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
@@ -949,7 +949,7 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools
       
       <script type="text/javascript">
           var disqus_config = function () {
-              this.page.url = 'http://localhost:4000/living/2018/02/22/blog/';
+              this.page.url = '/living/2018/02/22/blog/';
               this.page.identifier = '/living/2018/02/22/blog/';
               this.page.title = '2018年02月22日';
           };

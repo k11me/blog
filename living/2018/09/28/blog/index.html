@@ -115,7 +115,7 @@
 <meta name="keywords" content="日记, vue, laravel">
 <meta property="og:type" content="article">
 <meta property="og:title" content="记录">
-<meta property="og:url" content="http://localhost:4000/living/2018/09/28/blog/">
+<meta property="og:url" content="/living/2018/09/28/blog/">
 <meta property="og:site_name" content="Keleven.Me">
 <meta property="og:description" content="记录 工作指南 Code Message UI 部分处理 权限手动调整UI 权限系统的全局化，将权限处理加入列队 特定返回信息的响应 二步验证 UI 部分 语言全面本地化 【vuex-i18n】 code message 工作详解 将全局信息显示功能独立 需要为信息增加分页显示 搜索结果是否使用通用部分显示 识别2fa验证信息并相应【全局模组】 新建信息页面 【需要验证2FA】 编辑信息页面 【需要验证2FA】 删除信息页面 【需要验证2FA】 好在2FA与 code message可以使用代码手动添加，如果没先做后端真是难以想象，估计是灾难或者加班地狱吧 反而是语言本地化容易的，可以在休息时完成。 其他 貌似2FA的优先度比较高，但是信息提示也是非常重要 对功能分组编写非常重要！一人并行写是比较容易混乱 笔记是一定要的 好处是发现问题可以及时修正，也要考虑之后的多人协作的效率问题 多是交给组长处理吧 坑 bootstrap 4.*是没有图标的 需要自己找 使用fontawesome 解决了 23号的份 Code Message资源获取、更新、删除部分的UI完成。 调用与测试正常 想着将laravel 自带的UI 使用 vue 重构 最严重的问题还是在本地化语言上。 只能将使用的分离，其他的再做打算 😭 基本上这种感觉 分页显示也是有做的~ 26号的份 code message 部分基本完成，之后要调整code并修正一些细小的地方。 感到前端与后端的耦合度很高，这样之后是大麻烦，要不要全部使用vuex呢…… 之后 先处理2fa与验证吧，2fa 比如是全局的…… 不跨域使用oauth的意义不大 不过使用oauth容易啊~~ 啊啊啊啊啊~~~ 28号的份 添加2fa ui了，没什么创造性的劳动…… 使button:hover文字与样式 随鼠标产生变化 注意定义css 否则效果不会有变化 如果使用 vuex-i18n 可以使用语言行替代 对应位置文字 &amp;lt;button type=&quot;button&quot; class=&quot;btn btn-outline-success&quot; v-on:mouseenter=&quot;button = &apos;in button&apos;&quot; v-on:mouseleave=&quot;button = &apos;out button&apos;&quot;&amp;gt; &amp;lt;/button&amp;gt; data(){ return { button: &apos;out button&apos; } } .btn-outline-success:hover{ background-color: red; } .btn-outline-success:not(:disabled):not(.disabled):active{ background-color: red; } .btn-outline-success:not(:disabled):not(.disabled):focus{ box-shadow: none; }">
 <meta property="og:locale" content="en">
@@ -150,7 +150,7 @@
 
 
 
-  <link rel="canonical" href="http://localhost:4000/"/>
+  <link rel="canonical" href=""/>
 
 
 
@@ -337,7 +337,7 @@
   
 
   <article class="post post-type- " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://localhost:4000/living/2018/09/28/blog/">
+    <link itemprop="mainEntityOfPage" href="/living/2018/09/28/blog/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="K11">
@@ -620,6 +620,10 @@
         <div class="post-nav" id="post-nav-id">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/living/2018/10/01/blog/" rel="next" title="十月的第一天">
+                <i class="fa fa-chevron-left"></i> 十月的第一天
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
@@ -716,7 +720,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">84</span>
+                <span class="site-state-item-count">86</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
@@ -985,7 +989,7 @@
       
       <script type="text/javascript">
           var disqus_config = function () {
-              this.page.url = 'http://localhost:4000/living/2018/09/28/blog/';
+              this.page.url = '/living/2018/09/28/blog/';
               this.page.identifier = '/living/2018/09/28/blog/';
               this.page.title = '记录';
           };
