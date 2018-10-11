@@ -115,7 +115,7 @@
 <meta name="keywords" content="日记, vue, laravel">
 <meta property="og:type" content="article">
 <meta property="og:title" content="i18n 全球化语言">
-<meta property="og:url" content="/living/2018/07/30/blog/">
+<meta property="og:url" content="http://localhost:4000/living/2018/07/30/blog/">
 <meta property="og:site_name" content="Keleven.Me">
 <meta property="og:description" content="i18n 全球化语言 @lang 与 __(&apos;lange&apos;) 不能在vue中使用 于是找到martinlindhe/laravel-vue-i18n-generator包 不过要注意的 README 有错误 使用vue-i18n 后$t(&apos;lang&apos;) 不能正常渲染 疑似vue的bug vuex-i18n 则正常 修改 resources/assets/js/app.js import Vuex from &apos;vuex&apos;; import vuexI18n from &apos;vuex-i18n&apos;; import Locales from &apos;./vue-i18n-locales.generated.js&apos;; Vue.use(Vuex); const store = new Vuex.Store(); Vue.use(vuexI18n.plugin, store); Vue.i18n.add(&apos;en&apos;, Locales.en); Vue.i18n.add(&apos;zh&apos;, Locales.zh); Vue.i18n.set(&apos;en&apos;); const app = new Vue({ store, el: &apos;#app&apos;, }); 之后就可以正常的使用$t()了 同时也支持复数形式 参考地址 优点：不用设置后端后再设置前端 使用php artisan vue-i18n:generate可以直接创建或更新vue的语言设置 天朝上邦 估计汇率1比20是早晚的事儿了 某不可描述的两物必须灭亡 也算死了 账也是要算的 逃不掉的 准备被人唾弃到世界终结吧">
 <meta property="og:locale" content="en">
@@ -148,7 +148,7 @@
 
 
 
-  <link rel="canonical" href=""/>
+  <link rel="canonical" href="http://localhost:4000/"/>
 
 
 
@@ -335,7 +335,7 @@
   
 
   <article class="post post-type- " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="/living/2018/07/30/blog/">
+    <link itemprop="mainEntityOfPage" href="http://localhost:4000/living/2018/07/30/blog/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="K11">
@@ -661,7 +661,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">86</span>
+                <span class="site-state-item-count">87</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
@@ -930,7 +930,7 @@
       
       <script type="text/javascript">
           var disqus_config = function () {
-              this.page.url = '/living/2018/07/30/blog/';
+              this.page.url = 'http://localhost:4000/living/2018/07/30/blog/';
               this.page.identifier = '/living/2018/07/30/blog/';
               this.page.title = 'i18n 全球化语言';
           };

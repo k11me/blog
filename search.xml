@@ -2,6 +2,25 @@
 <search>
   
     <entry>
+      <title><![CDATA[10号的份]]></title>
+      <url>/living/2018/10/10/blog/</url>
+      <content type="text"><![CDATA[lavavel valetvalet share 在TLS的情况下会返回301可以确定为valet v2.1.1 的 BUG可以先valet unsecure 再 valet share 关闭TLS 和裸奔没区别 可以用来进行暂时测试汇率已经到7.5了……]]></content>
+      <categories>
+        
+          <category> Living </category>
+        
+      </categories>
+      <tags>
+        
+          <tag> 日记 </tag>
+        
+          <tag> laravel </tag>
+        
+      </tags>
+      <tags></tags>
+    </entry>
+  
+    <entry>
       <title><![CDATA[2FA 基本完成了]]></title>
       <url>/living/2018/10/04/blog/</url>
       <content type="text"><![CDATA[2FA 基本完成了后端还缺权限的判断，与code message预制编码前端缺特殊code message的代码响应 指的是2FA的强制验证之后要加入批量导入功能 否则会累死~~laravel model 的坑使用get()去取到的数据是array 而不是object可以手动转换 也可以直接使用 根据需求决定]]></content>
@@ -13,8 +32,6 @@
       <tags>
         
           <tag> 日记 </tag>
-        
-          <tag> vue </tag>
         
           <tag> laravel </tag>
         

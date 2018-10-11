@@ -115,7 +115,7 @@
 <meta name="keywords" content="ubuntu">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Arch Linux 安装指南">
-<meta property="og:url" content="/archlinux/2016/07/07/ArchLinux/">
+<meta property="og:url" content="http://localhost:4000/archlinux/2016/07/07/ArchLinux/">
 <meta property="og:site_name" content="Keleven.Me">
 <meta property="og:description" content="1. 基本系统安装 1.1. Arch Linux镜像下载 1.2. 安装 1.2.1. VWmare 基本安装设定 设定任意 Linux 64位虚拟机 内存2G，硬盘20G 挂载镜像光盘 1.2.2. 实体机 # loadkeys us // 设置键盘 # cfdisk // 创建硬盘分区 # mkfs.ext4 /dev/sda1 // 格式化分区 # mkswap /dev/sda2 &amp;amp;&amp;amp; swapon /dev/sda2 // 挂载swap # mount /dev/sda1 /mnt // 挂载 分区 # vi /etc/pacman.d/mirrorlist // 添加软件源 # pacman -Syy // 更新软件源 # pacstrap /mnt base base-devel net-tools // 安装基础包 # genfstab -U -p /mnt &amp;gt;&amp;gt; /mnt/etc/fstab // 自动生成引导文件 # arch-chroot /mnt // 切入硬盘root # vi /etc/locale.gen &amp;amp;&amp;amp; locale-gen // 设置字符 # echo LANG=&quot;zh_CN.UTF-8&quot; &amp;gt;&amp;gt; /etc/locale.conf // 设置语言 # echo KEYMAP=us &amp;gt;&amp;gt; /etc/vconsole.conf // 设置键盘 # ln -s /usr/share/zoneinfo/Asia/Chongqing /etc/localtime // 设置本地时间 # echo vm &amp;gt;&amp;gt; /etc/hostname // 设置主机名称 # mkinitcpio -p linux // 根据配置生成镜像 # passwd // 修改root密码 # pacman -S grub-bios // 安装grub引导 # grub-install /dev/sda // 安装到硬盘 # grub-mkconfig -o /boot/grub/grub.cfg // 自动设置grub # exit // 退出root用户 # umount /mnt // 取消挂载硬盘 # reboot // 重启 备注： # mkdir /mnt/home &amp;amp;&amp;amp; mount /dev/sda9 /mnt/home //创建/home 并挂载硬盘。 在创建硬盘分区后执行，如果有需要。 要添加的软件源： 参考官方 最新地址 http://mirror.bit.edu.cn/archlinux/ - Beijing Institute of Technology http://mirrors.aliyun.com/archlinux/ - Alibaba http://mirrors.sohu.com/archlinux/ http://mirrors.yun-idc.com/archlinux/ 以上基本安装完成。 1.2.3. 网站参考 地址1 地址2 自动化安装设置工具Archlinux U Install 2. 桌面化安装 3. 常用软件补全 4. 美化 5. 开发环境搭建">
 <meta property="og:locale" content="en">
@@ -148,7 +148,7 @@
 
 
 
-  <link rel="canonical" href=""/>
+  <link rel="canonical" href="http://localhost:4000/"/>
 
 
 
@@ -335,7 +335,7 @@
   
 
   <article class="post post-type- " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="/archlinux/2016/07/07/ArchLinux/">
+    <link itemprop="mainEntityOfPage" href="http://localhost:4000/archlinux/2016/07/07/ArchLinux/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="K11">
@@ -685,7 +685,7 @@ http://mirrors.yun-idc.com/archlinux/
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">86</span>
+                <span class="site-state-item-count">87</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
@@ -954,7 +954,7 @@ http://mirrors.yun-idc.com/archlinux/
       
       <script type="text/javascript">
           var disqus_config = function () {
-              this.page.url = '/archlinux/2016/07/07/ArchLinux/';
+              this.page.url = 'http://localhost:4000/archlinux/2016/07/07/ArchLinux/';
               this.page.identifier = '/archlinux/2016/07/07/ArchLinux/';
               this.page.title = 'Arch Linux  安装指南';
           };

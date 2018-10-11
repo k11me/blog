@@ -115,7 +115,7 @@
 <meta name="keywords" content="日记, SSH, socks5, GFW">
 <meta property="og:type" content="article">
 <meta property="og:title" content="宫墙又高了">
-<meta property="og:url" content="/living/2018/04/27/blog/">
+<meta property="og:url" content="http://localhost:4000/living/2018/04/27/blog/">
 <meta property="og:site_name" content="Keleven.Me">
 <meta property="og:description" content="US线路丢包越发严重了…… 心塞…… 自家web访问缓慢…… 于是使用cloudflare转发 需要注意 更改域名解析，更改后速度提高了好多~~ 不过iTerm2使用SSH依然缓慢。 解决方案让SSH可以使用Socks5 SSH使用Socks5 ssh -o ProxyCommand=&apos;nc -x 127.0.0.1:8083 %h %p&apos; -p 22 &amp;lt;user&amp;gt;@&amp;lt;000.000.000.000&amp;gt; 绕一圈的速度都比直连快……我也是……醉了…… 参考地址 iTerm2使用proxy 的方法 在.zshrc中添加 alias goproxy=&apos;export http_proxy=&quot;http://127.0.0.1:8003&quot;; export HTTP_PROXY=&quot;http://127.0.0.1:8003&quot;; export https_proxy=&quot;http://127.0.0.1:8003&quot;; export HTTPS_PROXY=&quot;http://127.0.0.1:8003&quot;&apos; alias disproxy=&apos;unset http_proxy HTTP_PROXY https_proxy HTTPS_PROXY&apos; 开启时使用goproxy 关闭时使用disproxy 从此brew、composer、npm,可以免去漫长的等待了。 验证是否有效curl ifconfig.me返回的就是当前IP。 以上">
 <meta property="og:locale" content="en">
@@ -148,7 +148,7 @@
 
 
 
-  <link rel="canonical" href=""/>
+  <link rel="canonical" href="http://localhost:4000/"/>
 
 
 
@@ -335,7 +335,7 @@
   
 
   <article class="post post-type- " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="/living/2018/04/27/blog/">
+    <link itemprop="mainEntityOfPage" href="http://localhost:4000/living/2018/04/27/blog/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="K11">
@@ -653,7 +653,7 @@ alias disproxy='unset http_proxy HTTP_PROXY https_proxy HTTPS_PROXY'
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">86</span>
+                <span class="site-state-item-count">87</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
@@ -922,7 +922,7 @@ alias disproxy='unset http_proxy HTTP_PROXY https_proxy HTTPS_PROXY'
       
       <script type="text/javascript">
           var disqus_config = function () {
-              this.page.url = '/living/2018/04/27/blog/';
+              this.page.url = 'http://localhost:4000/living/2018/04/27/blog/';
               this.page.identifier = '/living/2018/04/27/blog/';
               this.page.title = '宫墙又高了';
           };

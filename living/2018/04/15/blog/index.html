@@ -115,7 +115,7 @@
 <meta name="keywords" content="日记, laravel, swagger">
 <meta property="og:type" content="article">
 <meta property="og:title" content="laravel 5.5 升级到 5.6">
-<meta property="og:url" content="/living/2018/04/15/blog/">
+<meta property="og:url" content="http://localhost:4000/living/2018/04/15/blog/">
 <meta property="og:site_name" content="Keleven.Me">
 <meta property="og:description" content="脑子混乱停一下 前后端分离与游戏部分 admin 与 user 需要不同的入口 数据部分有一些是通用的，分离 admin 域 与 user 域 是有必要的 admin verify 将 config 提取出来有一定优势 quasar还是要加强的 码力 图力 不足…… 但是没什么用…… laravel Upgrading To 5.6.0 From 5.5 &quot;darkaonline/l5-swagger&quot;: &quot;5.6.*&quot;, &quot;fideloper/proxy&quot;: &quot;~4.0&quot;, &quot;laravel/framework&quot;: &quot;5.6.*&quot;, &quot;laravel/passport&quot;: &quot;^5.0&quot;, &quot;phpunit/phpunit&quot;: &quot;~7.0&quot; 之后会出现错误 Type error: Argument 2 passed to Symfony\Component\HttpFoundation\Request::setTrustedProxies() must be of the type integer, array given, called in /Users/k11/laravel/web/vendor/fideloper/proxy/src/TrustProxies.php on line 5 对应upgrade Trusted Proxies App\Http\Middleware\TrustProxies 改 protected $headers = [ Request::HEADER_FORWARDED =&amp;gt; &apos;FORWARDED&apos;, Request::HEADER_X_FORWARDED_FOR =&amp;gt; &apos;X_FORWARDED_FOR&apos;, Request::HEADER_X_FORWARDED_HOST =&amp;gt; &apos;X_FORWARDED_HOST&apos;, Request::HEADER_X_FORWARDED_PORT =&amp;gt; &apos;X_FORWARDED_PORT&apos;, Request::HEADER_X_FORWARDED_PROTO =&amp;gt; &apos;X_FORWARDED_PROTO&apos;, ]; 为 protected $headers = Request::HEADER_X_FORWARDED_ALL; Bootstrap 4 npm uninstall --save-dev bootstrap-sass npm install bootstrap popper.js resources/assets/js/bootstrap.js 中 try { window.$ = window.jQuery = require(&apos;jquery&apos;); require(&apos;bootstrap-sass&apos;); } catch (e) {} 改为 try { window.$ = window.jQuery = require(&apos;jquery&apos;); require(&apos;bootstrap&apos;); } catch (e) {} 添加 window.Popper = require(&apos;popper.js&apos;).default; resources/assets/sass/app.scss 中 @import “~bootstrap-sass/assets/stylesheets/bootstrap” 改为 @import “~bootstrap/scss/bootstrap.scss” .navbar-laravel { background-color: #fff; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04); } resources/assets/sass/_variables.scss 删除全部内容后写入 // Fonts @import url(&quot;https://fonts.googleapis.com/css?family=Raleway:300,400,600&quot;); // Variables @import &quot;variables&quot;; // Bootstrap @import &apos;~bootstrap/scss/bootstrap&apos;; .navbar-laravel { background-color: #fff; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04); } 方法二 直接复制laravel 5.6 版本的 resources package.json 到 laravel 5.5下覆盖。 swagger 在config/l5-swagger中设置好passport后使用下方代码引入每个请求 l5-swagger中使用的是password方式，所以不必限制请求地址 * security={ * {&quot;passport&quot;: {}} * }, mailserver 修复 起因 mac os 上不能登录邮箱了，手机却可以。查看logs发现是错误如下 TLS handshaking: SSL_accept() failed 查找issues得知tomav/docker-mailserver更新 增加一个新变量 TLS_LEVEL 要想兼容老 Mac OS 要设置为intermediate 以上">
 <meta property="og:locale" content="en">
@@ -148,7 +148,7 @@
 
 
 
-  <link rel="canonical" href=""/>
+  <link rel="canonical" href="http://localhost:4000/"/>
 
 
 
@@ -335,7 +335,7 @@
   
 
   <article class="post post-type- " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="/living/2018/04/15/blog/">
+    <link itemprop="mainEntityOfPage" href="http://localhost:4000/living/2018/04/15/blog/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="K11">
@@ -768,7 +768,7 @@ npm install bootstrap popper.js
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">86</span>
+                <span class="site-state-item-count">87</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
@@ -1037,7 +1037,7 @@ npm install bootstrap popper.js
       
       <script type="text/javascript">
           var disqus_config = function () {
-              this.page.url = '/living/2018/04/15/blog/';
+              this.page.url = 'http://localhost:4000/living/2018/04/15/blog/';
               this.page.identifier = '/living/2018/04/15/blog/';
               this.page.title = 'laravel 5.5 升级到 5.6';
           };

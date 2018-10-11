@@ -115,7 +115,7 @@
 <meta name="keywords" content="日记, v2ray, 梯子, 墙, GFW">
 <meta property="og:type" content="article">
 <meta property="og:title" content="2018年03月01日">
-<meta property="og:url" content="/living/2018/03/01/blog/">
+<meta property="og:url" content="http://localhost:4000/living/2018/03/01/blog/">
 <meta property="og:site_name" content="Keleven.Me">
 <meta property="og:description" content="小记 ssr的tls被爆，大规模封禁来袭，转v2ray 直接部署非常容易，使用docker快速部署是正解， 实现websocket+tls+V2ray+Nginx+CDN 起因，2018年2月15日开始梯子出现故障，换之。 2018年2月25日 戊戌复辟，可笑至极，诸多词变为禁语。包括张勋、袁世凯等等。微博、微信，禁止修改头像，签名。反对等不能发表。 马前课 第十一课 开始了…… 2月26日开始研究部署v2ray相关，其中遇坑，记录如下，供后人参考。 原理 v2ray 使用websocket连接到CDN，对抗DNS污染，保护真实IP CDN连接在到服务器，全程通讯使用tls加密。【不是仿造，是真正的TLS】，服务器内部转发到v2ray容器。 Q:为什么使用docker而不是直接部署？ A:不方便转移到其他服务器。同时不容易弄乱服务器环境 Q:docker好处是什么 A：不需要手动更新证书，可以使用二级域名部署其他服务。比如web、mail等等。可以随时添加。 docker 大多数供应商都支持docker快速构建，直接选择即可。服务器多为ubuntu。 更新各种包后，准备开始工作。 更新命令 $ apt update $ apt upgrade 文件目录 |-- docker-compose.yml |-- v2ray | `-- config.json `-- vhost.d `-- ******_location docker-compose.yml 说明: v2ray下的VIRTUAL_HOST注意填写为二级域名，也可以去掉不填。 同样v2ray下的expose与VIRTUAL_PORT为端口号，应该与*****_location中端口一致。 web1为一般web服务器，开放端口80。 You_Domain_Name 改为你的域名 You_Email 为邮箱，必填 VIRTUAL_HOST=You_Domain_Name VIRTUAL_PORT=80 LETSENCRYPT_HOST=You_Domain_Name LETSENCRYPT_EMAIL=You_Email nginx-proxy如名字,详情自行google letsencrypt-nginx-proxy-companion如名字,详情自行google version: &apos;2&apos; services: v2ray: image: v2ray/official container_name: v2ray restart: always expose: - &quot;****&quot; volumes: - $PWD/v2ray:/etc/v2ray - $PWD/v2ray/config.json:/etc/v2ray/config.json:ro environment: - VIRTUAL_HOST=**** - VIRTUAL_PORT=**** web1: image: nginx:latest restart: always expose: - &quot;80&quot; environment: - VIRTUAL_HOST=***** - VIRTUAL_PORT=80 - LETSENCRYPT_HOST=*****.*** - LETSENCRYPT_EMAIL=*****@*****.*** nginx-proxy: image: jwilder/nginx-proxy:latest restart: always ports: - &quot;80:80&quot; - &quot;443:443&quot; volumes: - /path/to/certs:/etc/nginx/certs:ro - $PWD/vhost.d:/etc/nginx/vhost.d:ro - /usr/share/nginx/html - /var/run/docker.sock:/tmp/docker.sock:ro labels: - &quot;com.github.jrcs.letsencrypt_nginx_proxy_companion.nginx_proxy&quot; letsencrypt-nginx-proxy-companion: image: jrcs/letsencrypt-nginx-proxy-companion:latest restart: always volumes: - /path/to/certs:/etc/nginx/certs:rw - $PWD/vhost.d:/etc/nginx/vhost.d:ro - /var/run/docker.sock:/var/run/docker.sock:ro volumes_from: - nginx-proxy TLS转发 在dockec-compose.yml下创建vhost.d文件件， 新建文件You_Domain_Name_location 使用你的域名替换You_Domain_Name，要与web1设置的一致。 注意proxy_pass后的端口与v2ray设置的一致。 proxy_redirect off; proxy_http_version 1.1; proxy_set_header Upgrade $http_upgrade; proxy_set_header Connection &quot;upgrade&quot;; proxy_set_header Host $http_host; if ($http_upgrade = &quot;websocket&quot; ) { proxy_pass http://v2ray:****; } v2ray 设置文件config.json 在dockec-compose.yml下创建v2ray文件件， 新建文件config.json port注意与v2ray设置一致 id改为你的id，可以使用uuidgenerator生成一个。 json写完之后，注意校对格式哦 { &quot;inbound&quot;: { &quot;port&quot;: &quot;****&quot;, &quot;protocol&quot;: &quot;vmess&quot;, &quot;settings&quot;: { &quot;clients&quot;: [ { &quot;id&quot;: &quot;***********&quot;, &quot;alterId&quot;: 64 } ] }, &quot;streamSettings&quot;: { &quot;network&quot;: &quot;ws&quot;, &quot;wsSettings&quot;: { &quot;path&quot;: &quot;/&quot; } } }, &quot;outbound&quot;: { &quot;protocol&quot;: &quot;freedom&quot;, &quot;settings&quot;: {} } } 之后 去用户端里面设置吧。地址You_Domain_Name端口443，记得使用websocket与TLS。 CDN CloudFlare DNS中开启websocket Crypto 中Require Modern TLS关闭 Crypto 中Authenticated Origin Pulls关闭 Crypto 中Opportunistic Encryption关闭 nginx-proxy 的坑 nginx-proxy中，设置转发时www.www.com/path无法正常解析，这个问题3年没有修复过了…… 错误重现:vhost.d下，新建www.www.com设置 location /v2ray/ { proxy_redirect off; proxy_http_version 1.1; proxy_set_header Upgrade $http_upgrade; proxy_set_header Connection &quot;upgrade&quot;; proxy_set_header Host $http_host; if ($http_upgrade = &quot;websocket&quot; ) { proxy_pass http://v2ray:****; } } 于是只能使用www.www.com_location进行转发。 参考文档 v2ray 参考1 参考2">
 <meta property="og:locale" content="en">
@@ -148,7 +148,7 @@
 
 
 
-  <link rel="canonical" href=""/>
+  <link rel="canonical" href="http://localhost:4000/"/>
 
 
 
@@ -335,7 +335,7 @@
   
 
   <article class="post post-type- " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="/living/2018/03/01/blog/">
+    <link itemprop="mainEntityOfPage" href="http://localhost:4000/living/2018/03/01/blog/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="K11">
@@ -857,7 +857,7 @@ if ($http_upgrade = "websocket" ) {
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">86</span>
+                <span class="site-state-item-count">87</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
@@ -1126,7 +1126,7 @@ if ($http_upgrade = "websocket" ) {
       
       <script type="text/javascript">
           var disqus_config = function () {
-              this.page.url = '/living/2018/03/01/blog/';
+              this.page.url = 'http://localhost:4000/living/2018/03/01/blog/';
               this.page.identifier = '/living/2018/03/01/blog/';
               this.page.title = '2018年03月01日';
           };
