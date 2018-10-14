@@ -1,4 +1,67 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.5.2">Jekyll</generator><link href="http://localhost:4000/atom.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-10-11T08:25:51+08:00</updated><id>http://localhost:4000/</id><title type="html">Keleven.Me</title><subtitle>千变万化的是世界</subtitle><author><name>K11</name></author><entry><title type="html">10号的份</title><link href="http://localhost:4000/living/2018/10/10/blog/" rel="alternate" type="text/html" title="10号的份" /><published>2018-10-10T08:00:00+08:00</published><updated>2018-10-10T08:00:00+08:00</updated><id>http://localhost:4000/living/2018/10/10/blog</id><content type="html" xml:base="http://localhost:4000/living/2018/10/10/blog/">&lt;h2 id=&quot;lavavel-valet&quot;&gt;lavavel valet&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.5.2">Jekyll</generator><link href="http://localhost:4000/atom.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-10-14T21:01:26+08:00</updated><id>http://localhost:4000/</id><title type="html">Keleven.Me</title><subtitle>千变万化的是世界</subtitle><author><name>K11</name></author><entry><title type="html">11号的份</title><link href="http://localhost:4000/living/2018/10/14/blog/" rel="alternate" type="text/html" title="11号的份" /><published>2018-10-14T08:00:00+08:00</published><updated>2018-10-14T08:00:00+08:00</updated><id>http://localhost:4000/living/2018/10/14/blog</id><content type="html" xml:base="http://localhost:4000/living/2018/10/14/blog/">&lt;h1 id=&quot;11号的份&quot;&gt;11号的份&lt;/h1&gt;
+
+&lt;h2 id=&quot;队列&quot;&gt;队列&lt;/h2&gt;
+
+&lt;p&gt;将特定 信息通知 推送到指定队列&lt;/p&gt;
+
+&lt;p&gt;修改&lt;code class=&quot;highlighter-rouge&quot;&gt;horizon&lt;/code&gt; 后&lt;/p&gt;
+
+&lt;p&gt;可以使用&lt;/p&gt;
+
+&lt;div class=&quot;language-php highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$user-&amp;gt;notify((new SendEmail($Token))-&amp;gt;onQueue('mail'));
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;或&lt;/p&gt;
+
+&lt;div class=&quot;language-php highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;use Notification;
+Notification::send($user, (new SendEmail($Token))-&amp;gt;onQueue('mail'));
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;h2 id=&quot;roles&quot;&gt;roles&lt;/h2&gt;
+
+&lt;p&gt;需要注意&lt;code class=&quot;highlighter-rouge&quot;&gt;guard&lt;/code&gt;对应&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;view&lt;/code&gt;与&lt;code class=&quot;highlighter-rouge&quot;&gt;models&lt;/code&gt; 要注意同步&lt;/p&gt;
+
+&lt;p&gt;在&lt;code class=&quot;highlighter-rouge&quot;&gt;blade&lt;/code&gt; 中使用时&lt;/p&gt;
+
+&lt;div class=&quot;language-php highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;@role('role' , 'guard')
+something
+@endrole
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;在路由中使用时&lt;/p&gt;
+
+&lt;div class=&quot;language-php highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Route::group(['middleware' =&amp;gt; ['auth:admin' , 'role:admin']], function () {
+
+});
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;也可以在控制器中使用&lt;/p&gt;
+
+&lt;div class=&quot;language-php highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;public function __construct()
+{
+    $this-&amp;gt;middleware(['role:admin' , 'auth:admin']);
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h1 id=&quot;14号的份&quot;&gt;14号的份&lt;/h1&gt;
+
+&lt;h2 id=&quot;find-与-where-的坑&quot;&gt;find 与 where 的坑&lt;/h2&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;find&lt;/code&gt; 不能准确 查找到对应条目&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;where&lt;/code&gt; 则可以，之后只有有意识的替换&lt;code class=&quot;highlighter-rouge&quot;&gt;find&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;register&lt;/code&gt;的后端调整完成了~~~&lt;/p&gt;
+
+&lt;p&gt;大概这种感觉&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://i.loli.net/2018/10/14/5bc33df12e03a.png&quot; alt=&quot;屏幕快照 2018-10-14 20.58.44&quot; /&gt;&lt;/p&gt;</content><author><name>K11</name></author><category term="日记" /><category term="laravel" /><summary type="html">11号的份 队列 将特定 信息通知 推送到指定队列 修改horizon 后 可以使用 $user-&amp;gt;notify((new SendEmail($Token))-&amp;gt;onQueue('mail')); 或 use Notification; Notification::send($user, (new SendEmail($Token))-&amp;gt;onQueue('mail')); roles 需要注意guard对应 view与models 要注意同步 在blade 中使用时 @role('role' , 'guard') something @endrole 在路由中使用时 Route::group(['middleware' =&amp;gt; ['auth:admin' , 'role:admin']], function () { }); 也可以在控制器中使用 public function __construct() { $this-&amp;gt;middleware(['role:admin' , 'auth:admin']); } 14号的份 find 与 where 的坑 find 不能准确 查找到对应条目 where 则可以，之后只有有意识的替换find register的后端调整完成了~~~ 大概这种感觉</summary></entry><entry><title type="html">10号的份</title><link href="http://localhost:4000/living/2018/10/10/blog/" rel="alternate" type="text/html" title="10号的份" /><published>2018-10-10T08:00:00+08:00</published><updated>2018-10-10T08:00:00+08:00</updated><id>http://localhost:4000/living/2018/10/10/blog</id><content type="html" xml:base="http://localhost:4000/living/2018/10/10/blog/">&lt;h2 id=&quot;lavavel-valet&quot;&gt;lavavel valet&lt;/h2&gt;
 
 &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;valet share&lt;/code&gt; 在TLS的情况下会返回&lt;code class=&quot;highlighter-rouge&quot;&gt;301&lt;/code&gt;&lt;/p&gt;
 
@@ -299,26 +362,4 @@ Thanks,&lt;span class=&quot;nt&quot;&gt;&amp;lt;br&amp;gt;&lt;/span&gt;
 
 &lt;p&gt;添加信息提示，将信息反馈的更加直观&lt;/p&gt;
 
-&lt;p&gt;最让人愁的是胜利的判断方式，要最简单不能复杂……&lt;/p&gt;</content><author><name>K11</name></author><category term="日记" /><summary type="html">出门看见彩虹了~~ 🌈🌈 @ _y.o_o.y_ 分享的帖子 · PDT 2018 年 9月 3 日 上午 10:58 集中精神干活了 添加信息提示，将信息反馈的更加直观 最让人愁的是胜利的判断方式，要最简单不能复杂……</summary></entry><entry><title type="html">寒冬？不存在的~~</title><link href="http://localhost:4000/living/2018/09/01/blog/" rel="alternate" type="text/html" title="寒冬？不存在的~~" /><published>2018-09-01T08:00:00+08:00</published><updated>2018-09-01T08:00:00+08:00</updated><id>http://localhost:4000/living/2018/09/01/blog</id><content type="html" xml:base="http://localhost:4000/living/2018/09/01/blog/">&lt;h2 id=&quot;沸沸扬扬&quot;&gt;沸沸扬扬&lt;/h2&gt;
-
-&lt;p&gt;我朝文件震惊游戏行业，寒冬已至。&lt;/p&gt;
-
-&lt;p&gt;错估形势，将我朝当主要市场也是必然吧。&lt;/p&gt;
-
-&lt;p&gt;从架起GFW的那天开始，就注定没有未来。&lt;/p&gt;
-
-&lt;p&gt;最糟糕的时，境外公司不能对我朝个人付款。&lt;/p&gt;
-
-&lt;p&gt;看来HK是一定要再去一次了。&lt;/p&gt;
-
-&lt;p&gt;众筹的款项不能入手也是糟糕。&lt;/p&gt;
-
-&lt;p&gt;还有企业税加了到35% 贸易战还加企业税 也是666&lt;/p&gt;
-
-&lt;h2 id=&quot;其他&quot;&gt;其他&lt;/h2&gt;
-
-&lt;p&gt;mac的系统盘满了&lt;/p&gt;
-
-&lt;p&gt;希望可以在坚持几个月~~&lt;/p&gt;
-
-&lt;p&gt;群辉的购入也在计划之中……&lt;/p&gt;</content><author><name>K11</name></author><category term="日记" /><summary type="html">沸沸扬扬 我朝文件震惊游戏行业，寒冬已至。 错估形势，将我朝当主要市场也是必然吧。 从架起GFW的那天开始，就注定没有未来。 最糟糕的时，境外公司不能对我朝个人付款。 看来HK是一定要再去一次了。 众筹的款项不能入手也是糟糕。 还有企业税加了到35% 贸易战还加企业税 也是666 其他 mac的系统盘满了 希望可以在坚持几个月~~ 群辉的购入也在计划之中……</summary></entry></feed>
+&lt;p&gt;最让人愁的是胜利的判断方式，要最简单不能复杂……&lt;/p&gt;</content><author><name>K11</name></author><category term="日记" /><summary type="html">出门看见彩虹了~~ 🌈🌈 @ _y.o_o.y_ 分享的帖子 · PDT 2018 年 9月 3 日 上午 10:58 集中精神干活了 添加信息提示，将信息反馈的更加直观 最让人愁的是胜利的判断方式，要最简单不能复杂……</summary></entry></feed>
