@@ -1,4 +1,42 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.5.2">Jekyll</generator><link href="http://localhost:4000/atom.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-10-14T21:01:26+08:00</updated><id>http://localhost:4000/</id><title type="html">Keleven.Me</title><subtitle>千变万化的是世界</subtitle><author><name>K11</name></author><entry><title type="html">11号的份</title><link href="http://localhost:4000/living/2018/10/14/blog/" rel="alternate" type="text/html" title="11号的份" /><published>2018-10-14T08:00:00+08:00</published><updated>2018-10-14T08:00:00+08:00</updated><id>http://localhost:4000/living/2018/10/14/blog</id><content type="html" xml:base="http://localhost:4000/living/2018/10/14/blog/">&lt;h1 id=&quot;11号的份&quot;&gt;11号的份&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.5.2">Jekyll</generator><link href="http://localhost:4000/atom.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-10-18T19:29:53+08:00</updated><id>http://localhost:4000/</id><title type="html">Keleven.Me</title><subtitle>千变万化的是世界</subtitle><author><name>K11</name></author><entry><title type="html">几天的份</title><link href="http://localhost:4000/living/2018/10/18/blog/" rel="alternate" type="text/html" title="几天的份" /><published>2018-10-18T08:00:00+08:00</published><updated>2018-10-18T08:00:00+08:00</updated><id>http://localhost:4000/living/2018/10/18/blog</id><content type="html" xml:base="http://localhost:4000/living/2018/10/18/blog/">&lt;h1 id=&quot;15号的份&quot;&gt;15号的份&lt;/h1&gt;
+
+&lt;h2 id=&quot;染黑了&quot;&gt;染黑了&lt;/h2&gt;
+
+&lt;p&gt;自己都感觉到内心在向着无底的黑暗靠近&lt;/p&gt;
+
+&lt;p&gt;新键盘并没有人体工程学的好用&lt;/p&gt;
+
+&lt;p&gt;估计以后都只会选择人体工程学的了&lt;/p&gt;
+
+&lt;h2 id=&quot;开始处理权限了&quot;&gt;开始处理权限了&lt;/h2&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;admin&lt;/code&gt;的基本部分快做完了&lt;/p&gt;
+
+&lt;p&gt;之后是一般用户数据了&lt;/p&gt;
+
+&lt;p&gt;按照计划的一样进行扩展&lt;/p&gt;
+
+&lt;p&gt;说句自满的话&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;它不仅仅是一个游戏&lt;/code&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;16号的份&quot;&gt;16号的份&lt;/h1&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;v-for&lt;/code&gt; 不能放在顶级标签上，会报错！&lt;/p&gt;
+
+&lt;p&gt;更新了一下&lt;code class=&quot;highlighter-rouge&quot;&gt;docker&lt;/code&gt;镜像&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;role&lt;/code&gt; 部分也完成了……&lt;/p&gt;
+
+&lt;p&gt;现在又累又饿……&lt;/p&gt;
+
+&lt;h2 id=&quot;18号的份&quot;&gt;18号的份&lt;/h2&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;role&lt;/code&gt; 部分修正完成~~&lt;/p&gt;
+
+&lt;p&gt;过程中确实补增了许多东西&lt;/p&gt;
+
+&lt;p&gt;到验证了~~&lt;/p&gt;</content><author><name>K11</name></author><category term="日记" /><category term="vue" /><category term="laravel" /><summary type="html">15号的份 染黑了 自己都感觉到内心在向着无底的黑暗靠近 新键盘并没有人体工程学的好用 估计以后都只会选择人体工程学的了 开始处理权限了 admin的基本部分快做完了 之后是一般用户数据了 按照计划的一样进行扩展 说句自满的话 它不仅仅是一个游戏 16号的份 v-for 不能放在顶级标签上，会报错！ 更新了一下docker镜像 role 部分也完成了…… 现在又累又饿…… 18号的份 role 部分修正完成~~ 过程中确实补增了许多东西 到验证了~~</summary></entry><entry><title type="html">11号的份</title><link href="http://localhost:4000/living/2018/10/14/blog/" rel="alternate" type="text/html" title="11号的份" /><published>2018-10-14T08:00:00+08:00</published><updated>2018-10-14T08:00:00+08:00</updated><id>http://localhost:4000/living/2018/10/14/blog</id><content type="html" xml:base="http://localhost:4000/living/2018/10/14/blog/">&lt;h1 id=&quot;11号的份&quot;&gt;11号的份&lt;/h1&gt;
 
 &lt;h2 id=&quot;队列&quot;&gt;队列&lt;/h2&gt;
 
@@ -353,13 +391,4 @@ Thanks,&lt;span class=&quot;nt&quot;&gt;&amp;lt;br&amp;gt;&lt;/span&gt;
 
 &lt;h1 id=&quot;其他&quot;&gt;其他&lt;/h1&gt;
 
-&lt;p&gt;作息时间混乱，啊啊啊 好想正常一点啊……&lt;/p&gt;</content><author><name>K11</name></author><category term="日记" /><summary type="html">套餐有点烦 办宽带一定要开卡就没人管一管吗…… 无奈更换旧手机的SIM卡槽 没错让我弄坏了…… 在此之前都不敢卸下SIM卡也神奇…… 元件直接淘宝还是很方便的 放在其他国家是难以想象…… 不过人家也没有这样恶心的套餐…… SIM卡槽更换失败 SIM 卡槽更换失败 😭 😭 粘上后盖但是没上螺丝…… 心塞…… 果然没有风枪是不行呢…… 找个风枪加入清单好了…… HAKKO FR-702 其他 作息时间混乱，啊啊啊 好想正常一点啊……</summary></entry><entry><title type="html">彩虹~~</title><link href="http://localhost:4000/living/2018/09/03/blog/" rel="alternate" type="text/html" title="彩虹~~" /><published>2018-09-03T08:00:00+08:00</published><updated>2018-09-03T08:00:00+08:00</updated><id>http://localhost:4000/living/2018/09/03/blog</id><content type="html" xml:base="http://localhost:4000/living/2018/09/03/blog/">&lt;h2 id=&quot;出门看见彩虹了&quot;&gt;出门看见彩虹了~~&lt;/h2&gt;
-
-&lt;blockquote class=&quot;instagram-media&quot; data-instgrm-captioned=&quot;&quot; data-instgrm-permalink=&quot;https://www.instagram.com/p/BnRfC0EnQ0X/?utm_source=ig_embed&quot; data-instgrm-version=&quot;9&quot; style=&quot; background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);&quot;&gt;&lt;div style=&quot;padding:8px;&quot;&gt; &lt;div style=&quot; background:#F8F8F8; line-height:0; margin-top:40px; padding:50.0% 0; text-align:center; width:100%;&quot;&gt; &lt;div style=&quot; background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAMAAAApWqozAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAMUExURczMzPf399fX1+bm5mzY9AMAAADiSURBVDjLvZXbEsMgCES5/P8/t9FuRVCRmU73JWlzosgSIIZURCjo/ad+EQJJB4Hv8BFt+IDpQoCx1wjOSBFhh2XssxEIYn3ulI/6MNReE07UIWJEv8UEOWDS88LY97kqyTliJKKtuYBbruAyVh5wOHiXmpi5we58Ek028czwyuQdLKPG1Bkb4NnM+VeAnfHqn1k4+GPT6uGQcvu2h2OVuIf/gWUFyy8OWEpdyZSa3aVCqpVoVvzZZ2VTnn2wU8qzVjDDetO90GSy9mVLqtgYSy231MxrY6I2gGqjrTY0L8fxCxfCBbhWrsYYAAAAAElFTkSuQmCC); display:block; height:44px; margin:0 auto -44px; position:relative; top:-22px; width:44px;&quot;&gt;&lt;/div&gt;&lt;/div&gt; &lt;p style=&quot; margin:8px 0 0 0; padding:0 4px;&quot;&gt; &lt;a href=&quot;https://www.instagram.com/p/BnRfC0EnQ0X/?utm_source=ig_embed&quot; style=&quot; color:#000; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none; word-wrap:break-word;&quot; target=&quot;_blank&quot;&gt;🌈🌈&lt;/a&gt;&lt;/p&gt; &lt;p style=&quot; color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;&quot;&gt;@&lt;a href=&quot;https://www.instagram.com/_y.o_o.y_/?utm_source=ig_embed&quot; style=&quot; color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px;&quot; target=&quot;_blank&quot;&gt; _y.o_o.y_&lt;/a&gt; 分享的帖子 · &lt;time style=&quot; font-family:Arial,sans-serif; font-size:14px; line-height:17px;&quot; datetime=&quot;2018-09-03T17:58:58+00:00&quot;&gt;PDT 2018 年 9月 3 日 上午 10:58&lt;/time&gt;&lt;/p&gt;&lt;/div&gt;&lt;/blockquote&gt;
-&lt;script async=&quot;&quot; defer=&quot;&quot; src=&quot;//www.instagram.com/embed.js&quot;&gt;&lt;/script&gt;
-
-&lt;h2 id=&quot;集中精神干活了&quot;&gt;集中精神干活了&lt;/h2&gt;
-
-&lt;p&gt;添加信息提示，将信息反馈的更加直观&lt;/p&gt;
-
-&lt;p&gt;最让人愁的是胜利的判断方式，要最简单不能复杂……&lt;/p&gt;</content><author><name>K11</name></author><category term="日记" /><summary type="html">出门看见彩虹了~~ 🌈🌈 @ _y.o_o.y_ 分享的帖子 · PDT 2018 年 9月 3 日 上午 10:58 集中精神干活了 添加信息提示，将信息反馈的更加直观 最让人愁的是胜利的判断方式，要最简单不能复杂……</summary></entry></feed>
+&lt;p&gt;作息时间混乱，啊啊啊 好想正常一点啊……&lt;/p&gt;</content><author><name>K11</name></author><category term="日记" /><summary type="html">套餐有点烦 办宽带一定要开卡就没人管一管吗…… 无奈更换旧手机的SIM卡槽 没错让我弄坏了…… 在此之前都不敢卸下SIM卡也神奇…… 元件直接淘宝还是很方便的 放在其他国家是难以想象…… 不过人家也没有这样恶心的套餐…… SIM卡槽更换失败 SIM 卡槽更换失败 😭 😭 粘上后盖但是没上螺丝…… 心塞…… 果然没有风枪是不行呢…… 找个风枪加入清单好了…… HAKKO FR-702 其他 作息时间混乱，啊啊啊 好想正常一点啊……</summary></entry></feed>

@@ -2,6 +2,27 @@
 <search>
   
     <entry>
+      <title><![CDATA[几天的份]]></title>
+      <url>/living/2018/10/18/blog/</url>
+      <content type="text"><![CDATA[15号的份染黑了自己都感觉到内心在向着无底的黑暗靠近新键盘并没有人体工程学的好用估计以后都只会选择人体工程学的了开始处理权限了admin的基本部分快做完了之后是一般用户数据了按照计划的一样进行扩展说句自满的话它不仅仅是一个游戏16号的份v-for 不能放在顶级标签上，会报错！更新了一下docker镜像role 部分也完成了……现在又累又饿……18号的份role 部分修正完成~~过程中确实补增了许多东西到验证了~~]]></content>
+      <categories>
+        
+          <category> Living </category>
+        
+      </categories>
+      <tags>
+        
+          <tag> 日记 </tag>
+        
+          <tag> vue </tag>
+        
+          <tag> laravel </tag>
+        
+      </tags>
+      <tags></tags>
+    </entry>
+  
+    <entry>
       <title><![CDATA[11号的份]]></title>
       <url>/living/2018/10/14/blog/</url>
       <content type="text"><![CDATA[11号的份队列将特定 信息通知 推送到指定队列修改horizon 后可以使用$user-&gt;notify((new SendEmail($Token))-&gt;onQueue('mail'));或use Notification;Notification::send($user, (new SendEmail($Token))-&gt;onQueue('mail'));roles需要注意guard对应view与models 要注意同步在blade 中使用时@role('role' , 'guard')something@endrole在路由中使用时Route::group(['middleware' =&gt; ['auth:admin' , 'role:admin']], function () {});也可以在控制器中使用public function __construct(){    $this-&gt;middleware(['role:admin' , 'auth:admin']);}14号的份find 与 where 的坑find 不能准确 查找到对应条目where 则可以，之后只有有意识的替换findregister的后端调整完成了~~~大概这种感觉]]></content>
