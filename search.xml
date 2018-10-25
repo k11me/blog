@@ -2,6 +2,46 @@
 <search>
   
     <entry>
+      <title><![CDATA[几天份]]></title>
+      <url>/living/2018/10/25/blog/</url>
+      <content type="text"><![CDATA[23号的份vue 当前页刷新location.reload()其他3合一验证 完成了后端做成服务提供者了用起来容易了不少admin 部分要收尾了 😊24号的份为一些请求添加二步验证之后是定时服务 与 logs还有 admin 基本信息页面游戏模式有一次眉目了25号的份laravel下错误返回分类在一些情况下想要对不同的请求做不同错误的返回可以使用$request-&gt;ajax()来识别ajax请求对于自定义错误返回非常有用更新node 后包报错，直接删除node_modules之后npm install 可以解决大多数问题]]></content>
+      <categories>
+        
+          <category> Living </category>
+        
+      </categories>
+      <tags>
+        
+          <tag> 日记 </tag>
+        
+          <tag> laravel </tag>
+        
+      </tags>
+      <tags></tags>
+    </entry>
+  
+    <entry>
+      <title><![CDATA[使用 postman 进行 post]]></title>
+      <url>/living/2018/10/21/blog/</url>
+      <content type="text"><![CDATA[使用 postman 进行 post使用postman 直接 post 的方法laravel 本身有CSRF 直接使用post 、 put 等等会被阻断找到一个可以解决办法postman chrome 插件版本新建一个environment 并切换到新建，右上⚙位置找一个get请求 在Tests标签下输入var xsrfCookie = postman.getResponseCookie("XSRF-TOKEN");postman.setEnvironmentVariable("XSRF-TOKEN", xsrfCookie.value);`` 对应该的是第二行要注意下。用于获取XSRF-TOKEN的值。查看environment中 XSRF-TOKEN 是否被正确传入。右上👁位置确认后在post 的Headers 中添加X-XSRF-TOKEN : 之后就可以正常提交post了注意：laravel XSRF-TOKEN 有时效性 注意更新当XSRF-TOKEN 中有特殊字符，例如%时，laravel X-XSRF-TOKEN 验证会失败主要是为postman 对XSRF-TOKEN识别有问题，桌面版本没有这个问题postman 桌面版同上Tests标签可以写成pm.environment.set("xsrf-token", decodeURIComponent(pm.cookies.get("XSRF-TOKEN")))使用laravel valet 时，postman不能正确访问域名……原因valet产生的SSL证书，所以被阻挡，手动关闭后正常使用要关闭的位置settings -&gt; SSL certificate verifcation -&gt; off之后就可以正常使用了使用valet时 link 与 park 混用会报错！]]></content>
+      <categories>
+        
+          <category> Living </category>
+        
+      </categories>
+      <tags>
+        
+          <tag> 日记 </tag>
+        
+          <tag> postman </tag>
+        
+          <tag> laravel </tag>
+        
+      </tags>
+      <tags></tags>
+    </entry>
+  
+    <entry>
       <title><![CDATA[几天的份]]></title>
       <url>/living/2018/10/18/blog/</url>
       <content type="text"><![CDATA[15号的份染黑了自己都感觉到内心在向着无底的黑暗靠近新键盘并没有人体工程学的好用估计以后都只会选择人体工程学的了开始处理权限了admin的基本部分快做完了之后是一般用户数据了按照计划的一样进行扩展说句自满的话它不仅仅是一个游戏16号的份v-for 不能放在顶级标签上，会报错！更新了一下docker镜像role 部分也完成了……现在又累又饿……18号的份role 部分修正完成~~过程中确实补增了许多东西到验证了~~]]></content>

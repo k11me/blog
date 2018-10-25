@@ -83,7 +83,7 @@
 <link href="/assets/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="日记," />
+  <meta name="keywords" content="日记,laravel," />
 
 
 
@@ -111,17 +111,17 @@
 
 
 
-<meta name="description" content="日常 家里电器各种坏心烦 一样一样修 也是心累…… 因祸得福的也算是愉快~~">
-<meta name="keywords" content="日记">
+<meta name="description" content="23号的份 vue 当前页刷新 location.reload() 其他 3合一验证 完成了 后端做成服务提供者了 用起来容易了不少 admin 部分要收尾了 😊 24号的份 为一些请求添加二步验证 之后是定时服务 与 logs 还有 admin 基本信息页面 游戏模式有一次眉目了 25号的份 laravel下错误返回分类 在一些情况下想要对不同的请求做不同错误的返回 可以使用$request-&amp;gt;ajax()来识别ajax请求 对于自定义错误返回非常有用 更新node 后包报错，直接删除node_modules 之后npm install 可以解决大多数问题">
+<meta name="keywords" content="日记, laravel">
 <meta property="og:type" content="article">
-<meta property="og:title" content="我是修理工！">
-<meta property="og:url" content="http://localhost:4000/living/2018/06/28/blog/">
+<meta property="og:title" content="几天份">
+<meta property="og:url" content="http://localhost:4000/living/2018/10/25/blog/">
 <meta property="og:site_name" content="Keleven.Me">
-<meta property="og:description" content="日常 家里电器各种坏心烦 一样一样修 也是心累…… 因祸得福的也算是愉快~~">
+<meta property="og:description" content="23号的份 vue 当前页刷新 location.reload() 其他 3合一验证 完成了 后端做成服务提供者了 用起来容易了不少 admin 部分要收尾了 😊 24号的份 为一些请求添加二步验证 之后是定时服务 与 logs 还有 admin 基本信息页面 游戏模式有一次眉目了 25号的份 laravel下错误返回分类 在一些情况下想要对不同的请求做不同错误的返回 可以使用$request-&amp;gt;ajax()来识别ajax请求 对于自定义错误返回非常有用 更新node 后包报错，直接删除node_modules 之后npm install 可以解决大多数问题">
 <meta property="og:locale" content="en">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="我是修理工！">
-<meta name="twitter:description" content="日常 家里电器各种坏心烦 一样一样修 也是心累…… 因祸得福的也算是愉快~~">
+<meta name="twitter:title" content="几天份">
+<meta name="twitter:description" content="23号的份 vue 当前页刷新 location.reload() 其他 3合一验证 完成了 后端做成服务提供者了 用起来容易了不少 admin 部分要收尾了 😊 24号的份 为一些请求添加二步验证 之后是定时服务 与 logs 还有 admin 基本信息页面 游戏模式有一次眉目了 25号的份 laravel下错误返回分类 在一些情况下想要对不同的请求做不同错误的返回 可以使用$request-&amp;gt;ajax()来识别ajax请求 对于自定义错误返回非常有用 更新node 后包报错，直接删除node_modules 之后npm install 可以解决大多数问题">
 
 
 <script type="text/javascript" id="hexo.configurations">
@@ -154,7 +154,7 @@
 
 
 
-  <title>我是修理工！ | Keleven.Me</title>
+  <title>几天份 | Keleven.Me</title>
   
 
 
@@ -335,7 +335,7 @@
   
 
   <article class="post post-type- " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://localhost:4000/living/2018/06/28/blog/">
+    <link itemprop="mainEntityOfPage" href="http://localhost:4000/living/2018/10/25/blog/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="K11">
@@ -355,7 +355,7 @@
           <h1 class="post-title" itemprop="name headline">
           
           
-            我是修理工！
+            几天份
           
         </h1>
         
@@ -369,8 +369,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-06-28T08:00:01+08:00">
-                2018-06-28
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-25T08:00:00+08:00">
+                2018-10-25
               </time>
             
 
@@ -411,9 +411,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/living/2018/06/28/blog/#comments" itemprop="discussionUrl">
+                <a href="/living/2018/10/25/blog/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="/living/2018/06/28/blog/" itemprop="commentCount"></span>
+                        data-disqus-identifier="/living/2018/10/25/blog/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -459,13 +459,51 @@
 
 
 
-  <h2 id="日常">日常</h2>
+  <h1 id="23号的份">23号的份</h1>
 
-<p>家里电器各种坏心烦</p>
+<h2 id="vue-当前页刷新">vue 当前页刷新</h2>
 
-<p>一样一样修 也是心累……</p>
+<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code>location.reload()
+</code></pre></td></tr></tbody></table></div>
+</div>
 
-<p>因祸得福的也算是愉快~~</p>
+<h2 id="其他">其他</h2>
+
+<p>3合一验证 完成了</p>
+
+<p>后端做成服务提供者了</p>
+
+<p>用起来容易了不少</p>
+
+<p>admin 部分要收尾了 😊</p>
+
+<hr />
+
+<h1 id="24号的份">24号的份</h1>
+
+<p>为一些请求添加二步验证</p>
+
+<p>之后是定时服务 与 logs</p>
+
+<p>还有 <code class="highlighter-rouge">admin</code> 基本信息页面</p>
+
+<p>游戏模式有一次眉目了</p>
+
+<hr />
+
+<h1 id="25号的份">25号的份</h1>
+
+<h2 id="laravel下错误返回分类">laravel下错误返回分类</h2>
+
+<p>在一些情况下想要对不同的请求做不同错误的返回</p>
+
+<p>可以使用<code class="highlighter-rouge">$request-&gt;ajax()</code>来识别<code class="highlighter-rouge">ajax</code>请求</p>
+
+<p>对于自定义错误返回非常有用</p>
+
+<p>更新<code class="highlighter-rouge">node</code> 后包报错，直接删除<code class="highlighter-rouge">node_modules</code></p>
+
+<p>之后<code class="highlighter-rouge">npm install</code> 可以解决大多数问题</p>
 
 
       
@@ -499,6 +537,9 @@
             
             <a href="/tag/#/%E6%97%A5%E8%AE%B0" rel="tag"># 日记</a>
           
+            
+            <a href="/tag/#/laravel" rel="tag"># laravel</a>
+          
         </div>
       
 
@@ -513,18 +554,14 @@
         <div class="post-nav" id="post-nav-id">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/living/2018/07/10/blog/" rel="next" title="一些日常😁😁😁">
-                <i class="fa fa-chevron-left"></i> 一些日常😁😁😁
-              </a>
-            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/living/2018/06/23/blog/" rel="prev" title="镜花雪月">
-                镜花雪月 <i class="fa fa-chevron-right"></i>
+              <a href="/living/2018/10/21/blog/" rel="prev" title="使用 postman 进行 post">
+                使用 postman 进行 post <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -713,7 +750,7 @@
             
               <div class="post-toc-content">
     <ol class=nav>
-      <li class="nav-item nav-level-2"> <a class="nav-link" href="#日常"> <span class="nav-number">1</span> <span class="nav-text">日常</span> </a> </li>
+      <li class="nav-item nav-level-1"> <a class="nav-link" href="#23号的份"> <span class="nav-number">1</span> <span class="nav-text">23号的份</span> </a> <ol class="nav-child"> <li class="nav-item nav-level-2"> <a class="nav-link" href="#vue-当前页刷新"> <span class="nav-number">1.1</span> <span class="nav-text">vue 当前页刷新</span> </a> </li> <li class="nav-item nav-level-2"> <a class="nav-link" href="#其他"> <span class="nav-number">1.2</span> <span class="nav-text">其他</span> </a> </li> </ol> </li> <li class="nav-item nav-level-1"> <a class="nav-link" href="#24号的份"> <span class="nav-number">2</span> <span class="nav-text">24号的份</span> </a> </li> <li class="nav-item nav-level-1"> <a class="nav-link" href="#25号的份"> <span class="nav-number">3</span> <span class="nav-text">25号的份</span> </a> <ol class="nav-child"> <li class="nav-item nav-level-2"> <a class="nav-link" href="#laravel下错误返回分类"> <span class="nav-number">3.1</span> <span class="nav-text">laravel下错误返回分类</span> </a> </li> </ol> </li>
     </ol>
   </div>
             
@@ -882,9 +919,9 @@
       
       <script type="text/javascript">
           var disqus_config = function () {
-              this.page.url = 'http://localhost:4000/living/2018/06/28/blog/';
-              this.page.identifier = '/living/2018/06/28/blog/';
-              this.page.title = '我是修理工！';
+              this.page.url = 'http://localhost:4000/living/2018/10/25/blog/';
+              this.page.identifier = '/living/2018/10/25/blog/';
+              this.page.title = '几天份';
           };
           var d = document, s = d.createElement('script');
           s.src = 'https://keleven.disqus.com/embed.js';

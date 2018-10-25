@@ -83,7 +83,7 @@
 <link href="/assets/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="日记," />
+  <meta name="keywords" content="Jekyll, NexT" />
 
 
 
@@ -111,17 +111,17 @@
 
 
 
-<meta name="description" content="日常 家里电器各种坏心烦 一样一样修 也是心累…… 因祸得福的也算是愉快~~">
-<meta name="keywords" content="日记">
-<meta property="og:type" content="article">
-<meta property="og:title" content="我是修理工！">
-<meta property="og:url" content="http://localhost:4000/living/2018/06/28/blog/">
+<meta name="description" content="千变万化的是世界">
+<meta name="keywords" content="Jekyll, NexT">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Keleven.Me">
+<meta property="og:url" content="http://localhost:4000/page10/">
 <meta property="og:site_name" content="Keleven.Me">
-<meta property="og:description" content="日常 家里电器各种坏心烦 一样一样修 也是心累…… 因祸得福的也算是愉快~~">
+<meta property="og:description" content="千变万化的是世界">
 <meta property="og:locale" content="en">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="我是修理工！">
-<meta name="twitter:description" content="日常 家里电器各种坏心烦 一样一样修 也是心累…… 因祸得福的也算是愉快~~">
+<meta name="twitter:title" content="Keleven.Me">
+<meta name="twitter:description" content="千变万化的是世界">
 
 
 <script type="text/javascript" id="hexo.configurations">
@@ -154,7 +154,7 @@
 
 
 
-  <title>我是修理工！ | Keleven.Me</title>
+  <title>Keleven.Me</title>
   
 
 
@@ -188,7 +188,7 @@
   
   
 
-  <div class="container sidebar-position-left page-post-detail ">
+  <div class="container sidebar-position-left page-home ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -324,9 +324,12 @@
           <div id="content" class="content">
             
 
-<div id="posts" class="posts-expand">
+
+
+<section id="posts" class="posts-expand">
   
-  
+    
+    
 
   
 
@@ -335,7 +338,7 @@
   
 
   <article class="post post-type- " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://localhost:4000/living/2018/06/28/blog/">
+    <link itemprop="mainEntityOfPage" href="http://localhost:4000/archlinux/2016/07/07/ArchLinux/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="K11">
@@ -355,7 +358,12 @@
           <h1 class="post-title" itemprop="name headline">
           
           
-            我是修理工！
+            
+                
+                <a class="post-title-link" href="/archlinux/2016/07/07/ArchLinux/" itemprop="url">
+                Arch Linux  安装指南
+              </a>
+            
           
         </h1>
         
@@ -369,8 +377,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-06-28T08:00:01+08:00">
-                2018-06-28
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-07-07T14:30:45+08:00">
+                2016-07-07
               </time>
             
 
@@ -393,8 +401,8 @@
               
                 
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/category/#/Living" itemprop="url" rel="index">
-                    <span itemprop="name">Living</span>
+                  <a href="/category/#/archlinux" itemprop="url" rel="index">
+                    <span itemprop="name">archlinux</span>
                   </a>
                 </span>
 
@@ -411,9 +419,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/living/2018/06/28/blog/#comments" itemprop="discussionUrl">
+                <a href="/archlinux/2016/07/07/ArchLinux/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="/living/2018/06/28/blog/" itemprop="commentCount"></span>
+                        data-disqus-identifier="/archlinux/2016/07/07/ArchLinux/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -427,12 +435,6 @@
           
 
           
-            
-                <div class="post-description">
-                    
-                </div>
-            
-          
 
         </div>
       </header>
@@ -445,6 +447,7 @@
 
       
         
+          
   
   
 
@@ -459,87 +462,147 @@
 
 
 
-  <h2 id="日常">日常</h2>
+  <h2 id="1-基本系统安装">1. 基本系统安装</h2>
 
-<p>家里电器各种坏心烦</p>
+<h3 id="11-arch-linux镜像下载">1.1. Arch Linux镜像<a href="https://www.archlinux.org/download/">下载</a></h3>
 
-<p>一样一样修 也是心累……</p>
+<h3 id="12-安装">1.2. 安装</h3>
 
-<p>因祸得福的也算是愉快~~</p>
+<h4 id="121-vwmare">1.2.1. VWmare</h4>
+
+<blockquote>
+  <p><strong>基本安装设定</strong></p>
+</blockquote>
+
+<blockquote>
+  <ul>
+    <li>设定任意 Linux 64位虚拟机</li>
+    <li>内存2G，硬盘20G</li>
+    <li>挂载镜像光盘</li>
+  </ul>
+</blockquote>
+
+<h4 id="122-实体机">1.2.2. 实体机</h4>
+
+<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9<br/>10<br/>11<br/>12<br/>13<br/>14<br/>15<br/>16<br/>17<br/>18<br/>19<br/>20<br/>21<br/>22<br/>23</pre></td><td class="code"><pre class="highlight"><code># loadkeys us                                // 设置键盘
+# cfdisk                                       // 创建硬盘分区
+# mkfs.ext4 /dev/sda1                        // 格式化分区
+# mkswap /dev/sda2 &amp;&amp; swapon /dev/sda2       // 挂载swap
+# mount /dev/sda1 /mnt                       // 挂载 分区
+# vi /etc/pacman.d/mirrorlist                // 添加软件源
+# pacman -Syy                                // 更新软件源
+# pacstrap /mnt base base-devel net-tools    // 安装基础包
+# genfstab -U -p /mnt &gt;&gt; /mnt/etc/fstab      // 自动生成引导文件
+# arch-chroot /mnt                           // 切入硬盘root
+# vi /etc/locale.gen &amp;&amp; locale-gen              // 设置字符
+# echo LANG="zh_CN.UTF-8" &gt;&gt; /etc/locale.conf   // 设置语言
+# echo KEYMAP=us &gt;&gt; /etc/vconsole.conf          // 设置键盘
+# ln -s /usr/share/zoneinfo/Asia/Chongqing /etc/localtime  // 设置本地时间
+# echo vm &gt;&gt; /etc/hostname                                 // 设置主机名称
+# mkinitcpio -p linux                                         // 根据配置生成镜像
+# passwd                                                   // 修改root密码
+# pacman -S grub-bios                                      // 安装grub引导
+# grub-install /dev/sda                                    // 安装到硬盘
+# grub-mkconfig -o /boot/grub/grub.cfg                     // 自动设置grub
+# exit                                                     // 退出root用户
+# umount /mnt                                              // 取消挂载硬盘
+# reboot                                                   // 重启
+</code></pre></td></tr></tbody></table></div>
+</div>
+
+<p>备注：</p>
+
+<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code># mkdir /mnt/home &amp;&amp; mount /dev/sda9 /mnt/home     //创建/home 并挂载硬盘。
+</code></pre></td></tr></tbody></table></div>
+</div>
+
+<p>在创建硬盘分区后执行，如果有需要。</p>
+
+<p>要添加的软件源： 参考官方 最新<a href="https://wiki.archlinux.org/index.php/Mirrors#China">地址</a></p>
+
+<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5</pre></td><td class="code"><pre class="highlight"><code>http://mirror.bit.edu.cn/archlinux/ - Beijing Institute of Technology
+http://mirrors.aliyun.com/archlinux/ - Alibaba
+
+http://mirrors.sohu.com/archlinux/
+http://mirrors.yun-idc.com/archlinux/
+</code></pre></td></tr></tbody></table></div>
+</div>
+
+<p>以上基本安装完成。</p>
+
+<h4 id="123-网站参考">1.2.3. 网站参考</h4>
+
+<p><a href="https://bbs.archlinuxcn.org/viewtopic.php?id=1901">地址1</a></p>
+
+<p><a href="https://bbs.archlinuxcn.org/viewtopic.php?id=1037">地址2</a></p>
+
+<p>自动化安装设置工具<a href="https://github.com/helmuthdu/aui">Archlinux U Install</a></p>
+
+<h2 id="2-桌面化安装">2. 桌面化安装</h2>
+
+<h2 id="3-常用软件补全">3. 常用软件补全</h2>
+
+<h2 id="4-美化">4. 美化</h2>
+
+<h2 id="5-开发环境搭建">5. 开发环境搭建</h2>
 
 
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/archlinux/2016/07/07/ArchLinux/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
       
     </div>
 
     <div>
       
-        
-
-      
     </div>
 
     <div>
       
-        
-
-      
     </div>
 
     <div>
-      
-        
-
       
     </div>
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            
-            <a href="/tag/#/%E6%97%A5%E8%AE%B0" rel="tag"># 日记</a>
-          
-        </div>
+
       
 
       
-      
-      
-      
-      
 
       
-      
-        <div class="post-nav" id="post-nav-id">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/living/2018/07/10/blog/" rel="next" title="一些日常😁😁😁">
-                <i class="fa fa-chevron-left"></i> 一些日常😁😁😁
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/living/2018/06/23/blog/" rel="prev" title="镜花雪月">
-                镜花雪月 <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-      
-
+        
+        
+        
+        
+          <div class="post-eof"></div>
+        
       
     </footer>
   </article>
 
-  <div class="post-spread">
+  
+</section>
+
+
+  <nav class="pagination">
     
-  </div>
-</div>
+    
+    
+
+
+
+    <a class="extend prev" rel="prev" href="/page9"><i class="fa fa-angle-left"></i></a> <a class="page-number" href="/">1</a> <span class="space">&hellip;</span> <a class="page-number" href="/page9">9</a> <span class="page-number current">10</span>
+  </nav>
+
+
 
 
           </div>
@@ -547,17 +610,6 @@
 
 
           
-  <div class="comments" id="comments">
-    
-      <div id="disqus_thread">
-        <noscript>
-          Please enable JavaScript to view the
-          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
-        </noscript>
-      </div>
-    
-  </div>
-
 
         </div>
         
@@ -575,30 +627,10 @@
     <div class="sidebar-inner">
 
       
-        
-        
-        
-
-
-
-
-
-
 
       
 
-      
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            Table of Contents
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            Overview
-          </li>
-        </ul>
-      
-
-      <section class="site-overview sidebar-panel">
+      <section class="site-overview sidebar-panel sidebar-panel-active">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/assets/images/21040889_825385437640313_540035783206109184_a.jpg"
@@ -693,34 +725,6 @@
 
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-            
-            
-            
-
-
-
-
-
-
-
-
-            
-              <div class="post-toc-content">
-    <ol class=nav>
-      <li class="nav-item nav-level-2"> <a class="nav-link" href="#日常"> <span class="nav-number">1</span> <span class="nav-text">日常</span> </a> </li>
-    </ol>
-  </div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
@@ -878,20 +882,6 @@
       <script id="dsq-count-scr" src="https://keleven.disqus.com/count.js" async></script>
     
 
-    
-      
-      <script type="text/javascript">
-          var disqus_config = function () {
-              this.page.url = 'http://localhost:4000/living/2018/06/28/blog/';
-              this.page.identifier = '/living/2018/06/28/blog/';
-              this.page.title = '我是修理工！';
-          };
-          var d = document, s = d.createElement('script');
-          s.src = 'https://keleven.disqus.com/embed.js';
-          s.setAttribute('data-timestamp', '' + +new Date());
-          (d.head || d.body).appendChild(s);
-      </script>
-      
     
 
   

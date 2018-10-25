@@ -83,7 +83,7 @@
 <link href="/assets/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="日记," />
+  <meta name="keywords" content="日记,postman,laravel," />
 
 
 
@@ -111,17 +111,17 @@
 
 
 
-<meta name="description" content="日常 家里电器各种坏心烦 一样一样修 也是心累…… 因祸得福的也算是愉快~~">
-<meta name="keywords" content="日记">
+<meta name="description" content="使用 postman 进行 post 使用postman 直接 post 的方法 laravel 本身有CSRF 直接使用post 、 put 等等会被阻断 找到一个可以解决办法 postman chrome 插件版本 新建一个environment 并切换到新建，右上⚙位置 找一个get请求 在Tests标签下输入 var xsrfCookie = postman.getResponseCookie(&quot;XSRF-TOKEN&quot;); postman.setEnvironmentVariable(&quot;XSRF-TOKEN&quot;, xsrfCookie.value); `` 对应该的是第二行要注意下。 用于获取XSRF-TOKEN的值。 查看environment中 XSRF-TOKEN 是否被正确传入。右上👁位置 确认后在post 的Headers 中添加 X-XSRF-TOKEN : 之后就可以正常提交post了 注意：laravel XSRF-TOKEN 有时效性 注意更新 当XSRF-TOKEN 中有特殊字符，例如%时，laravel X-XSRF-TOKEN 验证会失败 主要是为postman 对XSRF-TOKEN识别有问题，桌面版本没有这个问题 postman 桌面版 同上Tests标签可以写成 pm.environment.set(&quot;xsrf-token&quot;, decodeURIComponent(pm.cookies.get(&quot;XSRF-TOKEN&quot;))) 使用laravel valet 时，postman不能正确访问域名…… 原因valet产生的SSL证书，所以被阻挡，手动关闭后正常使用 要关闭的位置 settings -&amp;gt; SSL certificate verifcation -&amp;gt; off 之后就可以正常使用了 使用valet时 link 与 park 混用会报错！">
+<meta name="keywords" content="日记, postman, laravel">
 <meta property="og:type" content="article">
-<meta property="og:title" content="我是修理工！">
-<meta property="og:url" content="http://localhost:4000/living/2018/06/28/blog/">
+<meta property="og:title" content="使用 postman 进行 post">
+<meta property="og:url" content="http://localhost:4000/living/2018/10/21/blog/">
 <meta property="og:site_name" content="Keleven.Me">
-<meta property="og:description" content="日常 家里电器各种坏心烦 一样一样修 也是心累…… 因祸得福的也算是愉快~~">
+<meta property="og:description" content="使用 postman 进行 post 使用postman 直接 post 的方法 laravel 本身有CSRF 直接使用post 、 put 等等会被阻断 找到一个可以解决办法 postman chrome 插件版本 新建一个environment 并切换到新建，右上⚙位置 找一个get请求 在Tests标签下输入 var xsrfCookie = postman.getResponseCookie(&quot;XSRF-TOKEN&quot;); postman.setEnvironmentVariable(&quot;XSRF-TOKEN&quot;, xsrfCookie.value); `` 对应该的是第二行要注意下。 用于获取XSRF-TOKEN的值。 查看environment中 XSRF-TOKEN 是否被正确传入。右上👁位置 确认后在post 的Headers 中添加 X-XSRF-TOKEN : 之后就可以正常提交post了 注意：laravel XSRF-TOKEN 有时效性 注意更新 当XSRF-TOKEN 中有特殊字符，例如%时，laravel X-XSRF-TOKEN 验证会失败 主要是为postman 对XSRF-TOKEN识别有问题，桌面版本没有这个问题 postman 桌面版 同上Tests标签可以写成 pm.environment.set(&quot;xsrf-token&quot;, decodeURIComponent(pm.cookies.get(&quot;XSRF-TOKEN&quot;))) 使用laravel valet 时，postman不能正确访问域名…… 原因valet产生的SSL证书，所以被阻挡，手动关闭后正常使用 要关闭的位置 settings -&amp;gt; SSL certificate verifcation -&amp;gt; off 之后就可以正常使用了 使用valet时 link 与 park 混用会报错！">
 <meta property="og:locale" content="en">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="我是修理工！">
-<meta name="twitter:description" content="日常 家里电器各种坏心烦 一样一样修 也是心累…… 因祸得福的也算是愉快~~">
+<meta name="twitter:title" content="使用 postman 进行 post">
+<meta name="twitter:description" content="使用 postman 进行 post 使用postman 直接 post 的方法 laravel 本身有CSRF 直接使用post 、 put 等等会被阻断 找到一个可以解决办法 postman chrome 插件版本 新建一个environment 并切换到新建，右上⚙位置 找一个get请求 在Tests标签下输入 var xsrfCookie = postman.getResponseCookie(&quot;XSRF-TOKEN&quot;); postman.setEnvironmentVariable(&quot;XSRF-TOKEN&quot;, xsrfCookie.value); `` 对应该的是第二行要注意下。 用于获取XSRF-TOKEN的值。 查看environment中 XSRF-TOKEN 是否被正确传入。右上👁位置 确认后在post 的Headers 中添加 X-XSRF-TOKEN : 之后就可以正常提交post了 注意：laravel XSRF-TOKEN 有时效性 注意更新 当XSRF-TOKEN 中有特殊字符，例如%时，laravel X-XSRF-TOKEN 验证会失败 主要是为postman 对XSRF-TOKEN识别有问题，桌面版本没有这个问题 postman 桌面版 同上Tests标签可以写成 pm.environment.set(&quot;xsrf-token&quot;, decodeURIComponent(pm.cookies.get(&quot;XSRF-TOKEN&quot;))) 使用laravel valet 时，postman不能正确访问域名…… 原因valet产生的SSL证书，所以被阻挡，手动关闭后正常使用 要关闭的位置 settings -&amp;gt; SSL certificate verifcation -&amp;gt; off 之后就可以正常使用了 使用valet时 link 与 park 混用会报错！">
 
 
 <script type="text/javascript" id="hexo.configurations">
@@ -154,7 +154,7 @@
 
 
 
-  <title>我是修理工！ | Keleven.Me</title>
+  <title>使用 postman 进行 post | Keleven.Me</title>
   
 
 
@@ -335,7 +335,7 @@
   
 
   <article class="post post-type- " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://localhost:4000/living/2018/06/28/blog/">
+    <link itemprop="mainEntityOfPage" href="http://localhost:4000/living/2018/10/21/blog/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="K11">
@@ -355,7 +355,7 @@
           <h1 class="post-title" itemprop="name headline">
           
           
-            我是修理工！
+            使用 postman 进行 post
           
         </h1>
         
@@ -369,8 +369,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-06-28T08:00:01+08:00">
-                2018-06-28
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-21T08:00:00+08:00">
+                2018-10-21
               </time>
             
 
@@ -411,9 +411,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/living/2018/06/28/blog/#comments" itemprop="discussionUrl">
+                <a href="/living/2018/10/21/blog/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="/living/2018/06/28/blog/" itemprop="commentCount"></span>
+                        data-disqus-identifier="/living/2018/10/21/blog/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -459,13 +459,62 @@
 
 
 
-  <h2 id="日常">日常</h2>
+  <h1 id="使用-postman-进行-post">使用 postman 进行 post</h1>
 
-<p>家里电器各种坏心烦</p>
+<p>使用<code class="highlighter-rouge">postman</code> 直接 <code class="highlighter-rouge">post</code> 的方法</p>
 
-<p>一样一样修 也是心累……</p>
+<p><code class="highlighter-rouge">laravel</code> 本身有<code class="highlighter-rouge">CSRF</code> 直接使用<code class="highlighter-rouge">post</code> 、 <code class="highlighter-rouge">put</code> 等等会被阻断</p>
 
-<p>因祸得福的也算是愉快~~</p>
+<p>找到一个可以解决办法</p>
+
+<h2 id="postman-chrome-插件版本">postman chrome 插件版本</h2>
+
+<p>新建一个<code class="highlighter-rouge">environment</code> 并切换到新建，右上⚙位置</p>
+
+<p>找一个<code class="highlighter-rouge">get</code>请求 在<code class="highlighter-rouge">Tests</code>标签下输入</p>
+
+<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2</pre></td><td class="code"><pre class="highlight"><code>var xsrfCookie = postman.getResponseCookie("XSRF-TOKEN");
+postman.setEnvironmentVariable("XSRF-TOKEN", xsrfCookie.value);
+</code></pre></td></tr></tbody></table></div>
+</div>
+
+<p>`` 对应该的是第二行要注意下。</p>
+
+<p>用于获取<code class="highlighter-rouge">XSRF-TOKEN</code>的值。</p>
+
+<p>查看<code class="highlighter-rouge">environment</code>中 <code class="highlighter-rouge">XSRF-TOKEN</code> 是否被正确传入。右上👁位置</p>
+
+<p>确认后在<code class="highlighter-rouge">post</code> 的<code class="highlighter-rouge">Headers</code> 中添加</p>
+
+<p><code class="highlighter-rouge">X-XSRF-TOKEN : </code></p>
+
+<p>之后就可以正常提交<code class="highlighter-rouge">post</code>了</p>
+
+<p><strong>注意：laravel XSRF-TOKEN 有时效性 注意更新</strong></p>
+
+<p>当<code class="highlighter-rouge">XSRF-TOKEN</code> 中有特殊字符，例如<code class="highlighter-rouge">%</code>时，<code class="highlighter-rouge">laravel X-XSRF-TOKEN</code> 验证会失败</p>
+
+<p>主要是为<code class="highlighter-rouge">postman</code> 对<code class="highlighter-rouge">XSRF-TOKEN</code>识别有问题，桌面版本没有这个问题</p>
+
+<h2 id="postman-桌面版">postman 桌面版</h2>
+
+<p>同上<code class="highlighter-rouge">Tests</code>标签可以写成</p>
+
+<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code>pm.environment.set("xsrf-token", decodeURIComponent(pm.cookies.get("XSRF-TOKEN")))
+</code></pre></td></tr></tbody></table></div>
+</div>
+
+<p>使用<code class="highlighter-rouge">laravel valet</code> 时，<code class="highlighter-rouge">postman</code>不能正确访问域名……</p>
+
+<p>原因<code class="highlighter-rouge">valet</code>产生的<code class="highlighter-rouge">SSL</code>证书，所以被阻挡，手动关闭后正常使用</p>
+
+<p>要关闭的位置</p>
+
+<p><code class="highlighter-rouge">settings</code> -&gt; <code class="highlighter-rouge">SSL certificate verifcation</code> -&gt; <code class="highlighter-rouge">off</code></p>
+
+<p>之后就可以正常使用了</p>
+
+<p>使用<code class="highlighter-rouge">valet</code>时 <code class="highlighter-rouge">link</code> 与 <code class="highlighter-rouge">park</code> 混用会报错！</p>
 
 
       
@@ -499,6 +548,12 @@
             
             <a href="/tag/#/%E6%97%A5%E8%AE%B0" rel="tag"># 日记</a>
           
+            
+            <a href="/tag/#/postman" rel="tag"># postman</a>
+          
+            
+            <a href="/tag/#/laravel" rel="tag"># laravel</a>
+          
         </div>
       
 
@@ -513,8 +568,8 @@
         <div class="post-nav" id="post-nav-id">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/living/2018/07/10/blog/" rel="next" title="一些日常😁😁😁">
-                <i class="fa fa-chevron-left"></i> 一些日常😁😁😁
+              <a href="/living/2018/10/25/blog/" rel="next" title="几天份">
+                <i class="fa fa-chevron-left"></i> 几天份
               </a>
             
           </div>
@@ -523,8 +578,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/living/2018/06/23/blog/" rel="prev" title="镜花雪月">
-                镜花雪月 <i class="fa fa-chevron-right"></i>
+              <a href="/living/2018/10/18/blog/" rel="prev" title="几天的份">
+                几天的份 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -713,7 +768,7 @@
             
               <div class="post-toc-content">
     <ol class=nav>
-      <li class="nav-item nav-level-2"> <a class="nav-link" href="#日常"> <span class="nav-number">1</span> <span class="nav-text">日常</span> </a> </li>
+      <li class="nav-item nav-level-1"> <a class="nav-link" href="#使用-postman-进行-post"> <span class="nav-number">1</span> <span class="nav-text">使用 postman 进行 post</span> </a> <ol class="nav-child"> <li class="nav-item nav-level-2"> <a class="nav-link" href="#postman-chrome-插件版本"> <span class="nav-number">1.1</span> <span class="nav-text">postman chrome 插件版本</span> </a> </li> <li class="nav-item nav-level-2"> <a class="nav-link" href="#postman-桌面版"> <span class="nav-number">1.2</span> <span class="nav-text">postman 桌面版</span> </a> </li> </ol> </li>
     </ol>
   </div>
             
@@ -882,9 +937,9 @@
       
       <script type="text/javascript">
           var disqus_config = function () {
-              this.page.url = 'http://localhost:4000/living/2018/06/28/blog/';
-              this.page.identifier = '/living/2018/06/28/blog/';
-              this.page.title = '我是修理工！';
+              this.page.url = 'http://localhost:4000/living/2018/10/21/blog/';
+              this.page.identifier = '/living/2018/10/21/blog/';
+              this.page.title = '使用 postman 进行 post';
           };
           var d = document, s = d.createElement('script');
           s.src = 'https://keleven.disqus.com/embed.js';

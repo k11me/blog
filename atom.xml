@@ -1,4 +1,103 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.5.2">Jekyll</generator><link href="http://localhost:4000/atom.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-10-18T19:29:53+08:00</updated><id>http://localhost:4000/</id><title type="html">Keleven.Me</title><subtitle>千变万化的是世界</subtitle><author><name>K11</name></author><entry><title type="html">几天的份</title><link href="http://localhost:4000/living/2018/10/18/blog/" rel="alternate" type="text/html" title="几天的份" /><published>2018-10-18T08:00:00+08:00</published><updated>2018-10-18T08:00:00+08:00</updated><id>http://localhost:4000/living/2018/10/18/blog</id><content type="html" xml:base="http://localhost:4000/living/2018/10/18/blog/">&lt;h1 id=&quot;15号的份&quot;&gt;15号的份&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.5.2">Jekyll</generator><link href="http://localhost:4000/atom.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-10-26T04:34:56+08:00</updated><id>http://localhost:4000/</id><title type="html">Keleven.Me</title><subtitle>千变万化的是世界</subtitle><author><name>K11</name></author><entry><title type="html">几天份</title><link href="http://localhost:4000/living/2018/10/25/blog/" rel="alternate" type="text/html" title="几天份" /><published>2018-10-25T08:00:00+08:00</published><updated>2018-10-25T08:00:00+08:00</updated><id>http://localhost:4000/living/2018/10/25/blog</id><content type="html" xml:base="http://localhost:4000/living/2018/10/25/blog/">&lt;h1 id=&quot;23号的份&quot;&gt;23号的份&lt;/h1&gt;
+
+&lt;h2 id=&quot;vue-当前页刷新&quot;&gt;vue 当前页刷新&lt;/h2&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;location.reload()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;其他&quot;&gt;其他&lt;/h2&gt;
+
+&lt;p&gt;3合一验证 完成了&lt;/p&gt;
+
+&lt;p&gt;后端做成服务提供者了&lt;/p&gt;
+
+&lt;p&gt;用起来容易了不少&lt;/p&gt;
+
+&lt;p&gt;admin 部分要收尾了 😊&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;24号的份&quot;&gt;24号的份&lt;/h1&gt;
+
+&lt;p&gt;为一些请求添加二步验证&lt;/p&gt;
+
+&lt;p&gt;之后是定时服务 与 logs&lt;/p&gt;
+
+&lt;p&gt;还有 &lt;code class=&quot;highlighter-rouge&quot;&gt;admin&lt;/code&gt; 基本信息页面&lt;/p&gt;
+
+&lt;p&gt;游戏模式有一次眉目了&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;25号的份&quot;&gt;25号的份&lt;/h1&gt;
+
+&lt;h2 id=&quot;laravel下错误返回分类&quot;&gt;laravel下错误返回分类&lt;/h2&gt;
+
+&lt;p&gt;在一些情况下想要对不同的请求做不同错误的返回&lt;/p&gt;
+
+&lt;p&gt;可以使用&lt;code class=&quot;highlighter-rouge&quot;&gt;$request-&amp;gt;ajax()&lt;/code&gt;来识别&lt;code class=&quot;highlighter-rouge&quot;&gt;ajax&lt;/code&gt;请求&lt;/p&gt;
+
+&lt;p&gt;对于自定义错误返回非常有用&lt;/p&gt;
+
+&lt;p&gt;更新&lt;code class=&quot;highlighter-rouge&quot;&gt;node&lt;/code&gt; 后包报错，直接删除&lt;code class=&quot;highlighter-rouge&quot;&gt;node_modules&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;之后&lt;code class=&quot;highlighter-rouge&quot;&gt;npm install&lt;/code&gt; 可以解决大多数问题&lt;/p&gt;</content><author><name>K11</name></author><category term="日记" /><category term="laravel" /><summary type="html">23号的份 vue 当前页刷新 location.reload() 其他 3合一验证 完成了 后端做成服务提供者了 用起来容易了不少 admin 部分要收尾了 😊 24号的份 为一些请求添加二步验证 之后是定时服务 与 logs 还有 admin 基本信息页面 游戏模式有一次眉目了 25号的份 laravel下错误返回分类 在一些情况下想要对不同的请求做不同错误的返回 可以使用$request-&amp;gt;ajax()来识别ajax请求 对于自定义错误返回非常有用 更新node 后包报错，直接删除node_modules 之后npm install 可以解决大多数问题</summary></entry><entry><title type="html">使用 postman 进行 post</title><link href="http://localhost:4000/living/2018/10/21/blog/" rel="alternate" type="text/html" title="使用 postman 进行 post" /><published>2018-10-21T08:00:00+08:00</published><updated>2018-10-21T08:00:00+08:00</updated><id>http://localhost:4000/living/2018/10/21/blog</id><content type="html" xml:base="http://localhost:4000/living/2018/10/21/blog/">&lt;h1 id=&quot;使用-postman-进行-post&quot;&gt;使用 postman 进行 post&lt;/h1&gt;
+
+&lt;p&gt;使用&lt;code class=&quot;highlighter-rouge&quot;&gt;postman&lt;/code&gt; 直接 &lt;code class=&quot;highlighter-rouge&quot;&gt;post&lt;/code&gt; 的方法&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;laravel&lt;/code&gt; 本身有&lt;code class=&quot;highlighter-rouge&quot;&gt;CSRF&lt;/code&gt; 直接使用&lt;code class=&quot;highlighter-rouge&quot;&gt;post&lt;/code&gt; 、 &lt;code class=&quot;highlighter-rouge&quot;&gt;put&lt;/code&gt; 等等会被阻断&lt;/p&gt;
+
+&lt;p&gt;找到一个可以解决办法&lt;/p&gt;
+
+&lt;h2 id=&quot;postman-chrome-插件版本&quot;&gt;postman chrome 插件版本&lt;/h2&gt;
+
+&lt;p&gt;新建一个&lt;code class=&quot;highlighter-rouge&quot;&gt;environment&lt;/code&gt; 并切换到新建，右上⚙位置&lt;/p&gt;
+
+&lt;p&gt;找一个&lt;code class=&quot;highlighter-rouge&quot;&gt;get&lt;/code&gt;请求 在&lt;code class=&quot;highlighter-rouge&quot;&gt;Tests&lt;/code&gt;标签下输入&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;var xsrfCookie = postman.getResponseCookie(&quot;XSRF-TOKEN&quot;);
+postman.setEnvironmentVariable(&quot;XSRF-TOKEN&quot;, xsrfCookie.value);
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;`` 对应该的是第二行要注意下。&lt;/p&gt;
+
+&lt;p&gt;用于获取&lt;code class=&quot;highlighter-rouge&quot;&gt;XSRF-TOKEN&lt;/code&gt;的值。&lt;/p&gt;
+
+&lt;p&gt;查看&lt;code class=&quot;highlighter-rouge&quot;&gt;environment&lt;/code&gt;中 &lt;code class=&quot;highlighter-rouge&quot;&gt;XSRF-TOKEN&lt;/code&gt; 是否被正确传入。右上👁位置&lt;/p&gt;
+
+&lt;p&gt;确认后在&lt;code class=&quot;highlighter-rouge&quot;&gt;post&lt;/code&gt; 的&lt;code class=&quot;highlighter-rouge&quot;&gt;Headers&lt;/code&gt; 中添加&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;X-XSRF-TOKEN : &lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;之后就可以正常提交&lt;code class=&quot;highlighter-rouge&quot;&gt;post&lt;/code&gt;了&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;注意：laravel XSRF-TOKEN 有时效性 注意更新&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;当&lt;code class=&quot;highlighter-rouge&quot;&gt;XSRF-TOKEN&lt;/code&gt; 中有特殊字符，例如&lt;code class=&quot;highlighter-rouge&quot;&gt;%&lt;/code&gt;时，&lt;code class=&quot;highlighter-rouge&quot;&gt;laravel X-XSRF-TOKEN&lt;/code&gt; 验证会失败&lt;/p&gt;
+
+&lt;p&gt;主要是为&lt;code class=&quot;highlighter-rouge&quot;&gt;postman&lt;/code&gt; 对&lt;code class=&quot;highlighter-rouge&quot;&gt;XSRF-TOKEN&lt;/code&gt;识别有问题，桌面版本没有这个问题&lt;/p&gt;
+
+&lt;h2 id=&quot;postman-桌面版&quot;&gt;postman 桌面版&lt;/h2&gt;
+
+&lt;p&gt;同上&lt;code class=&quot;highlighter-rouge&quot;&gt;Tests&lt;/code&gt;标签可以写成&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;pm.environment.set(&quot;xsrf-token&quot;, decodeURIComponent(pm.cookies.get(&quot;XSRF-TOKEN&quot;)))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;使用&lt;code class=&quot;highlighter-rouge&quot;&gt;laravel valet&lt;/code&gt; 时，&lt;code class=&quot;highlighter-rouge&quot;&gt;postman&lt;/code&gt;不能正确访问域名……&lt;/p&gt;
+
+&lt;p&gt;原因&lt;code class=&quot;highlighter-rouge&quot;&gt;valet&lt;/code&gt;产生的&lt;code class=&quot;highlighter-rouge&quot;&gt;SSL&lt;/code&gt;证书，所以被阻挡，手动关闭后正常使用&lt;/p&gt;
+
+&lt;p&gt;要关闭的位置&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;settings&lt;/code&gt; -&amp;gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;SSL certificate verifcation&lt;/code&gt; -&amp;gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;off&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;之后就可以正常使用了&lt;/p&gt;
+
+&lt;p&gt;使用&lt;code class=&quot;highlighter-rouge&quot;&gt;valet&lt;/code&gt;时 &lt;code class=&quot;highlighter-rouge&quot;&gt;link&lt;/code&gt; 与 &lt;code class=&quot;highlighter-rouge&quot;&gt;park&lt;/code&gt; 混用会报错！&lt;/p&gt;</content><author><name>K11</name></author><category term="日记" /><category term="postman" /><category term="laravel" /><summary type="html">使用 postman 进行 post 使用postman 直接 post 的方法 laravel 本身有CSRF 直接使用post 、 put 等等会被阻断 找到一个可以解决办法 postman chrome 插件版本 新建一个environment 并切换到新建，右上⚙位置 找一个get请求 在Tests标签下输入 var xsrfCookie = postman.getResponseCookie(&quot;XSRF-TOKEN&quot;); postman.setEnvironmentVariable(&quot;XSRF-TOKEN&quot;, xsrfCookie.value); `` 对应该的是第二行要注意下。 用于获取XSRF-TOKEN的值。 查看environment中 XSRF-TOKEN 是否被正确传入。右上👁位置 确认后在post 的Headers 中添加 X-XSRF-TOKEN : 之后就可以正常提交post了 注意：laravel XSRF-TOKEN 有时效性 注意更新 当XSRF-TOKEN 中有特殊字符，例如%时，laravel X-XSRF-TOKEN 验证会失败 主要是为postman 对XSRF-TOKEN识别有问题，桌面版本没有这个问题 postman 桌面版 同上Tests标签可以写成 pm.environment.set(&quot;xsrf-token&quot;, decodeURIComponent(pm.cookies.get(&quot;XSRF-TOKEN&quot;))) 使用laravel valet 时，postman不能正确访问域名…… 原因valet产生的SSL证书，所以被阻挡，手动关闭后正常使用 要关闭的位置 settings -&amp;gt; SSL certificate verifcation -&amp;gt; off 之后就可以正常使用了 使用valet时 link 与 park 混用会报错！</summary></entry><entry><title type="html">几天的份</title><link href="http://localhost:4000/living/2018/10/18/blog/" rel="alternate" type="text/html" title="几天的份" /><published>2018-10-18T08:00:00+08:00</published><updated>2018-10-18T08:00:00+08:00</updated><id>http://localhost:4000/living/2018/10/18/blog</id><content type="html" xml:base="http://localhost:4000/living/2018/10/18/blog/">&lt;h1 id=&quot;15号的份&quot;&gt;15号的份&lt;/h1&gt;
 
 &lt;h2 id=&quot;染黑了&quot;&gt;染黑了&lt;/h2&gt;
 
@@ -20,6 +119,8 @@
 
 &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;它不仅仅是一个游戏&lt;/code&gt;&lt;/p&gt;
 
+&lt;hr /&gt;
+
 &lt;h1 id=&quot;16号的份&quot;&gt;16号的份&lt;/h1&gt;
 
 &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;v-for&lt;/code&gt; 不能放在顶级标签上，会报错！&lt;/p&gt;
@@ -29,6 +130,8 @@
 &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;role&lt;/code&gt; 部分也完成了……&lt;/p&gt;
 
 &lt;p&gt;现在又累又饿……&lt;/p&gt;
+
+&lt;hr /&gt;
 
 &lt;h2 id=&quot;18号的份&quot;&gt;18号的份&lt;/h2&gt;
 
@@ -86,6 +189,8 @@ something
 }
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
+
+&lt;hr /&gt;
 
 &lt;h1 id=&quot;14号的份&quot;&gt;14号的份&lt;/h1&gt;
 
@@ -341,54 +446,4 @@ Thanks,&lt;span class=&quot;nt&quot;&gt;&amp;lt;br&amp;gt;&lt;/span&gt;
 
 &lt;p&gt;##其他&lt;/p&gt;
 
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;git&lt;/code&gt;居然有中文版了！&lt;/p&gt;</content><author><name>K11</name></author><category term="日记" /><summary type="html">11号的份 新键盘到了 果然用习惯了Microsoft Sculpt Ergonomic Desktop套装后 正常的布局的键盘难以适应…… 虽然新键盘的手感不错…… 还是有点局促…… 16号的份 增加信息提示 增加信息提示功能，将返回信息推入 vuex 并可以同步移除。 ##其他 git居然有中文版了！</summary></entry><entry><title type="html">Vuex技能点获得 (づ｡◕‿‿◕｡)づ</title><link href="http://localhost:4000/living/2018/09/08/blog/" rel="alternate" type="text/html" title="Vuex技能点获得 (づ｡◕‿‿◕｡)づ" /><published>2018-09-08T08:00:00+08:00</published><updated>2018-09-08T08:00:00+08:00</updated><id>http://localhost:4000/living/2018/09/08/blog</id><content type="html" xml:base="http://localhost:4000/living/2018/09/08/blog/">&lt;h1 id=&quot;随手&quot;&gt;随手&lt;/h1&gt;
-
-&lt;p&gt;项目复杂没有规划就是容易混乱呢……&lt;/p&gt;
-
-&lt;p&gt;看来&lt;code class=&quot;highlighter-rouge&quot;&gt;vuex&lt;/code&gt;的例子的代码，完全掌握了~~&lt;/p&gt;
-
-&lt;p&gt;还发现了其中的小bug 😁&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;vuex&lt;/code&gt;的主要用途&lt;/p&gt;
-
-&lt;p&gt;将多页的网页变为一页，同时方便多平台&lt;/p&gt;
-
-&lt;h1 id=&quot;附言&quot;&gt;附言&lt;/h1&gt;
-
-&lt;p&gt;问题被问了呢&lt;/p&gt;
-
-&lt;p&gt;想看礼服啊~&lt;/p&gt;
-
-&lt;p&gt;o(&lt;em&gt;////▽////&lt;/em&gt;)q&lt;/p&gt;
-
-&lt;p&gt;所以主驾位上的人呢&lt;/p&gt;
-
-&lt;p&gt;比起指针的更喜欢电子的&lt;/p&gt;
-
-&lt;p&gt;虽然很好看&lt;/p&gt;
-
-&lt;p&gt;上面的指纹&lt;/p&gt;
-
-&lt;p&gt;嗯……&lt;/p&gt;</content><author><name>K11</name></author><category term="日记" /><category term="vue" /><summary type="html">随手 项目复杂没有规划就是容易混乱呢…… 看来vuex的例子的代码，完全掌握了~~ 还发现了其中的小bug 😁 vuex的主要用途 将多页的网页变为一页，同时方便多平台 附言 问题被问了呢 想看礼服啊~ o(////▽////)q 所以主驾位上的人呢 比起指针的更喜欢电子的 虽然很好看 上面的指纹 嗯……</summary></entry><entry><title type="html">失败了………………😭</title><link href="http://localhost:4000/living/2018/09/04/blog/" rel="alternate" type="text/html" title="失败了………………😭" /><published>2018-09-04T08:00:00+08:00</published><updated>2018-09-04T08:00:00+08:00</updated><id>http://localhost:4000/living/2018/09/04/blog</id><content type="html" xml:base="http://localhost:4000/living/2018/09/04/blog/">&lt;h1 id=&quot;套餐有点烦&quot;&gt;套餐有点烦&lt;/h1&gt;
-
-&lt;p&gt;办宽带一定要开卡就没人管一管吗……&lt;/p&gt;
-
-&lt;p&gt;无奈更换旧手机的SIM卡槽 没错让我弄坏了……&lt;/p&gt;
-
-&lt;p&gt;在此之前都不敢卸下SIM卡也神奇……&lt;/p&gt;
-
-&lt;p&gt;元件直接淘宝还是很方便的&lt;/p&gt;
-
-&lt;p&gt;放在其他国家是难以想象…… 不过人家也没有这样恶心的套餐……&lt;/p&gt;
-
-&lt;h1 id=&quot;sim卡槽更换失败&quot;&gt;SIM卡槽更换失败&lt;/h1&gt;
-
-&lt;p&gt;SIM 卡槽更换失败 😭 😭 粘上后盖但是没上螺丝…… 心塞……&lt;/p&gt;
-
-&lt;p&gt;果然没有风枪是不行呢…… 找个风枪加入清单好了……&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://www.hakko.com/japan/products/hakko_fr702.html&quot;&gt;HAKKO FR-702&lt;/a&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;其他&quot;&gt;其他&lt;/h1&gt;
-
-&lt;p&gt;作息时间混乱，啊啊啊 好想正常一点啊……&lt;/p&gt;</content><author><name>K11</name></author><category term="日记" /><summary type="html">套餐有点烦 办宽带一定要开卡就没人管一管吗…… 无奈更换旧手机的SIM卡槽 没错让我弄坏了…… 在此之前都不敢卸下SIM卡也神奇…… 元件直接淘宝还是很方便的 放在其他国家是难以想象…… 不过人家也没有这样恶心的套餐…… SIM卡槽更换失败 SIM 卡槽更换失败 😭 😭 粘上后盖但是没上螺丝…… 心塞…… 果然没有风枪是不行呢…… 找个风枪加入清单好了…… HAKKO FR-702 其他 作息时间混乱，啊啊啊 好想正常一点啊……</summary></entry></feed>
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;git&lt;/code&gt;居然有中文版了！&lt;/p&gt;</content><author><name>K11</name></author><category term="日记" /><summary type="html">11号的份 新键盘到了 果然用习惯了Microsoft Sculpt Ergonomic Desktop套装后 正常的布局的键盘难以适应…… 虽然新键盘的手感不错…… 还是有点局促…… 16号的份 增加信息提示 增加信息提示功能，将返回信息推入 vuex 并可以同步移除。 ##其他 git居然有中文版了！</summary></entry></feed>
