@@ -1,4 +1,54 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.5.2">Jekyll</generator><link href="http://localhost:4000/atom.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-10-26T04:34:56+08:00</updated><id>http://localhost:4000/</id><title type="html">Keleven.Me</title><subtitle>千变万化的是世界</subtitle><author><name>K11</name></author><entry><title type="html">几天份</title><link href="http://localhost:4000/living/2018/10/25/blog/" rel="alternate" type="text/html" title="几天份" /><published>2018-10-25T08:00:00+08:00</published><updated>2018-10-25T08:00:00+08:00</updated><id>http://localhost:4000/living/2018/10/25/blog</id><content type="html" xml:base="http://localhost:4000/living/2018/10/25/blog/">&lt;h1 id=&quot;23号的份&quot;&gt;23号的份&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.5.2">Jekyll</generator><link href="http://localhost:4000/atom.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-11-02T03:35:21+08:00</updated><id>http://localhost:4000/</id><title type="html">Keleven.Me</title><subtitle>千变万化的是世界</subtitle><author><name>K11</name></author><entry><title type="html">智力上线🙂</title><link href="http://localhost:4000/living/2018/11/01/blog/" rel="alternate" type="text/html" title="智力上线🙂" /><published>2018-11-01T08:00:00+08:00</published><updated>2018-11-01T08:00:00+08:00</updated><id>http://localhost:4000/living/2018/11/01/blog</id><content type="html" xml:base="http://localhost:4000/living/2018/11/01/blog/">&lt;h1 id=&quot;智力上线&quot;&gt;智力上线&lt;/h1&gt;
+
+&lt;h2 id=&quot;27号的份&quot;&gt;27号的份&lt;/h2&gt;
+
+&lt;p&gt;机械劳动久了，智商就下线了&lt;/p&gt;
+
+&lt;p&gt;可以快速解决问题，要重复好多次也是蛮蠢的&lt;/p&gt;
+
+&lt;p&gt;可是一直进行无创造劳动吧 智商也就慢慢休眠了_(:з」∠)_&lt;/p&gt;
+
+&lt;p&gt;之后美名其曰代码可读性提高了，&lt;/p&gt;
+
+&lt;p&gt;不过函数用多了一样不容易读，啊啊啊 好矛盾啊&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;29日的份&quot;&gt;29日的份&lt;/h2&gt;
+
+&lt;p&gt;定时自动调整权限完成了~~&lt;/p&gt;
+
+&lt;p&gt;加上之前的权限方便能安心了了~~ 暂时~~&lt;/p&gt;
+
+&lt;p&gt;程序什么的 是要不断改进的&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;11月1号的份&quot;&gt;11月1号的份&lt;/h2&gt;
+
+&lt;p&gt;一小步与一大步，真的只是差了一点点，现在看看方便了不少。&lt;/p&gt;
+
+&lt;p&gt;几天前 明白了一些事儿 很意外的 也是很有意思&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;providers&lt;/code&gt; 定义成了 &lt;code class=&quot;highlighter-rouge&quot;&gt;Facades&lt;/code&gt; 用起来更方便了&lt;/p&gt;
+
+&lt;p&gt;新建&lt;code class=&quot;highlighter-rouge&quot;&gt;class&lt;/code&gt; 下面这样写 之后要注意到&lt;code class=&quot;highlighter-rouge&quot;&gt;config\app.php&lt;/code&gt;中绑定&lt;/p&gt;
+
+&lt;div class=&quot;language-php highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt; 
+
+&lt;span class=&quot;k&quot;&gt;namespace&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;App\Facades&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; 
+
+&lt;span class=&quot;k&quot;&gt;use&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Illuminate\Support\Facades\Facade&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;  
+
+&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;CustomService&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Facade&lt;/span&gt; 
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+	&lt;span class=&quot;k&quot;&gt;protected&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;getFacadeAccessor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; 
+	&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+		&lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'CustomService'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+	&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;</content><author><name>K11</name></author><category term="日记" /><category term="laravel" /><summary type="html">智力上线 27号的份 机械劳动久了，智商就下线了 可以快速解决问题，要重复好多次也是蛮蠢的 可是一直进行无创造劳动吧 智商也就慢慢休眠了_(:з」∠)_ 之后美名其曰代码可读性提高了， 不过函数用多了一样不容易读，啊啊啊 好矛盾啊 29日的份 定时自动调整权限完成了~~ 加上之前的权限方便能安心了了~~ 暂时~~ 程序什么的 是要不断改进的 11月1号的份 一小步与一大步，真的只是差了一点点，现在看看方便了不少。 几天前 明白了一些事儿 很意外的 也是很有意思 providers 定义成了 Facades 用起来更方便了 新建class 下面这样写 之后要注意到config\app.php中绑定 &amp;lt;?php namespace App\Facades; use Illuminate\Support\Facades\Facade; class CustomService extends Facade { protected static function getFacadeAccessor() { return 'CustomService'; } }</summary></entry><entry><title type="html">几天份</title><link href="http://localhost:4000/living/2018/10/25/blog/" rel="alternate" type="text/html" title="几天份" /><published>2018-10-25T08:00:00+08:00</published><updated>2018-10-25T08:00:00+08:00</updated><id>http://localhost:4000/living/2018/10/25/blog</id><content type="html" xml:base="http://localhost:4000/living/2018/10/25/blog/">&lt;h1 id=&quot;23号的份&quot;&gt;23号的份&lt;/h1&gt;
 
 &lt;h2 id=&quot;vue-当前页刷新&quot;&gt;vue 当前页刷新&lt;/h2&gt;
 
@@ -424,26 +474,4 @@ Thanks,&lt;span class=&quot;nt&quot;&gt;&amp;lt;br&amp;gt;&lt;/span&gt;
 @endslot
 @endcomponent
 &lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;</content><author><name>K11</name></author><category term="日记" /><category term="vue" /><category term="laravel" /><summary type="html">18号的份 使用vuex 推送信息时 会让之前的消息一起发送变动 使用vue 工具发现 state 的数据被覆盖 使用手动输入框 更新 发现state并没有更新只是视图上的变化 最后发现为 提交active后没有清空数据导致…… 之后需要分离信息提示部分 并使后端返回数据规整化 并能使用固定数字代码 进行快速返回 admin 安全部分要完工了~~ 撒花~~ 20号的份 使code编码换用于信息的快速返回 当然也可以使用对应信息语句直接返回 vue 的坑 vue 的v-for一定要定义key不然会出现渲染不正常 数据正常 重要的是并不会提示错误！！ laravel 的坑 使用laravel markdown email时，不能独立定义header与footer 使用@component('mail::button')时，前方要清除空白。 否则不能正常渲染 要支持header与footer ，将@component('mail::message') 改为 @component('mail::layout') 下方是修改后的例子，也可以直接复制message.blade.php进行修改 找不到message.blade.php时 运行php artisan vendor:publish --tag=laravel-mail 之后可以在vendor/mail/markdown下找到对应文件。 @component('mail::layout') @slot('header') @component('mail::header', ['url' =&amp;gt; config('app.url')]) header @endcomponent @endslot # Introduction The body of your message. @component('mail::button', ['url' =&amp;gt; $url]) button @endcomponent Thanks,&amp;lt;br&amp;gt; @slot('footer') @component('mail::footer') © footer @endcomponent @endslot @endcomponent</summary></entry><entry><title type="html">新键盘购入！</title><link href="http://localhost:4000/living/2018/09/16/blog/" rel="alternate" type="text/html" title="新键盘购入！" /><published>2018-09-16T08:00:00+08:00</published><updated>2018-09-16T08:00:00+08:00</updated><id>http://localhost:4000/living/2018/09/16/blog</id><content type="html" xml:base="http://localhost:4000/living/2018/09/16/blog/">&lt;h1 id=&quot;11号的份&quot;&gt;11号的份&lt;/h1&gt;
-
-&lt;h2 id=&quot;新键盘到了&quot;&gt;新键盘到了&lt;/h2&gt;
-
-&lt;p&gt;果然用习惯了&lt;code class=&quot;highlighter-rouge&quot;&gt;Microsoft Sculpt Ergonomic Desktop&lt;/code&gt;套装后&lt;/p&gt;
-
-&lt;p&gt;正常的布局的键盘难以适应…… 虽然新键盘的手感不错……&lt;/p&gt;
-
-&lt;p&gt;还是有点局促……&lt;/p&gt;
-
-&lt;h1 id=&quot;16号的份&quot;&gt;16号的份&lt;/h1&gt;
-
-&lt;h2 id=&quot;增加信息提示&quot;&gt;增加信息提示&lt;/h2&gt;
-
-&lt;p&gt;增加信息提示功能，将返回信息推入 &lt;code class=&quot;highlighter-rouge&quot;&gt;vuex&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;并可以同步移除。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://i.loli.net/2018/09/17/5b9ead3d4abbe.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;##其他&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;git&lt;/code&gt;居然有中文版了！&lt;/p&gt;</content><author><name>K11</name></author><category term="日记" /><summary type="html">11号的份 新键盘到了 果然用习惯了Microsoft Sculpt Ergonomic Desktop套装后 正常的布局的键盘难以适应…… 虽然新键盘的手感不错…… 还是有点局促…… 16号的份 增加信息提示 增加信息提示功能，将返回信息推入 vuex 并可以同步移除。 ##其他 git居然有中文版了！</summary></entry></feed>
+&lt;/div&gt;</content><author><name>K11</name></author><category term="日记" /><category term="vue" /><category term="laravel" /><summary type="html">18号的份 使用vuex 推送信息时 会让之前的消息一起发送变动 使用vue 工具发现 state 的数据被覆盖 使用手动输入框 更新 发现state并没有更新只是视图上的变化 最后发现为 提交active后没有清空数据导致…… 之后需要分离信息提示部分 并使后端返回数据规整化 并能使用固定数字代码 进行快速返回 admin 安全部分要完工了~~ 撒花~~ 20号的份 使code编码换用于信息的快速返回 当然也可以使用对应信息语句直接返回 vue 的坑 vue 的v-for一定要定义key不然会出现渲染不正常 数据正常 重要的是并不会提示错误！！ laravel 的坑 使用laravel markdown email时，不能独立定义header与footer 使用@component('mail::button')时，前方要清除空白。 否则不能正常渲染 要支持header与footer ，将@component('mail::message') 改为 @component('mail::layout') 下方是修改后的例子，也可以直接复制message.blade.php进行修改 找不到message.blade.php时 运行php artisan vendor:publish --tag=laravel-mail 之后可以在vendor/mail/markdown下找到对应文件。 @component('mail::layout') @slot('header') @component('mail::header', ['url' =&amp;gt; config('app.url')]) header @endcomponent @endslot # Introduction The body of your message. @component('mail::button', ['url' =&amp;gt; $url]) button @endcomponent Thanks,&amp;lt;br&amp;gt; @slot('footer') @component('mail::footer') © footer @endcomponent @endslot @endcomponent</summary></entry></feed>

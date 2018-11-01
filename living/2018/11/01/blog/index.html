@@ -83,7 +83,7 @@
 <link href="/assets/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="日记,postman,laravel," />
+  <meta name="keywords" content="日记,laravel," />
 
 
 
@@ -111,17 +111,17 @@
 
 
 
-<meta name="description" content="使用 postman 进行 post 使用postman 直接 post 的方法 laravel 本身有CSRF 直接使用post 、 put 等等会被阻断 找到一个可以解决办法 postman chrome 插件版本 新建一个environment 并切换到新建，右上⚙位置 找一个get请求 在Tests标签下输入 var xsrfCookie = postman.getResponseCookie(&quot;XSRF-TOKEN&quot;); postman.setEnvironmentVariable(&quot;XSRF-TOKEN&quot;, xsrfCookie.value); `` 对应该的是第二行要注意下。 用于获取XSRF-TOKEN的值。 查看environment中 XSRF-TOKEN 是否被正确传入。右上👁位置 确认后在post 的Headers 中添加 X-XSRF-TOKEN : 之后就可以正常提交post了 注意：laravel XSRF-TOKEN 有时效性 注意更新 当XSRF-TOKEN 中有特殊字符，例如%时，laravel X-XSRF-TOKEN 验证会失败 主要是为postman 对XSRF-TOKEN识别有问题，桌面版本没有这个问题 postman 桌面版 同上Tests标签可以写成 pm.environment.set(&quot;xsrf-token&quot;, decodeURIComponent(pm.cookies.get(&quot;XSRF-TOKEN&quot;))) 使用laravel valet 时，postman不能正确访问域名…… 原因valet产生的SSL证书，所以被阻挡，手动关闭后正常使用 要关闭的位置 settings -&amp;gt; SSL certificate verifcation -&amp;gt; off 之后就可以正常使用了 使用valet时 link 与 park 混用会报错！">
-<meta name="keywords" content="日记, postman, laravel">
+<meta name="description" content="智力上线 27号的份 机械劳动久了，智商就下线了 可以快速解决问题，要重复好多次也是蛮蠢的 可是一直进行无创造劳动吧 智商也就慢慢休眠了_(:з」∠)_ 之后美名其曰代码可读性提高了， 不过函数用多了一样不容易读，啊啊啊 好矛盾啊 29日的份 定时自动调整权限完成了~~ 加上之前的权限方便能安心了了~~ 暂时~~ 程序什么的 是要不断改进的 11月1号的份 一小步与一大步，真的只是差了一点点，现在看看方便了不少。 几天前 明白了一些事儿 很意外的 也是很有意思 providers 定义成了 Facades 用起来更方便了 新建class 下面这样写 之后要注意到config\app.php中绑定 &amp;lt;?php namespace App\Facades; use Illuminate\Support\Facades\Facade; class CustomService extends Facade { protected static function getFacadeAccessor() { return &apos;CustomService&apos;; } }">
+<meta name="keywords" content="日记, laravel">
 <meta property="og:type" content="article">
-<meta property="og:title" content="使用 postman 进行 post">
-<meta property="og:url" content="http://localhost:4000/living/2018/10/21/blog/">
+<meta property="og:title" content="智力上线🙂">
+<meta property="og:url" content="http://localhost:4000/living/2018/11/01/blog/">
 <meta property="og:site_name" content="Keleven.Me">
-<meta property="og:description" content="使用 postman 进行 post 使用postman 直接 post 的方法 laravel 本身有CSRF 直接使用post 、 put 等等会被阻断 找到一个可以解决办法 postman chrome 插件版本 新建一个environment 并切换到新建，右上⚙位置 找一个get请求 在Tests标签下输入 var xsrfCookie = postman.getResponseCookie(&quot;XSRF-TOKEN&quot;); postman.setEnvironmentVariable(&quot;XSRF-TOKEN&quot;, xsrfCookie.value); `` 对应该的是第二行要注意下。 用于获取XSRF-TOKEN的值。 查看environment中 XSRF-TOKEN 是否被正确传入。右上👁位置 确认后在post 的Headers 中添加 X-XSRF-TOKEN : 之后就可以正常提交post了 注意：laravel XSRF-TOKEN 有时效性 注意更新 当XSRF-TOKEN 中有特殊字符，例如%时，laravel X-XSRF-TOKEN 验证会失败 主要是为postman 对XSRF-TOKEN识别有问题，桌面版本没有这个问题 postman 桌面版 同上Tests标签可以写成 pm.environment.set(&quot;xsrf-token&quot;, decodeURIComponent(pm.cookies.get(&quot;XSRF-TOKEN&quot;))) 使用laravel valet 时，postman不能正确访问域名…… 原因valet产生的SSL证书，所以被阻挡，手动关闭后正常使用 要关闭的位置 settings -&amp;gt; SSL certificate verifcation -&amp;gt; off 之后就可以正常使用了 使用valet时 link 与 park 混用会报错！">
+<meta property="og:description" content="智力上线 27号的份 机械劳动久了，智商就下线了 可以快速解决问题，要重复好多次也是蛮蠢的 可是一直进行无创造劳动吧 智商也就慢慢休眠了_(:з」∠)_ 之后美名其曰代码可读性提高了， 不过函数用多了一样不容易读，啊啊啊 好矛盾啊 29日的份 定时自动调整权限完成了~~ 加上之前的权限方便能安心了了~~ 暂时~~ 程序什么的 是要不断改进的 11月1号的份 一小步与一大步，真的只是差了一点点，现在看看方便了不少。 几天前 明白了一些事儿 很意外的 也是很有意思 providers 定义成了 Facades 用起来更方便了 新建class 下面这样写 之后要注意到config\app.php中绑定 &amp;lt;?php namespace App\Facades; use Illuminate\Support\Facades\Facade; class CustomService extends Facade { protected static function getFacadeAccessor() { return &apos;CustomService&apos;; } }">
 <meta property="og:locale" content="en">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="使用 postman 进行 post">
-<meta name="twitter:description" content="使用 postman 进行 post 使用postman 直接 post 的方法 laravel 本身有CSRF 直接使用post 、 put 等等会被阻断 找到一个可以解决办法 postman chrome 插件版本 新建一个environment 并切换到新建，右上⚙位置 找一个get请求 在Tests标签下输入 var xsrfCookie = postman.getResponseCookie(&quot;XSRF-TOKEN&quot;); postman.setEnvironmentVariable(&quot;XSRF-TOKEN&quot;, xsrfCookie.value); `` 对应该的是第二行要注意下。 用于获取XSRF-TOKEN的值。 查看environment中 XSRF-TOKEN 是否被正确传入。右上👁位置 确认后在post 的Headers 中添加 X-XSRF-TOKEN : 之后就可以正常提交post了 注意：laravel XSRF-TOKEN 有时效性 注意更新 当XSRF-TOKEN 中有特殊字符，例如%时，laravel X-XSRF-TOKEN 验证会失败 主要是为postman 对XSRF-TOKEN识别有问题，桌面版本没有这个问题 postman 桌面版 同上Tests标签可以写成 pm.environment.set(&quot;xsrf-token&quot;, decodeURIComponent(pm.cookies.get(&quot;XSRF-TOKEN&quot;))) 使用laravel valet 时，postman不能正确访问域名…… 原因valet产生的SSL证书，所以被阻挡，手动关闭后正常使用 要关闭的位置 settings -&amp;gt; SSL certificate verifcation -&amp;gt; off 之后就可以正常使用了 使用valet时 link 与 park 混用会报错！">
+<meta name="twitter:title" content="智力上线🙂">
+<meta name="twitter:description" content="智力上线 27号的份 机械劳动久了，智商就下线了 可以快速解决问题，要重复好多次也是蛮蠢的 可是一直进行无创造劳动吧 智商也就慢慢休眠了_(:з」∠)_ 之后美名其曰代码可读性提高了， 不过函数用多了一样不容易读，啊啊啊 好矛盾啊 29日的份 定时自动调整权限完成了~~ 加上之前的权限方便能安心了了~~ 暂时~~ 程序什么的 是要不断改进的 11月1号的份 一小步与一大步，真的只是差了一点点，现在看看方便了不少。 几天前 明白了一些事儿 很意外的 也是很有意思 providers 定义成了 Facades 用起来更方便了 新建class 下面这样写 之后要注意到config\app.php中绑定 &amp;lt;?php namespace App\Facades; use Illuminate\Support\Facades\Facade; class CustomService extends Facade { protected static function getFacadeAccessor() { return &apos;CustomService&apos;; } }">
 
 
 <script type="text/javascript" id="hexo.configurations">
@@ -154,7 +154,7 @@
 
 
 
-  <title>使用 postman 进行 post | Keleven.Me</title>
+  <title>智力上线🙂 | Keleven.Me</title>
   
 
 
@@ -335,7 +335,7 @@
   
 
   <article class="post post-type- " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://localhost:4000/living/2018/10/21/blog/">
+    <link itemprop="mainEntityOfPage" href="http://localhost:4000/living/2018/11/01/blog/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="K11">
@@ -355,7 +355,7 @@
           <h1 class="post-title" itemprop="name headline">
           
           
-            使用 postman 进行 post
+            智力上线🙂
           
         </h1>
         
@@ -369,8 +369,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-21T08:00:00+08:00">
-                2018-10-21
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-01T08:00:00+08:00">
+                2018-11-01
               </time>
             
 
@@ -411,9 +411,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/living/2018/10/21/blog/#comments" itemprop="discussionUrl">
+                <a href="/living/2018/11/01/blog/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="/living/2018/10/21/blog/" itemprop="commentCount"></span>
+                        data-disqus-identifier="/living/2018/11/01/blog/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -459,62 +459,58 @@
 
 
 
-  <h1 id="使用-postman-进行-post">使用 postman 进行 post</h1>
+  <h1 id="智力上线">智力上线</h1>
 
-<p>使用<code class="highlighter-rouge">postman</code> 直接 <code class="highlighter-rouge">post</code> 的方法</p>
+<h2 id="27号的份">27号的份</h2>
 
-<p><code class="highlighter-rouge">laravel</code> 本身有<code class="highlighter-rouge">CSRF</code> 直接使用<code class="highlighter-rouge">post</code> 、 <code class="highlighter-rouge">put</code> 等等会被阻断</p>
+<p>机械劳动久了，智商就下线了</p>
 
-<p>找到一个可以解决办法</p>
+<p>可以快速解决问题，要重复好多次也是蛮蠢的</p>
 
-<h2 id="postman-chrome-插件版本">postman chrome 插件版本</h2>
+<p>可是一直进行无创造劳动吧 智商也就慢慢休眠了_(:з」∠)_</p>
 
-<p>新建一个<code class="highlighter-rouge">environment</code> 并切换到新建，右上⚙位置</p>
+<p>之后美名其曰代码可读性提高了，</p>
 
-<p>找一个<code class="highlighter-rouge">get</code>请求 在<code class="highlighter-rouge">Tests</code>标签下输入</p>
+<p>不过函数用多了一样不容易读，啊啊啊 好矛盾啊</p>
 
-<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2</pre></td><td class="code"><pre class="highlight"><code>var xsrfCookie = postman.getResponseCookie("XSRF-TOKEN");
-postman.setEnvironmentVariable("XSRF-TOKEN", xsrfCookie.value);
+<hr />
+
+<h2 id="29日的份">29日的份</h2>
+
+<p>定时自动调整权限完成了~~</p>
+
+<p>加上之前的权限方便能安心了了~~ 暂时~~</p>
+
+<p>程序什么的 是要不断改进的</p>
+
+<hr />
+
+<h2 id="11月1号的份">11月1号的份</h2>
+
+<p>一小步与一大步，真的只是差了一点点，现在看看方便了不少。</p>
+
+<p>几天前 明白了一些事儿 很意外的 也是很有意思</p>
+
+<p><code class="highlighter-rouge">providers</code> 定义成了 <code class="highlighter-rouge">Facades</code> 用起来更方便了</p>
+
+<p>新建<code class="highlighter-rouge">class</code> 下面这样写 之后要注意到<code class="highlighter-rouge">config\app.php</code>中绑定</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9<br/>10<br/>11<br/>12<br/>13</pre></td><td class="code"><pre class="highlight"><code><span class="cp">&lt;?php</span> 
+
+<span class="k">namespace</span> <span class="nx">App\Facades</span><span class="p">;</span> 
+
+<span class="k">use</span> <span class="nx">Illuminate\Support\Facades\Facade</span><span class="p">;</span>  
+
+<span class="k">class</span> <span class="nc">CustomService</span> <span class="k">extends</span> <span class="nx">Facade</span> 
+<span class="p">{</span>
+	<span class="k">protected</span> <span class="k">static</span> <span class="k">function</span> <span class="nf">getFacadeAccessor</span><span class="p">()</span> 
+	<span class="p">{</span>
+		<span class="k">return</span> <span class="s1">'CustomService'</span><span class="p">;</span>
+	<span class="p">}</span>
+<span class="p">}</span>
 </code></pre></td></tr></tbody></table></div>
 </div>
 
-<p>`` 对应该的是第二行要注意下。</p>
-
-<p>用于获取<code class="highlighter-rouge">XSRF-TOKEN</code>的值。</p>
-
-<p>查看<code class="highlighter-rouge">environment</code>中 <code class="highlighter-rouge">XSRF-TOKEN</code> 是否被正确传入。右上👁位置</p>
-
-<p>确认后在<code class="highlighter-rouge">post</code> 的<code class="highlighter-rouge">Headers</code> 中添加</p>
-
-<p><code class="highlighter-rouge">X-XSRF-TOKEN : </code></p>
-
-<p>之后就可以正常提交<code class="highlighter-rouge">post</code>了</p>
-
-<p><strong>注意：laravel XSRF-TOKEN 有时效性 注意更新</strong></p>
-
-<p>当<code class="highlighter-rouge">XSRF-TOKEN</code> 中有特殊字符，例如<code class="highlighter-rouge">%</code>时，<code class="highlighter-rouge">laravel X-XSRF-TOKEN</code> 验证会失败</p>
-
-<p>主要是为<code class="highlighter-rouge">postman</code> 对<code class="highlighter-rouge">XSRF-TOKEN</code>识别有问题，桌面版本没有这个问题</p>
-
-<h2 id="postman-桌面版">postman 桌面版</h2>
-
-<p>同上<code class="highlighter-rouge">Tests</code>标签可以写成</p>
-
-<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code>pm.environment.set("xsrf-token", decodeURIComponent(pm.cookies.get("XSRF-TOKEN")))
-</code></pre></td></tr></tbody></table></div>
-</div>
-
-<p>使用<code class="highlighter-rouge">laravel valet</code> 时，<code class="highlighter-rouge">postman</code>不能正确访问域名……</p>
-
-<p>原因<code class="highlighter-rouge">valet</code>产生的<code class="highlighter-rouge">SSL</code>证书，所以被阻挡，手动关闭后正常使用</p>
-
-<p>要关闭的位置</p>
-
-<p><code class="highlighter-rouge">settings</code> -&gt; <code class="highlighter-rouge">SSL certificate verifcation</code> -&gt; <code class="highlighter-rouge">off</code></p>
-
-<p>之后就可以正常使用了</p>
-
-<p>使用<code class="highlighter-rouge">valet</code>时 <code class="highlighter-rouge">link</code> 与 <code class="highlighter-rouge">park</code> 混用会报错！</p>
 
 
       
@@ -549,9 +545,6 @@ postman.setEnvironmentVariable("XSRF-TOKEN", xsrfCookie.value);
             <a href="/tag/#/%E6%97%A5%E8%AE%B0" rel="tag"># 日记</a>
           
             
-            <a href="/tag/#/postman" rel="tag"># postman</a>
-          
-            
             <a href="/tag/#/laravel" rel="tag"># laravel</a>
           
         </div>
@@ -568,18 +561,14 @@ postman.setEnvironmentVariable("XSRF-TOKEN", xsrfCookie.value);
         <div class="post-nav" id="post-nav-id">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/living/2018/10/25/blog/" rel="next" title="几天份">
-                <i class="fa fa-chevron-left"></i> 几天份
-              </a>
-            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/living/2018/10/18/blog/" rel="prev" title="几天的份">
-                几天的份 <i class="fa fa-chevron-right"></i>
+              <a href="/living/2018/10/25/blog/" rel="prev" title="几天份">
+                几天份 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -768,7 +757,7 @@ postman.setEnvironmentVariable("XSRF-TOKEN", xsrfCookie.value);
             
               <div class="post-toc-content">
     <ol class=nav>
-      <li class="nav-item nav-level-1"> <a class="nav-link" href="#使用-postman-进行-post"> <span class="nav-number">1</span> <span class="nav-text">使用 postman 进行 post</span> </a> <ol class="nav-child"> <li class="nav-item nav-level-2"> <a class="nav-link" href="#postman-chrome-插件版本"> <span class="nav-number">1.1</span> <span class="nav-text">postman chrome 插件版本</span> </a> </li> <li class="nav-item nav-level-2"> <a class="nav-link" href="#postman-桌面版"> <span class="nav-number">1.2</span> <span class="nav-text">postman 桌面版</span> </a> </li> </ol> </li>
+      <li class="nav-item nav-level-1"> <a class="nav-link" href="#智力上线"> <span class="nav-number">1</span> <span class="nav-text">智力上线</span> </a> <ol class="nav-child"> <li class="nav-item nav-level-2"> <a class="nav-link" href="#27号的份"> <span class="nav-number">1.1</span> <span class="nav-text">27号的份</span> </a> </li> <li class="nav-item nav-level-2"> <a class="nav-link" href="#29日的份"> <span class="nav-number">1.2</span> <span class="nav-text">29日的份</span> </a> </li> <li class="nav-item nav-level-2"> <a class="nav-link" href="#11月1号的份"> <span class="nav-number">1.3</span> <span class="nav-text">11月1号的份</span> </a> </li> </ol> </li>
     </ol>
   </div>
             
@@ -937,9 +926,9 @@ postman.setEnvironmentVariable("XSRF-TOKEN", xsrfCookie.value);
       
       <script type="text/javascript">
           var disqus_config = function () {
-              this.page.url = 'http://localhost:4000/living/2018/10/21/blog/';
-              this.page.identifier = '/living/2018/10/21/blog/';
-              this.page.title = '使用 postman 进行 post';
+              this.page.url = 'http://localhost:4000/living/2018/11/01/blog/';
+              this.page.identifier = '/living/2018/11/01/blog/';
+              this.page.title = '智力上线🙂';
           };
           var d = document, s = d.createElement('script');
           s.src = 'https://keleven.disqus.com/embed.js';
