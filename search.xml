@@ -2,6 +2,25 @@
 <search>
   
     <entry>
+      <title><![CDATA[好想……]]></title>
+      <url>/living/2018/11/03/blog/</url>
+      <content type="text"><![CDATA[好想什么呢来猜猜吧logs 部分结合laravel logs重构在laravel logs基础上将logs存入数据库先下config\logging中添加channels如下'channels' =&gt; [    'stack' =&gt; [        'driver' =&gt; 'stack',        'channels' =&gt; ['mysql'],    ],	'mysql' =&gt; [	    'driver' =&gt; 'custom',	    'name' =&gt; 'mysql',	    'via' =&gt; App\Logging\MySQLLogger::class,	    'level' =&gt; 'debug',	],]新建MySQLLogger 这部分可以查看laravel 文档Logger 的 name 不能正常传入，问题暂时没找到根源于是进行手动传入&lt;?phpnamespace App\Logging;use Monolog\Logger;use App\Logging\AdminLogsHandler;class MySQLLogger{    public function __invoke(array $config)    {        return new Logger(            env('APP_NAME'),            [                new LogsHandler(                    $config['level'],                    $config['name']                )            ]        );    }}之后是AdminLogsHandler 用于将logs提交到数据库这里也可以复写其他方法，可以自行查看Monolog\Logger&lt;?phpnamespace App\Logging;use Monolog\Logger;use Monolog\Handler\AbstractProcessingHandler;use App\Models\Logs;class AdminLogsHandler extends AbstractProcessingHandler{    private $name;    public function __construct($level, $name)    {        parent::__construct($level);        $this-&gt;name = $name;    }    protected function write(array $record)    {        Logs::create([            'channel' =&gt; $this-&gt;name,            'message' =&gt; $record['message'],            'level'   =&gt; $record['level_name'],            'context' =&gt; $record['context']        ]);    }}App\Models\Logs 注意要添加批量写入    protected $fillable = [        'channel',        'message',        'level',        'context'    ];    protected $casts = [        'context' =&gt; 'array',    ];数据迁移如下$table-&gt;increments('id');$table-&gt;string('channel')-&gt;index();$table-&gt;enum('level', [    'DEBUG',    'INFO',    'NOTICE',    'WARNING',    'ERROR',    'CRITICAL',    'ALERT',    'EMERGENCY'])-&gt;default('INFO');$table-&gt;longText('message');$table-&gt;text('context');$table-&gt;timestamps();之后可以使用Log::info('message' , ['id' =&gt; $id])以上]]></content>
+      <categories>
+        
+          <category> Living </category>
+        
+      </categories>
+      <tags>
+        
+          <tag> 日记 </tag>
+        
+          <tag> laravel </tag>
+        
+      </tags>
+      <tags></tags>
+    </entry>
+  
+    <entry>
       <title><![CDATA[智力上线🙂]]></title>
       <url>/living/2018/11/01/blog/</url>
       <content type="text"><![CDATA[智力上线27号的份机械劳动久了，智商就下线了可以快速解决问题，要重复好多次也是蛮蠢的可是一直进行无创造劳动吧 智商也就慢慢休眠了_(:з」∠)_之后美名其曰代码可读性提高了，不过函数用多了一样不容易读，啊啊啊 好矛盾啊29日的份定时自动调整权限完成了~~加上之前的权限方便能安心了了~~ 暂时~~程序什么的 是要不断改进的11月1号的份一小步与一大步，真的只是差了一点点，现在看看方便了不少。几天前 明白了一些事儿 很意外的 也是很有意思providers 定义成了 Facades 用起来更方便了新建class 下面这样写 之后要注意到config\app.php中绑定&lt;?php namespace App\Facades; use Illuminate\Support\Facades\Facade;  class CustomService extends Facade {	protected static function getFacadeAccessor() 	{		return 'CustomService';	}}]]></content>

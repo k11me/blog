@@ -83,7 +83,7 @@
 <link href="/assets/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="docker,日记," />
+  <meta name="keywords" content="日记,laravel," />
 
 
 
@@ -111,17 +111,17 @@
 
 
 
-<meta name="description" content="blog 更新 blog 更新到 NexT 样式。 使用docker挂载，上传到github快速部署。 nginx-proxy 与 letsencrypt-nginx-proxy-companion 用处自动反向代理与https证书申请，自动续期，二级域名，多站同机变为可能。 version: &apos;2&apos; services: nginx-proxy: image: jwilder/nginx-proxy:latest restart: always ports: - &quot;80:80&quot; - &quot;443:443&quot; volumes: - /path/to/certs:/etc/nginx/certs:ro - /etc/nginx/vhost.d - /usr/share/nginx/html - /var/run/docker.sock:/tmp/docker.sock:ro labels: - &quot;com.github.jrcs.letsencrypt_nginx_proxy_companion.nginx_proxy&quot; network_mode: &quot;bridge&quot; letsencrypt-nginx-proxy-companion: image: jrcs/letsencrypt-nginx-proxy-companion:latest restart: always volumes: - /path/to/certs:/etc/nginx/certs:rw - /var/run/docker.sock:/var/run/docker.sock:ro volumes_from: - nginx-proxy network_mode: &quot;bridge&quot; blog 挂载 version: &apos;2&apos; services: web: image: nginx:latest restart: always environment: - VIRTUAL_HOST=keleven.me - LETSENCRYPT_HOST=keleven.me - LETSENCRYPT_EMAIL=k11@keleven.me volumes: - $PWD/blog2:/usr/share/nginx/html:ro network_mode: &quot;bridge&quot; https 中的坑 问题： 在https页面中使用http链接会导致浏览器默认为不安全。 解决：全部使用https链接可破解。 NexT 的坑 问题： 部分文章在首页显示部分不能。 解决：注意切换换行符LF不显示，CRLF显示。 PS： LF为Linux与Mac os默认。 CRLF为windows默认。 以上">
-<meta name="keywords" content="docker, 日记">
+<meta name="description" content="好想什么呢 来猜猜吧 logs 部分 结合laravel logs重构 在laravel logs基础上将logs存入数据库 先下config\logging中添加channels 如下 &apos;channels&apos; =&amp;gt; [ &apos;stack&apos; =&amp;gt; [ &apos;driver&apos; =&amp;gt; &apos;stack&apos;, &apos;channels&apos; =&amp;gt; [&apos;mysql&apos;], ], &apos;mysql&apos; =&amp;gt; [ &apos;driver&apos; =&amp;gt; &apos;custom&apos;, &apos;name&apos; =&amp;gt; &apos;mysql&apos;, &apos;via&apos; =&amp;gt; App\Logging\MySQLLogger::class, &apos;level&apos; =&amp;gt; &apos;debug&apos;, ], ] 新建MySQLLogger 这部分可以查看laravel 文档 Logger 的 name 不能正常传入，问题暂时没找到根源 于是进行手动传入 &amp;lt;?php namespace App\Logging; use Monolog\Logger; use App\Logging\AdminLogsHandler; class MySQLLogger { public function __invoke(array $config) { return new Logger( env(&apos;APP_NAME&apos;), [ new LogsHandler( $config[&apos;level&apos;], $config[&apos;name&apos;] ) ] ); } } 之后是AdminLogsHandler 用于将logs提交到数据库 这里也可以复写其他方法，可以自行查看Monolog\Logger &amp;lt;?php namespace App\Logging; use Monolog\Logger; use Monolog\Handler\AbstractProcessingHandler; use App\Models\Logs; class AdminLogsHandler extends AbstractProcessingHandler { private $name; public function __construct($level, $name) { parent::__construct($level); $this-&amp;gt;name = $name; } protected function write(array $record) { Logs::create([ &apos;channel&apos; =&amp;gt; $this-&amp;gt;name, &apos;message&apos; =&amp;gt; $record[&apos;message&apos;], &apos;level&apos; =&amp;gt; $record[&apos;level_name&apos;], &apos;context&apos; =&amp;gt; $record[&apos;context&apos;] ]); } } App\Models\Logs 注意要添加批量写入 protected $fillable = [ &apos;channel&apos;, &apos;message&apos;, &apos;level&apos;, &apos;context&apos; ]; protected $casts = [ &apos;context&apos; =&amp;gt; &apos;array&apos;, ]; 数据迁移如下 $table-&amp;gt;increments(&apos;id&apos;); $table-&amp;gt;string(&apos;channel&apos;)-&amp;gt;index(); $table-&amp;gt;enum(&apos;level&apos;, [ &apos;DEBUG&apos;, &apos;INFO&apos;, &apos;NOTICE&apos;, &apos;WARNING&apos;, &apos;ERROR&apos;, &apos;CRITICAL&apos;, &apos;ALERT&apos;, &apos;EMERGENCY&apos; ])-&amp;gt;default(&apos;INFO&apos;); $table-&amp;gt;longText(&apos;message&apos;); $table-&amp;gt;text(&apos;context&apos;); $table-&amp;gt;timestamps(); 之后可以使用 Log::info(&apos;message&apos; , [&apos;id&apos; =&amp;gt; $id]) 以上">
+<meta name="keywords" content="日记, laravel">
 <meta property="og:type" content="article">
-<meta property="og:title" content="2018年01月22日">
-<meta property="og:url" content="http://localhost:4000/living/2018/01/22/blog/">
+<meta property="og:title" content="好想……">
+<meta property="og:url" content="http://localhost:4000/living/2018/11/03/blog/">
 <meta property="og:site_name" content="Keleven.Me">
-<meta property="og:description" content="blog 更新 blog 更新到 NexT 样式。 使用docker挂载，上传到github快速部署。 nginx-proxy 与 letsencrypt-nginx-proxy-companion 用处自动反向代理与https证书申请，自动续期，二级域名，多站同机变为可能。 version: &apos;2&apos; services: nginx-proxy: image: jwilder/nginx-proxy:latest restart: always ports: - &quot;80:80&quot; - &quot;443:443&quot; volumes: - /path/to/certs:/etc/nginx/certs:ro - /etc/nginx/vhost.d - /usr/share/nginx/html - /var/run/docker.sock:/tmp/docker.sock:ro labels: - &quot;com.github.jrcs.letsencrypt_nginx_proxy_companion.nginx_proxy&quot; network_mode: &quot;bridge&quot; letsencrypt-nginx-proxy-companion: image: jrcs/letsencrypt-nginx-proxy-companion:latest restart: always volumes: - /path/to/certs:/etc/nginx/certs:rw - /var/run/docker.sock:/var/run/docker.sock:ro volumes_from: - nginx-proxy network_mode: &quot;bridge&quot; blog 挂载 version: &apos;2&apos; services: web: image: nginx:latest restart: always environment: - VIRTUAL_HOST=keleven.me - LETSENCRYPT_HOST=keleven.me - LETSENCRYPT_EMAIL=k11@keleven.me volumes: - $PWD/blog2:/usr/share/nginx/html:ro network_mode: &quot;bridge&quot; https 中的坑 问题： 在https页面中使用http链接会导致浏览器默认为不安全。 解决：全部使用https链接可破解。 NexT 的坑 问题： 部分文章在首页显示部分不能。 解决：注意切换换行符LF不显示，CRLF显示。 PS： LF为Linux与Mac os默认。 CRLF为windows默认。 以上">
+<meta property="og:description" content="好想什么呢 来猜猜吧 logs 部分 结合laravel logs重构 在laravel logs基础上将logs存入数据库 先下config\logging中添加channels 如下 &apos;channels&apos; =&amp;gt; [ &apos;stack&apos; =&amp;gt; [ &apos;driver&apos; =&amp;gt; &apos;stack&apos;, &apos;channels&apos; =&amp;gt; [&apos;mysql&apos;], ], &apos;mysql&apos; =&amp;gt; [ &apos;driver&apos; =&amp;gt; &apos;custom&apos;, &apos;name&apos; =&amp;gt; &apos;mysql&apos;, &apos;via&apos; =&amp;gt; App\Logging\MySQLLogger::class, &apos;level&apos; =&amp;gt; &apos;debug&apos;, ], ] 新建MySQLLogger 这部分可以查看laravel 文档 Logger 的 name 不能正常传入，问题暂时没找到根源 于是进行手动传入 &amp;lt;?php namespace App\Logging; use Monolog\Logger; use App\Logging\AdminLogsHandler; class MySQLLogger { public function __invoke(array $config) { return new Logger( env(&apos;APP_NAME&apos;), [ new LogsHandler( $config[&apos;level&apos;], $config[&apos;name&apos;] ) ] ); } } 之后是AdminLogsHandler 用于将logs提交到数据库 这里也可以复写其他方法，可以自行查看Monolog\Logger &amp;lt;?php namespace App\Logging; use Monolog\Logger; use Monolog\Handler\AbstractProcessingHandler; use App\Models\Logs; class AdminLogsHandler extends AbstractProcessingHandler { private $name; public function __construct($level, $name) { parent::__construct($level); $this-&amp;gt;name = $name; } protected function write(array $record) { Logs::create([ &apos;channel&apos; =&amp;gt; $this-&amp;gt;name, &apos;message&apos; =&amp;gt; $record[&apos;message&apos;], &apos;level&apos; =&amp;gt; $record[&apos;level_name&apos;], &apos;context&apos; =&amp;gt; $record[&apos;context&apos;] ]); } } App\Models\Logs 注意要添加批量写入 protected $fillable = [ &apos;channel&apos;, &apos;message&apos;, &apos;level&apos;, &apos;context&apos; ]; protected $casts = [ &apos;context&apos; =&amp;gt; &apos;array&apos;, ]; 数据迁移如下 $table-&amp;gt;increments(&apos;id&apos;); $table-&amp;gt;string(&apos;channel&apos;)-&amp;gt;index(); $table-&amp;gt;enum(&apos;level&apos;, [ &apos;DEBUG&apos;, &apos;INFO&apos;, &apos;NOTICE&apos;, &apos;WARNING&apos;, &apos;ERROR&apos;, &apos;CRITICAL&apos;, &apos;ALERT&apos;, &apos;EMERGENCY&apos; ])-&amp;gt;default(&apos;INFO&apos;); $table-&amp;gt;longText(&apos;message&apos;); $table-&amp;gt;text(&apos;context&apos;); $table-&amp;gt;timestamps(); 之后可以使用 Log::info(&apos;message&apos; , [&apos;id&apos; =&amp;gt; $id]) 以上">
 <meta property="og:locale" content="en">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="2018年01月22日">
-<meta name="twitter:description" content="blog 更新 blog 更新到 NexT 样式。 使用docker挂载，上传到github快速部署。 nginx-proxy 与 letsencrypt-nginx-proxy-companion 用处自动反向代理与https证书申请，自动续期，二级域名，多站同机变为可能。 version: &apos;2&apos; services: nginx-proxy: image: jwilder/nginx-proxy:latest restart: always ports: - &quot;80:80&quot; - &quot;443:443&quot; volumes: - /path/to/certs:/etc/nginx/certs:ro - /etc/nginx/vhost.d - /usr/share/nginx/html - /var/run/docker.sock:/tmp/docker.sock:ro labels: - &quot;com.github.jrcs.letsencrypt_nginx_proxy_companion.nginx_proxy&quot; network_mode: &quot;bridge&quot; letsencrypt-nginx-proxy-companion: image: jrcs/letsencrypt-nginx-proxy-companion:latest restart: always volumes: - /path/to/certs:/etc/nginx/certs:rw - /var/run/docker.sock:/var/run/docker.sock:ro volumes_from: - nginx-proxy network_mode: &quot;bridge&quot; blog 挂载 version: &apos;2&apos; services: web: image: nginx:latest restart: always environment: - VIRTUAL_HOST=keleven.me - LETSENCRYPT_HOST=keleven.me - LETSENCRYPT_EMAIL=k11@keleven.me volumes: - $PWD/blog2:/usr/share/nginx/html:ro network_mode: &quot;bridge&quot; https 中的坑 问题： 在https页面中使用http链接会导致浏览器默认为不安全。 解决：全部使用https链接可破解。 NexT 的坑 问题： 部分文章在首页显示部分不能。 解决：注意切换换行符LF不显示，CRLF显示。 PS： LF为Linux与Mac os默认。 CRLF为windows默认。 以上">
+<meta name="twitter:title" content="好想……">
+<meta name="twitter:description" content="好想什么呢 来猜猜吧 logs 部分 结合laravel logs重构 在laravel logs基础上将logs存入数据库 先下config\logging中添加channels 如下 &apos;channels&apos; =&amp;gt; [ &apos;stack&apos; =&amp;gt; [ &apos;driver&apos; =&amp;gt; &apos;stack&apos;, &apos;channels&apos; =&amp;gt; [&apos;mysql&apos;], ], &apos;mysql&apos; =&amp;gt; [ &apos;driver&apos; =&amp;gt; &apos;custom&apos;, &apos;name&apos; =&amp;gt; &apos;mysql&apos;, &apos;via&apos; =&amp;gt; App\Logging\MySQLLogger::class, &apos;level&apos; =&amp;gt; &apos;debug&apos;, ], ] 新建MySQLLogger 这部分可以查看laravel 文档 Logger 的 name 不能正常传入，问题暂时没找到根源 于是进行手动传入 &amp;lt;?php namespace App\Logging; use Monolog\Logger; use App\Logging\AdminLogsHandler; class MySQLLogger { public function __invoke(array $config) { return new Logger( env(&apos;APP_NAME&apos;), [ new LogsHandler( $config[&apos;level&apos;], $config[&apos;name&apos;] ) ] ); } } 之后是AdminLogsHandler 用于将logs提交到数据库 这里也可以复写其他方法，可以自行查看Monolog\Logger &amp;lt;?php namespace App\Logging; use Monolog\Logger; use Monolog\Handler\AbstractProcessingHandler; use App\Models\Logs; class AdminLogsHandler extends AbstractProcessingHandler { private $name; public function __construct($level, $name) { parent::__construct($level); $this-&amp;gt;name = $name; } protected function write(array $record) { Logs::create([ &apos;channel&apos; =&amp;gt; $this-&amp;gt;name, &apos;message&apos; =&amp;gt; $record[&apos;message&apos;], &apos;level&apos; =&amp;gt; $record[&apos;level_name&apos;], &apos;context&apos; =&amp;gt; $record[&apos;context&apos;] ]); } } App\Models\Logs 注意要添加批量写入 protected $fillable = [ &apos;channel&apos;, &apos;message&apos;, &apos;level&apos;, &apos;context&apos; ]; protected $casts = [ &apos;context&apos; =&amp;gt; &apos;array&apos;, ]; 数据迁移如下 $table-&amp;gt;increments(&apos;id&apos;); $table-&amp;gt;string(&apos;channel&apos;)-&amp;gt;index(); $table-&amp;gt;enum(&apos;level&apos;, [ &apos;DEBUG&apos;, &apos;INFO&apos;, &apos;NOTICE&apos;, &apos;WARNING&apos;, &apos;ERROR&apos;, &apos;CRITICAL&apos;, &apos;ALERT&apos;, &apos;EMERGENCY&apos; ])-&amp;gt;default(&apos;INFO&apos;); $table-&amp;gt;longText(&apos;message&apos;); $table-&amp;gt;text(&apos;context&apos;); $table-&amp;gt;timestamps(); 之后可以使用 Log::info(&apos;message&apos; , [&apos;id&apos; =&amp;gt; $id]) 以上">
 
 
 <script type="text/javascript" id="hexo.configurations">
@@ -154,7 +154,7 @@
 
 
 
-  <title>2018年01月22日 | Keleven.Me</title>
+  <title>好想…… | Keleven.Me</title>
   
 
 
@@ -335,7 +335,7 @@
   
 
   <article class="post post-type- " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://localhost:4000/living/2018/01/22/blog/">
+    <link itemprop="mainEntityOfPage" href="http://localhost:4000/living/2018/11/03/blog/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="K11">
@@ -355,7 +355,7 @@
           <h1 class="post-title" itemprop="name headline">
           
           
-            2018年01月22日
+            好想……
           
         </h1>
         
@@ -369,8 +369,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-01-22T09:00:00+08:00">
-                2018-01-22
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-03T08:00:00+08:00">
+                2018-11-03
               </time>
             
 
@@ -411,9 +411,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/living/2018/01/22/blog/#comments" itemprop="discussionUrl">
+                <a href="/living/2018/11/03/blog/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="/living/2018/01/22/blog/" itemprop="commentCount"></span>
+                        data-disqus-identifier="/living/2018/11/03/blog/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -459,78 +459,136 @@
 
 
 
-  <h2 id="blog-更新">blog 更新</h2>
+  <h1 id="好想什么呢">好想什么呢</h1>
 
-<p><code class="highlighter-rouge">blog</code> 更新到 <code class="highlighter-rouge">NexT</code> 样式。</p>
+<p>来猜猜吧</p>
 
-<p>使用<code class="highlighter-rouge">docker</code>挂载，上传到<code class="highlighter-rouge">github</code>快速部署。</p>
+<h2 id="logs-部分">logs 部分</h2>
 
-<h2 id="nginx-proxy-与-letsencrypt-nginx-proxy-companion">nginx-proxy 与 letsencrypt-nginx-proxy-companion</h2>
+<p>结合<code class="highlighter-rouge">laravel logs</code>重构</p>
 
-<p>用处自动反向代理与<code class="highlighter-rouge">https</code>证书申请，自动续期，二级域名，多站同机变为可能。</p>
+<p>在<code class="highlighter-rouge">laravel logs</code>基础上将<code class="highlighter-rouge">logs</code>存入数据库</p>
 
-<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9<br/>10<br/>11<br/>12<br/>13<br/>14<br/>15<br/>16<br/>17<br/>18<br/>19<br/>20<br/>21<br/>22<br/>23<br/>24<br/>25</pre></td><td class="code"><pre class="highlight"><code>version: '2'
-services:
-    nginx-proxy:
-        image: jwilder/nginx-proxy:latest
-        restart: always
-        ports:
-            - "80:80"
-            - "443:443"
-        volumes:
-            - /path/to/certs:/etc/nginx/certs:ro
-            - /etc/nginx/vhost.d
-            - /usr/share/nginx/html
-            - /var/run/docker.sock:/tmp/docker.sock:ro
-        labels:
-            - "com.github.jrcs.letsencrypt_nginx_proxy_companion.nginx_proxy"
-        network_mode: "bridge"
-    letsencrypt-nginx-proxy-companion:
-        image: jrcs/letsencrypt-nginx-proxy-companion:latest
-        restart: always
-        volumes:
-            - /path/to/certs:/etc/nginx/certs:rw
-            - /var/run/docker.sock:/var/run/docker.sock:ro
-        volumes_from:
-            - nginx-proxy
-        network_mode: "bridge"
+<p>先下<code class="highlighter-rouge">config\logging</code>中添加<code class="highlighter-rouge">channels</code></p>
+
+<p>如下</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9<br/>10<br/>11<br/>12</pre></td><td class="code"><pre class="highlight"><code>'channels' =&gt; [
+    'stack' =&gt; [
+        'driver' =&gt; 'stack',
+        'channels' =&gt; ['mysql'],
+    ],
+	'mysql' =&gt; [
+	    'driver' =&gt; 'custom',
+	    'name' =&gt; 'mysql',
+	    'via' =&gt; App\Logging\MySQLLogger::class,
+	    'level' =&gt; 'debug',
+	],
+]
 </code></pre></td></tr></tbody></table></div>
 </div>
 
-<h2 id="blog-挂载">blog 挂载</h2>
+<p>新建<code class="highlighter-rouge">MySQLLogger</code> 这部分可以查看<code class="highlighter-rouge">laravel 文档</code></p>
 
-<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9<br/>10<br/>11<br/>12</pre></td><td class="code"><pre class="highlight"><code>version: '2'
-services:
-    web:
-      image: nginx:latest
-      restart: always
-      environment:
-          - VIRTUAL_HOST=keleven.me
-          - LETSENCRYPT_HOST=keleven.me
-          - LETSENCRYPT_EMAIL=k11@keleven.me
-      volumes:
-          - $PWD/blog2:/usr/share/nginx/html:ro
-      network_mode: "bridge"
+<p><code class="highlighter-rouge">Logger</code> 的 <code class="highlighter-rouge">name</code> 不能正常传入，问题暂时没找到根源</p>
+
+<p>于是进行手动传入</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9<br/>10<br/>11<br/>12<br/>13<br/>14<br/>15<br/>16<br/>17<br/>18<br/>19<br/>20<br/>21</pre></td><td class="code"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+<span class="k">namespace</span> <span class="nx">App\Logging</span><span class="p">;</span>
+
+<span class="k">use</span> <span class="nx">Monolog\Logger</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">App\Logging\AdminLogsHandler</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">MySQLLogger</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">__invoke</span><span class="p">(</span><span class="k">array</span> <span class="nv">$config</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="nx">Logger</span><span class="p">(</span>
+            <span class="nx">env</span><span class="p">(</span><span class="s1">'APP_NAME'</span><span class="p">),</span>
+            <span class="p">[</span>
+                <span class="k">new</span> <span class="nx">LogsHandler</span><span class="p">(</span>
+                    <span class="nv">$config</span><span class="p">[</span><span class="s1">'level'</span><span class="p">],</span>
+                    <span class="nv">$config</span><span class="p">[</span><span class="s1">'name'</span><span class="p">]</span>
+                <span class="p">)</span>
+            <span class="p">]</span>
+        <span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </code></pre></td></tr></tbody></table></div>
 </div>
 
-<h2 id="https-中的坑">https 中的坑</h2>
+<p>之后是<code class="highlighter-rouge">AdminLogsHandler</code> 用于将<code class="highlighter-rouge">logs</code>提交到数据库</p>
 
-<p><strong>问题：</strong> 在<code class="highlighter-rouge">https</code>页面中使用<code class="highlighter-rouge">http</code>链接会导致浏览器默认为不安全。</p>
+<p>这里也可以复写其他方法，可以自行查看<code class="highlighter-rouge">Monolog\Logger</code></p>
 
-<p>解决：全部使用<code class="highlighter-rouge">https</code>链接可破解。</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9<br/>10<br/>11<br/>12<br/>13<br/>14<br/>15<br/>16<br/>17<br/>18<br/>19<br/>20<br/>21<br/>22<br/>23<br/>24<br/>25<br/>26<br/>27</pre></td><td class="code"><pre class="highlight"><code><span class="cp">&lt;?php</span>
 
-<h2 id="next-的坑">NexT 的坑</h2>
+<span class="k">namespace</span> <span class="nx">App\Logging</span><span class="p">;</span>
 
-<p><strong>问题：</strong> 部分文章在首页显示部分不能。</p>
+<span class="k">use</span> <span class="nx">Monolog\Logger</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Monolog\Handler\AbstractProcessingHandler</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">App\Models\Logs</span><span class="p">;</span>
 
-<p>解决：注意切换换行符<code class="highlighter-rouge">LF</code>不显示，<code class="highlighter-rouge">CRLF</code>显示。</p>
+<span class="k">class</span> <span class="nc">AdminLogsHandler</span> <span class="k">extends</span> <span class="nx">AbstractProcessingHandler</span>
+<span class="p">{</span>
+    <span class="k">private</span> <span class="nv">$name</span><span class="p">;</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">(</span><span class="nv">$level</span><span class="p">,</span> <span class="nv">$name</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">parent</span><span class="o">::</span><span class="na">__construct</span><span class="p">(</span><span class="nv">$level</span><span class="p">);</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">name</span> <span class="o">=</span> <span class="nv">$name</span><span class="p">;</span>
+    <span class="p">}</span>
 
-<blockquote>
-  <p>PS：<br />
-<code class="highlighter-rouge">LF</code>为<code class="highlighter-rouge">Linux</code>与<code class="highlighter-rouge">Mac os</code>默认。<br />
-<code class="highlighter-rouge">CRLF</code>为<code class="highlighter-rouge">windows</code>默认。</p>
-</blockquote>
+    <span class="k">protected</span> <span class="k">function</span> <span class="nf">write</span><span class="p">(</span><span class="k">array</span> <span class="nv">$record</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="nx">Logs</span><span class="o">::</span><span class="na">create</span><span class="p">([</span>
+            <span class="s1">'channel'</span> <span class="o">=&gt;</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">name</span><span class="p">,</span>
+            <span class="s1">'message'</span> <span class="o">=&gt;</span> <span class="nv">$record</span><span class="p">[</span><span class="s1">'message'</span><span class="p">],</span>
+            <span class="s1">'level'</span>   <span class="o">=&gt;</span> <span class="nv">$record</span><span class="p">[</span><span class="s1">'level_name'</span><span class="p">],</span>
+            <span class="s1">'context'</span> <span class="o">=&gt;</span> <span class="nv">$record</span><span class="p">[</span><span class="s1">'context'</span><span class="p">]</span>
+        <span class="p">]);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></td></tr></tbody></table></div>
+</div>
+
+<p><code class="highlighter-rouge">App\Models\Logs</code> 注意要添加批量写入</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9</pre></td><td class="code"><pre class="highlight"><code>    protected $fillable = [
+        'channel',
+        'message',
+        'level',
+        'context'
+    ];
+    protected $casts = [
+        'context' =&gt; 'array',
+    ];
+</code></pre></td></tr></tbody></table></div>
+</div>
+
+<p>数据迁移如下</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9<br/>10<br/>11<br/>12<br/>13<br/>14<br/>15</pre></td><td class="code"><pre class="highlight"><code>$table-&gt;increments('id');
+$table-&gt;string('channel')-&gt;index();
+$table-&gt;enum('level', [
+    'DEBUG',
+    'INFO',
+    'NOTICE',
+    'WARNING',
+    'ERROR',
+    'CRITICAL',
+    'ALERT',
+    'EMERGENCY'
+])-&gt;default('INFO');
+$table-&gt;longText('message');
+$table-&gt;text('context');
+$table-&gt;timestamps();
+</code></pre></td></tr></tbody></table></div>
+</div>
+
+<p>之后可以使用</p>
+
+<p><code class="highlighter-rouge">Log::info('message' , ['id' =&gt; $id])</code></p>
 
 <h2 id="以上">以上</h2>
 
@@ -564,10 +622,10 @@ services:
         <div class="post-tags">
           
             
-            <a href="/tag/#/docker" rel="tag"># docker</a>
+            <a href="/tag/#/%E6%97%A5%E8%AE%B0" rel="tag"># 日记</a>
           
             
-            <a href="/tag/#/%E6%97%A5%E8%AE%B0" rel="tag"># 日记</a>
+            <a href="/tag/#/laravel" rel="tag"># laravel</a>
           
         </div>
       
@@ -583,18 +641,14 @@ services:
         <div class="post-nav" id="post-nav-id">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/living/2018/01/26/blog/" rel="next" title="2018年01月26日">
-                <i class="fa fa-chevron-left"></i> 2018年01月26日
-              </a>
-            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/living/2018/01/21/blog/" rel="prev" title="2018年01月21日">
-                2018年01月21日 <i class="fa fa-chevron-right"></i>
+              <a href="/living/2018/11/01/blog/" rel="prev" title="智力上线🙂">
+                智力上线🙂 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -783,7 +837,7 @@ services:
             
               <div class="post-toc-content">
     <ol class=nav>
-      <li class="nav-item nav-level-2"> <a class="nav-link" href="#blog-更新"> <span class="nav-number">1</span> <span class="nav-text">blog 更新</span> </a> </li> <li class="nav-item nav-level-2"> <a class="nav-link" href="#nginx-proxy-与-letsencrypt-nginx-proxy-companion"> <span class="nav-number">2</span> <span class="nav-text">nginx-proxy 与 letsencrypt-nginx-proxy-companion</span> </a> </li> <li class="nav-item nav-level-2"> <a class="nav-link" href="#blog-挂载"> <span class="nav-number">3</span> <span class="nav-text">blog 挂载</span> </a> </li> <li class="nav-item nav-level-2"> <a class="nav-link" href="#https-中的坑"> <span class="nav-number">4</span> <span class="nav-text">https 中的坑</span> </a> </li> <li class="nav-item nav-level-2"> <a class="nav-link" href="#next-的坑"> <span class="nav-number">5</span> <span class="nav-text">NexT 的坑</span> </a> </li> <li class="nav-item nav-level-2"> <a class="nav-link" href="#以上"> <span class="nav-number">6</span> <span class="nav-text">以上</span> </a> </li>
+      <li class="nav-item nav-level-1"> <a class="nav-link" href="#好想什么呢"> <span class="nav-number">1</span> <span class="nav-text">好想什么呢</span> </a> <ol class="nav-child"> <li class="nav-item nav-level-2"> <a class="nav-link" href="#logs-部分"> <span class="nav-number">1.1</span> <span class="nav-text">logs 部分</span> </a> </li> <li class="nav-item nav-level-2"> <a class="nav-link" href="#以上"> <span class="nav-number">1.2</span> <span class="nav-text">以上</span> </a> </li> </ol> </li>
     </ol>
   </div>
             
@@ -952,9 +1006,9 @@ services:
       
       <script type="text/javascript">
           var disqus_config = function () {
-              this.page.url = 'http://localhost:4000/living/2018/01/22/blog/';
-              this.page.identifier = '/living/2018/01/22/blog/';
-              this.page.title = '2018年01月22日';
+              this.page.url = 'http://localhost:4000/living/2018/11/03/blog/';
+              this.page.identifier = '/living/2018/11/03/blog/';
+              this.page.title = '好想……';
           };
           var d = document, s = d.createElement('script');
           s.src = 'https://keleven.disqus.com/embed.js';
