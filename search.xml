@@ -2,6 +2,25 @@
 <search>
   
     <entry>
+      <title><![CDATA[logs完成了]]></title>
+      <url>/living/2018/11/11/blog/</url>
+      <content type="text"><![CDATA[7号的部分logs部分快完成了要不要使用Laravel Scout 是个问题，优势是用之后就是玩家部分了，后端眼看着要搞定了超开心~(≧▽≦)/~啦啦啦目标是12月14日前完成全部后台部分19年3月先做出Dome之后的修补是不可避免的希望众筹能顺利啊~~ 再去香港估计也要提上日程了~~想着要不要将游戏部分开源呢？一个人毕竟是有极限的……有些东西也是可遇不可求的……8号的部分Laravel Homestead 配置了一天最大的问题还是墙解决方案安装vagrant-proxyconf插在Vagrantfile 中添加Vagrant.configure("2") do |config|  if Vagrant.has_plugin?("vagrant-proxyconf")    config.proxy.http     = "http://192.168.1.4:8004"    config.proxy.https    = "http://192.168.1.4:8004"    config.proxy.no_proxy = "localhost,127.0.0.1,.example.com"  endend要在注意的是127.0.0.1指的是虚拟机本身之后在本机或者路由中开启对应端口就完成了9号的份windows 代理自动载入导致 大部分程序不能联网最后重启SPE问题解决……10号的份密码重置完成了 预感有时就的很准11月11的份出门绊倒了 有个小伤口 问题不大心得 合脚的鞋子超级重要！和现在的鞋子相性太差舒适度不高 走远了超辛苦语言切换完成了~~]]></content>
+      <categories>
+        
+          <category> Living </category>
+        
+      </categories>
+      <tags>
+        
+          <tag> 日记 </tag>
+        
+          <tag> laravel </tag>
+        
+      </tags>
+      <tags></tags>
+    </entry>
+  
+    <entry>
       <title><![CDATA[好想……]]></title>
       <url>/living/2018/11/03/blog/</url>
       <content type="text"><![CDATA[好想什么呢来猜猜吧logs 部分结合laravel logs重构在laravel logs基础上将logs存入数据库先下config\logging中添加channels如下'channels' =&gt; [    'stack' =&gt; [        'driver' =&gt; 'stack',        'channels' =&gt; ['mysql'],    ],	'mysql' =&gt; [	    'driver' =&gt; 'custom',	    'name' =&gt; 'mysql',	    'via' =&gt; App\Logging\MySQLLogger::class,	    'level' =&gt; 'debug',	],]新建MySQLLogger 这部分可以查看laravel 文档Logger 的 name 不能正常传入，问题暂时没找到根源于是进行手动传入&lt;?phpnamespace App\Logging;use Monolog\Logger;use App\Logging\AdminLogsHandler;class MySQLLogger{    public function __invoke(array $config)    {        return new Logger(            env('APP_NAME'),            [                new LogsHandler(                    $config['level'],                    $config['name']                )            ]        );    }}之后是AdminLogsHandler 用于将logs提交到数据库这里也可以复写其他方法，可以自行查看Monolog\Logger&lt;?phpnamespace App\Logging;use Monolog\Logger;use Monolog\Handler\AbstractProcessingHandler;use App\Models\Logs;class AdminLogsHandler extends AbstractProcessingHandler{    private $name;    public function __construct($level, $name)    {        parent::__construct($level);        $this-&gt;name = $name;    }    protected function write(array $record)    {        Logs::create([            'channel' =&gt; $this-&gt;name,            'message' =&gt; $record['message'],            'level'   =&gt; $record['level_name'],            'context' =&gt; $record['context']        ]);    }}App\Models\Logs 注意要添加批量写入    protected $fillable = [        'channel',        'message',        'level',        'context'    ];    protected $casts = [        'context' =&gt; 'array',    ];数据迁移如下$table-&gt;increments('id');$table-&gt;string('channel')-&gt;index();$table-&gt;enum('level', [    'DEBUG',    'INFO',    'NOTICE',    'WARNING',    'ERROR',    'CRITICAL',    'ALERT',    'EMERGENCY'])-&gt;default('INFO');$table-&gt;longText('message');$table-&gt;text('context');$table-&gt;timestamps();之后可以使用Log::info('message' , ['id' =&gt; $id])以上]]></content>

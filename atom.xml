@@ -1,4 +1,68 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.5.2">Jekyll</generator><link href="http://localhost:4000/atom.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-11-04T20:07:28+08:00</updated><id>http://localhost:4000/</id><title type="html">Keleven.Me</title><subtitle>千变万化的是世界</subtitle><author><name>K11</name></author><entry><title type="html">好想……</title><link href="http://localhost:4000/living/2018/11/03/blog/" rel="alternate" type="text/html" title="好想……" /><published>2018-11-03T08:00:00+08:00</published><updated>2018-11-03T08:00:00+08:00</updated><id>http://localhost:4000/living/2018/11/03/blog</id><content type="html" xml:base="http://localhost:4000/living/2018/11/03/blog/">&lt;h1 id=&quot;好想什么呢&quot;&gt;好想什么呢&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.5.2">Jekyll</generator><link href="http://localhost:4000/atom.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-11-12T21:52:16+08:00</updated><id>http://localhost:4000/</id><title type="html">Keleven.Me</title><subtitle>千变万化的是世界</subtitle><author><name>K11</name></author><entry><title type="html">logs完成了</title><link href="http://localhost:4000/living/2018/11/11/blog/" rel="alternate" type="text/html" title="logs完成了" /><published>2018-11-11T08:00:00+08:00</published><updated>2018-11-11T08:00:00+08:00</updated><id>http://localhost:4000/living/2018/11/11/blog</id><content type="html" xml:base="http://localhost:4000/living/2018/11/11/blog/">&lt;h1 id=&quot;7号的部分&quot;&gt;7号的部分&lt;/h1&gt;
+
+&lt;h2 id=&quot;logs部分快完成了&quot;&gt;logs部分快完成了&lt;/h2&gt;
+
+&lt;p&gt;要不要使用&lt;code class=&quot;highlighter-rouge&quot;&gt;Laravel Scout&lt;/code&gt; 是个问题，优势是用&lt;/p&gt;
+
+&lt;p&gt;之后就是玩家部分了，后端眼看着要搞定了&lt;/p&gt;
+
+&lt;p&gt;超开心~(≧▽≦)/~啦啦啦&lt;/p&gt;
+
+&lt;p&gt;目标是12月14日前完成全部后台部分&lt;/p&gt;
+
+&lt;p&gt;19年3月先做出&lt;code class=&quot;highlighter-rouge&quot;&gt;Dome&lt;/code&gt;之后的修补是不可避免的&lt;/p&gt;
+
+&lt;p&gt;希望众筹能顺利啊~~ 再去香港估计也要提上日程了~~&lt;/p&gt;
+
+&lt;p&gt;想着要不要将游戏部分开源呢？一个人毕竟是有极限的……&lt;/p&gt;
+
+&lt;p&gt;有些东西也是可遇不可求的……&lt;/p&gt;
+
+&lt;h1 id=&quot;8号的部分&quot;&gt;8号的部分&lt;/h1&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Laravel Homestead&lt;/code&gt; 配置了一天&lt;/p&gt;
+
+&lt;p&gt;最大的问题还是墙&lt;/p&gt;
+
+&lt;p&gt;解决方案&lt;/p&gt;
+
+&lt;p&gt;安装&lt;code class=&quot;highlighter-rouge&quot;&gt;vagrant-proxyconf&lt;/code&gt;插&lt;/p&gt;
+
+&lt;p&gt;在&lt;code class=&quot;highlighter-rouge&quot;&gt;Vagrantfile&lt;/code&gt; 中添加&lt;/p&gt;
+
+&lt;div class=&quot;language-ruby highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;no&quot;&gt;Vagrant&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;configure&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;2&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;config&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Vagrant&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;has_plugin?&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;vagrant-proxyconf&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;config&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;proxy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;http&lt;/span&gt;     &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;http://192.168.1.4:8004&quot;&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;config&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;proxy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;https&lt;/span&gt;    &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;http://192.168.1.4:8004&quot;&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;config&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;proxy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;no_proxy&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;localhost,127.0.0.1,.example.com&quot;&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;要在注意的是&lt;code class=&quot;highlighter-rouge&quot;&gt;127.0.0.1&lt;/code&gt;指的是虚拟机本身&lt;/p&gt;
+
+&lt;p&gt;之后在本机或者路由中开启对应端口就完成了&lt;/p&gt;
+
+&lt;h1 id=&quot;9号的份&quot;&gt;9号的份&lt;/h1&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;windows&lt;/code&gt; 代理自动载入导致 大部分程序不能联网&lt;/p&gt;
+
+&lt;p&gt;最后重启&lt;code class=&quot;highlighter-rouge&quot;&gt;SPE&lt;/code&gt;问题解决……&lt;/p&gt;
+
+&lt;h1 id=&quot;10号的份&quot;&gt;10号的份&lt;/h1&gt;
+
+&lt;p&gt;密码重置完成了 预感有时就的很准&lt;/p&gt;
+
+&lt;h1 id=&quot;11月11的份&quot;&gt;11月11的份&lt;/h1&gt;
+
+&lt;p&gt;出门绊倒了 有个小伤口 问题不大&lt;/p&gt;
+
+&lt;p&gt;心得 合脚的鞋子超级重要！和现在的鞋子相性太差&lt;/p&gt;
+
+&lt;p&gt;舒适度不高 走远了超辛苦&lt;/p&gt;
+
+&lt;p&gt;语言切换完成了~~&lt;/p&gt;</content><author><name>K11</name></author><category term="日记" /><category term="laravel" /><summary type="html">7号的部分 logs部分快完成了 要不要使用Laravel Scout 是个问题，优势是用 之后就是玩家部分了，后端眼看着要搞定了 超开心~(≧▽≦)/~啦啦啦 目标是12月14日前完成全部后台部分 19年3月先做出Dome之后的修补是不可避免的 希望众筹能顺利啊~~ 再去香港估计也要提上日程了~~ 想着要不要将游戏部分开源呢？一个人毕竟是有极限的…… 有些东西也是可遇不可求的…… 8号的部分 Laravel Homestead 配置了一天 最大的问题还是墙 解决方案 安装vagrant-proxyconf插 在Vagrantfile 中添加 Vagrant.configure(&quot;2&quot;) do |config| if Vagrant.has_plugin?(&quot;vagrant-proxyconf&quot;) config.proxy.http = &quot;http://192.168.1.4:8004&quot; config.proxy.https = &quot;http://192.168.1.4:8004&quot; config.proxy.no_proxy = &quot;localhost,127.0.0.1,.example.com&quot; end end 要在注意的是127.0.0.1指的是虚拟机本身 之后在本机或者路由中开启对应端口就完成了 9号的份 windows 代理自动载入导致 大部分程序不能联网 最后重启SPE问题解决…… 10号的份 密码重置完成了 预感有时就的很准 11月11的份 出门绊倒了 有个小伤口 问题不大 心得 合脚的鞋子超级重要！和现在的鞋子相性太差 舒适度不高 走远了超辛苦 语言切换完成了~~</summary></entry><entry><title type="html">好想……</title><link href="http://localhost:4000/living/2018/11/03/blog/" rel="alternate" type="text/html" title="好想……" /><published>2018-11-03T08:00:00+08:00</published><updated>2018-11-03T08:00:00+08:00</updated><id>http://localhost:4000/living/2018/11/03/blog</id><content type="html" xml:base="http://localhost:4000/living/2018/11/03/blog/">&lt;h1 id=&quot;好想什么呢&quot;&gt;好想什么呢&lt;/h1&gt;
 
 &lt;p&gt;来猜猜吧&lt;/p&gt;
 
@@ -434,109 +498,4 @@ something
 
 &lt;p&gt;如果直接使用&lt;code class=&quot;highlighter-rouge&quot;&gt;find()&lt;/code&gt;后使用&lt;code class=&quot;highlighter-rouge&quot;&gt;delete()&lt;/code&gt;有返回&lt;code class=&quot;highlighter-rouge&quot;&gt;null&lt;/code&gt;的可能性&lt;/p&gt;
 
-&lt;p&gt;可以使用&lt;code class=&quot;highlighter-rouge&quot;&gt;where('id' , $id)&lt;/code&gt;后使用&lt;code class=&quot;highlighter-rouge&quot;&gt;delete()&lt;/code&gt; 就可以避免&lt;code class=&quot;highlighter-rouge&quot;&gt;null&lt;/code&gt;的问题&lt;/p&gt;</content><author><name>K11</name></author><category term="日记" /><category term="vue" /><category term="laravel" /><summary type="html">渐渐的上手了 laravel 的错误信息 截取成功 标准化信息返回问题不大 方法是使用 try{ return 'something'; }catch(\Exception $e){ return $e-&amp;gt;getMessage(); } 也可以在App\Exceptions\Handler 的render中做截取 switch($exception-&amp;gt;getMessage()){ case 'someMessage'; return 'someMessage'; } 再次感受到先做后端的重要性！！ laravel model 的一些坑 如果直接使用find()后使用delete()有返回null的可能性 可以使用where('id' , $id)后使用delete() 就可以避免null的问题</summary></entry><entry><title type="html">记录</title><link href="http://localhost:4000/living/2018/09/28/blog/" rel="alternate" type="text/html" title="记录" /><published>2018-09-28T08:00:00+08:00</published><updated>2018-09-28T08:00:00+08:00</updated><id>http://localhost:4000/living/2018/09/28/blog</id><content type="html" xml:base="http://localhost:4000/living/2018/09/28/blog/">&lt;h1 id=&quot;记录&quot;&gt;记录&lt;/h1&gt;
-
-&lt;p&gt;工作指南&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Code Message UI 部分处理&lt;/li&gt;
-  &lt;li&gt;权限手动调整UI&lt;/li&gt;
-  &lt;li&gt;权限系统的全局化，将权限处理加入列队&lt;/li&gt;
-  &lt;li&gt;特定返回信息的响应&lt;/li&gt;
-  &lt;li&gt;二步验证 UI 部分&lt;/li&gt;
-  &lt;li&gt;语言全面本地化 【vuex-i18n】&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id=&quot;code-message&quot;&gt;code message&lt;/h2&gt;
-
-&lt;p&gt;工作详解&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;将全局信息显示功能独立&lt;/li&gt;
-  &lt;li&gt;需要为信息增加分页显示&lt;/li&gt;
-  &lt;li&gt;搜索结果是否使用通用部分显示&lt;/li&gt;
-  &lt;li&gt;识别2fa验证信息并相应【全局模组】&lt;/li&gt;
-  &lt;li&gt;新建信息页面 【需要验证2FA】&lt;/li&gt;
-  &lt;li&gt;编辑信息页面 【需要验证2FA】&lt;/li&gt;
-  &lt;li&gt;删除信息页面 【需要验证2FA】&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;好在&lt;code class=&quot;highlighter-rouge&quot;&gt;2FA&lt;/code&gt;与 &lt;code class=&quot;highlighter-rouge&quot;&gt;code message&lt;/code&gt;可以使用代码手动添加，如果没先做后端真是难以想象，估计是灾难或者加班地狱吧&lt;/p&gt;
-
-&lt;p&gt;反而是语言本地化容易的，可以在休息时完成。&lt;/p&gt;
-
-&lt;p&gt;其他 貌似2FA的优先度比较高，但是信息提示也是非常重要&lt;/p&gt;
-
-&lt;p&gt;对功能分组编写非常重要！一人并行写是比较容易混乱 笔记是一定要的&lt;/p&gt;
-
-&lt;p&gt;好处是发现问题可以及时修正，也要考虑之后的多人协作的效率问题&lt;/p&gt;
-
-&lt;p&gt;多是交给组长处理吧&lt;/p&gt;
-
-&lt;h2 id=&quot;坑&quot;&gt;坑&lt;/h2&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;bootstrap 4.*&lt;/code&gt;是没有图标的 需要自己找&lt;/p&gt;
-
-&lt;p&gt;使用&lt;code class=&quot;highlighter-rouge&quot;&gt;fontawesome&lt;/code&gt; 解决了&lt;/p&gt;
-
-&lt;h2 id=&quot;23号的份&quot;&gt;23号的份&lt;/h2&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Code Message&lt;/code&gt;资源获取、更新、删除部分的UI完成。 调用与测试正常&lt;/p&gt;
-
-&lt;p&gt;想着将&lt;code class=&quot;highlighter-rouge&quot;&gt;laravel&lt;/code&gt; 自带的UI 使用 &lt;code class=&quot;highlighter-rouge&quot;&gt;vue&lt;/code&gt; 重构 最严重的问题还是在本地化语言上。&lt;/p&gt;
-
-&lt;p&gt;只能将使用的分离，其他的再做打算 😭&lt;/p&gt;
-
-&lt;p&gt;基本上这种感觉&lt;/p&gt;
-
-&lt;p&gt;分页显示也是有做的~&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://i.loli.net/2018/09/24/5ba7f4b0cbf57.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;26号的份&quot;&gt;26号的份&lt;/h2&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;code message&lt;/code&gt; 部分基本完成，之后要调整&lt;code class=&quot;highlighter-rouge&quot;&gt;code&lt;/code&gt;并修正一些细小的地方。&lt;/p&gt;
-
-&lt;p&gt;感到前端与后端的耦合度很高，这样之后是大麻烦，要不要全部使用&lt;code class=&quot;highlighter-rouge&quot;&gt;vuex&lt;/code&gt;呢……&lt;/p&gt;
-
-&lt;p&gt;之后 先处理&lt;code class=&quot;highlighter-rouge&quot;&gt;2fa&lt;/code&gt;与验证吧，&lt;code class=&quot;highlighter-rouge&quot;&gt;2fa&lt;/code&gt; 比如是全局的…… 不跨域使用&lt;code class=&quot;highlighter-rouge&quot;&gt;oauth&lt;/code&gt;的意义不大&lt;/p&gt;
-
-&lt;p&gt;不过使用&lt;code class=&quot;highlighter-rouge&quot;&gt;oauth&lt;/code&gt;容易啊~~ 啊啊啊啊啊~~~&lt;/p&gt;
-
-&lt;h2 id=&quot;28号的份&quot;&gt;28号的份&lt;/h2&gt;
-
-&lt;p&gt;添加&lt;code class=&quot;highlighter-rouge&quot;&gt;2fa ui&lt;/code&gt;了，没什么创造性的劳动……&lt;/p&gt;
-
-&lt;p&gt;使&lt;code class=&quot;highlighter-rouge&quot;&gt;button:hover&lt;/code&gt;文字与样式 随鼠标产生变化&lt;/p&gt;
-
-&lt;p&gt;注意定义&lt;code class=&quot;highlighter-rouge&quot;&gt;css&lt;/code&gt; 否则效果不会有变化&lt;/p&gt;
-
-&lt;p&gt;如果使用 &lt;code class=&quot;highlighter-rouge&quot;&gt;vuex-i18n&lt;/code&gt; 可以使用语言行替代 对应位置文字&lt;/p&gt;
-
-&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;button&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;button&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;btn btn-outline-success&quot;&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;v-on:mouseenter=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;button = 'in button'&quot;&lt;/span&gt; 
-&lt;span class=&quot;na&quot;&gt;v-on:mouseleave=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;button = 'out button'&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/button&amp;gt;&lt;/span&gt; 
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
-	&lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-		&lt;span class=&quot;na&quot;&gt;button&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'out button'&lt;/span&gt;
-	&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;language-css highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nc&quot;&gt;.btn-outline-success&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;:hover&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nl&quot;&gt;background-color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;red&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;nc&quot;&gt;.btn-outline-success&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;:not&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;:disabled&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;:not&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;.disabled&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;:active&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nl&quot;&gt;background-color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;red&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;nc&quot;&gt;.btn-outline-success&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;:not&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;:disabled&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;:not&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;.disabled&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;:focus&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nl&quot;&gt;box-shadow&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;none&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;</content><author><name>K11</name></author><category term="日记" /><category term="vue" /><category term="laravel" /><summary type="html">记录 工作指南 Code Message UI 部分处理 权限手动调整UI 权限系统的全局化，将权限处理加入列队 特定返回信息的响应 二步验证 UI 部分 语言全面本地化 【vuex-i18n】 code message 工作详解 将全局信息显示功能独立 需要为信息增加分页显示 搜索结果是否使用通用部分显示 识别2fa验证信息并相应【全局模组】 新建信息页面 【需要验证2FA】 编辑信息页面 【需要验证2FA】 删除信息页面 【需要验证2FA】 好在2FA与 code message可以使用代码手动添加，如果没先做后端真是难以想象，估计是灾难或者加班地狱吧 反而是语言本地化容易的，可以在休息时完成。 其他 貌似2FA的优先度比较高，但是信息提示也是非常重要 对功能分组编写非常重要！一人并行写是比较容易混乱 笔记是一定要的 好处是发现问题可以及时修正，也要考虑之后的多人协作的效率问题 多是交给组长处理吧 坑 bootstrap 4.*是没有图标的 需要自己找 使用fontawesome 解决了 23号的份 Code Message资源获取、更新、删除部分的UI完成。 调用与测试正常 想着将laravel 自带的UI 使用 vue 重构 最严重的问题还是在本地化语言上。 只能将使用的分离，其他的再做打算 😭 基本上这种感觉 分页显示也是有做的~ 26号的份 code message 部分基本完成，之后要调整code并修正一些细小的地方。 感到前端与后端的耦合度很高，这样之后是大麻烦，要不要全部使用vuex呢…… 之后 先处理2fa与验证吧，2fa 比如是全局的…… 不跨域使用oauth的意义不大 不过使用oauth容易啊~~ 啊啊啊啊啊~~~ 28号的份 添加2fa ui了，没什么创造性的劳动…… 使button:hover文字与样式 随鼠标产生变化 注意定义css 否则效果不会有变化 如果使用 vuex-i18n 可以使用语言行替代 对应位置文字 &amp;lt;button type=&quot;button&quot; class=&quot;btn btn-outline-success&quot; v-on:mouseenter=&quot;button = 'in button'&quot; v-on:mouseleave=&quot;button = 'out button'&quot;&amp;gt; &amp;lt;/button&amp;gt; data(){ return { button: 'out button' } } .btn-outline-success:hover{ background-color: red; } .btn-outline-success:not(:disabled):not(.disabled):active{ background-color: red; } .btn-outline-success:not(:disabled):not(.disabled):focus{ box-shadow: none; }</summary></entry></feed>
+&lt;p&gt;可以使用&lt;code class=&quot;highlighter-rouge&quot;&gt;where('id' , $id)&lt;/code&gt;后使用&lt;code class=&quot;highlighter-rouge&quot;&gt;delete()&lt;/code&gt; 就可以避免&lt;code class=&quot;highlighter-rouge&quot;&gt;null&lt;/code&gt;的问题&lt;/p&gt;</content><author><name>K11</name></author><category term="日记" /><category term="vue" /><category term="laravel" /><summary type="html">渐渐的上手了 laravel 的错误信息 截取成功 标准化信息返回问题不大 方法是使用 try{ return 'something'; }catch(\Exception $e){ return $e-&amp;gt;getMessage(); } 也可以在App\Exceptions\Handler 的render中做截取 switch($exception-&amp;gt;getMessage()){ case 'someMessage'; return 'someMessage'; } 再次感受到先做后端的重要性！！ laravel model 的一些坑 如果直接使用find()后使用delete()有返回null的可能性 可以使用where('id' , $id)后使用delete() 就可以避免null的问题</summary></entry></feed>

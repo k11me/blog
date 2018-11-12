@@ -338,6 +338,233 @@
   
 
   <article class="post post-type- " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://localhost:4000/living/2018/07/30/blog/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="K11">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/assets/images/21040889_825385437640313_540035783206109184_a.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Keleven.Me">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+                
+                <a class="post-title-link" href="/living/2018/07/30/blog/" itemprop="url">
+                i18n 全球化语言
+              </a>
+            
+          
+        </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-30T08:00:00+08:00">
+                2018-07-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/category/#/Living" itemprop="url" rel="index">
+                    <span itemprop="name">Living</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/living/2018/07/30/blog/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="/living/2018/07/30/blog/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <h1 id="i18n-全球化语言">i18n 全球化语言</h1>
+
+<p>@lang 与 <code class="highlighter-rouge">__('lange')</code> 不能在vue中使用</p>
+
+<p>于是找到<code class="highlighter-rouge">martinlindhe/laravel-vue-i18n-generator</code>包</p>
+
+<p>不过要注意的 README 有错误</p>
+
+<p>使用<code class="highlighter-rouge">vue-i18n</code> 后<code class="highlighter-rouge">$t('lang')</code> 不能正常渲染 疑似<code class="highlighter-rouge">vue</code>的bug</p>
+
+<p><code class="highlighter-rouge">vuex-i18n</code> 则正常</p>
+
+<p>修改<code class="highlighter-rouge"> resources/assets/js/app.js</code></p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9<br/>10<br/>11<br/>12<br/>13<br/>14<br/>15<br/>16<br/>17</pre></td><td class="code"><pre class="highlight"><code><span class="kr">import</span> <span class="nx">Vuex</span> <span class="nx">from</span> <span class="s1">'vuex'</span><span class="p">;</span>
+<span class="kr">import</span> <span class="nx">vuexI18n</span> <span class="nx">from</span> <span class="s1">'vuex-i18n'</span><span class="p">;</span>
+<span class="kr">import</span> <span class="nx">Locales</span> <span class="nx">from</span> <span class="s1">'./vue-i18n-locales.generated.js'</span><span class="p">;</span>
+
+<span class="nx">Vue</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">Vuex</span><span class="p">);</span>
+<span class="kr">const</span> <span class="nx">store</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Vuex</span><span class="p">.</span><span class="nx">Store</span><span class="p">();</span>
+<span class="nx">Vue</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">vuexI18n</span><span class="p">.</span><span class="nx">plugin</span><span class="p">,</span> <span class="nx">store</span><span class="p">);</span>
+
+<span class="nx">Vue</span><span class="p">.</span><span class="nx">i18n</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s1">'en'</span><span class="p">,</span> <span class="nx">Locales</span><span class="p">.</span><span class="nx">en</span><span class="p">);</span>
+<span class="nx">Vue</span><span class="p">.</span><span class="nx">i18n</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s1">'zh'</span><span class="p">,</span> <span class="nx">Locales</span><span class="p">.</span><span class="nx">zh</span><span class="p">);</span>
+
+<span class="nx">Vue</span><span class="p">.</span><span class="nx">i18n</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s1">'en'</span><span class="p">);</span>
+
+<span class="kr">const</span> <span class="nx">app</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Vue</span><span class="p">({</span>
+    <span class="nx">store</span><span class="p">,</span>
+    <span class="na">el</span><span class="p">:</span> <span class="s1">'#app'</span><span class="p">,</span>
+<span class="p">});</span>
+</code></pre></td></tr></tbody></table></div>
+</div>
+
+<p>之后就可以正常的使用<code class="highlighter-rouge">$t()</code>了 同时也支持复数形式</p>
+
+<p><a href="https://medium.com/@konafets/localization-with-laravel-and-vuejs-e27068e68ee8">参考地址</a></p>
+
+<p><strong>优点：不用设置后端后再设置前端 使用<code class="highlighter-rouge">php artisan vue-i18n:generate</code>可以直接创建或更新<code class="highlighter-rouge">vue</code>的语言设置</strong></p>
+
+<h1 id="天朝上邦">天朝上邦</h1>
+
+<p>估计汇率1比20是早晚的事儿了</p>
+
+<p>某不可描述的两物必须灭亡</p>
+
+<p>也算死了 账也是要算的 逃不掉的</p>
+
+<p>准备被人唾弃到世界终结吧</p>
+
+
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/living/2018/07/30/blog/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+        
+        
+        
+        
+          <div class="post-eof"></div>
+        
+      
+    </footer>
+  </article>
+
+  
+    
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type- " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://localhost:4000/living/2018/07/28/blog/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -2197,245 +2424,6 @@ php artisan horizon:continue
         
         
         
-          <div class="post-eof"></div>
-        
-      
-    </footer>
-  </article>
-
-  
-    
-    
-
-  
-
-  
-  
-  
-
-  <article class="post post-type- " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://localhost:4000/living/2018/06/22/blog/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="K11">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/assets/images/21040889_825385437640313_540035783206109184_a.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Keleven.Me">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-                
-                <a class="post-title-link" href="/living/2018/06/22/blog/" itemprop="url">
-                时间走慢点！
-              </a>
-            
-          
-        </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-06-22T08:00:01+08:00">
-                2018-06-22
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/category/#/Living" itemprop="url" rel="index">
-                    <span itemprop="name">Living</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/living/2018/06/22/blog/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="/living/2018/06/22/blog/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-  
-  
-
-
-
-
-
-
-
-
-
-
-
-
-  <h2 id="日常">日常</h2>
-
-<h3 id="这是粽子节的份">这是粽子节的份</h3>
-
-<p>粽子节了~</p>
-
-<p>为什么想到的是僵尸小美😂</p>
-
-<p>一些事儿突然懂了……</p>
-
-<h3 id="6月22日的份">6月22日的份</h3>
-
-<p>单方面利用率高也是够了</p>
-
-<p>知识也并不是免费的</p>
-
-<p>好烦估计就没有下次了</p>
-
-<p>张开口就朋友，兄弟的…… 超恶心……</p>
-
-<p>还有一点小事就半夜2点给人打电话的……</p>
-
-<p>你算老几啊……</p>
-
-<p>还有没有事先说明就向人家家里带人的</p>
-
-<p>有点常识和礼貌会死吗……</p>
-
-<h3 id="梦想的秋叶原">梦想的秋叶原</h3>
-
-<p>前几天拆了空气净化器，发现是步进电机的齿轮磨损了</p>
-
-<p>只能换新</p>
-
-<p>型号<code class="highlighter-rouge">MSBPC20A20</code> 我朝是弄不到了……</p>
-
-<p><img src="https://i.loli.net/2018/06/22/5b2d08a448e14.jpg" alt="IMG_20180617_184254.png" /></p>
-
-<p>估计只有秋叶原了加入购物列表吧……</p>
-
-<p>某种程度上来说，秋叶原是天堂！！</p>
-
-<h3 id="相机入手考虑">相机入手考虑</h3>
-
-<p>就易用性来说大法a7r3 比 X1D 好很多……</p>
-
-<p>莱卡？ 什么时候到到四千万像素，什么时候在说……</p>
-
-<p>有消息说<code class="highlighter-rouge">ZEISS Batis 40mm</code> 要出了 完美挂机 手动再见了~~</p>
-
-<p>佳能的17mm移轴 与 <a href="http://www.metabones.com/products/details/MB-EF-E-BT5">转接环</a> 也是必须入手的 谁让我爱照建筑与风景呢</p>
-
-<p>用移轴拍出到长腿太容易了</p>
-
-<p>三脚架什么的是必须有的吧 HDR 摄像也是非常有趣的</p>
-
-<p><code class="highlighter-rouge">ZEISS Batis 2.8/18</code> 也是必备呢</p>
-
-<p><code class="highlighter-rouge">ZEISS Batis 1.8/85</code> 与 <code class="highlighter-rouge">ZEISS Batis 2.8/135</code> 也遇到喜欢人在考虑吧</p>
-
-<h2 id="以上">以上</h2>
-
-
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/living/2018/06/22/blog/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-        
-        
-        
-        
       
     </footer>
   </article>
@@ -2497,7 +2485,7 @@ php artisan horizon:continue
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">93</span>
+                <span class="site-state-item-count">94</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
