@@ -338,6 +338,269 @@
   
 
   <article class="post post-type- " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://localhost:4000/ubuntu/2016/07/12/jekyll/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="K11">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/assets/images/21040889_825385437640313_540035783206109184_a.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Keleven.Me">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+                
+                <a class="post-title-link" href="/ubuntu/2016/07/12/jekyll/" itemprop="url">
+                jekyll 学习指南
+              </a>
+            
+          
+        </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-07-12T23:30:45+08:00">
+                2016-07-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/category/#/ubuntu" itemprop="url" rel="index">
+                    <span itemprop="name">ubuntu</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/ubuntu/2016/07/12/jekyll/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="/ubuntu/2016/07/12/jekyll/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 id="1jekyll">1.jekyll</h2>
+
+<p><a href="https://jekyllrb.com/">jekyll官方地址</a></p>
+
+<p><a href="http://jekyllcn.com/">jekyll中文</a></p>
+
+<h3 id="11安装jekyll必要组件">1.1安装jekyll必要组件</h3>
+
+<p>下文是在ubuntu上安装与设置</p>
+
+<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code>$ sudo apt-get install ruby ruby-dev make gcc nodejs
+</code></pre></td></tr></tbody></table></div>
+</div>
+
+<h3 id="12安装jekyll">1.2安装jekyll</h3>
+
+<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code>$ sudo gem install jekyll
+</code></pre></td></tr></tbody></table></div>
+</div>
+
+<p>之后查看jekyll版本</p>
+
+<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code>$ jekyll -v
+</code></pre></td></tr></tbody></table></div>
+</div>
+
+<h3 id="13jekyll使用">1.3jekyll使用</h3>
+
+<p>首先要设置<code class="highlighter-rouge">_config.yml</code>文件</p>
+
+<p>随后build为site。</p>
+
+<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code>$ jekyll build
+</code></pre></td></tr></tbody></table></div>
+</div>
+
+<p>build后网站文件在<code class="highlighter-rouge">_site</code></p>
+
+<p>使用<code class="highlighter-rouge">jekyll server</code>运行测试。</p>
+
+<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code>$ jekyll server
+</code></pre></td></tr></tbody></table></div>
+</div>
+
+<p>浏览器输入<code class="highlighter-rouge">localhost:4000</code>可以查看网站运行情况。</p>
+
+<p><code class="highlighter-rouge">_post</code>文件下位文章列表，可以将文章放入后build。</p>
+
+<p><em>注意：文件的头部要使用下方格式</em></p>
+
+<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4</pre></td><td class="code"><pre class="highlight"><code>---
+layout: post
+title: Blogging Like a Hacker
+---
+</code></pre></td></tr></tbody></table></div>
+</div>
+
+<h2 id="2-kramdown-语法说明">2. kramdown 语法说明</h2>
+
+<h3 id="21-toc连接文章目录">2.1 TOC连接[文章目录]</h3>
+
+<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2</pre></td><td class="code"><pre class="highlight"><code>* TOC
+{：toc}
+</code></pre></td></tr></tbody></table></div>
+</div>
+
+<p>生成目录带自动锚点</p>
+
+<h3 id="22-删除线">2.2 删除线</h3>
+
+<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code>~~删除线~~
+</code></pre></td></tr></tbody></table></div>
+</div>
+
+<h3 id="23-数学公式">2.3 数学公式</h3>
+
+<p>需要增加<code class="highlighter-rouge">js</code>用于公式解析</p>
+
+<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code>&lt;script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"&gt;&lt;/script&gt;
+</code></pre></td></tr></tbody></table></div>
+</div>
+
+<h2 id="3-disqus">3. disqus</h2>
+
+<p>添加<code class="highlighter-rouge">disqus</code>代码到<code class="highlighter-rouge">_layouts/post.html</code></p>
+
+
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/ubuntu/2016/07/12/jekyll/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+        
+        
+        
+        
+          <div class="post-eof"></div>
+        
+      
+    </footer>
+  </article>
+
+  
+    
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type- " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://localhost:4000/ubuntu/2016/07/12/gulp/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1545,7 +1808,7 @@ http://mirrors.yun-idc.com/archlinux/
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">95</span>
+                <span class="site-state-item-count">96</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>

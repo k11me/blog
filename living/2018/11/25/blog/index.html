@@ -83,7 +83,7 @@
 <link href="/assets/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="日记,SSH," />
+  <meta name="keywords" content="日记,laravel," />
 
 
 
@@ -111,17 +111,17 @@
 
 
 
-<meta name="description" content="同系统下多SSH 使用 参考文档 新建SSH-KEY ssh-keygen -t rsa -b 4096 -C &quot;your_email@example.com&quot; 输入SSH KEY 文件位置，例如/Users/you/.ssh/id_rsa_2 为什么是id_rsa_2 ？ 一般会有一个id_rsa为默认KEY。 Enter a file in which to save the key (/Users/you/.ssh/id_rsa): [Press enter] 添加到~/.ssh/config 新建文件~/.ssh/config 编辑如下内容 1 2 3 4 5 6 7 8 9 10Host github.com HostName github.com User *******@*******.com PreferredAuthentications publickey IdentityFile ~/.ssh/id_rsa Host 2github.com HostName github.com User *******@*******.com PreferredAuthentications publickey IdentityFile ~/.ssh/id_rsa_2 注意：如果多个github账号，Host不能设置为相同。 最后添加新KEY到系统,并添加公钥到github对应账号。 ssh-add -K ~/.ssh/id_rsa ssh-add -K ~/.ssh/id_rsa_2 测试KEY是否添加 ssh-add -l 测试KEY是否有效 ssh -T git@github.com ssh -T git@2github.com Git项目中设置 设置对应email与name git config --local user.email &quot;***@****.***&quot; git config --local user.name &quot;***&quot; 添加remote,注意与HostName对应 git remote add origin git@2github.com:****/***.git 也可以直接修改.git/config。">
-<meta name="keywords" content="日记, SSH">
+<meta name="description" content="25日的份 将laravel 默认的id 改为 uuid 的方法，以及passport 使用uuid user 部分 当不使用传统id时， 先在模型中写入 关闭默认排序 public $incrementing = false; 再migrate中修改 $table-&amp;gt;increments(&apos;id&apos;); 为 $table-&amp;gt;uuid(&apos;id&apos;)-&amp;gt;primary(); 随后运行la5 migrate 新建App\Traits\Uuid 内容如下 &amp;lt;?php namespace App\Traits; use Illuminate\Support\Str; trait Uuid { /** * Boot function from laravel. */ protected static function boot() { parent::boot(); static::creating(function ($model) { $model-&amp;gt;{$model-&amp;gt;getKeyName()} = (string) Str::orderedUuid(); }); } } 随后在模型中添加 use App\Traits\Uuid; use Uuid; 之后使用laravel自带的auth可以正常注册了。密码找回功能也可以使用。 参考文档 passport 部分 当 passport安装完成后 执行php artisan vendor:publish --tag=passport-migrations 复制迁移到migrate目录 修改CreateOauthClientsTable $table-&amp;gt;increments(&apos;id&apos;); $table-&amp;gt;integer(&apos;user_id&apos;)-&amp;gt;index()-&amp;gt;nullable(); // 改为 $table-&amp;gt;uuid(&apos;id&apos;)-&amp;gt;primary(); $table-&amp;gt;uuid(&apos;user_id&apos;)-&amp;gt;index()-&amp;gt;nullable(); 其他迁移将client_id与user_id 改为使用uuid App\Providers\AppServiceProvider中引入部分添加 use Laravel\Passport\Client; use Illuminate\Support\Str; boot()部分添加 Client::creating(function (Client $client) { $client-&amp;gt;incrementing = false; $client-&amp;gt;id = (string) Str::orderedUuid(); }); Client::retrieved(function (Client $client) { $client-&amp;gt;incrementing = false; }); register() 部分添加 Passport::ignoreMigrations(); 其他部分按照文档即可正常使用。 参考文档 user 路径修改 在App\Http\Controllers\Auth\RegisterController中修改 在config中的providers修改到对应路径 之后可以正常使用 laravel 包开发 包的开发非常有利于后期的维护，同时也可以有效的分配工作任务，对未来的团队工作有极大的优势。 主要是功能混在一起，找起来超级烦。 有必要将独立的功能分散出去。 参考地址 1 参考地址 2 需要说明的是 namespace与autoload超级重要">
+<meta name="keywords" content="日记, laravel">
 <meta property="og:type" content="article">
-<meta property="og:title" content="2018年02月08日">
-<meta property="og:url" content="http://localhost:4000/living/2018/02/08/blog/">
+<meta property="og:title" content="user 使用uuid">
+<meta property="og:url" content="http://localhost:4000/living/2018/11/25/blog/">
 <meta property="og:site_name" content="Keleven.Me">
-<meta property="og:description" content="同系统下多SSH 使用 参考文档 新建SSH-KEY ssh-keygen -t rsa -b 4096 -C &quot;your_email@example.com&quot; 输入SSH KEY 文件位置，例如/Users/you/.ssh/id_rsa_2 为什么是id_rsa_2 ？ 一般会有一个id_rsa为默认KEY。 Enter a file in which to save the key (/Users/you/.ssh/id_rsa): [Press enter] 添加到~/.ssh/config 新建文件~/.ssh/config 编辑如下内容 1 2 3 4 5 6 7 8 9 10Host github.com HostName github.com User *******@*******.com PreferredAuthentications publickey IdentityFile ~/.ssh/id_rsa Host 2github.com HostName github.com User *******@*******.com PreferredAuthentications publickey IdentityFile ~/.ssh/id_rsa_2 注意：如果多个github账号，Host不能设置为相同。 最后添加新KEY到系统,并添加公钥到github对应账号。 ssh-add -K ~/.ssh/id_rsa ssh-add -K ~/.ssh/id_rsa_2 测试KEY是否添加 ssh-add -l 测试KEY是否有效 ssh -T git@github.com ssh -T git@2github.com Git项目中设置 设置对应email与name git config --local user.email &quot;***@****.***&quot; git config --local user.name &quot;***&quot; 添加remote,注意与HostName对应 git remote add origin git@2github.com:****/***.git 也可以直接修改.git/config。">
+<meta property="og:description" content="25日的份 将laravel 默认的id 改为 uuid 的方法，以及passport 使用uuid user 部分 当不使用传统id时， 先在模型中写入 关闭默认排序 public $incrementing = false; 再migrate中修改 $table-&amp;gt;increments(&apos;id&apos;); 为 $table-&amp;gt;uuid(&apos;id&apos;)-&amp;gt;primary(); 随后运行la5 migrate 新建App\Traits\Uuid 内容如下 &amp;lt;?php namespace App\Traits; use Illuminate\Support\Str; trait Uuid { /** * Boot function from laravel. */ protected static function boot() { parent::boot(); static::creating(function ($model) { $model-&amp;gt;{$model-&amp;gt;getKeyName()} = (string) Str::orderedUuid(); }); } } 随后在模型中添加 use App\Traits\Uuid; use Uuid; 之后使用laravel自带的auth可以正常注册了。密码找回功能也可以使用。 参考文档 passport 部分 当 passport安装完成后 执行php artisan vendor:publish --tag=passport-migrations 复制迁移到migrate目录 修改CreateOauthClientsTable $table-&amp;gt;increments(&apos;id&apos;); $table-&amp;gt;integer(&apos;user_id&apos;)-&amp;gt;index()-&amp;gt;nullable(); // 改为 $table-&amp;gt;uuid(&apos;id&apos;)-&amp;gt;primary(); $table-&amp;gt;uuid(&apos;user_id&apos;)-&amp;gt;index()-&amp;gt;nullable(); 其他迁移将client_id与user_id 改为使用uuid App\Providers\AppServiceProvider中引入部分添加 use Laravel\Passport\Client; use Illuminate\Support\Str; boot()部分添加 Client::creating(function (Client $client) { $client-&amp;gt;incrementing = false; $client-&amp;gt;id = (string) Str::orderedUuid(); }); Client::retrieved(function (Client $client) { $client-&amp;gt;incrementing = false; }); register() 部分添加 Passport::ignoreMigrations(); 其他部分按照文档即可正常使用。 参考文档 user 路径修改 在App\Http\Controllers\Auth\RegisterController中修改 在config中的providers修改到对应路径 之后可以正常使用 laravel 包开发 包的开发非常有利于后期的维护，同时也可以有效的分配工作任务，对未来的团队工作有极大的优势。 主要是功能混在一起，找起来超级烦。 有必要将独立的功能分散出去。 参考地址 1 参考地址 2 需要说明的是 namespace与autoload超级重要">
 <meta property="og:locale" content="en">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="2018年02月08日">
-<meta name="twitter:description" content="同系统下多SSH 使用 参考文档 新建SSH-KEY ssh-keygen -t rsa -b 4096 -C &quot;your_email@example.com&quot; 输入SSH KEY 文件位置，例如/Users/you/.ssh/id_rsa_2 为什么是id_rsa_2 ？ 一般会有一个id_rsa为默认KEY。 Enter a file in which to save the key (/Users/you/.ssh/id_rsa): [Press enter] 添加到~/.ssh/config 新建文件~/.ssh/config 编辑如下内容 1 2 3 4 5 6 7 8 9 10Host github.com HostName github.com User *******@*******.com PreferredAuthentications publickey IdentityFile ~/.ssh/id_rsa Host 2github.com HostName github.com User *******@*******.com PreferredAuthentications publickey IdentityFile ~/.ssh/id_rsa_2 注意：如果多个github账号，Host不能设置为相同。 最后添加新KEY到系统,并添加公钥到github对应账号。 ssh-add -K ~/.ssh/id_rsa ssh-add -K ~/.ssh/id_rsa_2 测试KEY是否添加 ssh-add -l 测试KEY是否有效 ssh -T git@github.com ssh -T git@2github.com Git项目中设置 设置对应email与name git config --local user.email &quot;***@****.***&quot; git config --local user.name &quot;***&quot; 添加remote,注意与HostName对应 git remote add origin git@2github.com:****/***.git 也可以直接修改.git/config。">
+<meta name="twitter:title" content="user 使用uuid">
+<meta name="twitter:description" content="25日的份 将laravel 默认的id 改为 uuid 的方法，以及passport 使用uuid user 部分 当不使用传统id时， 先在模型中写入 关闭默认排序 public $incrementing = false; 再migrate中修改 $table-&amp;gt;increments(&apos;id&apos;); 为 $table-&amp;gt;uuid(&apos;id&apos;)-&amp;gt;primary(); 随后运行la5 migrate 新建App\Traits\Uuid 内容如下 &amp;lt;?php namespace App\Traits; use Illuminate\Support\Str; trait Uuid { /** * Boot function from laravel. */ protected static function boot() { parent::boot(); static::creating(function ($model) { $model-&amp;gt;{$model-&amp;gt;getKeyName()} = (string) Str::orderedUuid(); }); } } 随后在模型中添加 use App\Traits\Uuid; use Uuid; 之后使用laravel自带的auth可以正常注册了。密码找回功能也可以使用。 参考文档 passport 部分 当 passport安装完成后 执行php artisan vendor:publish --tag=passport-migrations 复制迁移到migrate目录 修改CreateOauthClientsTable $table-&amp;gt;increments(&apos;id&apos;); $table-&amp;gt;integer(&apos;user_id&apos;)-&amp;gt;index()-&amp;gt;nullable(); // 改为 $table-&amp;gt;uuid(&apos;id&apos;)-&amp;gt;primary(); $table-&amp;gt;uuid(&apos;user_id&apos;)-&amp;gt;index()-&amp;gt;nullable(); 其他迁移将client_id与user_id 改为使用uuid App\Providers\AppServiceProvider中引入部分添加 use Laravel\Passport\Client; use Illuminate\Support\Str; boot()部分添加 Client::creating(function (Client $client) { $client-&amp;gt;incrementing = false; $client-&amp;gt;id = (string) Str::orderedUuid(); }); Client::retrieved(function (Client $client) { $client-&amp;gt;incrementing = false; }); register() 部分添加 Passport::ignoreMigrations(); 其他部分按照文档即可正常使用。 参考文档 user 路径修改 在App\Http\Controllers\Auth\RegisterController中修改 在config中的providers修改到对应路径 之后可以正常使用 laravel 包开发 包的开发非常有利于后期的维护，同时也可以有效的分配工作任务，对未来的团队工作有极大的优势。 主要是功能混在一起，找起来超级烦。 有必要将独立的功能分散出去。 参考地址 1 参考地址 2 需要说明的是 namespace与autoload超级重要">
 
 
 <script type="text/javascript" id="hexo.configurations">
@@ -154,7 +154,7 @@
 
 
 
-  <title>2018年02月08日 | Keleven.Me</title>
+  <title>user 使用uuid | Keleven.Me</title>
   
 
 
@@ -335,7 +335,7 @@
   
 
   <article class="post post-type- " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://localhost:4000/living/2018/02/08/blog/">
+    <link itemprop="mainEntityOfPage" href="http://localhost:4000/living/2018/11/25/blog/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="K11">
@@ -355,7 +355,7 @@
           <h1 class="post-title" itemprop="name headline">
           
           
-            2018年02月08日
+            user 使用uuid
           
         </h1>
         
@@ -369,8 +369,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-08T09:00:00+08:00">
-                2018-02-08
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-25T08:00:00+08:00">
+                2018-11-25
               </time>
             
 
@@ -411,9 +411,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/living/2018/02/08/blog/#comments" itemprop="discussionUrl">
+                <a href="/living/2018/11/25/blog/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="/living/2018/02/08/blog/" itemprop="commentCount"></span>
+                        data-disqus-identifier="/living/2018/11/25/blog/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -459,91 +459,141 @@
 
 
 
-  <h2 id="同系统下多ssh-使用">同系统下多SSH 使用</h2>
+  <h1 id="25日的份">25日的份</h1>
 
-<p><a href="https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/">参考文档</a></p>
+<p>将<code class="highlighter-rouge">laravel</code> 默认的<code class="highlighter-rouge">id</code> 改为 <code class="highlighter-rouge">uuid</code> 的方法，以及<code class="highlighter-rouge">passport</code> 使用<code class="highlighter-rouge">uuid</code></p>
 
-<h3 id="新建ssh-key">新建SSH-KEY</h3>
+<h2 id="user-部分">user 部分</h2>
 
-<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code>ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+<p>当不使用传统<code class="highlighter-rouge">id</code>时，</p>
+
+<p>先在模型中写入 关闭默认排序</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code>public $incrementing = false;
 </code></pre></td></tr></tbody></table></div>
 </div>
 
-<p>输入SSH KEY 文件位置，例如<code class="highlighter-rouge">/Users/you/.ssh/id_rsa_2</code></p>
+<p>再<code class="highlighter-rouge">migrate</code>中修改</p>
 
-<p>为什么是<code class="highlighter-rouge">id_rsa_2</code> ？</p>
-
-<p>一般会有一个<code class="highlighter-rouge">id_rsa</code>为默认KEY。</p>
-
-<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code>Enter a file in which to save the key (/Users/you/.ssh/id_rsa): [Press enter]
+<div class="language-php highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code>$table-&gt;increments('id');
 </code></pre></td></tr></tbody></table></div>
 </div>
 
-<h3 id="添加到sshconfig">添加到<code class="highlighter-rouge">~/.ssh/config</code></h3>
+<p>为</p>
 
-<p>新建文件<code class="highlighter-rouge">~/.ssh/config</code></p>
-
-<p>编辑如下内容</p>
-
-<figure class="highlight"><pre><code class="language-text" data-lang="text"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-10</pre></td><td class="code"><pre>Host github.com
-  HostName github.com
-  User *******@*******.com
-  PreferredAuthentications publickey
-  IdentityFile ~/.ssh/id_rsa
-Host 2github.com
-  HostName github.com
-  User *******@*******.com
-  PreferredAuthentications publickey
-  IdentityFile ~/.ssh/id_rsa_2<span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
-
-<p>注意：如果多个github账号，<code class="highlighter-rouge">Host</code>不能设置为相同。</p>
-
-<p>最后添加新KEY到系统,并添加公钥到<code class="highlighter-rouge">github</code>对应账号。</p>
-
-<div class="language-shell highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2</pre></td><td class="code"><pre class="highlight"><code>ssh-add -K ~/.ssh/id_rsa
-ssh-add -K ~/.ssh/id_rsa_2
+<div class="language-php highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code>$table-&gt;uuid('id')-&gt;primary();
 </code></pre></td></tr></tbody></table></div>
 </div>
 
-<p>测试KEY是否添加</p>
+<p>随后运行<code class="highlighter-rouge">la5 migrate</code></p>
 
-<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code> ssh-add -l
+<p>新建<code class="highlighter-rouge">App\Traits\Uuid</code></p>
+
+<p>内容如下</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9<br/>10<br/>11<br/>12<br/>13<br/>14<br/>15<br/>16<br/>17<br/>18<br/>19<br/>20<br/>21</pre></td><td class="code"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+
+<span class="k">namespace</span> <span class="nx">App\Traits</span><span class="p">;</span>
+
+<span class="k">use</span> <span class="nx">Illuminate\Support\Str</span><span class="p">;</span>
+
+<span class="nx">trait</span> <span class="nx">Uuid</span>
+<span class="p">{</span>
+
+    <span class="sd">/**
+     * Boot function from laravel.
+     */</span>
+    <span class="k">protected</span> <span class="k">static</span> <span class="k">function</span> <span class="nf">boot</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">parent</span><span class="o">::</span><span class="na">boot</span><span class="p">();</span>
+
+        <span class="k">static</span><span class="o">::</span><span class="na">creating</span><span class="p">(</span><span class="k">function</span> <span class="p">(</span><span class="nv">$model</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nv">$model</span><span class="o">-&gt;</span><span class="p">{</span><span class="nv">$model</span><span class="o">-&gt;</span><span class="na">getKeyName</span><span class="p">()}</span> <span class="o">=</span> <span class="p">(</span><span class="nx">string</span><span class="p">)</span> <span class="nx">Str</span><span class="o">::</span><span class="na">orderedUuid</span><span class="p">();</span>
+        <span class="p">});</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </code></pre></td></tr></tbody></table></div>
 </div>
 
-<p>测试KEY是否有效</p>
+<p>随后在模型中添加</p>
 
-<div class="language-shell highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2</pre></td><td class="code"><pre class="highlight"><code>ssh -T git@github.com
-ssh -T git@2github.com
+<div class="language-php highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3</pre></td><td class="code"><pre class="highlight"><code>use App\Traits\Uuid;
+
+use Uuid;
 </code></pre></td></tr></tbody></table></div>
 </div>
 
-<h3 id="git项目中设置">Git项目中设置</h3>
+<p>之后使用<code class="highlighter-rouge">laravel</code>自带的<code class="highlighter-rouge">auth</code>可以正常注册了。密码找回功能也可以使用。</p>
 
-<p>设置对应<code class="highlighter-rouge">email</code>与<code class="highlighter-rouge">name</code></p>
+<p><a href="https://medium.com/@steveazz/setting-up-uuids-in-laravel-5-552412db2088">参考文档</a></p>
 
-<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2</pre></td><td class="code"><pre class="highlight"><code>git config --local user.email "***@****.***"
-git config --local user.name "***"
+<h2 id="passport-部分">passport 部分</h2>
+
+<p>当 <code class="highlighter-rouge">passport</code>安装完成后</p>
+
+<p>执行<code class="highlighter-rouge">php artisan vendor:publish --tag=passport-migrations</code></p>
+
+<p>复制迁移到<code class="highlighter-rouge">migrate</code>目录</p>
+
+<p>修改<code class="highlighter-rouge">CreateOauthClientsTable</code></p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6</pre></td><td class="code"><pre class="highlight"><code>$table-&gt;increments('id');
+$table-&gt;integer('user_id')-&gt;index()-&gt;nullable();
+// 改为
+
+$table-&gt;uuid('id')-&gt;primary();
+$table-&gt;uuid('user_id')-&gt;index()-&gt;nullable();
 </code></pre></td></tr></tbody></table></div>
 </div>
 
-<p>添加<code class="highlighter-rouge">remote</code>,注意与<code class="highlighter-rouge">HostName</code>对应</p>
+<p>其他迁移将<code class="highlighter-rouge">client_id</code>与<code class="highlighter-rouge">user_id</code> 改为使用<code class="highlighter-rouge">uuid</code></p>
 
-<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code>git remote add origin git@2github.com:****/***.git
+<p><code class="highlighter-rouge">App\Providers\AppServiceProvider</code>中引入部分添加</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2</pre></td><td class="code"><pre class="highlight"><code>use Laravel\Passport\Client;
+use Illuminate\Support\Str;
 </code></pre></td></tr></tbody></table></div>
 </div>
 
-<p>也可以直接修改<code class="highlighter-rouge">.git/config</code>。</p>
+<p><code class="highlighter-rouge">boot()</code>部分添加</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7</pre></td><td class="code"><pre class="highlight"><code>Client::creating(function (Client $client) {
+    $client-&gt;incrementing = false;
+    $client-&gt;id = (string) Str::orderedUuid();
+});
+Client::retrieved(function (Client $client) {
+    $client-&gt;incrementing = false;
+});
+</code></pre></td></tr></tbody></table></div>
+</div>
+
+<p><code class="highlighter-rouge">register()</code> 部分添加</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code>Passport::ignoreMigrations();
+</code></pre></td></tr></tbody></table></div>
+</div>
+
+<p>其他部分按照文档即可正常使用。</p>
+
+<p><a href="https://mlo.io/blog/2018/08/17/laravel-passport-uuid/">参考文档</a></p>
+
+<h2 id="user-路径修改">user 路径修改</h2>
+
+<p>在<code class="highlighter-rouge">App\Http\Controllers\Auth\RegisterController</code>中修改</p>
+
+<p>在<code class="highlighter-rouge">config</code>中的<code class="highlighter-rouge">providers</code>修改到对应路径  之后可以正常使用</p>
+
+<h2 id="laravel-包开发">laravel 包开发</h2>
+
+<p>包的开发非常有利于后期的维护，同时也可以有效的分配工作任务，对未来的团队工作有极大的优势。</p>
+
+<p>主要是功能混在一起，找起来超级烦。</p>
+
+<p>有必要将独立的功能分散出去。</p>
+
+<p><a href="https://laravel-news.com/developing-laravel-packages-with-local-composer-dependencies">参考地址 1</a>
+<a href="https://laraveldaily.com/how-to-create-a-laravel-5-package-in-10-easy-steps/">参考地址 2</a></p>
+
+<p>需要说明的是 <code class="highlighter-rouge">namespace</code>与<code class="highlighter-rouge">autoload</code>超级重要</p>
 
 
       
@@ -578,7 +628,7 @@ git config --local user.name "***"
             <a href="/tag/#/%E6%97%A5%E8%AE%B0" rel="tag"># 日记</a>
           
             
-            <a href="/tag/#/SSH" rel="tag"># SSH</a>
+            <a href="/tag/#/laravel" rel="tag"># laravel</a>
           
         </div>
       
@@ -594,18 +644,14 @@ git config --local user.name "***"
         <div class="post-nav" id="post-nav-id">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/living/2018/02/10/blog/" rel="next" title="2018年02月10日">
-                <i class="fa fa-chevron-left"></i> 2018年02月10日
-              </a>
-            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/living/2018/02/02/blog/" rel="prev" title="2018年02月02日">
-                2018年02月02日 <i class="fa fa-chevron-right"></i>
+              <a href="/living/2018/11/20/blog/" rel="prev" title="快递到了！">
+                快递到了！ <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -794,7 +840,7 @@ git config --local user.name "***"
             
               <div class="post-toc-content">
     <ol class=nav>
-      <li class="nav-item nav-level-2"> <a class="nav-link" href="#同系统下多ssh-使用"> <span class="nav-number">1</span> <span class="nav-text">同系统下多SSH 使用</span> </a> <ol class="nav-child"> <li class="nav-item nav-level-3"> <a class="nav-link" href="#新建ssh-key"> <span class="nav-number">1.1</span> <span class="nav-text">新建SSH-KEY</span> </a> </li> <li class="nav-item nav-level-3"> <a class="nav-link" href="#添加到sshconfig"> <span class="nav-number">1.2</span> <span class="nav-text">添加到~/.ssh/config</code</span> </a> </li> <li class="nav-item nav-level-3"> <a class="nav-link" href="#git项目中设置"> <span class="nav-number">1.3</span> <span class="nav-text">Git项目中设置</span> </a> </li> </ol> </li>
+      <li class="nav-item nav-level-1"> <a class="nav-link" href="#25日的份"> <span class="nav-number">1</span> <span class="nav-text">25日的份</span> </a> <ol class="nav-child"> <li class="nav-item nav-level-2"> <a class="nav-link" href="#user-部分"> <span class="nav-number">1.1</span> <span class="nav-text">user 部分</span> </a> </li> <li class="nav-item nav-level-2"> <a class="nav-link" href="#passport-部分"> <span class="nav-number">1.2</span> <span class="nav-text">passport 部分</span> </a> </li> <li class="nav-item nav-level-2"> <a class="nav-link" href="#user-路径修改"> <span class="nav-number">1.3</span> <span class="nav-text">user 路径修改</span> </a> </li> <li class="nav-item nav-level-2"> <a class="nav-link" href="#laravel-包开发"> <span class="nav-number">1.4</span> <span class="nav-text">laravel 包开发</span> </a> </li> </ol> </li>
     </ol>
   </div>
             
@@ -963,9 +1009,9 @@ git config --local user.name "***"
       
       <script type="text/javascript">
           var disqus_config = function () {
-              this.page.url = 'http://localhost:4000/living/2018/02/08/blog/';
-              this.page.identifier = '/living/2018/02/08/blog/';
-              this.page.title = '2018年02月08日';
+              this.page.url = 'http://localhost:4000/living/2018/11/25/blog/';
+              this.page.identifier = '/living/2018/11/25/blog/';
+              this.page.title = 'user 使用uuid';
           };
           var d = document, s = d.createElement('script');
           s.src = 'https://keleven.disqus.com/embed.js';

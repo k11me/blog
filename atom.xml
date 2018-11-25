@@ -1,4 +1,138 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.5.2">Jekyll</generator><link href="http://localhost:4000/atom.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-11-22T03:43:33+08:00</updated><id>http://localhost:4000/</id><title type="html">Keleven.Me</title><subtitle>千变万化的是世界</subtitle><author><name>K11</name></author><entry><title type="html">快递到了！</title><link href="http://localhost:4000/living/2018/11/20/blog/" rel="alternate" type="text/html" title="快递到了！" /><published>2018-11-20T08:00:00+08:00</published><updated>2018-11-20T08:00:00+08:00</updated><id>http://localhost:4000/living/2018/11/20/blog</id><content type="html" xml:base="http://localhost:4000/living/2018/11/20/blog/">&lt;h1 id=&quot;14日的份&quot;&gt;14日的份&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.5.2">Jekyll</generator><link href="http://localhost:4000/atom.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-11-26T06:00:28+08:00</updated><id>http://localhost:4000/</id><title type="html">Keleven.Me</title><subtitle>千变万化的是世界</subtitle><author><name>K11</name></author><entry><title type="html">user 使用uuid</title><link href="http://localhost:4000/living/2018/11/25/blog/" rel="alternate" type="text/html" title="user 使用uuid" /><published>2018-11-25T08:00:00+08:00</published><updated>2018-11-25T08:00:00+08:00</updated><id>http://localhost:4000/living/2018/11/25/blog</id><content type="html" xml:base="http://localhost:4000/living/2018/11/25/blog/">&lt;h1 id=&quot;25日的份&quot;&gt;25日的份&lt;/h1&gt;
+
+&lt;p&gt;将&lt;code class=&quot;highlighter-rouge&quot;&gt;laravel&lt;/code&gt; 默认的&lt;code class=&quot;highlighter-rouge&quot;&gt;id&lt;/code&gt; 改为 &lt;code class=&quot;highlighter-rouge&quot;&gt;uuid&lt;/code&gt; 的方法，以及&lt;code class=&quot;highlighter-rouge&quot;&gt;passport&lt;/code&gt; 使用&lt;code class=&quot;highlighter-rouge&quot;&gt;uuid&lt;/code&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;user-部分&quot;&gt;user 部分&lt;/h2&gt;
+
+&lt;p&gt;当不使用传统&lt;code class=&quot;highlighter-rouge&quot;&gt;id&lt;/code&gt;时，&lt;/p&gt;
+
+&lt;p&gt;先在模型中写入 关闭默认排序&lt;/p&gt;
+
+&lt;div class=&quot;language-php highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;public $incrementing = false;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;再&lt;code class=&quot;highlighter-rouge&quot;&gt;migrate&lt;/code&gt;中修改&lt;/p&gt;
+
+&lt;div class=&quot;language-php highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$table-&amp;gt;increments('id');
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;为&lt;/p&gt;
+
+&lt;div class=&quot;language-php highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$table-&amp;gt;uuid('id')-&amp;gt;primary();
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;随后运行&lt;code class=&quot;highlighter-rouge&quot;&gt;la5 migrate&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;新建&lt;code class=&quot;highlighter-rouge&quot;&gt;App\Traits\Uuid&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;内容如下&lt;/p&gt;
+&lt;div class=&quot;language-php highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;namespace&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;App\Traits&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;use&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Illuminate\Support\Str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;trait&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Uuid&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+
+    &lt;span class=&quot;sd&quot;&gt;/**
+     * Boot function from laravel.
+     */&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;protected&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;boot&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;parent&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;boot&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+
+        &lt;span class=&quot;k&quot;&gt;static&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;creating&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$model&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;nv&quot;&gt;$model&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$model&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getKeyName&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()}&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Str&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;orderedUuid&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;随后在模型中添加&lt;/p&gt;
+
+&lt;div class=&quot;language-php highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;use App\Traits\Uuid;
+
+use Uuid;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;之后使用&lt;code class=&quot;highlighter-rouge&quot;&gt;laravel&lt;/code&gt;自带的&lt;code class=&quot;highlighter-rouge&quot;&gt;auth&lt;/code&gt;可以正常注册了。密码找回功能也可以使用。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://medium.com/@steveazz/setting-up-uuids-in-laravel-5-552412db2088&quot;&gt;参考文档&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;passport-部分&quot;&gt;passport 部分&lt;/h2&gt;
+
+&lt;p&gt;当 &lt;code class=&quot;highlighter-rouge&quot;&gt;passport&lt;/code&gt;安装完成后&lt;/p&gt;
+
+&lt;p&gt;执行&lt;code class=&quot;highlighter-rouge&quot;&gt;php artisan vendor:publish --tag=passport-migrations&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;复制迁移到&lt;code class=&quot;highlighter-rouge&quot;&gt;migrate&lt;/code&gt;目录&lt;/p&gt;
+
+&lt;p&gt;修改&lt;code class=&quot;highlighter-rouge&quot;&gt;CreateOauthClientsTable&lt;/code&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-php highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$table-&amp;gt;increments('id');
+$table-&amp;gt;integer('user_id')-&amp;gt;index()-&amp;gt;nullable();
+// 改为
+
+$table-&amp;gt;uuid('id')-&amp;gt;primary();
+$table-&amp;gt;uuid('user_id')-&amp;gt;index()-&amp;gt;nullable();
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;其他迁移将&lt;code class=&quot;highlighter-rouge&quot;&gt;client_id&lt;/code&gt;与&lt;code class=&quot;highlighter-rouge&quot;&gt;user_id&lt;/code&gt; 改为使用&lt;code class=&quot;highlighter-rouge&quot;&gt;uuid&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;App\Providers\AppServiceProvider&lt;/code&gt;中引入部分添加&lt;/p&gt;
+
+&lt;div class=&quot;language-php highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;use Laravel\Passport\Client;
+use Illuminate\Support\Str;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;boot()&lt;/code&gt;部分添加&lt;/p&gt;
+
+&lt;div class=&quot;language-php highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Client::creating(function (Client $client) {
+    $client-&amp;gt;incrementing = false;
+    $client-&amp;gt;id = (string) Str::orderedUuid();
+});
+Client::retrieved(function (Client $client) {
+    $client-&amp;gt;incrementing = false;
+});
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;register()&lt;/code&gt; 部分添加&lt;/p&gt;
+
+&lt;div class=&quot;language-php highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Passport::ignoreMigrations();
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;其他部分按照文档即可正常使用。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://mlo.io/blog/2018/08/17/laravel-passport-uuid/&quot;&gt;参考文档&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;user-路径修改&quot;&gt;user 路径修改&lt;/h2&gt;
+
+&lt;p&gt;在&lt;code class=&quot;highlighter-rouge&quot;&gt;App\Http\Controllers\Auth\RegisterController&lt;/code&gt;中修改&lt;/p&gt;
+
+&lt;p&gt;在&lt;code class=&quot;highlighter-rouge&quot;&gt;config&lt;/code&gt;中的&lt;code class=&quot;highlighter-rouge&quot;&gt;providers&lt;/code&gt;修改到对应路径  之后可以正常使用&lt;/p&gt;
+
+&lt;h2 id=&quot;laravel-包开发&quot;&gt;laravel 包开发&lt;/h2&gt;
+
+&lt;p&gt;包的开发非常有利于后期的维护，同时也可以有效的分配工作任务，对未来的团队工作有极大的优势。&lt;/p&gt;
+
+&lt;p&gt;主要是功能混在一起，找起来超级烦。&lt;/p&gt;
+
+&lt;p&gt;有必要将独立的功能分散出去。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://laravel-news.com/developing-laravel-packages-with-local-composer-dependencies&quot;&gt;参考地址 1&lt;/a&gt;
+&lt;a href=&quot;https://laraveldaily.com/how-to-create-a-laravel-5-package-in-10-easy-steps/&quot;&gt;参考地址 2&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;需要说明的是 &lt;code class=&quot;highlighter-rouge&quot;&gt;namespace&lt;/code&gt;与&lt;code class=&quot;highlighter-rouge&quot;&gt;autoload&lt;/code&gt;超级重要&lt;/p&gt;</content><author><name>K11</name></author><category term="日记" /><category term="laravel" /><summary type="html">25日的份 将laravel 默认的id 改为 uuid 的方法，以及passport 使用uuid user 部分 当不使用传统id时， 先在模型中写入 关闭默认排序 public $incrementing = false; 再migrate中修改 $table-&amp;gt;increments('id'); 为 $table-&amp;gt;uuid('id')-&amp;gt;primary(); 随后运行la5 migrate 新建App\Traits\Uuid 内容如下 &amp;lt;?php namespace App\Traits; use Illuminate\Support\Str; trait Uuid { /** * Boot function from laravel. */ protected static function boot() { parent::boot(); static::creating(function ($model) { $model-&amp;gt;{$model-&amp;gt;getKeyName()} = (string) Str::orderedUuid(); }); } } 随后在模型中添加 use App\Traits\Uuid; use Uuid; 之后使用laravel自带的auth可以正常注册了。密码找回功能也可以使用。 参考文档 passport 部分 当 passport安装完成后 执行php artisan vendor:publish --tag=passport-migrations 复制迁移到migrate目录 修改CreateOauthClientsTable $table-&amp;gt;increments('id'); $table-&amp;gt;integer('user_id')-&amp;gt;index()-&amp;gt;nullable(); // 改为 $table-&amp;gt;uuid('id')-&amp;gt;primary(); $table-&amp;gt;uuid('user_id')-&amp;gt;index()-&amp;gt;nullable(); 其他迁移将client_id与user_id 改为使用uuid App\Providers\AppServiceProvider中引入部分添加 use Laravel\Passport\Client; use Illuminate\Support\Str; boot()部分添加 Client::creating(function (Client $client) { $client-&amp;gt;incrementing = false; $client-&amp;gt;id = (string) Str::orderedUuid(); }); Client::retrieved(function (Client $client) { $client-&amp;gt;incrementing = false; }); register() 部分添加 Passport::ignoreMigrations(); 其他部分按照文档即可正常使用。 参考文档 user 路径修改 在App\Http\Controllers\Auth\RegisterController中修改 在config中的providers修改到对应路径 之后可以正常使用 laravel 包开发 包的开发非常有利于后期的维护，同时也可以有效的分配工作任务，对未来的团队工作有极大的优势。 主要是功能混在一起，找起来超级烦。 有必要将独立的功能分散出去。 参考地址 1 参考地址 2 需要说明的是 namespace与autoload超级重要</summary></entry><entry><title type="html">快递到了！</title><link href="http://localhost:4000/living/2018/11/20/blog/" rel="alternate" type="text/html" title="快递到了！" /><published>2018-11-20T08:00:00+08:00</published><updated>2018-11-20T08:00:00+08:00</updated><id>http://localhost:4000/living/2018/11/20/blog</id><content type="html" xml:base="http://localhost:4000/living/2018/11/20/blog/">&lt;h1 id=&quot;14日的份&quot;&gt;14日的份&lt;/h1&gt;
 
 &lt;h2 id=&quot;双11的快递到了&quot;&gt;双11的快递到了&lt;/h2&gt;
 
@@ -509,16 +643,4 @@ something
 
 &lt;p&gt;可以先&lt;code class=&quot;highlighter-rouge&quot;&gt;valet unsecure&lt;/code&gt; 再 &lt;code class=&quot;highlighter-rouge&quot;&gt;valet share&lt;/code&gt; 关闭&lt;code class=&quot;highlighter-rouge&quot;&gt;TLS&lt;/code&gt; 和裸奔没区别 可以用来进行暂时测试&lt;/p&gt;
 
-&lt;p&gt;汇率已经到&lt;code class=&quot;highlighter-rouge&quot;&gt;7.5&lt;/code&gt;了……&lt;/p&gt;</content><author><name>K11</name></author><category term="日记" /><category term="laravel" /><summary type="html">lavavel valet valet share 在TLS的情况下会返回301 可以确定为valet v2.1.1 的 BUG 可以先valet unsecure 再 valet share 关闭TLS 和裸奔没区别 可以用来进行暂时测试 汇率已经到7.5了……</summary></entry><entry><title type="html">2FA 基本完成了</title><link href="http://localhost:4000/living/2018/10/04/blog/" rel="alternate" type="text/html" title="2FA 基本完成了" /><published>2018-10-04T08:01:00+08:00</published><updated>2018-10-04T08:01:00+08:00</updated><id>http://localhost:4000/living/2018/10/04/blog</id><content type="html" xml:base="http://localhost:4000/living/2018/10/04/blog/">&lt;h1 id=&quot;2fa-基本完成了&quot;&gt;2FA 基本完成了&lt;/h1&gt;
-
-&lt;p&gt;后端还缺权限的判断，与&lt;code class=&quot;highlighter-rouge&quot;&gt;code message&lt;/code&gt;预制编码&lt;/p&gt;
-
-&lt;p&gt;前端缺特殊&lt;code class=&quot;highlighter-rouge&quot;&gt;code message&lt;/code&gt;的代码响应 指的是2FA的强制验证&lt;/p&gt;
-
-&lt;p&gt;之后要加入批量导入功能 否则会累死~~&lt;/p&gt;
-
-&lt;h2 id=&quot;laravel-model-的坑&quot;&gt;laravel model 的坑&lt;/h2&gt;
-
-&lt;p&gt;使用&lt;code class=&quot;highlighter-rouge&quot;&gt;get()&lt;/code&gt;去取到的数据是&lt;code class=&quot;highlighter-rouge&quot;&gt;array&lt;/code&gt; 而不是&lt;code class=&quot;highlighter-rouge&quot;&gt;object&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;可以手动转换 也可以直接使用 根据需求决定&lt;/p&gt;</content><author><name>K11</name></author><category term="日记" /><category term="laravel" /><summary type="html">2FA 基本完成了 后端还缺权限的判断，与code message预制编码 前端缺特殊code message的代码响应 指的是2FA的强制验证 之后要加入批量导入功能 否则会累死~~ laravel model 的坑 使用get()去取到的数据是array 而不是object 可以手动转换 也可以直接使用 根据需求决定</summary></entry></feed>
+&lt;p&gt;汇率已经到&lt;code class=&quot;highlighter-rouge&quot;&gt;7.5&lt;/code&gt;了……&lt;/p&gt;</content><author><name>K11</name></author><category term="日记" /><category term="laravel" /><summary type="html">lavavel valet valet share 在TLS的情况下会返回301 可以确定为valet v2.1.1 的 BUG 可以先valet unsecure 再 valet share 关闭TLS 和裸奔没区别 可以用来进行暂时测试 汇率已经到7.5了……</summary></entry></feed>

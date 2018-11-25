@@ -2,6 +2,25 @@
 <search>
   
     <entry>
+      <title><![CDATA[user 使用uuid]]></title>
+      <url>/living/2018/11/25/blog/</url>
+      <content type="text"><![CDATA[25日的份将laravel 默认的id 改为 uuid 的方法，以及passport 使用uuiduser 部分当不使用传统id时，先在模型中写入 关闭默认排序public $incrementing = false;再migrate中修改$table-&gt;increments('id');为$table-&gt;uuid('id')-&gt;primary();随后运行la5 migrate新建App\Traits\Uuid内容如下&lt;?phpnamespace App\Traits;use Illuminate\Support\Str;trait Uuid{    /**     * Boot function from laravel.     */    protected static function boot()    {        parent::boot();        static::creating(function ($model) {            $model-&gt;{$model-&gt;getKeyName()} = (string) Str::orderedUuid();        });    }}随后在模型中添加use App\Traits\Uuid;use Uuid;之后使用laravel自带的auth可以正常注册了。密码找回功能也可以使用。参考文档passport 部分当 passport安装完成后执行php artisan vendor:publish --tag=passport-migrations复制迁移到migrate目录修改CreateOauthClientsTable$table-&gt;increments('id');$table-&gt;integer('user_id')-&gt;index()-&gt;nullable();// 改为$table-&gt;uuid('id')-&gt;primary();$table-&gt;uuid('user_id')-&gt;index()-&gt;nullable();其他迁移将client_id与user_id 改为使用uuidApp\Providers\AppServiceProvider中引入部分添加use Laravel\Passport\Client;use Illuminate\Support\Str;boot()部分添加Client::creating(function (Client $client) {    $client-&gt;incrementing = false;    $client-&gt;id = (string) Str::orderedUuid();});Client::retrieved(function (Client $client) {    $client-&gt;incrementing = false;});register() 部分添加Passport::ignoreMigrations();其他部分按照文档即可正常使用。参考文档user 路径修改在App\Http\Controllers\Auth\RegisterController中修改在config中的providers修改到对应路径  之后可以正常使用laravel 包开发包的开发非常有利于后期的维护，同时也可以有效的分配工作任务，对未来的团队工作有极大的优势。主要是功能混在一起，找起来超级烦。有必要将独立的功能分散出去。参考地址 1参考地址 2需要说明的是 namespace与autoload超级重要]]></content>
+      <categories>
+        
+          <category> Living </category>
+        
+      </categories>
+      <tags>
+        
+          <tag> 日记 </tag>
+        
+          <tag> laravel </tag>
+        
+      </tags>
+      <tags></tags>
+    </entry>
+  
+    <entry>
       <title><![CDATA[快递到了！]]></title>
       <url>/living/2018/11/20/blog/</url>
       <content type="text"><![CDATA[14日的份双11的快递到了小型超声波清洗机，和手动洗眼镜说再见了~~code定义中定义code将返回标准化，部件代码进行有效简化。20日的份admin 管理 部分 完成了之后就是玩家部分了周末通过 奥德赛 与 暗影不不得不说 奥德赛 是历代最优暗影的手柄操作有点奇怪机器果然到时候了 九年了……在坚持坚持吧HDR 要有对应的显示器才可以目前看 LG 34WK95U-W 不错EIZO 就等到稳定下来再说了wacom 在数绘方面是优秀的 可是不支持HDR不过 贴图 还停留在一般RGB时代如果上升一步，想想都可怕，一般用户与使用HDR的用户体验的会是两个不同的世界，当然计算量也巨大的。服务端渲染随着带宽的扩大，终究是要到来的。头号玩家 描述世界 也只是时间问题技术层面上 一定使用的是 服务端渲染用户设备就不一定相同了随手看了下5G标准，需要更多基站设备…… 稳定性恐怕不高大法耳罩老化了 意外发现梁也断了……希望合金梁可以顺利到手！！耳罩的更换倒是有眉目了~]]></content>
