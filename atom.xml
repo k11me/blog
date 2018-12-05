@@ -1,4 +1,36 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.5.2">Jekyll</generator><link href="http://localhost:4000/atom.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-11-26T06:00:28+08:00</updated><id>http://localhost:4000/</id><title type="html">Keleven.Me</title><subtitle>千变万化的是世界</subtitle><author><name>K11</name></author><entry><title type="html">user 使用uuid</title><link href="http://localhost:4000/living/2018/11/25/blog/" rel="alternate" type="text/html" title="user 使用uuid" /><published>2018-11-25T08:00:00+08:00</published><updated>2018-11-25T08:00:00+08:00</updated><id>http://localhost:4000/living/2018/11/25/blog</id><content type="html" xml:base="http://localhost:4000/living/2018/11/25/blog/">&lt;h1 id=&quot;25日的份&quot;&gt;25日的份&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.5.2">Jekyll</generator><link href="http://localhost:4000/atom.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-12-06T03:17:12+08:00</updated><id>http://localhost:4000/</id><title type="html">Keleven.Me</title><subtitle>千变万化的是世界</subtitle><author><name>K11</name></author><entry><title type="html">分包了！！</title><link href="http://localhost:4000/living/2018/12/03/blog/" rel="alternate" type="text/html" title="分包了！！" /><published>2018-12-03T08:00:00+08:00</published><updated>2018-12-03T08:00:00+08:00</updated><id>http://localhost:4000/living/2018/12/03/blog</id><content type="html" xml:base="http://localhost:4000/living/2018/12/03/blog/">&lt;h1 id=&quot;厄运驱散&quot;&gt;厄运驱散&lt;/h1&gt;
+
+&lt;p&gt;最近不顺利的程度超级高，驱散！驱散！驱散！&lt;/p&gt;
+
+&lt;p&gt;还有文件莫名丢失，注意力不能集中，超级烦啊！啊！啊！&lt;/p&gt;
+
+&lt;p&gt;还有倒霉会出现征兆…… 也是……&lt;/p&gt;
+
+&lt;h1 id=&quot;php-版本的坑&quot;&gt;php 版本的坑&lt;/h1&gt;
+
+&lt;p&gt;更新后 不能识别 &lt;code class=&quot;highlighter-rouge&quot;&gt;tls&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;推断 更新后对&lt;code class=&quot;highlighter-rouge&quot;&gt;tls&lt;/code&gt; 产生变化，暂时关闭&lt;code class=&quot;highlighter-rouge&quot;&gt;tls&lt;/code&gt;使用 &lt;code class=&quot;highlighter-rouge&quot;&gt;http&lt;/code&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;果然&quot;&gt;果然&lt;/h2&gt;
+
+&lt;p&gt;后台没写好就写前端什么的，效率不高呢……&lt;/p&gt;
+
+&lt;p&gt;看来要规划一下了……&lt;/p&gt;
+
+&lt;p&gt;在&lt;code class=&quot;highlighter-rouge&quot;&gt;laravel&lt;/code&gt; 模型中使用&lt;/p&gt;
+
+&lt;div class=&quot;language-php highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;protected $casts = [
+    'scopes' =&amp;gt; 'array',
+];
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;当然也可以定义其他类型&lt;/p&gt;
+
+&lt;p&gt;可以使查询项返回数组，前提是存入的也是数组&lt;/p&gt;
+
+&lt;p&gt;文档在&lt;code class=&quot;highlighter-rouge&quot;&gt;5.0&lt;/code&gt;版 这就比较坑了&lt;/p&gt;</content><author><name>K11</name></author><category term="日记" /><category term="laravel" /><summary type="html">厄运驱散 最近不顺利的程度超级高，驱散！驱散！驱散！ 还有文件莫名丢失，注意力不能集中，超级烦啊！啊！啊！ 还有倒霉会出现征兆…… 也是…… php 版本的坑 更新后 不能识别 tls 推断 更新后对tls 产生变化，暂时关闭tls使用 http 果然 后台没写好就写前端什么的，效率不高呢…… 看来要规划一下了…… 在laravel 模型中使用 protected $casts = [ 'scopes' =&amp;gt; 'array', ]; 当然也可以定义其他类型 可以使查询项返回数组，前提是存入的也是数组 文档在5.0版 这就比较坑了</summary></entry><entry><title type="html">user 使用uuid</title><link href="http://localhost:4000/living/2018/11/25/blog/" rel="alternate" type="text/html" title="user 使用uuid" /><published>2018-11-25T08:00:00+08:00</published><updated>2018-11-25T08:00:00+08:00</updated><id>http://localhost:4000/living/2018/11/25/blog</id><content type="html" xml:base="http://localhost:4000/living/2018/11/25/blog/">&lt;h1 id=&quot;25日的份&quot;&gt;25日的份&lt;/h1&gt;
 
 &lt;p&gt;将&lt;code class=&quot;highlighter-rouge&quot;&gt;laravel&lt;/code&gt; 默认的&lt;code class=&quot;highlighter-rouge&quot;&gt;id&lt;/code&gt; 改为 &lt;code class=&quot;highlighter-rouge&quot;&gt;uuid&lt;/code&gt; 的方法，以及&lt;code class=&quot;highlighter-rouge&quot;&gt;passport&lt;/code&gt; 使用&lt;code class=&quot;highlighter-rouge&quot;&gt;uuid&lt;/code&gt;&lt;/p&gt;
 
@@ -635,12 +667,4 @@ something
 
 &lt;p&gt;大概这种感觉&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://i.loli.net/2018/10/14/5bc33df12e03a.png&quot; alt=&quot;屏幕快照 2018-10-14 20.58.44&quot; /&gt;&lt;/p&gt;</content><author><name>K11</name></author><category term="日记" /><category term="laravel" /><summary type="html">11号的份 队列 将特定 信息通知 推送到指定队列 修改horizon 后 可以使用 $user-&amp;gt;notify((new SendEmail($Token))-&amp;gt;onQueue('mail')); 或 use Notification; Notification::send($user, (new SendEmail($Token))-&amp;gt;onQueue('mail')); roles 需要注意guard对应 view与models 要注意同步 在blade 中使用时 @role('role' , 'guard') something @endrole 在路由中使用时 Route::group(['middleware' =&amp;gt; ['auth:admin' , 'role:admin']], function () { }); 也可以在控制器中使用 public function __construct() { $this-&amp;gt;middleware(['role:admin' , 'auth:admin']); } 14号的份 find 与 where 的坑 find 不能准确 查找到对应条目 where 则可以，之后只有有意识的替换find register的后端调整完成了~~~ 大概这种感觉</summary></entry><entry><title type="html">10号的份</title><link href="http://localhost:4000/living/2018/10/10/blog/" rel="alternate" type="text/html" title="10号的份" /><published>2018-10-10T08:00:00+08:00</published><updated>2018-10-10T08:00:00+08:00</updated><id>http://localhost:4000/living/2018/10/10/blog</id><content type="html" xml:base="http://localhost:4000/living/2018/10/10/blog/">&lt;h2 id=&quot;lavavel-valet&quot;&gt;lavavel valet&lt;/h2&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;valet share&lt;/code&gt; 在TLS的情况下会返回&lt;code class=&quot;highlighter-rouge&quot;&gt;301&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;可以确定为&lt;code class=&quot;highlighter-rouge&quot;&gt;valet v2.1.1&lt;/code&gt; 的 BUG&lt;/p&gt;
-
-&lt;p&gt;可以先&lt;code class=&quot;highlighter-rouge&quot;&gt;valet unsecure&lt;/code&gt; 再 &lt;code class=&quot;highlighter-rouge&quot;&gt;valet share&lt;/code&gt; 关闭&lt;code class=&quot;highlighter-rouge&quot;&gt;TLS&lt;/code&gt; 和裸奔没区别 可以用来进行暂时测试&lt;/p&gt;
-
-&lt;p&gt;汇率已经到&lt;code class=&quot;highlighter-rouge&quot;&gt;7.5&lt;/code&gt;了……&lt;/p&gt;</content><author><name>K11</name></author><category term="日记" /><category term="laravel" /><summary type="html">lavavel valet valet share 在TLS的情况下会返回301 可以确定为valet v2.1.1 的 BUG 可以先valet unsecure 再 valet share 关闭TLS 和裸奔没区别 可以用来进行暂时测试 汇率已经到7.5了……</summary></entry></feed>
+&lt;p&gt;&lt;img src=&quot;https://i.loli.net/2018/10/14/5bc33df12e03a.png&quot; alt=&quot;屏幕快照 2018-10-14 20.58.44&quot; /&gt;&lt;/p&gt;</content><author><name>K11</name></author><category term="日记" /><category term="laravel" /><summary type="html">11号的份 队列 将特定 信息通知 推送到指定队列 修改horizon 后 可以使用 $user-&amp;gt;notify((new SendEmail($Token))-&amp;gt;onQueue('mail')); 或 use Notification; Notification::send($user, (new SendEmail($Token))-&amp;gt;onQueue('mail')); roles 需要注意guard对应 view与models 要注意同步 在blade 中使用时 @role('role' , 'guard') something @endrole 在路由中使用时 Route::group(['middleware' =&amp;gt; ['auth:admin' , 'role:admin']], function () { }); 也可以在控制器中使用 public function __construct() { $this-&amp;gt;middleware(['role:admin' , 'auth:admin']); } 14号的份 find 与 where 的坑 find 不能准确 查找到对应条目 where 则可以，之后只有有意识的替换find register的后端调整完成了~~~ 大概这种感觉</summary></entry></feed>
