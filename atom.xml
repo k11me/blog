@@ -1,4 +1,88 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.5.2">Jekyll</generator><link href="http://localhost:4000/atom.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-12-06T03:17:12+08:00</updated><id>http://localhost:4000/</id><title type="html">Keleven.Me</title><subtitle>千变万化的是世界</subtitle><author><name>K11</name></author><entry><title type="html">分包了！！</title><link href="http://localhost:4000/living/2018/12/03/blog/" rel="alternate" type="text/html" title="分包了！！" /><published>2018-12-03T08:00:00+08:00</published><updated>2018-12-03T08:00:00+08:00</updated><id>http://localhost:4000/living/2018/12/03/blog</id><content type="html" xml:base="http://localhost:4000/living/2018/12/03/blog/">&lt;h1 id=&quot;厄运驱散&quot;&gt;厄运驱散&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.5.2">Jekyll</generator><link href="http://localhost:4000/atom.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-12-13T03:24:37+08:00</updated><id>http://localhost:4000/</id><title type="html">Keleven.Me</title><subtitle>千变万化的是世界</subtitle><author><name>K11</name></author><entry><title type="html">自动化的路上</title><link href="http://localhost:4000/living/2018/12/12/blog/" rel="alternate" type="text/html" title="自动化的路上" /><published>2018-12-12T08:00:00+08:00</published><updated>2018-12-12T08:00:00+08:00</updated><id>http://localhost:4000/living/2018/12/12/blog</id><content type="html" xml:base="http://localhost:4000/living/2018/12/12/blog/">&lt;h1 id=&quot;自动化的路上&quot;&gt;自动化的路上&lt;/h1&gt;
+
+&lt;p&gt;现在多写一点，之后使用时就容易一点。&lt;/p&gt;
+
+&lt;p&gt;真正运行起来工作量会是现在的几倍吧，也不知道能不能支撑下去……&lt;/p&gt;
+
+&lt;h1 id=&quot;打劫&quot;&gt;打劫&lt;/h1&gt;
+
+&lt;p&gt;4个小鬼 来打劫火花塞上的贵金属 也是醉了……&lt;/p&gt;
+
+&lt;p&gt;求钟馗大神传授驱鬼之法！&lt;/p&gt;
+
+&lt;p&gt;和 小区门口私设停车位收费类似 原始 无规则&lt;/p&gt;
+
+&lt;p&gt;我朝 需要 改变的东西真的太都了&lt;/p&gt;
+
+&lt;h1 id=&quot;砖酱&quot;&gt;砖酱&lt;/h1&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;iphone xr&lt;/code&gt; 入手 上了&lt;code class=&quot;highlighter-rouge&quot;&gt;UGA&lt;/code&gt;的壳&lt;/p&gt;
+
+&lt;p&gt;之后硬度感人，估计超过板砖。&lt;/p&gt;
+
+&lt;p&gt;所以之后爱称&lt;code class=&quot;highlighter-rouge&quot;&gt;砖酱&lt;/code&gt;&lt;/p&gt;</content><author><name>K11</name></author><category term="日记" /><category term="laravel" /><summary type="html">自动化的路上 现在多写一点，之后使用时就容易一点。 真正运行起来工作量会是现在的几倍吧，也不知道能不能支撑下去…… 打劫 4个小鬼 来打劫火花塞上的贵金属 也是醉了…… 求钟馗大神传授驱鬼之法！ 和 小区门口私设停车位收费类似 原始 无规则 我朝 需要 改变的东西真的太都了 砖酱 iphone xr 入手 上了UGA的壳 之后硬度感人，估计超过板砖。 所以之后爱称砖酱</summary></entry><entry><title type="html">链接</title><link href="http://localhost:4000/living/2018/12/06/blog/" rel="alternate" type="text/html" title="链接" /><published>2018-12-06T08:00:00+08:00</published><updated>2018-12-06T08:00:00+08:00</updated><id>http://localhost:4000/living/2018/12/06/blog</id><content type="html" xml:base="http://localhost:4000/living/2018/12/06/blog/">&lt;h1 id=&quot;链接构建中&quot;&gt;链接构建中&lt;/h1&gt;
+
+&lt;p&gt;远程管理构建中，主要目的是&lt;code class=&quot;highlighter-rouge&quot;&gt;token&lt;/code&gt;请求的自动化。&lt;/p&gt;
+
+&lt;p&gt;当使用大量&lt;code class=&quot;highlighter-rouge&quot;&gt;token&lt;/code&gt;细化权限时&lt;/p&gt;
+
+&lt;p&gt;手动请求、更新、选择&lt;code class=&quot;highlighter-rouge&quot;&gt;token&lt;/code&gt;将是地狱模式了&lt;/p&gt;
+
+&lt;h1 id=&quot;composer-包管理&quot;&gt;composer 包管理&lt;/h1&gt;
+
+&lt;p&gt;当使用自定义包时&lt;code class=&quot;highlighter-rouge&quot;&gt;dev-master&lt;/code&gt;版本不能正常载入的情况下&lt;/p&gt;
+
+&lt;p&gt;在&lt;code class=&quot;highlighter-rouge&quot;&gt;composer.json&lt;/code&gt;中添加&lt;/p&gt;
+
+&lt;div class=&quot;language-php highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    &quot;minimum-stability&quot;: &quot;dev&quot;,
+    &quot;prefer-stable&quot;: true,
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;同时要指定路径,如果有多个包,需要分别指定,&lt;/p&gt;
+
+&lt;div class=&quot;language-json highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;w&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;repositories&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+		&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;pack&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+		    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;type&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;path&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+		    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;url&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;../packages/packname/pack&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+		&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+	&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;这样自定义包就可以载入了&lt;/p&gt;
+
+&lt;p&gt;其他包则使用稳定版本&lt;/p&gt;
+
+&lt;h2 id=&quot;curl-error-60-ssl-certificate-problem&quot;&gt;cURL error 60: SSL certificate problem&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/laravel/valet/pull/515&quot;&gt;参考资料&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;推断为证书不能正确加载，在&lt;code class=&quot;highlighter-rouge&quot;&gt;php.info&lt;/code&gt;中指定路径同样无效。&lt;/p&gt;
+
+&lt;p&gt;直接使用&lt;code class=&quot;highlighter-rouge&quot;&gt;laravel valet&lt;/code&gt;的公钥访问有效&lt;/p&gt;
+
+&lt;div class=&quot;language-zsh highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;curl https://game.test/ --cacert ~/.config/valet/CA/LaravelValetCASelfSigned.pem
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;laravelscout&quot;&gt;laravel/scout&lt;/h2&gt;
+
+&lt;p&gt;安装&lt;code class=&quot;highlighter-rouge&quot;&gt;laravel/scout&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;使用时遇到&lt;code class=&quot;highlighter-rouge&quot;&gt;Class 'AlgoliaSearch\Version' not found&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;原因&lt;code class=&quot;highlighter-rouge&quot;&gt;laravel/scout&lt;/code&gt; 不支持 &lt;code class=&quot;highlighter-rouge&quot;&gt;algoliasearch-client-php: ^2.0&lt;/code&gt; 改为&lt;code class=&quot;highlighter-rouge&quot;&gt;algoliasearch-client-php: ^1.27&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/laravel/scout/issues/328&quot;&gt;参考资料&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;从速度看&lt;code class=&quot;highlighter-rouge&quot;&gt;scout&lt;/code&gt; 没有从内存搜索快，这也是必然吧。&lt;/p&gt;
+
+&lt;p&gt;使用第三方搜索也有数据泄露的风险。不过重写驱动也是要命……&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;scout&lt;/code&gt; 还没想到需要使用的地方……&lt;/p&gt;
+
+&lt;p&gt;比如 搜 文档 更新 什么的……&lt;/p&gt;</content><author><name>K11</name></author><category term="日记" /><category term="laravel" /><summary type="html">链接构建中 远程管理构建中，主要目的是token请求的自动化。 当使用大量token细化权限时 手动请求、更新、选择token将是地狱模式了 composer 包管理 当使用自定义包时dev-master版本不能正常载入的情况下 在composer.json中添加 &quot;minimum-stability&quot;: &quot;dev&quot;, &quot;prefer-stable&quot;: true, 同时要指定路径,如果有多个包,需要分别指定, &quot;repositories&quot;: { &quot;pack&quot;: { &quot;type&quot;: &quot;path&quot;, &quot;url&quot;: &quot;../packages/packname/pack&quot; } } 这样自定义包就可以载入了 其他包则使用稳定版本 cURL error 60: SSL certificate problem 参考资料 推断为证书不能正确加载，在php.info中指定路径同样无效。 直接使用laravel valet的公钥访问有效 curl https://game.test/ --cacert ~/.config/valet/CA/LaravelValetCASelfSigned.pem laravel/scout 安装laravel/scout 使用时遇到Class 'AlgoliaSearch\Version' not found 原因laravel/scout 不支持 algoliasearch-client-php: ^2.0 改为algoliasearch-client-php: ^1.27 参考资料 从速度看scout 没有从内存搜索快，这也是必然吧。 使用第三方搜索也有数据泄露的风险。不过重写驱动也是要命…… scout 还没想到需要使用的地方…… 比如 搜 文档 更新 什么的……</summary></entry><entry><title type="html">分包了！！</title><link href="http://localhost:4000/living/2018/12/03/blog/" rel="alternate" type="text/html" title="分包了！！" /><published>2018-12-03T08:00:00+08:00</published><updated>2018-12-03T08:00:00+08:00</updated><id>http://localhost:4000/living/2018/12/03/blog</id><content type="html" xml:base="http://localhost:4000/living/2018/12/03/blog/">&lt;h1 id=&quot;厄运驱散&quot;&gt;厄运驱散&lt;/h1&gt;
 
 &lt;p&gt;最近不顺利的程度超级高，驱散！驱散！驱散！&lt;/p&gt;
 
@@ -560,111 +644,4 @@ postman.setEnvironmentVariable(&quot;XSRF-TOKEN&quot;, xsrfCookie.value);
 
 &lt;p&gt;之后就可以正常使用了&lt;/p&gt;
 
-&lt;p&gt;使用&lt;code class=&quot;highlighter-rouge&quot;&gt;valet&lt;/code&gt;时 &lt;code class=&quot;highlighter-rouge&quot;&gt;link&lt;/code&gt; 与 &lt;code class=&quot;highlighter-rouge&quot;&gt;park&lt;/code&gt; 混用会报错！&lt;/p&gt;</content><author><name>K11</name></author><category term="日记" /><category term="postman" /><category term="laravel" /><summary type="html">使用 postman 进行 post 使用postman 直接 post 的方法 laravel 本身有CSRF 直接使用post 、 put 等等会被阻断 找到一个可以解决办法 postman chrome 插件版本 新建一个environment 并切换到新建，右上⚙位置 找一个get请求 在Tests标签下输入 var xsrfCookie = postman.getResponseCookie(&quot;XSRF-TOKEN&quot;); postman.setEnvironmentVariable(&quot;XSRF-TOKEN&quot;, xsrfCookie.value); `` 对应该的是第二行要注意下。 用于获取XSRF-TOKEN的值。 查看environment中 XSRF-TOKEN 是否被正确传入。右上👁位置 确认后在post 的Headers 中添加 X-XSRF-TOKEN : 之后就可以正常提交post了 注意：laravel XSRF-TOKEN 有时效性 注意更新 当XSRF-TOKEN 中有特殊字符，例如%时，laravel X-XSRF-TOKEN 验证会失败 主要是为postman 对XSRF-TOKEN识别有问题，桌面版本没有这个问题 postman 桌面版 同上Tests标签可以写成 pm.environment.set(&quot;xsrf-token&quot;, decodeURIComponent(pm.cookies.get(&quot;XSRF-TOKEN&quot;))) 使用laravel valet 时，postman不能正确访问域名…… 原因valet产生的SSL证书，所以被阻挡，手动关闭后正常使用 要关闭的位置 settings -&amp;gt; SSL certificate verifcation -&amp;gt; off 之后就可以正常使用了 使用valet时 link 与 park 混用会报错！</summary></entry><entry><title type="html">几天的份</title><link href="http://localhost:4000/living/2018/10/18/blog/" rel="alternate" type="text/html" title="几天的份" /><published>2018-10-18T08:00:00+08:00</published><updated>2018-10-18T08:00:00+08:00</updated><id>http://localhost:4000/living/2018/10/18/blog</id><content type="html" xml:base="http://localhost:4000/living/2018/10/18/blog/">&lt;h1 id=&quot;15号的份&quot;&gt;15号的份&lt;/h1&gt;
-
-&lt;h2 id=&quot;染黑了&quot;&gt;染黑了&lt;/h2&gt;
-
-&lt;p&gt;自己都感觉到内心在向着无底的黑暗靠近&lt;/p&gt;
-
-&lt;p&gt;新键盘并没有人体工程学的好用&lt;/p&gt;
-
-&lt;p&gt;估计以后都只会选择人体工程学的了&lt;/p&gt;
-
-&lt;h2 id=&quot;开始处理权限了&quot;&gt;开始处理权限了&lt;/h2&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;admin&lt;/code&gt;的基本部分快做完了&lt;/p&gt;
-
-&lt;p&gt;之后是一般用户数据了&lt;/p&gt;
-
-&lt;p&gt;按照计划的一样进行扩展&lt;/p&gt;
-
-&lt;p&gt;说句自满的话&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;它不仅仅是一个游戏&lt;/code&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h1 id=&quot;16号的份&quot;&gt;16号的份&lt;/h1&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;v-for&lt;/code&gt; 不能放在顶级标签上，会报错！&lt;/p&gt;
-
-&lt;p&gt;更新了一下&lt;code class=&quot;highlighter-rouge&quot;&gt;docker&lt;/code&gt;镜像&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;role&lt;/code&gt; 部分也完成了……&lt;/p&gt;
-
-&lt;p&gt;现在又累又饿……&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;18号的份&quot;&gt;18号的份&lt;/h2&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;role&lt;/code&gt; 部分修正完成~~&lt;/p&gt;
-
-&lt;p&gt;过程中确实补增了许多东西&lt;/p&gt;
-
-&lt;p&gt;到验证了~~&lt;/p&gt;</content><author><name>K11</name></author><category term="日记" /><category term="vue" /><category term="laravel" /><summary type="html">15号的份 染黑了 自己都感觉到内心在向着无底的黑暗靠近 新键盘并没有人体工程学的好用 估计以后都只会选择人体工程学的了 开始处理权限了 admin的基本部分快做完了 之后是一般用户数据了 按照计划的一样进行扩展 说句自满的话 它不仅仅是一个游戏 16号的份 v-for 不能放在顶级标签上，会报错！ 更新了一下docker镜像 role 部分也完成了…… 现在又累又饿…… 18号的份 role 部分修正完成~~ 过程中确实补增了许多东西 到验证了~~</summary></entry><entry><title type="html">11号的份</title><link href="http://localhost:4000/living/2018/10/14/blog/" rel="alternate" type="text/html" title="11号的份" /><published>2018-10-14T08:00:00+08:00</published><updated>2018-10-14T08:00:00+08:00</updated><id>http://localhost:4000/living/2018/10/14/blog</id><content type="html" xml:base="http://localhost:4000/living/2018/10/14/blog/">&lt;h1 id=&quot;11号的份&quot;&gt;11号的份&lt;/h1&gt;
-
-&lt;h2 id=&quot;队列&quot;&gt;队列&lt;/h2&gt;
-
-&lt;p&gt;将特定 信息通知 推送到指定队列&lt;/p&gt;
-
-&lt;p&gt;修改&lt;code class=&quot;highlighter-rouge&quot;&gt;horizon&lt;/code&gt; 后&lt;/p&gt;
-
-&lt;p&gt;可以使用&lt;/p&gt;
-
-&lt;div class=&quot;language-php highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$user-&amp;gt;notify((new SendEmail($Token))-&amp;gt;onQueue('mail'));
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;或&lt;/p&gt;
-
-&lt;div class=&quot;language-php highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;use Notification;
-Notification::send($user, (new SendEmail($Token))-&amp;gt;onQueue('mail'));
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;h2 id=&quot;roles&quot;&gt;roles&lt;/h2&gt;
-
-&lt;p&gt;需要注意&lt;code class=&quot;highlighter-rouge&quot;&gt;guard&lt;/code&gt;对应&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;view&lt;/code&gt;与&lt;code class=&quot;highlighter-rouge&quot;&gt;models&lt;/code&gt; 要注意同步&lt;/p&gt;
-
-&lt;p&gt;在&lt;code class=&quot;highlighter-rouge&quot;&gt;blade&lt;/code&gt; 中使用时&lt;/p&gt;
-
-&lt;div class=&quot;language-php highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;@role('role' , 'guard')
-something
-@endrole
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;在路由中使用时&lt;/p&gt;
-
-&lt;div class=&quot;language-php highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Route::group(['middleware' =&amp;gt; ['auth:admin' , 'role:admin']], function () {
-
-});
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;也可以在控制器中使用&lt;/p&gt;
-
-&lt;div class=&quot;language-php highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;public function __construct()
-{
-    $this-&amp;gt;middleware(['role:admin' , 'auth:admin']);
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;hr /&gt;
-
-&lt;h1 id=&quot;14号的份&quot;&gt;14号的份&lt;/h1&gt;
-
-&lt;h2 id=&quot;find-与-where-的坑&quot;&gt;find 与 where 的坑&lt;/h2&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;find&lt;/code&gt; 不能准确 查找到对应条目&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;where&lt;/code&gt; 则可以，之后只有有意识的替换&lt;code class=&quot;highlighter-rouge&quot;&gt;find&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;register&lt;/code&gt;的后端调整完成了~~~&lt;/p&gt;
-
-&lt;p&gt;大概这种感觉&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://i.loli.net/2018/10/14/5bc33df12e03a.png&quot; alt=&quot;屏幕快照 2018-10-14 20.58.44&quot; /&gt;&lt;/p&gt;</content><author><name>K11</name></author><category term="日记" /><category term="laravel" /><summary type="html">11号的份 队列 将特定 信息通知 推送到指定队列 修改horizon 后 可以使用 $user-&amp;gt;notify((new SendEmail($Token))-&amp;gt;onQueue('mail')); 或 use Notification; Notification::send($user, (new SendEmail($Token))-&amp;gt;onQueue('mail')); roles 需要注意guard对应 view与models 要注意同步 在blade 中使用时 @role('role' , 'guard') something @endrole 在路由中使用时 Route::group(['middleware' =&amp;gt; ['auth:admin' , 'role:admin']], function () { }); 也可以在控制器中使用 public function __construct() { $this-&amp;gt;middleware(['role:admin' , 'auth:admin']); } 14号的份 find 与 where 的坑 find 不能准确 查找到对应条目 where 则可以，之后只有有意识的替换find register的后端调整完成了~~~ 大概这种感觉</summary></entry></feed>
+&lt;p&gt;使用&lt;code class=&quot;highlighter-rouge&quot;&gt;valet&lt;/code&gt;时 &lt;code class=&quot;highlighter-rouge&quot;&gt;link&lt;/code&gt; 与 &lt;code class=&quot;highlighter-rouge&quot;&gt;park&lt;/code&gt; 混用会报错！&lt;/p&gt;</content><author><name>K11</name></author><category term="日记" /><category term="postman" /><category term="laravel" /><summary type="html">使用 postman 进行 post 使用postman 直接 post 的方法 laravel 本身有CSRF 直接使用post 、 put 等等会被阻断 找到一个可以解决办法 postman chrome 插件版本 新建一个environment 并切换到新建，右上⚙位置 找一个get请求 在Tests标签下输入 var xsrfCookie = postman.getResponseCookie(&quot;XSRF-TOKEN&quot;); postman.setEnvironmentVariable(&quot;XSRF-TOKEN&quot;, xsrfCookie.value); `` 对应该的是第二行要注意下。 用于获取XSRF-TOKEN的值。 查看environment中 XSRF-TOKEN 是否被正确传入。右上👁位置 确认后在post 的Headers 中添加 X-XSRF-TOKEN : 之后就可以正常提交post了 注意：laravel XSRF-TOKEN 有时效性 注意更新 当XSRF-TOKEN 中有特殊字符，例如%时，laravel X-XSRF-TOKEN 验证会失败 主要是为postman 对XSRF-TOKEN识别有问题，桌面版本没有这个问题 postman 桌面版 同上Tests标签可以写成 pm.environment.set(&quot;xsrf-token&quot;, decodeURIComponent(pm.cookies.get(&quot;XSRF-TOKEN&quot;))) 使用laravel valet 时，postman不能正确访问域名…… 原因valet产生的SSL证书，所以被阻挡，手动关闭后正常使用 要关闭的位置 settings -&amp;gt; SSL certificate verifcation -&amp;gt; off 之后就可以正常使用了 使用valet时 link 与 park 混用会报错！</summary></entry></feed>

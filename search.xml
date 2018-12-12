@@ -2,6 +2,44 @@
 <search>
   
     <entry>
+      <title><![CDATA[自动化的路上]]></title>
+      <url>/living/2018/12/12/blog/</url>
+      <content type="text"><![CDATA[自动化的路上现在多写一点，之后使用时就容易一点。真正运行起来工作量会是现在的几倍吧，也不知道能不能支撑下去……打劫4个小鬼 来打劫火花塞上的贵金属 也是醉了……求钟馗大神传授驱鬼之法！和 小区门口私设停车位收费类似 原始 无规则我朝 需要 改变的东西真的太都了砖酱iphone xr 入手 上了UGA的壳之后硬度感人，估计超过板砖。所以之后爱称砖酱]]></content>
+      <categories>
+        
+          <category> Living </category>
+        
+      </categories>
+      <tags>
+        
+          <tag> 日记 </tag>
+        
+          <tag> laravel </tag>
+        
+      </tags>
+      <tags></tags>
+    </entry>
+  
+    <entry>
+      <title><![CDATA[链接]]></title>
+      <url>/living/2018/12/06/blog/</url>
+      <content type="text"><![CDATA[链接构建中远程管理构建中，主要目的是token请求的自动化。当使用大量token细化权限时手动请求、更新、选择token将是地狱模式了composer 包管理当使用自定义包时dev-master版本不能正常载入的情况下在composer.json中添加    "minimum-stability": "dev",    "prefer-stable": true,同时要指定路径,如果有多个包,需要分别指定,    "repositories": {		"pack": {		    "type": "path",		    "url": "../packages/packname/pack"		}	}这样自定义包就可以载入了其他包则使用稳定版本cURL error 60: SSL certificate problem参考资料推断为证书不能正确加载，在php.info中指定路径同样无效。直接使用laravel valet的公钥访问有效curl https://game.test/ --cacert ~/.config/valet/CA/LaravelValetCASelfSigned.pemlaravel/scout安装laravel/scout使用时遇到Class 'AlgoliaSearch\Version' not found原因laravel/scout 不支持 algoliasearch-client-php: ^2.0 改为algoliasearch-client-php: ^1.27参考资料从速度看scout 没有从内存搜索快，这也是必然吧。使用第三方搜索也有数据泄露的风险。不过重写驱动也是要命……scout 还没想到需要使用的地方……比如 搜 文档 更新 什么的……]]></content>
+      <categories>
+        
+          <category> Living </category>
+        
+      </categories>
+      <tags>
+        
+          <tag> 日记 </tag>
+        
+          <tag> laravel </tag>
+        
+      </tags>
+      <tags></tags>
+    </entry>
+  
+    <entry>
       <title><![CDATA[分包了！！]]></title>
       <url>/living/2018/12/03/blog/</url>
       <content type="text"><![CDATA[厄运驱散最近不顺利的程度超级高，驱散！驱散！驱散！还有文件莫名丢失，注意力不能集中，超级烦啊！啊！啊！还有倒霉会出现征兆…… 也是……php 版本的坑更新后 不能识别 tls推断 更新后对tls 产生变化，暂时关闭tls使用 http果然后台没写好就写前端什么的，效率不高呢……看来要规划一下了……在laravel 模型中使用protected $casts = [    'scopes' =&gt; 'array',];当然也可以定义其他类型可以使查询项返回数组，前提是存入的也是数组文档在5.0版 这就比较坑了]]></content>
