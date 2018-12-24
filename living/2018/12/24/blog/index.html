@@ -83,7 +83,7 @@
 <link href="/assets/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="日记,laravel,laravel horizon,laravel queues,redis," />
+  <meta name="keywords" content="日记,laravel," />
 
 
 
@@ -111,17 +111,17 @@
 
 
 
-<meta name="description" content="laravel 队列的坑 正确的入坑姿势 使用laravel horizon的 php artisan horizon 运行 队列。 使用-&amp;gt;onQueue(SendMail)方法指定队列时，Job可以正常的载入，Queue不正常…… 判断为Queue问题 使用php artisan queue:work --queue=SendMail,default 时正常显示 判断为laravel horizon问题 一起出坑吧 在config\horizon中添加Queue 名称就好了~ 要注意在local 与 prodution的区别。 没有config\horizon文件？ 运行php artisan vendor:publish --provider=&quot;Laravel\Horizon\HorizonServiceProvider&quot; 其他 更改redis中存储位置 当多个web服务一同使用horizon时， 要在.env中设置 HORIZON_PREFIX=horizon:name 区分 不同应用 否则出错。 刚要使用不同的redis数据表时，要在设置config\horizon中的use项， 同时在config\database中redis设置 &apos;redis&apos; =&amp;gt; [ &apos;client&apos; =&amp;gt; &apos;predis&apos;, &apos;default&apos; =&amp;gt; [ &apos;host&apos; =&amp;gt; env(&apos;REDIS_HOST&apos;, &apos;127.0.0.1&apos;), &apos;password&apos; =&amp;gt; env(&apos;REDIS_PASSWORD&apos;, null), &apos;port&apos; =&amp;gt; env(&apos;REDIS_PORT&apos;, 6379), &apos;database&apos; =&amp;gt; 1, ], &apos;session&apos; =&amp;gt; [ &apos;host&apos; =&amp;gt; env(&apos;REDIS_HOST&apos;, &apos;127.0.0.1&apos;), &apos;password&apos; =&amp;gt; env(&apos;REDIS_PASSWORD&apos;, null), &apos;port&apos; =&amp;gt; env(&apos;REDIS_PORT&apos;, 6379), &apos;database&apos; =&amp;gt; 2, ], &apos;queue&apos; =&amp;gt; [ &apos;host&apos; =&amp;gt; env(&apos;REDIS_HOST&apos;, &apos;127.0.0.1&apos;), &apos;password&apos; =&amp;gt; env(&apos;REDIS_PASSWORD&apos;, null), &apos;port&apos; =&amp;gt; env(&apos;REDIS_PORT&apos;, 6379), &apos;database&apos; =&amp;gt; 3, ], 命令 运行 php artisan horizon 彻底关闭 php artisan horizon:terminate 暂定 php artisan horizon:pause 恢复 php artisan horizon:continue 以上">
-<meta name="keywords" content="日记, laravel, laravel horizon, laravel queues, redis">
+<meta name="description" content="连接部分完成了 进度有点慢…… 主要是心情问题…… 耳机断梁，零件遥遥无期， 环境噪音很烦，新版的暂时还不想入 ￥ 2400 RMB 并不廉价…… 问题是旧的硬件并没有坏，只是外壳坏了…… 对于喜爱事物的执著也是…… 心塞…… 看好了一款新键盘 键盘的优点是可以快速更改轴体，同时有RGB功能 写在这里留用 Massdrop CTRL Mechanical Keyboard 鼠标 就选定 罗技g903无线套装了 标准键位的的键盘也渐渐适应了 用久了 手指还是会疼…… 难道是我打开方式不对？ 雷蛇到好处之一是能与飞利浦hue灯光联动，环境效果极佳 新机的CPU预计使用新出的28。 如果使用双CUP之后搬运就大问题了，用电量也是一方便~ 更新时，墙内的电线也要一起更新，想想就头痛。 墙里原有的线质量并不好…… 其他 最近想的东西也很多，心里也很乱，完全不能平静 除了手头上的事情外都是模糊的 说实话挺恐怖的……">
+<meta name="keywords" content="日记, laravel">
 <meta property="og:type" content="article">
-<meta property="og:title" content="laravel 队列的坑">
-<meta property="og:url" content="http://localhost:4000/living/2018/07/16/blog/">
+<meta property="og:title" content="连接部分完成了">
+<meta property="og:url" content="http://localhost:4000/living/2018/12/24/blog/">
 <meta property="og:site_name" content="Keleven.Me">
-<meta property="og:description" content="laravel 队列的坑 正确的入坑姿势 使用laravel horizon的 php artisan horizon 运行 队列。 使用-&amp;gt;onQueue(SendMail)方法指定队列时，Job可以正常的载入，Queue不正常…… 判断为Queue问题 使用php artisan queue:work --queue=SendMail,default 时正常显示 判断为laravel horizon问题 一起出坑吧 在config\horizon中添加Queue 名称就好了~ 要注意在local 与 prodution的区别。 没有config\horizon文件？ 运行php artisan vendor:publish --provider=&quot;Laravel\Horizon\HorizonServiceProvider&quot; 其他 更改redis中存储位置 当多个web服务一同使用horizon时， 要在.env中设置 HORIZON_PREFIX=horizon:name 区分 不同应用 否则出错。 刚要使用不同的redis数据表时，要在设置config\horizon中的use项， 同时在config\database中redis设置 &apos;redis&apos; =&amp;gt; [ &apos;client&apos; =&amp;gt; &apos;predis&apos;, &apos;default&apos; =&amp;gt; [ &apos;host&apos; =&amp;gt; env(&apos;REDIS_HOST&apos;, &apos;127.0.0.1&apos;), &apos;password&apos; =&amp;gt; env(&apos;REDIS_PASSWORD&apos;, null), &apos;port&apos; =&amp;gt; env(&apos;REDIS_PORT&apos;, 6379), &apos;database&apos; =&amp;gt; 1, ], &apos;session&apos; =&amp;gt; [ &apos;host&apos; =&amp;gt; env(&apos;REDIS_HOST&apos;, &apos;127.0.0.1&apos;), &apos;password&apos; =&amp;gt; env(&apos;REDIS_PASSWORD&apos;, null), &apos;port&apos; =&amp;gt; env(&apos;REDIS_PORT&apos;, 6379), &apos;database&apos; =&amp;gt; 2, ], &apos;queue&apos; =&amp;gt; [ &apos;host&apos; =&amp;gt; env(&apos;REDIS_HOST&apos;, &apos;127.0.0.1&apos;), &apos;password&apos; =&amp;gt; env(&apos;REDIS_PASSWORD&apos;, null), &apos;port&apos; =&amp;gt; env(&apos;REDIS_PORT&apos;, 6379), &apos;database&apos; =&amp;gt; 3, ], 命令 运行 php artisan horizon 彻底关闭 php artisan horizon:terminate 暂定 php artisan horizon:pause 恢复 php artisan horizon:continue 以上">
+<meta property="og:description" content="连接部分完成了 进度有点慢…… 主要是心情问题…… 耳机断梁，零件遥遥无期， 环境噪音很烦，新版的暂时还不想入 ￥ 2400 RMB 并不廉价…… 问题是旧的硬件并没有坏，只是外壳坏了…… 对于喜爱事物的执著也是…… 心塞…… 看好了一款新键盘 键盘的优点是可以快速更改轴体，同时有RGB功能 写在这里留用 Massdrop CTRL Mechanical Keyboard 鼠标 就选定 罗技g903无线套装了 标准键位的的键盘也渐渐适应了 用久了 手指还是会疼…… 难道是我打开方式不对？ 雷蛇到好处之一是能与飞利浦hue灯光联动，环境效果极佳 新机的CPU预计使用新出的28。 如果使用双CUP之后搬运就大问题了，用电量也是一方便~ 更新时，墙内的电线也要一起更新，想想就头痛。 墙里原有的线质量并不好…… 其他 最近想的东西也很多，心里也很乱，完全不能平静 除了手头上的事情外都是模糊的 说实话挺恐怖的……">
 <meta property="og:locale" content="en">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="laravel 队列的坑">
-<meta name="twitter:description" content="laravel 队列的坑 正确的入坑姿势 使用laravel horizon的 php artisan horizon 运行 队列。 使用-&amp;gt;onQueue(SendMail)方法指定队列时，Job可以正常的载入，Queue不正常…… 判断为Queue问题 使用php artisan queue:work --queue=SendMail,default 时正常显示 判断为laravel horizon问题 一起出坑吧 在config\horizon中添加Queue 名称就好了~ 要注意在local 与 prodution的区别。 没有config\horizon文件？ 运行php artisan vendor:publish --provider=&quot;Laravel\Horizon\HorizonServiceProvider&quot; 其他 更改redis中存储位置 当多个web服务一同使用horizon时， 要在.env中设置 HORIZON_PREFIX=horizon:name 区分 不同应用 否则出错。 刚要使用不同的redis数据表时，要在设置config\horizon中的use项， 同时在config\database中redis设置 &apos;redis&apos; =&amp;gt; [ &apos;client&apos; =&amp;gt; &apos;predis&apos;, &apos;default&apos; =&amp;gt; [ &apos;host&apos; =&amp;gt; env(&apos;REDIS_HOST&apos;, &apos;127.0.0.1&apos;), &apos;password&apos; =&amp;gt; env(&apos;REDIS_PASSWORD&apos;, null), &apos;port&apos; =&amp;gt; env(&apos;REDIS_PORT&apos;, 6379), &apos;database&apos; =&amp;gt; 1, ], &apos;session&apos; =&amp;gt; [ &apos;host&apos; =&amp;gt; env(&apos;REDIS_HOST&apos;, &apos;127.0.0.1&apos;), &apos;password&apos; =&amp;gt; env(&apos;REDIS_PASSWORD&apos;, null), &apos;port&apos; =&amp;gt; env(&apos;REDIS_PORT&apos;, 6379), &apos;database&apos; =&amp;gt; 2, ], &apos;queue&apos; =&amp;gt; [ &apos;host&apos; =&amp;gt; env(&apos;REDIS_HOST&apos;, &apos;127.0.0.1&apos;), &apos;password&apos; =&amp;gt; env(&apos;REDIS_PASSWORD&apos;, null), &apos;port&apos; =&amp;gt; env(&apos;REDIS_PORT&apos;, 6379), &apos;database&apos; =&amp;gt; 3, ], 命令 运行 php artisan horizon 彻底关闭 php artisan horizon:terminate 暂定 php artisan horizon:pause 恢复 php artisan horizon:continue 以上">
+<meta name="twitter:title" content="连接部分完成了">
+<meta name="twitter:description" content="连接部分完成了 进度有点慢…… 主要是心情问题…… 耳机断梁，零件遥遥无期， 环境噪音很烦，新版的暂时还不想入 ￥ 2400 RMB 并不廉价…… 问题是旧的硬件并没有坏，只是外壳坏了…… 对于喜爱事物的执著也是…… 心塞…… 看好了一款新键盘 键盘的优点是可以快速更改轴体，同时有RGB功能 写在这里留用 Massdrop CTRL Mechanical Keyboard 鼠标 就选定 罗技g903无线套装了 标准键位的的键盘也渐渐适应了 用久了 手指还是会疼…… 难道是我打开方式不对？ 雷蛇到好处之一是能与飞利浦hue灯光联动，环境效果极佳 新机的CPU预计使用新出的28。 如果使用双CUP之后搬运就大问题了，用电量也是一方便~ 更新时，墙内的电线也要一起更新，想想就头痛。 墙里原有的线质量并不好…… 其他 最近想的东西也很多，心里也很乱，完全不能平静 除了手头上的事情外都是模糊的 说实话挺恐怖的……">
 
 
 <script type="text/javascript" id="hexo.configurations">
@@ -154,7 +154,7 @@
 
 
 
-  <title>laravel 队列的坑 | Keleven.Me</title>
+  <title>连接部分完成了 | Keleven.Me</title>
   
 
 
@@ -335,7 +335,7 @@
   
 
   <article class="post post-type- " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://localhost:4000/living/2018/07/16/blog/">
+    <link itemprop="mainEntityOfPage" href="http://localhost:4000/living/2018/12/24/blog/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="K11">
@@ -355,7 +355,7 @@
           <h1 class="post-title" itemprop="name headline">
           
           
-            laravel 队列的坑
+            连接部分完成了
           
         </h1>
         
@@ -369,8 +369,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-16T08:00:01+08:00">
-                2018-07-16
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-24T08:00:00+08:00">
+                2018-12-24
               </time>
             
 
@@ -411,9 +411,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/living/2018/07/16/blog/#comments" itemprop="discussionUrl">
+                <a href="/living/2018/12/24/blog/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="/living/2018/07/16/blog/" itemprop="commentCount"></span>
+                        data-disqus-identifier="/living/2018/12/24/blog/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -459,86 +459,58 @@
 
 
 
-  <h2 id="laravel-队列的坑">laravel 队列的坑</h2>
+  <h1 id="连接部分完成了">连接部分完成了</h1>
 
-<h3 id="正确的入坑姿势">正确的入坑姿势</h3>
+<p>进度有点慢……</p>
 
-<p>使用<code class="highlighter-rouge">laravel horizon</code>的 <code class="highlighter-rouge">php artisan horizon</code> 运行 队列。</p>
+<p>主要是心情问题……</p>
 
-<p>使用<code class="highlighter-rouge">-&gt;onQueue(SendMail)</code>方法指定队列时，<code class="highlighter-rouge">Job</code>可以正常的载入，<code class="highlighter-rouge">Queue</code>不正常……</p>
+<p>耳机断梁，零件遥遥无期，</p>
 
-<p>判断为<code class="highlighter-rouge">Queue</code>问题</p>
+<p>环境噪音很烦，新版的暂时还不想入</p>
 
-<p>使用<code class="highlighter-rouge">php artisan queue:work --queue=SendMail,default</code> 时正常显示</p>
+<p>￥ 2400 RMB 并不廉价……</p>
 
-<p>判断为<code class="highlighter-rouge">laravel horizon</code>问题</p>
+<p>问题是旧的硬件并没有坏，只是外壳坏了……</p>
 
-<h3 id="一起出坑吧">一起出坑吧</h3>
+<p>对于喜爱事物的执著也是……</p>
 
-<p>在<code class="highlighter-rouge">config\horizon</code>中添加<code class="highlighter-rouge">Queue</code> 名称就好了~</p>
+<p>心塞……</p>
 
-<p>要注意在<code class="highlighter-rouge">local</code> 与 <code class="highlighter-rouge">prodution</code>的区别。</p>
+<h1 id="看好了一款新键盘">看好了一款新键盘</h1>
 
-<p>没有<code class="highlighter-rouge">config\horizon</code>文件？</p>
+<p>键盘的优点是可以快速更改轴体，同时有<code class="highlighter-rouge">RGB</code>功能</p>
 
-<p>运行<code class="highlighter-rouge">php artisan vendor:publish --provider="Laravel\Horizon\HorizonServiceProvider"</code></p>
+<p>写在这里留用</p>
 
-<h3 id="其他">其他</h3>
+<p><a href="https://www.massdrop.com/buy/massdrop-ctrl-mechanical-keyboard">Massdrop CTRL Mechanical Keyboard</a></p>
 
-<h4 id="更改redis中存储位置">更改redis中存储位置</h4>
+<p>鼠标 就选定 <code class="highlighter-rouge">罗技g903</code>无线套装了</p>
 
-<p>当多个web服务一同使用<code class="highlighter-rouge">horizon</code>时，</p>
+<p>标准键位的的键盘也渐渐适应了</p>
 
-<p>要在<code class="highlighter-rouge">.env</code>中设置 <code class="highlighter-rouge">HORIZON_PREFIX=horizon:name</code> 区分 不同应用 否则出错。</p>
+<p>用久了 手指还是会疼……</p>
 
-<p>刚要使用不同的<code class="highlighter-rouge">redis</code>数据表时，要在设置<code class="highlighter-rouge">config\horizon</code>中的<code class="highlighter-rouge">use</code>项，</p>
+<p>难道是我打开方式不对？</p>
 
-<p>同时在<code class="highlighter-rouge">config\database</code>中<code class="highlighter-rouge">redis</code>设置</p>
+<p>雷蛇到好处之一是能与飞利浦hue灯光联动，环境效果极佳</p>
 
-<div class="language-php highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9<br/>10<br/>11<br/>12<br/>13<br/>14<br/>15<br/>16<br/>17<br/>18<br/>19<br/>20<br/>21<br/>22<br/>23<br/>24</pre></td><td class="code"><pre class="highlight"><code>    'redis' =&gt; [
+<p>新机的<code class="highlighter-rouge">CPU</code>预计使用新出的<code class="highlighter-rouge">28</code>。</p>
 
-        'client' =&gt; 'predis',
+<p>如果使用双<code class="highlighter-rouge">CUP</code>之后搬运就大问题了，用电量也是一方便~</p>
 
-        'default' =&gt; [
-            'host' =&gt; env('REDIS_HOST', '127.0.0.1'),
-            'password' =&gt; env('REDIS_PASSWORD', null),
-            'port' =&gt; env('REDIS_PORT', 6379),
-            'database' =&gt; 1,
-        ],
+<p>更新时，墙内的电线也要一起更新，想想就头痛。</p>
 
-        'session' =&gt; [
-            'host' =&gt; env('REDIS_HOST', '127.0.0.1'),
-            'password' =&gt; env('REDIS_PASSWORD', null),
-            'port' =&gt; env('REDIS_PORT', 6379),
-            'database' =&gt; 2,
-        ],
-        
-        'queue' =&gt; [
-            'host' =&gt; env('REDIS_HOST', '127.0.0.1'),
-            'password' =&gt; env('REDIS_PASSWORD', null),
-            'port' =&gt; env('REDIS_PORT', 6379),
-            'database' =&gt; 3,
-        ],
-</code></pre></td></tr></tbody></table></div>
-</div>
+<p>墙里原有的线质量并不好……</p>
 
-<h4 id="命令">命令</h4>
+<h1 id="其他">其他</h1>
 
-<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9<br/>10<br/>11</pre></td><td class="code"><pre class="highlight"><code>运行
-php artisan horizon 
+<p>最近想的东西也很多，心里也很乱，完全不能平静</p>
 
-彻底关闭
-php artisan horizon:terminate
+<p>除了手头上的事情外都是模糊的</p>
 
-暂定
-php artisan horizon:pause
+<p>说实话挺恐怖的……</p>
 
-恢复
-php artisan horizon:continue
-</code></pre></td></tr></tbody></table></div>
-</div>
-
-<h2 id="以上">以上</h2>
 
 
       
@@ -575,15 +547,6 @@ php artisan horizon:continue
             
             <a href="/tag/#/laravel" rel="tag"># laravel</a>
           
-            
-            <a href="/tag/#/laravel%20horizon" rel="tag"># laravel horizon</a>
-          
-            
-            <a href="/tag/#/laravel%20queues" rel="tag"># laravel queues</a>
-          
-            
-            <a href="/tag/#/redis" rel="tag"># redis</a>
-          
         </div>
       
 
@@ -598,18 +561,14 @@ php artisan horizon:continue
         <div class="post-nav" id="post-nav-id">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/living/2018/07/23/blog/" rel="next" title="细小的修正">
-                <i class="fa fa-chevron-left"></i> 细小的修正
-              </a>
-            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/living/2018/07/13/blog/" rel="prev" title="laravel 日常的坑">
-                laravel 日常的坑 <i class="fa fa-chevron-right"></i>
+              <a href="/living/2018/12/18/blog/" rel="prev" title="日常">
+                日常 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -798,7 +757,7 @@ php artisan horizon:continue
             
               <div class="post-toc-content">
     <ol class=nav>
-      <li class="nav-item nav-level-2"> <a class="nav-link" href="#laravel-队列的坑"> <span class="nav-number">1</span> <span class="nav-text">laravel 队列的坑</span> </a> <ol class="nav-child"> <li class="nav-item nav-level-3"> <a class="nav-link" href="#正确的入坑姿势"> <span class="nav-number">1.1</span> <span class="nav-text">正确的入坑姿势</span> </a> </li> <li class="nav-item nav-level-3"> <a class="nav-link" href="#一起出坑吧"> <span class="nav-number">1.2</span> <span class="nav-text">一起出坑吧</span> </a> </li> <li class="nav-item nav-level-3"> <a class="nav-link" href="#其他"> <span class="nav-number">1.3</span> <span class="nav-text">其他</span> </a> <ol class="nav-child"> <li class="nav-item nav-level-4"> <a class="nav-link" href="#更改redis中存储位置"> <span class="nav-number">1.3.1</span> <span class="nav-text">更改redis中存储位置</span> </a> </li> <li class="nav-item nav-level-4"> <a class="nav-link" href="#命令"> <span class="nav-number">1.3.2</span> <span class="nav-text">命令</span> </a> </li> </ol> </li> </ol> </li> <li class="nav-item nav-level-2"> <a class="nav-link" href="#以上"> <span class="nav-number">2</span> <span class="nav-text">以上</span> </a> </li>
+      <li class="nav-item nav-level-1"> <a class="nav-link" href="#连接部分完成了"> <span class="nav-number">1</span> <span class="nav-text">连接部分完成了</span> </a> </li> <li class="nav-item nav-level-1"> <a class="nav-link" href="#看好了一款新键盘"> <span class="nav-number">2</span> <span class="nav-text">看好了一款新键盘</span> </a> </li> <li class="nav-item nav-level-1"> <a class="nav-link" href="#其他"> <span class="nav-number">3</span> <span class="nav-text">其他</span> </a> </li>
     </ol>
   </div>
             
@@ -967,9 +926,9 @@ php artisan horizon:continue
       
       <script type="text/javascript">
           var disqus_config = function () {
-              this.page.url = 'http://localhost:4000/living/2018/07/16/blog/';
-              this.page.identifier = '/living/2018/07/16/blog/';
-              this.page.title = 'laravel 队列的坑';
+              this.page.url = 'http://localhost:4000/living/2018/12/24/blog/';
+              this.page.identifier = '/living/2018/12/24/blog/';
+              this.page.title = '连接部分完成了';
           };
           var d = document, s = d.createElement('script');
           s.src = 'https://keleven.disqus.com/embed.js';

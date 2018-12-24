@@ -397,6 +397,14 @@
 <lastmod>2018-12-12T08:00:00+08:00</lastmod>
 </url>
 <url>
+<loc>http://localhost:4000/living/2018/12/18/blog/</loc>
+<lastmod>2018-12-18T08:00:00+08:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/living/2018/12/24/blog/</loc>
+<lastmod>2018-12-24T08:00:00+08:00</lastmod>
+</url>
+<url>
 <loc>http://localhost:4000/tags/</loc>
 </url>
 <url>
@@ -452,6 +460,9 @@
 </url>
 <url>
 <loc>http://localhost:4000/page10/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/page11/</loc>
 </url>
 <url>
 <loc>http://localhost:4000/404.html</loc>

@@ -83,7 +83,7 @@
 <link href="/assets/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="日记,laravel,laravel horizon,laravel queues,redis," />
+  <meta name="keywords" content="日记,laravel," />
 
 
 
@@ -111,17 +111,17 @@
 
 
 
-<meta name="description" content="laravel 队列的坑 正确的入坑姿势 使用laravel horizon的 php artisan horizon 运行 队列。 使用-&amp;gt;onQueue(SendMail)方法指定队列时，Job可以正常的载入，Queue不正常…… 判断为Queue问题 使用php artisan queue:work --queue=SendMail,default 时正常显示 判断为laravel horizon问题 一起出坑吧 在config\horizon中添加Queue 名称就好了~ 要注意在local 与 prodution的区别。 没有config\horizon文件？ 运行php artisan vendor:publish --provider=&quot;Laravel\Horizon\HorizonServiceProvider&quot; 其他 更改redis中存储位置 当多个web服务一同使用horizon时， 要在.env中设置 HORIZON_PREFIX=horizon:name 区分 不同应用 否则出错。 刚要使用不同的redis数据表时，要在设置config\horizon中的use项， 同时在config\database中redis设置 &apos;redis&apos; =&amp;gt; [ &apos;client&apos; =&amp;gt; &apos;predis&apos;, &apos;default&apos; =&amp;gt; [ &apos;host&apos; =&amp;gt; env(&apos;REDIS_HOST&apos;, &apos;127.0.0.1&apos;), &apos;password&apos; =&amp;gt; env(&apos;REDIS_PASSWORD&apos;, null), &apos;port&apos; =&amp;gt; env(&apos;REDIS_PORT&apos;, 6379), &apos;database&apos; =&amp;gt; 1, ], &apos;session&apos; =&amp;gt; [ &apos;host&apos; =&amp;gt; env(&apos;REDIS_HOST&apos;, &apos;127.0.0.1&apos;), &apos;password&apos; =&amp;gt; env(&apos;REDIS_PASSWORD&apos;, null), &apos;port&apos; =&amp;gt; env(&apos;REDIS_PORT&apos;, 6379), &apos;database&apos; =&amp;gt; 2, ], &apos;queue&apos; =&amp;gt; [ &apos;host&apos; =&amp;gt; env(&apos;REDIS_HOST&apos;, &apos;127.0.0.1&apos;), &apos;password&apos; =&amp;gt; env(&apos;REDIS_PASSWORD&apos;, null), &apos;port&apos; =&amp;gt; env(&apos;REDIS_PORT&apos;, 6379), &apos;database&apos; =&amp;gt; 3, ], 命令 运行 php artisan horizon 彻底关闭 php artisan horizon:terminate 暂定 php artisan horizon:pause 恢复 php artisan horizon:continue 以上">
-<meta name="keywords" content="日记, laravel, laravel horizon, laravel queues, redis">
+<meta name="description" content="日常 砖酱人脸识别速度不高呢 换了钢化膜 解锁速度起飞~~ 都是膜的错 vue 的坑 使用组件时props 如果直接复制数组，刚数组变化时props 中的值也会变化。 这就非常不利于对数据进行调整了。 使用 JSON.parse(JSON.stringify(this.name.array)) 这样用解决了array 数据被改变的问题 如果props 中没有嵌套 array 或 object 可以使用 Object.assign({}, this.name) 一对多 的坑 laravel一对多写入时 并不如想的容易 改用多对多轻松解决了">
+<meta name="keywords" content="日记, laravel">
 <meta property="og:type" content="article">
-<meta property="og:title" content="laravel 队列的坑">
-<meta property="og:url" content="http://localhost:4000/living/2018/07/16/blog/">
+<meta property="og:title" content="日常">
+<meta property="og:url" content="http://localhost:4000/living/2018/12/18/blog/">
 <meta property="og:site_name" content="Keleven.Me">
-<meta property="og:description" content="laravel 队列的坑 正确的入坑姿势 使用laravel horizon的 php artisan horizon 运行 队列。 使用-&amp;gt;onQueue(SendMail)方法指定队列时，Job可以正常的载入，Queue不正常…… 判断为Queue问题 使用php artisan queue:work --queue=SendMail,default 时正常显示 判断为laravel horizon问题 一起出坑吧 在config\horizon中添加Queue 名称就好了~ 要注意在local 与 prodution的区别。 没有config\horizon文件？ 运行php artisan vendor:publish --provider=&quot;Laravel\Horizon\HorizonServiceProvider&quot; 其他 更改redis中存储位置 当多个web服务一同使用horizon时， 要在.env中设置 HORIZON_PREFIX=horizon:name 区分 不同应用 否则出错。 刚要使用不同的redis数据表时，要在设置config\horizon中的use项， 同时在config\database中redis设置 &apos;redis&apos; =&amp;gt; [ &apos;client&apos; =&amp;gt; &apos;predis&apos;, &apos;default&apos; =&amp;gt; [ &apos;host&apos; =&amp;gt; env(&apos;REDIS_HOST&apos;, &apos;127.0.0.1&apos;), &apos;password&apos; =&amp;gt; env(&apos;REDIS_PASSWORD&apos;, null), &apos;port&apos; =&amp;gt; env(&apos;REDIS_PORT&apos;, 6379), &apos;database&apos; =&amp;gt; 1, ], &apos;session&apos; =&amp;gt; [ &apos;host&apos; =&amp;gt; env(&apos;REDIS_HOST&apos;, &apos;127.0.0.1&apos;), &apos;password&apos; =&amp;gt; env(&apos;REDIS_PASSWORD&apos;, null), &apos;port&apos; =&amp;gt; env(&apos;REDIS_PORT&apos;, 6379), &apos;database&apos; =&amp;gt; 2, ], &apos;queue&apos; =&amp;gt; [ &apos;host&apos; =&amp;gt; env(&apos;REDIS_HOST&apos;, &apos;127.0.0.1&apos;), &apos;password&apos; =&amp;gt; env(&apos;REDIS_PASSWORD&apos;, null), &apos;port&apos; =&amp;gt; env(&apos;REDIS_PORT&apos;, 6379), &apos;database&apos; =&amp;gt; 3, ], 命令 运行 php artisan horizon 彻底关闭 php artisan horizon:terminate 暂定 php artisan horizon:pause 恢复 php artisan horizon:continue 以上">
+<meta property="og:description" content="日常 砖酱人脸识别速度不高呢 换了钢化膜 解锁速度起飞~~ 都是膜的错 vue 的坑 使用组件时props 如果直接复制数组，刚数组变化时props 中的值也会变化。 这就非常不利于对数据进行调整了。 使用 JSON.parse(JSON.stringify(this.name.array)) 这样用解决了array 数据被改变的问题 如果props 中没有嵌套 array 或 object 可以使用 Object.assign({}, this.name) 一对多 的坑 laravel一对多写入时 并不如想的容易 改用多对多轻松解决了">
 <meta property="og:locale" content="en">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="laravel 队列的坑">
-<meta name="twitter:description" content="laravel 队列的坑 正确的入坑姿势 使用laravel horizon的 php artisan horizon 运行 队列。 使用-&amp;gt;onQueue(SendMail)方法指定队列时，Job可以正常的载入，Queue不正常…… 判断为Queue问题 使用php artisan queue:work --queue=SendMail,default 时正常显示 判断为laravel horizon问题 一起出坑吧 在config\horizon中添加Queue 名称就好了~ 要注意在local 与 prodution的区别。 没有config\horizon文件？ 运行php artisan vendor:publish --provider=&quot;Laravel\Horizon\HorizonServiceProvider&quot; 其他 更改redis中存储位置 当多个web服务一同使用horizon时， 要在.env中设置 HORIZON_PREFIX=horizon:name 区分 不同应用 否则出错。 刚要使用不同的redis数据表时，要在设置config\horizon中的use项， 同时在config\database中redis设置 &apos;redis&apos; =&amp;gt; [ &apos;client&apos; =&amp;gt; &apos;predis&apos;, &apos;default&apos; =&amp;gt; [ &apos;host&apos; =&amp;gt; env(&apos;REDIS_HOST&apos;, &apos;127.0.0.1&apos;), &apos;password&apos; =&amp;gt; env(&apos;REDIS_PASSWORD&apos;, null), &apos;port&apos; =&amp;gt; env(&apos;REDIS_PORT&apos;, 6379), &apos;database&apos; =&amp;gt; 1, ], &apos;session&apos; =&amp;gt; [ &apos;host&apos; =&amp;gt; env(&apos;REDIS_HOST&apos;, &apos;127.0.0.1&apos;), &apos;password&apos; =&amp;gt; env(&apos;REDIS_PASSWORD&apos;, null), &apos;port&apos; =&amp;gt; env(&apos;REDIS_PORT&apos;, 6379), &apos;database&apos; =&amp;gt; 2, ], &apos;queue&apos; =&amp;gt; [ &apos;host&apos; =&amp;gt; env(&apos;REDIS_HOST&apos;, &apos;127.0.0.1&apos;), &apos;password&apos; =&amp;gt; env(&apos;REDIS_PASSWORD&apos;, null), &apos;port&apos; =&amp;gt; env(&apos;REDIS_PORT&apos;, 6379), &apos;database&apos; =&amp;gt; 3, ], 命令 运行 php artisan horizon 彻底关闭 php artisan horizon:terminate 暂定 php artisan horizon:pause 恢复 php artisan horizon:continue 以上">
+<meta name="twitter:title" content="日常">
+<meta name="twitter:description" content="日常 砖酱人脸识别速度不高呢 换了钢化膜 解锁速度起飞~~ 都是膜的错 vue 的坑 使用组件时props 如果直接复制数组，刚数组变化时props 中的值也会变化。 这就非常不利于对数据进行调整了。 使用 JSON.parse(JSON.stringify(this.name.array)) 这样用解决了array 数据被改变的问题 如果props 中没有嵌套 array 或 object 可以使用 Object.assign({}, this.name) 一对多 的坑 laravel一对多写入时 并不如想的容易 改用多对多轻松解决了">
 
 
 <script type="text/javascript" id="hexo.configurations">
@@ -154,7 +154,7 @@
 
 
 
-  <title>laravel 队列的坑 | Keleven.Me</title>
+  <title>日常 | Keleven.Me</title>
   
 
 
@@ -335,7 +335,7 @@
   
 
   <article class="post post-type- " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://localhost:4000/living/2018/07/16/blog/">
+    <link itemprop="mainEntityOfPage" href="http://localhost:4000/living/2018/12/18/blog/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="K11">
@@ -355,7 +355,7 @@
           <h1 class="post-title" itemprop="name headline">
           
           
-            laravel 队列的坑
+            日常
           
         </h1>
         
@@ -369,8 +369,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-16T08:00:01+08:00">
-                2018-07-16
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-18T08:00:00+08:00">
+                2018-12-18
               </time>
             
 
@@ -411,9 +411,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/living/2018/07/16/blog/#comments" itemprop="discussionUrl">
+                <a href="/living/2018/12/18/blog/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="/living/2018/07/16/blog/" itemprop="commentCount"></span>
+                        data-disqus-identifier="/living/2018/12/18/blog/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -459,86 +459,42 @@
 
 
 
-  <h2 id="laravel-队列的坑">laravel 队列的坑</h2>
+  <h1 id="日常">日常</h1>
 
-<h3 id="正确的入坑姿势">正确的入坑姿势</h3>
+<p>砖酱人脸识别速度不高呢</p>
 
-<p>使用<code class="highlighter-rouge">laravel horizon</code>的 <code class="highlighter-rouge">php artisan horizon</code> 运行 队列。</p>
+<p>换了钢化膜 解锁速度起飞~~ 都是膜的错</p>
 
-<p>使用<code class="highlighter-rouge">-&gt;onQueue(SendMail)</code>方法指定队列时，<code class="highlighter-rouge">Job</code>可以正常的载入，<code class="highlighter-rouge">Queue</code>不正常……</p>
+<h1 id="vue-的坑">vue 的坑</h1>
 
-<p>判断为<code class="highlighter-rouge">Queue</code>问题</p>
+<p>使用组件时<code class="highlighter-rouge">props</code></p>
 
-<p>使用<code class="highlighter-rouge">php artisan queue:work --queue=SendMail,default</code> 时正常显示</p>
+<p>如果直接复制数组，刚数组变化时<code class="highlighter-rouge">props</code> 中的值也会变化。</p>
 
-<p>判断为<code class="highlighter-rouge">laravel horizon</code>问题</p>
+<p>这就非常不利于对数据进行调整了。</p>
 
-<h3 id="一起出坑吧">一起出坑吧</h3>
+<p>使用</p>
 
-<p>在<code class="highlighter-rouge">config\horizon</code>中添加<code class="highlighter-rouge">Queue</code> 名称就好了~</p>
-
-<p>要注意在<code class="highlighter-rouge">local</code> 与 <code class="highlighter-rouge">prodution</code>的区别。</p>
-
-<p>没有<code class="highlighter-rouge">config\horizon</code>文件？</p>
-
-<p>运行<code class="highlighter-rouge">php artisan vendor:publish --provider="Laravel\Horizon\HorizonServiceProvider"</code></p>
-
-<h3 id="其他">其他</h3>
-
-<h4 id="更改redis中存储位置">更改redis中存储位置</h4>
-
-<p>当多个web服务一同使用<code class="highlighter-rouge">horizon</code>时，</p>
-
-<p>要在<code class="highlighter-rouge">.env</code>中设置 <code class="highlighter-rouge">HORIZON_PREFIX=horizon:name</code> 区分 不同应用 否则出错。</p>
-
-<p>刚要使用不同的<code class="highlighter-rouge">redis</code>数据表时，要在设置<code class="highlighter-rouge">config\horizon</code>中的<code class="highlighter-rouge">use</code>项，</p>
-
-<p>同时在<code class="highlighter-rouge">config\database</code>中<code class="highlighter-rouge">redis</code>设置</p>
-
-<div class="language-php highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9<br/>10<br/>11<br/>12<br/>13<br/>14<br/>15<br/>16<br/>17<br/>18<br/>19<br/>20<br/>21<br/>22<br/>23<br/>24</pre></td><td class="code"><pre class="highlight"><code>    'redis' =&gt; [
-
-        'client' =&gt; 'predis',
-
-        'default' =&gt; [
-            'host' =&gt; env('REDIS_HOST', '127.0.0.1'),
-            'password' =&gt; env('REDIS_PASSWORD', null),
-            'port' =&gt; env('REDIS_PORT', 6379),
-            'database' =&gt; 1,
-        ],
-
-        'session' =&gt; [
-            'host' =&gt; env('REDIS_HOST', '127.0.0.1'),
-            'password' =&gt; env('REDIS_PASSWORD', null),
-            'port' =&gt; env('REDIS_PORT', 6379),
-            'database' =&gt; 2,
-        ],
-        
-        'queue' =&gt; [
-            'host' =&gt; env('REDIS_HOST', '127.0.0.1'),
-            'password' =&gt; env('REDIS_PASSWORD', null),
-            'port' =&gt; env('REDIS_PORT', 6379),
-            'database' =&gt; 3,
-        ],
+<div class="language-js highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code><span class="nx">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="p">.</span><span class="nx">array</span><span class="p">))</span>
 </code></pre></td></tr></tbody></table></div>
 </div>
 
-<h4 id="命令">命令</h4>
+<p>这样用解决了<code class="highlighter-rouge">array</code> 数据被改变的问题</p>
 
-<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9<br/>10<br/>11</pre></td><td class="code"><pre class="highlight"><code>运行
-php artisan horizon 
+<p>如果<code class="highlighter-rouge">props</code> 中没有嵌套 <code class="highlighter-rouge">array</code> 或 <code class="highlighter-rouge">object</code></p>
 
-彻底关闭
-php artisan horizon:terminate
+<p>可以使用</p>
 
-暂定
-php artisan horizon:pause
-
-恢复
-php artisan horizon:continue
+<div class="language-js highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code><span class="nb">Object</span><span class="p">.</span><span class="nx">assign</span><span class="p">({},</span> <span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="p">)</span>
 </code></pre></td></tr></tbody></table></div>
 </div>
 
-<h2 id="以上">以上</h2>
+<h1 id="一对多-的坑">一对多 的坑</h1>
+
+<p><code class="highlighter-rouge">laravel</code>一对多写入时 并不如想的容易</p>
+
+<p>改用多对多轻松解决了</p>
+
 
 
       
@@ -575,15 +531,6 @@ php artisan horizon:continue
             
             <a href="/tag/#/laravel" rel="tag"># laravel</a>
           
-            
-            <a href="/tag/#/laravel%20horizon" rel="tag"># laravel horizon</a>
-          
-            
-            <a href="/tag/#/laravel%20queues" rel="tag"># laravel queues</a>
-          
-            
-            <a href="/tag/#/redis" rel="tag"># redis</a>
-          
         </div>
       
 
@@ -598,8 +545,8 @@ php artisan horizon:continue
         <div class="post-nav" id="post-nav-id">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/living/2018/07/23/blog/" rel="next" title="细小的修正">
-                <i class="fa fa-chevron-left"></i> 细小的修正
+              <a href="/living/2018/12/24/blog/" rel="next" title="连接部分完成了">
+                <i class="fa fa-chevron-left"></i> 连接部分完成了
               </a>
             
           </div>
@@ -608,8 +555,8 @@ php artisan horizon:continue
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/living/2018/07/13/blog/" rel="prev" title="laravel 日常的坑">
-                laravel 日常的坑 <i class="fa fa-chevron-right"></i>
+              <a href="/living/2018/12/12/blog/" rel="prev" title="自动化的路上">
+                自动化的路上 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -798,7 +745,7 @@ php artisan horizon:continue
             
               <div class="post-toc-content">
     <ol class=nav>
-      <li class="nav-item nav-level-2"> <a class="nav-link" href="#laravel-队列的坑"> <span class="nav-number">1</span> <span class="nav-text">laravel 队列的坑</span> </a> <ol class="nav-child"> <li class="nav-item nav-level-3"> <a class="nav-link" href="#正确的入坑姿势"> <span class="nav-number">1.1</span> <span class="nav-text">正确的入坑姿势</span> </a> </li> <li class="nav-item nav-level-3"> <a class="nav-link" href="#一起出坑吧"> <span class="nav-number">1.2</span> <span class="nav-text">一起出坑吧</span> </a> </li> <li class="nav-item nav-level-3"> <a class="nav-link" href="#其他"> <span class="nav-number">1.3</span> <span class="nav-text">其他</span> </a> <ol class="nav-child"> <li class="nav-item nav-level-4"> <a class="nav-link" href="#更改redis中存储位置"> <span class="nav-number">1.3.1</span> <span class="nav-text">更改redis中存储位置</span> </a> </li> <li class="nav-item nav-level-4"> <a class="nav-link" href="#命令"> <span class="nav-number">1.3.2</span> <span class="nav-text">命令</span> </a> </li> </ol> </li> </ol> </li> <li class="nav-item nav-level-2"> <a class="nav-link" href="#以上"> <span class="nav-number">2</span> <span class="nav-text">以上</span> </a> </li>
+      <li class="nav-item nav-level-1"> <a class="nav-link" href="#日常"> <span class="nav-number">1</span> <span class="nav-text">日常</span> </a> </li> <li class="nav-item nav-level-1"> <a class="nav-link" href="#vue-的坑"> <span class="nav-number">2</span> <span class="nav-text">vue 的坑</span> </a> </li> <li class="nav-item nav-level-1"> <a class="nav-link" href="#一对多-的坑"> <span class="nav-number">3</span> <span class="nav-text">一对多 的坑</span> </a> </li>
     </ol>
   </div>
             
@@ -967,9 +914,9 @@ php artisan horizon:continue
       
       <script type="text/javascript">
           var disqus_config = function () {
-              this.page.url = 'http://localhost:4000/living/2018/07/16/blog/';
-              this.page.identifier = '/living/2018/07/16/blog/';
-              this.page.title = 'laravel 队列的坑';
+              this.page.url = 'http://localhost:4000/living/2018/12/18/blog/';
+              this.page.identifier = '/living/2018/12/18/blog/';
+              this.page.title = '日常';
           };
           var d = document, s = d.createElement('script');
           s.src = 'https://keleven.disqus.com/embed.js';

@@ -2,6 +2,44 @@
 <search>
   
     <entry>
+      <title><![CDATA[连接部分完成了]]></title>
+      <url>/living/2018/12/24/blog/</url>
+      <content type="text"><![CDATA[连接部分完成了进度有点慢……主要是心情问题……耳机断梁，零件遥遥无期，环境噪音很烦，新版的暂时还不想入￥ 2400 RMB 并不廉价……问题是旧的硬件并没有坏，只是外壳坏了……对于喜爱事物的执著也是……心塞……看好了一款新键盘键盘的优点是可以快速更改轴体，同时有RGB功能写在这里留用Massdrop CTRL Mechanical Keyboard鼠标 就选定 罗技g903无线套装了标准键位的的键盘也渐渐适应了用久了 手指还是会疼……难道是我打开方式不对？雷蛇到好处之一是能与飞利浦hue灯光联动，环境效果极佳新机的CPU预计使用新出的28。如果使用双CUP之后搬运就大问题了，用电量也是一方便~更新时，墙内的电线也要一起更新，想想就头痛。墙里原有的线质量并不好……其他最近想的东西也很多，心里也很乱，完全不能平静除了手头上的事情外都是模糊的说实话挺恐怖的……]]></content>
+      <categories>
+        
+          <category> Living </category>
+        
+      </categories>
+      <tags>
+        
+          <tag> 日记 </tag>
+        
+          <tag> laravel </tag>
+        
+      </tags>
+      <tags></tags>
+    </entry>
+  
+    <entry>
+      <title><![CDATA[日常]]></title>
+      <url>/living/2018/12/18/blog/</url>
+      <content type="text"><![CDATA[日常砖酱人脸识别速度不高呢换了钢化膜 解锁速度起飞~~ 都是膜的错vue 的坑使用组件时props如果直接复制数组，刚数组变化时props 中的值也会变化。这就非常不利于对数据进行调整了。使用JSON.parse(JSON.stringify(this.name.array))这样用解决了array 数据被改变的问题如果props 中没有嵌套 array 或 object可以使用Object.assign({}, this.name)一对多 的坑laravel一对多写入时 并不如想的容易改用多对多轻松解决了]]></content>
+      <categories>
+        
+          <category> Living </category>
+        
+      </categories>
+      <tags>
+        
+          <tag> 日记 </tag>
+        
+          <tag> laravel </tag>
+        
+      </tags>
+      <tags></tags>
+    </entry>
+  
+    <entry>
       <title><![CDATA[自动化的路上]]></title>
       <url>/living/2018/12/12/blog/</url>
       <content type="text"><![CDATA[自动化的路上现在多写一点，之后使用时就容易一点。真正运行起来工作量会是现在的几倍吧，也不知道能不能支撑下去……打劫4个小鬼 来打劫火花塞上的贵金属 也是醉了……求钟馗大神传授驱鬼之法！和 小区门口私设停车位收费类似 原始 无规则我朝 需要 改变的东西真的太都了砖酱iphone xr 入手 上了UGA的壳之后硬度感人，估计超过板砖。所以之后爱称砖酱]]></content>
