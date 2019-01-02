@@ -1,4 +1,46 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.5.2">Jekyll</generator><link href="http://localhost:4000/atom.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-12-25T04:57:55+08:00</updated><id>http://localhost:4000/</id><title type="html">Keleven.Me</title><subtitle>千变万化的是世界</subtitle><author><name>K11</name></author><entry><title type="html">连接部分完成了</title><link href="http://localhost:4000/living/2018/12/24/blog/" rel="alternate" type="text/html" title="连接部分完成了" /><published>2018-12-24T08:00:00+08:00</published><updated>2018-12-24T08:00:00+08:00</updated><id>http://localhost:4000/living/2018/12/24/blog</id><content type="html" xml:base="http://localhost:4000/living/2018/12/24/blog/">&lt;h1 id=&quot;连接部分完成了&quot;&gt;连接部分完成了&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.5.2">Jekyll</generator><link href="http://localhost:4000/atom.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-01-02T22:08:48+08:00</updated><id>http://localhost:4000/</id><title type="html">Keleven.Me</title><subtitle>千变万化的是世界</subtitle><author><name>K11</name></author><entry><title type="html">新年了~</title><link href="http://localhost:4000/living/2019/01/01/blog/" rel="alternate" type="text/html" title="新年了~" /><published>2019-01-01T08:00:00+08:00</published><updated>2019-01-01T08:00:00+08:00</updated><id>http://localhost:4000/living/2019/01/01/blog</id><content type="html" xml:base="http://localhost:4000/living/2019/01/01/blog/">&lt;h1 id=&quot;新年快乐&quot;&gt;新年快乐！&lt;/h1&gt;
+
+&lt;h1 id=&quot;这一年学到的东西很多很多&quot;&gt;这一年学到的东西很多很多&lt;/h1&gt;
+
+&lt;p&gt;看到 &lt;code class=&quot;highlighter-rouge&quot;&gt;Blender&lt;/code&gt; 还是那么反人类也是安心了&lt;/p&gt;
+
+&lt;p&gt;不过新功能确实引起了兴趣，能使建模速度快不少，姑且是一个好消息。&lt;/p&gt;
+
+&lt;p&gt;多少还是知道经络不通的，偶尔疼一条也是酸爽……&lt;/p&gt;
+
+&lt;p&gt;2018年 有70次更新呢~&lt;/p&gt;
+
+&lt;p&gt;blog 使用率 还是不错的 :-D&lt;/p&gt;
+
+&lt;h1 id=&quot;刺客信条奥德赛&quot;&gt;刺客信条:奥德赛&lt;/h1&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;steam&lt;/code&gt; 圣诞活动入手了，&lt;code class=&quot;highlighter-rouge&quot;&gt;bug&lt;/code&gt;有点多，游戏体验不错。&lt;/p&gt;
+
+&lt;p&gt;啊啊啊，机器真的要更新了。希望能顺利更新啊~&lt;/p&gt;
+
+&lt;p&gt;试轴器也看好了~&lt;/p&gt;
+
+&lt;p&gt;准备的超级充分啊~~&lt;/p&gt;
+
+&lt;h1 id=&quot;数据请求&quot;&gt;数据请求&lt;/h1&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;logs&lt;/code&gt; 保存使用列队了，速度上升，在可以接受的范围之内了。&lt;/p&gt;
+
+&lt;p&gt;使用&lt;code class=&quot;highlighter-rouge&quot;&gt;api&lt;/code&gt;对数据操作操作完成了。&lt;/p&gt;
+
+&lt;p&gt;之后麻烦的是数据的显示部分了。&lt;/p&gt;
+
+&lt;p&gt;啊啊啊~ 要做的&lt;code class=&quot;highlighter-rouge&quot;&gt;UI&lt;/code&gt; 好多啊~&lt;/p&gt;
+
+&lt;p&gt;要整理安排下……&lt;/p&gt;
+
+&lt;p&gt;一个部分完成后，总是不知道下面要做什么&lt;/p&gt;
+
+&lt;p&gt;主要是自己操纵的东西有点大……&lt;/p&gt;
+
+&lt;p&gt;批量导入要上线呢……&lt;/p&gt;
+
+&lt;p&gt;使用&lt;code class=&quot;highlighter-rouge&quot;&gt;codemessage&lt;/code&gt; 更新权限部分还没有完成先记录下来&lt;/p&gt;</content><author><name>K11</name></author><category term="日记" /><category term="laravel" /><summary type="html">新年快乐！ 这一年学到的东西很多很多 看到 Blender 还是那么反人类也是安心了 不过新功能确实引起了兴趣，能使建模速度快不少，姑且是一个好消息。 多少还是知道经络不通的，偶尔疼一条也是酸爽…… 2018年 有70次更新呢~ blog 使用率 还是不错的 :-D 刺客信条:奥德赛 steam 圣诞活动入手了，bug有点多，游戏体验不错。 啊啊啊，机器真的要更新了。希望能顺利更新啊~ 试轴器也看好了~ 准备的超级充分啊~~ 数据请求 logs 保存使用列队了，速度上升，在可以接受的范围之内了。 使用api对数据操作操作完成了。 之后麻烦的是数据的显示部分了。 啊啊啊~ 要做的UI 好多啊~ 要整理安排下…… 一个部分完成后，总是不知道下面要做什么 主要是自己操纵的东西有点大…… 批量导入要上线呢…… 使用codemessage 更新权限部分还没有完成先记录下来</summary></entry><entry><title type="html">连接部分完成了</title><link href="http://localhost:4000/living/2018/12/24/blog/" rel="alternate" type="text/html" title="连接部分完成了" /><published>2018-12-24T08:00:00+08:00</published><updated>2018-12-24T08:00:00+08:00</updated><id>http://localhost:4000/living/2018/12/24/blog</id><content type="html" xml:base="http://localhost:4000/living/2018/12/24/blog/">&lt;h1 id=&quot;连接部分完成了&quot;&gt;连接部分完成了&lt;/h1&gt;
 
 &lt;p&gt;进度有点慢……&lt;/p&gt;
 
@@ -579,54 +621,4 @@ $table-&amp;gt;timestamps();
 
 &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Log::info('message' , ['id' =&amp;gt; $id])&lt;/code&gt;&lt;/p&gt;
 
-&lt;h2 id=&quot;以上&quot;&gt;以上&lt;/h2&gt;</content><author><name>K11</name></author><category term="日记" /><category term="laravel" /><summary type="html">好想什么呢 来猜猜吧 logs 部分 结合laravel logs重构 在laravel logs基础上将logs存入数据库 先下config\logging中添加channels 如下 'channels' =&amp;gt; [ 'stack' =&amp;gt; [ 'driver' =&amp;gt; 'stack', 'channels' =&amp;gt; ['mysql'], ], 'mysql' =&amp;gt; [ 'driver' =&amp;gt; 'custom', 'name' =&amp;gt; 'mysql', 'via' =&amp;gt; App\Logging\MySQLLogger::class, 'level' =&amp;gt; 'debug', ], ] 新建MySQLLogger 这部分可以查看laravel 文档 Logger 的 name 不能正常传入，问题暂时没找到根源 于是进行手动传入 &amp;lt;?php namespace App\Logging; use Monolog\Logger; use App\Logging\AdminLogsHandler; class MySQLLogger { public function __invoke(array $config) { return new Logger( env('APP_NAME'), [ new LogsHandler( $config['level'], $config['name'] ) ] ); } } 之后是AdminLogsHandler 用于将logs提交到数据库 这里也可以复写其他方法，可以自行查看Monolog\Logger &amp;lt;?php namespace App\Logging; use Monolog\Logger; use Monolog\Handler\AbstractProcessingHandler; use App\Models\Logs; class AdminLogsHandler extends AbstractProcessingHandler { private $name; public function __construct($level, $name) { parent::__construct($level); $this-&amp;gt;name = $name; } protected function write(array $record) { Logs::create([ 'channel' =&amp;gt; $this-&amp;gt;name, 'message' =&amp;gt; $record['message'], 'level' =&amp;gt; $record['level_name'], 'context' =&amp;gt; $record['context'] ]); } } App\Models\Logs 注意要添加批量写入 protected $fillable = [ 'channel', 'message', 'level', 'context' ]; protected $casts = [ 'context' =&amp;gt; 'array', ]; 数据迁移如下 $table-&amp;gt;increments('id'); $table-&amp;gt;string('channel')-&amp;gt;index(); $table-&amp;gt;enum('level', [ 'DEBUG', 'INFO', 'NOTICE', 'WARNING', 'ERROR', 'CRITICAL', 'ALERT', 'EMERGENCY' ])-&amp;gt;default('INFO'); $table-&amp;gt;longText('message'); $table-&amp;gt;text('context'); $table-&amp;gt;timestamps(); 之后可以使用 Log::info('message' , ['id' =&amp;gt; $id]) 以上</summary></entry><entry><title type="html">智力上线🙂</title><link href="http://localhost:4000/living/2018/11/01/blog/" rel="alternate" type="text/html" title="智力上线🙂" /><published>2018-11-01T08:00:00+08:00</published><updated>2018-11-01T08:00:00+08:00</updated><id>http://localhost:4000/living/2018/11/01/blog</id><content type="html" xml:base="http://localhost:4000/living/2018/11/01/blog/">&lt;h1 id=&quot;智力上线&quot;&gt;智力上线&lt;/h1&gt;
-
-&lt;h2 id=&quot;27号的份&quot;&gt;27号的份&lt;/h2&gt;
-
-&lt;p&gt;机械劳动久了，智商就下线了&lt;/p&gt;
-
-&lt;p&gt;可以快速解决问题，要重复好多次也是蛮蠢的&lt;/p&gt;
-
-&lt;p&gt;可是一直进行无创造劳动吧 智商也就慢慢休眠了_(:з」∠)_&lt;/p&gt;
-
-&lt;p&gt;之后美名其曰代码可读性提高了，&lt;/p&gt;
-
-&lt;p&gt;不过函数用多了一样不容易读，啊啊啊 好矛盾啊&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;29日的份&quot;&gt;29日的份&lt;/h2&gt;
-
-&lt;p&gt;定时自动调整权限完成了~~&lt;/p&gt;
-
-&lt;p&gt;加上之前的权限方便能安心了了~~ 暂时~~&lt;/p&gt;
-
-&lt;p&gt;程序什么的 是要不断改进的&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;11月1号的份&quot;&gt;11月1号的份&lt;/h2&gt;
-
-&lt;p&gt;一小步与一大步，真的只是差了一点点，现在看看方便了不少。&lt;/p&gt;
-
-&lt;p&gt;几天前 明白了一些事儿 很意外的 也是很有意思&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;providers&lt;/code&gt; 定义成了 &lt;code class=&quot;highlighter-rouge&quot;&gt;Facades&lt;/code&gt; 用起来更方便了&lt;/p&gt;
-
-&lt;p&gt;新建&lt;code class=&quot;highlighter-rouge&quot;&gt;class&lt;/code&gt; 下面这样写 之后要注意到&lt;code class=&quot;highlighter-rouge&quot;&gt;config\app.php&lt;/code&gt;中绑定&lt;/p&gt;
-
-&lt;div class=&quot;language-php highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt; 
-
-&lt;span class=&quot;k&quot;&gt;namespace&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;App\Facades&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; 
-
-&lt;span class=&quot;k&quot;&gt;use&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Illuminate\Support\Facades\Facade&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;  
-
-&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;CustomService&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Facade&lt;/span&gt; 
-&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-	&lt;span class=&quot;k&quot;&gt;protected&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;getFacadeAccessor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; 
-	&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-		&lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'CustomService'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-	&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;</content><author><name>K11</name></author><category term="日记" /><category term="laravel" /><summary type="html">智力上线 27号的份 机械劳动久了，智商就下线了 可以快速解决问题，要重复好多次也是蛮蠢的 可是一直进行无创造劳动吧 智商也就慢慢休眠了_(:з」∠)_ 之后美名其曰代码可读性提高了， 不过函数用多了一样不容易读，啊啊啊 好矛盾啊 29日的份 定时自动调整权限完成了~~ 加上之前的权限方便能安心了了~~ 暂时~~ 程序什么的 是要不断改进的 11月1号的份 一小步与一大步，真的只是差了一点点，现在看看方便了不少。 几天前 明白了一些事儿 很意外的 也是很有意思 providers 定义成了 Facades 用起来更方便了 新建class 下面这样写 之后要注意到config\app.php中绑定 &amp;lt;?php namespace App\Facades; use Illuminate\Support\Facades\Facade; class CustomService extends Facade { protected static function getFacadeAccessor() { return 'CustomService'; } }</summary></entry></feed>
+&lt;h2 id=&quot;以上&quot;&gt;以上&lt;/h2&gt;</content><author><name>K11</name></author><category term="日记" /><category term="laravel" /><summary type="html">好想什么呢 来猜猜吧 logs 部分 结合laravel logs重构 在laravel logs基础上将logs存入数据库 先下config\logging中添加channels 如下 'channels' =&amp;gt; [ 'stack' =&amp;gt; [ 'driver' =&amp;gt; 'stack', 'channels' =&amp;gt; ['mysql'], ], 'mysql' =&amp;gt; [ 'driver' =&amp;gt; 'custom', 'name' =&amp;gt; 'mysql', 'via' =&amp;gt; App\Logging\MySQLLogger::class, 'level' =&amp;gt; 'debug', ], ] 新建MySQLLogger 这部分可以查看laravel 文档 Logger 的 name 不能正常传入，问题暂时没找到根源 于是进行手动传入 &amp;lt;?php namespace App\Logging; use Monolog\Logger; use App\Logging\AdminLogsHandler; class MySQLLogger { public function __invoke(array $config) { return new Logger( env('APP_NAME'), [ new LogsHandler( $config['level'], $config['name'] ) ] ); } } 之后是AdminLogsHandler 用于将logs提交到数据库 这里也可以复写其他方法，可以自行查看Monolog\Logger &amp;lt;?php namespace App\Logging; use Monolog\Logger; use Monolog\Handler\AbstractProcessingHandler; use App\Models\Logs; class AdminLogsHandler extends AbstractProcessingHandler { private $name; public function __construct($level, $name) { parent::__construct($level); $this-&amp;gt;name = $name; } protected function write(array $record) { Logs::create([ 'channel' =&amp;gt; $this-&amp;gt;name, 'message' =&amp;gt; $record['message'], 'level' =&amp;gt; $record['level_name'], 'context' =&amp;gt; $record['context'] ]); } } App\Models\Logs 注意要添加批量写入 protected $fillable = [ 'channel', 'message', 'level', 'context' ]; protected $casts = [ 'context' =&amp;gt; 'array', ]; 数据迁移如下 $table-&amp;gt;increments('id'); $table-&amp;gt;string('channel')-&amp;gt;index(); $table-&amp;gt;enum('level', [ 'DEBUG', 'INFO', 'NOTICE', 'WARNING', 'ERROR', 'CRITICAL', 'ALERT', 'EMERGENCY' ])-&amp;gt;default('INFO'); $table-&amp;gt;longText('message'); $table-&amp;gt;text('context'); $table-&amp;gt;timestamps(); 之后可以使用 Log::info('message' , ['id' =&amp;gt; $id]) 以上</summary></entry></feed>
