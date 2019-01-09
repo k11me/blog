@@ -1,4 +1,34 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.5.2">Jekyll</generator><link href="http://localhost:4000/atom.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-01-02T22:08:48+08:00</updated><id>http://localhost:4000/</id><title type="html">Keleven.Me</title><subtitle>千变万化的是世界</subtitle><author><name>K11</name></author><entry><title type="html">新年了~</title><link href="http://localhost:4000/living/2019/01/01/blog/" rel="alternate" type="text/html" title="新年了~" /><published>2019-01-01T08:00:00+08:00</published><updated>2019-01-01T08:00:00+08:00</updated><id>http://localhost:4000/living/2019/01/01/blog</id><content type="html" xml:base="http://localhost:4000/living/2019/01/01/blog/">&lt;h1 id=&quot;新年快乐&quot;&gt;新年快乐！&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.5.2">Jekyll</generator><link href="http://localhost:4000/atom.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-01-09T09:25:49+08:00</updated><id>http://localhost:4000/</id><title type="html">Keleven.Me</title><subtitle>千变万化的是世界</subtitle><author><name>K11</name></author><entry><title type="html">日常的坑</title><link href="http://localhost:4000/living/2019/01/08/blog/" rel="alternate" type="text/html" title="日常的坑" /><published>2019-01-08T08:00:00+08:00</published><updated>2019-01-08T08:00:00+08:00</updated><id>http://localhost:4000/living/2019/01/08/blog</id><content type="html" xml:base="http://localhost:4000/living/2019/01/08/blog/">&lt;h1 id=&quot;6号的份&quot;&gt;6号的份&lt;/h1&gt;
+
+&lt;h2 id=&quot;laravel-队列的坑&quot;&gt;laravel 队列的坑&lt;/h2&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;laravel job&lt;/code&gt; 的初始函数中不能使用 嵌套 型数组&lt;/p&gt;
+
+&lt;p&gt;否则 会 报错 &lt;code class=&quot;highlighter-rouge&quot;&gt;Serialization of 'Closure' is not allowed&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;优先程度很高，而且不容易发现。是在&lt;code class=&quot;highlighter-rouge&quot;&gt;logs&lt;/code&gt;不能正常写入的时候发现的&lt;/p&gt;
+
+&lt;p&gt;官方说最好与 &lt;code class=&quot;highlighter-rouge&quot;&gt;models&lt;/code&gt; 一起使用&lt;/p&gt;
+
+&lt;p&gt;将 原有数组 重构 勉强 解决了&lt;/p&gt;
+
+&lt;p&gt;之后是批量 写入 与 写入数据 自动验证了 当然&lt;code class=&quot;highlighter-rouge&quot;&gt;api&lt;/code&gt; 进行。&lt;/p&gt;
+
+&lt;p&gt;操作最简化是目的~~&lt;/p&gt;
+
+&lt;p&gt;以上&lt;/p&gt;
+
+&lt;p&gt;PS: 情况越来越严峻&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;8号的份&quot;&gt;8号的份&lt;/h1&gt;
+
+&lt;h2 id=&quot;api-token-自动化进程过半&quot;&gt;api token 自动化进程过半&lt;/h2&gt;
+
+&lt;p&gt;管理员操作部分终于要完成了~~&lt;/p&gt;
+
+&lt;p&gt;安静果然是最重要的！&lt;/p&gt;</content><author><name>K11</name></author><category term="日记" /><category term="laravel" /><summary type="html">6号的份 laravel 队列的坑 laravel job 的初始函数中不能使用 嵌套 型数组 否则 会 报错 Serialization of 'Closure' is not allowed 优先程度很高，而且不容易发现。是在logs不能正常写入的时候发现的 官方说最好与 models 一起使用 将 原有数组 重构 勉强 解决了 之后是批量 写入 与 写入数据 自动验证了 当然api 进行。 操作最简化是目的~~ 以上 PS: 情况越来越严峻 8号的份 api token 自动化进程过半 管理员操作部分终于要完成了~~ 安静果然是最重要的！</summary></entry><entry><title type="html">新年了~</title><link href="http://localhost:4000/living/2019/01/01/blog/" rel="alternate" type="text/html" title="新年了~" /><published>2019-01-01T08:00:00+08:00</published><updated>2019-01-01T08:00:00+08:00</updated><id>http://localhost:4000/living/2019/01/01/blog</id><content type="html" xml:base="http://localhost:4000/living/2019/01/01/blog/">&lt;h1 id=&quot;新年快乐&quot;&gt;新年快乐！&lt;/h1&gt;
 
 &lt;h1 id=&quot;这一年学到的东西很多很多&quot;&gt;这一年学到的东西很多很多&lt;/h1&gt;
 
@@ -490,135 +520,4 @@ Client::retrieved(function (Client $client) {
 
 &lt;p&gt;舒适度不高 走远了超辛苦&lt;/p&gt;
 
-&lt;p&gt;语言切换完成了~~&lt;/p&gt;</content><author><name>K11</name></author><category term="日记" /><category term="laravel" /><summary type="html">7号的部分 logs部分快完成了 要不要使用Laravel Scout 是个问题，优势是用 之后就是玩家部分了，后端眼看着要搞定了 超开心~(≧▽≦)/~啦啦啦 目标是12月14日前完成全部后台部分 19年3月先做出Dome之后的修补是不可避免的 希望众筹能顺利啊~~ 再去香港估计也要提上日程了~~ 想着要不要将游戏部分开源呢？一个人毕竟是有极限的…… 有些东西也是可遇不可求的…… 8号的部分 Laravel Homestead 配置了一天 最大的问题还是墙 解决方案 安装vagrant-proxyconf插 在Vagrantfile 中添加 Vagrant.configure(&quot;2&quot;) do |config| if Vagrant.has_plugin?(&quot;vagrant-proxyconf&quot;) config.proxy.http = &quot;http://192.168.1.4:8004&quot; config.proxy.https = &quot;http://192.168.1.4:8004&quot; config.proxy.no_proxy = &quot;localhost,127.0.0.1,.example.com&quot; end end 要在注意的是127.0.0.1指的是虚拟机本身 之后在本机或者路由中开启对应端口就完成了 9号的份 windows 代理自动载入导致 大部分程序不能联网 最后重启SPE问题解决…… 10号的份 密码重置完成了 预感有时就的很准 11月11的份 出门绊倒了 有个小伤口 问题不大 心得 合脚的鞋子超级重要！和现在的鞋子相性太差 舒适度不高 走远了超辛苦 语言切换完成了~~</summary></entry><entry><title type="html">好想……</title><link href="http://localhost:4000/living/2018/11/03/blog/" rel="alternate" type="text/html" title="好想……" /><published>2018-11-03T08:00:00+08:00</published><updated>2018-11-03T08:00:00+08:00</updated><id>http://localhost:4000/living/2018/11/03/blog</id><content type="html" xml:base="http://localhost:4000/living/2018/11/03/blog/">&lt;h1 id=&quot;好想什么呢&quot;&gt;好想什么呢&lt;/h1&gt;
-
-&lt;p&gt;来猜猜吧&lt;/p&gt;
-
-&lt;h2 id=&quot;logs-部分&quot;&gt;logs 部分&lt;/h2&gt;
-
-&lt;p&gt;结合&lt;code class=&quot;highlighter-rouge&quot;&gt;laravel logs&lt;/code&gt;重构&lt;/p&gt;
-
-&lt;p&gt;在&lt;code class=&quot;highlighter-rouge&quot;&gt;laravel logs&lt;/code&gt;基础上将&lt;code class=&quot;highlighter-rouge&quot;&gt;logs&lt;/code&gt;存入数据库&lt;/p&gt;
-
-&lt;p&gt;先下&lt;code class=&quot;highlighter-rouge&quot;&gt;config\logging&lt;/code&gt;中添加&lt;code class=&quot;highlighter-rouge&quot;&gt;channels&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;如下&lt;/p&gt;
-
-&lt;div class=&quot;language-php highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;'channels' =&amp;gt; [
-    'stack' =&amp;gt; [
-        'driver' =&amp;gt; 'stack',
-        'channels' =&amp;gt; ['mysql'],
-    ],
-	'mysql' =&amp;gt; [
-	    'driver' =&amp;gt; 'custom',
-	    'name' =&amp;gt; 'mysql',
-	    'via' =&amp;gt; App\Logging\MySQLLogger::class,
-	    'level' =&amp;gt; 'debug',
-	],
-]
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;新建&lt;code class=&quot;highlighter-rouge&quot;&gt;MySQLLogger&lt;/code&gt; 这部分可以查看&lt;code class=&quot;highlighter-rouge&quot;&gt;laravel 文档&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Logger&lt;/code&gt; 的 &lt;code class=&quot;highlighter-rouge&quot;&gt;name&lt;/code&gt; 不能正常传入，问题暂时没找到根源&lt;/p&gt;
-
-&lt;p&gt;于是进行手动传入&lt;/p&gt;
-
-&lt;div class=&quot;language-php highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;namespace&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;App\Logging&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;use&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Monolog\Logger&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;use&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;App\Logging\AdminLogsHandler&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;MySQLLogger&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;__invoke&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;array&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$config&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Logger&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
-            &lt;span class=&quot;nx&quot;&gt;env&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'APP_NAME'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
-            &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
-                &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;LogsHandler&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
-                    &lt;span class=&quot;nv&quot;&gt;$config&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'level'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
-                    &lt;span class=&quot;nv&quot;&gt;$config&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'name'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-                &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-            &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;之后是&lt;code class=&quot;highlighter-rouge&quot;&gt;AdminLogsHandler&lt;/code&gt; 用于将&lt;code class=&quot;highlighter-rouge&quot;&gt;logs&lt;/code&gt;提交到数据库&lt;/p&gt;
-
-&lt;p&gt;这里也可以复写其他方法，可以自行查看&lt;code class=&quot;highlighter-rouge&quot;&gt;Monolog\Logger&lt;/code&gt;&lt;/p&gt;
-
-&lt;div class=&quot;language-php highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;namespace&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;App\Logging&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;use&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Monolog\Logger&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;use&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Monolog\Handler\AbstractProcessingHandler&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;use&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;App\Models\Logs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;AdminLogsHandler&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;AbstractProcessingHandler&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;__construct&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$level&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;parent&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;__construct&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$level&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-        &lt;span class=&quot;nv&quot;&gt;$this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-    &lt;span class=&quot;k&quot;&gt;protected&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;write&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;array&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$record&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;nx&quot;&gt;Logs&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;create&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;
-            &lt;span class=&quot;s1&quot;&gt;'channel'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-            &lt;span class=&quot;s1&quot;&gt;'message'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$record&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'message'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
-            &lt;span class=&quot;s1&quot;&gt;'level'&lt;/span&gt;   &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$record&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'level_name'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
-            &lt;span class=&quot;s1&quot;&gt;'context'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$record&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'context'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;]);&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;App\Models\Logs&lt;/code&gt; 注意要添加批量写入&lt;/p&gt;
-
-&lt;div class=&quot;language-php highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    protected $fillable = [
-        'channel',
-        'message',
-        'level',
-        'context'
-    ];
-    protected $casts = [
-        'context' =&amp;gt; 'array',
-    ];
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;数据迁移如下&lt;/p&gt;
-
-&lt;div class=&quot;language-php highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$table-&amp;gt;increments('id');
-$table-&amp;gt;string('channel')-&amp;gt;index();
-$table-&amp;gt;enum('level', [
-    'DEBUG',
-    'INFO',
-    'NOTICE',
-    'WARNING',
-    'ERROR',
-    'CRITICAL',
-    'ALERT',
-    'EMERGENCY'
-])-&amp;gt;default('INFO');
-$table-&amp;gt;longText('message');
-$table-&amp;gt;text('context');
-$table-&amp;gt;timestamps();
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;之后可以使用&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Log::info('message' , ['id' =&amp;gt; $id])&lt;/code&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;以上&quot;&gt;以上&lt;/h2&gt;</content><author><name>K11</name></author><category term="日记" /><category term="laravel" /><summary type="html">好想什么呢 来猜猜吧 logs 部分 结合laravel logs重构 在laravel logs基础上将logs存入数据库 先下config\logging中添加channels 如下 'channels' =&amp;gt; [ 'stack' =&amp;gt; [ 'driver' =&amp;gt; 'stack', 'channels' =&amp;gt; ['mysql'], ], 'mysql' =&amp;gt; [ 'driver' =&amp;gt; 'custom', 'name' =&amp;gt; 'mysql', 'via' =&amp;gt; App\Logging\MySQLLogger::class, 'level' =&amp;gt; 'debug', ], ] 新建MySQLLogger 这部分可以查看laravel 文档 Logger 的 name 不能正常传入，问题暂时没找到根源 于是进行手动传入 &amp;lt;?php namespace App\Logging; use Monolog\Logger; use App\Logging\AdminLogsHandler; class MySQLLogger { public function __invoke(array $config) { return new Logger( env('APP_NAME'), [ new LogsHandler( $config['level'], $config['name'] ) ] ); } } 之后是AdminLogsHandler 用于将logs提交到数据库 这里也可以复写其他方法，可以自行查看Monolog\Logger &amp;lt;?php namespace App\Logging; use Monolog\Logger; use Monolog\Handler\AbstractProcessingHandler; use App\Models\Logs; class AdminLogsHandler extends AbstractProcessingHandler { private $name; public function __construct($level, $name) { parent::__construct($level); $this-&amp;gt;name = $name; } protected function write(array $record) { Logs::create([ 'channel' =&amp;gt; $this-&amp;gt;name, 'message' =&amp;gt; $record['message'], 'level' =&amp;gt; $record['level_name'], 'context' =&amp;gt; $record['context'] ]); } } App\Models\Logs 注意要添加批量写入 protected $fillable = [ 'channel', 'message', 'level', 'context' ]; protected $casts = [ 'context' =&amp;gt; 'array', ]; 数据迁移如下 $table-&amp;gt;increments('id'); $table-&amp;gt;string('channel')-&amp;gt;index(); $table-&amp;gt;enum('level', [ 'DEBUG', 'INFO', 'NOTICE', 'WARNING', 'ERROR', 'CRITICAL', 'ALERT', 'EMERGENCY' ])-&amp;gt;default('INFO'); $table-&amp;gt;longText('message'); $table-&amp;gt;text('context'); $table-&amp;gt;timestamps(); 之后可以使用 Log::info('message' , ['id' =&amp;gt; $id]) 以上</summary></entry></feed>
+&lt;p&gt;语言切换完成了~~&lt;/p&gt;</content><author><name>K11</name></author><category term="日记" /><category term="laravel" /><summary type="html">7号的部分 logs部分快完成了 要不要使用Laravel Scout 是个问题，优势是用 之后就是玩家部分了，后端眼看着要搞定了 超开心~(≧▽≦)/~啦啦啦 目标是12月14日前完成全部后台部分 19年3月先做出Dome之后的修补是不可避免的 希望众筹能顺利啊~~ 再去香港估计也要提上日程了~~ 想着要不要将游戏部分开源呢？一个人毕竟是有极限的…… 有些东西也是可遇不可求的…… 8号的部分 Laravel Homestead 配置了一天 最大的问题还是墙 解决方案 安装vagrant-proxyconf插 在Vagrantfile 中添加 Vagrant.configure(&quot;2&quot;) do |config| if Vagrant.has_plugin?(&quot;vagrant-proxyconf&quot;) config.proxy.http = &quot;http://192.168.1.4:8004&quot; config.proxy.https = &quot;http://192.168.1.4:8004&quot; config.proxy.no_proxy = &quot;localhost,127.0.0.1,.example.com&quot; end end 要在注意的是127.0.0.1指的是虚拟机本身 之后在本机或者路由中开启对应端口就完成了 9号的份 windows 代理自动载入导致 大部分程序不能联网 最后重启SPE问题解决…… 10号的份 密码重置完成了 预感有时就的很准 11月11的份 出门绊倒了 有个小伤口 问题不大 心得 合脚的鞋子超级重要！和现在的鞋子相性太差 舒适度不高 走远了超辛苦 语言切换完成了~~</summary></entry></feed>
