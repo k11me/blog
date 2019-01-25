@@ -338,6 +338,255 @@
   
 
   <article class="post post-type- " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://localhost:4000/living/2019/01/20/blog/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="K11">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/assets/images/21040889_825385437640313_540035783206109184_a.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Keleven.Me">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+                
+                <a class="post-title-link" href="/living/2019/01/20/blog/" itemprop="url">
+                laravel json 的坑
+              </a>
+            
+          
+        </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-01-20T08:00:00+08:00">
+                2019-01-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/category/#/Living" itemprop="url" rel="index">
+                    <span itemprop="name">Living</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/living/2019/01/20/blog/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="/living/2019/01/20/blog/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <h1 id="15-号的份">15 号的份</h1>
+
+<h2 id="laravel-创建-json">laravel 创建 json</h2>
+
+<p>使用laravel 创建 json 时</p>
+
+<p>可以使用 <code class="highlighter-rouge">json_encode()</code> 不过</p>
+
+<p>当输入如下时，</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5</pre></td><td class="code"><pre class="highlight"><code><span class="nv">$test</span> <span class="o">=</span> <span class="p">[</span>
+	<span class="p">[</span>	
+		<span class="s1">'test'</span> <span class="o">=&gt;</span> <span class="s1">'test'</span>
+	<span class="p">]</span>
+<span class="p">]</span>
+</code></pre></td></tr></tbody></table></div></div>
+
+<p>返回的为数组包裹，可以使用<code class="highlighter-rouge">$request[0]['test']</code>获取数据</p>
+
+<p>当输入如下时，</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5</pre></td><td class="code"><pre class="highlight"><code><span class="nv">$test</span> <span class="o">=</span> <span class="p">[</span>
+	<span class="s1">'test'</span> <span class="o">=&gt;</span> <span class="p">[</span>
+		<span class="s1">'test'</span> <span class="o">=&gt;</span> <span class="s1">'test'</span>
+	<span class="p">]</span>
+<span class="p">]</span>
+</code></pre></td></tr></tbody></table></div></div>
+
+<p>返回的为对象包裹，可以使用<code class="highlighter-rouge">$request-&gt;input('test.test')</code>获取数据</p>
+
+<p>在进行大量数据传入时，注意使用对应的方法进行循环写入。</p>
+
+<hr />
+
+<h1 id="20号的份">20号的份</h1>
+
+<h2 id="laravel-外部请求方法">laravel 外部请求方法</h2>
+
+<p>使用<code class="highlighter-rouge">GuzzleHttp</code> 进行请求时</p>
+
+<p>当使用<code class="highlighter-rouge">json</code>时 需要添加<code class="highlighter-rouge">Content-Type</code>为 <code class="highlighter-rouge">application/json</code>,数据写在<code class="highlighter-rouge">body</code>下</p>
+
+<p>如果使用传统方式去除<code class="highlighter-rouge">Content-Type</code>, 使用<code class="highlighter-rouge">form_params</code>请求。</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5</pre></td><td class="code"><pre class="highlight"><code><span class="s1">'headers'</span> <span class="o">=&gt;</span> <span class="p">[</span>
+		<span class="s1">'Authorization'</span> <span class="o">=&gt;</span> <span class="s1">'Bearer '</span><span class="o">.</span><span class="s1">'toekn'</span><span class="p">,</span>
+		<span class="s1">'Content-Type'</span> <span class="o">=&gt;</span> <span class="s1">'application/json'</span><span class="p">,</span>
+<span class="p">],</span>
+<span class="s1">'body'</span> <span class="o">=&gt;</span> <span class="nb">json_encode</span><span class="p">(</span><span class="nv">$JsonData</span><span class="p">),</span>
+</code></pre></td></tr></tbody></table></div></div>
+
+<h2 id="laravel-json-的坑">laravel json 的坑</h2>
+
+<p>当使用<code class="highlighter-rouge">json</code>请求时，<code class="highlighter-rouge">Request</code> 可以自动解析<code class="highlighter-rouge">json</code>为数组</p>
+
+<p>也可以使用<code class="highlighter-rouge">$request-&gt;input()</code></p>
+
+<p>最坑的是刚使用<code class="highlighter-rouge">return</code> 时会自动使用<code class="highlighter-rouge">json</code>……</p>
+
+<p>使用<code class="highlighter-rouge">json_decode()</code> 也会返回<code class="highlighter-rouge">json</code> , 可是实际上转换了，使用<code class="highlighter-rouge">dd()</code>发现是数组……</p>
+
+<p>这时请求端在使用一次<code class="highlighter-rouge">json_decode()</code>就一定会出错。</p>
+
+<p>所以在请求端<code class="highlighter-rouge">json_decode()</code>一次就好。</p>
+
+<p>大致上可以推测 请求端发送的为独立数据，使用<code class="highlighter-rouge">GuzzleHttp</code>获取的返回为<code class="highlighter-rouge">object</code> 所以需要 <code class="highlighter-rouge">json_decode()</code>。</p>
+
+<p><code class="highlighter-rouge">vue</code> 不能跨域也是…… 现在还是先做出来，之后再完善的好。</p>
+
+<p>原因暂时没有找到估计时<code class="highlighter-rouge">laravel passport</code>的锅</p>
+
+
+
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/living/2019/01/20/blog/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+        
+        
+        
+        
+          <div class="post-eof"></div>
+        
+      
+    </footer>
+  </article>
+
+  
+    
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type- " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://localhost:4000/living/2019/01/08/blog/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1139,8 +1388,7 @@
 <p>使用</p>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code><span class="nx">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="p">.</span><span class="nx">array</span><span class="p">))</span>
-</code></pre></td></tr></tbody></table></div>
-</div>
+</code></pre></td></tr></tbody></table></div></div>
 
 <p>这样用解决了<code class="highlighter-rouge">array</code> 数据被改变的问题</p>
 
@@ -1149,8 +1397,7 @@
 <p>可以使用</p>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code><span class="nb">Object</span><span class="p">.</span><span class="nx">assign</span><span class="p">({},</span> <span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="p">)</span>
-</code></pre></td></tr></tbody></table></div>
-</div>
+</code></pre></td></tr></tbody></table></div></div>
 
 <h1 id="一对多-的坑">一对多 的坑</h1>
 
@@ -1551,21 +1798,19 @@
 
 <p>在<code class="highlighter-rouge">composer.json</code>中添加</p>
 
-<div class="language-php highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2</pre></td><td class="code"><pre class="highlight"><code>    "minimum-stability": "dev",
-    "prefer-stable": true,
-</code></pre></td></tr></tbody></table></div>
-</div>
+<div class="language-php highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2</pre></td><td class="code"><pre class="highlight"><code>    <span class="s2">"minimum-stability"</span><span class="o">:</span> <span class="s2">"dev"</span><span class="p">,</span>
+    <span class="s2">"prefer-stable"</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+</code></pre></td></tr></tbody></table></div></div>
 
 <p>同时要指定路径,如果有多个包,需要分别指定,</p>
 
-<div class="language-json highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6</pre></td><td class="code"><pre class="highlight"><code><span class="w">    </span><span class="s2">"repositories"</span><span class="err">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-		</span><span class="nt">"pack"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-		    </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"path"</span><span class="p">,</span><span class="w">
-		    </span><span class="nt">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"../packages/packname/pack"</span><span class="w">
+<div class="language-json highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6</pre></td><td class="code"><pre class="highlight"><code><span class="w">    </span><span class="s2">"repositories"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+		</span><span class="s2">"pack"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+		    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"path"</span><span class="p">,</span><span class="w">
+		    </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"../packages/packname/pack"</span><span class="w">
 		</span><span class="p">}</span><span class="w">
 	</span><span class="p">}</span><span class="w">
-</span></code></pre></td></tr></tbody></table></div>
-</div>
+</span></code></pre></td></tr></tbody></table></div></div>
 
 <p>这样自定义包就可以载入了</p>
 
@@ -1579,9 +1824,8 @@
 
 <p>直接使用<code class="highlighter-rouge">laravel valet</code>的公钥访问有效</p>
 
-<div class="language-zsh highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code>curl https://game.test/ --cacert ~/.config/valet/CA/LaravelValetCASelfSigned.pem
-</code></pre></td></tr></tbody></table></div>
-</div>
+<div class="language-zsh highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code>curl https://game.test/ <span class="nt">--cacert</span> ~/.config/valet/CA/LaravelValetCASelfSigned.pem
+</code></pre></td></tr></tbody></table></div></div>
 
 <h2 id="laravelscout">laravel/scout</h2>
 
@@ -1800,11 +2044,10 @@
 
 <p>在<code class="highlighter-rouge">laravel</code> 模型中使用</p>
 
-<div class="language-php highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3</pre></td><td class="code"><pre class="highlight"><code>protected $casts = [
-    'scopes' =&gt; 'array',
-];
-</code></pre></td></tr></tbody></table></div>
-</div>
+<div class="language-php highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3</pre></td><td class="code"><pre class="highlight"><code><span class="k">protected</span> <span class="nv">$casts</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">'scopes'</span> <span class="o">=&gt;</span> <span class="s1">'array'</span><span class="p">,</span>
+<span class="p">];</span>
+</code></pre></td></tr></tbody></table></div></div>
 
 <p>当然也可以定义其他类型</p>
 
@@ -1999,21 +2242,18 @@
 
 <p>先在模型中写入 关闭默认排序</p>
 
-<div class="language-php highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code>public $incrementing = false;
-</code></pre></td></tr></tbody></table></div>
-</div>
+<div class="language-php highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code><span class="k">public</span> <span class="nv">$incrementing</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+</code></pre></td></tr></tbody></table></div></div>
 
 <p>再<code class="highlighter-rouge">migrate</code>中修改</p>
 
-<div class="language-php highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code>$table-&gt;increments('id');
-</code></pre></td></tr></tbody></table></div>
-</div>
+<div class="language-php highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code><span class="nv">$table</span><span class="o">-&gt;</span><span class="na">increments</span><span class="p">(</span><span class="s1">'id'</span><span class="p">);</span>
+</code></pre></td></tr></tbody></table></div></div>
 
 <p>为</p>
 
-<div class="language-php highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code>$table-&gt;uuid('id')-&gt;primary();
-</code></pre></td></tr></tbody></table></div>
-</div>
+<div class="language-php highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code><span class="nv">$table</span><span class="o">-&gt;</span><span class="na">uuid</span><span class="p">(</span><span class="s1">'id'</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">primary</span><span class="p">();</span>
+</code></pre></td></tr></tbody></table></div></div>
 
 <p>随后运行<code class="highlighter-rouge">la5 migrate</code></p>
 
@@ -2041,16 +2281,14 @@
         <span class="p">});</span>
     <span class="p">}</span>
 <span class="p">}</span>
-</code></pre></td></tr></tbody></table></div>
-</div>
+</code></pre></td></tr></tbody></table></div></div>
 
 <p>随后在模型中添加</p>
 
-<div class="language-php highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3</pre></td><td class="code"><pre class="highlight"><code>use App\Traits\Uuid;
+<div class="language-php highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3</pre></td><td class="code"><pre class="highlight"><code><span class="k">use</span> <span class="nx">App\Traits\Uuid</span><span class="p">;</span>
 
-use Uuid;
-</code></pre></td></tr></tbody></table></div>
-</div>
+<span class="k">use</span> <span class="nx">Uuid</span><span class="p">;</span>
+</code></pre></td></tr></tbody></table></div></div>
 
 <p>之后使用<code class="highlighter-rouge">laravel</code>自带的<code class="highlighter-rouge">auth</code>可以正常注册了。密码找回功能也可以使用。</p>
 
@@ -2066,41 +2304,37 @@ use Uuid;
 
 <p>修改<code class="highlighter-rouge">CreateOauthClientsTable</code></p>
 
-<div class="language-php highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6</pre></td><td class="code"><pre class="highlight"><code>$table-&gt;increments('id');
-$table-&gt;integer('user_id')-&gt;index()-&gt;nullable();
-// 改为
-
-$table-&gt;uuid('id')-&gt;primary();
-$table-&gt;uuid('user_id')-&gt;index()-&gt;nullable();
-</code></pre></td></tr></tbody></table></div>
-</div>
+<div class="language-php highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6</pre></td><td class="code"><pre class="highlight"><code><span class="nv">$table</span><span class="o">-&gt;</span><span class="na">increments</span><span class="p">(</span><span class="s1">'id'</span><span class="p">);</span>
+<span class="nv">$table</span><span class="o">-&gt;</span><span class="na">integer</span><span class="p">(</span><span class="s1">'user_id'</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">index</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">nullable</span><span class="p">();</span>
+<span class="c1">// 改为
+</span>
+<span class="nv">$table</span><span class="o">-&gt;</span><span class="na">uuid</span><span class="p">(</span><span class="s1">'id'</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">primary</span><span class="p">();</span>
+<span class="nv">$table</span><span class="o">-&gt;</span><span class="na">uuid</span><span class="p">(</span><span class="s1">'user_id'</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">index</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">nullable</span><span class="p">();</span>
+</code></pre></td></tr></tbody></table></div></div>
 
 <p>其他迁移将<code class="highlighter-rouge">client_id</code>与<code class="highlighter-rouge">user_id</code> 改为使用<code class="highlighter-rouge">uuid</code></p>
 
 <p><code class="highlighter-rouge">App\Providers\AppServiceProvider</code>中引入部分添加</p>
 
-<div class="language-php highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2</pre></td><td class="code"><pre class="highlight"><code>use Laravel\Passport\Client;
-use Illuminate\Support\Str;
-</code></pre></td></tr></tbody></table></div>
-</div>
+<div class="language-php highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2</pre></td><td class="code"><pre class="highlight"><code><span class="k">use</span> <span class="nx">Laravel\Passport\Client</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Illuminate\Support\Str</span><span class="p">;</span>
+</code></pre></td></tr></tbody></table></div></div>
 
 <p><code class="highlighter-rouge">boot()</code>部分添加</p>
 
-<div class="language-php highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7</pre></td><td class="code"><pre class="highlight"><code>Client::creating(function (Client $client) {
-    $client-&gt;incrementing = false;
-    $client-&gt;id = (string) Str::orderedUuid();
-});
-Client::retrieved(function (Client $client) {
-    $client-&gt;incrementing = false;
-});
-</code></pre></td></tr></tbody></table></div>
-</div>
+<div class="language-php highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7</pre></td><td class="code"><pre class="highlight"><code><span class="nx">Client</span><span class="o">::</span><span class="na">creating</span><span class="p">(</span><span class="k">function</span> <span class="p">(</span><span class="nx">Client</span> <span class="nv">$client</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nv">$client</span><span class="o">-&gt;</span><span class="na">incrementing</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+    <span class="nv">$client</span><span class="o">-&gt;</span><span class="na">id</span> <span class="o">=</span> <span class="p">(</span><span class="nx">string</span><span class="p">)</span> <span class="nx">Str</span><span class="o">::</span><span class="na">orderedUuid</span><span class="p">();</span>
+<span class="p">});</span>
+<span class="nx">Client</span><span class="o">::</span><span class="na">retrieved</span><span class="p">(</span><span class="k">function</span> <span class="p">(</span><span class="nx">Client</span> <span class="nv">$client</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nv">$client</span><span class="o">-&gt;</span><span class="na">incrementing</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+<span class="p">});</span>
+</code></pre></td></tr></tbody></table></div></div>
 
 <p><code class="highlighter-rouge">register()</code> 部分添加</p>
 
-<div class="language-php highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code>Passport::ignoreMigrations();
-</code></pre></td></tr></tbody></table></div>
-</div>
+<div class="language-php highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code><span class="nx">Passport</span><span class="o">::</span><span class="na">ignoreMigrations</span><span class="p">();</span>
+</code></pre></td></tr></tbody></table></div></div>
 
 <p>其他部分按照文档即可正常使用。</p>
 
@@ -2393,249 +2627,6 @@ Client::retrieved(function (Client $client) {
         
         
         
-          <div class="post-eof"></div>
-        
-      
-    </footer>
-  </article>
-
-  
-    
-    
-
-  
-
-  
-  
-  
-
-  <article class="post post-type- " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://localhost:4000/living/2018/11/11/blog/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="K11">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/assets/images/21040889_825385437640313_540035783206109184_a.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Keleven.Me">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-                
-                <a class="post-title-link" href="/living/2018/11/11/blog/" itemprop="url">
-                logs完成了
-              </a>
-            
-          
-        </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-11T08:00:00+08:00">
-                2018-11-11
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/category/#/Living" itemprop="url" rel="index">
-                    <span itemprop="name">Living</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/living/2018/11/11/blog/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="/living/2018/11/11/blog/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-  
-  
-
-
-
-
-
-
-
-
-
-
-
-
-  <h1 id="7号的部分">7号的部分</h1>
-
-<h2 id="logs部分快完成了">logs部分快完成了</h2>
-
-<p>要不要使用<code class="highlighter-rouge">Laravel Scout</code> 是个问题，优势是用</p>
-
-<p>之后就是玩家部分了，后端眼看着要搞定了</p>
-
-<p>超开心~(≧▽≦)/~啦啦啦</p>
-
-<p>目标是12月14日前完成全部后台部分</p>
-
-<p>19年3月先做出<code class="highlighter-rouge">Dome</code>之后的修补是不可避免的</p>
-
-<p>希望众筹能顺利啊~~ 再去香港估计也要提上日程了~~</p>
-
-<p>想着要不要将游戏部分开源呢？一个人毕竟是有极限的……</p>
-
-<p>有些东西也是可遇不可求的……</p>
-
-<h1 id="8号的部分">8号的部分</h1>
-
-<p><code class="highlighter-rouge">Laravel Homestead</code> 配置了一天</p>
-
-<p>最大的问题还是墙</p>
-
-<p>解决方案</p>
-
-<p>安装<code class="highlighter-rouge">vagrant-proxyconf</code>插</p>
-
-<p>在<code class="highlighter-rouge">Vagrantfile</code> 中添加</p>
-
-<div class="language-ruby highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7</pre></td><td class="code"><pre class="highlight"><code><span class="no">Vagrant</span><span class="p">.</span><span class="nf">configure</span><span class="p">(</span><span class="s2">"2"</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">config</span><span class="o">|</span>
-  <span class="k">if</span> <span class="no">Vagrant</span><span class="p">.</span><span class="nf">has_plugin?</span><span class="p">(</span><span class="s2">"vagrant-proxyconf"</span><span class="p">)</span>
-    <span class="n">config</span><span class="p">.</span><span class="nf">proxy</span><span class="p">.</span><span class="nf">http</span>     <span class="o">=</span> <span class="s2">"http://192.168.1.4:8004"</span>
-    <span class="n">config</span><span class="p">.</span><span class="nf">proxy</span><span class="p">.</span><span class="nf">https</span>    <span class="o">=</span> <span class="s2">"http://192.168.1.4:8004"</span>
-    <span class="n">config</span><span class="p">.</span><span class="nf">proxy</span><span class="p">.</span><span class="nf">no_proxy</span> <span class="o">=</span> <span class="s2">"localhost,127.0.0.1,.example.com"</span>
-  <span class="k">end</span>
-<span class="k">end</span>
-</code></pre></td></tr></tbody></table></div>
-</div>
-
-<p>要在注意的是<code class="highlighter-rouge">127.0.0.1</code>指的是虚拟机本身</p>
-
-<p>之后在本机或者路由中开启对应端口就完成了</p>
-
-<h1 id="9号的份">9号的份</h1>
-
-<p><code class="highlighter-rouge">windows</code> 代理自动载入导致 大部分程序不能联网</p>
-
-<p>最后重启<code class="highlighter-rouge">SPE</code>问题解决……</p>
-
-<h1 id="10号的份">10号的份</h1>
-
-<p>密码重置完成了 预感有时就的很准</p>
-
-<h1 id="11月11的份">11月11的份</h1>
-
-<p>出门绊倒了 有个小伤口 问题不大</p>
-
-<p>心得 合脚的鞋子超级重要！和现在的鞋子相性太差</p>
-
-<p>舒适度不高 走远了超辛苦</p>
-
-<p>语言切换完成了~~</p>
-
-
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/living/2018/11/11/blog/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-        
-        
-        
-        
       
     </footer>
   </article>
@@ -2697,7 +2688,7 @@ Client::retrieved(function (Client $client) {
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">103</span>
+                <span class="site-state-item-count">104</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>

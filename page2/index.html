@@ -338,6 +338,248 @@
   
 
   <article class="post post-type- " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://localhost:4000/living/2018/11/11/blog/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="K11">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/assets/images/21040889_825385437640313_540035783206109184_a.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Keleven.Me">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+                
+                <a class="post-title-link" href="/living/2018/11/11/blog/" itemprop="url">
+                logs完成了
+              </a>
+            
+          
+        </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-11T08:00:00+08:00">
+                2018-11-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/category/#/Living" itemprop="url" rel="index">
+                    <span itemprop="name">Living</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/living/2018/11/11/blog/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="/living/2018/11/11/blog/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <h1 id="7号的部分">7号的部分</h1>
+
+<h2 id="logs部分快完成了">logs部分快完成了</h2>
+
+<p>要不要使用<code class="highlighter-rouge">Laravel Scout</code> 是个问题，优势是用</p>
+
+<p>之后就是玩家部分了，后端眼看着要搞定了</p>
+
+<p>超开心~(≧▽≦)/~啦啦啦</p>
+
+<p>目标是12月14日前完成全部后台部分</p>
+
+<p>19年3月先做出<code class="highlighter-rouge">Dome</code>之后的修补是不可避免的</p>
+
+<p>希望众筹能顺利啊~~ 再去香港估计也要提上日程了~~</p>
+
+<p>想着要不要将游戏部分开源呢？一个人毕竟是有极限的……</p>
+
+<p>有些东西也是可遇不可求的……</p>
+
+<h1 id="8号的部分">8号的部分</h1>
+
+<p><code class="highlighter-rouge">Laravel Homestead</code> 配置了一天</p>
+
+<p>最大的问题还是墙</p>
+
+<p>解决方案</p>
+
+<p>安装<code class="highlighter-rouge">vagrant-proxyconf</code>插</p>
+
+<p>在<code class="highlighter-rouge">Vagrantfile</code> 中添加</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7</pre></td><td class="code"><pre class="highlight"><code><span class="no">Vagrant</span><span class="p">.</span><span class="nf">configure</span><span class="p">(</span><span class="s2">"2"</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">config</span><span class="o">|</span>
+  <span class="k">if</span> <span class="no">Vagrant</span><span class="p">.</span><span class="nf">has_plugin?</span><span class="p">(</span><span class="s2">"vagrant-proxyconf"</span><span class="p">)</span>
+    <span class="n">config</span><span class="p">.</span><span class="nf">proxy</span><span class="p">.</span><span class="nf">http</span>     <span class="o">=</span> <span class="s2">"http://192.168.1.4:8004"</span>
+    <span class="n">config</span><span class="p">.</span><span class="nf">proxy</span><span class="p">.</span><span class="nf">https</span>    <span class="o">=</span> <span class="s2">"http://192.168.1.4:8004"</span>
+    <span class="n">config</span><span class="p">.</span><span class="nf">proxy</span><span class="p">.</span><span class="nf">no_proxy</span> <span class="o">=</span> <span class="s2">"localhost,127.0.0.1,.example.com"</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></td></tr></tbody></table></div></div>
+
+<p>要在注意的是<code class="highlighter-rouge">127.0.0.1</code>指的是虚拟机本身</p>
+
+<p>之后在本机或者路由中开启对应端口就完成了</p>
+
+<h1 id="9号的份">9号的份</h1>
+
+<p><code class="highlighter-rouge">windows</code> 代理自动载入导致 大部分程序不能联网</p>
+
+<p>最后重启<code class="highlighter-rouge">SPE</code>问题解决……</p>
+
+<h1 id="10号的份">10号的份</h1>
+
+<p>密码重置完成了 预感有时就的很准</p>
+
+<h1 id="11月11的份">11月11的份</h1>
+
+<p>出门绊倒了 有个小伤口 问题不大</p>
+
+<p>心得 合脚的鞋子超级重要！和现在的鞋子相性太差</p>
+
+<p>舒适度不高 走远了超辛苦</p>
+
+<p>语言切换完成了~~</p>
+
+
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/living/2018/11/11/blog/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+        
+        
+        
+        
+          <div class="post-eof"></div>
+        
+      
+    </footer>
+  </article>
+
+  
+    
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type- " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://localhost:4000/living/2018/11/03/blog/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -476,20 +718,19 @@
 
 <p>如下</p>
 
-<div class="language-php highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9<br/>10<br/>11<br/>12</pre></td><td class="code"><pre class="highlight"><code>'channels' =&gt; [
-    'stack' =&gt; [
-        'driver' =&gt; 'stack',
-        'channels' =&gt; ['mysql'],
-    ],
-	'mysql' =&gt; [
-	    'driver' =&gt; 'custom',
-	    'name' =&gt; 'mysql',
-	    'via' =&gt; App\Logging\MySQLLogger::class,
-	    'level' =&gt; 'debug',
-	],
-]
-</code></pre></td></tr></tbody></table></div>
-</div>
+<div class="language-php highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9<br/>10<br/>11<br/>12</pre></td><td class="code"><pre class="highlight"><code><span class="s1">'channels'</span> <span class="o">=&gt;</span> <span class="p">[</span>
+    <span class="s1">'stack'</span> <span class="o">=&gt;</span> <span class="p">[</span>
+        <span class="s1">'driver'</span> <span class="o">=&gt;</span> <span class="s1">'stack'</span><span class="p">,</span>
+        <span class="s1">'channels'</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s1">'mysql'</span><span class="p">],</span>
+    <span class="p">],</span>
+	<span class="s1">'mysql'</span> <span class="o">=&gt;</span> <span class="p">[</span>
+	    <span class="s1">'driver'</span> <span class="o">=&gt;</span> <span class="s1">'custom'</span><span class="p">,</span>
+	    <span class="s1">'name'</span> <span class="o">=&gt;</span> <span class="s1">'mysql'</span><span class="p">,</span>
+	    <span class="s1">'via'</span> <span class="o">=&gt;</span> <span class="nx">App\Logging\MySQLLogger</span><span class="o">::</span><span class="na">class</span><span class="p">,</span>
+	    <span class="s1">'level'</span> <span class="o">=&gt;</span> <span class="s1">'debug'</span><span class="p">,</span>
+	<span class="p">],</span>
+<span class="p">]</span>
+</code></pre></td></tr></tbody></table></div></div>
 
 <p>新建<code class="highlighter-rouge">MySQLLogger</code> 这部分可以查看<code class="highlighter-rouge">laravel 文档</code></p>
 
@@ -518,8 +759,7 @@
         <span class="p">);</span>
     <span class="p">}</span>
 <span class="p">}</span>
-</code></pre></td></tr></tbody></table></div>
-</div>
+</code></pre></td></tr></tbody></table></div></div>
 
 <p>之后是<code class="highlighter-rouge">AdminLogsHandler</code> 用于将<code class="highlighter-rouge">logs</code>提交到数据库</p>
 
@@ -552,42 +792,39 @@
         <span class="p">]);</span>
     <span class="p">}</span>
 <span class="p">}</span>
-</code></pre></td></tr></tbody></table></div>
-</div>
+</code></pre></td></tr></tbody></table></div></div>
 
 <p><code class="highlighter-rouge">App\Models\Logs</code> 注意要添加批量写入</p>
 
-<div class="language-php highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9</pre></td><td class="code"><pre class="highlight"><code>    protected $fillable = [
-        'channel',
-        'message',
-        'level',
-        'context'
-    ];
-    protected $casts = [
-        'context' =&gt; 'array',
-    ];
-</code></pre></td></tr></tbody></table></div>
-</div>
+<div class="language-php highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9</pre></td><td class="code"><pre class="highlight"><code>    <span class="k">protected</span> <span class="nv">$fillable</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="s1">'channel'</span><span class="p">,</span>
+        <span class="s1">'message'</span><span class="p">,</span>
+        <span class="s1">'level'</span><span class="p">,</span>
+        <span class="s1">'context'</span>
+    <span class="p">];</span>
+    <span class="k">protected</span> <span class="nv">$casts</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="s1">'context'</span> <span class="o">=&gt;</span> <span class="s1">'array'</span><span class="p">,</span>
+    <span class="p">];</span>
+</code></pre></td></tr></tbody></table></div></div>
 
 <p>数据迁移如下</p>
 
-<div class="language-php highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9<br/>10<br/>11<br/>12<br/>13<br/>14<br/>15</pre></td><td class="code"><pre class="highlight"><code>$table-&gt;increments('id');
-$table-&gt;string('channel')-&gt;index();
-$table-&gt;enum('level', [
-    'DEBUG',
-    'INFO',
-    'NOTICE',
-    'WARNING',
-    'ERROR',
-    'CRITICAL',
-    'ALERT',
-    'EMERGENCY'
-])-&gt;default('INFO');
-$table-&gt;longText('message');
-$table-&gt;text('context');
-$table-&gt;timestamps();
-</code></pre></td></tr></tbody></table></div>
-</div>
+<div class="language-php highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9<br/>10<br/>11<br/>12<br/>13<br/>14<br/>15</pre></td><td class="code"><pre class="highlight"><code><span class="nv">$table</span><span class="o">-&gt;</span><span class="na">increments</span><span class="p">(</span><span class="s1">'id'</span><span class="p">);</span>
+<span class="nv">$table</span><span class="o">-&gt;</span><span class="na">string</span><span class="p">(</span><span class="s1">'channel'</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">index</span><span class="p">();</span>
+<span class="nv">$table</span><span class="o">-&gt;</span><span class="na">enum</span><span class="p">(</span><span class="s1">'level'</span><span class="p">,</span> <span class="p">[</span>
+    <span class="s1">'DEBUG'</span><span class="p">,</span>
+    <span class="s1">'INFO'</span><span class="p">,</span>
+    <span class="s1">'NOTICE'</span><span class="p">,</span>
+    <span class="s1">'WARNING'</span><span class="p">,</span>
+    <span class="s1">'ERROR'</span><span class="p">,</span>
+    <span class="s1">'CRITICAL'</span><span class="p">,</span>
+    <span class="s1">'ALERT'</span><span class="p">,</span>
+    <span class="s1">'EMERGENCY'</span>
+<span class="p">])</span><span class="o">-&gt;</span><span class="na">default</span><span class="p">(</span><span class="s1">'INFO'</span><span class="p">);</span>
+<span class="nv">$table</span><span class="o">-&gt;</span><span class="na">longText</span><span class="p">(</span><span class="s1">'message'</span><span class="p">);</span>
+<span class="nv">$table</span><span class="o">-&gt;</span><span class="na">text</span><span class="p">(</span><span class="s1">'context'</span><span class="p">);</span>
+<span class="nv">$table</span><span class="o">-&gt;</span><span class="na">timestamps</span><span class="p">();</span>
+</code></pre></td></tr></tbody></table></div></div>
 
 <p>之后可以使用</p>
 
@@ -821,8 +1058,7 @@ $table-&gt;timestamps();
 		<span class="k">return</span> <span class="s1">'CustomService'</span><span class="p">;</span>
 	<span class="p">}</span>
 <span class="p">}</span>
-</code></pre></td></tr></tbody></table></div>
-</div>
+</code></pre></td></tr></tbody></table></div></div>
 
 
 
@@ -1007,8 +1243,7 @@ $table-&gt;timestamps();
 <h2 id="vue-当前页刷新">vue 当前页刷新</h2>
 
 <div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code>location.reload()
-</code></pre></td></tr></tbody></table></div>
-</div>
+</code></pre></td></tr></tbody></table></div></div>
 
 <h2 id="其他">其他</h2>
 
@@ -1241,8 +1476,7 @@ $table-&gt;timestamps();
 
 <div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2</pre></td><td class="code"><pre class="highlight"><code>var xsrfCookie = postman.getResponseCookie("XSRF-TOKEN");
 postman.setEnvironmentVariable("XSRF-TOKEN", xsrfCookie.value);
-</code></pre></td></tr></tbody></table></div>
-</div>
+</code></pre></td></tr></tbody></table></div></div>
 
 <p>`` 对应该的是第二行要注意下。</p>
 
@@ -1267,8 +1501,7 @@ postman.setEnvironmentVariable("XSRF-TOKEN", xsrfCookie.value);
 <p>同上<code class="highlighter-rouge">Tests</code>标签可以写成</p>
 
 <div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code>pm.environment.set("xsrf-token", decodeURIComponent(pm.cookies.get("XSRF-TOKEN")))
-</code></pre></td></tr></tbody></table></div>
-</div>
+</code></pre></td></tr></tbody></table></div></div>
 
 <p>使用<code class="highlighter-rouge">laravel valet</code> 时，<code class="highlighter-rouge">postman</code>不能正确访问域名……</p>
 
@@ -1691,16 +1924,14 @@ postman.setEnvironmentVariable("XSRF-TOKEN", xsrfCookie.value);
 
 <p>可以使用</p>
 
-<div class="language-php highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code>$user-&gt;notify((new SendEmail($Token))-&gt;onQueue('mail'));
-</code></pre></td></tr></tbody></table></div>
-</div>
+<div class="language-php highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code><span class="nv">$user</span><span class="o">-&gt;</span><span class="na">notify</span><span class="p">((</span><span class="k">new</span> <span class="nx">SendEmail</span><span class="p">(</span><span class="nv">$Token</span><span class="p">))</span><span class="o">-&gt;</span><span class="na">onQueue</span><span class="p">(</span><span class="s1">'mail'</span><span class="p">));</span>
+</code></pre></td></tr></tbody></table></div></div>
 
 <p>或</p>
 
-<div class="language-php highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2</pre></td><td class="code"><pre class="highlight"><code>use Notification;
-Notification::send($user, (new SendEmail($Token))-&gt;onQueue('mail'));
-</code></pre></td></tr></tbody></table></div>
-</div>
+<div class="language-php highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2</pre></td><td class="code"><pre class="highlight"><code><span class="k">use</span> <span class="nx">Notification</span><span class="p">;</span>
+<span class="nx">Notification</span><span class="o">::</span><span class="na">send</span><span class="p">(</span><span class="nv">$user</span><span class="p">,</span> <span class="p">(</span><span class="k">new</span> <span class="nx">SendEmail</span><span class="p">(</span><span class="nv">$Token</span><span class="p">))</span><span class="o">-&gt;</span><span class="na">onQueue</span><span class="p">(</span><span class="s1">'mail'</span><span class="p">));</span>
+</code></pre></td></tr></tbody></table></div></div>
 <h2 id="roles">roles</h2>
 
 <p>需要注意<code class="highlighter-rouge">guard</code>对应</p>
@@ -1709,28 +1940,25 @@ Notification::send($user, (new SendEmail($Token))-&gt;onQueue('mail'));
 
 <p>在<code class="highlighter-rouge">blade</code> 中使用时</p>
 
-<div class="language-php highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3</pre></td><td class="code"><pre class="highlight"><code>@role('role' , 'guard')
-something
-@endrole
-</code></pre></td></tr></tbody></table></div>
-</div>
+<div class="language-php highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3</pre></td><td class="code"><pre class="highlight"><code><span class="o">@</span><span class="nx">role</span><span class="p">(</span><span class="s1">'role'</span> <span class="p">,</span> <span class="s1">'guard'</span><span class="p">)</span>
+<span class="nx">something</span>
+<span class="o">@</span><span class="nx">endrole</span>
+</code></pre></td></tr></tbody></table></div></div>
 
 <p>在路由中使用时</p>
 
-<div class="language-php highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3</pre></td><td class="code"><pre class="highlight"><code>Route::group(['middleware' =&gt; ['auth:admin' , 'role:admin']], function () {
+<div class="language-php highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3</pre></td><td class="code"><pre class="highlight"><code><span class="nx">Route</span><span class="o">::</span><span class="na">group</span><span class="p">([</span><span class="s1">'middleware'</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s1">'auth:admin'</span> <span class="p">,</span> <span class="s1">'role:admin'</span><span class="p">]],</span> <span class="k">function</span> <span class="p">()</span> <span class="p">{</span>
 
-});
-</code></pre></td></tr></tbody></table></div>
-</div>
+<span class="p">});</span>
+</code></pre></td></tr></tbody></table></div></div>
 
 <p>也可以在控制器中使用</p>
 
-<div class="language-php highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4</pre></td><td class="code"><pre class="highlight"><code>public function __construct()
-{
-    $this-&gt;middleware(['role:admin' , 'auth:admin']);
-}
-</code></pre></td></tr></tbody></table></div>
-</div>
+<div class="language-php highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4</pre></td><td class="code"><pre class="highlight"><code><span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">middleware</span><span class="p">([</span><span class="s1">'role:admin'</span> <span class="p">,</span> <span class="s1">'auth:admin'</span><span class="p">]);</span>
+<span class="p">}</span>
+</code></pre></td></tr></tbody></table></div></div>
 
 <hr />
 
@@ -2311,22 +2539,20 @@ something
 
 <p>标准化信息返回问题不大 方法是使用</p>
 
-<div class="language-php highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5</pre></td><td class="code"><pre class="highlight"><code>try{
-	return 'something';
-}catch(\Exception $e){
-	return $e-&gt;getMessage();
-}
-</code></pre></td></tr></tbody></table></div>
-</div>
+<div class="language-php highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5</pre></td><td class="code"><pre class="highlight"><code><span class="k">try</span><span class="p">{</span>
+	<span class="k">return</span> <span class="s1">'something'</span><span class="p">;</span>
+<span class="p">}</span><span class="k">catch</span><span class="p">(</span><span class="nx">\Exception</span> <span class="nv">$e</span><span class="p">){</span>
+	<span class="k">return</span> <span class="nv">$e</span><span class="o">-&gt;</span><span class="na">getMessage</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></td></tr></tbody></table></div></div>
 
 <p>也可以在<code class="highlighter-rouge">App\Exceptions\Handler</code> 的<code class="highlighter-rouge">render</code>中做截取</p>
 
-<div class="language-php highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4</pre></td><td class="code"><pre class="highlight"><code>switch($exception-&gt;getMessage()){
-	case 'someMessage';
-	return 'someMessage';
-}
-</code></pre></td></tr></tbody></table></div>
-</div>
+<div class="language-php highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4</pre></td><td class="code"><pre class="highlight"><code><span class="k">switch</span><span class="p">(</span><span class="nv">$exception</span><span class="o">-&gt;</span><span class="na">getMessage</span><span class="p">()){</span>
+	<span class="k">case</span> <span class="s1">'someMessage'</span><span class="p">;</span>
+	<span class="k">return</span> <span class="s1">'someMessage'</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></td></tr></tbody></table></div></div>
 
 <p>再次感受到先做后端的重要性！！</p>
 
@@ -2341,290 +2567,6 @@ something
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/living/2018/10/01/blog/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-        
-        
-        
-        
-          <div class="post-eof"></div>
-        
-      
-    </footer>
-  </article>
-
-  
-    
-    
-
-  
-
-  
-  
-  
-
-  <article class="post post-type- " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://localhost:4000/living/2018/09/28/blog/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="K11">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/assets/images/21040889_825385437640313_540035783206109184_a.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Keleven.Me">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-                
-                <a class="post-title-link" href="/living/2018/09/28/blog/" itemprop="url">
-                记录
-              </a>
-            
-          
-        </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-28T08:00:00+08:00">
-                2018-09-28
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/category/#/Living" itemprop="url" rel="index">
-                    <span itemprop="name">Living</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/living/2018/09/28/blog/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="/living/2018/09/28/blog/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-  
-  
-
-
-
-
-
-
-
-
-
-
-
-
-  <h1 id="记录">记录</h1>
-
-<p>工作指南</p>
-
-<ol>
-  <li>Code Message UI 部分处理</li>
-  <li>权限手动调整UI</li>
-  <li>权限系统的全局化，将权限处理加入列队</li>
-  <li>特定返回信息的响应</li>
-  <li>二步验证 UI 部分</li>
-  <li>语言全面本地化 【vuex-i18n】</li>
-</ol>
-
-<h2 id="code-message">code message</h2>
-
-<p>工作详解</p>
-
-<ol>
-  <li>将全局信息显示功能独立</li>
-  <li>需要为信息增加分页显示</li>
-  <li>搜索结果是否使用通用部分显示</li>
-  <li>识别2fa验证信息并相应【全局模组】</li>
-  <li>新建信息页面 【需要验证2FA】</li>
-  <li>编辑信息页面 【需要验证2FA】</li>
-  <li>删除信息页面 【需要验证2FA】</li>
-</ol>
-
-<p>好在<code class="highlighter-rouge">2FA</code>与 <code class="highlighter-rouge">code message</code>可以使用代码手动添加，如果没先做后端真是难以想象，估计是灾难或者加班地狱吧</p>
-
-<p>反而是语言本地化容易的，可以在休息时完成。</p>
-
-<p>其他 貌似2FA的优先度比较高，但是信息提示也是非常重要</p>
-
-<p>对功能分组编写非常重要！一人并行写是比较容易混乱 笔记是一定要的</p>
-
-<p>好处是发现问题可以及时修正，也要考虑之后的多人协作的效率问题</p>
-
-<p>多是交给组长处理吧</p>
-
-<h2 id="坑">坑</h2>
-
-<p><code class="highlighter-rouge">bootstrap 4.*</code>是没有图标的 需要自己找</p>
-
-<p>使用<code class="highlighter-rouge">fontawesome</code> 解决了</p>
-
-<h2 id="23号的份">23号的份</h2>
-
-<p><code class="highlighter-rouge">Code Message</code>资源获取、更新、删除部分的UI完成。 调用与测试正常</p>
-
-<p>想着将<code class="highlighter-rouge">laravel</code> 自带的UI 使用 <code class="highlighter-rouge">vue</code> 重构 最严重的问题还是在本地化语言上。</p>
-
-<p>只能将使用的分离，其他的再做打算 😭</p>
-
-<p>基本上这种感觉</p>
-
-<p>分页显示也是有做的~</p>
-
-<p><img src="https://i.loli.net/2018/09/24/5ba7f4b0cbf57.png" alt="" /></p>
-
-<h2 id="26号的份">26号的份</h2>
-
-<p><code class="highlighter-rouge">code message</code> 部分基本完成，之后要调整<code class="highlighter-rouge">code</code>并修正一些细小的地方。</p>
-
-<p>感到前端与后端的耦合度很高，这样之后是大麻烦，要不要全部使用<code class="highlighter-rouge">vuex</code>呢……</p>
-
-<p>之后 先处理<code class="highlighter-rouge">2fa</code>与验证吧，<code class="highlighter-rouge">2fa</code> 比如是全局的…… 不跨域使用<code class="highlighter-rouge">oauth</code>的意义不大</p>
-
-<p>不过使用<code class="highlighter-rouge">oauth</code>容易啊~~ 啊啊啊啊啊~~~</p>
-
-<h2 id="28号的份">28号的份</h2>
-
-<p>添加<code class="highlighter-rouge">2fa ui</code>了，没什么创造性的劳动……</p>
-
-<p>使<code class="highlighter-rouge">button:hover</code>文字与样式 随鼠标产生变化</p>
-
-<p>注意定义<code class="highlighter-rouge">css</code> 否则效果不会有变化</p>
-
-<p>如果使用 <code class="highlighter-rouge">vuex-i18n</code> 可以使用语言行替代 对应位置文字</p>
-
-<div class="language-html highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5</pre></td><td class="code"><pre class="highlight"><code><span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn-outline-success"</span>
-<span class="na">v-on:mouseenter=</span><span class="s">"button = 'in button'"</span> 
-<span class="na">v-on:mouseleave=</span><span class="s">"button = 'out button'"</span><span class="nt">&gt;</span>
-
-<span class="nt">&lt;/button&gt;</span> 
-</code></pre></td></tr></tbody></table></div>
-</div>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5</pre></td><td class="code"><pre class="highlight"><code><span class="nx">data</span><span class="p">(){</span>
-	<span class="k">return</span> <span class="p">{</span>
-		<span class="na">button</span><span class="p">:</span> <span class="s1">'out button'</span>
-	<span class="p">}</span>
-<span class="p">}</span>
-</code></pre></td></tr></tbody></table></div>
-</div>
-
-<div class="language-css highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9</pre></td><td class="code"><pre class="highlight"><code><span class="nc">.btn-outline-success</span><span class="nd">:hover</span><span class="p">{</span>
-    <span class="nl">background-color</span><span class="p">:</span> <span class="no">red</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="nc">.btn-outline-success</span><span class="nd">:not</span><span class="o">(</span><span class="nd">:disabled</span><span class="o">)</span><span class="nd">:not</span><span class="o">(</span><span class="nc">.disabled</span><span class="o">)</span><span class="nd">:active</span><span class="p">{</span>
-    <span class="nl">background-color</span><span class="p">:</span> <span class="no">red</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="nc">.btn-outline-success</span><span class="nd">:not</span><span class="o">(</span><span class="nd">:disabled</span><span class="o">)</span><span class="nd">:not</span><span class="o">(</span><span class="nc">.disabled</span><span class="o">)</span><span class="nd">:focus</span><span class="p">{</span>
-    <span class="nl">box-shadow</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></td></tr></tbody></table></div>
-</div>
-
-
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/living/2018/09/28/blog/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -2718,7 +2660,7 @@ something
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">103</span>
+                <span class="site-state-item-count">104</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>

@@ -473,25 +473,24 @@
 
 <p>修改<code class="highlighter-rouge"> resources/assets/js/app.js</code></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9<br/>10<br/>11<br/>12<br/>13<br/>14<br/>15<br/>16<br/>17</pre></td><td class="code"><pre class="highlight"><code><span class="kr">import</span> <span class="nx">Vuex</span> <span class="nx">from</span> <span class="s1">'vuex'</span><span class="p">;</span>
-<span class="kr">import</span> <span class="nx">vuexI18n</span> <span class="nx">from</span> <span class="s1">'vuex-i18n'</span><span class="p">;</span>
-<span class="kr">import</span> <span class="nx">Locales</span> <span class="nx">from</span> <span class="s1">'./vue-i18n-locales.generated.js'</span><span class="p">;</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9<br/>10<br/>11<br/>12<br/>13<br/>14<br/>15<br/>16<br/>17</pre></td><td class="code"><pre class="highlight"><code><span class="k">import</span> <span class="nx">Vuex</span> <span class="k">from</span> <span class="s1">'vuex'</span><span class="p">;</span>
+<span class="k">import</span> <span class="nx">vuexI18n</span> <span class="k">from</span> <span class="s1">'vuex-i18n'</span><span class="p">;</span>
+<span class="k">import</span> <span class="nx">Locales</span> <span class="k">from</span> <span class="s1">'./vue-i18n-locales.generated.js'</span><span class="p">;</span>
 
 <span class="nx">Vue</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">Vuex</span><span class="p">);</span>
-<span class="kr">const</span> <span class="nx">store</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Vuex</span><span class="p">.</span><span class="nx">Store</span><span class="p">();</span>
+<span class="kd">const</span> <span class="nx">store</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Vuex</span><span class="p">.</span><span class="nx">Store</span><span class="p">();</span>
 <span class="nx">Vue</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">vuexI18n</span><span class="p">.</span><span class="nx">plugin</span><span class="p">,</span> <span class="nx">store</span><span class="p">);</span>
 
 <span class="nx">Vue</span><span class="p">.</span><span class="nx">i18n</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s1">'en'</span><span class="p">,</span> <span class="nx">Locales</span><span class="p">.</span><span class="nx">en</span><span class="p">);</span>
 <span class="nx">Vue</span><span class="p">.</span><span class="nx">i18n</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s1">'zh'</span><span class="p">,</span> <span class="nx">Locales</span><span class="p">.</span><span class="nx">zh</span><span class="p">);</span>
 
-<span class="nx">Vue</span><span class="p">.</span><span class="nx">i18n</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s1">'en'</span><span class="p">);</span>
+<span class="nx">Vue</span><span class="p">.</span><span class="nx">i18n</span><span class="p">.</span><span class="kd">set</span><span class="p">(</span><span class="s1">'en'</span><span class="p">);</span>
 
-<span class="kr">const</span> <span class="nx">app</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Vue</span><span class="p">({</span>
+<span class="kd">const</span> <span class="nx">app</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Vue</span><span class="p">({</span>
     <span class="nx">store</span><span class="p">,</span>
     <span class="na">el</span><span class="p">:</span> <span class="s1">'#app'</span><span class="p">,</span>
 <span class="p">});</span>
-</code></pre></td></tr></tbody></table></div>
-</div>
+</code></pre></td></tr></tbody></table></div></div>
 
 <p>之后就可以正常的使用<code class="highlighter-rouge">$t()</code>了 同时也支持复数形式</p>
 
@@ -661,7 +660,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">103</span>
+                <span class="site-state-item-count">104</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>

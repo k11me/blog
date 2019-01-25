@@ -472,8 +472,7 @@
 <h2 id="ssh使用socks5">SSH使用Socks5</h2>
 
 <div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code>ssh -o ProxyCommand='nc -x 127.0.0.1:8083 %h %p' -p 22 &lt;user&gt;@&lt;000.000.000.000&gt;
-</code></pre></td></tr></tbody></table></div>
-</div>
+</code></pre></td></tr></tbody></table></div></div>
 
 <p>绕一圈的速度都比直连快……我也是……醉了……</p>
 
@@ -485,8 +484,7 @@
 
 <div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2</pre></td><td class="code"><pre class="highlight"><code>alias goproxy='export http_proxy="http://127.0.0.1:8003"; export HTTP_PROXY="http://127.0.0.1:8003"; export https_proxy="http://127.0.0.1:8003"; export HTTPS_PROXY="http://127.0.0.1:8003"'
 alias disproxy='unset http_proxy HTTP_PROXY https_proxy HTTPS_PROXY'
-</code></pre></td></tr></tbody></table></div>
-</div>
+</code></pre></td></tr></tbody></table></div></div>
 
 <p>开启时使用<code class="highlighter-rouge">goproxy</code></p>
 
@@ -653,7 +651,7 @@ alias disproxy='unset http_proxy HTTP_PROXY https_proxy HTTPS_PROXY'
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">103</span>
+                <span class="site-state-item-count">104</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>

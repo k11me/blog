@@ -465,22 +465,20 @@
 
 <p>标准化信息返回问题不大 方法是使用</p>
 
-<div class="language-php highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5</pre></td><td class="code"><pre class="highlight"><code>try{
-	return 'something';
-}catch(\Exception $e){
-	return $e-&gt;getMessage();
-}
-</code></pre></td></tr></tbody></table></div>
-</div>
+<div class="language-php highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5</pre></td><td class="code"><pre class="highlight"><code><span class="k">try</span><span class="p">{</span>
+	<span class="k">return</span> <span class="s1">'something'</span><span class="p">;</span>
+<span class="p">}</span><span class="k">catch</span><span class="p">(</span><span class="nx">\Exception</span> <span class="nv">$e</span><span class="p">){</span>
+	<span class="k">return</span> <span class="nv">$e</span><span class="o">-&gt;</span><span class="na">getMessage</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></td></tr></tbody></table></div></div>
 
 <p>也可以在<code class="highlighter-rouge">App\Exceptions\Handler</code> 的<code class="highlighter-rouge">render</code>中做截取</p>
 
-<div class="language-php highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4</pre></td><td class="code"><pre class="highlight"><code>switch($exception-&gt;getMessage()){
-	case 'someMessage';
-	return 'someMessage';
-}
-</code></pre></td></tr></tbody></table></div>
-</div>
+<div class="language-php highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4</pre></td><td class="code"><pre class="highlight"><code><span class="k">switch</span><span class="p">(</span><span class="nv">$exception</span><span class="o">-&gt;</span><span class="na">getMessage</span><span class="p">()){</span>
+	<span class="k">case</span> <span class="s1">'someMessage'</span><span class="p">;</span>
+	<span class="k">return</span> <span class="s1">'someMessage'</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></td></tr></tbody></table></div></div>
 
 <p>再次感受到先做后端的重要性！！</p>
 
@@ -643,7 +641,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">103</span>
+                <span class="site-state-item-count">104</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>

@@ -471,16 +471,14 @@
 
 <p>可以使用</p>
 
-<div class="language-php highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code>$user-&gt;notify((new SendEmail($Token))-&gt;onQueue('mail'));
-</code></pre></td></tr></tbody></table></div>
-</div>
+<div class="language-php highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code><span class="nv">$user</span><span class="o">-&gt;</span><span class="na">notify</span><span class="p">((</span><span class="k">new</span> <span class="nx">SendEmail</span><span class="p">(</span><span class="nv">$Token</span><span class="p">))</span><span class="o">-&gt;</span><span class="na">onQueue</span><span class="p">(</span><span class="s1">'mail'</span><span class="p">));</span>
+</code></pre></td></tr></tbody></table></div></div>
 
 <p>或</p>
 
-<div class="language-php highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2</pre></td><td class="code"><pre class="highlight"><code>use Notification;
-Notification::send($user, (new SendEmail($Token))-&gt;onQueue('mail'));
-</code></pre></td></tr></tbody></table></div>
-</div>
+<div class="language-php highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2</pre></td><td class="code"><pre class="highlight"><code><span class="k">use</span> <span class="nx">Notification</span><span class="p">;</span>
+<span class="nx">Notification</span><span class="o">::</span><span class="na">send</span><span class="p">(</span><span class="nv">$user</span><span class="p">,</span> <span class="p">(</span><span class="k">new</span> <span class="nx">SendEmail</span><span class="p">(</span><span class="nv">$Token</span><span class="p">))</span><span class="o">-&gt;</span><span class="na">onQueue</span><span class="p">(</span><span class="s1">'mail'</span><span class="p">));</span>
+</code></pre></td></tr></tbody></table></div></div>
 <h2 id="roles">roles</h2>
 
 <p>需要注意<code class="highlighter-rouge">guard</code>对应</p>
@@ -489,28 +487,25 @@ Notification::send($user, (new SendEmail($Token))-&gt;onQueue('mail'));
 
 <p>在<code class="highlighter-rouge">blade</code> 中使用时</p>
 
-<div class="language-php highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3</pre></td><td class="code"><pre class="highlight"><code>@role('role' , 'guard')
-something
-@endrole
-</code></pre></td></tr></tbody></table></div>
-</div>
+<div class="language-php highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3</pre></td><td class="code"><pre class="highlight"><code><span class="o">@</span><span class="nx">role</span><span class="p">(</span><span class="s1">'role'</span> <span class="p">,</span> <span class="s1">'guard'</span><span class="p">)</span>
+<span class="nx">something</span>
+<span class="o">@</span><span class="nx">endrole</span>
+</code></pre></td></tr></tbody></table></div></div>
 
 <p>在路由中使用时</p>
 
-<div class="language-php highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3</pre></td><td class="code"><pre class="highlight"><code>Route::group(['middleware' =&gt; ['auth:admin' , 'role:admin']], function () {
+<div class="language-php highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3</pre></td><td class="code"><pre class="highlight"><code><span class="nx">Route</span><span class="o">::</span><span class="na">group</span><span class="p">([</span><span class="s1">'middleware'</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s1">'auth:admin'</span> <span class="p">,</span> <span class="s1">'role:admin'</span><span class="p">]],</span> <span class="k">function</span> <span class="p">()</span> <span class="p">{</span>
 
-});
-</code></pre></td></tr></tbody></table></div>
-</div>
+<span class="p">});</span>
+</code></pre></td></tr></tbody></table></div></div>
 
 <p>也可以在控制器中使用</p>
 
-<div class="language-php highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4</pre></td><td class="code"><pre class="highlight"><code>public function __construct()
-{
-    $this-&gt;middleware(['role:admin' , 'auth:admin']);
-}
-</code></pre></td></tr></tbody></table></div>
-</div>
+<div class="language-php highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4</pre></td><td class="code"><pre class="highlight"><code><span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">middleware</span><span class="p">([</span><span class="s1">'role:admin'</span> <span class="p">,</span> <span class="s1">'auth:admin'</span><span class="p">]);</span>
+<span class="p">}</span>
+</code></pre></td></tr></tbody></table></div></div>
 
 <hr />
 
@@ -678,7 +673,7 @@ something
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">103</span>
+                <span class="site-state-item-count">104</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>

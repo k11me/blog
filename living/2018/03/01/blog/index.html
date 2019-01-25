@@ -498,8 +498,7 @@ A：不需要手动更新证书，可以使用二级域名部署其他服务。�
 
 <div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2</pre></td><td class="code"><pre class="highlight"><code>$ apt update
 $ apt upgrade
-</code></pre></td></tr></tbody></table></div>
-</div>
+</code></pre></td></tr></tbody></table></div></div>
 
 <h2 id="文件目录">文件目录</h2>
 
@@ -508,8 +507,7 @@ $ apt upgrade
 |   `-- config.json
 `-- vhost.d
     `-- ******_location
-</code></pre></td></tr></tbody></table></div>
-</div>
+</code></pre></td></tr></tbody></table></div></div>
 
 <h2 id="docker-composeyml">docker-compose.yml</h2>
 
@@ -539,59 +537,58 @@ $ apt upgrade
 
 <hr />
 
-<div class="language-yml highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9<br/>10<br/>11<br/>12<br/>13<br/>14<br/>15<br/>16<br/>17<br/>18<br/>19<br/>20<br/>21<br/>22<br/>23<br/>24<br/>25<br/>26<br/>27<br/>28<br/>29<br/>30<br/>31<br/>32<br/>33<br/>34<br/>35<br/>36<br/>37<br/>38<br/>39<br/>40<br/>41<br/>42<br/>43<br/>44<br/>45<br/>46<br/>47<br/>48<br/>49<br/>50<br/>51</pre></td><td class="code"><pre class="highlight"><code><span class="s">version</span><span class="pi">:</span> <span class="s1">'</span><span class="s">2'</span>
+<div class="language-yml highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9<br/>10<br/>11<br/>12<br/>13<br/>14<br/>15<br/>16<br/>17<br/>18<br/>19<br/>20<br/>21<br/>22<br/>23<br/>24<br/>25<br/>26<br/>27<br/>28<br/>29<br/>30<br/>31<br/>32<br/>33<br/>34<br/>35<br/>36<br/>37<br/>38<br/>39<br/>40<br/>41<br/>42<br/>43<br/>44<br/>45<br/>46<br/>47<br/>48<br/>49<br/>50<br/>51</pre></td><td class="code"><pre class="highlight"><code><span class="na">version</span><span class="pi">:</span> <span class="s1">'</span><span class="s">2'</span>
 
-<span class="s">services</span><span class="pi">:</span>
-  <span class="s">v2ray</span><span class="pi">:</span>
-    <span class="s">image</span><span class="pi">:</span> <span class="s">v2ray/official</span>
-    <span class="s">container_name</span><span class="pi">:</span> <span class="s">v2ray</span>
-    <span class="s">restart</span><span class="pi">:</span> <span class="s">always</span>
-    <span class="s">expose</span><span class="pi">:</span>
+<span class="na">services</span><span class="pi">:</span>
+  <span class="na">v2ray</span><span class="pi">:</span>
+    <span class="na">image</span><span class="pi">:</span> <span class="s">v2ray/official</span>
+    <span class="na">container_name</span><span class="pi">:</span> <span class="s">v2ray</span>
+    <span class="na">restart</span><span class="pi">:</span> <span class="s">always</span>
+    <span class="na">expose</span><span class="pi">:</span>
       <span class="pi">-</span> <span class="s2">"</span><span class="s">****"</span>
-    <span class="s">volumes</span><span class="pi">:</span>
+    <span class="na">volumes</span><span class="pi">:</span>
       <span class="pi">-</span> <span class="s">$PWD/v2ray:/etc/v2ray</span>
       <span class="pi">-</span> <span class="s">$PWD/v2ray/config.json:/etc/v2ray/config.json:ro</span>
-    <span class="s">environment</span><span class="pi">:</span>
+    <span class="na">environment</span><span class="pi">:</span>
       <span class="pi">-</span> <span class="s">VIRTUAL_HOST=****</span>
       <span class="pi">-</span> <span class="s">VIRTUAL_PORT=****</span>
 
-  <span class="s">web1</span><span class="pi">:</span>
-    <span class="s">image</span><span class="pi">:</span> <span class="s">nginx:latest</span>
-    <span class="s">restart</span><span class="pi">:</span> <span class="s">always</span>
-    <span class="s">expose</span><span class="pi">:</span>
+  <span class="na">web1</span><span class="pi">:</span>
+    <span class="na">image</span><span class="pi">:</span> <span class="s">nginx:latest</span>
+    <span class="na">restart</span><span class="pi">:</span> <span class="s">always</span>
+    <span class="na">expose</span><span class="pi">:</span>
       <span class="pi">-</span> <span class="s2">"</span><span class="s">80"</span>
-    <span class="s">environment</span><span class="pi">:</span>
+    <span class="na">environment</span><span class="pi">:</span>
       <span class="pi">-</span> <span class="s">VIRTUAL_HOST=*****</span>
       <span class="pi">-</span> <span class="s">VIRTUAL_PORT=80</span>
       <span class="pi">-</span> <span class="s">LETSENCRYPT_HOST=*****.***</span>
       <span class="pi">-</span> <span class="s">LETSENCRYPT_EMAIL=*****@*****.***</span>
 
-  <span class="s">nginx-proxy</span><span class="pi">:</span>
-      <span class="s">image</span><span class="pi">:</span> <span class="s">jwilder/nginx-proxy:latest</span>
-      <span class="s">restart</span><span class="pi">:</span> <span class="s">always</span>
-      <span class="s">ports</span><span class="pi">:</span>
+  <span class="na">nginx-proxy</span><span class="pi">:</span>
+      <span class="na">image</span><span class="pi">:</span> <span class="s">jwilder/nginx-proxy:latest</span>
+      <span class="na">restart</span><span class="pi">:</span> <span class="s">always</span>
+      <span class="na">ports</span><span class="pi">:</span>
           <span class="pi">-</span> <span class="s2">"</span><span class="s">80:80"</span>
           <span class="pi">-</span> <span class="s2">"</span><span class="s">443:443"</span>
-      <span class="s">volumes</span><span class="pi">:</span>
+      <span class="na">volumes</span><span class="pi">:</span>
           <span class="pi">-</span> <span class="s">/path/to/certs:/etc/nginx/certs:ro</span>
           <span class="pi">-</span> <span class="s">$PWD/vhost.d:/etc/nginx/vhost.d:ro</span>
           <span class="pi">-</span> <span class="s">/usr/share/nginx/html</span>
           <span class="pi">-</span> <span class="s">/var/run/docker.sock:/tmp/docker.sock:ro</span>
-      <span class="s">labels</span><span class="pi">:</span>
+      <span class="na">labels</span><span class="pi">:</span>
           <span class="pi">-</span> <span class="s2">"</span><span class="s">com.github.jrcs.letsencrypt_nginx_proxy_companion.nginx_proxy"</span>
 
-  <span class="s">letsencrypt-nginx-proxy-companion</span><span class="pi">:</span>
-      <span class="s">image</span><span class="pi">:</span> <span class="s">jrcs/letsencrypt-nginx-proxy-companion:latest</span>
-      <span class="s">restart</span><span class="pi">:</span> <span class="s">always</span>
-      <span class="s">volumes</span><span class="pi">:</span>
+  <span class="na">letsencrypt-nginx-proxy-companion</span><span class="pi">:</span>
+      <span class="na">image</span><span class="pi">:</span> <span class="s">jrcs/letsencrypt-nginx-proxy-companion:latest</span>
+      <span class="na">restart</span><span class="pi">:</span> <span class="s">always</span>
+      <span class="na">volumes</span><span class="pi">:</span>
           <span class="pi">-</span> <span class="s">/path/to/certs:/etc/nginx/certs:rw</span>
           <span class="pi">-</span> <span class="s">$PWD/vhost.d:/etc/nginx/vhost.d:ro</span>
           <span class="pi">-</span> <span class="s">/var/run/docker.sock:/var/run/docker.sock:ro</span>
-      <span class="s">volumes_from</span><span class="pi">:</span>
+      <span class="na">volumes_from</span><span class="pi">:</span>
           <span class="pi">-</span> <span class="s">nginx-proxy</span>
 
-</code></pre></td></tr></tbody></table></div>
-</div>
+</code></pre></td></tr></tbody></table></div></div>
 
 <h2 id="tls转发">TLS转发</h2>
 
@@ -611,8 +608,7 @@ proxy_set_header Host $http_host;
 if ($http_upgrade = "websocket" ) {
     proxy_pass http://v2ray:****;
 }
-</code></pre></td></tr></tbody></table></div>
-</div>
+</code></pre></td></tr></tbody></table></div></div>
 
 <h2 id="v2ray-设置文件configjson">v2ray 设置文件<code class="highlighter-rouge">config.json</code></h2>
 
@@ -627,32 +623,31 @@ if ($http_upgrade = "websocket" ) {
 <p><code class="highlighter-rouge">json</code>写完之后，注意校对格式哦</p>
 
 <div class="language-json highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9<br/>10<br/>11<br/>12<br/>13<br/>14<br/>15<br/>16<br/>17<br/>18<br/>19<br/>20<br/>21<br/>22<br/>23<br/>24<br/>25</pre></td><td class="code"><pre class="highlight"><code><span class="p">{</span><span class="w">
-  </span><span class="nt">"inbound"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nt">"port"</span><span class="p">:</span><span class="w"> </span><span class="s2">"****"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"protocol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"vmess"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"settings"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nt">"clients"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+  </span><span class="s2">"inbound"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"port"</span><span class="p">:</span><span class="w"> </span><span class="s2">"****"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"protocol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"vmess"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"settings"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"clients"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="p">{</span><span class="w">
-          </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"***********"</span><span class="p">,</span><span class="w">
-          </span><span class="nt">"alterId"</span><span class="p">:</span><span class="w"> </span><span class="mi">64</span><span class="w">
+          </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"***********"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"alterId"</span><span class="p">:</span><span class="w"> </span><span class="mi">64</span><span class="w">
         </span><span class="p">}</span><span class="w">
       </span><span class="p">]</span><span class="w">
     </span><span class="p">},</span><span class="w">
-    </span><span class="nt">"streamSettings"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nt">"network"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ws"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"wsSettings"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nt">"path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/"</span><span class="w">
+    </span><span class="s2">"streamSettings"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"network"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ws"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"wsSettings"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/"</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">},</span><span class="w">
-  </span><span class="nt">"outbound"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nt">"protocol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"freedom"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"settings"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
+  </span><span class="s2">"outbound"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"protocol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"freedom"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"settings"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></td></tr></tbody></table></div>
-</div>
+</span></code></pre></td></tr></tbody></table></div></div>
 
 <h2 id="之后">之后</h2>
 
@@ -686,8 +681,7 @@ if ($http_upgrade = "websocket" ) {
       proxy_pass http://v2ray:****;
   }
 }
-</code></pre></td></tr></tbody></table></div>
-</div>
+</code></pre></td></tr></tbody></table></div></div>
 
 <p>于是只能使用<code class="highlighter-rouge">www.www.com_location</code>进行转发。</p>
 
@@ -857,7 +851,7 @@ if ($http_upgrade = "websocket" ) {
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">103</span>
+                <span class="site-state-item-count">104</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>

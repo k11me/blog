@@ -475,8 +475,7 @@
 
 <div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2</pre></td><td class="code"><pre class="highlight"><code>var xsrfCookie = postman.getResponseCookie("XSRF-TOKEN");
 postman.setEnvironmentVariable("XSRF-TOKEN", xsrfCookie.value);
-</code></pre></td></tr></tbody></table></div>
-</div>
+</code></pre></td></tr></tbody></table></div></div>
 
 <p>`` 对应该的是第二行要注意下。</p>
 
@@ -501,8 +500,7 @@ postman.setEnvironmentVariable("XSRF-TOKEN", xsrfCookie.value);
 <p>同上<code class="highlighter-rouge">Tests</code>标签可以写成</p>
 
 <div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code>pm.environment.set("xsrf-token", decodeURIComponent(pm.cookies.get("XSRF-TOKEN")))
-</code></pre></td></tr></tbody></table></div>
-</div>
+</code></pre></td></tr></tbody></table></div></div>
 
 <p>使用<code class="highlighter-rouge">laravel valet</code> 时，<code class="highlighter-rouge">postman</code>不能正确访问域名……</p>
 
@@ -668,7 +666,7 @@ postman.setEnvironmentVariable("XSRF-TOKEN", xsrfCookie.value);
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">103</span>
+                <span class="site-state-item-count">104</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>

@@ -83,7 +83,7 @@
 <link href="/assets/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="日记,vue,laravel," />
+  <meta name="keywords" content="日记,laravel," />
 
 
 
@@ -111,20 +111,17 @@
 
 
 
-<meta name="description" content="奥运10年 场馆荒废了 看着心疼 表弟回来了 表弟回来了 嗯 考上的多大~~ 略微的研究了一下公司注册的事儿~~ 明天9号 要久违的出去旅行了~~ 18号回来~~ 来过这里的人 这是这周的 等的人并没有来 看到某处亮了一下 还是有些期待的 查了一下真的是我想多了………… laravel 中的 vuex 将vuex-i18n部分从app.js移动到了store\index.js 目的是确保state中可以看到 i18n的设置 并可以 直接设置locale 变更语言 如果直接写在app.js 中i18n 就会被覆盖掉 其他部分就可以按照vuex推荐的结构进行设置 但愿可以在js路上越来越顺手 内心还是充满恐惧…… 其他vue 打错 需要安装vue-template-compiler包 l5-swagger 使用自定义auth登录 修改config\l5-swagger 中的middleware 将auth 修改为auth:admin 注意要对应config\auth中的guards 修改后一般用户不能查看api doc admin 用户 登录后可以正常查看 以上">
-<meta name="keywords" content="日记, vue, laravel">
+<meta name="description" content="15 号的份 laravel 创建 json 使用laravel 创建 json 时 可以使用 json_encode() 不过 当输入如下时， $test = [ [ &apos;test&apos; =&amp;gt; &apos;test&apos; ] ] 返回的为数组包裹，可以使用$request[0][&apos;test&apos;]获取数据 当输入如下时， $test = [ &apos;test&apos; =&amp;gt; [ &apos;test&apos; =&amp;gt; &apos;test&apos; ] ] 返回的为对象包裹，可以使用$request-&amp;gt;input(&apos;test.test&apos;)获取数据 在进行大量数据传入时，注意使用对应的方法进行循环写入。 20号的份 laravel 外部请求方法 使用GuzzleHttp 进行请求时 当使用json时 需要添加Content-Type为 application/json,数据写在body下 如果使用传统方式去除Content-Type, 使用form_params请求。 &apos;headers&apos; =&amp;gt; [ &apos;Authorization&apos; =&amp;gt; &apos;Bearer &apos;.&apos;toekn&apos;, &apos;Content-Type&apos; =&amp;gt; &apos;application/json&apos;, ], &apos;body&apos; =&amp;gt; json_encode($JsonData), laravel json 的坑 当使用json请求时，Request 可以自动解析json为数组 也可以使用$request-&amp;gt;input() 最坑的是刚使用return 时会自动使用json…… 使用json_decode() 也会返回json , 可是实际上转换了，使用dd()发现是数组…… 这时请求端在使用一次json_decode()就一定会出错。 所以在请求端json_decode()一次就好。 大致上可以推测 请求端发送的为独立数据，使用GuzzleHttp获取的返回为object 所以需要 json_decode()。 vue 不能跨域也是…… 现在还是先做出来，之后再完善的好。 原因暂时没有找到估计时laravel passport的锅">
+<meta name="keywords" content="日记, laravel">
 <meta property="og:type" content="article">
-<meta property="og:title" content="环保不是说说而已">
-<meta property="og:url" content="http://localhost:4000/living/2018/08/08/blog/">
+<meta property="og:title" content="laravel json 的坑">
+<meta property="og:url" content="http://localhost:4000/living/2019/01/20/blog/">
 <meta property="og:site_name" content="Keleven.Me">
-<meta property="og:description" content="奥运10年 场馆荒废了 看着心疼 表弟回来了 表弟回来了 嗯 考上的多大~~ 略微的研究了一下公司注册的事儿~~ 明天9号 要久违的出去旅行了~~ 18号回来~~ 来过这里的人 这是这周的 等的人并没有来 看到某处亮了一下 还是有些期待的 查了一下真的是我想多了………… laravel 中的 vuex 将vuex-i18n部分从app.js移动到了store\index.js 目的是确保state中可以看到 i18n的设置 并可以 直接设置locale 变更语言 如果直接写在app.js 中i18n 就会被覆盖掉 其他部分就可以按照vuex推荐的结构进行设置 但愿可以在js路上越来越顺手 内心还是充满恐惧…… 其他vue 打错 需要安装vue-template-compiler包 l5-swagger 使用自定义auth登录 修改config\l5-swagger 中的middleware 将auth 修改为auth:admin 注意要对应config\auth中的guards 修改后一般用户不能查看api doc admin 用户 登录后可以正常查看 以上">
+<meta property="og:description" content="15 号的份 laravel 创建 json 使用laravel 创建 json 时 可以使用 json_encode() 不过 当输入如下时， $test = [ [ &apos;test&apos; =&amp;gt; &apos;test&apos; ] ] 返回的为数组包裹，可以使用$request[0][&apos;test&apos;]获取数据 当输入如下时， $test = [ &apos;test&apos; =&amp;gt; [ &apos;test&apos; =&amp;gt; &apos;test&apos; ] ] 返回的为对象包裹，可以使用$request-&amp;gt;input(&apos;test.test&apos;)获取数据 在进行大量数据传入时，注意使用对应的方法进行循环写入。 20号的份 laravel 外部请求方法 使用GuzzleHttp 进行请求时 当使用json时 需要添加Content-Type为 application/json,数据写在body下 如果使用传统方式去除Content-Type, 使用form_params请求。 &apos;headers&apos; =&amp;gt; [ &apos;Authorization&apos; =&amp;gt; &apos;Bearer &apos;.&apos;toekn&apos;, &apos;Content-Type&apos; =&amp;gt; &apos;application/json&apos;, ], &apos;body&apos; =&amp;gt; json_encode($JsonData), laravel json 的坑 当使用json请求时，Request 可以自动解析json为数组 也可以使用$request-&amp;gt;input() 最坑的是刚使用return 时会自动使用json…… 使用json_decode() 也会返回json , 可是实际上转换了，使用dd()发现是数组…… 这时请求端在使用一次json_decode()就一定会出错。 所以在请求端json_decode()一次就好。 大致上可以推测 请求端发送的为独立数据，使用GuzzleHttp获取的返回为object 所以需要 json_decode()。 vue 不能跨域也是…… 现在还是先做出来，之后再完善的好。 原因暂时没有找到估计时laravel passport的锅">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="https://i.loli.net/2018/08/08/5b6a9085dc603.png">
-<meta property="og:image" content="https://i.loli.net/2018/08/08/5b6a934f001fe.png">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="环保不是说说而已">
-<meta name="twitter:description" content="奥运10年 场馆荒废了 看着心疼 表弟回来了 表弟回来了 嗯 考上的多大~~ 略微的研究了一下公司注册的事儿~~ 明天9号 要久违的出去旅行了~~ 18号回来~~ 来过这里的人 这是这周的 等的人并没有来 看到某处亮了一下 还是有些期待的 查了一下真的是我想多了………… laravel 中的 vuex 将vuex-i18n部分从app.js移动到了store\index.js 目的是确保state中可以看到 i18n的设置 并可以 直接设置locale 变更语言 如果直接写在app.js 中i18n 就会被覆盖掉 其他部分就可以按照vuex推荐的结构进行设置 但愿可以在js路上越来越顺手 内心还是充满恐惧…… 其他vue 打错 需要安装vue-template-compiler包 l5-swagger 使用自定义auth登录 修改config\l5-swagger 中的middleware 将auth 修改为auth:admin 注意要对应config\auth中的guards 修改后一般用户不能查看api doc admin 用户 登录后可以正常查看 以上">
-<meta name="twitter:image" content="https://i.loli.net/2018/08/08/5b6a9085dc603.png">
+<meta name="twitter:title" content="laravel json 的坑">
+<meta name="twitter:description" content="15 号的份 laravel 创建 json 使用laravel 创建 json 时 可以使用 json_encode() 不过 当输入如下时， $test = [ [ &apos;test&apos; =&amp;gt; &apos;test&apos; ] ] 返回的为数组包裹，可以使用$request[0][&apos;test&apos;]获取数据 当输入如下时， $test = [ &apos;test&apos; =&amp;gt; [ &apos;test&apos; =&amp;gt; &apos;test&apos; ] ] 返回的为对象包裹，可以使用$request-&amp;gt;input(&apos;test.test&apos;)获取数据 在进行大量数据传入时，注意使用对应的方法进行循环写入。 20号的份 laravel 外部请求方法 使用GuzzleHttp 进行请求时 当使用json时 需要添加Content-Type为 application/json,数据写在body下 如果使用传统方式去除Content-Type, 使用form_params请求。 &apos;headers&apos; =&amp;gt; [ &apos;Authorization&apos; =&amp;gt; &apos;Bearer &apos;.&apos;toekn&apos;, &apos;Content-Type&apos; =&amp;gt; &apos;application/json&apos;, ], &apos;body&apos; =&amp;gt; json_encode($JsonData), laravel json 的坑 当使用json请求时，Request 可以自动解析json为数组 也可以使用$request-&amp;gt;input() 最坑的是刚使用return 时会自动使用json…… 使用json_decode() 也会返回json , 可是实际上转换了，使用dd()发现是数组…… 这时请求端在使用一次json_decode()就一定会出错。 所以在请求端json_decode()一次就好。 大致上可以推测 请求端发送的为独立数据，使用GuzzleHttp获取的返回为object 所以需要 json_decode()。 vue 不能跨域也是…… 现在还是先做出来，之后再完善的好。 原因暂时没有找到估计时laravel passport的锅">
 
 
 <script type="text/javascript" id="hexo.configurations">
@@ -157,7 +154,7 @@
 
 
 
-  <title>环保不是说说而已 | Keleven.Me</title>
+  <title>laravel json 的坑 | Keleven.Me</title>
   
 
 
@@ -338,7 +335,7 @@
   
 
   <article class="post post-type- " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://localhost:4000/living/2018/08/08/blog/">
+    <link itemprop="mainEntityOfPage" href="http://localhost:4000/living/2019/01/20/blog/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="K11">
@@ -358,7 +355,7 @@
           <h1 class="post-title" itemprop="name headline">
           
           
-            环保不是说说而已
+            laravel json 的坑
           
         </h1>
         
@@ -372,8 +369,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-08-08T08:00:00+08:00">
-                2018-08-08
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-01-20T08:00:00+08:00">
+                2019-01-20
               </time>
             
 
@@ -414,9 +411,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/living/2018/08/08/blog/#comments" itemprop="discussionUrl">
+                <a href="/living/2019/01/20/blog/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="/living/2018/08/08/blog/" itemprop="commentCount"></span>
+                        data-disqus-identifier="/living/2019/01/20/blog/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -462,63 +459,77 @@
 
 
 
-  <h2 id="奥运10年">奥运10年</h2>
+  <h1 id="15-号的份">15 号的份</h1>
 
-<p>场馆荒废了 看着心疼</p>
+<h2 id="laravel-创建-json">laravel 创建 json</h2>
 
-<h2 id="表弟回来了">表弟回来了</h2>
+<p>使用laravel 创建 json 时</p>
 
-<p>表弟回来了 嗯 考上的多大~~</p>
+<p>可以使用 <code class="highlighter-rouge">json_encode()</code> 不过</p>
 
-<p>略微的研究了一下公司注册的事儿~~</p>
+<p>当输入如下时，</p>
 
-<p>明天9号 要久违的出去旅行了~~</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5</pre></td><td class="code"><pre class="highlight"><code><span class="nv">$test</span> <span class="o">=</span> <span class="p">[</span>
+	<span class="p">[</span>	
+		<span class="s1">'test'</span> <span class="o">=&gt;</span> <span class="s1">'test'</span>
+	<span class="p">]</span>
+<span class="p">]</span>
+</code></pre></td></tr></tbody></table></div></div>
 
-<p>18号回来~~</p>
+<p>返回的为数组包裹，可以使用<code class="highlighter-rouge">$request[0]['test']</code>获取数据</p>
 
-<h2 id="来过这里的人">来过这里的人</h2>
+<p>当输入如下时，</p>
 
-<p>这是这周的 等的人并没有来</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5</pre></td><td class="code"><pre class="highlight"><code><span class="nv">$test</span> <span class="o">=</span> <span class="p">[</span>
+	<span class="s1">'test'</span> <span class="o">=&gt;</span> <span class="p">[</span>
+		<span class="s1">'test'</span> <span class="o">=&gt;</span> <span class="s1">'test'</span>
+	<span class="p">]</span>
+<span class="p">]</span>
+</code></pre></td></tr></tbody></table></div></div>
 
-<p>看到某处亮了一下 还是有些期待的</p>
+<p>返回的为对象包裹，可以使用<code class="highlighter-rouge">$request-&gt;input('test.test')</code>获取数据</p>
 
-<p><img src="https://i.loli.net/2018/08/08/5b6a9085dc603.png" alt="屏幕快照 2018-08-08 14.39.04" /></p>
+<p>在进行大量数据传入时，注意使用对应的方法进行循环写入。</p>
 
-<p>查了一下真的是我想多了…………</p>
+<hr />
 
-<h2 id="laravel-中的-vuex">laravel 中的 vuex</h2>
+<h1 id="20号的份">20号的份</h1>
 
-<p>将<code class="highlighter-rouge">vuex-i18n</code>部分从<code class="highlighter-rouge">app.js</code>移动到了<code class="highlighter-rouge">store\index.js</code></p>
+<h2 id="laravel-外部请求方法">laravel 外部请求方法</h2>
 
-<p>目的是确保<code class="highlighter-rouge">state</code>中可以看到 <code class="highlighter-rouge">i18n</code>的设置</p>
+<p>使用<code class="highlighter-rouge">GuzzleHttp</code> 进行请求时</p>
 
-<p>并可以 直接设置<code class="highlighter-rouge">locale</code> 变更语言</p>
+<p>当使用<code class="highlighter-rouge">json</code>时 需要添加<code class="highlighter-rouge">Content-Type</code>为 <code class="highlighter-rouge">application/json</code>,数据写在<code class="highlighter-rouge">body</code>下</p>
 
-<p><img src="https://i.loli.net/2018/08/08/5b6a934f001fe.png" alt="屏幕快照 2018-08-08 14.52.15" /></p>
+<p>如果使用传统方式去除<code class="highlighter-rouge">Content-Type</code>, 使用<code class="highlighter-rouge">form_params</code>请求。</p>
 
-<p>如果直接写在<code class="highlighter-rouge">app.js</code> 中<code class="highlighter-rouge">i18n</code> 就会被覆盖掉</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5</pre></td><td class="code"><pre class="highlight"><code><span class="s1">'headers'</span> <span class="o">=&gt;</span> <span class="p">[</span>
+		<span class="s1">'Authorization'</span> <span class="o">=&gt;</span> <span class="s1">'Bearer '</span><span class="o">.</span><span class="s1">'toekn'</span><span class="p">,</span>
+		<span class="s1">'Content-Type'</span> <span class="o">=&gt;</span> <span class="s1">'application/json'</span><span class="p">,</span>
+<span class="p">],</span>
+<span class="s1">'body'</span> <span class="o">=&gt;</span> <span class="nb">json_encode</span><span class="p">(</span><span class="nv">$JsonData</span><span class="p">),</span>
+</code></pre></td></tr></tbody></table></div></div>
 
-<p>其他部分就可以按照<code class="highlighter-rouge">vuex</code>推荐的结构进行设置</p>
+<h2 id="laravel-json-的坑">laravel json 的坑</h2>
 
-<p>但愿可以在<code class="highlighter-rouge">js</code>路上越来越顺手 内心还是充满恐惧……</p>
+<p>当使用<code class="highlighter-rouge">json</code>请求时，<code class="highlighter-rouge">Request</code> 可以自动解析<code class="highlighter-rouge">json</code>为数组</p>
 
-<h3 id="其他vue-打错">其他vue 打错</h3>
+<p>也可以使用<code class="highlighter-rouge">$request-&gt;input()</code></p>
 
-<p>需要安装<code class="highlighter-rouge">vue-template-compiler</code>包</p>
+<p>最坑的是刚使用<code class="highlighter-rouge">return</code> 时会自动使用<code class="highlighter-rouge">json</code>……</p>
 
-<h2 id="l5-swagger-使用自定义auth登录">l5-swagger 使用自定义auth登录</h2>
+<p>使用<code class="highlighter-rouge">json_decode()</code> 也会返回<code class="highlighter-rouge">json</code> , 可是实际上转换了，使用<code class="highlighter-rouge">dd()</code>发现是数组……</p>
 
-<p>修改<code class="highlighter-rouge">config\l5-swagger</code> 中的<code class="highlighter-rouge">middleware</code></p>
+<p>这时请求端在使用一次<code class="highlighter-rouge">json_decode()</code>就一定会出错。</p>
 
-<p>将<code class="highlighter-rouge">auth</code> 修改为<code class="highlighter-rouge">auth:admin</code></p>
+<p>所以在请求端<code class="highlighter-rouge">json_decode()</code>一次就好。</p>
 
-<p>注意要对应<code class="highlighter-rouge">config\auth</code>中的<code class="highlighter-rouge">guards</code></p>
+<p>大致上可以推测 请求端发送的为独立数据，使用<code class="highlighter-rouge">GuzzleHttp</code>获取的返回为<code class="highlighter-rouge">object</code> 所以需要 <code class="highlighter-rouge">json_decode()</code>。</p>
 
-<p>修改后一般用户不能查看<code class="highlighter-rouge">api doc</code></p>
+<p><code class="highlighter-rouge">vue</code> 不能跨域也是…… 现在还是先做出来，之后再完善的好。</p>
 
-<p><code class="highlighter-rouge">admin</code> 用户 登录后可以正常查看</p>
+<p>原因暂时没有找到估计时<code class="highlighter-rouge">laravel passport</code>的锅</p>
 
-<h2 id="以上">以上</h2>
 
 
       
@@ -553,9 +564,6 @@
             <a href="/tag/#/%E6%97%A5%E8%AE%B0" rel="tag"># 日记</a>
           
             
-            <a href="/tag/#/vue" rel="tag"># vue</a>
-          
-            
             <a href="/tag/#/laravel" rel="tag"># laravel</a>
           
         </div>
@@ -572,18 +580,14 @@
         <div class="post-nav" id="post-nav-id">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/living/2018/08/20/blog/" rel="next" title="我回来了😁">
-                <i class="fa fa-chevron-left"></i> 我回来了😁
-              </a>
-            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/living/2018/07/30/blog/" rel="prev" title="i18n 全球化语言">
-                i18n 全球化语言 <i class="fa fa-chevron-right"></i>
+              <a href="/living/2019/01/08/blog/" rel="prev" title="日常的坑">
+                日常的坑 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -772,7 +776,7 @@
             
               <div class="post-toc-content">
     <ol class=nav>
-      <li class="nav-item nav-level-2"> <a class="nav-link" href="#奥运10年"> <span class="nav-number">1</span> <span class="nav-text">奥运10年</span> </a> </li> <li class="nav-item nav-level-2"> <a class="nav-link" href="#表弟回来了"> <span class="nav-number">2</span> <span class="nav-text">表弟回来了</span> </a> </li> <li class="nav-item nav-level-2"> <a class="nav-link" href="#来过这里的人"> <span class="nav-number">3</span> <span class="nav-text">来过这里的人</span> </a> </li> <li class="nav-item nav-level-2"> <a class="nav-link" href="#laravel-中的-vuex"> <span class="nav-number">4</span> <span class="nav-text">laravel 中的 vuex</span> </a> <ol class="nav-child"> <li class="nav-item nav-level-3"> <a class="nav-link" href="#其他vue-打错"> <span class="nav-number">4.1</span> <span class="nav-text">其他vue 打错</span> </a> </li> </ol> </li> <li class="nav-item nav-level-2"> <a class="nav-link" href="#l5-swagger-使用自定义auth登录"> <span class="nav-number">5</span> <span class="nav-text">l5-swagger 使用自定义auth登录</span> </a> </li> <li class="nav-item nav-level-2"> <a class="nav-link" href="#以上"> <span class="nav-number">6</span> <span class="nav-text">以上</span> </a> </li>
+      <li class="nav-item nav-level-1"> <a class="nav-link" href="#15-号的份"> <span class="nav-number">1</span> <span class="nav-text">15 号的份</span> </a> <ol class="nav-child"> <li class="nav-item nav-level-2"> <a class="nav-link" href="#laravel-创建-json"> <span class="nav-number">1.1</span> <span class="nav-text">laravel 创建 json</span> </a> </li> </ol> </li> <li class="nav-item nav-level-1"> <a class="nav-link" href="#20号的份"> <span class="nav-number">2</span> <span class="nav-text">20号的份</span> </a> <ol class="nav-child"> <li class="nav-item nav-level-2"> <a class="nav-link" href="#laravel-外部请求方法"> <span class="nav-number">2.1</span> <span class="nav-text">laravel 外部请求方法</span> </a> </li> <li class="nav-item nav-level-2"> <a class="nav-link" href="#laravel-json-的坑"> <span class="nav-number">2.2</span> <span class="nav-text">laravel json 的坑</span> </a> </li> </ol> </li>
     </ol>
   </div>
             
@@ -941,9 +945,9 @@
       
       <script type="text/javascript">
           var disqus_config = function () {
-              this.page.url = 'http://localhost:4000/living/2018/08/08/blog/';
-              this.page.identifier = '/living/2018/08/08/blog/';
-              this.page.title = '环保不是说说而已';
+              this.page.url = 'http://localhost:4000/living/2019/01/20/blog/';
+              this.page.identifier = '/living/2019/01/20/blog/';
+              this.page.title = 'laravel json 的坑';
           };
           var d = document, s = d.createElement('script');
           s.src = 'https://keleven.disqus.com/embed.js';

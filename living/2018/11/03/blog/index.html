@@ -473,20 +473,19 @@
 
 <p>如下</p>
 
-<div class="language-php highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9<br/>10<br/>11<br/>12</pre></td><td class="code"><pre class="highlight"><code>'channels' =&gt; [
-    'stack' =&gt; [
-        'driver' =&gt; 'stack',
-        'channels' =&gt; ['mysql'],
-    ],
-	'mysql' =&gt; [
-	    'driver' =&gt; 'custom',
-	    'name' =&gt; 'mysql',
-	    'via' =&gt; App\Logging\MySQLLogger::class,
-	    'level' =&gt; 'debug',
-	],
-]
-</code></pre></td></tr></tbody></table></div>
-</div>
+<div class="language-php highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9<br/>10<br/>11<br/>12</pre></td><td class="code"><pre class="highlight"><code><span class="s1">'channels'</span> <span class="o">=&gt;</span> <span class="p">[</span>
+    <span class="s1">'stack'</span> <span class="o">=&gt;</span> <span class="p">[</span>
+        <span class="s1">'driver'</span> <span class="o">=&gt;</span> <span class="s1">'stack'</span><span class="p">,</span>
+        <span class="s1">'channels'</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s1">'mysql'</span><span class="p">],</span>
+    <span class="p">],</span>
+	<span class="s1">'mysql'</span> <span class="o">=&gt;</span> <span class="p">[</span>
+	    <span class="s1">'driver'</span> <span class="o">=&gt;</span> <span class="s1">'custom'</span><span class="p">,</span>
+	    <span class="s1">'name'</span> <span class="o">=&gt;</span> <span class="s1">'mysql'</span><span class="p">,</span>
+	    <span class="s1">'via'</span> <span class="o">=&gt;</span> <span class="nx">App\Logging\MySQLLogger</span><span class="o">::</span><span class="na">class</span><span class="p">,</span>
+	    <span class="s1">'level'</span> <span class="o">=&gt;</span> <span class="s1">'debug'</span><span class="p">,</span>
+	<span class="p">],</span>
+<span class="p">]</span>
+</code></pre></td></tr></tbody></table></div></div>
 
 <p>新建<code class="highlighter-rouge">MySQLLogger</code> 这部分可以查看<code class="highlighter-rouge">laravel 文档</code></p>
 
@@ -515,8 +514,7 @@
         <span class="p">);</span>
     <span class="p">}</span>
 <span class="p">}</span>
-</code></pre></td></tr></tbody></table></div>
-</div>
+</code></pre></td></tr></tbody></table></div></div>
 
 <p>之后是<code class="highlighter-rouge">AdminLogsHandler</code> 用于将<code class="highlighter-rouge">logs</code>提交到数据库</p>
 
@@ -549,42 +547,39 @@
         <span class="p">]);</span>
     <span class="p">}</span>
 <span class="p">}</span>
-</code></pre></td></tr></tbody></table></div>
-</div>
+</code></pre></td></tr></tbody></table></div></div>
 
 <p><code class="highlighter-rouge">App\Models\Logs</code> 注意要添加批量写入</p>
 
-<div class="language-php highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9</pre></td><td class="code"><pre class="highlight"><code>    protected $fillable = [
-        'channel',
-        'message',
-        'level',
-        'context'
-    ];
-    protected $casts = [
-        'context' =&gt; 'array',
-    ];
-</code></pre></td></tr></tbody></table></div>
-</div>
+<div class="language-php highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9</pre></td><td class="code"><pre class="highlight"><code>    <span class="k">protected</span> <span class="nv">$fillable</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="s1">'channel'</span><span class="p">,</span>
+        <span class="s1">'message'</span><span class="p">,</span>
+        <span class="s1">'level'</span><span class="p">,</span>
+        <span class="s1">'context'</span>
+    <span class="p">];</span>
+    <span class="k">protected</span> <span class="nv">$casts</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="s1">'context'</span> <span class="o">=&gt;</span> <span class="s1">'array'</span><span class="p">,</span>
+    <span class="p">];</span>
+</code></pre></td></tr></tbody></table></div></div>
 
 <p>数据迁移如下</p>
 
-<div class="language-php highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9<br/>10<br/>11<br/>12<br/>13<br/>14<br/>15</pre></td><td class="code"><pre class="highlight"><code>$table-&gt;increments('id');
-$table-&gt;string('channel')-&gt;index();
-$table-&gt;enum('level', [
-    'DEBUG',
-    'INFO',
-    'NOTICE',
-    'WARNING',
-    'ERROR',
-    'CRITICAL',
-    'ALERT',
-    'EMERGENCY'
-])-&gt;default('INFO');
-$table-&gt;longText('message');
-$table-&gt;text('context');
-$table-&gt;timestamps();
-</code></pre></td></tr></tbody></table></div>
-</div>
+<div class="language-php highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9<br/>10<br/>11<br/>12<br/>13<br/>14<br/>15</pre></td><td class="code"><pre class="highlight"><code><span class="nv">$table</span><span class="o">-&gt;</span><span class="na">increments</span><span class="p">(</span><span class="s1">'id'</span><span class="p">);</span>
+<span class="nv">$table</span><span class="o">-&gt;</span><span class="na">string</span><span class="p">(</span><span class="s1">'channel'</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">index</span><span class="p">();</span>
+<span class="nv">$table</span><span class="o">-&gt;</span><span class="na">enum</span><span class="p">(</span><span class="s1">'level'</span><span class="p">,</span> <span class="p">[</span>
+    <span class="s1">'DEBUG'</span><span class="p">,</span>
+    <span class="s1">'INFO'</span><span class="p">,</span>
+    <span class="s1">'NOTICE'</span><span class="p">,</span>
+    <span class="s1">'WARNING'</span><span class="p">,</span>
+    <span class="s1">'ERROR'</span><span class="p">,</span>
+    <span class="s1">'CRITICAL'</span><span class="p">,</span>
+    <span class="s1">'ALERT'</span><span class="p">,</span>
+    <span class="s1">'EMERGENCY'</span>
+<span class="p">])</span><span class="o">-&gt;</span><span class="na">default</span><span class="p">(</span><span class="s1">'INFO'</span><span class="p">);</span>
+<span class="nv">$table</span><span class="o">-&gt;</span><span class="na">longText</span><span class="p">(</span><span class="s1">'message'</span><span class="p">);</span>
+<span class="nv">$table</span><span class="o">-&gt;</span><span class="na">text</span><span class="p">(</span><span class="s1">'context'</span><span class="p">);</span>
+<span class="nv">$table</span><span class="o">-&gt;</span><span class="na">timestamps</span><span class="p">();</span>
+</code></pre></td></tr></tbody></table></div></div>
 
 <p>之后可以使用</p>
 
@@ -741,7 +736,7 @@ $table-&gt;timestamps();
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">103</span>
+                <span class="site-state-item-count">104</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>

@@ -473,8 +473,7 @@
 <h3 id="12-第一步">1.2 第一步</h3>
 
 <div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code>$ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-</code></pre></td></tr></tbody></table></div>
-</div>
+</code></pre></td></tr></tbody></table></div></div>
 
 <h3 id="13-第二步">1.3 第二步</h3>
 
@@ -497,8 +496,7 @@ Plugin 'suan/vim-instant-markdown'
 
 call vundle#end()            
 filetype plugin indent on
-</code></pre></td></tr></tbody></table></div>
-</div>
+</code></pre></td></tr></tbody></table></div></div>
 
 <h3 id="14-第三步">1.4 第三步</h3>
 
@@ -518,16 +516,14 @@ filetype plugin indent on
 
 <div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2</pre></td><td class="code"><pre class="highlight"><code>ruby extconf.rb
 make
-</code></pre></td></tr></tbody></table></div>
-</div>
+</code></pre></td></tr></tbody></table></div></div>
 
 <p>之后进入Vim，输入命令<code class="highlighter-rouge">:CommandT</code>查看效果。</p>
 
 <p>如果提示vim不支持<code class="highlighter-rouge">ruby</code>，则安装<code class="highlighter-rouge">vim-nox</code></p>
 
 <div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code>$ sudo apt-get install vim-nox
-</code></pre></td></tr></tbody></table></div>
-</div>
+</code></pre></td></tr></tbody></table></div></div>
 
 <p>下图，为正常运行图</p>
 
@@ -546,16 +542,14 @@ make
 <div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3</pre></td><td class="code"><pre class="highlight"><code>Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'suan/vim-instant-markdown'
-</code></pre></td></tr></tbody></table></div>
-</div>
+</code></pre></td></tr></tbody></table></div></div>
 
 <p>其中<code class="highlighter-rouge">vim-instant-markdown</code>需要安装<code class="highlighter-rouge">nodejs</code>、<code class="highlighter-rouge">npm</code>、<code class="highlighter-rouge">xdg-utils</code>、<code class="highlighter-rouge">nodejs-legacy</code>。</p>
 
 <p>安装<code class="highlighter-rouge">instant-markdown-d</code></p>
 
 <div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code>$ sudo npm -g install instant-markdown-d
-</code></pre></td></tr></tbody></table></div>
-</div>
+</code></pre></td></tr></tbody></table></div></div>
 
 <p>其他需要组件：</p>
 
@@ -563,8 +557,7 @@ Plugin 'suan/vim-instant-markdown'
 $ sudo apt-get install npm
 $ sudo apt-get install xdg-utils
 $ sudo apt-get install nodejs-legacy
-</code></pre></td></tr></tbody></table></div>
-</div>
+</code></pre></td></tr></tbody></table></div></div>
 
 <p>实现的效果为<code class="highlighter-rouge">浏览器预览</code>与<code class="highlighter-rouge">markdown语法高亮</code></p>
 
@@ -585,8 +578,7 @@ $ sudo apt-get install nodejs-legacy
 <div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3</pre></td><td class="code"><pre class="highlight"><code>Plugin 'scrooloose/nerdTree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'jistr/vim-nerdtree-tabs'
-</code></pre></td></tr></tbody></table></div>
-</div>
+</code></pre></td></tr></tbody></table></div></div>
 
 <p><code class="highlighter-rouge">vim</code>中输入<code class="highlighter-rouge">PluginInstall</code>，输入<code class="highlighter-rouge">NERDTree</code>检查是否运行</p>
 
@@ -608,8 +600,7 @@ map &lt;C-n&gt; :NERDTreeToggle&lt;CR&gt;
 "左侧只有一个窗口时，随Vim一起关闭
 
 autocmd bufenter * if (winnr("$") == 1 &amp;&amp; exists("b:NERDTree") &amp;&amp; b:NERDTree.isTabTree()) | q | endif
-</code></pre></td></tr></tbody></table></div>
-</div>
+</code></pre></td></tr></tbody></table></div></div>
 
 <hr />
 
@@ -759,7 +750,7 @@ autocmd bufenter * if (winnr("$") == 1 &amp;&amp; exists("b:NERDTree") &amp;&amp
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">103</span>
+                <span class="site-state-item-count">104</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>

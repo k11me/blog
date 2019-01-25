@@ -495,32 +495,31 @@
 
 <p>同时在<code class="highlighter-rouge">config\database</code>中<code class="highlighter-rouge">redis</code>设置</p>
 
-<div class="language-php highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9<br/>10<br/>11<br/>12<br/>13<br/>14<br/>15<br/>16<br/>17<br/>18<br/>19<br/>20<br/>21<br/>22<br/>23<br/>24</pre></td><td class="code"><pre class="highlight"><code>    'redis' =&gt; [
+<div class="language-php highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9<br/>10<br/>11<br/>12<br/>13<br/>14<br/>15<br/>16<br/>17<br/>18<br/>19<br/>20<br/>21<br/>22<br/>23<br/>24</pre></td><td class="code"><pre class="highlight"><code>    <span class="s1">'redis'</span> <span class="o">=&gt;</span> <span class="p">[</span>
 
-        'client' =&gt; 'predis',
+        <span class="s1">'client'</span> <span class="o">=&gt;</span> <span class="s1">'predis'</span><span class="p">,</span>
 
-        'default' =&gt; [
-            'host' =&gt; env('REDIS_HOST', '127.0.0.1'),
-            'password' =&gt; env('REDIS_PASSWORD', null),
-            'port' =&gt; env('REDIS_PORT', 6379),
-            'database' =&gt; 1,
-        ],
+        <span class="s1">'default'</span> <span class="o">=&gt;</span> <span class="p">[</span>
+            <span class="s1">'host'</span> <span class="o">=&gt;</span> <span class="nx">env</span><span class="p">(</span><span class="s1">'REDIS_HOST'</span><span class="p">,</span> <span class="s1">'127.0.0.1'</span><span class="p">),</span>
+            <span class="s1">'password'</span> <span class="o">=&gt;</span> <span class="nx">env</span><span class="p">(</span><span class="s1">'REDIS_PASSWORD'</span><span class="p">,</span> <span class="kc">null</span><span class="p">),</span>
+            <span class="s1">'port'</span> <span class="o">=&gt;</span> <span class="nx">env</span><span class="p">(</span><span class="s1">'REDIS_PORT'</span><span class="p">,</span> <span class="mi">6379</span><span class="p">),</span>
+            <span class="s1">'database'</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="p">],</span>
 
-        'session' =&gt; [
-            'host' =&gt; env('REDIS_HOST', '127.0.0.1'),
-            'password' =&gt; env('REDIS_PASSWORD', null),
-            'port' =&gt; env('REDIS_PORT', 6379),
-            'database' =&gt; 2,
-        ],
+        <span class="s1">'session'</span> <span class="o">=&gt;</span> <span class="p">[</span>
+            <span class="s1">'host'</span> <span class="o">=&gt;</span> <span class="nx">env</span><span class="p">(</span><span class="s1">'REDIS_HOST'</span><span class="p">,</span> <span class="s1">'127.0.0.1'</span><span class="p">),</span>
+            <span class="s1">'password'</span> <span class="o">=&gt;</span> <span class="nx">env</span><span class="p">(</span><span class="s1">'REDIS_PASSWORD'</span><span class="p">,</span> <span class="kc">null</span><span class="p">),</span>
+            <span class="s1">'port'</span> <span class="o">=&gt;</span> <span class="nx">env</span><span class="p">(</span><span class="s1">'REDIS_PORT'</span><span class="p">,</span> <span class="mi">6379</span><span class="p">),</span>
+            <span class="s1">'database'</span> <span class="o">=&gt;</span> <span class="mi">2</span><span class="p">,</span>
+        <span class="p">],</span>
         
-        'queue' =&gt; [
-            'host' =&gt; env('REDIS_HOST', '127.0.0.1'),
-            'password' =&gt; env('REDIS_PASSWORD', null),
-            'port' =&gt; env('REDIS_PORT', 6379),
-            'database' =&gt; 3,
-        ],
-</code></pre></td></tr></tbody></table></div>
-</div>
+        <span class="s1">'queue'</span> <span class="o">=&gt;</span> <span class="p">[</span>
+            <span class="s1">'host'</span> <span class="o">=&gt;</span> <span class="nx">env</span><span class="p">(</span><span class="s1">'REDIS_HOST'</span><span class="p">,</span> <span class="s1">'127.0.0.1'</span><span class="p">),</span>
+            <span class="s1">'password'</span> <span class="o">=&gt;</span> <span class="nx">env</span><span class="p">(</span><span class="s1">'REDIS_PASSWORD'</span><span class="p">,</span> <span class="kc">null</span><span class="p">),</span>
+            <span class="s1">'port'</span> <span class="o">=&gt;</span> <span class="nx">env</span><span class="p">(</span><span class="s1">'REDIS_PORT'</span><span class="p">,</span> <span class="mi">6379</span><span class="p">),</span>
+            <span class="s1">'database'</span> <span class="o">=&gt;</span> <span class="mi">3</span><span class="p">,</span>
+        <span class="p">],</span>
+</code></pre></td></tr></tbody></table></div></div>
 
 <h4 id="命令">命令</h4>
 
@@ -535,8 +534,7 @@ php artisan horizon:pause
 
 恢复
 php artisan horizon:continue
-</code></pre></td></tr></tbody></table></div>
-</div>
+</code></pre></td></tr></tbody></table></div></div>
 
 <h2 id="以上">以上</h2>
 
@@ -698,7 +696,7 @@ php artisan horizon:continue
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">103</span>
+                <span class="site-state-item-count">104</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>

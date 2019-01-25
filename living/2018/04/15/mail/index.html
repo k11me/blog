@@ -580,28 +580,24 @@ docker run --rm \
   -e MAIL_PASS=password \
   -ti tvial/docker-mailserver:latest \
   /bin/sh -c 'echo "$MAIL_USER|$(doveadm pw -s SHA512-CRYPT -u $MAIL_USER -p $MAIL_PASS)"' &gt;&gt; config/postfix-accounts.cf
-</code></pre></td></tr></tbody></table></div>
-</div>
+</code></pre></td></tr></tbody></table></div></div>
 
 <h3 id="创建-dkim-key">创建 DKIM key</h3>
 
 <div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3</pre></td><td class="code"><pre class="highlight"><code>docker run --rm \
  -v "/root/mailserver/config":/tmp/docker-mailserver \
  -ti tvial/docker-mailserver:latest generate-dkim-config bar.foo
-</code></pre></td></tr></tbody></table></div>
-</div>
+</code></pre></td></tr></tbody></table></div></div>
 
 <p>查看</p>
 
 <div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code>cat /root/mailserver/config/opendkim/keys/bar.foo/mail.txt
-</code></pre></td></tr></tbody></table></div>
-</div>
+</code></pre></td></tr></tbody></table></div></div>
 
 <p>将DKIM1 调整后添加到域名解析<code class="highlighter-rouge">mail._domainkey</code>记录下。</p>
 
 <div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code>v=DKIM1; k=rsa; p=***********
-</code></pre></td></tr></tbody></table></div>
-</div>
+</code></pre></td></tr></tbody></table></div></div>
 
 <p><code class="highlighter-rouge">p==***********</code>为<code class="highlighter-rouge">DKIM key</code>这里隐去了</p>
 
@@ -609,7 +605,7 @@ docker run --rm \
 
 <p>启动 docker-proxy 【反向代理】</p>
 
-<pre><code class="language-docker">docker run -d -p 80:80 -p 443:443 \
+<div class="language-docker highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8</pre></td><td class="code"><pre class="highlight"><code>docker run -d -p 80:80 -p 443:443 \
     --name nginx-proxy \
     -v /path/to/certs:/etc/nginx/certs:ro \
     -v /etc/nginx/vhost.d \
@@ -617,7 +613,7 @@ docker run --rm \
     -v /var/run/docker.sock:/tmp/docker.sock:ro \
     --label com.github.jrcs.letsencrypt_nginx_proxy_companion.nginx_proxy \
     jwilder/nginx-proxy
-</code></pre>
+</code></pre></td></tr></tbody></table></div></div>
 
 <p>启动 letsencrypt-nginx-proxy-companion 【挂载TLS证书】</p>
 
@@ -626,8 +622,7 @@ docker run --rm \
     -v /var/run/docker.sock:/var/run/docker.sock:ro \
     --volumes-from nginx-proxy \
     jrcs/letsencrypt-nginx-proxy-companion
-</code></pre></td></tr></tbody></table></div>
-</div>
+</code></pre></td></tr></tbody></table></div></div>
 
 <p>启动 library/nginx 【用于获取TLS证书， 验证时，需要<code class="highlighter-rouge">port:80</code>】
 也可以使用下方<code class="highlighter-rouge">docker-compose.yml</code></p>
@@ -636,36 +631,36 @@ docker run --rm \
 Email 必须为有效地址。</li>
 </ul>
 
-<div class="language-yml highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9<br/>10<br/>11<br/>12<br/>13<br/>14<br/>15<br/>16<br/>17<br/>18<br/>19<br/>20<br/>21<br/>22<br/>23<br/>24<br/>25<br/>26<br/>27<br/>28<br/>29<br/>30<br/>31<br/>32<br/>33<br/>34<br/>35<br/>36<br/>37<br/>38</pre></td><td class="code"><pre class="highlight"><code><span class="s">version</span><span class="pi">:</span> <span class="s1">'</span><span class="s">2'</span>
+<div class="language-yml highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9<br/>10<br/>11<br/>12<br/>13<br/>14<br/>15<br/>16<br/>17<br/>18<br/>19<br/>20<br/>21<br/>22<br/>23<br/>24<br/>25<br/>26<br/>27<br/>28<br/>29<br/>30<br/>31<br/>32<br/>33<br/>34<br/>35<br/>36<br/>37<br/>38</pre></td><td class="code"><pre class="highlight"><code><span class="na">version</span><span class="pi">:</span> <span class="s1">'</span><span class="s">2'</span>
 
-<span class="s">services</span><span class="pi">:</span>
-  <span class="s">webmail</span><span class="pi">:</span>
-    <span class="s">image</span><span class="pi">:</span> <span class="s">nginx:latest</span>
-    <span class="s">restart</span><span class="pi">:</span> <span class="s">always</span>
-    <span class="s">environment</span><span class="pi">:</span>
+<span class="na">services</span><span class="pi">:</span>
+  <span class="na">webmail</span><span class="pi">:</span>
+    <span class="na">image</span><span class="pi">:</span> <span class="s">nginx:latest</span>
+    <span class="na">restart</span><span class="pi">:</span> <span class="s">always</span>
+    <span class="na">environment</span><span class="pi">:</span>
         <span class="pi">-</span> <span class="s">VIRTUAL_HOST=mail.bar.foo</span>
         <span class="pi">-</span> <span class="s">LETSENCRYPT_HOST=mail.bar.foo</span>
         <span class="pi">-</span> <span class="s">LETSENCRYPT_EMAIL=k11@bar.foo</span>
         <span class="c1"># - LETSENCRYPT_TEST=true</span>
-    <span class="s">network_mode</span><span class="pi">:</span> <span class="s2">"</span><span class="s">bridge"</span>
-  <span class="s">mailserver</span><span class="pi">:</span>
-    <span class="s">image</span><span class="pi">:</span> <span class="s">tvial/docker-mailserver:latest</span>
-    <span class="s">hostname</span><span class="pi">:</span> <span class="s">mail</span>
-    <span class="s">domainname</span><span class="pi">:</span> <span class="s">bar.foo</span>
-    <span class="s">container_name</span><span class="pi">:</span> <span class="s">mail</span>
-    <span class="s">restart</span><span class="pi">:</span> <span class="s">always</span>
-    <span class="s">ports</span><span class="pi">:</span>
+    <span class="na">network_mode</span><span class="pi">:</span> <span class="s2">"</span><span class="s">bridge"</span>
+  <span class="na">mailserver</span><span class="pi">:</span>
+    <span class="na">image</span><span class="pi">:</span> <span class="s">tvial/docker-mailserver:latest</span>
+    <span class="na">hostname</span><span class="pi">:</span> <span class="s">mail</span>
+    <span class="na">domainname</span><span class="pi">:</span> <span class="s">bar.foo</span>
+    <span class="na">container_name</span><span class="pi">:</span> <span class="s">mail</span>
+    <span class="na">restart</span><span class="pi">:</span> <span class="s">always</span>
+    <span class="na">ports</span><span class="pi">:</span>
     <span class="pi">-</span> <span class="s2">"</span><span class="s">25:25"</span>
     <span class="pi">-</span> <span class="s2">"</span><span class="s">143:143"</span>
     <span class="pi">-</span> <span class="s2">"</span><span class="s">587:587"</span>
     <span class="pi">-</span> <span class="s2">"</span><span class="s">993:993"</span>
-    <span class="s">volumes</span><span class="pi">:</span>
+    <span class="na">volumes</span><span class="pi">:</span>
     <span class="pi">-</span> <span class="s">/root/mailserver/mail:/var/mail</span>
     <span class="pi">-</span> <span class="s">/root/mailserver/mail-state:/var/mail-state</span>
     <span class="pi">-</span> <span class="s">/root/mailserver/config/:/tmp/docker-mailserver/</span>
     <span class="c1"># - /etc/letsencrypt:/etc/letsencrypt</span>
     <span class="pi">-</span> <span class="s">/path/to/certs/mail.bar.foo:/etc/letsencrypt/live/mail.bar.foo</span>
-    <span class="s">environment</span><span class="pi">:</span>
+    <span class="na">environment</span><span class="pi">:</span>
     <span class="pi">-</span> <span class="s">SSL_TYPE=letsencrypt</span>
     <span class="pi">-</span> <span class="s">ENABLE_SPAMASSASSIN=0</span>
     <span class="pi">-</span> <span class="s">ENABLE_CLAMAV=0</span>
@@ -674,8 +669,7 @@ Email 必须为有效地址。</li>
     <span class="pi">-</span> <span class="s">ONE_DIR=1</span>
     <span class="pi">-</span> <span class="s">DMS_DEBUG=0</span>
     <span class="pi">-</span> <span class="s">TLS_LEVEL=intermediate</span>
-</code></pre></td></tr></tbody></table></div>
-</div>
+</code></pre></td></tr></tbody></table></div></div>
 
 <h3 id="补充">补充</h3>
 
@@ -691,15 +685,13 @@ docker exec letsencrypt-nginx-proxy-companion /app/force_renew
 
 证书状态
 docker exec letsencrypt-nginx-proxy-companion /app/cert_status
-</code></pre></td></tr></tbody></table></div>
-</div>
+</code></pre></td></tr></tbody></table></div></div>
 
 <h3 id="测试ssl">测试SSL</h3>
 
 <div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2</pre></td><td class="code"><pre class="highlight"><code>docker exec mailserver openssl s_client -connect 0.0.0.0:587 -starttls smtp -CApath /etc/letsencrypt/
 docker exec mailserver openssl s_client -connect 0.0.0.0:993 -starttls imap -CApath /etc/letsencrypt/
-</code></pre></td></tr></tbody></table></div>
-</div>
+</code></pre></td></tr></tbody></table></div></div>
 
 <h2 id="其他">其他</h2>
 
@@ -712,8 +704,7 @@ docker exec mailserver openssl s_client -connect 0.0.0.0:993 -starttls imap -CAp
     --expose 80 \
     -e "VIRTUAL_HOST=bar.foo" \
     library/nginx
-</code></pre></td></tr></tbody></table></div>
-</div>
+</code></pre></td></tr></tbody></table></div></div>
 
 <p>获取证书</p>
 
@@ -724,26 +715,22 @@ docker exec mailserver openssl s_client -connect 0.0.0.0:993 -starttls imap -CAp
     -e "LETSENCRYPT_HOST=mail.bar.foo" \
     -e "LETSENCRYPT_EMAIL=foo@bar.com" \
     library/nginx
-</code></pre></td></tr></tbody></table></div>
-</div>
+</code></pre></td></tr></tbody></table></div></div>
 
 <p>查看  域名映射</p>
 
 <div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code>curl -H "Host:bar.foo" localhost
-</code></pre></td></tr></tbody></table></div>
-</div>
+</code></pre></td></tr></tbody></table></div></div>
 
 <p>查看 nginx 代理设置</p>
 
 <div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code>docker exec nginx-proxy  cat /etc/nginx/conf.d/default.conf
-</code></pre></td></tr></tbody></table></div>
-</div>
+</code></pre></td></tr></tbody></table></div></div>
 
 <p>包管理</p>
 
 <div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code>docker run --rm --expose 9000 -e VIRTUAL_HOST=test.bar.foo -v /var/run/docker.sock:/var/run/docker.sock portainer/portainer
-</code></pre></td></tr></tbody></table></div>
-</div>
+</code></pre></td></tr></tbody></table></div></div>
 
 
       
@@ -894,7 +881,7 @@ docker exec mailserver openssl s_client -connect 0.0.0.0:993 -starttls imap -CAp
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">103</span>
+                <span class="site-state-item-count">104</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>

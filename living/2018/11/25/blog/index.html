@@ -469,21 +469,18 @@
 
 <p>先在模型中写入 关闭默认排序</p>
 
-<div class="language-php highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code>public $incrementing = false;
-</code></pre></td></tr></tbody></table></div>
-</div>
+<div class="language-php highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code><span class="k">public</span> <span class="nv">$incrementing</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+</code></pre></td></tr></tbody></table></div></div>
 
 <p>再<code class="highlighter-rouge">migrate</code>中修改</p>
 
-<div class="language-php highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code>$table-&gt;increments('id');
-</code></pre></td></tr></tbody></table></div>
-</div>
+<div class="language-php highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code><span class="nv">$table</span><span class="o">-&gt;</span><span class="na">increments</span><span class="p">(</span><span class="s1">'id'</span><span class="p">);</span>
+</code></pre></td></tr></tbody></table></div></div>
 
 <p>为</p>
 
-<div class="language-php highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code>$table-&gt;uuid('id')-&gt;primary();
-</code></pre></td></tr></tbody></table></div>
-</div>
+<div class="language-php highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code><span class="nv">$table</span><span class="o">-&gt;</span><span class="na">uuid</span><span class="p">(</span><span class="s1">'id'</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">primary</span><span class="p">();</span>
+</code></pre></td></tr></tbody></table></div></div>
 
 <p>随后运行<code class="highlighter-rouge">la5 migrate</code></p>
 
@@ -511,16 +508,14 @@
         <span class="p">});</span>
     <span class="p">}</span>
 <span class="p">}</span>
-</code></pre></td></tr></tbody></table></div>
-</div>
+</code></pre></td></tr></tbody></table></div></div>
 
 <p>随后在模型中添加</p>
 
-<div class="language-php highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3</pre></td><td class="code"><pre class="highlight"><code>use App\Traits\Uuid;
+<div class="language-php highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3</pre></td><td class="code"><pre class="highlight"><code><span class="k">use</span> <span class="nx">App\Traits\Uuid</span><span class="p">;</span>
 
-use Uuid;
-</code></pre></td></tr></tbody></table></div>
-</div>
+<span class="k">use</span> <span class="nx">Uuid</span><span class="p">;</span>
+</code></pre></td></tr></tbody></table></div></div>
 
 <p>之后使用<code class="highlighter-rouge">laravel</code>自带的<code class="highlighter-rouge">auth</code>可以正常注册了。密码找回功能也可以使用。</p>
 
@@ -536,41 +531,37 @@ use Uuid;
 
 <p>修改<code class="highlighter-rouge">CreateOauthClientsTable</code></p>
 
-<div class="language-php highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6</pre></td><td class="code"><pre class="highlight"><code>$table-&gt;increments('id');
-$table-&gt;integer('user_id')-&gt;index()-&gt;nullable();
-// 改为
-
-$table-&gt;uuid('id')-&gt;primary();
-$table-&gt;uuid('user_id')-&gt;index()-&gt;nullable();
-</code></pre></td></tr></tbody></table></div>
-</div>
+<div class="language-php highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6</pre></td><td class="code"><pre class="highlight"><code><span class="nv">$table</span><span class="o">-&gt;</span><span class="na">increments</span><span class="p">(</span><span class="s1">'id'</span><span class="p">);</span>
+<span class="nv">$table</span><span class="o">-&gt;</span><span class="na">integer</span><span class="p">(</span><span class="s1">'user_id'</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">index</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">nullable</span><span class="p">();</span>
+<span class="c1">// 改为
+</span>
+<span class="nv">$table</span><span class="o">-&gt;</span><span class="na">uuid</span><span class="p">(</span><span class="s1">'id'</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">primary</span><span class="p">();</span>
+<span class="nv">$table</span><span class="o">-&gt;</span><span class="na">uuid</span><span class="p">(</span><span class="s1">'user_id'</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">index</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">nullable</span><span class="p">();</span>
+</code></pre></td></tr></tbody></table></div></div>
 
 <p>其他迁移将<code class="highlighter-rouge">client_id</code>与<code class="highlighter-rouge">user_id</code> 改为使用<code class="highlighter-rouge">uuid</code></p>
 
 <p><code class="highlighter-rouge">App\Providers\AppServiceProvider</code>中引入部分添加</p>
 
-<div class="language-php highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2</pre></td><td class="code"><pre class="highlight"><code>use Laravel\Passport\Client;
-use Illuminate\Support\Str;
-</code></pre></td></tr></tbody></table></div>
-</div>
+<div class="language-php highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2</pre></td><td class="code"><pre class="highlight"><code><span class="k">use</span> <span class="nx">Laravel\Passport\Client</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Illuminate\Support\Str</span><span class="p">;</span>
+</code></pre></td></tr></tbody></table></div></div>
 
 <p><code class="highlighter-rouge">boot()</code>部分添加</p>
 
-<div class="language-php highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7</pre></td><td class="code"><pre class="highlight"><code>Client::creating(function (Client $client) {
-    $client-&gt;incrementing = false;
-    $client-&gt;id = (string) Str::orderedUuid();
-});
-Client::retrieved(function (Client $client) {
-    $client-&gt;incrementing = false;
-});
-</code></pre></td></tr></tbody></table></div>
-</div>
+<div class="language-php highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7</pre></td><td class="code"><pre class="highlight"><code><span class="nx">Client</span><span class="o">::</span><span class="na">creating</span><span class="p">(</span><span class="k">function</span> <span class="p">(</span><span class="nx">Client</span> <span class="nv">$client</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nv">$client</span><span class="o">-&gt;</span><span class="na">incrementing</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+    <span class="nv">$client</span><span class="o">-&gt;</span><span class="na">id</span> <span class="o">=</span> <span class="p">(</span><span class="nx">string</span><span class="p">)</span> <span class="nx">Str</span><span class="o">::</span><span class="na">orderedUuid</span><span class="p">();</span>
+<span class="p">});</span>
+<span class="nx">Client</span><span class="o">::</span><span class="na">retrieved</span><span class="p">(</span><span class="k">function</span> <span class="p">(</span><span class="nx">Client</span> <span class="nv">$client</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nv">$client</span><span class="o">-&gt;</span><span class="na">incrementing</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+<span class="p">});</span>
+</code></pre></td></tr></tbody></table></div></div>
 
 <p><code class="highlighter-rouge">register()</code> 部分添加</p>
 
-<div class="language-php highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code>Passport::ignoreMigrations();
-</code></pre></td></tr></tbody></table></div>
-</div>
+<div class="language-php highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code><span class="nx">Passport</span><span class="o">::</span><span class="na">ignoreMigrations</span><span class="p">();</span>
+</code></pre></td></tr></tbody></table></div></div>
 
 <p>其他部分按照文档即可正常使用。</p>
 
@@ -744,7 +735,7 @@ Client::retrieved(function (Client $client) {
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">103</span>
+                <span class="site-state-item-count">104</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>

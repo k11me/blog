@@ -477,8 +477,7 @@
 
 <div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2</pre></td><td class="code"><pre class="highlight"><code>--  while (list($key, $val) = each($rows)) {
 ++  foreach($rows as $key =&gt; $val){
-</code></pre></td></tr></tbody></table></div>
-</div>
+</code></pre></td></tr></tbody></table></div></div>
 
 <p><code class="highlighter-rouge">app/config/yubikey.php</code>中设置<code class="highlighter-rouge">CLIENT_ID</code> 与 <code class="highlighter-rouge">SECRET_KEY</code>
 控制器中使用。
@@ -493,8 +492,7 @@ $yubikey_auth = Yubikey::verify(Input::get('otp'));
 $yubikey_params = Yubikey::getParameters();
 // 获取返回信息中的`identity`字段，yubikey的硬件ID，通常捆绑用户名
 $yubikey_identity = Yubikey::getParameter('identity');
-</code></pre></td></tr></tbody></table></div>
-</div>
+</code></pre></td></tr></tbody></table></div></div>
 
 <h2 id="yubikey-是什么">yubikey 是什么</h2>
 
@@ -574,8 +572,7 @@ THNXc3XpzqGw1pgb7ehsjJxkqmG6FYPOZZ/wVqosit1+tNmmRK0MPitvO6LBBG6J
 kDSEWJun3tv0R0zNtv494ZfD29MmQEi1RFV1qbGEW4LlP19jnNhlr3pP2Xt18Kg=
 =7zR2
 -----END PGP PUBLIC KEY BLOCK-----
-</code></pre></td></tr></tbody></table></div>
-</div>
+</code></pre></td></tr></tbody></table></div></div>
 
 
       
@@ -726,7 +723,7 @@ kDSEWJun3tv0R0zNtv494ZfD29MmQEi1RFV1qbGEW4LlP19jnNhlr3pP2Xt18Kg=
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">103</span>
+                <span class="site-state-item-count">104</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>

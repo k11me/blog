@@ -486,8 +486,7 @@
 <p><code class="highlighter-rouge">nmrpflash</code> 目录下运行下方命令会显示当前网卡</p>
 
 <div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code>nmrpflash -L
-</code></pre></td></tr></tbody></table></div>
-</div>
+</code></pre></td></tr></tbody></table></div></div>
 
 <p>没事设置<code class="highlighter-rouge">IPv4</code>的情况下找不到<code class="highlighter-rouge">IP</code>的</p>
 
@@ -496,8 +495,7 @@
 <div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3</pre></td><td class="code"><pre class="highlight"><code>192.168.1.2
 255.255.255.0
 192.168.1.1
-</code></pre></td></tr></tbody></table></div>
-</div>
+</code></pre></td></tr></tbody></table></div></div>
 <p>再次<code class="highlighter-rouge">nmrpflash -L</code> 找到网卡<code class="highlighter-rouge">IP</code>了</p>
 
 <p>随后关闭<code class="highlighter-rouge">R6300v2</code></p>
@@ -507,8 +505,7 @@
 <p>通电的瞬间按回车……</p>
 
 <div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code>nmrpflash.exe -i net2 -a 192.168.1.1 -f R6300v2-V1.0.4.2_10.0.74.chk
-</code></pre></td></tr></tbody></table></div>
-</div>
+</code></pre></td></tr></tbody></table></div></div>
 
 <p>成功时出现下方提升</p>
 
@@ -529,8 +526,7 @@ Received keep-alive request.
 Received keep-alive request.
 Remote finished. Closing connection.
 Reboot your device now.
-</code></pre></td></tr></tbody></table></div>
-</div>
+</code></pre></td></tr></tbody></table></div></div>
 
 <p>没提升<code class="highlighter-rouge">Reboot</code>前，一定别手贱……</p>
 
@@ -566,14 +562,13 @@ Reboot your device now.
 
 <p>进入<code class="highlighter-rouge">ssh</code> 账号是<code class="highlighter-rouge">root</code>，密码是刚刚设置的，验证设备是否匹配固件，如下方，基本可以刷了</p>
 
-<div class="language-shell highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6</pre></td><td class="code"><pre class="highlight"><code><span class="gp">$ </span>nvram get boardnum
+<div class="language-shell highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6</pre></td><td class="code"><pre class="highlight"><code><span class="nv">$ </span>nvram get boardnum
 679
-<span class="gp">$ </span>nvram get boardtype
+<span class="nv">$ </span>nvram get boardtype
 0x0646
-<span class="gp">$ </span>nvram get boardrev
+<span class="nv">$ </span>nvram get boardrev
 0x1110
-</code></pre></td></tr></tbody></table></div>
-</div>
+</code></pre></td></tr></tbody></table></div></div>
 
 <p>随后进入<code class="highlighter-rouge">192.168.1.1</code>-&gt;<code class="highlighter-rouge">administration</code></p>
 
@@ -745,7 +740,7 @@ Reboot your device now.
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">103</span>
+                <span class="site-state-item-count">104</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>

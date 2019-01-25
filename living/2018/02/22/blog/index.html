@@ -477,8 +477,7 @@
 
 <div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2</pre></td><td class="code"><pre class="highlight"><code>brew tap caskroom/versions
 brew cask install java8
-</code></pre></td></tr></tbody></table></div>
-</div>
+</code></pre></td></tr></tbody></table></div></div>
 
 <p>使用<code class="highlighter-rouge">/usr/libexec/java_home -V</code>查看本机安装的<code class="highlighter-rouge">JDK</code></p>
 
@@ -486,14 +485,12 @@ brew cask install java8
 
 <div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2</pre></td><td class="code"><pre class="highlight"><code>echo 'export PATH="$HOME/.jenv/bin:$PATH"' &gt;&gt; ~/.zshrc
 echo 'eval "$(jenv init -)"' &gt;&gt; ~/.zshrc
-</code></pre></td></tr></tbody></table></div>
-</div>
+</code></pre></td></tr></tbody></table></div></div>
 
 <div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3</pre></td><td class="code"><pre class="highlight"><code>jenv add /Library/Java/JavaVirtualMachines/jdk-9.0.4.jdk/Contents/Home
 jenv add /Library/Java/JavaVirtualMachines/jdk1.8.0_162.jdk/Contents/Home
 jenv global 1.8.0.162
-</code></pre></td></tr></tbody></table></div>
-</div>
+</code></pre></td></tr></tbody></table></div></div>
 
 <p>需要重启使用<code class="highlighter-rouge">java -version</code>检查设置</p>
 
@@ -501,14 +498,12 @@ jenv global 1.8.0.162
 
 <div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2</pre></td><td class="code"><pre class="highlight"><code>jenv local 1.8.0.162
 jenv shell 1.8.0.162
-</code></pre></td></tr></tbody></table></div>
-</div>
+</code></pre></td></tr></tbody></table></div></div>
 
 <h2 id="安装-android-studio">安装 Android Studio</h2>
 
 <div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code>brew cask install android-studio
-</code></pre></td></tr></tbody></table></div>
-</div>
+</code></pre></td></tr></tbody></table></div></div>
 
 <p>之后还是要等……</p>
 
@@ -519,14 +514,12 @@ jenv shell 1.8.0.162
 <div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3</pre></td><td class="code"><pre class="highlight"><code>export ANDROID_HOME="$HOME/Library/Android/sdk"
 export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/platform-tools
-</code></pre></td></tr></tbody></table></div>
-</div>
+</code></pre></td></tr></tbody></table></div></div>
 
 <h2 id="cordova-构建需要-gradle">Cordova 构建需要 gradle</h2>
 
 <div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code>brew install gradle
-</code></pre></td></tr></tbody></table></div>
-</div>
+</code></pre></td></tr></tbody></table></div></div>
 
 
       
@@ -680,7 +673,7 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">103</span>
+                <span class="site-state-item-count">104</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>

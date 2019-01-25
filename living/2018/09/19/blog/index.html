@@ -501,31 +501,30 @@
 
 <p>之后可以在<code class="highlighter-rouge">vendor/mail/markdown</code>下找到对应文件。</p>
 
-<div class="language-php highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9<br/>10<br/>11<br/>12<br/>13<br/>14<br/>15<br/>16<br/>17<br/>18<br/>19<br/>20<br/>21<br/>22<br/>23</pre></td><td class="code"><pre class="highlight"><code>@component('mail::layout')
+<div class="language-php highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9<br/>10<br/>11<br/>12<br/>13<br/>14<br/>15<br/>16<br/>17<br/>18<br/>19<br/>20<br/>21<br/>22<br/>23</pre></td><td class="code"><pre class="highlight"><code><span class="o">@</span><span class="nx">component</span><span class="p">(</span><span class="s1">'mail::layout'</span><span class="p">)</span>
 
-@slot('header')
-@component('mail::header', ['url' =&gt; config('app.url')])
-header
-@endcomponent
-@endslot
+<span class="o">@</span><span class="nx">slot</span><span class="p">(</span><span class="s1">'header'</span><span class="p">)</span>
+<span class="o">@</span><span class="nx">component</span><span class="p">(</span><span class="s1">'mail::header'</span><span class="p">,</span> <span class="p">[</span><span class="s1">'url'</span> <span class="o">=&gt;</span> <span class="nx">config</span><span class="p">(</span><span class="s1">'app.url'</span><span class="p">)])</span>
+<span class="nb">header</span>
+<span class="o">@</span><span class="nx">endcomponent</span>
+<span class="o">@</span><span class="nx">endslot</span>
 
-# Introduction
-The body of your message.
+<span class="c1"># Introduction
+</span><span class="nx">The</span> <span class="nx">body</span> <span class="nx">of</span> <span class="nx">your</span> <span class="nx">message</span><span class="o">.</span>
 
-@component('mail::button', ['url' =&gt; $url])
-button
-@endcomponent
+<span class="o">@</span><span class="nx">component</span><span class="p">(</span><span class="s1">'mail::button'</span><span class="p">,</span> <span class="p">[</span><span class="s1">'url'</span> <span class="o">=&gt;</span> <span class="nv">$url</span><span class="p">])</span>
+<span class="nx">button</span>
+<span class="o">@</span><span class="nx">endcomponent</span>
 
-Thanks,<span class="nt">&lt;br&gt;</span>
+<span class="nx">Thanks</span><span class="p">,</span><span class="o">&lt;</span><span class="nx">br</span><span class="o">&gt;</span>
 
-@slot('footer')
-@component('mail::footer')
-© footer
-@endcomponent
-@endslot
-@endcomponent
-</code></pre></td></tr></tbody></table></div>
-</div>
+<span class="o">@</span><span class="nx">slot</span><span class="p">(</span><span class="s1">'footer'</span><span class="p">)</span>
+<span class="o">@</span><span class="nx">component</span><span class="p">(</span><span class="s1">'mail::footer'</span><span class="p">)</span>
+<span class="err">©</span> <span class="nx">footer</span>
+<span class="o">@</span><span class="nx">endcomponent</span>
+<span class="o">@</span><span class="nx">endslot</span>
+<span class="o">@</span><span class="nx">endcomponent</span>
+</code></pre></td></tr></tbody></table></div></div>
 
 
       
@@ -679,7 +678,7 @@ Thanks,<span class="nt">&lt;br&gt;</span>
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">103</span>
+                <span class="site-state-item-count">104</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>

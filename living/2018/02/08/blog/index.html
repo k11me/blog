@@ -111,17 +111,17 @@
 
 
 
-<meta name="description" content="同系统下多SSH 使用 参考文档 新建SSH-KEY ssh-keygen -t rsa -b 4096 -C &quot;your_email@example.com&quot; 输入SSH KEY 文件位置，例如/Users/you/.ssh/id_rsa_2 为什么是id_rsa_2 ？ 一般会有一个id_rsa为默认KEY。 Enter a file in which to save the key (/Users/you/.ssh/id_rsa): [Press enter] 添加到~/.ssh/config 新建文件~/.ssh/config 编辑如下内容 1 2 3 4 5 6 7 8 9 10Host github.com HostName github.com User *******@*******.com PreferredAuthentications publickey IdentityFile ~/.ssh/id_rsa Host 2github.com HostName github.com User *******@*******.com PreferredAuthentications publickey IdentityFile ~/.ssh/id_rsa_2 注意：如果多个github账号，Host不能设置为相同。 最后添加新KEY到系统,并添加公钥到github对应账号。 ssh-add -K ~/.ssh/id_rsa ssh-add -K ~/.ssh/id_rsa_2 测试KEY是否添加 ssh-add -l 测试KEY是否有效 ssh -T git@github.com ssh -T git@2github.com Git项目中设置 设置对应email与name git config --local user.email &quot;***@****.***&quot; git config --local user.name &quot;***&quot; 添加remote,注意与HostName对应 git remote add origin git@2github.com:****/***.git 也可以直接修改.git/config。">
+<meta name="description" content="同系统下多SSH 使用 参考文档 新建SSH-KEY ssh-keygen -t rsa -b 4096 -C &quot;your_email@example.com&quot; 输入SSH KEY 文件位置，例如/Users/you/.ssh/id_rsa_2 为什么是id_rsa_2 ？ 一般会有一个id_rsa为默认KEY。 Enter a file in which to save the key (/Users/you/.ssh/id_rsa): [Press enter] 添加到~/.ssh/config 新建文件~/.ssh/config 编辑如下内容 1 2 3 4 5 6 7 8 9 10 Host github.com HostName github.com User *******@*******.com PreferredAuthentications publickey IdentityFile ~/.ssh/id_rsa Host 2github.com HostName github.com User *******@*******.com PreferredAuthentications publickey IdentityFile ~/.ssh/id_rsa_2 注意：如果多个github账号，Host不能设置为相同。 最后添加新KEY到系统,并添加公钥到github对应账号。 ssh-add -K ~/.ssh/id_rsa ssh-add -K ~/.ssh/id_rsa_2 测试KEY是否添加 ssh-add -l 测试KEY是否有效 ssh -T git@github.com ssh -T git@2github.com Git项目中设置 设置对应email与name git config --local user.email &quot;***@****.***&quot; git config --local user.name &quot;***&quot; 添加remote,注意与HostName对应 git remote add origin git@2github.com:****/***.git 也可以直接修改.git/config。">
 <meta name="keywords" content="日记, SSH">
 <meta property="og:type" content="article">
 <meta property="og:title" content="2018年02月08日">
 <meta property="og:url" content="http://localhost:4000/living/2018/02/08/blog/">
 <meta property="og:site_name" content="Keleven.Me">
-<meta property="og:description" content="同系统下多SSH 使用 参考文档 新建SSH-KEY ssh-keygen -t rsa -b 4096 -C &quot;your_email@example.com&quot; 输入SSH KEY 文件位置，例如/Users/you/.ssh/id_rsa_2 为什么是id_rsa_2 ？ 一般会有一个id_rsa为默认KEY。 Enter a file in which to save the key (/Users/you/.ssh/id_rsa): [Press enter] 添加到~/.ssh/config 新建文件~/.ssh/config 编辑如下内容 1 2 3 4 5 6 7 8 9 10Host github.com HostName github.com User *******@*******.com PreferredAuthentications publickey IdentityFile ~/.ssh/id_rsa Host 2github.com HostName github.com User *******@*******.com PreferredAuthentications publickey IdentityFile ~/.ssh/id_rsa_2 注意：如果多个github账号，Host不能设置为相同。 最后添加新KEY到系统,并添加公钥到github对应账号。 ssh-add -K ~/.ssh/id_rsa ssh-add -K ~/.ssh/id_rsa_2 测试KEY是否添加 ssh-add -l 测试KEY是否有效 ssh -T git@github.com ssh -T git@2github.com Git项目中设置 设置对应email与name git config --local user.email &quot;***@****.***&quot; git config --local user.name &quot;***&quot; 添加remote,注意与HostName对应 git remote add origin git@2github.com:****/***.git 也可以直接修改.git/config。">
+<meta property="og:description" content="同系统下多SSH 使用 参考文档 新建SSH-KEY ssh-keygen -t rsa -b 4096 -C &quot;your_email@example.com&quot; 输入SSH KEY 文件位置，例如/Users/you/.ssh/id_rsa_2 为什么是id_rsa_2 ？ 一般会有一个id_rsa为默认KEY。 Enter a file in which to save the key (/Users/you/.ssh/id_rsa): [Press enter] 添加到~/.ssh/config 新建文件~/.ssh/config 编辑如下内容 1 2 3 4 5 6 7 8 9 10 Host github.com HostName github.com User *******@*******.com PreferredAuthentications publickey IdentityFile ~/.ssh/id_rsa Host 2github.com HostName github.com User *******@*******.com PreferredAuthentications publickey IdentityFile ~/.ssh/id_rsa_2 注意：如果多个github账号，Host不能设置为相同。 最后添加新KEY到系统,并添加公钥到github对应账号。 ssh-add -K ~/.ssh/id_rsa ssh-add -K ~/.ssh/id_rsa_2 测试KEY是否添加 ssh-add -l 测试KEY是否有效 ssh -T git@github.com ssh -T git@2github.com Git项目中设置 设置对应email与name git config --local user.email &quot;***@****.***&quot; git config --local user.name &quot;***&quot; 添加remote,注意与HostName对应 git remote add origin git@2github.com:****/***.git 也可以直接修改.git/config。">
 <meta property="og:locale" content="en">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="2018年02月08日">
-<meta name="twitter:description" content="同系统下多SSH 使用 参考文档 新建SSH-KEY ssh-keygen -t rsa -b 4096 -C &quot;your_email@example.com&quot; 输入SSH KEY 文件位置，例如/Users/you/.ssh/id_rsa_2 为什么是id_rsa_2 ？ 一般会有一个id_rsa为默认KEY。 Enter a file in which to save the key (/Users/you/.ssh/id_rsa): [Press enter] 添加到~/.ssh/config 新建文件~/.ssh/config 编辑如下内容 1 2 3 4 5 6 7 8 9 10Host github.com HostName github.com User *******@*******.com PreferredAuthentications publickey IdentityFile ~/.ssh/id_rsa Host 2github.com HostName github.com User *******@*******.com PreferredAuthentications publickey IdentityFile ~/.ssh/id_rsa_2 注意：如果多个github账号，Host不能设置为相同。 最后添加新KEY到系统,并添加公钥到github对应账号。 ssh-add -K ~/.ssh/id_rsa ssh-add -K ~/.ssh/id_rsa_2 测试KEY是否添加 ssh-add -l 测试KEY是否有效 ssh -T git@github.com ssh -T git@2github.com Git项目中设置 设置对应email与name git config --local user.email &quot;***@****.***&quot; git config --local user.name &quot;***&quot; 添加remote,注意与HostName对应 git remote add origin git@2github.com:****/***.git 也可以直接修改.git/config。">
+<meta name="twitter:description" content="同系统下多SSH 使用 参考文档 新建SSH-KEY ssh-keygen -t rsa -b 4096 -C &quot;your_email@example.com&quot; 输入SSH KEY 文件位置，例如/Users/you/.ssh/id_rsa_2 为什么是id_rsa_2 ？ 一般会有一个id_rsa为默认KEY。 Enter a file in which to save the key (/Users/you/.ssh/id_rsa): [Press enter] 添加到~/.ssh/config 新建文件~/.ssh/config 编辑如下内容 1 2 3 4 5 6 7 8 9 10 Host github.com HostName github.com User *******@*******.com PreferredAuthentications publickey IdentityFile ~/.ssh/id_rsa Host 2github.com HostName github.com User *******@*******.com PreferredAuthentications publickey IdentityFile ~/.ssh/id_rsa_2 注意：如果多个github账号，Host不能设置为相同。 最后添加新KEY到系统,并添加公钥到github对应账号。 ssh-add -K ~/.ssh/id_rsa ssh-add -K ~/.ssh/id_rsa_2 测试KEY是否添加 ssh-add -l 测试KEY是否有效 ssh -T git@github.com ssh -T git@2github.com Git项目中设置 设置对应email与name git config --local user.email &quot;***@****.***&quot; git config --local user.name &quot;***&quot; 添加remote,注意与HostName对应 git remote add origin git@2github.com:****/***.git 也可以直接修改.git/config。">
 
 
 <script type="text/javascript" id="hexo.configurations">
@@ -466,8 +466,7 @@
 <h3 id="新建ssh-key">新建SSH-KEY</h3>
 
 <div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code>ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
-</code></pre></td></tr></tbody></table></div>
-</div>
+</code></pre></td></tr></tbody></table></div></div>
 
 <p>输入SSH KEY 文件位置，例如<code class="highlighter-rouge">/Users/you/.ssh/id_rsa_2</code></p>
 
@@ -476,8 +475,7 @@
 <p>一般会有一个<code class="highlighter-rouge">id_rsa</code>为默认KEY。</p>
 
 <div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code>Enter a file in which to save the key (/Users/you/.ssh/id_rsa): [Press enter]
-</code></pre></td></tr></tbody></table></div>
-</div>
+</code></pre></td></tr></tbody></table></div></div>
 
 <h3 id="添加到sshconfig">添加到<code class="highlighter-rouge">~/.ssh/config</code></h3>
 
@@ -485,7 +483,7 @@
 
 <p>编辑如下内容</p>
 
-<figure class="highlight"><pre><code class="language-text" data-lang="text"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-text" data-lang="text"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -494,7 +492,8 @@
 7
 8
 9
-10</pre></td><td class="code"><pre>Host github.com
+10
+</pre></td><td class="code"><pre>Host github.com
   HostName github.com
   User *******@*******.com
   PreferredAuthentications publickey
@@ -503,30 +502,26 @@ Host 2github.com
   HostName github.com
   User *******@*******.com
   PreferredAuthentications publickey
-  IdentityFile ~/.ssh/id_rsa_2<span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+  IdentityFile ~/.ssh/id_rsa_2</pre></td></tr></tbody></table></code></pre></figure>
 
 <p>注意：如果多个github账号，<code class="highlighter-rouge">Host</code>不能设置为相同。</p>
 
 <p>最后添加新KEY到系统,并添加公钥到<code class="highlighter-rouge">github</code>对应账号。</p>
 
-<div class="language-shell highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2</pre></td><td class="code"><pre class="highlight"><code>ssh-add -K ~/.ssh/id_rsa
-ssh-add -K ~/.ssh/id_rsa_2
-</code></pre></td></tr></tbody></table></div>
-</div>
+<div class="language-shell highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2</pre></td><td class="code"><pre class="highlight"><code>ssh-add <span class="nt">-K</span> ~/.ssh/id_rsa
+ssh-add <span class="nt">-K</span> ~/.ssh/id_rsa_2
+</code></pre></td></tr></tbody></table></div></div>
 
 <p>测试KEY是否添加</p>
 
 <div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code> ssh-add -l
-</code></pre></td></tr></tbody></table></div>
-</div>
+</code></pre></td></tr></tbody></table></div></div>
 
 <p>测试KEY是否有效</p>
 
-<div class="language-shell highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2</pre></td><td class="code"><pre class="highlight"><code>ssh -T git@github.com
-ssh -T git@2github.com
-</code></pre></td></tr></tbody></table></div>
-</div>
+<div class="language-shell highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2</pre></td><td class="code"><pre class="highlight"><code>ssh <span class="nt">-T</span> git@github.com
+ssh <span class="nt">-T</span> git@2github.com
+</code></pre></td></tr></tbody></table></div></div>
 
 <h3 id="git项目中设置">Git项目中设置</h3>
 
@@ -534,14 +529,12 @@ ssh -T git@2github.com
 
 <div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2</pre></td><td class="code"><pre class="highlight"><code>git config --local user.email "***@****.***"
 git config --local user.name "***"
-</code></pre></td></tr></tbody></table></div>
-</div>
+</code></pre></td></tr></tbody></table></div></div>
 
 <p>添加<code class="highlighter-rouge">remote</code>,注意与<code class="highlighter-rouge">HostName</code>对应</p>
 
 <div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code>git remote add origin git@2github.com:****/***.git
-</code></pre></td></tr></tbody></table></div>
-</div>
+</code></pre></td></tr></tbody></table></div></div>
 
 <p>也可以直接修改<code class="highlighter-rouge">.git/config</code>。</p>
 
@@ -694,7 +687,7 @@ git config --local user.name "***"
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">103</span>
+                <span class="site-state-item-count">104</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>

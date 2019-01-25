@@ -475,19 +475,17 @@
 
 <h1 id="laravel-upgrading-to-560-from-55">laravel Upgrading To 5.6.0 From 5.5</h1>
 
-<div class="language-json highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5</pre></td><td class="code"><pre class="highlight"><code><span class="w">        </span><span class="s2">"darkaonline/l5-swagger"</span><span class="err">:</span><span class="w"> </span><span class="s2">"5.6.*"</span><span class="err">,</span><span class="w">
-        </span><span class="s2">"fideloper/proxy"</span><span class="err">:</span><span class="w"> </span><span class="s2">"~4.0"</span><span class="err">,</span><span class="w">
-        </span><span class="s2">"laravel/framework"</span><span class="err">:</span><span class="w"> </span><span class="s2">"5.6.*"</span><span class="err">,</span><span class="w">
-        </span><span class="s2">"laravel/passport"</span><span class="err">:</span><span class="w"> </span><span class="s2">"^5.0"</span><span class="err">,</span><span class="w">
-        </span><span class="s2">"phpunit/phpunit"</span><span class="err">:</span><span class="w"> </span><span class="s2">"~7.0"</span><span class="w">
-</span></code></pre></td></tr></tbody></table></div>
-</div>
+<div class="language-json highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5</pre></td><td class="code"><pre class="highlight"><code><span class="w">        </span><span class="s2">"darkaonline/l5-swagger"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5.6.*"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"fideloper/proxy"</span><span class="p">:</span><span class="w"> </span><span class="s2">"~4.0"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"laravel/framework"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5.6.*"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"laravel/passport"</span><span class="p">:</span><span class="w"> </span><span class="s2">"^5.0"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"phpunit/phpunit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"~7.0"</span><span class="w">
+</span></code></pre></td></tr></tbody></table></div></div>
 
 <p>之后会出现错误</p>
 
 <div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code>Type error: Argument 2 passed to Symfony\Component\HttpFoundation\Request::setTrustedProxies() must be of the type integer, array given, called in /Users/k11/laravel/web/vendor/fideloper/proxy/src/TrustProxies.php on line 5
-</code></pre></td></tr></tbody></table></div>
-</div>
+</code></pre></td></tr></tbody></table></div></div>
 
 <p>对应<a href="https://laravel.com/docs/5.6/upgrade#upgrade-5.6.0">upgrade Trusted Proxies</a></p>
 
@@ -495,28 +493,25 @@
 
 <p>改</p>
 
-<div class="language-php highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7</pre></td><td class="code"><pre class="highlight"><code>    protected $headers = [
-        Request::HEADER_FORWARDED =&gt; 'FORWARDED',
-        Request::HEADER_X_FORWARDED_FOR =&gt; 'X_FORWARDED_FOR',
-        Request::HEADER_X_FORWARDED_HOST =&gt; 'X_FORWARDED_HOST',
-        Request::HEADER_X_FORWARDED_PORT =&gt; 'X_FORWARDED_PORT',
-        Request::HEADER_X_FORWARDED_PROTO =&gt; 'X_FORWARDED_PROTO',
-    ];
-</code></pre></td></tr></tbody></table></div>
-</div>
+<div class="language-php highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7</pre></td><td class="code"><pre class="highlight"><code>    <span class="k">protected</span> <span class="nv">$headers</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="nx">Request</span><span class="o">::</span><span class="na">HEADER_FORWARDED</span> <span class="o">=&gt;</span> <span class="s1">'FORWARDED'</span><span class="p">,</span>
+        <span class="nx">Request</span><span class="o">::</span><span class="na">HEADER_X_FORWARDED_FOR</span> <span class="o">=&gt;</span> <span class="s1">'X_FORWARDED_FOR'</span><span class="p">,</span>
+        <span class="nx">Request</span><span class="o">::</span><span class="na">HEADER_X_FORWARDED_HOST</span> <span class="o">=&gt;</span> <span class="s1">'X_FORWARDED_HOST'</span><span class="p">,</span>
+        <span class="nx">Request</span><span class="o">::</span><span class="na">HEADER_X_FORWARDED_PORT</span> <span class="o">=&gt;</span> <span class="s1">'X_FORWARDED_PORT'</span><span class="p">,</span>
+        <span class="nx">Request</span><span class="o">::</span><span class="na">HEADER_X_FORWARDED_PROTO</span> <span class="o">=&gt;</span> <span class="s1">'X_FORWARDED_PROTO'</span><span class="p">,</span>
+    <span class="p">];</span>
+</code></pre></td></tr></tbody></table></div></div>
 
 <p>为</p>
 
-<div class="language-php highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code>protected $headers = Request::HEADER_X_FORWARDED_ALL; 
-</code></pre></td></tr></tbody></table></div>
-</div>
+<div class="language-php highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code><span class="k">protected</span> <span class="nv">$headers</span> <span class="o">=</span> <span class="nx">Request</span><span class="o">::</span><span class="na">HEADER_X_FORWARDED_ALL</span><span class="p">;</span> 
+</code></pre></td></tr></tbody></table></div></div>
 
 <h2 id="bootstrap-4">Bootstrap 4</h2>
 
 <div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2</pre></td><td class="code"><pre class="highlight"><code>npm uninstall --save-dev bootstrap-sass
 npm install bootstrap popper.js
-</code></pre></td></tr></tbody></table></div>
-</div>
+</code></pre></td></tr></tbody></table></div></div>
 
 <h3 id="resourcesassetsjsbootstrapjs">resources/assets/js/bootstrap.js</h3>
 
@@ -527,8 +522,7 @@ npm install bootstrap popper.js
 
     require('bootstrap-sass');
 } catch (e) {}
-</code></pre></td></tr></tbody></table></div>
-</div>
+</code></pre></td></tr></tbody></table></div></div>
 <p>改为</p>
 
 <div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5</pre></td><td class="code"><pre class="highlight"><code>try {
@@ -536,22 +530,19 @@ npm install bootstrap popper.js
 
     require('bootstrap');
 } catch (e) {}
-</code></pre></td></tr></tbody></table></div>
-</div>
+</code></pre></td></tr></tbody></table></div></div>
 
 <p>添加</p>
 
 <div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code>window.Popper = require('popper.js').default;
-</code></pre></td></tr></tbody></table></div>
-</div>
+</code></pre></td></tr></tbody></table></div></div>
 
 <h3 id="resourcesassetssassappscss">resources/assets/sass/app.scss</h3>
 
 <p>中</p>
 
 <div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code>@import “~bootstrap-sass/assets/stylesheets/bootstrap”
-</code></pre></td></tr></tbody></table></div>
-</div>
+</code></pre></td></tr></tbody></table></div></div>
 
 <p>改为</p>
 
@@ -561,8 +552,7 @@ npm install bootstrap popper.js
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
 }
-</code></pre></td></tr></tbody></table></div>
-</div>
+</code></pre></td></tr></tbody></table></div></div>
 
 <h3 id="resourcesassetssass_variablesscss">resources/assets/sass/_variables.scss</h3>
 
@@ -581,8 +571,7 @@ npm install bootstrap popper.js
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
 }
-</code></pre></td></tr></tbody></table></div>
-</div>
+</code></pre></td></tr></tbody></table></div></div>
 
 <h3 id="方法二">方法二</h3>
 
@@ -597,16 +586,14 @@ npm install bootstrap popper.js
 <div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3</pre></td><td class="code"><pre class="highlight"><code>*     security={
 *         {"passport": {}}
 *     },
-</code></pre></td></tr></tbody></table></div>
-</div>
+</code></pre></td></tr></tbody></table></div></div>
 
 <h1 id="mailserver-修复">mailserver 修复</h1>
 
 <p>起因 mac os 上不能登录邮箱了，手机却可以。查看logs发现是错误如下</p>
 
 <div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code>TLS handshaking: SSL_accept() failed 
-</code></pre></td></tr></tbody></table></div>
-</div>
+</code></pre></td></tr></tbody></table></div></div>
 
 <p>查找issues得知<code class="highlighter-rouge">tomav/docker-mailserver</code>更新</p>
 
@@ -768,7 +755,7 @@ npm install bootstrap popper.js
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">103</span>
+                <span class="site-state-item-count">104</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>

@@ -472,24 +472,20 @@
 <p><code class="highlighter-rouge">brew</code>搜索包</p>
 
 <div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code>brew search php72
-</code></pre></td></tr></tbody></table></div>
-</div>
+</code></pre></td></tr></tbody></table></div></div>
 
 <div class="language-shell highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code>brew install homebrew/php/php72-opcache
-</code></pre></td></tr></tbody></table></div>
-</div>
+</code></pre></td></tr></tbody></table></div></div>
 
 <p>重启<code class="highlighter-rouge">php72</code>服务 注意使用<code class="highlighter-rouge">sudo</code></p>
 
-<div class="language-shell highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code>sudo brew services restart php72
-</code></pre></td></tr></tbody></table></div>
-</div>
+<div class="language-shell highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code><span class="nb">sudo </span>brew services restart php72
+</code></pre></td></tr></tbody></table></div></div>
 
 <p>修改<code class="highlighter-rouge">php72-opcache</code>配置</p>
 
 <div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code>subl /usr/local/etc/php/7.2/conf.d/ext-opcache.ini
-</code></pre></td></tr></tbody></table></div>
-</div>
+</code></pre></td></tr></tbody></table></div></div>
 
 <h2 id="appstractlaravel-opcache">appstract/laravel-opcache</h2>
 
@@ -498,8 +494,7 @@
 <p>安装<code class="highlighter-rouge">appstract/laravel-opcache</code></p>
 
 <div class="language-shell highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code>composer require appstract/laravel-opcache
-</code></pre></td></tr></tbody></table></div>
-</div>
+</code></pre></td></tr></tbody></table></div></div>
 
 <p><a href="https://laravel-china.org/topics/7458/open-php-opcache-and-make-your-laravel-application-fast">参考文档1</a></p>
 
@@ -507,9 +502,8 @@
 
 <p><code class="highlighter-rouge">phpinfo()</code>命令行查看</p>
 
-<div class="language-shell highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code>php -i <span class="s2">"(command-line 'phpinfo()')"</span>
-</code></pre></td></tr></tbody></table></div>
-</div>
+<div class="language-shell highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code>php <span class="nt">-i</span> <span class="s2">"(command-line 'phpinfo()')"</span>
+</code></pre></td></tr></tbody></table></div></div>
 
 
       
@@ -660,7 +654,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">103</span>
+                <span class="site-state-item-count">104</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>

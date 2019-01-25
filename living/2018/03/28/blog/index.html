@@ -476,20 +476,17 @@
 <p>项目使用的是<code class="highlighter-rouge">laravel 5.5</code> 对应 <code class="highlighter-rouge">darkaonline/l5-swagger:5.5.*</code></p>
 
 <div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code>composer require "darkaonline/l5-swagger:5.5.*"
-</code></pre></td></tr></tbody></table></div>
-</div>
+</code></pre></td></tr></tbody></table></div></div>
 
 <p>复制设置与视图文件</p>
 
 <div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code>php artisan vendor:publish --provider "L5Swagger\L5SwaggerServiceProvider"
-</code></pre></td></tr></tbody></table></div>
-</div>
+</code></pre></td></tr></tbody></table></div></div>
 
 <p><code class="highlighter-rouge">SWAGGER VERSION 3.0</code>支持</p>
 
 <div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code>composer require "zircote/swagger-php:3.x-dev"
-</code></pre></td></tr></tbody></table></div>
-</div>
+</code></pre></td></tr></tbody></table></div></div>
 
 <p>设置<code class="highlighter-rouge">.env</code>文件</p>
 
@@ -497,8 +494,7 @@
 
 <div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2</pre></td><td class="code"><pre class="highlight"><code>SWAGGER_VERSION=3.0
 L5_SWAGGER_GENERATE_ALWAYS=true
-</code></pre></td></tr></tbody></table></div>
-</div>
+</code></pre></td></tr></tbody></table></div></div>
 <h2 id="基础文件设置">基础文件设置</h2>
 
 <p><a href="https://github.com/OAI/OpenAPI-Specification/blob/v3.0.2-dev/versions/3.0.2.md">基本用法</a></p>
@@ -507,7 +503,7 @@ L5_SWAGGER_GENERATE_ALWAYS=true
 
 <p>用于设置一些基本API信息，在页面最上方显示。</p>
 
-<div class="language-php highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9<br/>10<br/>11<br/>12<br/>13<br/>14<br/>15<br/>16<br/>17<br/>18<br/>19<br/>20<br/>21<br/>22<br/>23<br/>24<br/>25<br/>26<br/>27<br/>28<br/>29<br/>30<br/>31</pre></td><td class="code"><pre class="highlight"><code>/**
+<div class="language-php highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9<br/>10<br/>11<br/>12<br/>13<br/>14<br/>15<br/>16<br/>17<br/>18<br/>19<br/>20<br/>21<br/>22<br/>23<br/>24<br/>25<br/>26<br/>27<br/>28<br/>29<br/>30<br/>31</pre></td><td class="code"><pre class="highlight"><code><span class="sd">/**
 * @OAS\OpenApi(
 *     @OAS\Info(
 *         version="1.0.0",
@@ -537,9 +533,8 @@ L5_SWAGGER_GENERATE_ALWAYS=true
 *         url="https://test.dev/api/Doc"
 *     )
 * )
-*/
-</code></pre></td></tr></tbody></table></div>
-</div>
+*/</span>
+</code></pre></td></tr></tbody></table></div></div>
 <p>@OAS 为使用前缀，用于读取<code class="highlighter-rouge">swagger</code>的设置</p>
 
 <table>
@@ -595,7 +590,7 @@ L5_SWAGGER_GENERATE_ALWAYS=true
 
 <p>用于设置用户标签</p>
 
-<div class="language-php highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9<br/>10<br/>11<br/>12<br/>13<br/>14<br/>15<br/>16<br/>17<br/>18</pre></td><td class="code"><pre class="highlight"><code>/**
+<div class="language-php highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9<br/>10<br/>11<br/>12<br/>13<br/>14<br/>15<br/>16<br/>17<br/>18</pre></td><td class="code"><pre class="highlight"><code><span class="sd">/**
 * @OAS\Tag(
 *     name="2fa",
 *     description="Google 2FA",
@@ -612,15 +607,14 @@ L5_SWAGGER_GENERATE_ALWAYS=true
 *     name="user",
 *     description="Operations about user"
 * )
-*/
-</code></pre></td></tr></tbody></table></div>
-</div>
+*/</span>
+</code></pre></td></tr></tbody></table></div></div>
 
 <h3 id="path-部分">path 部分</h3>
 
 <p>直接使用注释形势写入控制器</p>
 
-<div class="language-php highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9<br/>10<br/>11<br/>12<br/>13<br/>14<br/>15<br/>16<br/>17<br/>18<br/>19<br/>20<br/>21<br/>22<br/>23<br/>24<br/>25<br/>26<br/>27<br/>28<br/>29<br/>30<br/>31<br/>32<br/>33<br/>34<br/>35<br/>36<br/>37<br/>38<br/>39<br/>40<br/>41<br/>42<br/>43<br/>44<br/>45<br/>46<br/>47<br/>48<br/>49<br/>50<br/>51<br/>52<br/>53<br/>54<br/>55<br/>56<br/>57<br/>58<br/>59<br/>60<br/>61<br/>62<br/>63<br/>64<br/>65<br/>66<br/>67<br/>68<br/>69<br/>70<br/>71<br/>72<br/>73<br/>74<br/>75<br/>76<br/>77<br/>78<br/>79<br/>80<br/>81<br/>82<br/>83<br/>84<br/>85<br/>86<br/>87</pre></td><td class="code"><pre class="highlight"><code>/**
+<div class="language-php highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9<br/>10<br/>11<br/>12<br/>13<br/>14<br/>15<br/>16<br/>17<br/>18<br/>19<br/>20<br/>21<br/>22<br/>23<br/>24<br/>25<br/>26<br/>27<br/>28<br/>29<br/>30<br/>31<br/>32<br/>33<br/>34<br/>35<br/>36<br/>37<br/>38<br/>39<br/>40<br/>41<br/>42<br/>43<br/>44<br/>45<br/>46<br/>47<br/>48<br/>49<br/>50<br/>51<br/>52<br/>53<br/>54<br/>55<br/>56<br/>57<br/>58<br/>59<br/>60<br/>61<br/>62<br/>63<br/>64<br/>65<br/>66<br/>67<br/>68<br/>69<br/>70<br/>71<br/>72<br/>73<br/>74<br/>75<br/>76<br/>77<br/>78<br/>79<br/>80<br/>81<br/>82<br/>83<br/>84<br/>85<br/>86<br/>87</pre></td><td class="code"><pre class="highlight"><code><span class="sd">/**
 * @OAS\Get(
 *     path="/test",                                 // API 路由地址
 *     tags={"test"},                                // 对应Tag
@@ -706,16 +700,15 @@ L5_SWAGGER_GENERATE_ALWAYS=true
 *         )
 *     )
 * )
-*/
-</code></pre></td></tr></tbody></table></div>
-</div>
+*/</span>
+</code></pre></td></tr></tbody></table></div></div>
 <h3 id="model-数据参数">Model 数据参数</h3>
 
 <p>可以直接设置在class之上，使用<code class="highlighter-rouge">ref="#/components/schemas/ClassName"</code>可以直接引用。</p>
 
 <p><code class="highlighter-rouge">swagger</code>默认载入位置<code class="highlighter-rouge">#/components/schemas/</code>。</p>
 
-<div class="language-php highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9<br/>10<br/>11<br/>12<br/>13<br/>14<br/>15<br/>16<br/>17<br/>18<br/>19<br/>20<br/>21<br/>22<br/>23<br/>24<br/>25<br/>26</pre></td><td class="code"><pre class="highlight"><code>/**
+<div class="language-php highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9<br/>10<br/>11<br/>12<br/>13<br/>14<br/>15<br/>16<br/>17<br/>18<br/>19<br/>20<br/>21<br/>22<br/>23<br/>24<br/>25<br/>26</pre></td><td class="code"><pre class="highlight"><code><span class="sd">/**
  * @OAS\Schema(
  *     title="yubikey model",
  *     description="yubikey model",
@@ -740,35 +733,32 @@ L5_SWAGGER_GENERATE_ALWAYS=true
  *         minimum="0"
  *     ),
  * )
- */
-</code></pre></td></tr></tbody></table></div>
-</div>
+ */</span>
+</code></pre></td></tr></tbody></table></div></div>
 <h3 id="bitbeansyubikey-的坑">bitbeans/yubikey 的坑</h3>
 
 <p>控制器中不能正常获取<code class="highlighter-rouge">Exception</code>。所以不能使用下方代码</p>
 
-<div class="language-php highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9</pre></td><td class="code"><pre class="highlight"><code>use YubiKey;
+<div class="language-php highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9</pre></td><td class="code"><pre class="highlight"><code><span class="k">use</span> <span class="nx">YubiKey</span><span class="p">;</span>
 
-try {
-	$yubikey_auth = Yubikey::verify(Input::get('otp'));
-	$yubikey_params = Yubikey::getParameters();
-	$yubikey_identity = Yubikey::getParameter('identity');
-} catch (\Exception $exception) {
-	$error = $exception-&gt;getMessage();
-}
-</code></pre></td></tr></tbody></table></div>
-</div>
+<span class="k">try</span> <span class="p">{</span>
+	<span class="nv">$yubikey_auth</span> <span class="o">=</span> <span class="nx">Yubikey</span><span class="o">::</span><span class="na">verify</span><span class="p">(</span><span class="nx">Input</span><span class="o">::</span><span class="na">get</span><span class="p">(</span><span class="s1">'otp'</span><span class="p">));</span>
+	<span class="nv">$yubikey_params</span> <span class="o">=</span> <span class="nx">Yubikey</span><span class="o">::</span><span class="na">getParameters</span><span class="p">();</span>
+	<span class="nv">$yubikey_identity</span> <span class="o">=</span> <span class="nx">Yubikey</span><span class="o">::</span><span class="na">getParameter</span><span class="p">(</span><span class="s1">'identity'</span><span class="p">);</span>
+<span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">\Exception</span> <span class="nv">$exception</span><span class="p">)</span> <span class="p">{</span>
+	<span class="nv">$error</span> <span class="o">=</span> <span class="nv">$exception</span><span class="o">-&gt;</span><span class="na">getMessage</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></td></tr></tbody></table></div></div>
 
 <p>改写到<code class="highlighter-rouge">App\Exceptions\Handler</code>的<code class="highlighter-rouge">render</code>方法判断，使用<code class="highlighter-rouge">Exception</code>判断的<code class="highlighter-rouge">packages</code>不多。</p>
 
-<div class="language-php highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6</pre></td><td class="code"><pre class="highlight"><code>switch($exception-&gt;getMessage()) {
-    case 'REPLAYED_OTP':
-    return response()-&gt;json(['message' =&gt; $exception-&gt;getMessage()]);
-    case 'Could not parse Yubikey OTP':
-    return response()-&gt;json(['message' =&gt; $exception-&gt;getMessage()]);
-}
-</code></pre></td></tr></tbody></table></div>
-</div>
+<div class="language-php highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6</pre></td><td class="code"><pre class="highlight"><code><span class="k">switch</span><span class="p">(</span><span class="nv">$exception</span><span class="o">-&gt;</span><span class="na">getMessage</span><span class="p">())</span> <span class="p">{</span>
+    <span class="k">case</span> <span class="s1">'REPLAYED_OTP'</span><span class="o">:</span>
+    <span class="k">return</span> <span class="nx">response</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">json</span><span class="p">([</span><span class="s1">'message'</span> <span class="o">=&gt;</span> <span class="nv">$exception</span><span class="o">-&gt;</span><span class="na">getMessage</span><span class="p">()]);</span>
+    <span class="k">case</span> <span class="s1">'Could not parse Yubikey OTP'</span><span class="o">:</span>
+    <span class="k">return</span> <span class="nx">response</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">json</span><span class="p">([</span><span class="s1">'message'</span> <span class="o">=&gt;</span> <span class="nv">$exception</span><span class="o">-&gt;</span><span class="na">getMessage</span><span class="p">()]);</span>
+<span class="p">}</span>
+</code></pre></td></tr></tbody></table></div></div>
 
 <h2 id="以上">以上</h2>
 
@@ -930,7 +920,7 @@ try {
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">103</span>
+                <span class="site-state-item-count">104</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
