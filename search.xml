@@ -2,6 +2,46 @@
 <search>
   
     <entry>
+      <title><![CDATA[有点烦！]]></title>
+      <url>/living/2019/01/31/blog/</url>
+      <content type="text"><![CDATA[29号的份黑苹果从 os 切回 win 出现 显卡与usb硬件卡 问题其中 GPU 工作占用率 异常高推测是Intel ICH10 芯片的问题只能放弃 10.13 继续使用 10.11 新年后希望能换新机。本应该尝试重新安装，可是有点烦了，暂时搁置吧……10.11 变慢也是一个大问题……这该如何是好生活新的净水滤芯 不能安装到 水壶上, 新款比旧款高5mm。导致漏水，定了新壶，还不知道，能否正常使用。30号的份重装了勉强可以正常使用了~~芯片问题也解决了 开心~~参考文档可以直接在四叶草中添加,对应版本为AppleAHCIPort v329 不需要下载页面上的文件AppleAHCIPort4585F60F 95C289C8 83E0FE66 85C9780F 84D2750B89C883E0 FE6685C9 0F98C141 08CC9090 9090750B Fix IO Error AppleAHCIPortAppleAHCIPort89C82540 6002003D 40200000 750C81E1 BF7FFFFF 898B5101 000090909090 90909090 90909090 90909090 90909090 90909090 9090hot-plug AppleAHCIPort]]></content>
+      <categories>
+        
+          <category> Living </category>
+        
+      </categories>
+      <tags>
+        
+          <tag> 日记 </tag>
+        
+          <tag> mac os </tag>
+        
+      </tags>
+      <tags></tags>
+    </entry>
+  
+    <entry>
+      <title><![CDATA[系统升级了~ 走过的一些坑!]]></title>
+      <url>/living/2019/01/27/blog/</url>
+      <content type="text"><![CDATA[黑苹果 部分正常安装就好 config.plist  是重点tonymacx86 带的clover 安装完成后不能正常引导。更新到最新的版可以解决。clover configurator 一定要装很有用。Acpi中选择 AddDTGP 、 FixDarwin 、 AddMCHC 、 FakeLPC 、FixSBUS 、 FixUSBBoot 中选择dart=0 显卡是gtx 760 驱动自带Kernel 中  不要手贱关Apple RTC!  不要手贱关Apple RTC!  不要手贱关Apple RTC!关闭结果就是 每次开机进入系统时 bios 设置被重置。没有其他恢复手段非常可怕！声卡使用 audio_CloverALC 自动注入 完全正常读取ntfs10.13可以使用brew cask install osxfusebrew install ntfs-3g重启到recovery mode 关闭系统保护csrutil disable重启到正常模式， 使NTFS分区可以自动挂载sudo mv /sbin/mount_ntfs /sbin/mount_ntfs.originalsudo ln -s /usr/local/sbin/mount_ntfs /sbin/mount_ntfs重启到recovery mode 开启系统保护csrutil enable显示全部隐藏文件显示隐藏文件defaults write com.apple.finder AppleShowAllFiles -boolean true ; killall Finder不显示隐藏文件defaults write com.apple.finder AppleShowAllFiles -boolean false ; killall Finder创建快捷方式option + commandlaravel 部分valet 全部网站 it work新装valet后，访问自定域名网站全部it's work原因apachectl占用80端口解决方法sudo apachectl -k stopsudo apachectl stopvalet restart]]></content>
+      <categories>
+        
+          <category> Living </category>
+        
+      </categories>
+      <tags>
+        
+          <tag> 日记 </tag>
+        
+          <tag> laravel </tag>
+        
+          <tag> mac os </tag>
+        
+      </tags>
+      <tags></tags>
+    </entry>
+  
+    <entry>
       <title><![CDATA[laravel json 的坑]]></title>
       <url>/living/2019/01/20/blog/</url>
       <content type="text"><![CDATA[15 号的份laravel 创建 json使用laravel 创建 json 时可以使用 json_encode() 不过当输入如下时，$test = [	[			'test' =&gt; 'test'	]]返回的为数组包裹，可以使用$request[0]['test']获取数据当输入如下时，$test = [	'test' =&gt; [		'test' =&gt; 'test'	]]返回的为对象包裹，可以使用$request-&gt;input('test.test')获取数据在进行大量数据传入时，注意使用对应的方法进行循环写入。20号的份laravel 外部请求方法使用GuzzleHttp 进行请求时当使用json时 需要添加Content-Type为 application/json,数据写在body下如果使用传统方式去除Content-Type, 使用form_params请求。'headers' =&gt; [		'Authorization' =&gt; 'Bearer '.'toekn',		'Content-Type' =&gt; 'application/json',],'body' =&gt; json_encode($JsonData),laravel json 的坑当使用json请求时，Request 可以自动解析json为数组也可以使用$request-&gt;input()最坑的是刚使用return 时会自动使用json……使用json_decode() 也会返回json , 可是实际上转换了，使用dd()发现是数组……这时请求端在使用一次json_decode()就一定会出错。所以在请求端json_decode()一次就好。大致上可以推测 请求端发送的为独立数据，使用GuzzleHttp获取的返回为object 所以需要 json_decode()。vue 不能跨域也是…… 现在还是先做出来，之后再完善的好。原因暂时没有找到估计时laravel passport的锅]]></content>

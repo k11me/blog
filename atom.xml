@@ -1,4 +1,129 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="http://localhost:4000/atom.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-01-25T23:18:02+08:00</updated><id>http://localhost:4000/atom.xml</id><title type="html">Keleven.Me</title><subtitle>千变万化的是世界</subtitle><author><name>K11</name></author><entry><title type="html">laravel json 的坑</title><link href="http://localhost:4000/living/2019/01/20/blog/" rel="alternate" type="text/html" title="laravel json 的坑" /><published>2019-01-20T08:00:00+08:00</published><updated>2019-01-20T08:00:00+08:00</updated><id>http://localhost:4000/living/2019/01/20/blog</id><content type="html" xml:base="http://localhost:4000/living/2019/01/20/blog/">&lt;h1 id=&quot;15-号的份&quot;&gt;15 号的份&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="http://localhost:4000/atom.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-02-01T04:13:40+08:00</updated><id>http://localhost:4000/atom.xml</id><title type="html">Keleven.Me</title><subtitle>千变万化的是世界</subtitle><author><name>K11</name></author><entry><title type="html">有点烦！</title><link href="http://localhost:4000/living/2019/01/31/blog/" rel="alternate" type="text/html" title="有点烦！" /><published>2019-01-31T08:00:00+08:00</published><updated>2019-01-31T08:00:00+08:00</updated><id>http://localhost:4000/living/2019/01/31/blog</id><content type="html" xml:base="http://localhost:4000/living/2019/01/31/blog/">&lt;h1 id=&quot;29号的份&quot;&gt;29号的份&lt;/h1&gt;
+
+&lt;h2 id=&quot;黑苹果&quot;&gt;黑苹果&lt;/h2&gt;
+
+&lt;p&gt;从 &lt;code class=&quot;highlighter-rouge&quot;&gt;os&lt;/code&gt; 切回 &lt;code class=&quot;highlighter-rouge&quot;&gt;win&lt;/code&gt; 出现 显卡与usb硬件卡 问题&lt;/p&gt;
+
+&lt;p&gt;其中 &lt;code class=&quot;highlighter-rouge&quot;&gt;GPU&lt;/code&gt; 工作占用率 异常高&lt;/p&gt;
+
+&lt;p&gt;推测是&lt;code class=&quot;highlighter-rouge&quot;&gt;Intel ICH10&lt;/code&gt; 芯片的问题&lt;/p&gt;
+
+&lt;p&gt;只能放弃 &lt;code class=&quot;highlighter-rouge&quot;&gt;10.13&lt;/code&gt; 继续使用 &lt;code class=&quot;highlighter-rouge&quot;&gt;10.11&lt;/code&gt; 新年后希望能换新机。&lt;/p&gt;
+
+&lt;p&gt;本应该尝试重新安装，可是有点烦了，暂时搁置吧……&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;10.11&lt;/code&gt; 变慢也是一个大问题……&lt;/p&gt;
+
+&lt;p&gt;这该如何是好&lt;/p&gt;
+
+&lt;h1 id=&quot;生活&quot;&gt;生活&lt;/h1&gt;
+
+&lt;p&gt;新的净水滤芯 不能安装到 水壶上, 新款比旧款高5mm。&lt;/p&gt;
+
+&lt;p&gt;导致漏水，定了新壶，还不知道，能否正常使用。&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;30号的份&quot;&gt;30号的份&lt;/h2&gt;
+
+&lt;p&gt;重装了勉强可以正常使用了~~&lt;/p&gt;
+
+&lt;p&gt;芯片问题也解决了 开心~~&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.insanelymac.com/forum/files/file/815-appleahciportkext/&quot;&gt;参考文档&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;可以直接在四叶草中添加,对应版本为&lt;code class=&quot;highlighter-rouge&quot;&gt;AppleAHCIPort v329&lt;/code&gt; 不需要下载页面上的文件&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;AppleAHCIPort
+4585F60F 95C289C8 83E0FE66 85C9780F 84D2750B
+89C883E0 FE6685C9 0F98C141 08CC9090 9090750B 
+Fix IO Error AppleAHCIPort
+
+AppleAHCIPort
+89C82540 6002003D 40200000 750C81E1 BF7FFFFF 898B5101 0000
+90909090 90909090 90909090 90909090 90909090 90909090 9090
+hot-plug AppleAHCIPort
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>K11</name></author><category term="日记" /><category term="mac os" /><summary type="html">29号的份 黑苹果 从 os 切回 win 出现 显卡与usb硬件卡 问题 其中 GPU 工作占用率 异常高 推测是Intel ICH10 芯片的问题 只能放弃 10.13 继续使用 10.11 新年后希望能换新机。 本应该尝试重新安装，可是有点烦了，暂时搁置吧…… 10.11 变慢也是一个大问题…… 这该如何是好 生活 新的净水滤芯 不能安装到 水壶上, 新款比旧款高5mm。 导致漏水，定了新壶，还不知道，能否正常使用。 30号的份 重装了勉强可以正常使用了~~ 芯片问题也解决了 开心~~ 参考文档 可以直接在四叶草中添加,对应版本为AppleAHCIPort v329 不需要下载页面上的文件 AppleAHCIPort 4585F60F 95C289C8 83E0FE66 85C9780F 84D2750B 89C883E0 FE6685C9 0F98C141 08CC9090 9090750B Fix IO Error AppleAHCIPort AppleAHCIPort 89C82540 6002003D 40200000 750C81E1 BF7FFFFF 898B5101 0000 90909090 90909090 90909090 90909090 90909090 90909090 9090 hot-plug AppleAHCIPort</summary></entry><entry><title type="html">系统升级了~ 走过的一些坑!</title><link href="http://localhost:4000/living/2019/01/27/blog/" rel="alternate" type="text/html" title="系统升级了~ 走过的一些坑!" /><published>2019-01-27T08:00:00+08:00</published><updated>2019-01-27T08:00:00+08:00</updated><id>http://localhost:4000/living/2019/01/27/blog</id><content type="html" xml:base="http://localhost:4000/living/2019/01/27/blog/">&lt;h1 id=&quot;黑苹果-部分&quot;&gt;黑苹果 部分&lt;/h1&gt;
+
+&lt;p&gt;正常安装就好 &lt;code class=&quot;highlighter-rouge&quot;&gt;config.plist &lt;/code&gt; 是重点&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;tonymacx86&lt;/code&gt; 带的&lt;code class=&quot;highlighter-rouge&quot;&gt;clover&lt;/code&gt; 安装完成后不能正常引导。&lt;/p&gt;
+
+&lt;p&gt;更新到最新的版可以解决。&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;clover configurator&lt;/code&gt; 一定要装很有用。&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Acpi&lt;/code&gt;中选择 &lt;code class=&quot;highlighter-rouge&quot;&gt;AddDTGP&lt;/code&gt; 、 &lt;code class=&quot;highlighter-rouge&quot;&gt;FixDarwin&lt;/code&gt; 、 &lt;code class=&quot;highlighter-rouge&quot;&gt;AddMCHC&lt;/code&gt; 、 &lt;code class=&quot;highlighter-rouge&quot;&gt;FakeLPC&lt;/code&gt; 、&lt;code class=&quot;highlighter-rouge&quot;&gt;FixSBUS&lt;/code&gt; 、 &lt;code class=&quot;highlighter-rouge&quot;&gt;FixUSB&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Boot&lt;/code&gt; 中选择&lt;code class=&quot;highlighter-rouge&quot;&gt;dart=0&lt;/code&gt; 显卡是&lt;code class=&quot;highlighter-rouge&quot;&gt;gtx 760&lt;/code&gt; 驱动自带&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Kernel&lt;/code&gt; 中&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;不要手贱关&lt;code class=&quot;highlighter-rouge&quot;&gt;Apple RTC&lt;/code&gt;!&lt;/li&gt;
+  &lt;li&gt;不要手贱关&lt;code class=&quot;highlighter-rouge&quot;&gt;Apple RTC&lt;/code&gt;!&lt;/li&gt;
+  &lt;li&gt;不要手贱关&lt;code class=&quot;highlighter-rouge&quot;&gt;Apple RTC&lt;/code&gt;!&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;关闭结果就是 每次开机进入系统时 bios 设置被重置。&lt;/p&gt;
+
+&lt;p&gt;没有其他恢复手段非常可怕！&lt;/p&gt;
+
+&lt;p&gt;声卡使用 &lt;a href=&quot;https://github.com/toleda/audio_CloverALC&quot;&gt;audio_CloverALC&lt;/a&gt; 自动注入 完全正常&lt;/p&gt;
+
+&lt;h2 id=&quot;读取ntfs&quot;&gt;读取ntfs&lt;/h2&gt;
+
+&lt;p&gt;10.13可以使用&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;brew cask install osxfuse
+brew install ntfs-3g
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;重启到&lt;code class=&quot;highlighter-rouge&quot;&gt;recovery mode&lt;/code&gt; 关闭系统保护&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;csrutil disable
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;重启到正常模式， 使&lt;code class=&quot;highlighter-rouge&quot;&gt;NTFS&lt;/code&gt;分区可以自动挂载&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo mv /sbin/mount_ntfs /sbin/mount_ntfs.original
+sudo ln -s /usr/local/sbin/mount_ntfs /sbin/mount_ntfs
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;重启到&lt;code class=&quot;highlighter-rouge&quot;&gt;recovery mode&lt;/code&gt; 开启系统保护&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;csrutil enable
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;显示全部隐藏文件&quot;&gt;显示全部隐藏文件&lt;/h2&gt;
+
+&lt;p&gt;显示隐藏文件&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;defaults write com.apple.finder AppleShowAllFiles -boolean true ; killall Finder
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;不显示隐藏文件&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;defaults write com.apple.finder AppleShowAllFiles -boolean false ; killall Finder
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;创建快捷方式&quot;&gt;创建快捷方式&lt;/h2&gt;
+
+&lt;p&gt;&lt;kbd&gt;option&lt;/kbd&gt; + &lt;kbd&gt;command&lt;/kbd&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;laravel-部分&quot;&gt;laravel 部分&lt;/h1&gt;
+
+&lt;h2 id=&quot;valet-全部网站-it-work&quot;&gt;valet 全部网站 it work&lt;/h2&gt;
+
+&lt;p&gt;新装&lt;code class=&quot;highlighter-rouge&quot;&gt;valet&lt;/code&gt;后，访问自定域名网站全部&lt;code class=&quot;highlighter-rouge&quot;&gt;it's work&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;原因&lt;code class=&quot;highlighter-rouge&quot;&gt;apachectl&lt;/code&gt;占用&lt;code class=&quot;highlighter-rouge&quot;&gt;80&lt;/code&gt;端口&lt;/p&gt;
+
+&lt;p&gt;解决方法&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo apachectl -k stop
+sudo apachectl stop
+valet restart
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>K11</name></author><category term="日记" /><category term="laravel" /><category term="mac os" /><summary type="html">黑苹果 部分 正常安装就好 config.plist 是重点 tonymacx86 带的clover 安装完成后不能正常引导。 更新到最新的版可以解决。 clover configurator 一定要装很有用。 Acpi中选择 AddDTGP 、 FixDarwin 、 AddMCHC 、 FakeLPC 、FixSBUS 、 FixUSB Boot 中选择dart=0 显卡是gtx 760 驱动自带 Kernel 中 不要手贱关Apple RTC! 不要手贱关Apple RTC! 不要手贱关Apple RTC! 关闭结果就是 每次开机进入系统时 bios 设置被重置。 没有其他恢复手段非常可怕！ 声卡使用 audio_CloverALC 自动注入 完全正常 读取ntfs 10.13可以使用 brew cask install osxfuse brew install ntfs-3g 重启到recovery mode 关闭系统保护 csrutil disable 重启到正常模式， 使NTFS分区可以自动挂载 sudo mv /sbin/mount_ntfs /sbin/mount_ntfs.original sudo ln -s /usr/local/sbin/mount_ntfs /sbin/mount_ntfs 重启到recovery mode 开启系统保护 csrutil enable 显示全部隐藏文件 显示隐藏文件 defaults write com.apple.finder AppleShowAllFiles -boolean true ; killall Finder 不显示隐藏文件 defaults write com.apple.finder AppleShowAllFiles -boolean false ; killall Finder 创建快捷方式 option + command laravel 部分 valet 全部网站 it work 新装valet后，访问自定域名网站全部it's work 原因apachectl占用80端口 解决方法 sudo apachectl -k stop sudo apachectl stop valet restart</summary></entry><entry><title type="html">laravel json 的坑</title><link href="http://localhost:4000/living/2019/01/20/blog/" rel="alternate" type="text/html" title="laravel json 的坑" /><published>2019-01-20T08:00:00+08:00</published><updated>2019-01-20T08:00:00+08:00</updated><id>http://localhost:4000/living/2019/01/20/blog</id><content type="html" xml:base="http://localhost:4000/living/2019/01/20/blog/">&lt;h1 id=&quot;15-号的份&quot;&gt;15 号的份&lt;/h1&gt;
 
 &lt;h2 id=&quot;laravel-创建-json&quot;&gt;laravel 创建 json&lt;/h2&gt;
 
@@ -333,181 +458,4 @@
 
 &lt;p&gt;可以使查询项返回数组，前提是存入的也是数组&lt;/p&gt;
 
-&lt;p&gt;文档在&lt;code class=&quot;highlighter-rouge&quot;&gt;5.0&lt;/code&gt;版 这就比较坑了&lt;/p&gt;</content><author><name>K11</name></author><category term="日记" /><category term="laravel" /><summary type="html">厄运驱散 最近不顺利的程度超级高，驱散！驱散！驱散！ 还有文件莫名丢失，注意力不能集中，超级烦啊！啊！啊！ 还有倒霉会出现征兆…… 也是…… php 版本的坑 更新后 不能识别 tls 推断 更新后对tls 产生变化，暂时关闭tls使用 http 果然 后台没写好就写前端什么的，效率不高呢…… 看来要规划一下了…… 在laravel 模型中使用 protected $casts = [ 'scopes' =&amp;gt; 'array', ]; 当然也可以定义其他类型 可以使查询项返回数组，前提是存入的也是数组 文档在5.0版 这就比较坑了</summary></entry><entry><title type="html">user 使用uuid</title><link href="http://localhost:4000/living/2018/11/25/blog/" rel="alternate" type="text/html" title="user 使用uuid" /><published>2018-11-25T08:00:00+08:00</published><updated>2018-11-25T08:00:00+08:00</updated><id>http://localhost:4000/living/2018/11/25/blog</id><content type="html" xml:base="http://localhost:4000/living/2018/11/25/blog/">&lt;h1 id=&quot;25日的份&quot;&gt;25日的份&lt;/h1&gt;
-
-&lt;p&gt;将&lt;code class=&quot;highlighter-rouge&quot;&gt;laravel&lt;/code&gt; 默认的&lt;code class=&quot;highlighter-rouge&quot;&gt;id&lt;/code&gt; 改为 &lt;code class=&quot;highlighter-rouge&quot;&gt;uuid&lt;/code&gt; 的方法，以及&lt;code class=&quot;highlighter-rouge&quot;&gt;passport&lt;/code&gt; 使用&lt;code class=&quot;highlighter-rouge&quot;&gt;uuid&lt;/code&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;user-部分&quot;&gt;user 部分&lt;/h2&gt;
-
-&lt;p&gt;当不使用传统&lt;code class=&quot;highlighter-rouge&quot;&gt;id&lt;/code&gt;时，&lt;/p&gt;
-
-&lt;p&gt;先在模型中写入 关闭默认排序&lt;/p&gt;
-
-&lt;div class=&quot;language-php highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$incrementing&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;再&lt;code class=&quot;highlighter-rouge&quot;&gt;migrate&lt;/code&gt;中修改&lt;/p&gt;
-
-&lt;div class=&quot;language-php highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$table&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;increments&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'id'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;为&lt;/p&gt;
-
-&lt;div class=&quot;language-php highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$table&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;uuid&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'id'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;primary&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;随后运行&lt;code class=&quot;highlighter-rouge&quot;&gt;la5 migrate&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;新建&lt;code class=&quot;highlighter-rouge&quot;&gt;App\Traits\Uuid&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;内容如下&lt;/p&gt;
-&lt;div class=&quot;language-php highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;namespace&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;App\Traits&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;use&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Illuminate\Support\Str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;nx&quot;&gt;trait&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Uuid&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-
-    &lt;span class=&quot;sd&quot;&gt;/**
-     * Boot function from laravel.
-     */&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;protected&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;boot&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;parent&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;boot&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-
-        &lt;span class=&quot;k&quot;&gt;static&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;creating&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$model&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-            &lt;span class=&quot;nv&quot;&gt;$model&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$model&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getKeyName&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()}&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Str&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;orderedUuid&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;随后在模型中添加&lt;/p&gt;
-
-&lt;div class=&quot;language-php highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;use&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;App\Traits\Uuid&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;use&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Uuid&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;之后使用&lt;code class=&quot;highlighter-rouge&quot;&gt;laravel&lt;/code&gt;自带的&lt;code class=&quot;highlighter-rouge&quot;&gt;auth&lt;/code&gt;可以正常注册了。密码找回功能也可以使用。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://medium.com/@steveazz/setting-up-uuids-in-laravel-5-552412db2088&quot;&gt;参考文档&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;passport-部分&quot;&gt;passport 部分&lt;/h2&gt;
-
-&lt;p&gt;当 &lt;code class=&quot;highlighter-rouge&quot;&gt;passport&lt;/code&gt;安装完成后&lt;/p&gt;
-
-&lt;p&gt;执行&lt;code class=&quot;highlighter-rouge&quot;&gt;php artisan vendor:publish --tag=passport-migrations&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;复制迁移到&lt;code class=&quot;highlighter-rouge&quot;&gt;migrate&lt;/code&gt;目录&lt;/p&gt;
-
-&lt;p&gt;修改&lt;code class=&quot;highlighter-rouge&quot;&gt;CreateOauthClientsTable&lt;/code&gt;&lt;/p&gt;
-
-&lt;div class=&quot;language-php highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$table&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;increments&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'id'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;$table&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;integer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'user_id'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;nullable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;// 改为
-&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;$table&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;uuid&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'id'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;primary&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;$table&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;uuid&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'user_id'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;nullable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;其他迁移将&lt;code class=&quot;highlighter-rouge&quot;&gt;client_id&lt;/code&gt;与&lt;code class=&quot;highlighter-rouge&quot;&gt;user_id&lt;/code&gt; 改为使用&lt;code class=&quot;highlighter-rouge&quot;&gt;uuid&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;App\Providers\AppServiceProvider&lt;/code&gt;中引入部分添加&lt;/p&gt;
-
-&lt;div class=&quot;language-php highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;use&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Laravel\Passport\Client&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;use&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Illuminate\Support\Str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;boot()&lt;/code&gt;部分添加&lt;/p&gt;
-
-&lt;div class=&quot;language-php highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;Client&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;creating&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Client&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$client&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nv&quot;&gt;$client&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;incrementing&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;nv&quot;&gt;$client&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;id&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Str&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;orderedUuid&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;Client&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;retrieved&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Client&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$client&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nv&quot;&gt;$client&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;incrementing&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;register()&lt;/code&gt; 部分添加&lt;/p&gt;
-
-&lt;div class=&quot;language-php highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;Passport&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;ignoreMigrations&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;其他部分按照文档即可正常使用。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://mlo.io/blog/2018/08/17/laravel-passport-uuid/&quot;&gt;参考文档&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;user-路径修改&quot;&gt;user 路径修改&lt;/h2&gt;
-
-&lt;p&gt;在&lt;code class=&quot;highlighter-rouge&quot;&gt;App\Http\Controllers\Auth\RegisterController&lt;/code&gt;中修改&lt;/p&gt;
-
-&lt;p&gt;在&lt;code class=&quot;highlighter-rouge&quot;&gt;config&lt;/code&gt;中的&lt;code class=&quot;highlighter-rouge&quot;&gt;providers&lt;/code&gt;修改到对应路径  之后可以正常使用&lt;/p&gt;
-
-&lt;h2 id=&quot;laravel-包开发&quot;&gt;laravel 包开发&lt;/h2&gt;
-
-&lt;p&gt;包的开发非常有利于后期的维护，同时也可以有效的分配工作任务，对未来的团队工作有极大的优势。&lt;/p&gt;
-
-&lt;p&gt;主要是功能混在一起，找起来超级烦。&lt;/p&gt;
-
-&lt;p&gt;有必要将独立的功能分散出去。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://laravel-news.com/developing-laravel-packages-with-local-composer-dependencies&quot;&gt;参考地址 1&lt;/a&gt;
-&lt;a href=&quot;https://laraveldaily.com/how-to-create-a-laravel-5-package-in-10-easy-steps/&quot;&gt;参考地址 2&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;需要说明的是 &lt;code class=&quot;highlighter-rouge&quot;&gt;namespace&lt;/code&gt;与&lt;code class=&quot;highlighter-rouge&quot;&gt;autoload&lt;/code&gt;超级重要&lt;/p&gt;</content><author><name>K11</name></author><category term="日记" /><category term="laravel" /><summary type="html">25日的份 将laravel 默认的id 改为 uuid 的方法，以及passport 使用uuid user 部分 当不使用传统id时， 先在模型中写入 关闭默认排序 public $incrementing = false; 再migrate中修改 $table-&amp;gt;increments('id'); 为 $table-&amp;gt;uuid('id')-&amp;gt;primary(); 随后运行la5 migrate 新建App\Traits\Uuid 内容如下 &amp;lt;?php namespace App\Traits; use Illuminate\Support\Str; trait Uuid { /** * Boot function from laravel. */ protected static function boot() { parent::boot(); static::creating(function ($model) { $model-&amp;gt;{$model-&amp;gt;getKeyName()} = (string) Str::orderedUuid(); }); } } 随后在模型中添加 use App\Traits\Uuid; use Uuid; 之后使用laravel自带的auth可以正常注册了。密码找回功能也可以使用。 参考文档 passport 部分 当 passport安装完成后 执行php artisan vendor:publish --tag=passport-migrations 复制迁移到migrate目录 修改CreateOauthClientsTable $table-&amp;gt;increments('id'); $table-&amp;gt;integer('user_id')-&amp;gt;index()-&amp;gt;nullable(); // 改为 $table-&amp;gt;uuid('id')-&amp;gt;primary(); $table-&amp;gt;uuid('user_id')-&amp;gt;index()-&amp;gt;nullable(); 其他迁移将client_id与user_id 改为使用uuid App\Providers\AppServiceProvider中引入部分添加 use Laravel\Passport\Client; use Illuminate\Support\Str; boot()部分添加 Client::creating(function (Client $client) { $client-&amp;gt;incrementing = false; $client-&amp;gt;id = (string) Str::orderedUuid(); }); Client::retrieved(function (Client $client) { $client-&amp;gt;incrementing = false; }); register() 部分添加 Passport::ignoreMigrations(); 其他部分按照文档即可正常使用。 参考文档 user 路径修改 在App\Http\Controllers\Auth\RegisterController中修改 在config中的providers修改到对应路径 之后可以正常使用 laravel 包开发 包的开发非常有利于后期的维护，同时也可以有效的分配工作任务，对未来的团队工作有极大的优势。 主要是功能混在一起，找起来超级烦。 有必要将独立的功能分散出去。 参考地址 1 参考地址 2 需要说明的是 namespace与autoload超级重要</summary></entry><entry><title type="html">快递到了！</title><link href="http://localhost:4000/living/2018/11/20/blog/" rel="alternate" type="text/html" title="快递到了！" /><published>2018-11-20T08:00:00+08:00</published><updated>2018-11-20T08:00:00+08:00</updated><id>http://localhost:4000/living/2018/11/20/blog</id><content type="html" xml:base="http://localhost:4000/living/2018/11/20/blog/">&lt;h1 id=&quot;14日的份&quot;&gt;14日的份&lt;/h1&gt;
-
-&lt;h2 id=&quot;双11的快递到了&quot;&gt;双11的快递到了&lt;/h2&gt;
-
-&lt;p&gt;小型超声波清洗机，和手动洗眼镜说再见了~~&lt;/p&gt;
-
-&lt;h2 id=&quot;code定义中&quot;&gt;code定义中&lt;/h2&gt;
-
-&lt;p&gt;定义&lt;code class=&quot;highlighter-rouge&quot;&gt;code&lt;/code&gt;将返回标准化，部件代码进行有效简化。&lt;/p&gt;
-
-&lt;h1 id=&quot;20日的份&quot;&gt;20日的份&lt;/h1&gt;
-
-&lt;p&gt;admin 管理 部分 完成了&lt;/p&gt;
-
-&lt;p&gt;之后就是玩家部分了&lt;/p&gt;
-
-&lt;p&gt;周末通过 奥德赛 与 暗影&lt;/p&gt;
-
-&lt;p&gt;不不得不说 奥德赛 是历代最优&lt;/p&gt;
-
-&lt;p&gt;暗影的手柄操作有点奇怪&lt;/p&gt;
-
-&lt;p&gt;机器果然到时候了 九年了……&lt;/p&gt;
-
-&lt;p&gt;在坚持坚持吧&lt;/p&gt;
-
-&lt;p&gt;HDR 要有对应的显示器才可以&lt;/p&gt;
-
-&lt;p&gt;目前看 LG 34WK95U-W 不错&lt;/p&gt;
-
-&lt;p&gt;EIZO 就等到稳定下来再说了&lt;/p&gt;
-
-&lt;p&gt;wacom 在数绘方面是优秀的 可是不支持HDR&lt;/p&gt;
-
-&lt;p&gt;不过 贴图 还停留在一般RGB时代&lt;/p&gt;
-
-&lt;p&gt;如果上升一步，想想都可怕，一般用户与使用HDR的用户&lt;/p&gt;
-
-&lt;p&gt;体验的会是两个不同的世界，当然计算量也巨大的。&lt;/p&gt;
-
-&lt;p&gt;服务端渲染随着带宽的扩大，终究是要到来的。&lt;/p&gt;
-
-&lt;p&gt;头号玩家 描述世界 也只是时间问题&lt;/p&gt;
-
-&lt;p&gt;技术层面上 一定使用的是 服务端渲染&lt;/p&gt;
-
-&lt;p&gt;用户设备就不一定相同了&lt;/p&gt;
-
-&lt;p&gt;随手看了下5G标准，需要更多基站设备…… 稳定性恐怕不高&lt;/p&gt;
-
-&lt;p&gt;大法耳罩老化了 意外发现梁也断了……&lt;/p&gt;
-
-&lt;p&gt;希望合金梁可以顺利到手！！耳罩的更换倒是有眉目了~&lt;/p&gt;</content><author><name>K11</name></author><category term="日记" /><category term="laravel" /><summary type="html">14日的份 双11的快递到了 小型超声波清洗机，和手动洗眼镜说再见了~~ code定义中 定义code将返回标准化，部件代码进行有效简化。 20日的份 admin 管理 部分 完成了 之后就是玩家部分了 周末通过 奥德赛 与 暗影 不不得不说 奥德赛 是历代最优 暗影的手柄操作有点奇怪 机器果然到时候了 九年了…… 在坚持坚持吧 HDR 要有对应的显示器才可以 目前看 LG 34WK95U-W 不错 EIZO 就等到稳定下来再说了 wacom 在数绘方面是优秀的 可是不支持HDR 不过 贴图 还停留在一般RGB时代 如果上升一步，想想都可怕，一般用户与使用HDR的用户 体验的会是两个不同的世界，当然计算量也巨大的。 服务端渲染随着带宽的扩大，终究是要到来的。 头号玩家 描述世界 也只是时间问题 技术层面上 一定使用的是 服务端渲染 用户设备就不一定相同了 随手看了下5G标准，需要更多基站设备…… 稳定性恐怕不高 大法耳罩老化了 意外发现梁也断了…… 希望合金梁可以顺利到手！！耳罩的更换倒是有眉目了~</summary></entry></feed>
+&lt;p&gt;文档在&lt;code class=&quot;highlighter-rouge&quot;&gt;5.0&lt;/code&gt;版 这就比较坑了&lt;/p&gt;</content><author><name>K11</name></author><category term="日记" /><category term="laravel" /><summary type="html">厄运驱散 最近不顺利的程度超级高，驱散！驱散！驱散！ 还有文件莫名丢失，注意力不能集中，超级烦啊！啊！啊！ 还有倒霉会出现征兆…… 也是…… php 版本的坑 更新后 不能识别 tls 推断 更新后对tls 产生变化，暂时关闭tls使用 http 果然 后台没写好就写前端什么的，效率不高呢…… 看来要规划一下了…… 在laravel 模型中使用 protected $casts = [ 'scopes' =&amp;gt; 'array', ]; 当然也可以定义其他类型 可以使查询项返回数组，前提是存入的也是数组 文档在5.0版 这就比较坑了</summary></entry></feed>
