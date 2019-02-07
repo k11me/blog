@@ -338,6 +338,433 @@
   
 
   <article class="post post-type- " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://localhost:4000/living/2018/10/14/blog/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="K11">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/assets/images/21040889_825385437640313_540035783206109184_a.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Keleven.Me">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+                
+                <a class="post-title-link" href="/living/2018/10/14/blog/" itemprop="url">
+                11号的份
+              </a>
+            
+          
+        </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-14T08:00:00+08:00">
+                2018-10-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/category/#/Living" itemprop="url" rel="index">
+                    <span itemprop="name">Living</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/living/2018/10/14/blog/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="/living/2018/10/14/blog/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <h1 id="11号的份">11号的份</h1>
+
+<h2 id="队列">队列</h2>
+
+<p>将特定 信息通知 推送到指定队列</p>
+
+<p>修改<code class="highlighter-rouge">horizon</code> 后</p>
+
+<p>可以使用</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code><span class="nv">$user</span><span class="o">-&gt;</span><span class="na">notify</span><span class="p">((</span><span class="k">new</span> <span class="nx">SendEmail</span><span class="p">(</span><span class="nv">$Token</span><span class="p">))</span><span class="o">-&gt;</span><span class="na">onQueue</span><span class="p">(</span><span class="s1">'mail'</span><span class="p">));</span>
+</code></pre></td></tr></tbody></table></div></div>
+
+<p>或</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2</pre></td><td class="code"><pre class="highlight"><code><span class="k">use</span> <span class="nx">Notification</span><span class="p">;</span>
+<span class="nx">Notification</span><span class="o">::</span><span class="na">send</span><span class="p">(</span><span class="nv">$user</span><span class="p">,</span> <span class="p">(</span><span class="k">new</span> <span class="nx">SendEmail</span><span class="p">(</span><span class="nv">$Token</span><span class="p">))</span><span class="o">-&gt;</span><span class="na">onQueue</span><span class="p">(</span><span class="s1">'mail'</span><span class="p">));</span>
+</code></pre></td></tr></tbody></table></div></div>
+<h2 id="roles">roles</h2>
+
+<p>需要注意<code class="highlighter-rouge">guard</code>对应</p>
+
+<p><code class="highlighter-rouge">view</code>与<code class="highlighter-rouge">models</code> 要注意同步</p>
+
+<p>在<code class="highlighter-rouge">blade</code> 中使用时</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3</pre></td><td class="code"><pre class="highlight"><code><span class="o">@</span><span class="nx">role</span><span class="p">(</span><span class="s1">'role'</span> <span class="p">,</span> <span class="s1">'guard'</span><span class="p">)</span>
+<span class="nx">something</span>
+<span class="o">@</span><span class="nx">endrole</span>
+</code></pre></td></tr></tbody></table></div></div>
+
+<p>在路由中使用时</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3</pre></td><td class="code"><pre class="highlight"><code><span class="nx">Route</span><span class="o">::</span><span class="na">group</span><span class="p">([</span><span class="s1">'middleware'</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s1">'auth:admin'</span> <span class="p">,</span> <span class="s1">'role:admin'</span><span class="p">]],</span> <span class="k">function</span> <span class="p">()</span> <span class="p">{</span>
+
+<span class="p">});</span>
+</code></pre></td></tr></tbody></table></div></div>
+
+<p>也可以在控制器中使用</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4</pre></td><td class="code"><pre class="highlight"><code><span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">middleware</span><span class="p">([</span><span class="s1">'role:admin'</span> <span class="p">,</span> <span class="s1">'auth:admin'</span><span class="p">]);</span>
+<span class="p">}</span>
+</code></pre></td></tr></tbody></table></div></div>
+
+<hr />
+
+<h1 id="14号的份">14号的份</h1>
+
+<h2 id="find-与-where-的坑">find 与 where 的坑</h2>
+
+<p><code class="highlighter-rouge">find</code> 不能准确 查找到对应条目</p>
+
+<p><code class="highlighter-rouge">where</code> 则可以，之后只有有意识的替换<code class="highlighter-rouge">find</code></p>
+
+<p><code class="highlighter-rouge">register</code>的后端调整完成了~~~</p>
+
+<p>大概这种感觉</p>
+
+<p><img src="https://i.loli.net/2018/10/14/5bc33df12e03a.png" alt="屏幕快照 2018-10-14 20.58.44" /></p>
+
+
+
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/living/2018/10/14/blog/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+        
+        
+        
+        
+          <div class="post-eof"></div>
+        
+      
+    </footer>
+  </article>
+
+  
+    
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type- " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://localhost:4000/living/2018/10/10/blog/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="K11">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/assets/images/21040889_825385437640313_540035783206109184_a.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Keleven.Me">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+                
+                <a class="post-title-link" href="/living/2018/10/10/blog/" itemprop="url">
+                10号的份
+              </a>
+            
+          
+        </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-10T08:00:00+08:00">
+                2018-10-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/category/#/Living" itemprop="url" rel="index">
+                    <span itemprop="name">Living</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/living/2018/10/10/blog/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="/living/2018/10/10/blog/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 id="lavavel-valet">lavavel valet</h2>
+
+<p><code class="highlighter-rouge">valet share</code> 在TLS的情况下会返回<code class="highlighter-rouge">301</code></p>
+
+<p>可以确定为<code class="highlighter-rouge">valet v2.1.1</code> 的 BUG</p>
+
+<p>可以先<code class="highlighter-rouge">valet unsecure</code> 再 <code class="highlighter-rouge">valet share</code> 关闭<code class="highlighter-rouge">TLS</code> 和裸奔没区别 可以用来进行暂时测试</p>
+
+<p>汇率已经到<code class="highlighter-rouge">7.5</code>了……</p>
+
+
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/living/2018/10/10/blog/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+        
+        
+        
+        
+          <div class="post-eof"></div>
+        
+      
+    </footer>
+  </article>
+
+  
+    
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type- " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://localhost:4000/living/2018/10/04/blog/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -2042,402 +2469,6 @@
         
         
         
-          <div class="post-eof"></div>
-        
-      
-    </footer>
-  </article>
-
-  
-    
-    
-
-  
-
-  
-  
-  
-
-  <article class="post post-type- " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://localhost:4000/living/2018/09/01/blog/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="K11">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/assets/images/21040889_825385437640313_540035783206109184_a.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Keleven.Me">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-                
-                <a class="post-title-link" href="/living/2018/09/01/blog/" itemprop="url">
-                寒冬？不存在的~~
-              </a>
-            
-          
-        </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-01T08:00:00+08:00">
-                2018-09-01
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/category/#/Living" itemprop="url" rel="index">
-                    <span itemprop="name">Living</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/living/2018/09/01/blog/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="/living/2018/09/01/blog/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-  
-  
-
-
-
-
-
-
-
-
-
-
-
-
-  <h2 id="沸沸扬扬">沸沸扬扬</h2>
-
-<p>我朝文件震惊游戏行业，寒冬已至。</p>
-
-<p>错估形势，将我朝当主要市场也是必然吧。</p>
-
-<p>从架起GFW的那天开始，就注定没有未来。</p>
-
-<p>最糟糕的时，境外公司不能对我朝个人付款。</p>
-
-<p>看来HK是一定要再去一次了。</p>
-
-<p>众筹的款项不能入手也是糟糕。</p>
-
-<p>还有企业税加了到35% 贸易战还加企业税 也是666</p>
-
-<h2 id="其他">其他</h2>
-
-<p>mac的系统盘满了</p>
-
-<p>希望可以在坚持几个月~~</p>
-
-<p>群辉的购入也在计划之中……</p>
-
-
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/living/2018/09/01/blog/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-        
-        
-        
-        
-          <div class="post-eof"></div>
-        
-      
-    </footer>
-  </article>
-
-  
-    
-    
-
-  
-
-  
-  
-  
-
-  <article class="post post-type- " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://localhost:4000/living/2018/08/24/blog/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="K11">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/assets/images/21040889_825385437640313_540035783206109184_a.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Keleven.Me">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-                
-                <a class="post-title-link" href="/living/2018/08/24/blog/" itemprop="url">
-                Update😍😍
-              </a>
-            
-          
-        </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-08-24T08:00:00+08:00">
-                2018-08-24
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/category/#/Living" itemprop="url" rel="index">
-                    <span itemprop="name">Living</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/living/2018/08/24/blog/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="/living/2018/08/24/blog/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-  
-  
-
-
-
-
-
-
-
-
-
-
-
-
-  <h1 id="全球化语言">全球化语言</h1>
-
-<p>将 <code class="highlighter-rouge">laravel</code> 返回语言指定</p>
-
-<p>为库中的 对应语言 并 可以切换到其他语言</p>
-
-<p>直接返回<code class="highlighter-rouge">lang</code>行就可以 比如<code class="highlighter-rouge">auth.Login</code></p>
-
-<p><code class="highlighter-rouge">vue</code>中使用<code class="highlighter-rouge">Vue.i18n.translate(auth.Login)</code> 就完成了</p>
-
-<p>主要用来显示对用户的提示信息</p>
-
-<h1 id="以上">以上</h1>
-
-<p>鞋子 和 裙子 绝赞好评 ~~</p>
-
-<p>忘了说  xbox one 的手柄真好用啊~~</p>
-
-
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/living/2018/08/24/blog/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-        
-        
-        
-        
       
     </footer>
   </article>
@@ -2499,7 +2530,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">106</span>
+                <span class="site-state-item-count">108</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>

@@ -1,4 +1,35 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="http://localhost:4000/atom.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-02-01T04:13:40+08:00</updated><id>http://localhost:4000/atom.xml</id><title type="html">Keleven.Me</title><subtitle>千变万化的是世界</subtitle><author><name>K11</name></author><entry><title type="html">有点烦！</title><link href="http://localhost:4000/living/2019/01/31/blog/" rel="alternate" type="text/html" title="有点烦！" /><published>2019-01-31T08:00:00+08:00</published><updated>2019-01-31T08:00:00+08:00</updated><id>http://localhost:4000/living/2019/01/31/blog</id><content type="html" xml:base="http://localhost:4000/living/2019/01/31/blog/">&lt;h1 id=&quot;29号的份&quot;&gt;29号的份&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="http://localhost:4000/atom.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-02-07T16:52:36+08:00</updated><id>http://localhost:4000/atom.xml</id><title type="html">Keleven.Me</title><subtitle>千变万化的是世界</subtitle><author><name>K11</name></author><entry><title type="html">己亥年快乐~</title><link href="http://localhost:4000/living/2019/02/07/blog/" rel="alternate" type="text/html" title="己亥年快乐~" /><published>2019-02-07T08:00:00+08:00</published><updated>2019-02-07T08:00:00+08:00</updated><id>http://localhost:4000/living/2019/02/07/blog</id><content type="html" xml:base="http://localhost:4000/living/2019/02/07/blog/">&lt;h1 id=&quot;己亥年快乐&quot;&gt;己亥年快乐~&lt;/h1&gt;
+
+&lt;p&gt;虽然晚了一点&lt;/p&gt;
+
+&lt;p&gt;4号网络太慢，索性开了谷歌云，费用好贵！&lt;/p&gt;
+
+&lt;p&gt;估计用过了赠送的额度就不会再使用了！&lt;/p&gt;
+
+&lt;p&gt;没有梯子一些服务的速度会慢100倍，一点都不夸张。&lt;/p&gt;
+
+&lt;p&gt;6号 早上的梦点神奇呢~&lt;/p&gt;
+
+&lt;h1 id=&quot;新机器在路上&quot;&gt;新机器在路上&lt;/h1&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;valet&lt;/code&gt; 的 &lt;code class=&quot;highlighter-rouge&quot;&gt;https&lt;/code&gt; 问题还是没有解决……&lt;/p&gt;
+
+&lt;p&gt;过年期间太懈怠了……&lt;/p&gt;
+
+&lt;h1 id=&quot;以上-再次-新年快乐&quot;&gt;以上 再次 新年快乐&lt;/h1&gt;</content><author><name>K11</name></author><category term="日记" /><summary type="html">己亥年快乐~ 虽然晚了一点 4号网络太慢，索性开了谷歌云，费用好贵！ 估计用过了赠送的额度就不会再使用了！ 没有梯子一些服务的速度会慢100倍，一点都不夸张。 6号 早上的梦点神奇呢~ 新机器在路上 valet 的 https 问题还是没有解决…… 过年期间太懈怠了…… 以上 再次 新年快乐</summary></entry><entry><title type="html">cURL error 60</title><link href="http://localhost:4000/living/2019/02/03/blog/" rel="alternate" type="text/html" title="cURL error 60" /><published>2019-02-03T08:00:00+08:00</published><updated>2019-02-03T08:00:00+08:00</updated><id>http://localhost:4000/living/2019/02/03/blog</id><content type="html" xml:base="http://localhost:4000/living/2019/02/03/blog/">&lt;h1 id=&quot;curl-error-60-问题依旧&quot;&gt;cURL error 60 问题依旧&lt;/h1&gt;
+
+&lt;p&gt;升级完系统继续踩坑…… 我也是……&lt;/p&gt;
+
+&lt;p&gt;就好的方法安装时使用&lt;code class=&quot;highlighter-rouge&quot;&gt;dev-master&lt;/code&gt; 版本&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;composer global require laravel/valet dev-master
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h1 id=&quot;服务器流量超了&quot;&gt;服务器流量超了&lt;/h1&gt;
+
+&lt;p&gt;啊啊 慢死了 什么都连不上怎么干活啊！！&lt;/p&gt;
+
+&lt;h1 id=&quot;以上&quot;&gt;以上&lt;/h1&gt;</content><author><name>K11</name></author><category term="日记" /><category term="mac os" /><summary type="html">cURL error 60 问题依旧 升级完系统继续踩坑…… 我也是…… 就好的方法安装时使用dev-master 版本 composer global require laravel/valet dev-master 服务器流量超了 啊啊 慢死了 什么都连不上怎么干活啊！！ 以上</summary></entry><entry><title type="html">有点烦！</title><link href="http://localhost:4000/living/2019/01/31/blog/" rel="alternate" type="text/html" title="有点烦！" /><published>2019-01-31T08:00:00+08:00</published><updated>2019-01-31T08:00:00+08:00</updated><id>http://localhost:4000/living/2019/01/31/blog</id><content type="html" xml:base="http://localhost:4000/living/2019/01/31/blog/">&lt;h1 id=&quot;29号的份&quot;&gt;29号的份&lt;/h1&gt;
 
 &lt;h2 id=&quot;黑苹果&quot;&gt;黑苹果&lt;/h2&gt;
 
@@ -368,94 +399,4 @@ valet restart
 
 &lt;p&gt;之后硬度感人，估计超过板砖。&lt;/p&gt;
 
-&lt;p&gt;所以之后爱称&lt;code class=&quot;highlighter-rouge&quot;&gt;砖酱&lt;/code&gt;&lt;/p&gt;</content><author><name>K11</name></author><category term="日记" /><category term="laravel" /><summary type="html">自动化的路上 现在多写一点，之后使用时就容易一点。 真正运行起来工作量会是现在的几倍吧，也不知道能不能支撑下去…… 打劫 4个小鬼 来打劫火花塞上的贵金属 也是醉了…… 求钟馗大神传授驱鬼之法！ 和 小区门口私设停车位收费类似 原始 无规则 我朝 需要 改变的东西真的太都了 砖酱 iphone xr 入手 上了UGA的壳 之后硬度感人，估计超过板砖。 所以之后爱称砖酱</summary></entry><entry><title type="html">链接</title><link href="http://localhost:4000/living/2018/12/06/blog/" rel="alternate" type="text/html" title="链接" /><published>2018-12-06T08:00:00+08:00</published><updated>2018-12-06T08:00:00+08:00</updated><id>http://localhost:4000/living/2018/12/06/blog</id><content type="html" xml:base="http://localhost:4000/living/2018/12/06/blog/">&lt;h1 id=&quot;链接构建中&quot;&gt;链接构建中&lt;/h1&gt;
-
-&lt;p&gt;远程管理构建中，主要目的是&lt;code class=&quot;highlighter-rouge&quot;&gt;token&lt;/code&gt;请求的自动化。&lt;/p&gt;
-
-&lt;p&gt;当使用大量&lt;code class=&quot;highlighter-rouge&quot;&gt;token&lt;/code&gt;细化权限时&lt;/p&gt;
-
-&lt;p&gt;手动请求、更新、选择&lt;code class=&quot;highlighter-rouge&quot;&gt;token&lt;/code&gt;将是地狱模式了&lt;/p&gt;
-
-&lt;h1 id=&quot;composer-包管理&quot;&gt;composer 包管理&lt;/h1&gt;
-
-&lt;p&gt;当使用自定义包时&lt;code class=&quot;highlighter-rouge&quot;&gt;dev-master&lt;/code&gt;版本不能正常载入的情况下&lt;/p&gt;
-
-&lt;p&gt;在&lt;code class=&quot;highlighter-rouge&quot;&gt;composer.json&lt;/code&gt;中添加&lt;/p&gt;
-
-&lt;div class=&quot;language-php highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    &lt;span class=&quot;s2&quot;&gt;&quot;minimum-stability&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;dev&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;s2&quot;&gt;&quot;prefer-stable&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;同时要指定路径,如果有多个包,需要分别指定,&lt;/p&gt;
-
-&lt;div class=&quot;language-json highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;w&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;repositories&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-		&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;pack&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-		    &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;type&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;path&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-		    &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;url&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;../packages/packname/pack&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-		&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-	&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;这样自定义包就可以载入了&lt;/p&gt;
-
-&lt;p&gt;其他包则使用稳定版本&lt;/p&gt;
-
-&lt;h2 id=&quot;curl-error-60-ssl-certificate-problem&quot;&gt;cURL error 60: SSL certificate problem&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/laravel/valet/pull/515&quot;&gt;参考资料&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;推断为证书不能正确加载，在&lt;code class=&quot;highlighter-rouge&quot;&gt;php.info&lt;/code&gt;中指定路径同样无效。&lt;/p&gt;
-
-&lt;p&gt;直接使用&lt;code class=&quot;highlighter-rouge&quot;&gt;laravel valet&lt;/code&gt;的公钥访问有效&lt;/p&gt;
-
-&lt;div class=&quot;language-zsh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;curl https://game.test/ &lt;span class=&quot;nt&quot;&gt;--cacert&lt;/span&gt; ~/.config/valet/CA/LaravelValetCASelfSigned.pem
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h2 id=&quot;laravelscout&quot;&gt;laravel/scout&lt;/h2&gt;
-
-&lt;p&gt;安装&lt;code class=&quot;highlighter-rouge&quot;&gt;laravel/scout&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;使用时遇到&lt;code class=&quot;highlighter-rouge&quot;&gt;Class 'AlgoliaSearch\Version' not found&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;原因&lt;code class=&quot;highlighter-rouge&quot;&gt;laravel/scout&lt;/code&gt; 不支持 &lt;code class=&quot;highlighter-rouge&quot;&gt;algoliasearch-client-php: ^2.0&lt;/code&gt; 改为&lt;code class=&quot;highlighter-rouge&quot;&gt;algoliasearch-client-php: ^1.27&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/laravel/scout/issues/328&quot;&gt;参考资料&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;从速度看&lt;code class=&quot;highlighter-rouge&quot;&gt;scout&lt;/code&gt; 没有从内存搜索快，这也是必然吧。&lt;/p&gt;
-
-&lt;p&gt;使用第三方搜索也有数据泄露的风险。不过重写驱动也是要命……&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;scout&lt;/code&gt; 还没想到需要使用的地方……&lt;/p&gt;
-
-&lt;p&gt;比如 搜 文档 更新 什么的……&lt;/p&gt;</content><author><name>K11</name></author><category term="日记" /><category term="laravel" /><summary type="html">链接构建中 远程管理构建中，主要目的是token请求的自动化。 当使用大量token细化权限时 手动请求、更新、选择token将是地狱模式了 composer 包管理 当使用自定义包时dev-master版本不能正常载入的情况下 在composer.json中添加 &quot;minimum-stability&quot;: &quot;dev&quot;, &quot;prefer-stable&quot;: true, 同时要指定路径,如果有多个包,需要分别指定, &quot;repositories&quot;: { &quot;pack&quot;: { &quot;type&quot;: &quot;path&quot;, &quot;url&quot;: &quot;../packages/packname/pack&quot; } } 这样自定义包就可以载入了 其他包则使用稳定版本 cURL error 60: SSL certificate problem 参考资料 推断为证书不能正确加载，在php.info中指定路径同样无效。 直接使用laravel valet的公钥访问有效 curl https://game.test/ --cacert ~/.config/valet/CA/LaravelValetCASelfSigned.pem laravel/scout 安装laravel/scout 使用时遇到Class 'AlgoliaSearch\Version' not found 原因laravel/scout 不支持 algoliasearch-client-php: ^2.0 改为algoliasearch-client-php: ^1.27 参考资料 从速度看scout 没有从内存搜索快，这也是必然吧。 使用第三方搜索也有数据泄露的风险。不过重写驱动也是要命…… scout 还没想到需要使用的地方…… 比如 搜 文档 更新 什么的……</summary></entry><entry><title type="html">分包了！！</title><link href="http://localhost:4000/living/2018/12/03/blog/" rel="alternate" type="text/html" title="分包了！！" /><published>2018-12-03T08:00:00+08:00</published><updated>2018-12-03T08:00:00+08:00</updated><id>http://localhost:4000/living/2018/12/03/blog</id><content type="html" xml:base="http://localhost:4000/living/2018/12/03/blog/">&lt;h1 id=&quot;厄运驱散&quot;&gt;厄运驱散&lt;/h1&gt;
-
-&lt;p&gt;最近不顺利的程度超级高，驱散！驱散！驱散！&lt;/p&gt;
-
-&lt;p&gt;还有文件莫名丢失，注意力不能集中，超级烦啊！啊！啊！&lt;/p&gt;
-
-&lt;p&gt;还有倒霉会出现征兆…… 也是……&lt;/p&gt;
-
-&lt;h1 id=&quot;php-版本的坑&quot;&gt;php 版本的坑&lt;/h1&gt;
-
-&lt;p&gt;更新后 不能识别 &lt;code class=&quot;highlighter-rouge&quot;&gt;tls&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;推断 更新后对&lt;code class=&quot;highlighter-rouge&quot;&gt;tls&lt;/code&gt; 产生变化，暂时关闭&lt;code class=&quot;highlighter-rouge&quot;&gt;tls&lt;/code&gt;使用 &lt;code class=&quot;highlighter-rouge&quot;&gt;http&lt;/code&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;果然&quot;&gt;果然&lt;/h2&gt;
-
-&lt;p&gt;后台没写好就写前端什么的，效率不高呢……&lt;/p&gt;
-
-&lt;p&gt;看来要规划一下了……&lt;/p&gt;
-
-&lt;p&gt;在&lt;code class=&quot;highlighter-rouge&quot;&gt;laravel&lt;/code&gt; 模型中使用&lt;/p&gt;
-
-&lt;div class=&quot;language-php highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;protected&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$casts&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
-    &lt;span class=&quot;s1&quot;&gt;'scopes'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'array'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;当然也可以定义其他类型&lt;/p&gt;
-
-&lt;p&gt;可以使查询项返回数组，前提是存入的也是数组&lt;/p&gt;
-
-&lt;p&gt;文档在&lt;code class=&quot;highlighter-rouge&quot;&gt;5.0&lt;/code&gt;版 这就比较坑了&lt;/p&gt;</content><author><name>K11</name></author><category term="日记" /><category term="laravel" /><summary type="html">厄运驱散 最近不顺利的程度超级高，驱散！驱散！驱散！ 还有文件莫名丢失，注意力不能集中，超级烦啊！啊！啊！ 还有倒霉会出现征兆…… 也是…… php 版本的坑 更新后 不能识别 tls 推断 更新后对tls 产生变化，暂时关闭tls使用 http 果然 后台没写好就写前端什么的，效率不高呢…… 看来要规划一下了…… 在laravel 模型中使用 protected $casts = [ 'scopes' =&amp;gt; 'array', ]; 当然也可以定义其他类型 可以使查询项返回数组，前提是存入的也是数组 文档在5.0版 这就比较坑了</summary></entry></feed>
+&lt;p&gt;所以之后爱称&lt;code class=&quot;highlighter-rouge&quot;&gt;砖酱&lt;/code&gt;&lt;/p&gt;</content><author><name>K11</name></author><category term="日记" /><category term="laravel" /><summary type="html">自动化的路上 现在多写一点，之后使用时就容易一点。 真正运行起来工作量会是现在的几倍吧，也不知道能不能支撑下去…… 打劫 4个小鬼 来打劫火花塞上的贵金属 也是醉了…… 求钟馗大神传授驱鬼之法！ 和 小区门口私设停车位收费类似 原始 无规则 我朝 需要 改变的东西真的太都了 砖酱 iphone xr 入手 上了UGA的壳 之后硬度感人，估计超过板砖。 所以之后爱称砖酱</summary></entry></feed>

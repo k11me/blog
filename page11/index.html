@@ -338,6 +338,986 @@
   
 
   <article class="post post-type- " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://localhost:4000/ubuntu/2016/07/13/vim/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="K11">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/assets/images/21040889_825385437640313_540035783206109184_a.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Keleven.Me">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+                
+                <a class="post-title-link" href="/ubuntu/2016/07/13/vim/" itemprop="url">
+                vim 学习指南
+              </a>
+            
+          
+        </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-07-13T18:30:45+08:00">
+                2016-07-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/category/#/ubuntu" itemprop="url" rel="index">
+                    <span itemprop="name">ubuntu</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/ubuntu/2016/07/13/vim/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="/ubuntu/2016/07/13/vim/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <h1 id="vim-使用指南">vim 使用指南</h1>
+
+<h2 id="1vim-插件管理器">1.vim 插件管理器</h2>
+
+<h3 id="11-vundle-git仓库">1.1 Vundle <a href="https://github.com/VundleVim/Vundle.vim">git仓库</a></h3>
+
+<p>安装文档有中文指南。</p>
+
+<h3 id="12-第一步">1.2 第一步</h3>
+
+<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code>$ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+</code></pre></td></tr></tbody></table></div></div>
+
+<h3 id="13-第二步">1.3 第二步</h3>
+
+<p>对<code class="highlighter-rouge">.vimrc</code>文件进行设置。</p>
+
+<p><code class="highlighter-rouge">begin()</code>和<code class="highlighter-rouge">end()</code>之间的为可以添加的插件。</p>
+
+<p>插件添加支持多种格式。</p>
+
+<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9<br/>10<br/>11<br/>12<br/>13</pre></td><td class="code"><pre class="highlight"><code>set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'tpope/vim-fugitive'
+Plugin 'L9'
+Plugin 'wincent/command-t'
+Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
+Plugin 'suan/vim-instant-markdown'
+
+call vundle#end()            
+filetype plugin indent on
+</code></pre></td></tr></tbody></table></div></div>
+
+<h3 id="14-第三步">1.4 第三步</h3>
+
+<p>在vim中输入<code class="highlighter-rouge">:PluginInstall</code>来安装插件。</p>
+
+<hr />
+
+<h2 id="2vim-常用插件指南">2.vim 常用插件指南</h2>
+
+<h3 id="21-command-t">2.1 Command-t</h3>
+
+<p>插件<a href="https://github.com/wincent/command-t">地址</a></p>
+
+<p>插件需要安装<code class="highlighter-rouge">ruby</code>，安装完成后，进入目录<code class="highlighter-rouge">~/.vim/bundle/command-t/ruby/command-t</code></p>
+
+<p>执行下方命令：</p>
+
+<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2</pre></td><td class="code"><pre class="highlight"><code>ruby extconf.rb
+make
+</code></pre></td></tr></tbody></table></div></div>
+
+<p>之后进入Vim，输入命令<code class="highlighter-rouge">:CommandT</code>查看效果。</p>
+
+<p>如果提示vim不支持<code class="highlighter-rouge">ruby</code>，则安装<code class="highlighter-rouge">vim-nox</code></p>
+
+<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code>$ sudo apt-get install vim-nox
+</code></pre></td></tr></tbody></table></div></div>
+
+<p>下图，为正常运行图</p>
+
+<p><img src="https://raw.githubusercontent.com/wincent/command-t/media/command-t.gif" alt="" /></p>
+
+<p><strong>简要使用说明</strong></p>
+
+<p><code class="highlighter-rouge">tab</code>为选择切换到文件选择。方向键用了选择文件。<code class="highlighter-rouge">enter</code>确认选择。</p>
+
+<hr />
+
+<h3 id="22-vim中编写markdown与预览">2.2 vim中编写markdown与预览</h3>
+
+<p>需要安装的插件有三个。</p>
+
+<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3</pre></td><td class="code"><pre class="highlight"><code>Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
+Plugin 'suan/vim-instant-markdown'
+</code></pre></td></tr></tbody></table></div></div>
+
+<p>其中<code class="highlighter-rouge">vim-instant-markdown</code>需要安装<code class="highlighter-rouge">nodejs</code>、<code class="highlighter-rouge">npm</code>、<code class="highlighter-rouge">xdg-utils</code>、<code class="highlighter-rouge">nodejs-legacy</code>。</p>
+
+<p>安装<code class="highlighter-rouge">instant-markdown-d</code></p>
+
+<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code>$ sudo npm -g install instant-markdown-d
+</code></pre></td></tr></tbody></table></div></div>
+
+<p>其他需要组件：</p>
+
+<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4</pre></td><td class="code"><pre class="highlight"><code>$ sudo apt-get install nodejs
+$ sudo apt-get install npm
+$ sudo apt-get install xdg-utils
+$ sudo apt-get install nodejs-legacy
+</code></pre></td></tr></tbody></table></div></div>
+
+<p>实现的效果为<code class="highlighter-rouge">浏览器预览</code>与<code class="highlighter-rouge">markdown语法高亮</code></p>
+
+<p>安装完成后效果如下图：</p>
+
+<p><img src="https://dl.dropboxusercontent.com/u/28956267/instant-markdown-demo.gif" alt="" /></p>
+
+<hr />
+
+<h3 id="23-nerdtree">2.3 nerdTree</h3>
+
+<p>参考<a href="https://github.com/scrooloose/nerdtree">地址</a></p>
+
+<p><a href="https://github.com/Xuyuanp/nerdtree-git-plugin">nerdtree-git-plugin</a> git语法提示</p>
+
+<p><a href="https://github.com/jistr/vim-nerdtree-tabs">vim-nerdtree-tabs</a> NERDTree tag控制</p>
+
+<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3</pre></td><td class="code"><pre class="highlight"><code>Plugin 'scrooloose/nerdTree'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
+Plugin 'jistr/vim-nerdtree-tabs'
+</code></pre></td></tr></tbody></table></div></div>
+
+<p><code class="highlighter-rouge">vim</code>中输入<code class="highlighter-rouge">PluginInstall</code>，输入<code class="highlighter-rouge">NERDTree</code>检查是否运行</p>
+
+<p>在<code class="highlighter-rouge">.vimrc</code>中添加设置</p>
+
+<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9<br/>10<br/>11<br/>12<br/>13<br/>14<br/>15<br/>16</pre></td><td class="code"><pre class="highlight"><code>" NERDTRee config NERDTree 设置
+
+autocmd vimenter * NERDTree  “ 当指定文件时，自动随VIM启动。
+
+"未指定文件时，加载NERDTree
+
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 &amp;&amp; !exists("s:std_in") | NERDTree | endif
+
+"隐藏与显示快捷键[Ctrl+n]
+
+map &lt;C-n&gt; :NERDTreeToggle&lt;CR&gt;
+
+"左侧只有一个窗口时，随Vim一起关闭
+
+autocmd bufenter * if (winnr("$") == 1 &amp;&amp; exists("b:NERDTree") &amp;&amp; b:NERDTree.isTabTree()) | q | endif
+</code></pre></td></tr></tbody></table></div></div>
+
+<hr />
+
+
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/ubuntu/2016/07/13/vim/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+        
+        
+        
+        
+          <div class="post-eof"></div>
+        
+      
+    </footer>
+  </article>
+
+  
+    
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type- " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://localhost:4000/ubuntu/2016/07/12/zsh_plugin/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="K11">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/assets/images/21040889_825385437640313_540035783206109184_a.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Keleven.Me">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+                
+                <a class="post-title-link" href="/ubuntu/2016/07/12/zsh_plugin/" itemprop="url">
+                zsh指南
+              </a>
+            
+          
+        </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-07-12T23:30:45+08:00">
+                2016-07-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/category/#/ubuntu" itemprop="url" rel="index">
+                    <span itemprop="name">ubuntu</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/ubuntu/2016/07/12/zsh_plugin/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="/ubuntu/2016/07/12/zsh_plugin/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <h1 id="zsh-plugin">zsh plugin</h1>
+
+<h3 id="zsh-tmux">zsh tmux</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">缩写</th>
+      <th style="text-align: left">命令</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">ta</td>
+      <td style="text-align: left">tmux attach -t</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">ts</td>
+      <td style="text-align: left">tmux new-session -s</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">tl</td>
+      <td style="text-align: left">tmux list-sessions</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">tksv</td>
+      <td style="text-align: left">tmux kill-server</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">tkss</td>
+      <td style="text-align: left">tmux kill-session -t</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="zsh-git">zsh git</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">缩写</th>
+      <th style="text-align: left">命令</th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">g</td>
+      <td style="text-align: left">git</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td style="text-align: left">ga</td>
+      <td style="text-align: left">git add</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td style="text-align: left">gaa</td>
+      <td style="text-align: left">git add –add</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td style="text-align: left">gapa</td>
+      <td style="text-align: left">git add –patsh</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td style="text-align: left">gb</td>
+      <td style="text-align: left">git branch</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td style="text-align: left">gba</td>
+      <td style="text-align: left">git branch -a</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td style="text-align: left">gbnm</td>
+      <td style="text-align: left">git branch –no-merged</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td style="text-align: left">gbr</td>
+      <td style="text-align: left">git branch –remote</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td style="text-align: left">gc</td>
+      <td style="text-align: left">git commit -v</td>
+      <td>可以看到差异</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">gca</td>
+      <td style="text-align: left">git commit -v -a</td>
+      <td>一般提交</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">gcam</td>
+      <td style="text-align: left">git commit -a -m</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td style="text-align: left">gcmsg</td>
+      <td style="text-align: left">git commit -m</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td style="text-align: left">gco</td>
+      <td style="text-align: left">git checkout</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td style="text-align: left">gcm</td>
+      <td style="text-align: left">git checkout master</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td style="text-align: left">gcb</td>
+      <td style="text-align: left">git checkout -b</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td style="text-align: left">gcl</td>
+      <td style="text-align: left">git clone –recursive</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td style="text-align: left">gcf</td>
+      <td style="text-align: left">git config –list</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td style="text-align: left">gd</td>
+      <td style="text-align: left">git diff</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td style="text-align: left">gf</td>
+      <td style="text-align: left">git fetch</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td style="text-align: left">gl</td>
+      <td style="text-align: left">git pull</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td style="text-align: left">gm</td>
+      <td style="text-align: left">git merge</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td style="text-align: left">gmom</td>
+      <td style="text-align: left">git merge origin/master</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td style="text-align: left">gp</td>
+      <td style="text-align: left">git push</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td style="text-align: left">gpd</td>
+      <td style="text-align: left">git push –dry-run</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td style="text-align: left">gpoat</td>
+      <td style="text-align: left">git push origin –all &amp;&amp; git push origin –tags</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td style="text-align: left">gr</td>
+      <td style="text-align: left">git remote</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td style="text-align: left">gra</td>
+      <td style="text-align: left">git remote add</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td style="text-align: left">grmv</td>
+      <td style="text-align: left">git remote rename</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td style="text-align: left">grrm</td>
+      <td style="text-align: left">git remote remove</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td style="text-align: left">grv</td>
+      <td style="text-align: left">git remote -v</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td style="text-align: left">grb</td>
+      <td style="text-align: left">git rebase</td>
+      <td>变基</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">grbm</td>
+      <td style="text-align: left">git rebase master</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td style="text-align: left">grh</td>
+      <td style="text-align: left">git reset HEAD</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td style="text-align: left">grhh</td>
+      <td style="text-align: left">git reset HEAD –hard</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td style="text-align: left">gsb</td>
+      <td style="text-align: left">git status -sb</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td style="text-align: left">gss</td>
+      <td style="text-align: left">git status -s</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td style="text-align: left">gst</td>
+      <td style="text-align: left">git status</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td style="text-align: left">gts</td>
+      <td style="text-align: left">git tag -s</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td style="text-align: left">gtv</td>
+      <td style="text-align: left">git tag</td>
+      <td>sort -V</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="zsh-laravel">zsh laravel</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">缩写</th>
+      <th style="text-align: left">命令</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">la5</td>
+      <td style="text-align: left">php artisan</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">la5cache</td>
+      <td style="text-align: left">php artisan cache:clear</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">la5routes</td>
+      <td style="text-align: left">php artisan route:list</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">la5vendor</td>
+      <td style="text-align: left">php artisan vendor:publish</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="zsh-ubuntu">zsh ubuntu</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">缩写</th>
+      <th style="text-align: left">命令</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">ag</td>
+      <td style="text-align: left">sudo apt-get</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">aga</td>
+      <td style="text-align: left">sudo apt-get autoclean</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">agar</td>
+      <td style="text-align: left">sudo apt-get autoremove</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">agb</td>
+      <td style="text-align: left">sudo apt-get build-dep</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">agc</td>
+      <td style="text-align: left">sudo apt-get clean</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">agd</td>
+      <td style="text-align: left">sudo apt-get dselect-upgrade</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">agi</td>
+      <td style="text-align: left">sudo apt-get install</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">agp</td>
+      <td style="text-align: left">sudo apt-get purge</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">agr</td>
+      <td style="text-align: left">sudo apt-get remove</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">agu</td>
+      <td style="text-align: left">sudo apt-get update</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">agud</td>
+      <td style="text-align: left">sudo apt-get update &amp;&amp; sudo apt-get dist-upgrade</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">agug</td>
+      <td style="text-align: left">sudo apt-get upgrade</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">aguu</td>
+      <td style="text-align: left">sudo apt-get update &amp;&amp; sudo apt-get upgrade</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="zsh-npm">zsh npm</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">缩写</th>
+      <th style="text-align: left">命令</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">npmg</td>
+      <td style="text-align: left">npm i -g</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">npmS</td>
+      <td style="text-align: left">npm i -S</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">npmD</td>
+      <td style="text-align: left">npm i -D</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">npmO</td>
+      <td style="text-align: left">npm outdated</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="zsh-ruby">zsh ruby</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">缩写</th>
+      <th style="text-align: left">命令</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">sgem</td>
+      <td style="text-align: left">sudo gem</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="zsh-bundler">zsh bundler</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">缩写</th>
+      <th style="text-align: left">命令</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">be</td>
+      <td style="text-align: left">bundle exec</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">bl</td>
+      <td style="text-align: left">bundle list</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">bp</td>
+      <td style="text-align: left">bundle package</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">bo</td>
+      <td style="text-align: left">bundle open</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">bout</td>
+      <td style="text-align: left">bundle outdated</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">bu</td>
+      <td style="text-align: left">bundle update</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">bi</td>
+      <td style="text-align: left">bundle install</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">bcn</td>
+      <td style="text-align: left">bundle clean</td>
+    </tr>
+  </tbody>
+</table>
+
+
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/ubuntu/2016/07/12/zsh_plugin/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+        
+        
+        
+        
+          <div class="post-eof"></div>
+        
+      
+    </footer>
+  </article>
+
+  
+    
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type- " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://localhost:4000/ubuntu/2016/07/12/jekyll/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1788,7 +2768,7 @@ http://mirrors.yun-idc.com/archlinux/
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">106</span>
+                <span class="site-state-item-count">108</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
