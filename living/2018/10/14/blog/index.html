@@ -115,7 +115,7 @@
 <meta name="keywords" content="日记, laravel">
 <meta property="og:type" content="article">
 <meta property="og:title" content="11号的份">
-<meta property="og:url" content="http://localhost:4000/living/2018/10/14/blog/">
+<meta property="og:url" content="/living/2018/10/14/blog/">
 <meta property="og:site_name" content="Keleven.Me">
 <meta property="og:description" content="11号的份 队列 将特定 信息通知 推送到指定队列 修改horizon 后 可以使用 $user-&amp;gt;notify((new SendEmail($Token))-&amp;gt;onQueue(&apos;mail&apos;)); 或 use Notification; Notification::send($user, (new SendEmail($Token))-&amp;gt;onQueue(&apos;mail&apos;)); roles 需要注意guard对应 view与models 要注意同步 在blade 中使用时 @role(&apos;role&apos; , &apos;guard&apos;) something @endrole 在路由中使用时 Route::group([&apos;middleware&apos; =&amp;gt; [&apos;auth:admin&apos; , &apos;role:admin&apos;]], function () { }); 也可以在控制器中使用 public function __construct() { $this-&amp;gt;middleware([&apos;role:admin&apos; , &apos;auth:admin&apos;]); } 14号的份 find 与 where 的坑 find 不能准确 查找到对应条目 where 则可以，之后只有有意识的替换find register的后端调整完成了~~~ 大概这种感觉">
 <meta property="og:locale" content="en">
@@ -150,7 +150,7 @@
 
 
 
-  <link rel="canonical" href="http://localhost:4000/"/>
+  <link rel="canonical" href=""/>
 
 
 
@@ -337,7 +337,7 @@
   
 
   <article class="post post-type- " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://localhost:4000/living/2018/10/14/blog/">
+    <link itemprop="mainEntityOfPage" href="/living/2018/10/14/blog/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="K11">
@@ -673,7 +673,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">109</span>
+                <span class="site-state-item-count">110</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
@@ -942,7 +942,7 @@
       
       <script type="text/javascript">
           var disqus_config = function () {
-              this.page.url = 'http://localhost:4000/living/2018/10/14/blog/';
+              this.page.url = '/living/2018/10/14/blog/';
               this.page.identifier = '/living/2018/10/14/blog/';
               this.page.title = '11号的份';
           };

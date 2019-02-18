@@ -83,7 +83,7 @@
 <link href="/assets/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="yubikey,日记," />
+  <meta name="keywords" content="日记," />
 
 
 
@@ -111,19 +111,17 @@
 
 
 
-<meta name="description" content="小记 为什么写日记，写日记可以让心情变好。 精神上的伤害远比肉体上的猛烈！！ 失眠、疲惫、测试bitbeans/Yubikey包。 版本年代久远，手动修改一行，成功攻略。 bitbeans/Yubikey的坑 src\YubiKey.php第376行。 -- while (list($key, $val) = each($rows)) { ++ foreach($rows as $key =&amp;gt; $val){ app/config/yubikey.php中设置CLIENT_ID 与 SECRET_KEY 控制器中使用。 注意：要先验证otp验证identity。 OTP = One Time Password use YubiKey; // 验证OTP 返回 true or false $yubikey_auth = Yubikey::verify(Input::get(&apos;otp&apos;)); // 排部 返回信息 $yubikey_params = Yubikey::getParameters(); // 获取返回信息中的`identity`字段，yubikey的硬件ID，通常捆绑用户名 $yubikey_identity = Yubikey::getParameter(&apos;identity&apos;); yubikey 是什么 简单的说，不能保存文件的u盘，只用来验证身份。 长下面的样子。 可以用来登陆电脑、提供一次性密码等等。 使用时按一下金属部分，就产生一串随机密码，30秒有效，验证窗口为1分30秒。 结合SSH登陆服务器安全性非常高。 什么？你说windows？完全没安全性呢。 还可以用来保存加密的密钥，解密时，要求提供密钥并插入yubikey。加密过文件10年内是不太可能被破解的。 什么？yubikey丢了？嗯，放弃文件吧🤓 这时候用2个yubikey就好了~~😂 最后可以就来加解密电子邮件，Edward Joseph Snowden告诉我们监控无处不在，在不暴露私钥的情况下，加密过的邮件是安全的。 yubikey的私钥解密时要插入USB接口，不丢失的情况下无解。 最后 最后放个公钥，可以用来加密给我的邮件哦~ 欢迎勾搭~ k11@keleven.me -----BEGIN PGP PUBLIC KEY BLOCK----- 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 =7zR2 -----END PGP PUBLIC KEY BLOCK-----">
-<meta name="keywords" content="yubikey, 日记">
+<meta name="description" content="新机器装好了~ 折腾了三天，终于装好了~ vega 64 满载的声音有点大。 先装High Sierra成功的几率比较大。 参考地址1 参考地址2 配置单 组件 型号 CPU intel i9-9900k 主板 华硕 ROG MAXIMUS XI HERO WIFi 显卡 华硕 AREZ-STRIX-RXVEGA64-O8G-GAMING 内存 芝奇 Trident Z RGB 16GB DDR4 3200 （ F4-3200C14D-16GTZR ） ssd 三星 Samsung 970 pro 512G 电源 海盗船 HX850i 散热器 猫头鹰 NH D15S clover efi 使用了最新版 clover configurator 同样使用了最新版 坑 SIP 权限问题 Rt Variables 的 CsrActiveConfig 设置为 0x67 关闭 SIP 完全有效是0x0, 部分有效是 0x3。 关闭后ntfs 可以正挂载了。 DisplayPort 问题 具体原因未知，不过设置Graphics 的 Inject ATI 稳定了许多。 USB 端口不识别问题 使用MultiBeast 安装 Remove XHCI USB Port Limit 后可以使用。 其他MultiBeast 查看 参考地址2。 关机与重启 问题 关机或者重启时不能正常断电。 Boot 中设置slide=0 同时安装 EmuVariableUefi-64.efi ssd 速度修正 安装NvmExpressDxe-64.efi 显示卡顿问题 安装Lilu.kext与 WhateverGreen.kext 使用DP线的色彩问题 使用DisplayPort 色彩更冷了。有重新校色的必要 修复启动项 重命名Microsoft\Boot\bootmgfw.efi 为 bootmgfw-orig.efi bios中找到clover启动项后可以改回。 显卡温度感人 想着以后要不要换水冷~ 暂时这些">
+<meta name="keywords" content="日记">
 <meta property="og:type" content="article">
-<meta property="og:title" content="2017年12月27日">
-<meta property="og:url" content="/living/2017/12/27/blog/">
+<meta property="og:title" content="新机器装好了~">
+<meta property="og:url" content="/living/2019/02/16/blog/">
 <meta property="og:site_name" content="Keleven.Me">
-<meta property="og:description" content="小记 为什么写日记，写日记可以让心情变好。 精神上的伤害远比肉体上的猛烈！！ 失眠、疲惫、测试bitbeans/Yubikey包。 版本年代久远，手动修改一行，成功攻略。 bitbeans/Yubikey的坑 src\YubiKey.php第376行。 -- while (list($key, $val) = each($rows)) { ++ foreach($rows as $key =&amp;gt; $val){ app/config/yubikey.php中设置CLIENT_ID 与 SECRET_KEY 控制器中使用。 注意：要先验证otp验证identity。 OTP = One Time Password use YubiKey; // 验证OTP 返回 true or false $yubikey_auth = Yubikey::verify(Input::get(&apos;otp&apos;)); // 排部 返回信息 $yubikey_params = Yubikey::getParameters(); // 获取返回信息中的`identity`字段，yubikey的硬件ID，通常捆绑用户名 $yubikey_identity = Yubikey::getParameter(&apos;identity&apos;); yubikey 是什么 简单的说，不能保存文件的u盘，只用来验证身份。 长下面的样子。 可以用来登陆电脑、提供一次性密码等等。 使用时按一下金属部分，就产生一串随机密码，30秒有效，验证窗口为1分30秒。 结合SSH登陆服务器安全性非常高。 什么？你说windows？完全没安全性呢。 还可以用来保存加密的密钥，解密时，要求提供密钥并插入yubikey。加密过文件10年内是不太可能被破解的。 什么？yubikey丢了？嗯，放弃文件吧🤓 这时候用2个yubikey就好了~~😂 最后可以就来加解密电子邮件，Edward Joseph Snowden告诉我们监控无处不在，在不暴露私钥的情况下，加密过的邮件是安全的。 yubikey的私钥解密时要插入USB接口，不丢失的情况下无解。 最后 最后放个公钥，可以用来加密给我的邮件哦~ 欢迎勾搭~ k11@keleven.me -----BEGIN PGP PUBLIC KEY BLOCK----- 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 =7zR2 -----END PGP PUBLIC KEY BLOCK-----">
+<meta property="og:description" content="新机器装好了~ 折腾了三天，终于装好了~ vega 64 满载的声音有点大。 先装High Sierra成功的几率比较大。 参考地址1 参考地址2 配置单 组件 型号 CPU intel i9-9900k 主板 华硕 ROG MAXIMUS XI HERO WIFi 显卡 华硕 AREZ-STRIX-RXVEGA64-O8G-GAMING 内存 芝奇 Trident Z RGB 16GB DDR4 3200 （ F4-3200C14D-16GTZR ） ssd 三星 Samsung 970 pro 512G 电源 海盗船 HX850i 散热器 猫头鹰 NH D15S clover efi 使用了最新版 clover configurator 同样使用了最新版 坑 SIP 权限问题 Rt Variables 的 CsrActiveConfig 设置为 0x67 关闭 SIP 完全有效是0x0, 部分有效是 0x3。 关闭后ntfs 可以正挂载了。 DisplayPort 问题 具体原因未知，不过设置Graphics 的 Inject ATI 稳定了许多。 USB 端口不识别问题 使用MultiBeast 安装 Remove XHCI USB Port Limit 后可以使用。 其他MultiBeast 查看 参考地址2。 关机与重启 问题 关机或者重启时不能正常断电。 Boot 中设置slide=0 同时安装 EmuVariableUefi-64.efi ssd 速度修正 安装NvmExpressDxe-64.efi 显示卡顿问题 安装Lilu.kext与 WhateverGreen.kext 使用DP线的色彩问题 使用DisplayPort 色彩更冷了。有重新校色的必要 修复启动项 重命名Microsoft\Boot\bootmgfw.efi 为 bootmgfw-orig.efi bios中找到clover启动项后可以改回。 显卡温度感人 想着以后要不要换水冷~ 暂时这些">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="https://i.loli.net/2017/12/27/5a435d53dd617.png">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="2017年12月27日">
-<meta name="twitter:description" content="小记 为什么写日记，写日记可以让心情变好。 精神上的伤害远比肉体上的猛烈！！ 失眠、疲惫、测试bitbeans/Yubikey包。 版本年代久远，手动修改一行，成功攻略。 bitbeans/Yubikey的坑 src\YubiKey.php第376行。 -- while (list($key, $val) = each($rows)) { ++ foreach($rows as $key =&amp;gt; $val){ app/config/yubikey.php中设置CLIENT_ID 与 SECRET_KEY 控制器中使用。 注意：要先验证otp验证identity。 OTP = One Time Password use YubiKey; // 验证OTP 返回 true or false $yubikey_auth = Yubikey::verify(Input::get(&apos;otp&apos;)); // 排部 返回信息 $yubikey_params = Yubikey::getParameters(); // 获取返回信息中的`identity`字段，yubikey的硬件ID，通常捆绑用户名 $yubikey_identity = Yubikey::getParameter(&apos;identity&apos;); yubikey 是什么 简单的说，不能保存文件的u盘，只用来验证身份。 长下面的样子。 可以用来登陆电脑、提供一次性密码等等。 使用时按一下金属部分，就产生一串随机密码，30秒有效，验证窗口为1分30秒。 结合SSH登陆服务器安全性非常高。 什么？你说windows？完全没安全性呢。 还可以用来保存加密的密钥，解密时，要求提供密钥并插入yubikey。加密过文件10年内是不太可能被破解的。 什么？yubikey丢了？嗯，放弃文件吧🤓 这时候用2个yubikey就好了~~😂 最后可以就来加解密电子邮件，Edward Joseph Snowden告诉我们监控无处不在，在不暴露私钥的情况下，加密过的邮件是安全的。 yubikey的私钥解密时要插入USB接口，不丢失的情况下无解。 最后 最后放个公钥，可以用来加密给我的邮件哦~ 欢迎勾搭~ k11@keleven.me -----BEGIN PGP PUBLIC KEY BLOCK----- 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 =7zR2 -----END PGP PUBLIC KEY BLOCK-----">
-<meta name="twitter:image" content="https://i.loli.net/2017/12/27/5a435d53dd617.png">
+<meta name="twitter:title" content="新机器装好了~">
+<meta name="twitter:description" content="新机器装好了~ 折腾了三天，终于装好了~ vega 64 满载的声音有点大。 先装High Sierra成功的几率比较大。 参考地址1 参考地址2 配置单 组件 型号 CPU intel i9-9900k 主板 华硕 ROG MAXIMUS XI HERO WIFi 显卡 华硕 AREZ-STRIX-RXVEGA64-O8G-GAMING 内存 芝奇 Trident Z RGB 16GB DDR4 3200 （ F4-3200C14D-16GTZR ） ssd 三星 Samsung 970 pro 512G 电源 海盗船 HX850i 散热器 猫头鹰 NH D15S clover efi 使用了最新版 clover configurator 同样使用了最新版 坑 SIP 权限问题 Rt Variables 的 CsrActiveConfig 设置为 0x67 关闭 SIP 完全有效是0x0, 部分有效是 0x3。 关闭后ntfs 可以正挂载了。 DisplayPort 问题 具体原因未知，不过设置Graphics 的 Inject ATI 稳定了许多。 USB 端口不识别问题 使用MultiBeast 安装 Remove XHCI USB Port Limit 后可以使用。 其他MultiBeast 查看 参考地址2。 关机与重启 问题 关机或者重启时不能正常断电。 Boot 中设置slide=0 同时安装 EmuVariableUefi-64.efi ssd 速度修正 安装NvmExpressDxe-64.efi 显示卡顿问题 安装Lilu.kext与 WhateverGreen.kext 使用DP线的色彩问题 使用DisplayPort 色彩更冷了。有重新校色的必要 修复启动项 重命名Microsoft\Boot\bootmgfw.efi 为 bootmgfw-orig.efi bios中找到clover启动项后可以改回。 显卡温度感人 想着以后要不要换水冷~ 暂时这些">
 
 
 <script type="text/javascript" id="hexo.configurations">
@@ -156,7 +154,7 @@
 
 
 
-  <title>2017年12月27日 | Keleven.Me</title>
+  <title>新机器装好了~ | Keleven.Me</title>
   
 
 
@@ -337,7 +335,7 @@
   
 
   <article class="post post-type- " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="/living/2017/12/27/blog/">
+    <link itemprop="mainEntityOfPage" href="/living/2019/02/16/blog/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="K11">
@@ -357,7 +355,7 @@
           <h1 class="post-title" itemprop="name headline">
           
           
-            2017年12月27日
+            新机器装好了~
           
         </h1>
         
@@ -371,8 +369,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-12-27T09:00:00+08:00">
-                2017-12-27
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-02-16T08:00:00+08:00">
+                2019-02-16
               </time>
             
 
@@ -413,9 +411,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/living/2017/12/27/blog/#comments" itemprop="discussionUrl">
+                <a href="/living/2019/02/16/blog/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="/living/2017/12/27/blog/" itemprop="commentCount"></span>
+                        data-disqus-identifier="/living/2019/02/16/blog/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -461,118 +459,112 @@
 
 
 
-  <h1 id="小记">小记</h1>
+  <h1 id="新机器装好了">新机器装好了~</h1>
 
-<p>为什么写日记，写日记可以让心情变好。</p>
+<p>折腾了三天，终于装好了~</p>
 
-<p>精神上的伤害远比肉体上的猛烈！！</p>
+<p><code class="highlighter-rouge">vega 64</code> 满载的声音有点大。</p>
 
-<p>失眠、疲惫、测试<code class="highlighter-rouge">bitbeans/Yubikey</code>包。</p>
+<p>先装<code class="highlighter-rouge">High Sierra</code>成功的几率比较大。</p>
 
-<p>版本年代久远，手动修改一行，成功攻略。</p>
+<p><a href="https://www.tonymacx86.com/threads/success-asus-rog-maximus-hero-xi-i9-9900k-gtx-1070.267236/">参考地址1</a></p>
 
-<h2 id="bitbeansyubikey的坑"><code class="highlighter-rouge">bitbeans/Yubikey</code>的坑</h2>
+<p><a href="https://www.tonymacx86.com/threads/storks-myhero-ii-build-asus-rog-maximus-z370-hero-x-i7-8700k-amd-rx-580.245074/">参考地址2</a></p>
 
-<p><code class="highlighter-rouge">src\YubiKey.php</code>第376行。</p>
+<p>配置单</p>
 
-<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2</pre></td><td class="code"><pre class="highlight"><code>--  while (list($key, $val) = each($rows)) {
-++  foreach($rows as $key =&gt; $val){
-</code></pre></td></tr></tbody></table></div></div>
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">组件</th>
+      <th style="text-align: left">型号</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">CPU</td>
+      <td style="text-align: left">intel i9-9900k</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">主板</td>
+      <td style="text-align: left">华硕 ROG MAXIMUS XI HERO WIFi</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">显卡</td>
+      <td style="text-align: left">华硕 AREZ-STRIX-RXVEGA64-O8G-GAMING</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">内存</td>
+      <td style="text-align: left">芝奇 Trident Z RGB 16GB DDR4 3200 （ F4-3200C14D-16GTZR ）</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">ssd</td>
+      <td style="text-align: left">三星 Samsung 970 pro 512G</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">电源</td>
+      <td style="text-align: left">海盗船 HX850i</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">散热器</td>
+      <td style="text-align: left">猫头鹰 NH D15S</td>
+    </tr>
+  </tbody>
+</table>
 
-<p><code class="highlighter-rouge">app/config/yubikey.php</code>中设置<code class="highlighter-rouge">CLIENT_ID</code> 与 <code class="highlighter-rouge">SECRET_KEY</code>
-控制器中使用。
-注意：要先验证<code class="highlighter-rouge">otp</code>验证<code class="highlighter-rouge">identity</code>。
-OTP = One Time Password</p>
+<p><code class="highlighter-rouge">clover efi</code> 使用了最新版</p>
 
-<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8</pre></td><td class="code"><pre class="highlight"><code>use YubiKey;
+<p><code class="highlighter-rouge">clover configurator</code> 同样使用了最新版</p>
 
-// 验证OTP 返回 true or false
-$yubikey_auth = Yubikey::verify(Input::get('otp'));
-// 排部 返回信息
-$yubikey_params = Yubikey::getParameters();
-// 获取返回信息中的`identity`字段，yubikey的硬件ID，通常捆绑用户名
-$yubikey_identity = Yubikey::getParameter('identity');
-</code></pre></td></tr></tbody></table></div></div>
+<h2 id="坑">坑</h2>
 
-<h2 id="yubikey-是什么">yubikey 是什么</h2>
+<h3 id="sip-权限问题">SIP 权限问题</h3>
 
-<p>简单的说，不能保存文件的u盘，只用来验证身份。
-长下面的样子。</p>
+<p><code class="highlighter-rouge">Rt Variables</code> 的 <code class="highlighter-rouge">CsrActiveConfig</code> 设置为 <code class="highlighter-rouge">0x67</code> 关闭 <code class="highlighter-rouge">SIP</code></p>
 
-<p><img src="https://i.loli.net/2017/12/27/5a435d53dd617.png" alt="yubikey-4-series-sept-2017-444x444" /></p>
+<p>完全有效是<code class="highlighter-rouge">0x0</code>, 部分有效是 <code class="highlighter-rouge">0x3</code>。</p>
 
-<p>可以用来登陆电脑、提供一次性密码等等。 使用时按一下金属部分，就产生一串随机密码，30秒有效，验证窗口为1分30秒。</p>
+<p>关闭后<code class="highlighter-rouge">ntfs</code> 可以正挂载了。</p>
 
-<p>结合SSH登陆服务器安全性非常高。</p>
+<h3 id="displayport-问题">DisplayPort 问题</h3>
 
-<p><strong>什么？你说windows？完全没安全性呢。</strong></p>
+<p>具体原因未知，不过设置<code class="highlighter-rouge">Graphics</code> 的 <code class="highlighter-rouge">Inject ATI</code> 稳定了许多。</p>
 
-<p>还可以用来保存加密的密钥，解密时，要求提供密钥并插入yubikey。加密过文件10年内是不太可能被破解的。</p>
+<h3 id="usb-端口不识别问题">USB 端口不识别问题</h3>
 
-<p><strong>什么？yubikey丢了？嗯，放弃文件吧🤓</strong>
-这时候用2个yubikey就好了~~😂</p>
+<p>使用<code class="highlighter-rouge">MultiBeast</code> 安装 <code class="highlighter-rouge">Remove XHCI USB Port Limit</code> 后可以使用。</p>
 
-<p>最后可以就来加解密电子邮件，<code class="highlighter-rouge">Edward Joseph Snowden</code>告诉我们监控无处不在，在不暴露私钥的情况下，加密过的邮件是安全的。</p>
+<p>其他<code class="highlighter-rouge">MultiBeast</code> 查看 <code class="highlighter-rouge">参考地址2</code>。</p>
 
-<p><code class="highlighter-rouge">yubikey</code>的私钥解密时要插入USB接口，不丢失的情况下无解。</p>
+<h3 id="关机与重启-问题">关机与重启 问题</h3>
 
-<h2 id="最后">最后</h2>
+<p>关机或者重启时不能正常断电。</p>
 
-<p>最后放个公钥，可以用来加密给我的邮件哦~ 欢迎勾搭~</p>
+<p><code class="highlighter-rouge">Boot</code> 中设置<code class="highlighter-rouge">slide=0</code> 同时安装 <code class="highlighter-rouge">EmuVariableUefi-64.efi</code></p>
 
-<p>k11@keleven.me</p>
+<h3 id="ssd-速度修正">ssd 速度修正</h3>
 
-<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9<br/>10<br/>11<br/>12<br/>13<br/>14<br/>15<br/>16<br/>17<br/>18<br/>19<br/>20<br/>21<br/>22<br/>23<br/>24<br/>25<br/>26<br/>27<br/>28<br/>29<br/>30<br/>31<br/>32<br/>33<br/>34<br/>35<br/>36<br/>37<br/>38<br/>39<br/>40<br/>41<br/>42<br/>43<br/>44<br/>45<br/>46<br/>47<br/>48<br/>49<br/>50</pre></td><td class="code"><pre class="highlight"><code>-----BEGIN PGP PUBLIC KEY BLOCK-----
-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
-=7zR2
------END PGP PUBLIC KEY BLOCK-----
-</code></pre></td></tr></tbody></table></div></div>
+<p>安装<code class="highlighter-rouge">NvmExpressDxe-64.efi</code></p>
+
+<h3 id="显示卡顿问题">显示卡顿问题</h3>
+
+<p>安装<code class="highlighter-rouge">Lilu.kext</code>与 <code class="highlighter-rouge">WhateverGreen.kext</code></p>
+
+<h3 id="使用dp线的色彩问题">使用DP线的色彩问题</h3>
+
+<p>使用<code class="highlighter-rouge">DisplayPort</code> 色彩更冷了。有重新校色的必要</p>
+
+<h3 id="修复启动项">修复启动项</h3>
+
+<p>重命名<code class="highlighter-rouge">Microsoft\Boot\bootmgfw.efi</code> 为 <code class="highlighter-rouge">bootmgfw-orig.efi</code></p>
+
+<p><code class="highlighter-rouge">bios</code>中找到<code class="highlighter-rouge">clover</code>启动项后可以改回。</p>
+
+<h3 id="显卡温度感人">显卡温度感人</h3>
+
+<p>想着以后要不要换水冷~</p>
+
+<h2 id="暂时这些">暂时这些</h2>
 
 
       
@@ -604,9 +596,6 @@ kDSEWJun3tv0R0zNtv494ZfD29MmQEi1RFV1qbGEW4LlP19jnNhlr3pP2Xt18Kg=
         <div class="post-tags">
           
             
-            <a href="/tag/#/yubikey" rel="tag"># yubikey</a>
-          
-            
             <a href="/tag/#/%E6%97%A5%E8%AE%B0" rel="tag"># 日记</a>
           
         </div>
@@ -623,18 +612,14 @@ kDSEWJun3tv0R0zNtv494ZfD29MmQEi1RFV1qbGEW4LlP19jnNhlr3pP2Xt18Kg=
         <div class="post-nav" id="post-nav-id">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/living/2018/01/21/blog/" rel="next" title="2018年01月21日">
-                <i class="fa fa-chevron-left"></i> 2018年01月21日
-              </a>
-            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/living/2017/12/24/blog/" rel="prev" title="ssh使用公钥 与 yubikey OTP">
-                ssh使用公钥 与 yubikey OTP <i class="fa fa-chevron-right"></i>
+              <a href="/living/2019/02/10/blog/" rel="prev" title="一些记录">
+                一些记录 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -823,7 +808,7 @@ kDSEWJun3tv0R0zNtv494ZfD29MmQEi1RFV1qbGEW4LlP19jnNhlr3pP2Xt18Kg=
             
               <div class="post-toc-content">
     <ol class=nav>
-      <li class="nav-item nav-level-1"> <a class="nav-link" href="#小记"> <span class="nav-number">1</span> <span class="nav-text">小记</span> </a> <ol class="nav-child"> <li class="nav-item nav-level-2"> <a class="nav-link" href="#bitbeansyubikey的坑"> <span class="nav-number">1.1</span> <span class="nav-text">bitbeans/Yubikey的坑</span> </a> </li> <li class="nav-item nav-level-2"> <a class="nav-link" href="#yubikey-是什么"> <span class="nav-number">1.2</span> <span class="nav-text">yubikey 是什么</span> </a> </li> <li class="nav-item nav-level-2"> <a class="nav-link" href="#最后"> <span class="nav-number">1.3</span> <span class="nav-text">最后</span> </a> </li> </ol> </li>
+      <li class="nav-item nav-level-1"> <a class="nav-link" href="#新机器装好了"> <span class="nav-number">1</span> <span class="nav-text">新机器装好了~</span> </a> <ol class="nav-child"> <li class="nav-item nav-level-2"> <a class="nav-link" href="#坑"> <span class="nav-number">1.1</span> <span class="nav-text">坑</span> </a> <ol class="nav-child"> <li class="nav-item nav-level-3"> <a class="nav-link" href="#sip-权限问题"> <span class="nav-number">1.1.1</span> <span class="nav-text">SIP 权限问题</span> </a> </li> <li class="nav-item nav-level-3"> <a class="nav-link" href="#displayport-问题"> <span class="nav-number">1.1.2</span> <span class="nav-text">DisplayPort 问题</span> </a> </li> <li class="nav-item nav-level-3"> <a class="nav-link" href="#usb-端口不识别问题"> <span class="nav-number">1.1.3</span> <span class="nav-text">USB 端口不识别问题</span> </a> </li> <li class="nav-item nav-level-3"> <a class="nav-link" href="#关机与重启-问题"> <span class="nav-number">1.1.4</span> <span class="nav-text">关机与重启 问题</span> </a> </li> <li class="nav-item nav-level-3"> <a class="nav-link" href="#ssd-速度修正"> <span class="nav-number">1.1.5</span> <span class="nav-text">ssd 速度修正</span> </a> </li> <li class="nav-item nav-level-3"> <a class="nav-link" href="#显示卡顿问题"> <span class="nav-number">1.1.6</span> <span class="nav-text">显示卡顿问题</span> </a> </li> <li class="nav-item nav-level-3"> <a class="nav-link" href="#使用dp线的色彩问题"> <span class="nav-number">1.1.7</span> <span class="nav-text">使用DP线的色彩问题</span> </a> </li> <li class="nav-item nav-level-3"> <a class="nav-link" href="#修复启动项"> <span class="nav-number">1.1.8</span> <span class="nav-text">修复启动项</span> </a> </li> <li class="nav-item nav-level-3"> <a class="nav-link" href="#显卡温度感人"> <span class="nav-number">1.1.9</span> <span class="nav-text">显卡温度感人</span> </a> </li> </ol> </li> <li class="nav-item nav-level-2"> <a class="nav-link" href="#暂时这些"> <span class="nav-number">1.2</span> <span class="nav-text">暂时这些</span> </a> </li> </ol> </li>
     </ol>
   </div>
             
@@ -992,9 +977,9 @@ kDSEWJun3tv0R0zNtv494ZfD29MmQEi1RFV1qbGEW4LlP19jnNhlr3pP2Xt18Kg=
       
       <script type="text/javascript">
           var disqus_config = function () {
-              this.page.url = '/living/2017/12/27/blog/';
-              this.page.identifier = '/living/2017/12/27/blog/';
-              this.page.title = '2017年12月27日';
+              this.page.url = '/living/2019/02/16/blog/';
+              this.page.identifier = '/living/2019/02/16/blog/';
+              this.page.title = '新机器装好了~';
           };
           var d = document, s = d.createElement('script');
           s.src = 'https://keleven.disqus.com/embed.js';

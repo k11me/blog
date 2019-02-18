@@ -115,7 +115,7 @@
 <meta name="keywords" content="Jekyll, NexT">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Keleven.Me">
-<meta property="og:url" content="http://localhost:4000/page2/">
+<meta property="og:url" content="/page2/">
 <meta property="og:site_name" content="Keleven.Me">
 <meta property="og:description" content="千变万化的是世界">
 <meta property="og:locale" content="en">
@@ -148,7 +148,7 @@
 
 
 
-  <link rel="canonical" href="http://localhost:4000/"/>
+  <link rel="canonical" href=""/>
 
 
 
@@ -338,7 +338,219 @@
   
 
   <article class="post post-type- " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://localhost:4000/living/2018/12/12/blog/">
+    <link itemprop="mainEntityOfPage" href="/living/2018/12/18/blog/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="K11">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/assets/images/21040889_825385437640313_540035783206109184_a.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Keleven.Me">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+                
+                <a class="post-title-link" href="/living/2018/12/18/blog/" itemprop="url">
+                日常
+              </a>
+            
+          
+        </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-18T08:00:00+08:00">
+                2018-12-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/category/#/Living" itemprop="url" rel="index">
+                    <span itemprop="name">Living</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/living/2018/12/18/blog/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="/living/2018/12/18/blog/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <h1 id="日常">日常</h1>
+
+<p>砖酱人脸识别速度不高呢</p>
+
+<p>换了钢化膜 解锁速度起飞~~ 都是膜的错</p>
+
+<h1 id="vue-的坑">vue 的坑</h1>
+
+<p>使用组件时<code class="highlighter-rouge">props</code></p>
+
+<p>如果直接复制数组，刚数组变化时<code class="highlighter-rouge">props</code> 中的值也会变化。</p>
+
+<p>这就非常不利于对数据进行调整了。</p>
+
+<p>使用</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code><span class="nx">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="p">.</span><span class="nx">array</span><span class="p">))</span>
+</code></pre></td></tr></tbody></table></div></div>
+
+<p>这样用解决了<code class="highlighter-rouge">array</code> 数据被改变的问题</p>
+
+<p>如果<code class="highlighter-rouge">props</code> 中没有嵌套 <code class="highlighter-rouge">array</code> 或 <code class="highlighter-rouge">object</code></p>
+
+<p>可以使用</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code><span class="nb">Object</span><span class="p">.</span><span class="nx">assign</span><span class="p">({},</span> <span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="p">)</span>
+</code></pre></td></tr></tbody></table></div></div>
+
+<h1 id="一对多-的坑">一对多 的坑</h1>
+
+<p><code class="highlighter-rouge">laravel</code>一对多写入时 并不如想的容易</p>
+
+<p>改用多对多轻松解决了</p>
+
+
+
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/living/2018/12/18/blog/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+        
+        
+        
+        
+          <div class="post-eof"></div>
+        
+      
+    </footer>
+  </article>
+
+  
+    
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type- " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="/living/2018/12/12/blog/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="K11">
@@ -539,7 +751,7 @@
   
 
   <article class="post post-type- " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://localhost:4000/living/2018/12/06/blog/">
+    <link itemprop="mainEntityOfPage" href="/living/2018/12/06/blog/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="K11">
@@ -777,7 +989,7 @@
   
 
   <article class="post post-type- " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://localhost:4000/living/2018/12/03/blog/">
+    <link itemprop="mainEntityOfPage" href="/living/2018/12/03/blog/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="K11">
@@ -987,7 +1199,7 @@
   
 
   <article class="post post-type- " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://localhost:4000/living/2018/11/25/blog/">
+    <link itemprop="mainEntityOfPage" href="/living/2018/11/25/blog/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="K11">
@@ -1291,7 +1503,7 @@
   
 
   <article class="post post-type- " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://localhost:4000/living/2018/11/20/blog/">
+    <link itemprop="mainEntityOfPage" href="/living/2018/11/20/blog/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="K11">
@@ -1523,7 +1735,7 @@
   
 
   <article class="post post-type- " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://localhost:4000/living/2018/11/11/blog/">
+    <link itemprop="mainEntityOfPage" href="/living/2018/11/11/blog/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="K11">
@@ -1765,7 +1977,7 @@
   
 
   <article class="post post-type- " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://localhost:4000/living/2018/11/03/blog/">
+    <link itemprop="mainEntityOfPage" href="/living/2018/11/03/blog/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="K11">
@@ -2070,7 +2282,7 @@
   
 
   <article class="post post-type- " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://localhost:4000/living/2018/11/01/blog/">
+    <link itemprop="mainEntityOfPage" href="/living/2018/11/01/blog/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="K11">
@@ -2299,7 +2511,7 @@
   
 
   <article class="post post-type- " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://localhost:4000/living/2018/10/25/blog/">
+    <link itemprop="mainEntityOfPage" href="/living/2018/10/25/blog/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="K11">
@@ -2504,238 +2716,6 @@
         
         
         
-          <div class="post-eof"></div>
-        
-      
-    </footer>
-  </article>
-
-  
-    
-    
-
-  
-
-  
-  
-  
-
-  <article class="post post-type- " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://localhost:4000/living/2018/10/21/blog/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="K11">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/assets/images/21040889_825385437640313_540035783206109184_a.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Keleven.Me">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-                
-                <a class="post-title-link" href="/living/2018/10/21/blog/" itemprop="url">
-                使用 postman 进行 post
-              </a>
-            
-          
-        </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-21T08:00:00+08:00">
-                2018-10-21
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/category/#/Living" itemprop="url" rel="index">
-                    <span itemprop="name">Living</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/living/2018/10/21/blog/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="/living/2018/10/21/blog/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-  
-  
-
-
-
-
-
-
-
-
-
-
-
-
-  <h1 id="使用-postman-进行-post">使用 postman 进行 post</h1>
-
-<p>使用<code class="highlighter-rouge">postman</code> 直接 <code class="highlighter-rouge">post</code> 的方法</p>
-
-<p><code class="highlighter-rouge">laravel</code> 本身有<code class="highlighter-rouge">CSRF</code> 直接使用<code class="highlighter-rouge">post</code> 、 <code class="highlighter-rouge">put</code> 等等会被阻断</p>
-
-<p>找到一个可以解决办法</p>
-
-<h2 id="postman-chrome-插件版本">postman chrome 插件版本</h2>
-
-<p>新建一个<code class="highlighter-rouge">environment</code> 并切换到新建，右上⚙位置</p>
-
-<p>找一个<code class="highlighter-rouge">get</code>请求 在<code class="highlighter-rouge">Tests</code>标签下输入</p>
-
-<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2</pre></td><td class="code"><pre class="highlight"><code>var xsrfCookie = postman.getResponseCookie("XSRF-TOKEN");
-postman.setEnvironmentVariable("XSRF-TOKEN", xsrfCookie.value);
-</code></pre></td></tr></tbody></table></div></div>
-
-<p>`` 对应该的是第二行要注意下。</p>
-
-<p>用于获取<code class="highlighter-rouge">XSRF-TOKEN</code>的值。</p>
-
-<p>查看<code class="highlighter-rouge">environment</code>中 <code class="highlighter-rouge">XSRF-TOKEN</code> 是否被正确传入。右上👁位置</p>
-
-<p>确认后在<code class="highlighter-rouge">post</code> 的<code class="highlighter-rouge">Headers</code> 中添加</p>
-
-<p><code class="highlighter-rouge">X-XSRF-TOKEN : </code></p>
-
-<p>之后就可以正常提交<code class="highlighter-rouge">post</code>了</p>
-
-<p><strong>注意：laravel XSRF-TOKEN 有时效性 注意更新</strong></p>
-
-<p>当<code class="highlighter-rouge">XSRF-TOKEN</code> 中有特殊字符，例如<code class="highlighter-rouge">%</code>时，<code class="highlighter-rouge">laravel X-XSRF-TOKEN</code> 验证会失败</p>
-
-<p>主要是为<code class="highlighter-rouge">postman</code> 对<code class="highlighter-rouge">XSRF-TOKEN</code>识别有问题，桌面版本没有这个问题</p>
-
-<h2 id="postman-桌面版">postman 桌面版</h2>
-
-<p>同上<code class="highlighter-rouge">Tests</code>标签可以写成</p>
-
-<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code>pm.environment.set("xsrf-token", decodeURIComponent(pm.cookies.get("XSRF-TOKEN")))
-</code></pre></td></tr></tbody></table></div></div>
-
-<p>使用<code class="highlighter-rouge">laravel valet</code> 时，<code class="highlighter-rouge">postman</code>不能正确访问域名……</p>
-
-<p>原因<code class="highlighter-rouge">valet</code>产生的<code class="highlighter-rouge">SSL</code>证书，所以被阻挡，手动关闭后正常使用</p>
-
-<p>要关闭的位置</p>
-
-<p><code class="highlighter-rouge">settings</code> -&gt; <code class="highlighter-rouge">SSL certificate verifcation</code> -&gt; <code class="highlighter-rouge">off</code></p>
-
-<p>之后就可以正常使用了</p>
-
-<p>使用<code class="highlighter-rouge">valet</code>时 <code class="highlighter-rouge">link</code> 与 <code class="highlighter-rouge">park</code> 混用会报错！</p>
-
-
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/living/2018/10/21/blog/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-        
-        
-        
-        
       
     </footer>
   </article>
@@ -2797,7 +2777,7 @@ postman.setEnvironmentVariable("XSRF-TOKEN", xsrfCookie.value);
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">109</span>
+                <span class="site-state-item-count">110</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>

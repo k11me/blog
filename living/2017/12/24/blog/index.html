@@ -115,7 +115,7 @@
 <meta name="keywords" content="yubikey, ssh, ubuntu">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ssh使用公钥 与 yubikey OTP">
-<meta property="og:url" content="http://localhost:4000/living/2017/12/24/blog/">
+<meta property="og:url" content="/living/2017/12/24/blog/">
 <meta property="og:site_name" content="Keleven.Me">
 <meta property="og:description" content="修改ssh 使用公钥 与 yubikey OTP ssh 部分 在 ~/.ssh/authorized_keys中添加公钥。没有文件则手动创建。 修改sudo nano /etc/ssh/sshd_config中的 修改 SSH 登陆端口 Port 22 可选 禁止Root用户密码登陆 PermitRootLogin without-password 重启SSH服务 yubikey 部分 添加yubikey软件源 sudo add-apt-repository ppa:yubico/stable sudo apt-get update sudo apt-get install libpam-yubico 在/etc/pam.d/sshd 中添加id,key sudo nano /etc/pam.d/sshd auth sufficient pam_yubico.so id=&amp;lt;ID&amp;gt; key=&amp;lt;API_KEY&amp;gt; debug authfile=/etc/yubikey_mappings mode=client 创建/etc/yubikey_mappings 设置用户与对应的yubikey sudo nano /etc/yubikey_mappings &amp;lt;user1&amp;gt;:&amp;lt;cccccyubikey1&amp;gt;:&amp;lt;cccccyubikey2&amp;gt; &amp;lt;user2&amp;gt;:&amp;lt;cccccyubikey3&amp;gt; 设置ssh sudo nano /etc/ssh/sshd_config 修改ChallengeResponseAuthentication no为yes ChallengeResponseAuthentication yes 增加 AuthenticationMethods publickey,keyboard-interactive:pam 重启SSH sudo service sshd restart 参考文档 1 参考文档 2">
 <meta property="og:locale" content="en">
@@ -148,7 +148,7 @@
 
 
 
-  <link rel="canonical" href="http://localhost:4000/"/>
+  <link rel="canonical" href=""/>
 
 
 
@@ -335,7 +335,7 @@
   
 
   <article class="post post-type- " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://localhost:4000/living/2017/12/24/blog/">
+    <link itemprop="mainEntityOfPage" href="/living/2017/12/24/blog/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="K11">
@@ -675,7 +675,7 @@ sudo apt-get install libpam-yubico
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">109</span>
+                <span class="site-state-item-count">110</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
@@ -944,7 +944,7 @@ sudo apt-get install libpam-yubico
       
       <script type="text/javascript">
           var disqus_config = function () {
-              this.page.url = 'http://localhost:4000/living/2017/12/24/blog/';
+              this.page.url = '/living/2017/12/24/blog/';
               this.page.identifier = '/living/2017/12/24/blog/';
               this.page.title = 'ssh使用公钥 与 yubikey OTP';
           };

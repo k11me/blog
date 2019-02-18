@@ -115,7 +115,7 @@
 <meta name="keywords" content="ubuntu">
 <meta property="og:type" content="article">
 <meta property="og:title" content="vim 学习指南">
-<meta property="og:url" content="http://localhost:4000/ubuntu/2016/07/13/vim/">
+<meta property="og:url" content="/ubuntu/2016/07/13/vim/">
 <meta property="og:site_name" content="Keleven.Me">
 <meta property="og:description" content="vim 使用指南 1.vim 插件管理器 1.1 Vundle git仓库 安装文档有中文指南。 1.2 第一步 $ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim 1.3 第二步 对.vimrc文件进行设置。 begin()和end()之间的为可以添加的插件。 插件添加支持多种格式。 set rtp+=~/.vim/bundle/Vundle.vim call vundle#begin() Plugin &apos;VundleVim/Vundle.vim&apos; Plugin &apos;tpope/vim-fugitive&apos; Plugin &apos;L9&apos; Plugin &apos;wincent/command-t&apos; Plugin &apos;godlygeek/tabular&apos; Plugin &apos;plasticboy/vim-markdown&apos; Plugin &apos;suan/vim-instant-markdown&apos; call vundle#end() filetype plugin indent on 1.4 第三步 在vim中输入:PluginInstall来安装插件。 2.vim 常用插件指南 2.1 Command-t 插件地址 插件需要安装ruby，安装完成后，进入目录~/.vim/bundle/command-t/ruby/command-t 执行下方命令： ruby extconf.rb make 之后进入Vim，输入命令:CommandT查看效果。 如果提示vim不支持ruby，则安装vim-nox $ sudo apt-get install vim-nox 下图，为正常运行图 简要使用说明 tab为选择切换到文件选择。方向键用了选择文件。enter确认选择。 2.2 vim中编写markdown与预览 需要安装的插件有三个。 Plugin &apos;godlygeek/tabular&apos; Plugin &apos;plasticboy/vim-markdown&apos; Plugin &apos;suan/vim-instant-markdown&apos; 其中vim-instant-markdown需要安装nodejs、npm、xdg-utils、nodejs-legacy。 安装instant-markdown-d $ sudo npm -g install instant-markdown-d 其他需要组件： $ sudo apt-get install nodejs $ sudo apt-get install npm $ sudo apt-get install xdg-utils $ sudo apt-get install nodejs-legacy 实现的效果为浏览器预览与markdown语法高亮 安装完成后效果如下图： 2.3 nerdTree 参考地址 nerdtree-git-plugin git语法提示 vim-nerdtree-tabs NERDTree tag控制 Plugin &apos;scrooloose/nerdTree&apos; Plugin &apos;Xuyuanp/nerdtree-git-plugin&apos; Plugin &apos;jistr/vim-nerdtree-tabs&apos; vim中输入PluginInstall，输入NERDTree检查是否运行 在.vimrc中添加设置 &quot; NERDTRee config NERDTree 设置 autocmd vimenter * NERDTree “ 当指定文件时，自动随VIM启动。 &quot;未指定文件时，加载NERDTree autocmd StdinReadPre * let s:std_in=1 autocmd VimEnter * if argc() == 0 &amp;amp;&amp;amp; !exists(&quot;s:std_in&quot;) | NERDTree | endif &quot;隐藏与显示快捷键[Ctrl+n] map &amp;lt;C-n&amp;gt; :NERDTreeToggle&amp;lt;CR&amp;gt; &quot;左侧只有一个窗口时，随Vim一起关闭 autocmd bufenter * if (winnr(&quot;$&quot;) == 1 &amp;amp;&amp;amp; exists(&quot;b:NERDTree&quot;) &amp;amp;&amp;amp; b:NERDTree.isTabTree()) | q | endif">
 <meta property="og:locale" content="en">
@@ -151,7 +151,7 @@
 
 
 
-  <link rel="canonical" href="http://localhost:4000/"/>
+  <link rel="canonical" href=""/>
 
 
 
@@ -338,7 +338,7 @@
   
 
   <article class="post post-type- " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://localhost:4000/ubuntu/2016/07/13/vim/">
+    <link itemprop="mainEntityOfPage" href="/ubuntu/2016/07/13/vim/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="K11">
@@ -750,7 +750,7 @@ autocmd bufenter * if (winnr("$") == 1 &amp;&amp; exists("b:NERDTree") &amp;&amp
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">109</span>
+                <span class="site-state-item-count">110</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
@@ -1019,7 +1019,7 @@ autocmd bufenter * if (winnr("$") == 1 &amp;&amp; exists("b:NERDTree") &amp;&amp
       
       <script type="text/javascript">
           var disqus_config = function () {
-              this.page.url = 'http://localhost:4000/ubuntu/2016/07/13/vim/';
+              this.page.url = '/ubuntu/2016/07/13/vim/';
               this.page.identifier = '/ubuntu/2016/07/13/vim/';
               this.page.title = 'vim 学习指南';
           };
