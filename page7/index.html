@@ -338,6 +338,510 @@
   
 
   <article class="post post-type- " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="/living/2018/04/15/blog/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="K11">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/assets/images/21040889_825385437640313_540035783206109184_a.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Keleven.Me">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+                
+                <a class="post-title-link" href="/living/2018/04/15/blog/" itemprop="url">
+                laravel 5.5 升级到 5.6
+              </a>
+            
+          
+        </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-15T08:01:00+08:00">
+                2018-04-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/category/#/Living" itemprop="url" rel="index">
+                    <span itemprop="name">Living</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/living/2018/04/15/blog/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="/living/2018/04/15/blog/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <h1 id="脑子混乱停一下">脑子混乱停一下</h1>
+
+<p>前后端分离与游戏部分</p>
+
+<p>admin 与 user 需要不同的入口</p>
+
+<p>数据部分有一些是通用的，分离 admin 域 与 user 域 是有必要的</p>
+
+<p>admin verify 将 config 提取出来有一定优势</p>
+
+<p>quasar还是要加强的</p>
+
+<p>码力 图力 不足…… 但是没什么用……</p>
+
+<h1 id="laravel-upgrading-to-560-from-55">laravel Upgrading To 5.6.0 From 5.5</h1>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5</pre></td><td class="code"><pre class="highlight"><code><span class="w">        </span><span class="s2">"darkaonline/l5-swagger"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5.6.*"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"fideloper/proxy"</span><span class="p">:</span><span class="w"> </span><span class="s2">"~4.0"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"laravel/framework"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5.6.*"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"laravel/passport"</span><span class="p">:</span><span class="w"> </span><span class="s2">"^5.0"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"phpunit/phpunit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"~7.0"</span><span class="w">
+</span></code></pre></td></tr></tbody></table></div></div>
+
+<p>之后会出现错误</p>
+
+<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code>Type error: Argument 2 passed to Symfony\Component\HttpFoundation\Request::setTrustedProxies() must be of the type integer, array given, called in /Users/k11/laravel/web/vendor/fideloper/proxy/src/TrustProxies.php on line 5
+</code></pre></td></tr></tbody></table></div></div>
+
+<p>对应<a href="https://laravel.com/docs/5.6/upgrade#upgrade-5.6.0">upgrade Trusted Proxies</a></p>
+
+<p><code class="highlighter-rouge">App\Http\Middleware\TrustProxies</code></p>
+
+<p>改</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7</pre></td><td class="code"><pre class="highlight"><code>    <span class="k">protected</span> <span class="nv">$headers</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="nx">Request</span><span class="o">::</span><span class="na">HEADER_FORWARDED</span> <span class="o">=&gt;</span> <span class="s1">'FORWARDED'</span><span class="p">,</span>
+        <span class="nx">Request</span><span class="o">::</span><span class="na">HEADER_X_FORWARDED_FOR</span> <span class="o">=&gt;</span> <span class="s1">'X_FORWARDED_FOR'</span><span class="p">,</span>
+        <span class="nx">Request</span><span class="o">::</span><span class="na">HEADER_X_FORWARDED_HOST</span> <span class="o">=&gt;</span> <span class="s1">'X_FORWARDED_HOST'</span><span class="p">,</span>
+        <span class="nx">Request</span><span class="o">::</span><span class="na">HEADER_X_FORWARDED_PORT</span> <span class="o">=&gt;</span> <span class="s1">'X_FORWARDED_PORT'</span><span class="p">,</span>
+        <span class="nx">Request</span><span class="o">::</span><span class="na">HEADER_X_FORWARDED_PROTO</span> <span class="o">=&gt;</span> <span class="s1">'X_FORWARDED_PROTO'</span><span class="p">,</span>
+    <span class="p">];</span>
+</code></pre></td></tr></tbody></table></div></div>
+
+<p>为</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code><span class="k">protected</span> <span class="nv">$headers</span> <span class="o">=</span> <span class="nx">Request</span><span class="o">::</span><span class="na">HEADER_X_FORWARDED_ALL</span><span class="p">;</span> 
+</code></pre></td></tr></tbody></table></div></div>
+
+<h2 id="bootstrap-4">Bootstrap 4</h2>
+
+<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2</pre></td><td class="code"><pre class="highlight"><code>npm uninstall --save-dev bootstrap-sass
+npm install bootstrap popper.js
+</code></pre></td></tr></tbody></table></div></div>
+
+<h3 id="resourcesassetsjsbootstrapjs">resources/assets/js/bootstrap.js</h3>
+
+<p>中</p>
+
+<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5</pre></td><td class="code"><pre class="highlight"><code>try {
+    window.$ = window.jQuery = require('jquery');
+
+    require('bootstrap-sass');
+} catch (e) {}
+</code></pre></td></tr></tbody></table></div></div>
+<p>改为</p>
+
+<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5</pre></td><td class="code"><pre class="highlight"><code>try {
+    window.$ = window.jQuery = require('jquery');
+
+    require('bootstrap');
+} catch (e) {}
+</code></pre></td></tr></tbody></table></div></div>
+
+<p>添加</p>
+
+<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code>window.Popper = require('popper.js').default;
+</code></pre></td></tr></tbody></table></div></div>
+
+<h3 id="resourcesassetssassappscss">resources/assets/sass/app.scss</h3>
+
+<p>中</p>
+
+<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code>@import “~bootstrap-sass/assets/stylesheets/bootstrap”
+</code></pre></td></tr></tbody></table></div></div>
+
+<p>改为</p>
+
+<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6</pre></td><td class="code"><pre class="highlight"><code>@import “~bootstrap/scss/bootstrap.scss”
+
+.navbar-laravel {
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+</code></pre></td></tr></tbody></table></div></div>
+
+<h3 id="resourcesassetssass_variablesscss">resources/assets/sass/_variables.scss</h3>
+
+<p>删除全部内容后写入</p>
+
+<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9<br/>10<br/>11<br/>12<br/>13</pre></td><td class="code"><pre class="highlight"><code>// Fonts
+@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
+
+// Variables
+@import "variables";
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+.navbar-laravel {
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+</code></pre></td></tr></tbody></table></div></div>
+
+<h3 id="方法二">方法二</h3>
+
+<p>直接复制<code class="highlighter-rouge">laravel 5.6</code> 版本的 <code class="highlighter-rouge">resources</code> <code class="highlighter-rouge">package.json</code> 到 <code class="highlighter-rouge">laravel 5.5</code>下覆盖。</p>
+
+<h2 id="swagger">swagger</h2>
+
+<p>在<code class="highlighter-rouge">config/l5-swagger</code>中设置好<code class="highlighter-rouge">passport</code>后使用下方代码引入每个请求</p>
+
+<p><code class="highlighter-rouge">l5-swagger</code>中使用的是<code class="highlighter-rouge">password</code>方式，所以不必限制请求地址</p>
+
+<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3</pre></td><td class="code"><pre class="highlight"><code>*     security={
+*         {"passport": {}}
+*     },
+</code></pre></td></tr></tbody></table></div></div>
+
+<h1 id="mailserver-修复">mailserver 修复</h1>
+
+<p>起因 mac os 上不能登录邮箱了，手机却可以。查看logs发现是错误如下</p>
+
+<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code>TLS handshaking: SSL_accept() failed 
+</code></pre></td></tr></tbody></table></div></div>
+
+<p>查找issues得知<code class="highlighter-rouge">tomav/docker-mailserver</code>更新</p>
+
+<p>增加一个新变量</p>
+
+<p><code class="highlighter-rouge">TLS_LEVEL</code> 要想兼容老 Mac OS 要设置为<code class="highlighter-rouge">intermediate</code></p>
+
+<h1 id="以上">以上</h1>
+
+
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/living/2018/04/15/blog/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+        
+        
+        
+        
+          <div class="post-eof"></div>
+        
+      
+    </footer>
+  </article>
+
+  
+    
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type- " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="/living/2018/04/12/blog/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="K11">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/assets/images/21040889_825385437640313_540035783206109184_a.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Keleven.Me">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+                
+                <a class="post-title-link" href="/living/2018/04/12/blog/" itemprop="url">
+                2018年04月12日
+              </a>
+            
+          
+        </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-12T08:01:00+08:00">
+                2018-04-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/category/#/Living" itemprop="url" rel="index">
+                    <span itemprop="name">Living</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/living/2018/04/12/blog/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="/living/2018/04/12/blog/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <h1>……</h1>
+
+<p>小弟走了只能自己上了，对手是说着相同语言的同胞，脑子不好吧。</p>
+
+<p>虚妄的野心只会带来毁灭……</p>
+
+
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/living/2018/04/12/blog/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+        
+        
+        
+        
+          <div class="post-eof"></div>
+        
+      
+    </footer>
+  </article>
+
+  
+    
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type- " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="/living/2018/04/11/blog/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -2401,434 +2905,6 @@ if ($http_upgrade = "websocket" ) {
         
         
         
-          <div class="post-eof"></div>
-        
-      
-    </footer>
-  </article>
-
-  
-    
-    
-
-  
-
-  
-  
-  
-
-  <article class="post post-type- " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="/living/2018/02/22/blog/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="K11">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/assets/images/21040889_825385437640313_540035783206109184_a.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Keleven.Me">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-                
-                <a class="post-title-link" href="/living/2018/02/22/blog/" itemprop="url">
-                2018年02月22日
-              </a>
-            
-          
-        </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-22T09:00:00+08:00">
-                2018-02-22
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/category/#/Living" itemprop="url" rel="index">
-                    <span itemprop="name">Living</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/living/2018/02/22/blog/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="/living/2018/02/22/blog/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-  
-  
-
-
-
-
-
-
-
-
-
-
-
-
-  <h2 id="小记">小记</h2>
-
-<p><code class="highlighter-rouge">quasar-cli</code>升级到了<code class="highlighter-rouge">0.15.1</code> 与之前版本不兼容……</p>
-
-<p>不支持<code class="highlighter-rouge">quasar-play</code></p>
-
-<p>目录结构有所调整，比之前清晰多了，加上一次编程构建<code class="highlighter-rouge">PWA</code>、<code class="highlighter-rouge">Cordova</code>、<code class="highlighter-rouge">Electron</code>全平台大礼包。</p>
-
-<p>和预想的一样，<code class="highlighter-rouge">android</code>就是坑多。</p>
-
-<h2 id="安装-java-8">安装 JAVA 8</h2>
-
-<p><code class="highlighter-rouge">Android Studio</code>依然不好下载。墙！墙！墙！ 略烦。</p>
-
-<p>需要<code class="highlighter-rouge">java</code>……，直接使用<code class="highlighter-rouge">brew cask install java</code>安装是<code class="highlighter-rouge">9.0+</code>版本，不兼容<code class="highlighter-rouge">Cordova</code>需要装<code class="highlighter-rouge">java8</code>,方法如下</p>
-
-<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2</pre></td><td class="code"><pre class="highlight"><code>brew tap caskroom/versions
-brew cask install java8
-</code></pre></td></tr></tbody></table></div></div>
-
-<p>使用<code class="highlighter-rouge">/usr/libexec/java_home -V</code>查看本机安装的<code class="highlighter-rouge">JDK</code></p>
-
-<p>安装<code class="highlighter-rouge">jenv</code>用于管理与切换<code class="highlighter-rouge">java</code>版本<code class="highlighter-rouge">brew install jenv</code></p>
-
-<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2</pre></td><td class="code"><pre class="highlight"><code>echo 'export PATH="$HOME/.jenv/bin:$PATH"' &gt;&gt; ~/.zshrc
-echo 'eval "$(jenv init -)"' &gt;&gt; ~/.zshrc
-</code></pre></td></tr></tbody></table></div></div>
-
-<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3</pre></td><td class="code"><pre class="highlight"><code>jenv add /Library/Java/JavaVirtualMachines/jdk-9.0.4.jdk/Contents/Home
-jenv add /Library/Java/JavaVirtualMachines/jdk1.8.0_162.jdk/Contents/Home
-jenv global 1.8.0.162
-</code></pre></td></tr></tbody></table></div></div>
-
-<p>需要重启使用<code class="highlighter-rouge">java -version</code>检查设置</p>
-
-<p>其他设置方法。</p>
-
-<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2</pre></td><td class="code"><pre class="highlight"><code>jenv local 1.8.0.162
-jenv shell 1.8.0.162
-</code></pre></td></tr></tbody></table></div></div>
-
-<h2 id="安装-android-studio">安装 Android Studio</h2>
-
-<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code>brew cask install android-studio
-</code></pre></td></tr></tbody></table></div></div>
-
-<p>之后还是要等……</p>
-
-<h2 id="zshrc">zshrc</h2>
-
-<p>编辑<code class="highlighter-rouge">~/.zshrc</code>，并添加下方代码</p>
-
-<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3</pre></td><td class="code"><pre class="highlight"><code>export ANDROID_HOME="$HOME/Library/Android/sdk"
-export PATH=$PATH:$ANDROID_HOME/tools
-export PATH=$PATH:$ANDROID_HOME/platform-tools
-</code></pre></td></tr></tbody></table></div></div>
-
-<h2 id="cordova-构建需要-gradle">Cordova 构建需要 gradle</h2>
-
-<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code>brew install gradle
-</code></pre></td></tr></tbody></table></div></div>
-
-
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/living/2018/02/22/blog/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-        
-        
-        
-        
-          <div class="post-eof"></div>
-        
-      
-    </footer>
-  </article>
-
-  
-    
-    
-
-  
-
-  
-  
-  
-
-  <article class="post post-type- " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="/living/2018/02/18/blog/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="K11">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/assets/images/21040889_825385437640313_540035783206109184_a.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Keleven.Me">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-                
-                <a class="post-title-link" href="/living/2018/02/18/blog/" itemprop="url">
-                2018年02月18日
-              </a>
-            
-          
-        </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-18T09:00:00+08:00">
-                2018-02-18
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/category/#/Living" itemprop="url" rel="index">
-                    <span itemprop="name">Living</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/living/2018/02/18/blog/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="/living/2018/02/18/blog/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-  
-  
-
-
-
-
-
-
-
-
-
-
-
-
-  <h2 id="心情">心情</h2>
-
-<p>真让人恶心，自己什么都不做，却幻想着得到巨额的回报。</p>
-
-<p>不觉得中彩票的几率更大吗。</p>
-
-<p>满心的小算盘，当别人看不出来吗。</p>
-
-<p>想如愿，呵呵，等着去吧。管你是谁，都别做梦了。</p>
-
-<p>现在心情与吃了苍蝇差不多。</p>
-
-
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/living/2018/02/18/blog/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-        
-        
-        
-        
       
     </footer>
   </article>
@@ -2844,7 +2920,7 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools
 
 
 
-    <a class="extend prev" rel="prev" href="/page6"><i class="fa fa-angle-left"></i></a> <a class="page-number" href="/">1</a> <span class="space">&hellip;</span> <a class="page-number" href="/page6">6</a> <span class="page-number current">7</span> <a class="page-number" href="/page8">8</a> <span class="space">&hellip;</span> <a class="page-number" href="/page11">11</a> <a class="extend prev" rel="next" href="/page8"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page6"><i class="fa fa-angle-left"></i></a> <a class="page-number" href="/">1</a> <span class="space">&hellip;</span> <a class="page-number" href="/page6">6</a> <span class="page-number current">7</span> <a class="page-number" href="/page8">8</a> <span class="space">&hellip;</span> <a class="page-number" href="/page12">12</a> <a class="extend prev" rel="next" href="/page8"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -2890,7 +2966,7 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">110</span>
+                <span class="site-state-item-count">112</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>

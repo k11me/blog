@@ -2,6 +2,42 @@
 <search>
   
     <entry>
+      <title><![CDATA[vue 上传]]></title>
+      <url>/living/2019/03/04/blog/</url>
+      <content type="text"><![CDATA[vue 上传文件在vue中确认上传的文件input标签中设置ref&lt;input type="file" ref="FileUp" class="custom-file-input" id="customFile" @change="FileUpload"&gt;&lt;label class="custom-file-label" for="customFile"&gt;&lt;/label&gt;FileUpload() {	if (!this.$refs.FileUp.files.length) {		this.upform.upfile = ''	}else{		this.upform.upfile = this.$refs.FileUp.files[0]		this.upform.name = this.$refs.FileUp.files[0].name	}},随后文件可以正常上传。自动获取文件名bootstrap 4中自动载入文件名需要使用bs-custom-file-input包npm install bs-custom-file-input --savevue 中使用mounted() {	this.getFileName()},methods: {	getFileName() {		$('.custom-file-input').on('change', function() {			let fileName = $(this).val().split('\\').pop();			$(this).siblings('.custom-file-label').addClass('selected').html(fileName);		});	},}之后再选择文件后，input便签可以自动显示文件名。axios 中上传文件方法上传文件时，需要headers为multipart/form-data。注意请求时使用formData不能使用formformData 中数据使用append()传入formData.append('file', this.upform.upfile)注意laravel中数据名称对应axios.post('/game/json' , formData ,{	headers: {		'Content-Type': 'multipart/form-data'	}}).then( response =&gt; {		console.log(response.data)});]]></content>
+      <categories>
+        
+          <category> Living </category>
+        
+      </categories>
+      <tags>
+        
+          <tag> 日记 </tag>
+        
+          <tag> vue </tag>
+        
+      </tags>
+      <tags></tags>
+    </entry>
+  
+    <entry>
+      <title><![CDATA[日常]]></title>
+      <url>/living/2019/02/28/blog/</url>
+      <content type="text"><![CDATA[19日顺利升级到了Mojave~~用起来还是不错的~23日调整风扇位置改善散热改水冷的方案深入心中……现在的东西连螺丝的质量都严重下降……稍微拧一拧就花了……要是上扭力起子估计是秒蹦……还有某游戏带私货也是……天朝反应也是有趣…… 上行下效28日Mojave睡眠有问题，暂时没找到解决办法。]]></content>
+      <categories>
+        
+          <category> Living </category>
+        
+      </categories>
+      <tags>
+        
+          <tag> 日记 </tag>
+        
+      </tags>
+      <tags></tags>
+    </entry>
+  
+    <entry>
       <title><![CDATA[新机器装好了~]]></title>
       <url>/living/2019/02/16/blog/</url>
       <content type="text"><![CDATA[新机器装好了~折腾了三天，终于装好了~vega 64 满载的声音有点大。先装High Sierra成功的几率比较大。参考地址1参考地址2配置单            组件      型号                  CPU      intel i9-9900k              主板      华硕 ROG MAXIMUS XI HERO WIFi              显卡      华硕 AREZ-STRIX-RXVEGA64-O8G-GAMING              内存      芝奇 Trident Z RGB 16GB DDR4 3200 （ F4-3200C14D-16GTZR ）              ssd      三星 Samsung 970 pro 512G              电源      海盗船 HX850i              散热器      猫头鹰 NH D15S      clover efi 使用了最新版clover configurator 同样使用了最新版坑SIP 权限问题Rt Variables 的 CsrActiveConfig 设置为 0x67 关闭 SIP完全有效是0x0, 部分有效是 0x3。关闭后ntfs 可以正挂载了。DisplayPort 问题具体原因未知，不过设置Graphics 的 Inject ATI 稳定了许多。USB 端口不识别问题使用MultiBeast 安装 Remove XHCI USB Port Limit 后可以使用。其他MultiBeast 查看 参考地址2。关机与重启 问题关机或者重启时不能正常断电。Boot 中设置slide=0 同时安装 EmuVariableUefi-64.efissd 速度修正安装NvmExpressDxe-64.efi显示卡顿问题安装Lilu.kext与 WhateverGreen.kext使用DP线的色彩问题使用DisplayPort 色彩更冷了。有重新校色的必要修复启动项重命名Microsoft\Boot\bootmgfw.efi 为 bootmgfw-orig.efibios中找到clover启动项后可以改回。显卡温度感人想着以后要不要换水冷~暂时这些]]></content>

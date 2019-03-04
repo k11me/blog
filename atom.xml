@@ -1,4 +1,100 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="/atom.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2019-02-18T13:38:01+08:00</updated><id>/atom.xml</id><title type="html">Keleven.Me</title><subtitle>千变万化的是世界</subtitle><author><name>K11</name></author><entry><title type="html">新机器装好了~</title><link href="/living/2019/02/16/blog/" rel="alternate" type="text/html" title="新机器装好了~" /><published>2019-02-16T08:00:00+08:00</published><updated>2019-02-16T08:00:00+08:00</updated><id>/living/2019/02/16/blog</id><content type="html" xml:base="/living/2019/02/16/blog/">&lt;h1 id=&quot;新机器装好了&quot;&gt;新机器装好了~&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="/atom.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2019-03-04T13:26:30+08:00</updated><id>/atom.xml</id><title type="html">Keleven.Me</title><subtitle>千变万化的是世界</subtitle><author><name>K11</name></author><entry><title type="html">vue 上传</title><link href="/living/2019/03/04/blog/" rel="alternate" type="text/html" title="vue 上传" /><published>2019-03-04T08:00:00+08:00</published><updated>2019-03-04T08:00:00+08:00</updated><id>/living/2019/03/04/blog</id><content type="html" xml:base="/living/2019/03/04/blog/">&lt;h1 id=&quot;vue-上传文件&quot;&gt;vue 上传文件&lt;/h1&gt;
+
+&lt;h2 id=&quot;在vue中确认上传的文件&quot;&gt;在vue中确认上传的文件&lt;/h2&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;input&lt;/code&gt;标签中设置&lt;code class=&quot;highlighter-rouge&quot;&gt;ref&lt;/code&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;input&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;file&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;ref=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;FileUp&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;custom-file-input&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;customFile&quot;&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;change=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;FileUpload&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;label&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;custom-file-label&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;for=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;customFile&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/label&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-vue highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;FileUpload() {
+	if (!this.$refs.FileUp.files.length) {
+		this.upform.upfile = ''
+	}else{
+		this.upform.upfile = this.$refs.FileUp.files[0]
+		this.upform.name = this.$refs.FileUp.files[0].name
+	}
+},
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;随后文件可以正常上传。&lt;/p&gt;
+
+&lt;h2 id=&quot;自动获取文件名&quot;&gt;自动获取文件名&lt;/h2&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;bootstrap 4&lt;/code&gt;中自动载入文件名需要使用&lt;code class=&quot;highlighter-rouge&quot;&gt;bs-custom-file-input&lt;/code&gt;包&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;npm install bs-custom-file-input --save
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;vue 中使用&lt;/p&gt;
+
+&lt;div class=&quot;language-vue highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;mounted() {
+	this.getFileName()
+},
+
+methods: {
+	getFileName() {
+		$('.custom-file-input').on('change', function() {
+			let fileName = $(this).val().split('\\').pop();
+			$(this).siblings('.custom-file-label').addClass('selected').html(fileName);
+		});
+	},
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;之后再选择文件后，&lt;code class=&quot;highlighter-rouge&quot;&gt;input&lt;/code&gt;便签可以自动显示文件名。&lt;/p&gt;
+
+&lt;h2 id=&quot;axios-中上传文件方法&quot;&gt;axios 中上传文件方法&lt;/h2&gt;
+
+&lt;p&gt;上传文件时，需要&lt;code class=&quot;highlighter-rouge&quot;&gt;headers&lt;/code&gt;为&lt;code class=&quot;highlighter-rouge&quot;&gt;multipart/form-data&lt;/code&gt;。&lt;/p&gt;
+
+&lt;p&gt;注意请求时使用&lt;code class=&quot;highlighter-rouge&quot;&gt;formData&lt;/code&gt;不能使用&lt;code class=&quot;highlighter-rouge&quot;&gt;form&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;formData&lt;/code&gt; 中数据使用&lt;code class=&quot;highlighter-rouge&quot;&gt;append()&lt;/code&gt;传入&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;formData.append('file', this.upform.upfile)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;注意&lt;code class=&quot;highlighter-rouge&quot;&gt;laravel&lt;/code&gt;中数据名称对应&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;axios.post('/game/json' , formData ,
+{
+	headers: {
+		'Content-Type': 'multipart/form-data'
+	}
+}).then( response =&amp;gt; {
+		console.log(response.data)
+});
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>K11</name></author><category term="日记" /><category term="vue" /><summary type="html">vue 上传文件 在vue中确认上传的文件 input标签中设置ref &amp;lt;input type=&quot;file&quot; ref=&quot;FileUp&quot; class=&quot;custom-file-input&quot; id=&quot;customFile&quot; @change=&quot;FileUpload&quot;&amp;gt; &amp;lt;label class=&quot;custom-file-label&quot; for=&quot;customFile&quot;&amp;gt;&amp;lt;/label&amp;gt; FileUpload() { if (!this.$refs.FileUp.files.length) { this.upform.upfile = '' }else{ this.upform.upfile = this.$refs.FileUp.files[0] this.upform.name = this.$refs.FileUp.files[0].name } }, 随后文件可以正常上传。 自动获取文件名 bootstrap 4中自动载入文件名需要使用bs-custom-file-input包 npm install bs-custom-file-input --save vue 中使用 mounted() { this.getFileName() }, methods: { getFileName() { $('.custom-file-input').on('change', function() { let fileName = $(this).val().split('\\').pop(); $(this).siblings('.custom-file-label').addClass('selected').html(fileName); }); }, } 之后再选择文件后，input便签可以自动显示文件名。 axios 中上传文件方法 上传文件时，需要headers为multipart/form-data。 注意请求时使用formData不能使用form formData 中数据使用append()传入 formData.append('file', this.upform.upfile) 注意laravel中数据名称对应 axios.post('/game/json' , formData , { headers: { 'Content-Type': 'multipart/form-data' } }).then( response =&amp;gt; { console.log(response.data) });</summary></entry><entry><title type="html">日常</title><link href="/living/2019/02/28/blog/" rel="alternate" type="text/html" title="日常" /><published>2019-02-28T08:00:00+08:00</published><updated>2019-02-28T08:00:00+08:00</updated><id>/living/2019/02/28/blog</id><content type="html" xml:base="/living/2019/02/28/blog/">&lt;h1 id=&quot;19日&quot;&gt;19日&lt;/h1&gt;
+
+&lt;p&gt;顺利升级到了&lt;code class=&quot;highlighter-rouge&quot;&gt;Mojave&lt;/code&gt;~~&lt;/p&gt;
+
+&lt;p&gt;用起来还是不错的~&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;23日&quot;&gt;23日&lt;/h1&gt;
+
+&lt;p&gt;调整风扇位置改善散热&lt;/p&gt;
+
+&lt;p&gt;改水冷的方案深入心中……&lt;/p&gt;
+
+&lt;p&gt;现在的东西连螺丝的质量都严重下降……&lt;/p&gt;
+
+&lt;p&gt;稍微拧一拧就花了……&lt;/p&gt;
+
+&lt;p&gt;要是上扭力起子估计是秒蹦……&lt;/p&gt;
+
+&lt;p&gt;还有某游戏带私货也是……&lt;/p&gt;
+
+&lt;p&gt;天朝反应也是有趣…… 上行下效&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;28日&quot;&gt;28日&lt;/h1&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Mojave&lt;/code&gt;睡眠有问题，暂时没找到解决办法。&lt;/p&gt;</content><author><name>K11</name></author><category term="日记" /><summary type="html">19日 顺利升级到了Mojave~~ 用起来还是不错的~ 23日 调整风扇位置改善散热 改水冷的方案深入心中…… 现在的东西连螺丝的质量都严重下降…… 稍微拧一拧就花了…… 要是上扭力起子估计是秒蹦…… 还有某游戏带私货也是…… 天朝反应也是有趣…… 上行下效 28日 Mojave睡眠有问题，暂时没找到解决办法。</summary></entry><entry><title type="html">新机器装好了~</title><link href="/living/2019/02/16/blog/" rel="alternate" type="text/html" title="新机器装好了~" /><published>2019-02-16T08:00:00+08:00</published><updated>2019-02-16T08:00:00+08:00</updated><id>/living/2019/02/16/blog</id><content type="html" xml:base="/living/2019/02/16/blog/">&lt;h1 id=&quot;新机器装好了&quot;&gt;新机器装好了~&lt;/h1&gt;
 
 &lt;p&gt;折腾了三天，终于装好了~&lt;/p&gt;
 
@@ -397,96 +493,4 @@ valet restart
 
 &lt;p&gt;管理员操作部分终于要完成了~~&lt;/p&gt;
 
-&lt;p&gt;安静果然是最重要的！&lt;/p&gt;</content><author><name>K11</name></author><category term="日记" /><category term="laravel" /><summary type="html">6号的份 laravel 队列的坑 laravel job 的初始函数中不能使用 嵌套 型数组 否则 会 报错 Serialization of 'Closure' is not allowed 优先程度很高，而且不容易发现。是在logs不能正常写入的时候发现的 官方说最好与 models 一起使用 将 原有数组 重构 勉强 解决了 之后是批量 写入 与 写入数据 自动验证了 当然api 进行。 操作最简化是目的~~ 以上 PS: 情况越来越严峻 8号的份 api token 自动化进程过半 管理员操作部分终于要完成了~~ 安静果然是最重要的！</summary></entry><entry><title type="html">新年了~</title><link href="/living/2019/01/01/blog/" rel="alternate" type="text/html" title="新年了~" /><published>2019-01-01T08:00:00+08:00</published><updated>2019-01-01T08:00:00+08:00</updated><id>/living/2019/01/01/blog</id><content type="html" xml:base="/living/2019/01/01/blog/">&lt;h1 id=&quot;新年快乐&quot;&gt;新年快乐！&lt;/h1&gt;
-
-&lt;h1 id=&quot;这一年学到的东西很多很多&quot;&gt;这一年学到的东西很多很多&lt;/h1&gt;
-
-&lt;p&gt;看到 &lt;code class=&quot;highlighter-rouge&quot;&gt;Blender&lt;/code&gt; 还是那么反人类也是安心了&lt;/p&gt;
-
-&lt;p&gt;不过新功能确实引起了兴趣，能使建模速度快不少，姑且是一个好消息。&lt;/p&gt;
-
-&lt;p&gt;多少还是知道经络不通的，偶尔疼一条也是酸爽……&lt;/p&gt;
-
-&lt;p&gt;2018年 有70次更新呢~&lt;/p&gt;
-
-&lt;p&gt;blog 使用率 还是不错的 :-D&lt;/p&gt;
-
-&lt;h1 id=&quot;刺客信条奥德赛&quot;&gt;刺客信条:奥德赛&lt;/h1&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;steam&lt;/code&gt; 圣诞活动入手了，&lt;code class=&quot;highlighter-rouge&quot;&gt;bug&lt;/code&gt;有点多，游戏体验不错。&lt;/p&gt;
-
-&lt;p&gt;啊啊啊，机器真的要更新了。希望能顺利更新啊~&lt;/p&gt;
-
-&lt;p&gt;试轴器也看好了~&lt;/p&gt;
-
-&lt;p&gt;准备的超级充分啊~~&lt;/p&gt;
-
-&lt;h1 id=&quot;数据请求&quot;&gt;数据请求&lt;/h1&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;logs&lt;/code&gt; 保存使用列队了，速度上升，在可以接受的范围之内了。&lt;/p&gt;
-
-&lt;p&gt;使用&lt;code class=&quot;highlighter-rouge&quot;&gt;api&lt;/code&gt;对数据操作操作完成了。&lt;/p&gt;
-
-&lt;p&gt;之后麻烦的是数据的显示部分了。&lt;/p&gt;
-
-&lt;p&gt;啊啊啊~ 要做的&lt;code class=&quot;highlighter-rouge&quot;&gt;UI&lt;/code&gt; 好多啊~&lt;/p&gt;
-
-&lt;p&gt;要整理安排下……&lt;/p&gt;
-
-&lt;p&gt;一个部分完成后，总是不知道下面要做什么&lt;/p&gt;
-
-&lt;p&gt;主要是自己操纵的东西有点大……&lt;/p&gt;
-
-&lt;p&gt;批量导入要上线呢……&lt;/p&gt;
-
-&lt;p&gt;使用&lt;code class=&quot;highlighter-rouge&quot;&gt;codemessage&lt;/code&gt; 更新权限部分还没有完成先记录下来&lt;/p&gt;</content><author><name>K11</name></author><category term="日记" /><category term="laravel" /><summary type="html">新年快乐！ 这一年学到的东西很多很多 看到 Blender 还是那么反人类也是安心了 不过新功能确实引起了兴趣，能使建模速度快不少，姑且是一个好消息。 多少还是知道经络不通的，偶尔疼一条也是酸爽…… 2018年 有70次更新呢~ blog 使用率 还是不错的 :-D 刺客信条:奥德赛 steam 圣诞活动入手了，bug有点多，游戏体验不错。 啊啊啊，机器真的要更新了。希望能顺利更新啊~ 试轴器也看好了~ 准备的超级充分啊~~ 数据请求 logs 保存使用列队了，速度上升，在可以接受的范围之内了。 使用api对数据操作操作完成了。 之后麻烦的是数据的显示部分了。 啊啊啊~ 要做的UI 好多啊~ 要整理安排下…… 一个部分完成后，总是不知道下面要做什么 主要是自己操纵的东西有点大…… 批量导入要上线呢…… 使用codemessage 更新权限部分还没有完成先记录下来</summary></entry><entry><title type="html">连接部分完成了</title><link href="/living/2018/12/24/blog/" rel="alternate" type="text/html" title="连接部分完成了" /><published>2018-12-24T08:00:00+08:00</published><updated>2018-12-24T08:00:00+08:00</updated><id>/living/2018/12/24/blog</id><content type="html" xml:base="/living/2018/12/24/blog/">&lt;h1 id=&quot;连接部分完成了&quot;&gt;连接部分完成了&lt;/h1&gt;
-
-&lt;p&gt;进度有点慢……&lt;/p&gt;
-
-&lt;p&gt;主要是心情问题……&lt;/p&gt;
-
-&lt;p&gt;耳机断梁，零件遥遥无期，&lt;/p&gt;
-
-&lt;p&gt;环境噪音很烦，新版的暂时还不想入&lt;/p&gt;
-
-&lt;p&gt;￥ 2400 RMB 并不廉价……&lt;/p&gt;
-
-&lt;p&gt;问题是旧的硬件并没有坏，只是外壳坏了……&lt;/p&gt;
-
-&lt;p&gt;对于喜爱事物的执著也是……&lt;/p&gt;
-
-&lt;p&gt;心塞……&lt;/p&gt;
-
-&lt;h1 id=&quot;看好了一款新键盘&quot;&gt;看好了一款新键盘&lt;/h1&gt;
-
-&lt;p&gt;键盘的优点是可以快速更改轴体，同时有&lt;code class=&quot;highlighter-rouge&quot;&gt;RGB&lt;/code&gt;功能&lt;/p&gt;
-
-&lt;p&gt;写在这里留用&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.massdrop.com/buy/massdrop-ctrl-mechanical-keyboard&quot;&gt;Massdrop CTRL Mechanical Keyboard&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;鼠标 就选定 &lt;code class=&quot;highlighter-rouge&quot;&gt;罗技g903&lt;/code&gt;无线套装了&lt;/p&gt;
-
-&lt;p&gt;标准键位的的键盘也渐渐适应了&lt;/p&gt;
-
-&lt;p&gt;用久了 手指还是会疼……&lt;/p&gt;
-
-&lt;p&gt;难道是我打开方式不对？&lt;/p&gt;
-
-&lt;p&gt;雷蛇到好处之一是能与飞利浦hue灯光联动，环境效果极佳&lt;/p&gt;
-
-&lt;p&gt;新机的&lt;code class=&quot;highlighter-rouge&quot;&gt;CPU&lt;/code&gt;预计使用新出的&lt;code class=&quot;highlighter-rouge&quot;&gt;28&lt;/code&gt;。&lt;/p&gt;
-
-&lt;p&gt;如果使用双&lt;code class=&quot;highlighter-rouge&quot;&gt;CUP&lt;/code&gt;之后搬运就大问题了，用电量也是一方便~&lt;/p&gt;
-
-&lt;p&gt;更新时，墙内的电线也要一起更新，想想就头痛。&lt;/p&gt;
-
-&lt;p&gt;墙里原有的线质量并不好……&lt;/p&gt;
-
-&lt;h1 id=&quot;其他&quot;&gt;其他&lt;/h1&gt;
-
-&lt;p&gt;最近想的东西也很多，心里也很乱，完全不能平静&lt;/p&gt;
-
-&lt;p&gt;除了手头上的事情外都是模糊的&lt;/p&gt;
-
-&lt;p&gt;说实话挺恐怖的……&lt;/p&gt;</content><author><name>K11</name></author><category term="日记" /><category term="laravel" /><summary type="html">连接部分完成了 进度有点慢…… 主要是心情问题…… 耳机断梁，零件遥遥无期， 环境噪音很烦，新版的暂时还不想入 ￥ 2400 RMB 并不廉价…… 问题是旧的硬件并没有坏，只是外壳坏了…… 对于喜爱事物的执著也是…… 心塞…… 看好了一款新键盘 键盘的优点是可以快速更改轴体，同时有RGB功能 写在这里留用 Massdrop CTRL Mechanical Keyboard 鼠标 就选定 罗技g903无线套装了 标准键位的的键盘也渐渐适应了 用久了 手指还是会疼…… 难道是我打开方式不对？ 雷蛇到好处之一是能与飞利浦hue灯光联动，环境效果极佳 新机的CPU预计使用新出的28。 如果使用双CUP之后搬运就大问题了，用电量也是一方便~ 更新时，墙内的电线也要一起更新，想想就头痛。 墙里原有的线质量并不好…… 其他 最近想的东西也很多，心里也很乱，完全不能平静 除了手头上的事情外都是模糊的 说实话挺恐怖的……</summary></entry></feed>
+&lt;p&gt;安静果然是最重要的！&lt;/p&gt;</content><author><name>K11</name></author><category term="日记" /><category term="laravel" /><summary type="html">6号的份 laravel 队列的坑 laravel job 的初始函数中不能使用 嵌套 型数组 否则 会 报错 Serialization of 'Closure' is not allowed 优先程度很高，而且不容易发现。是在logs不能正常写入的时候发现的 官方说最好与 models 一起使用 将 原有数组 重构 勉强 解决了 之后是批量 写入 与 写入数据 自动验证了 当然api 进行。 操作最简化是目的~~ 以上 PS: 情况越来越严峻 8号的份 api token 自动化进程过半 管理员操作部分终于要完成了~~ 安静果然是最重要的！</summary></entry></feed>
