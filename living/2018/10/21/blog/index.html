@@ -115,7 +115,7 @@
 <meta name="keywords" content="日记, postman, laravel">
 <meta property="og:type" content="article">
 <meta property="og:title" content="使用 postman 进行 post">
-<meta property="og:url" content="/living/2018/10/21/blog/">
+<meta property="og:url" content="http://localhost:4000/living/2018/10/21/blog/">
 <meta property="og:site_name" content="Keleven.Me">
 <meta property="og:description" content="使用 postman 进行 post 使用postman 直接 post 的方法 laravel 本身有CSRF 直接使用post 、 put 等等会被阻断 找到一个可以解决办法 postman chrome 插件版本 新建一个environment 并切换到新建，右上⚙位置 找一个get请求 在Tests标签下输入 var xsrfCookie = postman.getResponseCookie(&quot;XSRF-TOKEN&quot;); postman.setEnvironmentVariable(&quot;XSRF-TOKEN&quot;, xsrfCookie.value); `` 对应该的是第二行要注意下。 用于获取XSRF-TOKEN的值。 查看environment中 XSRF-TOKEN 是否被正确传入。右上👁位置 确认后在post 的Headers 中添加 X-XSRF-TOKEN : 之后就可以正常提交post了 注意：laravel XSRF-TOKEN 有时效性 注意更新 当XSRF-TOKEN 中有特殊字符，例如%时，laravel X-XSRF-TOKEN 验证会失败 主要是为postman 对XSRF-TOKEN识别有问题，桌面版本没有这个问题 postman 桌面版 同上Tests标签可以写成 pm.environment.set(&quot;xsrf-token&quot;, decodeURIComponent(pm.cookies.get(&quot;XSRF-TOKEN&quot;))) 使用laravel valet 时，postman不能正确访问域名…… 原因valet产生的SSL证书，所以被阻挡，手动关闭后正常使用 要关闭的位置 settings -&amp;gt; SSL certificate verifcation -&amp;gt; off 之后就可以正常使用了 使用valet时 link 与 park 混用会报错！">
 <meta property="og:locale" content="en">
@@ -148,7 +148,7 @@
 
 
 
-  <link rel="canonical" href=""/>
+  <link rel="canonical" href="http://localhost:4000/"/>
 
 
 
@@ -335,7 +335,7 @@
   
 
   <article class="post post-type- " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="/living/2018/10/21/blog/">
+    <link itemprop="mainEntityOfPage" href="http://localhost:4000/living/2018/10/21/blog/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="K11">
@@ -666,7 +666,7 @@ postman.setEnvironmentVariable("XSRF-TOKEN", xsrfCookie.value);
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">112</span>
+                <span class="site-state-item-count">114</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
@@ -935,7 +935,7 @@ postman.setEnvironmentVariable("XSRF-TOKEN", xsrfCookie.value);
       
       <script type="text/javascript">
           var disqus_config = function () {
-              this.page.url = '/living/2018/10/21/blog/';
+              this.page.url = 'http://localhost:4000/living/2018/10/21/blog/';
               this.page.identifier = '/living/2018/10/21/blog/';
               this.page.title = '使用 postman 进行 post';
           };

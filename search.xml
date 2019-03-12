@@ -2,6 +2,40 @@
 <search>
   
     <entry>
+      <title><![CDATA[受风 好疼！]]></title>
+      <url>/living/2019/03/12/blog/</url>
+      <content type="text"><![CDATA[疼肌肉受风…… 一动就疼…… 不想动…… 不想动……不过与胆结石的疼比起来也没什么。略微不适而已……]]></content>
+      <categories>
+        
+          <category> Living </category>
+        
+      </categories>
+      <tags>
+        
+          <tag> 日记 </tag>
+        
+      </tags>
+      <tags></tags>
+    </entry>
+  
+    <entry>
+      <title><![CDATA[日常]]></title>
+      <url>/living/2019/03/08/blog/</url>
+      <content type="text"><![CDATA[终于入手了卡尺多少次要量尺寸找不到合适的工具肉眼观察多少有一些不准确有的时候差 1mm ，也是装不上的。再加上一些奇怪的地方不是很好测量终于还是入手了~分区格式mac 对 ntfs 分区向来都不友好索性都转换为ExFAT一劳永逸移动数据用了一天……果然换固态要提上日程预估3块860 pro 4T 组RAID5当然速度是960 pro的一半吧。如果只装win10开机5s之内是没问题的。macbook pro 果然还是要考虑的。水冷测量机箱，感觉安装水冷机箱不一定能装下……估计要先入组件，之后实际安装看看了税你妹收你妹的房产税！]]></content>
+      <categories>
+        
+          <category> Living </category>
+        
+      </categories>
+      <tags>
+        
+          <tag> 日记 </tag>
+        
+      </tags>
+      <tags></tags>
+    </entry>
+  
+    <entry>
       <title><![CDATA[vue 上传]]></title>
       <url>/living/2019/03/04/blog/</url>
       <content type="text"><![CDATA[vue 上传文件在vue中确认上传的文件input标签中设置ref&lt;input type="file" ref="FileUp" class="custom-file-input" id="customFile" @change="FileUpload"&gt;&lt;label class="custom-file-label" for="customFile"&gt;&lt;/label&gt;FileUpload() {	if (!this.$refs.FileUp.files.length) {		this.upform.upfile = ''	}else{		this.upform.upfile = this.$refs.FileUp.files[0]		this.upform.name = this.$refs.FileUp.files[0].name	}},随后文件可以正常上传。自动获取文件名bootstrap 4中自动载入文件名需要使用bs-custom-file-input包npm install bs-custom-file-input --savevue 中使用mounted() {	this.getFileName()},methods: {	getFileName() {		$('.custom-file-input').on('change', function() {			let fileName = $(this).val().split('\\').pop();			$(this).siblings('.custom-file-label').addClass('selected').html(fileName);		});	},}之后再选择文件后，input便签可以自动显示文件名。axios 中上传文件方法上传文件时，需要headers为multipart/form-data。注意请求时使用formData不能使用formformData 中数据使用append()传入formData.append('file', this.upform.upfile)注意laravel中数据名称对应axios.post('/game/json' , formData ,{	headers: {		'Content-Type': 'multipart/form-data'	}}).then( response =&gt; {		console.log(response.data)});]]></content>

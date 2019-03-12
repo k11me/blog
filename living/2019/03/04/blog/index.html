@@ -115,7 +115,7 @@
 <meta name="keywords" content="日记, vue">
 <meta property="og:type" content="article">
 <meta property="og:title" content="vue 上传">
-<meta property="og:url" content="/living/2019/03/04/blog/">
+<meta property="og:url" content="http://localhost:4000/living/2019/03/04/blog/">
 <meta property="og:site_name" content="Keleven.Me">
 <meta property="og:description" content="vue 上传文件 在vue中确认上传的文件 input标签中设置ref &amp;lt;input type=&quot;file&quot; ref=&quot;FileUp&quot; class=&quot;custom-file-input&quot; id=&quot;customFile&quot; @change=&quot;FileUpload&quot;&amp;gt; &amp;lt;label class=&quot;custom-file-label&quot; for=&quot;customFile&quot;&amp;gt;&amp;lt;/label&amp;gt; FileUpload() { if (!this.$refs.FileUp.files.length) { this.upform.upfile = &apos;&apos; }else{ this.upform.upfile = this.$refs.FileUp.files[0] this.upform.name = this.$refs.FileUp.files[0].name } }, 随后文件可以正常上传。 自动获取文件名 bootstrap 4中自动载入文件名需要使用bs-custom-file-input包 npm install bs-custom-file-input --save vue 中使用 mounted() { this.getFileName() }, methods: { getFileName() { $(&apos;.custom-file-input&apos;).on(&apos;change&apos;, function() { let fileName = $(this).val().split(&apos;\\&apos;).pop(); $(this).siblings(&apos;.custom-file-label&apos;).addClass(&apos;selected&apos;).html(fileName); }); }, } 之后再选择文件后，input便签可以自动显示文件名。 axios 中上传文件方法 上传文件时，需要headers为multipart/form-data。 注意请求时使用formData不能使用form formData 中数据使用append()传入 formData.append(&apos;file&apos;, this.upform.upfile) 注意laravel中数据名称对应 axios.post(&apos;/game/json&apos; , formData , { headers: { &apos;Content-Type&apos;: &apos;multipart/form-data&apos; } }).then( response =&amp;gt; { console.log(response.data) });">
 <meta property="og:locale" content="en">
@@ -148,7 +148,7 @@
 
 
 
-  <link rel="canonical" href=""/>
+  <link rel="canonical" href="http://localhost:4000/"/>
 
 
 
@@ -335,7 +335,7 @@
   
 
   <article class="post post-type- " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="/living/2019/03/04/blog/">
+    <link itemprop="mainEntityOfPage" href="http://localhost:4000/living/2019/03/04/blog/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="K11">
@@ -579,6 +579,10 @@ methods: {
         <div class="post-nav" id="post-nav-id">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/living/2019/03/08/blog/" rel="next" title="日常">
+                <i class="fa fa-chevron-left"></i> 日常
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
@@ -675,7 +679,7 @@ methods: {
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">112</span>
+                <span class="site-state-item-count">114</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
@@ -944,7 +948,7 @@ methods: {
       
       <script type="text/javascript">
           var disqus_config = function () {
-              this.page.url = '/living/2019/03/04/blog/';
+              this.page.url = 'http://localhost:4000/living/2019/03/04/blog/';
               this.page.identifier = '/living/2019/03/04/blog/';
               this.page.title = 'vue 上传';
           };

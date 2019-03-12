@@ -115,7 +115,7 @@
 <meta name="keywords" content="日记, laravel">
 <meta property="og:type" content="article">
 <meta property="og:title" content="链接">
-<meta property="og:url" content="/living/2018/12/06/blog/">
+<meta property="og:url" content="http://localhost:4000/living/2018/12/06/blog/">
 <meta property="og:site_name" content="Keleven.Me">
 <meta property="og:description" content="链接构建中 远程管理构建中，主要目的是token请求的自动化。 当使用大量token细化权限时 手动请求、更新、选择token将是地狱模式了 composer 包管理 当使用自定义包时dev-master版本不能正常载入的情况下 在composer.json中添加 &quot;minimum-stability&quot;: &quot;dev&quot;, &quot;prefer-stable&quot;: true, 同时要指定路径,如果有多个包,需要分别指定, &quot;repositories&quot;: { &quot;pack&quot;: { &quot;type&quot;: &quot;path&quot;, &quot;url&quot;: &quot;../packages/packname/pack&quot; } } 这样自定义包就可以载入了 其他包则使用稳定版本 cURL error 60: SSL certificate problem 参考资料 推断为证书不能正确加载，在php.info中指定路径同样无效。 直接使用laravel valet的公钥访问有效 curl https://game.test/ --cacert ~/.config/valet/CA/LaravelValetCASelfSigned.pem laravel/scout 安装laravel/scout 使用时遇到Class &apos;AlgoliaSearch\Version&apos; not found 原因laravel/scout 不支持 algoliasearch-client-php: ^2.0 改为algoliasearch-client-php: ^1.27 参考资料 从速度看scout 没有从内存搜索快，这也是必然吧。 使用第三方搜索也有数据泄露的风险。不过重写驱动也是要命…… scout 还没想到需要使用的地方…… 比如 搜 文档 更新 什么的……">
 <meta property="og:locale" content="en">
@@ -148,7 +148,7 @@
 
 
 
-  <link rel="canonical" href=""/>
+  <link rel="canonical" href="http://localhost:4000/"/>
 
 
 
@@ -335,7 +335,7 @@
   
 
   <article class="post post-type- " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="/living/2018/12/06/blog/">
+    <link itemprop="mainEntityOfPage" href="http://localhost:4000/living/2018/12/06/blog/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="K11">
@@ -669,7 +669,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">112</span>
+                <span class="site-state-item-count">114</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
@@ -938,7 +938,7 @@
       
       <script type="text/javascript">
           var disqus_config = function () {
-              this.page.url = '/living/2018/12/06/blog/';
+              this.page.url = 'http://localhost:4000/living/2018/12/06/blog/';
               this.page.identifier = '/living/2018/12/06/blog/';
               this.page.title = '链接';
           };

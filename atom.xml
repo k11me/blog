@@ -1,4 +1,46 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="/atom.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2019-03-04T13:26:30+08:00</updated><id>/atom.xml</id><title type="html">Keleven.Me</title><subtitle>千变万化的是世界</subtitle><author><name>K11</name></author><entry><title type="html">vue 上传</title><link href="/living/2019/03/04/blog/" rel="alternate" type="text/html" title="vue 上传" /><published>2019-03-04T08:00:00+08:00</published><updated>2019-03-04T08:00:00+08:00</updated><id>/living/2019/03/04/blog</id><content type="html" xml:base="/living/2019/03/04/blog/">&lt;h1 id=&quot;vue-上传文件&quot;&gt;vue 上传文件&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="http://localhost:4000/atom.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-03-12T12:09:02+08:00</updated><id>http://localhost:4000/atom.xml</id><title type="html">Keleven.Me</title><subtitle>千变万化的是世界</subtitle><author><name>K11</name></author><entry><title type="html">受风 好疼！</title><link href="http://localhost:4000/living/2019/03/12/blog/" rel="alternate" type="text/html" title="受风 好疼！" /><published>2019-03-12T08:00:00+08:00</published><updated>2019-03-12T08:00:00+08:00</updated><id>http://localhost:4000/living/2019/03/12/blog</id><content type="html" xml:base="http://localhost:4000/living/2019/03/12/blog/">&lt;h1 id=&quot;疼&quot;&gt;疼&lt;/h1&gt;
+
+&lt;p&gt;肌肉受风…… 一动就疼…… 不想动…… 不想动……&lt;/p&gt;
+
+&lt;p&gt;不过与胆结石的疼比起来也没什么。略微不适而已……&lt;/p&gt;</content><author><name>K11</name></author><category term="日记" /><summary type="html">疼 肌肉受风…… 一动就疼…… 不想动…… 不想动…… 不过与胆结石的疼比起来也没什么。略微不适而已……</summary></entry><entry><title type="html">日常</title><link href="http://localhost:4000/living/2019/03/08/blog/" rel="alternate" type="text/html" title="日常" /><published>2019-03-08T08:00:00+08:00</published><updated>2019-03-08T08:00:00+08:00</updated><id>http://localhost:4000/living/2019/03/08/blog</id><content type="html" xml:base="http://localhost:4000/living/2019/03/08/blog/">&lt;h1 id=&quot;终于入手了卡尺&quot;&gt;终于入手了卡尺&lt;/h1&gt;
+
+&lt;p&gt;多少次要量尺寸找不到合适的工具&lt;/p&gt;
+
+&lt;p&gt;肉眼观察多少有一些不准确&lt;/p&gt;
+
+&lt;p&gt;有的时候差 1mm ，也是装不上的。&lt;/p&gt;
+
+&lt;p&gt;再加上一些奇怪的地方不是很好测量&lt;/p&gt;
+
+&lt;p&gt;终于还是入手了~&lt;/p&gt;
+
+&lt;h1 id=&quot;分区格式&quot;&gt;分区格式&lt;/h1&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;mac&lt;/code&gt; 对 &lt;code class=&quot;highlighter-rouge&quot;&gt;ntfs&lt;/code&gt; 分区向来都不友好&lt;/p&gt;
+
+&lt;p&gt;索性都转换为&lt;code class=&quot;highlighter-rouge&quot;&gt;ExFAT&lt;/code&gt;一劳永逸&lt;/p&gt;
+
+&lt;p&gt;移动数据用了一天……&lt;/p&gt;
+
+&lt;p&gt;果然换固态要提上日程&lt;/p&gt;
+
+&lt;p&gt;预估3块&lt;code class=&quot;highlighter-rouge&quot;&gt;860 pro 4T&lt;/code&gt; 组&lt;code class=&quot;highlighter-rouge&quot;&gt;RAID5&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;当然速度是&lt;code class=&quot;highlighter-rouge&quot;&gt;960 pro&lt;/code&gt;的一半吧。&lt;/p&gt;
+
+&lt;p&gt;如果只装&lt;code class=&quot;highlighter-rouge&quot;&gt;win10&lt;/code&gt;开机&lt;code class=&quot;highlighter-rouge&quot;&gt;5s&lt;/code&gt;之内是没问题的。&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;macbook pro&lt;/code&gt; 果然还是要考虑的。&lt;/p&gt;
+
+&lt;h1 id=&quot;水冷&quot;&gt;水冷&lt;/h1&gt;
+
+&lt;p&gt;测量机箱，感觉安装水冷机箱不一定能装下……&lt;/p&gt;
+
+&lt;p&gt;估计要先入组件，之后实际安装看看了&lt;/p&gt;
+
+&lt;h1 id=&quot;税你妹&quot;&gt;税你妹&lt;/h1&gt;
+
+&lt;p&gt;收你妹的房产税！&lt;/p&gt;</content><author><name>K11</name></author><category term="日记" /><summary type="html">终于入手了卡尺 多少次要量尺寸找不到合适的工具 肉眼观察多少有一些不准确 有的时候差 1mm ，也是装不上的。 再加上一些奇怪的地方不是很好测量 终于还是入手了~ 分区格式 mac 对 ntfs 分区向来都不友好 索性都转换为ExFAT一劳永逸 移动数据用了一天…… 果然换固态要提上日程 预估3块860 pro 4T 组RAID5 当然速度是960 pro的一半吧。 如果只装win10开机5s之内是没问题的。 macbook pro 果然还是要考虑的。 水冷 测量机箱，感觉安装水冷机箱不一定能装下…… 估计要先入组件，之后实际安装看看了 税你妹 收你妹的房产税！</summary></entry><entry><title type="html">vue 上传</title><link href="http://localhost:4000/living/2019/03/04/blog/" rel="alternate" type="text/html" title="vue 上传" /><published>2019-03-04T08:00:00+08:00</published><updated>2019-03-04T08:00:00+08:00</updated><id>http://localhost:4000/living/2019/03/04/blog</id><content type="html" xml:base="http://localhost:4000/living/2019/03/04/blog/">&lt;h1 id=&quot;vue-上传文件&quot;&gt;vue 上传文件&lt;/h1&gt;
 
 &lt;h2 id=&quot;在vue中确认上传的文件&quot;&gt;在vue中确认上传的文件&lt;/h2&gt;
 
@@ -66,7 +108,7 @@ methods: {
 }).then( response =&amp;gt; {
 		console.log(response.data)
 });
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>K11</name></author><category term="日记" /><category term="vue" /><summary type="html">vue 上传文件 在vue中确认上传的文件 input标签中设置ref &amp;lt;input type=&quot;file&quot; ref=&quot;FileUp&quot; class=&quot;custom-file-input&quot; id=&quot;customFile&quot; @change=&quot;FileUpload&quot;&amp;gt; &amp;lt;label class=&quot;custom-file-label&quot; for=&quot;customFile&quot;&amp;gt;&amp;lt;/label&amp;gt; FileUpload() { if (!this.$refs.FileUp.files.length) { this.upform.upfile = '' }else{ this.upform.upfile = this.$refs.FileUp.files[0] this.upform.name = this.$refs.FileUp.files[0].name } }, 随后文件可以正常上传。 自动获取文件名 bootstrap 4中自动载入文件名需要使用bs-custom-file-input包 npm install bs-custom-file-input --save vue 中使用 mounted() { this.getFileName() }, methods: { getFileName() { $('.custom-file-input').on('change', function() { let fileName = $(this).val().split('\\').pop(); $(this).siblings('.custom-file-label').addClass('selected').html(fileName); }); }, } 之后再选择文件后，input便签可以自动显示文件名。 axios 中上传文件方法 上传文件时，需要headers为multipart/form-data。 注意请求时使用formData不能使用form formData 中数据使用append()传入 formData.append('file', this.upform.upfile) 注意laravel中数据名称对应 axios.post('/game/json' , formData , { headers: { 'Content-Type': 'multipart/form-data' } }).then( response =&amp;gt; { console.log(response.data) });</summary></entry><entry><title type="html">日常</title><link href="/living/2019/02/28/blog/" rel="alternate" type="text/html" title="日常" /><published>2019-02-28T08:00:00+08:00</published><updated>2019-02-28T08:00:00+08:00</updated><id>/living/2019/02/28/blog</id><content type="html" xml:base="/living/2019/02/28/blog/">&lt;h1 id=&quot;19日&quot;&gt;19日&lt;/h1&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>K11</name></author><category term="日记" /><category term="vue" /><summary type="html">vue 上传文件 在vue中确认上传的文件 input标签中设置ref &amp;lt;input type=&quot;file&quot; ref=&quot;FileUp&quot; class=&quot;custom-file-input&quot; id=&quot;customFile&quot; @change=&quot;FileUpload&quot;&amp;gt; &amp;lt;label class=&quot;custom-file-label&quot; for=&quot;customFile&quot;&amp;gt;&amp;lt;/label&amp;gt; FileUpload() { if (!this.$refs.FileUp.files.length) { this.upform.upfile = '' }else{ this.upform.upfile = this.$refs.FileUp.files[0] this.upform.name = this.$refs.FileUp.files[0].name } }, 随后文件可以正常上传。 自动获取文件名 bootstrap 4中自动载入文件名需要使用bs-custom-file-input包 npm install bs-custom-file-input --save vue 中使用 mounted() { this.getFileName() }, methods: { getFileName() { $('.custom-file-input').on('change', function() { let fileName = $(this).val().split('\\').pop(); $(this).siblings('.custom-file-label').addClass('selected').html(fileName); }); }, } 之后再选择文件后，input便签可以自动显示文件名。 axios 中上传文件方法 上传文件时，需要headers为multipart/form-data。 注意请求时使用formData不能使用form formData 中数据使用append()传入 formData.append('file', this.upform.upfile) 注意laravel中数据名称对应 axios.post('/game/json' , formData , { headers: { 'Content-Type': 'multipart/form-data' } }).then( response =&amp;gt; { console.log(response.data) });</summary></entry><entry><title type="html">日常</title><link href="http://localhost:4000/living/2019/02/28/blog/" rel="alternate" type="text/html" title="日常" /><published>2019-02-28T08:00:00+08:00</published><updated>2019-02-28T08:00:00+08:00</updated><id>http://localhost:4000/living/2019/02/28/blog</id><content type="html" xml:base="http://localhost:4000/living/2019/02/28/blog/">&lt;h1 id=&quot;19日&quot;&gt;19日&lt;/h1&gt;
 
 &lt;p&gt;顺利升级到了&lt;code class=&quot;highlighter-rouge&quot;&gt;Mojave&lt;/code&gt;~~&lt;/p&gt;
 
@@ -94,7 +136,7 @@ methods: {
 
 &lt;h1 id=&quot;28日&quot;&gt;28日&lt;/h1&gt;
 
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Mojave&lt;/code&gt;睡眠有问题，暂时没找到解决办法。&lt;/p&gt;</content><author><name>K11</name></author><category term="日记" /><summary type="html">19日 顺利升级到了Mojave~~ 用起来还是不错的~ 23日 调整风扇位置改善散热 改水冷的方案深入心中…… 现在的东西连螺丝的质量都严重下降…… 稍微拧一拧就花了…… 要是上扭力起子估计是秒蹦…… 还有某游戏带私货也是…… 天朝反应也是有趣…… 上行下效 28日 Mojave睡眠有问题，暂时没找到解决办法。</summary></entry><entry><title type="html">新机器装好了~</title><link href="/living/2019/02/16/blog/" rel="alternate" type="text/html" title="新机器装好了~" /><published>2019-02-16T08:00:00+08:00</published><updated>2019-02-16T08:00:00+08:00</updated><id>/living/2019/02/16/blog</id><content type="html" xml:base="/living/2019/02/16/blog/">&lt;h1 id=&quot;新机器装好了&quot;&gt;新机器装好了~&lt;/h1&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Mojave&lt;/code&gt;睡眠有问题，暂时没找到解决办法。&lt;/p&gt;</content><author><name>K11</name></author><category term="日记" /><summary type="html">19日 顺利升级到了Mojave~~ 用起来还是不错的~ 23日 调整风扇位置改善散热 改水冷的方案深入心中…… 现在的东西连螺丝的质量都严重下降…… 稍微拧一拧就花了…… 要是上扭力起子估计是秒蹦…… 还有某游戏带私货也是…… 天朝反应也是有趣…… 上行下效 28日 Mojave睡眠有问题，暂时没找到解决办法。</summary></entry><entry><title type="html">新机器装好了~</title><link href="http://localhost:4000/living/2019/02/16/blog/" rel="alternate" type="text/html" title="新机器装好了~" /><published>2019-02-16T08:00:00+08:00</published><updated>2019-02-16T08:00:00+08:00</updated><id>http://localhost:4000/living/2019/02/16/blog</id><content type="html" xml:base="http://localhost:4000/living/2019/02/16/blog/">&lt;h1 id=&quot;新机器装好了&quot;&gt;新机器装好了~&lt;/h1&gt;
 
 &lt;p&gt;折腾了三天，终于装好了~&lt;/p&gt;
 
@@ -199,7 +241,7 @@ methods: {
 
 &lt;p&gt;想着以后要不要换水冷~&lt;/p&gt;
 
-&lt;h2 id=&quot;暂时这些&quot;&gt;暂时这些&lt;/h2&gt;</content><author><name>K11</name></author><category term="日记" /><summary type="html">新机器装好了~ 折腾了三天，终于装好了~ vega 64 满载的声音有点大。 先装High Sierra成功的几率比较大。 参考地址1 参考地址2 配置单 组件 型号 CPU intel i9-9900k 主板 华硕 ROG MAXIMUS XI HERO WIFi 显卡 华硕 AREZ-STRIX-RXVEGA64-O8G-GAMING 内存 芝奇 Trident Z RGB 16GB DDR4 3200 （ F4-3200C14D-16GTZR ） ssd 三星 Samsung 970 pro 512G 电源 海盗船 HX850i 散热器 猫头鹰 NH D15S clover efi 使用了最新版 clover configurator 同样使用了最新版 坑 SIP 权限问题 Rt Variables 的 CsrActiveConfig 设置为 0x67 关闭 SIP 完全有效是0x0, 部分有效是 0x3。 关闭后ntfs 可以正挂载了。 DisplayPort 问题 具体原因未知，不过设置Graphics 的 Inject ATI 稳定了许多。 USB 端口不识别问题 使用MultiBeast 安装 Remove XHCI USB Port Limit 后可以使用。 其他MultiBeast 查看 参考地址2。 关机与重启 问题 关机或者重启时不能正常断电。 Boot 中设置slide=0 同时安装 EmuVariableUefi-64.efi ssd 速度修正 安装NvmExpressDxe-64.efi 显示卡顿问题 安装Lilu.kext与 WhateverGreen.kext 使用DP线的色彩问题 使用DisplayPort 色彩更冷了。有重新校色的必要 修复启动项 重命名Microsoft\Boot\bootmgfw.efi 为 bootmgfw-orig.efi bios中找到clover启动项后可以改回。 显卡温度感人 想着以后要不要换水冷~ 暂时这些</summary></entry><entry><title type="html">一些记录</title><link href="/living/2019/02/10/blog/" rel="alternate" type="text/html" title="一些记录" /><published>2019-02-10T08:00:00+08:00</published><updated>2019-02-10T08:00:00+08:00</updated><id>/living/2019/02/10/blog</id><content type="html" xml:base="/living/2019/02/10/blog/">&lt;h1 id=&quot;2月9日&quot;&gt;2月9日&lt;/h1&gt;
+&lt;h2 id=&quot;暂时这些&quot;&gt;暂时这些&lt;/h2&gt;</content><author><name>K11</name></author><category term="日记" /><summary type="html">新机器装好了~ 折腾了三天，终于装好了~ vega 64 满载的声音有点大。 先装High Sierra成功的几率比较大。 参考地址1 参考地址2 配置单 组件 型号 CPU intel i9-9900k 主板 华硕 ROG MAXIMUS XI HERO WIFi 显卡 华硕 AREZ-STRIX-RXVEGA64-O8G-GAMING 内存 芝奇 Trident Z RGB 16GB DDR4 3200 （ F4-3200C14D-16GTZR ） ssd 三星 Samsung 970 pro 512G 电源 海盗船 HX850i 散热器 猫头鹰 NH D15S clover efi 使用了最新版 clover configurator 同样使用了最新版 坑 SIP 权限问题 Rt Variables 的 CsrActiveConfig 设置为 0x67 关闭 SIP 完全有效是0x0, 部分有效是 0x3。 关闭后ntfs 可以正挂载了。 DisplayPort 问题 具体原因未知，不过设置Graphics 的 Inject ATI 稳定了许多。 USB 端口不识别问题 使用MultiBeast 安装 Remove XHCI USB Port Limit 后可以使用。 其他MultiBeast 查看 参考地址2。 关机与重启 问题 关机或者重启时不能正常断电。 Boot 中设置slide=0 同时安装 EmuVariableUefi-64.efi ssd 速度修正 安装NvmExpressDxe-64.efi 显示卡顿问题 安装Lilu.kext与 WhateverGreen.kext 使用DP线的色彩问题 使用DisplayPort 色彩更冷了。有重新校色的必要 修复启动项 重命名Microsoft\Boot\bootmgfw.efi 为 bootmgfw-orig.efi bios中找到clover启动项后可以改回。 显卡温度感人 想着以后要不要换水冷~ 暂时这些</summary></entry><entry><title type="html">一些记录</title><link href="http://localhost:4000/living/2019/02/10/blog/" rel="alternate" type="text/html" title="一些记录" /><published>2019-02-10T08:00:00+08:00</published><updated>2019-02-10T08:00:00+08:00</updated><id>http://localhost:4000/living/2019/02/10/blog</id><content type="html" xml:base="http://localhost:4000/living/2019/02/10/blog/">&lt;h1 id=&quot;2月9日&quot;&gt;2月9日&lt;/h1&gt;
 
 &lt;h2 id=&quot;一些记录&quot;&gt;一些记录&lt;/h2&gt;
 
@@ -238,7 +280,7 @@ methods: {
 
 &lt;p&gt;切换到&lt;code class=&quot;highlighter-rouge&quot;&gt;php 7.2&lt;/code&gt; 后功能正常。&lt;/p&gt;
 
-&lt;h2 id=&quot;以上&quot;&gt;以上&lt;/h2&gt;</content><author><name>K11</name></author><category term="日记" /><summary type="html">2月9日 一些记录 控制部分暂时本地化，之后开一个服务器也是必然。 时间早晚的问题，最重要的是稳定。 2月10日 yubikey otp 修正 更新bitbeans/yubikey 到最新，yubikey官方关闭了http访问。 之后验证功能正常yubikey的验证速度上没有google 2FA快，也并不是墙的问题。 在php 7.3 版本下 HTTPS_VERIFY 无要求。 在php 7.2 版本下 HTTPS_VERIFY 需要设置为false 可以正常使用。 修正Https访问 修正不能使用https的问题。 php 7.3 版本下 la5 opcache:status 出现 SSL certificate problem: unable to get local issuer certificate 使用php --ini 确认php.ini 位置后添加 {name}为当前用户 用户名 curl.cainfo = &quot;/Users/{name}/.config/valet/CA/LaravelValetCASelfSigned.pem&quot; 在php 7.3版本下 会出现cURL error 77 切换到php 7.2 后功能正常。 以上</summary></entry><entry><title type="html">己亥年快乐~</title><link href="/living/2019/02/07/blog/" rel="alternate" type="text/html" title="己亥年快乐~" /><published>2019-02-07T08:00:00+08:00</published><updated>2019-02-07T08:00:00+08:00</updated><id>/living/2019/02/07/blog</id><content type="html" xml:base="/living/2019/02/07/blog/">&lt;h1 id=&quot;己亥年快乐&quot;&gt;己亥年快乐~&lt;/h1&gt;
+&lt;h2 id=&quot;以上&quot;&gt;以上&lt;/h2&gt;</content><author><name>K11</name></author><category term="日记" /><summary type="html">2月9日 一些记录 控制部分暂时本地化，之后开一个服务器也是必然。 时间早晚的问题，最重要的是稳定。 2月10日 yubikey otp 修正 更新bitbeans/yubikey 到最新，yubikey官方关闭了http访问。 之后验证功能正常yubikey的验证速度上没有google 2FA快，也并不是墙的问题。 在php 7.3 版本下 HTTPS_VERIFY 无要求。 在php 7.2 版本下 HTTPS_VERIFY 需要设置为false 可以正常使用。 修正Https访问 修正不能使用https的问题。 php 7.3 版本下 la5 opcache:status 出现 SSL certificate problem: unable to get local issuer certificate 使用php --ini 确认php.ini 位置后添加 {name}为当前用户 用户名 curl.cainfo = &quot;/Users/{name}/.config/valet/CA/LaravelValetCASelfSigned.pem&quot; 在php 7.3版本下 会出现cURL error 77 切换到php 7.2 后功能正常。 以上</summary></entry><entry><title type="html">己亥年快乐~</title><link href="http://localhost:4000/living/2019/02/07/blog/" rel="alternate" type="text/html" title="己亥年快乐~" /><published>2019-02-07T08:00:00+08:00</published><updated>2019-02-07T08:00:00+08:00</updated><id>http://localhost:4000/living/2019/02/07/blog</id><content type="html" xml:base="http://localhost:4000/living/2019/02/07/blog/">&lt;h1 id=&quot;己亥年快乐&quot;&gt;己亥年快乐~&lt;/h1&gt;
 
 &lt;p&gt;虽然晚了一点&lt;/p&gt;
 
@@ -256,7 +298,7 @@ methods: {
 
 &lt;p&gt;过年期间太懈怠了……&lt;/p&gt;
 
-&lt;h1 id=&quot;以上-再次-新年快乐&quot;&gt;以上 再次 新年快乐&lt;/h1&gt;</content><author><name>K11</name></author><category term="日记" /><summary type="html">己亥年快乐~ 虽然晚了一点 4号网络太慢，索性开了谷歌云，费用好贵！ 估计用过了赠送的额度就不会再使用了！ 没有梯子一些服务的速度会慢100倍，一点都不夸张。 6号 早上的梦点神奇呢~ 新机器在路上 valet 的 https 问题还是没有解决…… 过年期间太懈怠了…… 以上 再次 新年快乐</summary></entry><entry><title type="html">cURL error 60</title><link href="/living/2019/02/03/blog/" rel="alternate" type="text/html" title="cURL error 60" /><published>2019-02-03T08:00:00+08:00</published><updated>2019-02-03T08:00:00+08:00</updated><id>/living/2019/02/03/blog</id><content type="html" xml:base="/living/2019/02/03/blog/">&lt;h1 id=&quot;curl-error-60-问题依旧&quot;&gt;cURL error 60 问题依旧&lt;/h1&gt;
+&lt;h1 id=&quot;以上-再次-新年快乐&quot;&gt;以上 再次 新年快乐&lt;/h1&gt;</content><author><name>K11</name></author><category term="日记" /><summary type="html">己亥年快乐~ 虽然晚了一点 4号网络太慢，索性开了谷歌云，费用好贵！ 估计用过了赠送的额度就不会再使用了！ 没有梯子一些服务的速度会慢100倍，一点都不夸张。 6号 早上的梦点神奇呢~ 新机器在路上 valet 的 https 问题还是没有解决…… 过年期间太懈怠了…… 以上 再次 新年快乐</summary></entry><entry><title type="html">cURL error 60</title><link href="http://localhost:4000/living/2019/02/03/blog/" rel="alternate" type="text/html" title="cURL error 60" /><published>2019-02-03T08:00:00+08:00</published><updated>2019-02-03T08:00:00+08:00</updated><id>http://localhost:4000/living/2019/02/03/blog</id><content type="html" xml:base="http://localhost:4000/living/2019/02/03/blog/">&lt;h1 id=&quot;curl-error-60-问题依旧&quot;&gt;cURL error 60 问题依旧&lt;/h1&gt;
 
 &lt;p&gt;升级完系统继续踩坑…… 我也是……&lt;/p&gt;
 
@@ -269,7 +311,7 @@ methods: {
 
 &lt;p&gt;啊啊 慢死了 什么都连不上怎么干活啊！！&lt;/p&gt;
 
-&lt;h1 id=&quot;以上&quot;&gt;以上&lt;/h1&gt;</content><author><name>K11</name></author><category term="日记" /><category term="mac os" /><summary type="html">cURL error 60 问题依旧 升级完系统继续踩坑…… 我也是…… 就好的方法安装时使用dev-master 版本 composer global require laravel/valet dev-master 服务器流量超了 啊啊 慢死了 什么都连不上怎么干活啊！！ 以上</summary></entry><entry><title type="html">有点烦！</title><link href="/living/2019/01/31/blog/" rel="alternate" type="text/html" title="有点烦！" /><published>2019-01-31T08:00:00+08:00</published><updated>2019-01-31T08:00:00+08:00</updated><id>/living/2019/01/31/blog</id><content type="html" xml:base="/living/2019/01/31/blog/">&lt;h1 id=&quot;29号的份&quot;&gt;29号的份&lt;/h1&gt;
+&lt;h1 id=&quot;以上&quot;&gt;以上&lt;/h1&gt;</content><author><name>K11</name></author><category term="日记" /><category term="mac os" /><summary type="html">cURL error 60 问题依旧 升级完系统继续踩坑…… 我也是…… 就好的方法安装时使用dev-master 版本 composer global require laravel/valet dev-master 服务器流量超了 啊啊 慢死了 什么都连不上怎么干活啊！！ 以上</summary></entry><entry><title type="html">有点烦！</title><link href="http://localhost:4000/living/2019/01/31/blog/" rel="alternate" type="text/html" title="有点烦！" /><published>2019-01-31T08:00:00+08:00</published><updated>2019-01-31T08:00:00+08:00</updated><id>http://localhost:4000/living/2019/01/31/blog</id><content type="html" xml:base="http://localhost:4000/living/2019/01/31/blog/">&lt;h1 id=&quot;29号的份&quot;&gt;29号的份&lt;/h1&gt;
 
 &lt;h2 id=&quot;黑苹果&quot;&gt;黑苹果&lt;/h2&gt;
 
@@ -314,7 +356,7 @@ AppleAHCIPort
 89C82540 6002003D 40200000 750C81E1 BF7FFFFF 898B5101 0000
 90909090 90909090 90909090 90909090 90909090 90909090 9090
 hot-plug AppleAHCIPort
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>K11</name></author><category term="日记" /><category term="mac os" /><summary type="html">29号的份 黑苹果 从 os 切回 win 出现 显卡与usb硬件卡 问题 其中 GPU 工作占用率 异常高 推测是Intel ICH10 芯片的问题 只能放弃 10.13 继续使用 10.11 新年后希望能换新机。 本应该尝试重新安装，可是有点烦了，暂时搁置吧…… 10.11 变慢也是一个大问题…… 这该如何是好 生活 新的净水滤芯 不能安装到 水壶上, 新款比旧款高5mm。 导致漏水，定了新壶，还不知道，能否正常使用。 30号的份 重装了勉强可以正常使用了~~ 芯片问题也解决了 开心~~ 参考文档 可以直接在四叶草中添加,对应版本为AppleAHCIPort v329 不需要下载页面上的文件 AppleAHCIPort 4585F60F 95C289C8 83E0FE66 85C9780F 84D2750B 89C883E0 FE6685C9 0F98C141 08CC9090 9090750B Fix IO Error AppleAHCIPort AppleAHCIPort 89C82540 6002003D 40200000 750C81E1 BF7FFFFF 898B5101 0000 90909090 90909090 90909090 90909090 90909090 90909090 9090 hot-plug AppleAHCIPort</summary></entry><entry><title type="html">系统升级了~ 走过的一些坑!</title><link href="/living/2019/01/27/blog/" rel="alternate" type="text/html" title="系统升级了~ 走过的一些坑!" /><published>2019-01-27T08:00:00+08:00</published><updated>2019-01-27T08:00:00+08:00</updated><id>/living/2019/01/27/blog</id><content type="html" xml:base="/living/2019/01/27/blog/">&lt;h1 id=&quot;黑苹果-部分&quot;&gt;黑苹果 部分&lt;/h1&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>K11</name></author><category term="日记" /><category term="mac os" /><summary type="html">29号的份 黑苹果 从 os 切回 win 出现 显卡与usb硬件卡 问题 其中 GPU 工作占用率 异常高 推测是Intel ICH10 芯片的问题 只能放弃 10.13 继续使用 10.11 新年后希望能换新机。 本应该尝试重新安装，可是有点烦了，暂时搁置吧…… 10.11 变慢也是一个大问题…… 这该如何是好 生活 新的净水滤芯 不能安装到 水壶上, 新款比旧款高5mm。 导致漏水，定了新壶，还不知道，能否正常使用。 30号的份 重装了勉强可以正常使用了~~ 芯片问题也解决了 开心~~ 参考文档 可以直接在四叶草中添加,对应版本为AppleAHCIPort v329 不需要下载页面上的文件 AppleAHCIPort 4585F60F 95C289C8 83E0FE66 85C9780F 84D2750B 89C883E0 FE6685C9 0F98C141 08CC9090 9090750B Fix IO Error AppleAHCIPort AppleAHCIPort 89C82540 6002003D 40200000 750C81E1 BF7FFFFF 898B5101 0000 90909090 90909090 90909090 90909090 90909090 90909090 9090 hot-plug AppleAHCIPort</summary></entry><entry><title type="html">系统升级了~ 走过的一些坑!</title><link href="http://localhost:4000/living/2019/01/27/blog/" rel="alternate" type="text/html" title="系统升级了~ 走过的一些坑!" /><published>2019-01-27T08:00:00+08:00</published><updated>2019-01-27T08:00:00+08:00</updated><id>http://localhost:4000/living/2019/01/27/blog</id><content type="html" xml:base="http://localhost:4000/living/2019/01/27/blog/">&lt;h1 id=&quot;黑苹果-部分&quot;&gt;黑苹果 部分&lt;/h1&gt;
 
 &lt;p&gt;正常安装就好 &lt;code class=&quot;highlighter-rouge&quot;&gt;config.plist &lt;/code&gt; 是重点&lt;/p&gt;
 
@@ -394,103 +436,4 @@ sudo ln -s /usr/local/sbin/mount_ntfs /sbin/mount_ntfs
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo apachectl -k stop
 sudo apachectl stop
 valet restart
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>K11</name></author><category term="日记" /><category term="laravel" /><category term="mac os" /><summary type="html">黑苹果 部分 正常安装就好 config.plist 是重点 tonymacx86 带的clover 安装完成后不能正常引导。 更新到最新的版可以解决。 clover configurator 一定要装很有用。 Acpi中选择 AddDTGP 、 FixDarwin 、 AddMCHC 、 FakeLPC 、FixSBUS 、 FixUSB Boot 中选择dart=0 显卡是gtx 760 驱动自带 Kernel 中 不要手贱关Apple RTC! 不要手贱关Apple RTC! 不要手贱关Apple RTC! 关闭结果就是 每次开机进入系统时 bios 设置被重置。 没有其他恢复手段非常可怕！ 声卡使用 audio_CloverALC 自动注入 完全正常 读取ntfs 10.13可以使用 brew cask install osxfuse brew install ntfs-3g 重启到recovery mode 关闭系统保护 csrutil disable 重启到正常模式， 使NTFS分区可以自动挂载 sudo mv /sbin/mount_ntfs /sbin/mount_ntfs.original sudo ln -s /usr/local/sbin/mount_ntfs /sbin/mount_ntfs 重启到recovery mode 开启系统保护 csrutil enable 显示全部隐藏文件 显示隐藏文件 defaults write com.apple.finder AppleShowAllFiles -boolean true ; killall Finder 不显示隐藏文件 defaults write com.apple.finder AppleShowAllFiles -boolean false ; killall Finder 创建快捷方式 option + command laravel 部分 valet 全部网站 it work 新装valet后，访问自定域名网站全部it's work 原因apachectl占用80端口 解决方法 sudo apachectl -k stop sudo apachectl stop valet restart</summary></entry><entry><title type="html">laravel json 的坑</title><link href="/living/2019/01/20/blog/" rel="alternate" type="text/html" title="laravel json 的坑" /><published>2019-01-20T08:00:00+08:00</published><updated>2019-01-20T08:00:00+08:00</updated><id>/living/2019/01/20/blog</id><content type="html" xml:base="/living/2019/01/20/blog/">&lt;h1 id=&quot;15-号的份&quot;&gt;15 号的份&lt;/h1&gt;
-
-&lt;h2 id=&quot;laravel-创建-json&quot;&gt;laravel 创建 json&lt;/h2&gt;
-
-&lt;p&gt;使用laravel 创建 json 时&lt;/p&gt;
-
-&lt;p&gt;可以使用 &lt;code class=&quot;highlighter-rouge&quot;&gt;json_encode()&lt;/code&gt; 不过&lt;/p&gt;
-
-&lt;p&gt;当输入如下时，&lt;/p&gt;
-
-&lt;div class=&quot;language-php highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$test&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
-	&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;	
-		&lt;span class=&quot;s1&quot;&gt;'test'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'test'&lt;/span&gt;
-	&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;返回的为数组包裹，可以使用&lt;code class=&quot;highlighter-rouge&quot;&gt;$request[0]['test']&lt;/code&gt;获取数据&lt;/p&gt;
-
-&lt;p&gt;当输入如下时，&lt;/p&gt;
-
-&lt;div class=&quot;language-php highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$test&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
-	&lt;span class=&quot;s1&quot;&gt;'test'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
-		&lt;span class=&quot;s1&quot;&gt;'test'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'test'&lt;/span&gt;
-	&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;返回的为对象包裹，可以使用&lt;code class=&quot;highlighter-rouge&quot;&gt;$request-&amp;gt;input('test.test')&lt;/code&gt;获取数据&lt;/p&gt;
-
-&lt;p&gt;在进行大量数据传入时，注意使用对应的方法进行循环写入。&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h1 id=&quot;20号的份&quot;&gt;20号的份&lt;/h1&gt;
-
-&lt;h2 id=&quot;laravel-外部请求方法&quot;&gt;laravel 外部请求方法&lt;/h2&gt;
-
-&lt;p&gt;使用&lt;code class=&quot;highlighter-rouge&quot;&gt;GuzzleHttp&lt;/code&gt; 进行请求时&lt;/p&gt;
-
-&lt;p&gt;当使用&lt;code class=&quot;highlighter-rouge&quot;&gt;json&lt;/code&gt;时 需要添加&lt;code class=&quot;highlighter-rouge&quot;&gt;Content-Type&lt;/code&gt;为 &lt;code class=&quot;highlighter-rouge&quot;&gt;application/json&lt;/code&gt;,数据写在&lt;code class=&quot;highlighter-rouge&quot;&gt;body&lt;/code&gt;下&lt;/p&gt;
-
-&lt;p&gt;如果使用传统方式去除&lt;code class=&quot;highlighter-rouge&quot;&gt;Content-Type&lt;/code&gt;, 使用&lt;code class=&quot;highlighter-rouge&quot;&gt;form_params&lt;/code&gt;请求。&lt;/p&gt;
-
-&lt;div class=&quot;language-php highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s1&quot;&gt;'headers'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
-		&lt;span class=&quot;s1&quot;&gt;'Authorization'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'Bearer '&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'toekn'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-		&lt;span class=&quot;s1&quot;&gt;'Content-Type'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'application/json'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
-&lt;span class=&quot;s1&quot;&gt;'body'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;json_encode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$JsonData&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h2 id=&quot;laravel-json-的坑&quot;&gt;laravel json 的坑&lt;/h2&gt;
-
-&lt;p&gt;当使用&lt;code class=&quot;highlighter-rouge&quot;&gt;json&lt;/code&gt;请求时，&lt;code class=&quot;highlighter-rouge&quot;&gt;Request&lt;/code&gt; 可以自动解析&lt;code class=&quot;highlighter-rouge&quot;&gt;json&lt;/code&gt;为数组&lt;/p&gt;
-
-&lt;p&gt;也可以使用&lt;code class=&quot;highlighter-rouge&quot;&gt;$request-&amp;gt;input()&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;最坑的是刚使用&lt;code class=&quot;highlighter-rouge&quot;&gt;return&lt;/code&gt; 时会自动使用&lt;code class=&quot;highlighter-rouge&quot;&gt;json&lt;/code&gt;……&lt;/p&gt;
-
-&lt;p&gt;使用&lt;code class=&quot;highlighter-rouge&quot;&gt;json_decode()&lt;/code&gt; 也会返回&lt;code class=&quot;highlighter-rouge&quot;&gt;json&lt;/code&gt; , 可是实际上转换了，使用&lt;code class=&quot;highlighter-rouge&quot;&gt;dd()&lt;/code&gt;发现是数组……&lt;/p&gt;
-
-&lt;p&gt;这时请求端在使用一次&lt;code class=&quot;highlighter-rouge&quot;&gt;json_decode()&lt;/code&gt;就一定会出错。&lt;/p&gt;
-
-&lt;p&gt;所以在请求端&lt;code class=&quot;highlighter-rouge&quot;&gt;json_decode()&lt;/code&gt;一次就好。&lt;/p&gt;
-
-&lt;p&gt;大致上可以推测 请求端发送的为独立数据，使用&lt;code class=&quot;highlighter-rouge&quot;&gt;GuzzleHttp&lt;/code&gt;获取的返回为&lt;code class=&quot;highlighter-rouge&quot;&gt;object&lt;/code&gt; 所以需要 &lt;code class=&quot;highlighter-rouge&quot;&gt;json_decode()&lt;/code&gt;。&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;vue&lt;/code&gt; 不能跨域也是…… 现在还是先做出来，之后再完善的好。&lt;/p&gt;
-
-&lt;p&gt;原因暂时没有找到估计时&lt;code class=&quot;highlighter-rouge&quot;&gt;laravel passport&lt;/code&gt;的锅&lt;/p&gt;</content><author><name>K11</name></author><category term="日记" /><category term="laravel" /><summary type="html">15 号的份 laravel 创建 json 使用laravel 创建 json 时 可以使用 json_encode() 不过 当输入如下时， $test = [ [ 'test' =&amp;gt; 'test' ] ] 返回的为数组包裹，可以使用$request[0]['test']获取数据 当输入如下时， $test = [ 'test' =&amp;gt; [ 'test' =&amp;gt; 'test' ] ] 返回的为对象包裹，可以使用$request-&amp;gt;input('test.test')获取数据 在进行大量数据传入时，注意使用对应的方法进行循环写入。 20号的份 laravel 外部请求方法 使用GuzzleHttp 进行请求时 当使用json时 需要添加Content-Type为 application/json,数据写在body下 如果使用传统方式去除Content-Type, 使用form_params请求。 'headers' =&amp;gt; [ 'Authorization' =&amp;gt; 'Bearer '.'toekn', 'Content-Type' =&amp;gt; 'application/json', ], 'body' =&amp;gt; json_encode($JsonData), laravel json 的坑 当使用json请求时，Request 可以自动解析json为数组 也可以使用$request-&amp;gt;input() 最坑的是刚使用return 时会自动使用json…… 使用json_decode() 也会返回json , 可是实际上转换了，使用dd()发现是数组…… 这时请求端在使用一次json_decode()就一定会出错。 所以在请求端json_decode()一次就好。 大致上可以推测 请求端发送的为独立数据，使用GuzzleHttp获取的返回为object 所以需要 json_decode()。 vue 不能跨域也是…… 现在还是先做出来，之后再完善的好。 原因暂时没有找到估计时laravel passport的锅</summary></entry><entry><title type="html">日常的坑</title><link href="/living/2019/01/08/blog/" rel="alternate" type="text/html" title="日常的坑" /><published>2019-01-08T08:00:00+08:00</published><updated>2019-01-08T08:00:00+08:00</updated><id>/living/2019/01/08/blog</id><content type="html" xml:base="/living/2019/01/08/blog/">&lt;h1 id=&quot;6号的份&quot;&gt;6号的份&lt;/h1&gt;
-
-&lt;h2 id=&quot;laravel-队列的坑&quot;&gt;laravel 队列的坑&lt;/h2&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;laravel job&lt;/code&gt; 的初始函数中不能使用 嵌套 型数组&lt;/p&gt;
-
-&lt;p&gt;否则 会 报错 &lt;code class=&quot;highlighter-rouge&quot;&gt;Serialization of 'Closure' is not allowed&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;优先程度很高，而且不容易发现。是在&lt;code class=&quot;highlighter-rouge&quot;&gt;logs&lt;/code&gt;不能正常写入的时候发现的&lt;/p&gt;
-
-&lt;p&gt;官方说最好与 &lt;code class=&quot;highlighter-rouge&quot;&gt;models&lt;/code&gt; 一起使用&lt;/p&gt;
-
-&lt;p&gt;将 原有数组 重构 勉强 解决了&lt;/p&gt;
-
-&lt;p&gt;之后是批量 写入 与 写入数据 自动验证了 当然&lt;code class=&quot;highlighter-rouge&quot;&gt;api&lt;/code&gt; 进行。&lt;/p&gt;
-
-&lt;p&gt;操作最简化是目的~~&lt;/p&gt;
-
-&lt;p&gt;以上&lt;/p&gt;
-
-&lt;p&gt;PS: 情况越来越严峻&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h1 id=&quot;8号的份&quot;&gt;8号的份&lt;/h1&gt;
-
-&lt;h2 id=&quot;api-token-自动化进程过半&quot;&gt;api token 自动化进程过半&lt;/h2&gt;
-
-&lt;p&gt;管理员操作部分终于要完成了~~&lt;/p&gt;
-
-&lt;p&gt;安静果然是最重要的！&lt;/p&gt;</content><author><name>K11</name></author><category term="日记" /><category term="laravel" /><summary type="html">6号的份 laravel 队列的坑 laravel job 的初始函数中不能使用 嵌套 型数组 否则 会 报错 Serialization of 'Closure' is not allowed 优先程度很高，而且不容易发现。是在logs不能正常写入的时候发现的 官方说最好与 models 一起使用 将 原有数组 重构 勉强 解决了 之后是批量 写入 与 写入数据 自动验证了 当然api 进行。 操作最简化是目的~~ 以上 PS: 情况越来越严峻 8号的份 api token 自动化进程过半 管理员操作部分终于要完成了~~ 安静果然是最重要的！</summary></entry></feed>
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>K11</name></author><category term="日记" /><category term="laravel" /><category term="mac os" /><summary type="html">黑苹果 部分 正常安装就好 config.plist 是重点 tonymacx86 带的clover 安装完成后不能正常引导。 更新到最新的版可以解决。 clover configurator 一定要装很有用。 Acpi中选择 AddDTGP 、 FixDarwin 、 AddMCHC 、 FakeLPC 、FixSBUS 、 FixUSB Boot 中选择dart=0 显卡是gtx 760 驱动自带 Kernel 中 不要手贱关Apple RTC! 不要手贱关Apple RTC! 不要手贱关Apple RTC! 关闭结果就是 每次开机进入系统时 bios 设置被重置。 没有其他恢复手段非常可怕！ 声卡使用 audio_CloverALC 自动注入 完全正常 读取ntfs 10.13可以使用 brew cask install osxfuse brew install ntfs-3g 重启到recovery mode 关闭系统保护 csrutil disable 重启到正常模式， 使NTFS分区可以自动挂载 sudo mv /sbin/mount_ntfs /sbin/mount_ntfs.original sudo ln -s /usr/local/sbin/mount_ntfs /sbin/mount_ntfs 重启到recovery mode 开启系统保护 csrutil enable 显示全部隐藏文件 显示隐藏文件 defaults write com.apple.finder AppleShowAllFiles -boolean true ; killall Finder 不显示隐藏文件 defaults write com.apple.finder AppleShowAllFiles -boolean false ; killall Finder 创建快捷方式 option + command laravel 部分 valet 全部网站 it work 新装valet后，访问自定域名网站全部it's work 原因apachectl占用80端口 解决方法 sudo apachectl -k stop sudo apachectl stop valet restart</summary></entry></feed>

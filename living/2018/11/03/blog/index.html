@@ -115,7 +115,7 @@
 <meta name="keywords" content="日记, laravel">
 <meta property="og:type" content="article">
 <meta property="og:title" content="好想……">
-<meta property="og:url" content="/living/2018/11/03/blog/">
+<meta property="og:url" content="http://localhost:4000/living/2018/11/03/blog/">
 <meta property="og:site_name" content="Keleven.Me">
 <meta property="og:description" content="好想什么呢 来猜猜吧 logs 部分 结合laravel logs重构 在laravel logs基础上将logs存入数据库 先下config\logging中添加channels 如下 &apos;channels&apos; =&amp;gt; [ &apos;stack&apos; =&amp;gt; [ &apos;driver&apos; =&amp;gt; &apos;stack&apos;, &apos;channels&apos; =&amp;gt; [&apos;mysql&apos;], ], &apos;mysql&apos; =&amp;gt; [ &apos;driver&apos; =&amp;gt; &apos;custom&apos;, &apos;name&apos; =&amp;gt; &apos;mysql&apos;, &apos;via&apos; =&amp;gt; App\Logging\MySQLLogger::class, &apos;level&apos; =&amp;gt; &apos;debug&apos;, ], ] 新建MySQLLogger 这部分可以查看laravel 文档 Logger 的 name 不能正常传入，问题暂时没找到根源 于是进行手动传入 &amp;lt;?php namespace App\Logging; use Monolog\Logger; use App\Logging\AdminLogsHandler; class MySQLLogger { public function __invoke(array $config) { return new Logger( env(&apos;APP_NAME&apos;), [ new LogsHandler( $config[&apos;level&apos;], $config[&apos;name&apos;] ) ] ); } } 之后是AdminLogsHandler 用于将logs提交到数据库 这里也可以复写其他方法，可以自行查看Monolog\Logger &amp;lt;?php namespace App\Logging; use Monolog\Logger; use Monolog\Handler\AbstractProcessingHandler; use App\Models\Logs; class AdminLogsHandler extends AbstractProcessingHandler { private $name; public function __construct($level, $name) { parent::__construct($level); $this-&amp;gt;name = $name; } protected function write(array $record) { Logs::create([ &apos;channel&apos; =&amp;gt; $this-&amp;gt;name, &apos;message&apos; =&amp;gt; $record[&apos;message&apos;], &apos;level&apos; =&amp;gt; $record[&apos;level_name&apos;], &apos;context&apos; =&amp;gt; $record[&apos;context&apos;] ]); } } App\Models\Logs 注意要添加批量写入 protected $fillable = [ &apos;channel&apos;, &apos;message&apos;, &apos;level&apos;, &apos;context&apos; ]; protected $casts = [ &apos;context&apos; =&amp;gt; &apos;array&apos;, ]; 数据迁移如下 $table-&amp;gt;increments(&apos;id&apos;); $table-&amp;gt;string(&apos;channel&apos;)-&amp;gt;index(); $table-&amp;gt;enum(&apos;level&apos;, [ &apos;DEBUG&apos;, &apos;INFO&apos;, &apos;NOTICE&apos;, &apos;WARNING&apos;, &apos;ERROR&apos;, &apos;CRITICAL&apos;, &apos;ALERT&apos;, &apos;EMERGENCY&apos; ])-&amp;gt;default(&apos;INFO&apos;); $table-&amp;gt;longText(&apos;message&apos;); $table-&amp;gt;text(&apos;context&apos;); $table-&amp;gt;timestamps(); 之后可以使用 Log::info(&apos;message&apos; , [&apos;id&apos; =&amp;gt; $id]) 以上">
 <meta property="og:locale" content="en">
@@ -148,7 +148,7 @@
 
 
 
-  <link rel="canonical" href=""/>
+  <link rel="canonical" href="http://localhost:4000/"/>
 
 
 
@@ -335,7 +335,7 @@
   
 
   <article class="post post-type- " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="/living/2018/11/03/blog/">
+    <link itemprop="mainEntityOfPage" href="http://localhost:4000/living/2018/11/03/blog/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="K11">
@@ -736,7 +736,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">112</span>
+                <span class="site-state-item-count">114</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
@@ -1005,7 +1005,7 @@
       
       <script type="text/javascript">
           var disqus_config = function () {
-              this.page.url = '/living/2018/11/03/blog/';
+              this.page.url = 'http://localhost:4000/living/2018/11/03/blog/';
               this.page.identifier = '/living/2018/11/03/blog/';
               this.page.title = '好想……';
           };

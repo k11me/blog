@@ -115,7 +115,7 @@
 <meta name="keywords" content="日记, 路由, R6300v2">
 <meta property="og:type" content="article">
 <meta property="og:title" content="霉运驱散">
-<meta property="og:url" content="/living/2018/05/16/blog/">
+<meta property="og:url" content="http://localhost:4000/living/2018/05/16/blog/">
 <meta property="og:site_name" content="Keleven.Me">
 <meta property="og:description" content="霉运驱散！ 霉运驱散！霉运驱散！霉运驱散！ 一周之内霉运连发。 先是电动牙刷挂掉，修理之中弄坏主板，彻底变尸体…… 之后，桌子闹钟电源老化…… 替换的在路上了…… 随后…… 空气净化器的扇叶会自己跳…… 估计是哪里卡住了…… 还没拆…… 昨天…… 升级路由…… 之后变砖了…… 花费2小时修复了…… R6300v2 变砖的修复之路 需要nmrpflash window下还需求WinPcap 官方原始镜像与工具打包 关闭防火墙，网线连接任意 R6300v2 LAN口，一端连接电脑 nmrpflash 目录下运行下方命令会显示当前网卡 nmrpflash -L 没事设置IPv4的情况下找不到IP的 设置IPv4 192.168.1.2 255.255.255.0 192.168.1.1 再次nmrpflash -L 找到网卡IP了 随后关闭R6300v2 CMD下，保持下方命令可以输入的状态，没错拼手速的时候到了…… 通电的瞬间按回车…… nmrpflash.exe -i net2 -a 192.168.1.1 -f R6300v2-V1.0.4.2_10.0.74.chk 成功时出现下方提升 Received upload request with empty filename. Uploading R6300v2-V1.0.4.2_10.0.74.chk ... OK Waiting for remote to respond. Received keep-alive request. Received keep-alive request. Received keep-alive request. Received keep-alive request. Received keep-alive request. Received keep-alive request. Received keep-alive request. Received keep-alive request. Received keep-alive request. Received keep-alive request. Received keep-alive request. Received keep-alive request. Remote finished. Closing connection. Reboot your device now. 没提升Reboot前，一定别手贱…… No response after 60 seconds. Bailing out. 这个是手速慢了…… 少侠请重新来过…… R6300v2 原版刷梅林 重启之后，就回到了原厂固件的状态了~ Q: 为什么刷梅林？ A: 当然是有一些不可描述的服务了~~ 详情可以看这里写的很详细 下面是简单方法备用 进入192.168.1.1 找到高级-&amp;gt;管理-&amp;gt;路由器升级 刷入factory-to-dd-wrt.chk，等完成后重启别手贱…… 完成后进入DD-wrt, 设置用户名，密码，之后会用到 services中开启ssh 进入ssh 账号是root，密码是刚刚设置的，验证设备是否匹配固件，如下方，基本可以刷了 $ nvram get boardnum 679 $ nvram get boardtype 0x0646 $ nvram get boardrev 0x1110 随后进入192.168.1.1-&amp;gt;administration 刷入R6300V2_merlin_1.2.trx 别手贱…… 等完成后自动重启！ 重启后就进入梅林了进入系统管理-&amp;gt;固件升级 刷入R6300V2_380.70_0-X7.9.trx 最新固件后 恢复下默认设置。 开启JFFS, 系统设置-&amp;gt;Persistent JFFS2 Partition -&amp;gt; 都选是 之后点最上边的重启。 另外设置内网IP后也要重启。 以上">
 <meta property="og:locale" content="en">
@@ -148,7 +148,7 @@
 
 
 
-  <link rel="canonical" href=""/>
+  <link rel="canonical" href="http://localhost:4000/"/>
 
 
 
@@ -335,7 +335,7 @@
   
 
   <article class="post post-type- " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="/living/2018/05/16/blog/">
+    <link itemprop="mainEntityOfPage" href="http://localhost:4000/living/2018/05/16/blog/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="K11">
@@ -740,7 +740,7 @@ Reboot your device now.
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">112</span>
+                <span class="site-state-item-count">114</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
@@ -1009,7 +1009,7 @@ Reboot your device now.
       
       <script type="text/javascript">
           var disqus_config = function () {
-              this.page.url = '/living/2018/05/16/blog/';
+              this.page.url = 'http://localhost:4000/living/2018/05/16/blog/';
               this.page.identifier = '/living/2018/05/16/blog/';
               this.page.title = '霉运驱散';
           };

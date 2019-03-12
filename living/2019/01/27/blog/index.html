@@ -115,7 +115,7 @@
 <meta name="keywords" content="日记, laravel, mac os">
 <meta property="og:type" content="article">
 <meta property="og:title" content="系统升级了~ 走过的一些坑!">
-<meta property="og:url" content="/living/2019/01/27/blog/">
+<meta property="og:url" content="http://localhost:4000/living/2019/01/27/blog/">
 <meta property="og:site_name" content="Keleven.Me">
 <meta property="og:description" content="黑苹果 部分 正常安装就好 config.plist 是重点 tonymacx86 带的clover 安装完成后不能正常引导。 更新到最新的版可以解决。 clover configurator 一定要装很有用。 Acpi中选择 AddDTGP 、 FixDarwin 、 AddMCHC 、 FakeLPC 、FixSBUS 、 FixUSB Boot 中选择dart=0 显卡是gtx 760 驱动自带 Kernel 中 不要手贱关Apple RTC! 不要手贱关Apple RTC! 不要手贱关Apple RTC! 关闭结果就是 每次开机进入系统时 bios 设置被重置。 没有其他恢复手段非常可怕！ 声卡使用 audio_CloverALC 自动注入 完全正常 读取ntfs 10.13可以使用 brew cask install osxfuse brew install ntfs-3g 重启到recovery mode 关闭系统保护 csrutil disable 重启到正常模式， 使NTFS分区可以自动挂载 sudo mv /sbin/mount_ntfs /sbin/mount_ntfs.original sudo ln -s /usr/local/sbin/mount_ntfs /sbin/mount_ntfs 重启到recovery mode 开启系统保护 csrutil enable 显示全部隐藏文件 显示隐藏文件 defaults write com.apple.finder AppleShowAllFiles -boolean true ; killall Finder 不显示隐藏文件 defaults write com.apple.finder AppleShowAllFiles -boolean false ; killall Finder 创建快捷方式 option + command laravel 部分 valet 全部网站 it work 新装valet后，访问自定域名网站全部it&apos;s work 原因apachectl占用80端口 解决方法 sudo apachectl -k stop sudo apachectl stop valet restart">
 <meta property="og:locale" content="en">
@@ -148,7 +148,7 @@
 
 
 
-  <link rel="canonical" href=""/>
+  <link rel="canonical" href="http://localhost:4000/"/>
 
 
 
@@ -335,7 +335,7 @@
   
 
   <article class="post post-type- " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="/living/2019/01/27/blog/">
+    <link itemprop="mainEntityOfPage" href="http://localhost:4000/living/2019/01/27/blog/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="K11">
@@ -693,7 +693,7 @@ valet restart
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">112</span>
+                <span class="site-state-item-count">114</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
@@ -962,7 +962,7 @@ valet restart
       
       <script type="text/javascript">
           var disqus_config = function () {
-              this.page.url = '/living/2019/01/27/blog/';
+              this.page.url = 'http://localhost:4000/living/2019/01/27/blog/';
               this.page.identifier = '/living/2019/01/27/blog/';
               this.page.title = '系统升级了~ 走过的一些坑!';
           };

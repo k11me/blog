@@ -115,7 +115,7 @@
 <meta name="keywords" content="日记, laravel">
 <meta property="og:type" content="article">
 <meta property="og:title" content="laravel json 的坑">
-<meta property="og:url" content="/living/2019/01/20/blog/">
+<meta property="og:url" content="http://localhost:4000/living/2019/01/20/blog/">
 <meta property="og:site_name" content="Keleven.Me">
 <meta property="og:description" content="15 号的份 laravel 创建 json 使用laravel 创建 json 时 可以使用 json_encode() 不过 当输入如下时， $test = [ [ &apos;test&apos; =&amp;gt; &apos;test&apos; ] ] 返回的为数组包裹，可以使用$request[0][&apos;test&apos;]获取数据 当输入如下时， $test = [ &apos;test&apos; =&amp;gt; [ &apos;test&apos; =&amp;gt; &apos;test&apos; ] ] 返回的为对象包裹，可以使用$request-&amp;gt;input(&apos;test.test&apos;)获取数据 在进行大量数据传入时，注意使用对应的方法进行循环写入。 20号的份 laravel 外部请求方法 使用GuzzleHttp 进行请求时 当使用json时 需要添加Content-Type为 application/json,数据写在body下 如果使用传统方式去除Content-Type, 使用form_params请求。 &apos;headers&apos; =&amp;gt; [ &apos;Authorization&apos; =&amp;gt; &apos;Bearer &apos;.&apos;toekn&apos;, &apos;Content-Type&apos; =&amp;gt; &apos;application/json&apos;, ], &apos;body&apos; =&amp;gt; json_encode($JsonData), laravel json 的坑 当使用json请求时，Request 可以自动解析json为数组 也可以使用$request-&amp;gt;input() 最坑的是刚使用return 时会自动使用json…… 使用json_decode() 也会返回json , 可是实际上转换了，使用dd()发现是数组…… 这时请求端在使用一次json_decode()就一定会出错。 所以在请求端json_decode()一次就好。 大致上可以推测 请求端发送的为独立数据，使用GuzzleHttp获取的返回为object 所以需要 json_decode()。 vue 不能跨域也是…… 现在还是先做出来，之后再完善的好。 原因暂时没有找到估计时laravel passport的锅">
 <meta property="og:locale" content="en">
@@ -148,7 +148,7 @@
 
 
 
-  <link rel="canonical" href=""/>
+  <link rel="canonical" href="http://localhost:4000/"/>
 
 
 
@@ -335,7 +335,7 @@
   
 
   <article class="post post-type- " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="/living/2019/01/20/blog/">
+    <link itemprop="mainEntityOfPage" href="http://localhost:4000/living/2019/01/20/blog/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="K11">
@@ -680,7 +680,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">112</span>
+                <span class="site-state-item-count">114</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
@@ -949,7 +949,7 @@
       
       <script type="text/javascript">
           var disqus_config = function () {
-              this.page.url = '/living/2019/01/20/blog/';
+              this.page.url = 'http://localhost:4000/living/2019/01/20/blog/';
               this.page.identifier = '/living/2019/01/20/blog/';
               this.page.title = 'laravel json 的坑';
           };
