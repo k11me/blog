@@ -115,7 +115,7 @@
 <meta name="keywords" content="日记, php, swagger, yubikey, laravel">
 <meta property="og:type" content="article">
 <meta property="og:title" content="swagger-php 快速上手指南">
-<meta property="og:url" content="/living/2018/03/28/blog/">
+<meta property="og:url" content="http://localhost:4000/living/2018/03/28/blog/">
 <meta property="og:site_name" content="Keleven.Me">
 <meta property="og:description" content="小结 swagger 学习用时2天，天宫一号预计在2018年03月31日到2018年04月01日坠落地球，碎片坠落地点未知。 天宫一号的坠落，可以说我朝近年的航天成果全灭。 报道断章取义…… 陨落只是时间问题。小额外汇貌似限制了，实际未测试。 使用DarkaOnLine/L5-Swagger可以在代码中以注释形势直接编写API文档非常方便。 注释中的语法要使用Swagger-php样式，SWAGGER VERSION 3.0 DarkaOnLine/L5-Swagger安装 项目使用的是laravel 5.5 对应 darkaonline/l5-swagger:5.5.* composer require &quot;darkaonline/l5-swagger:5.5.*&quot; 复制设置与视图文件 php artisan vendor:publish --provider &quot;L5Swagger\L5SwaggerServiceProvider&quot; SWAGGER VERSION 3.0支持 composer require &quot;zircote/swagger-php:3.x-dev&quot; 设置.env文件 L5_SWAGGER_GENERATE_ALWAYS=true为每次打开页面是都进行重新渲染，设计阶段非常好用。 SWAGGER_VERSION=3.0 L5_SWAGGER_GENERATE_ALWAYS=true 基础文件设置 基本用法 swagger-v3.php 用于设置一些基本API信息，在页面最上方显示。 /** * @OAS\OpenApi( * @OAS\Info( * version=&quot;1.0.0&quot;, * title=&quot;Test Api&quot;, * description=&quot;描述&quot;, * termsOfService=&quot;https://Test.dev/terms/&quot;, * @OAS\contact( * email=&quot;test@test.dev&quot;, * name=&quot;test&quot;, * url=&quot;https://test.dev&quot; * ), * @OAS\License( * name=&quot;Apache 2.0&quot;, * url=&quot;http://www.apache.org/licenses/LICENSE-2.0.html&quot; * ) * ), * @OAS\Server( * description=&quot;OpenApi host&quot;, * url=&quot;https://test.dev/api&quot; * ), * @OAS\Server( * description=&quot;OpenApi host&quot;, * url=&quot;https://test.dev/api/v2&quot; * ), * @OAS\ExternalDocumentation( * description=&quot;OpenApi host&quot;, * url=&quot;https://test.dev/api/Doc&quot; * ) * ) */ @OAS 为使用前缀，用于读取swagger的设置 名头 解释 是否必要 其他说明 OpenApi swagger 初始化 必要 唯一并位于全部设置最顶端 Info Api说明 必要 设置中的title与version为必要项 Server Api 前置路径 非必要 多连接时，可以并行设置 ExternalDocumentation 扩展文档 非必要 只能设置description与url paths 连接地址 必要 可以在控制器位置设置 tags 主标签 必要 与laravel一起使用时，独立设置方便管理。可以设置name、description、ExternalDocumentation tags.php 用于设置用户标签 /** * @OAS\Tag( * name=&quot;2fa&quot;, * description=&quot;Google 2FA&quot;, * @OAS\ExternalDocumentation( * description=&quot;more&quot;, * url=&quot;https://test.test/docs&quot; * ) * ) * @OAS\Tag( * name=&quot;store&quot;, * description=&quot;Access to Petstore orders&quot; * ) * @OAS\Tag( * name=&quot;user&quot;, * description=&quot;Operations about user&quot; * ) */ path 部分 直接使用注释形势写入控制器 /** * @OAS\Get( * path=&quot;/test&quot;, // API 路由地址 * tags={&quot;test&quot;}, // 对应Tag * sumary=&quot;get test doc&quot;, // API概要 * description=&quot;get test doc more ........&quot;, // API描述 * operationId=&quot;test&quot;, // API请求时ID * deprecated=false, // API是否有效 * @OAS\Server( // 独立API连接设置 可以覆盖全局 * description=&quot;Server host&quot;, // 连接描述 * url=&quot;https://test.dev/api&quot; // 连接地址 * ), * @OAS\Parameter( // API参数, 非必要 * name=”id“, // 参数名 * in=&quot;query&quot;, // 参数位置 可以设置`query`、`header`、`path`、`cookie` * description=&quot;adout this id ......&quot;, // 描述 * required=true, // 是否必须填写，当in设置为path时，需要设置为true。 * style=&quot;from&quot;, // 设置参数序列化类型，非必要，自动根据in值设置。 * @OAS\Schema( * type=&quot;string&quot;, // 参数类型 * example=&quot;test example&quot;, // 参数例子 * ) * ), * @OAS\RequestBody( // 请求主体 content-type 下使用 适合传递多个参数 * description=&quot;adout this id ......&quot;, // 描述 * required=false, // 是否必须填写,默认为false * @OAS\MediaType( // 请求数据结构 * mediaType=&quot;application/json&quot;, // application/json 结构 * @OAS\Schema( * type=&quot;string&quot; * ref=&quot;#/components/schemas/User&quot; // 可以载入设置完成的参数,区分大小写 * ), * @OAS\Schema( * @OAS\Property( // 多参数设置 * property=&quot;otp&quot;, // 参数名称 * description=&quot;yubikey otp&quot;, // 参数描述 * type=&quot;string&quot;, // 参数类型 * example=&quot;cccccccccccccccccccccccccccccccccccccccccccc&quot; * // 参数例子 * ) * ) * ), * @OAS\MediaType( // 请求数据结构 * mediaType=&quot;application/xml&quot;, // application/xml 结构 * @OAS\Schema( * type=&quot;string&quot; * ref=&quot;#/components/schemas/User&quot; // 可以载入设置完成的参数,区分大小写 * ), * @OAS\Schema( * @OAS\Property( // 多参数设置 * property=&quot;otp&quot;, // 参数名称 * description=&quot;yubikey otp&quot;, // 参数描述 * type=&quot;string&quot;, // 参数类型 * example=&quot;cccccccccccccccccccccccccccccccccccccccccccc&quot; * // 参数例子 * ) * ) * ) * ), * @OAS\Response( // 响应,必须设置 * response=200, // 响应编号 * description=&quot;successful operation&quot;, // 响应描述 * @OAS\Header( * header=&quot;X-Rate-Limit&quot;, // 响应头 * description=&quot;calls per hour allowed by the user&quot;, * // 响应头描述 * @OAS\Schema( * type=&quot;integer&quot;, * format=&quot;int32&quot;, * default=&quot;64&quot;, // 默认 * example=&quot;12&quot; // 例子 * ) * ), * @OAS\MediaType( // 响应数据结构 * mediaType=&quot;application/json&quot;, * @OAS\Schema( * @OAS\Property( * property=&quot;message&quot;, // 响应参数头 * description=&quot;Response message&quot;, * type=&quot;string&quot;, // 响应参数数据类型 * example=&quot;true&quot; // 响应参数例子 * ) * ), * ) * ) * ) */ Model 数据参数 可以直接设置在class之上，使用ref=&quot;#/components/schemas/ClassName&quot;可以直接引用。 swagger默认载入位置#/components/schemas/。 /** * @OAS\Schema( * title=&quot;yubikey model&quot;, * description=&quot;yubikey model&quot;, * type=&quot;object&quot;, * @OAS\Property( * property=&quot;message&quot;, * description=&quot;Response message&quot;, * type=&quot;string&quot;, * default=&quot;true&quot;, * example=&quot;true&quot; * ), * @OAS\Property( * property=&quot;status&quot;, * description=&quot;Updated status&quot;, * type=&quot;string&quot;, * example=&quot;true&quot; * ), * @OAS\Property( * property=&quot;age&quot;, * description=&quot;Updated status of the pet&quot;, * type=&quot;integer&quot;, * minimum=&quot;0&quot; * ), * ) */ bitbeans/yubikey 的坑 控制器中不能正常获取Exception。所以不能使用下方代码 use YubiKey; try { $yubikey_auth = Yubikey::verify(Input::get(&apos;otp&apos;)); $yubikey_params = Yubikey::getParameters(); $yubikey_identity = Yubikey::getParameter(&apos;identity&apos;); } catch (\Exception $exception) { $error = $exception-&amp;gt;getMessage(); } 改写到App\Exceptions\Handler的render方法判断，使用Exception判断的packages不多。 switch($exception-&amp;gt;getMessage()) { case &apos;REPLAYED_OTP&apos;: return response()-&amp;gt;json([&apos;message&apos; =&amp;gt; $exception-&amp;gt;getMessage()]); case &apos;Could not parse Yubikey OTP&apos;: return response()-&amp;gt;json([&apos;message&apos; =&amp;gt; $exception-&amp;gt;getMessage()]); } 以上">
 <meta property="og:locale" content="en">
@@ -148,7 +148,7 @@
 
 
 
-  <link rel="canonical" href=""/>
+  <link rel="canonical" href="http://localhost:4000/"/>
 
 
 
@@ -335,7 +335,7 @@
   
 
   <article class="post post-type- " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="/living/2018/03/28/blog/">
+    <link itemprop="mainEntityOfPage" href="http://localhost:4000/living/2018/03/28/blog/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="K11">
@@ -920,7 +920,7 @@ L5_SWAGGER_GENERATE_ALWAYS=true
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">110</span>
+                <span class="site-state-item-count">115</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
@@ -1189,7 +1189,7 @@ L5_SWAGGER_GENERATE_ALWAYS=true
       
       <script type="text/javascript">
           var disqus_config = function () {
-              this.page.url = '/living/2018/03/28/blog/';
+              this.page.url = 'http://localhost:4000/living/2018/03/28/blog/';
               this.page.identifier = '/living/2018/03/28/blog/';
               this.page.title = 'swagger-php 快速上手指南';
           };

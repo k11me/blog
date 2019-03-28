@@ -115,7 +115,7 @@
 <meta name="keywords" content="Jekyll, NexT">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Keleven.Me">
-<meta property="og:url" content="/page8/">
+<meta property="og:url" content="http://localhost:4000/page8/">
 <meta property="og:site_name" content="Keleven.Me">
 <meta property="og:description" content="千变万化的是世界">
 <meta property="og:locale" content="en">
@@ -148,7 +148,7 @@
 
 
 
-  <link rel="canonical" href=""/>
+  <link rel="canonical" href="http://localhost:4000/"/>
 
 
 
@@ -338,7 +338,1210 @@
   
 
   <article class="post post-type- " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="/living/2018/02/15/blog/">
+    <link itemprop="mainEntityOfPage" href="http://localhost:4000/living/2018/03/01/blog/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="K11">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/assets/images/21040889_825385437640313_540035783206109184_a.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Keleven.Me">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+                
+                <a class="post-title-link" href="/living/2018/03/01/blog/" itemprop="url">
+                2018年03月01日
+              </a>
+            
+          
+        </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-01T09:00:00+08:00">
+                2018-03-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/category/#/Living" itemprop="url" rel="index">
+                    <span itemprop="name">Living</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/living/2018/03/01/blog/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="/living/2018/03/01/blog/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <h1 id="小记">小记</h1>
+
+<p><code class="highlighter-rouge">ssr</code>的<code class="highlighter-rouge">tls</code>被爆，大规模封禁来袭，转<code class="highlighter-rouge">v2ray</code></p>
+
+<p>直接部署非常容易，使用<code class="highlighter-rouge">docker</code>快速部署是正解，</p>
+
+<p>实现<code class="highlighter-rouge">websocket+tls+V2ray+Nginx+CDN</code></p>
+
+<p>起因，2018年2月15日开始梯子出现故障，换之。</p>
+
+<p>2018年2月25日 <code class="highlighter-rouge">戊戌复辟</code>，可笑至极，诸多词变为禁语。包括<code class="highlighter-rouge">张勋</code>、<code class="highlighter-rouge">袁世凯</code>等等。微博、微信，禁止修改头像，签名。<code class="highlighter-rouge">反对</code>等不能发表。</p>
+
+<p>马前课 第十一课 开始了……</p>
+
+<p>2月26日开始研究部署<code class="highlighter-rouge">v2ray</code>相关，其中遇坑，记录如下，供后人参考。</p>
+
+<h2 id="原理">原理</h2>
+
+<p>v2ray 使用<code class="highlighter-rouge">websocket</code>连接到<code class="highlighter-rouge">CDN</code>，对抗<code class="highlighter-rouge">DNS</code>污染，保护真实<code class="highlighter-rouge">IP</code></p>
+
+<p><code class="highlighter-rouge">CDN</code>连接在到<code class="highlighter-rouge">服务器</code>，全程通讯使用<code class="highlighter-rouge">tls</code>加密。【不是仿造，是真正的TLS】，服务器内部转发到<code class="highlighter-rouge">v2ray</code>容器。</p>
+
+<blockquote>
+  <p>Q:为什么使用<code class="highlighter-rouge">docker</code>而不是直接部署？  <br />
+A:不方便转移到其他服务器。同时不容易弄乱服务器环境  <br />
+Q:<code class="highlighter-rouge">docker</code>好处是什么  <br />
+A：不需要手动更新证书，可以使用二级域名部署其他服务。比如<code class="highlighter-rouge">web</code>、<code class="highlighter-rouge">mail</code>等等。可以随时添加。</p>
+</blockquote>
+
+<h2 id="docker">docker</h2>
+
+<p>大多数供应商都支持<code class="highlighter-rouge">docker</code>快速构建，直接选择即可。服务器多为<code class="highlighter-rouge">ubuntu</code>。</p>
+
+<p>更新各种包后，准备开始工作。</p>
+
+<p>更新命令</p>
+
+<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2</pre></td><td class="code"><pre class="highlight"><code>$ apt update
+$ apt upgrade
+</code></pre></td></tr></tbody></table></div></div>
+
+<h2 id="文件目录">文件目录</h2>
+
+<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5</pre></td><td class="code"><pre class="highlight"><code>|-- docker-compose.yml
+|-- v2ray
+|   `-- config.json
+`-- vhost.d
+    `-- ******_location
+</code></pre></td></tr></tbody></table></div></div>
+
+<h2 id="docker-composeyml">docker-compose.yml</h2>
+
+<p>说明:</p>
+
+<p><code class="highlighter-rouge">v2ray</code>下的<code class="highlighter-rouge">VIRTUAL_HOST</code>注意填写为二级域名，也可以去掉不填。</p>
+
+<p>同样<code class="highlighter-rouge">v2ray</code>下的<code class="highlighter-rouge">expose</code>与<code class="highlighter-rouge">VIRTUAL_PORT</code>为端口号，应该与<code class="highlighter-rouge">*****_location</code>中端口一致。</p>
+
+<hr />
+
+<p><code class="highlighter-rouge">web1</code>为一般web服务器，开放端口<code class="highlighter-rouge">80</code>。     <br />
+<code class="highlighter-rouge">You_Domain_Name</code> 改为你的域名  <br />
+<code class="highlighter-rouge">You_Email</code> 为邮箱，必填</p>
+
+<ul>
+  <li>VIRTUAL_HOST=<code class="highlighter-rouge">You_Domain_Name</code></li>
+  <li>VIRTUAL_PORT=<code class="highlighter-rouge">80</code></li>
+  <li>LETSENCRYPT_HOST=<code class="highlighter-rouge">You_Domain_Name</code></li>
+  <li>LETSENCRYPT_EMAIL=<code class="highlighter-rouge">You_Email</code></li>
+</ul>
+
+<hr />
+
+<p><code class="highlighter-rouge">nginx-proxy</code>如名字,详情自行<code class="highlighter-rouge">google</code>  <br />
+<code class="highlighter-rouge">letsencrypt-nginx-proxy-companion</code>如名字,详情自行<code class="highlighter-rouge">google</code></p>
+
+<hr />
+
+<div class="language-yml highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9<br/>10<br/>11<br/>12<br/>13<br/>14<br/>15<br/>16<br/>17<br/>18<br/>19<br/>20<br/>21<br/>22<br/>23<br/>24<br/>25<br/>26<br/>27<br/>28<br/>29<br/>30<br/>31<br/>32<br/>33<br/>34<br/>35<br/>36<br/>37<br/>38<br/>39<br/>40<br/>41<br/>42<br/>43<br/>44<br/>45<br/>46<br/>47<br/>48<br/>49<br/>50<br/>51</pre></td><td class="code"><pre class="highlight"><code><span class="na">version</span><span class="pi">:</span> <span class="s1">'</span><span class="s">2'</span>
+
+<span class="na">services</span><span class="pi">:</span>
+  <span class="na">v2ray</span><span class="pi">:</span>
+    <span class="na">image</span><span class="pi">:</span> <span class="s">v2ray/official</span>
+    <span class="na">container_name</span><span class="pi">:</span> <span class="s">v2ray</span>
+    <span class="na">restart</span><span class="pi">:</span> <span class="s">always</span>
+    <span class="na">expose</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s2">"</span><span class="s">****"</span>
+    <span class="na">volumes</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">$PWD/v2ray:/etc/v2ray</span>
+      <span class="pi">-</span> <span class="s">$PWD/v2ray/config.json:/etc/v2ray/config.json:ro</span>
+    <span class="na">environment</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">VIRTUAL_HOST=****</span>
+      <span class="pi">-</span> <span class="s">VIRTUAL_PORT=****</span>
+
+  <span class="na">web1</span><span class="pi">:</span>
+    <span class="na">image</span><span class="pi">:</span> <span class="s">nginx:latest</span>
+    <span class="na">restart</span><span class="pi">:</span> <span class="s">always</span>
+    <span class="na">expose</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s2">"</span><span class="s">80"</span>
+    <span class="na">environment</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">VIRTUAL_HOST=*****</span>
+      <span class="pi">-</span> <span class="s">VIRTUAL_PORT=80</span>
+      <span class="pi">-</span> <span class="s">LETSENCRYPT_HOST=*****.***</span>
+      <span class="pi">-</span> <span class="s">LETSENCRYPT_EMAIL=*****@*****.***</span>
+
+  <span class="na">nginx-proxy</span><span class="pi">:</span>
+      <span class="na">image</span><span class="pi">:</span> <span class="s">jwilder/nginx-proxy:latest</span>
+      <span class="na">restart</span><span class="pi">:</span> <span class="s">always</span>
+      <span class="na">ports</span><span class="pi">:</span>
+          <span class="pi">-</span> <span class="s2">"</span><span class="s">80:80"</span>
+          <span class="pi">-</span> <span class="s2">"</span><span class="s">443:443"</span>
+      <span class="na">volumes</span><span class="pi">:</span>
+          <span class="pi">-</span> <span class="s">/path/to/certs:/etc/nginx/certs:ro</span>
+          <span class="pi">-</span> <span class="s">$PWD/vhost.d:/etc/nginx/vhost.d:ro</span>
+          <span class="pi">-</span> <span class="s">/usr/share/nginx/html</span>
+          <span class="pi">-</span> <span class="s">/var/run/docker.sock:/tmp/docker.sock:ro</span>
+      <span class="na">labels</span><span class="pi">:</span>
+          <span class="pi">-</span> <span class="s2">"</span><span class="s">com.github.jrcs.letsencrypt_nginx_proxy_companion.nginx_proxy"</span>
+
+  <span class="na">letsencrypt-nginx-proxy-companion</span><span class="pi">:</span>
+      <span class="na">image</span><span class="pi">:</span> <span class="s">jrcs/letsencrypt-nginx-proxy-companion:latest</span>
+      <span class="na">restart</span><span class="pi">:</span> <span class="s">always</span>
+      <span class="na">volumes</span><span class="pi">:</span>
+          <span class="pi">-</span> <span class="s">/path/to/certs:/etc/nginx/certs:rw</span>
+          <span class="pi">-</span> <span class="s">$PWD/vhost.d:/etc/nginx/vhost.d:ro</span>
+          <span class="pi">-</span> <span class="s">/var/run/docker.sock:/var/run/docker.sock:ro</span>
+      <span class="na">volumes_from</span><span class="pi">:</span>
+          <span class="pi">-</span> <span class="s">nginx-proxy</span>
+
+</code></pre></td></tr></tbody></table></div></div>
+
+<h2 id="tls转发">TLS转发</h2>
+
+<p>在<code class="highlighter-rouge">dockec-compose.yml</code>下创建<code class="highlighter-rouge">vhost.d</code>文件件，</p>
+
+<p>新建文件<code class="highlighter-rouge">You_Domain_Name_location</code></p>
+
+<p>使用你的域名替换<code class="highlighter-rouge">You_Domain_Name</code>，要与<code class="highlighter-rouge">web1</code>设置的一致。</p>
+
+<p>注意<code class="highlighter-rouge">proxy_pass</code>后的端口与<code class="highlighter-rouge">v2ray</code>设置的一致。</p>
+
+<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8</pre></td><td class="code"><pre class="highlight"><code>proxy_redirect off;
+proxy_http_version 1.1;
+proxy_set_header Upgrade $http_upgrade;
+proxy_set_header Connection "upgrade";
+proxy_set_header Host $http_host;
+if ($http_upgrade = "websocket" ) {
+    proxy_pass http://v2ray:****;
+}
+</code></pre></td></tr></tbody></table></div></div>
+
+<h2 id="v2ray-设置文件configjson">v2ray 设置文件<code class="highlighter-rouge">config.json</code></h2>
+
+<p>在<code class="highlighter-rouge">dockec-compose.yml</code>下创建<code class="highlighter-rouge">v2ray</code>文件件，</p>
+
+<p>新建文件<code class="highlighter-rouge">config.json</code></p>
+
+<p><code class="highlighter-rouge">port</code>注意与<code class="highlighter-rouge">v2ray</code>设置一致</p>
+
+<p><code class="highlighter-rouge">id</code>改为<code class="highlighter-rouge">你的id</code>，可以使用<a href="https://www.uuidgenerator.net/">uuidgenerator</a>生成一个。</p>
+
+<p><code class="highlighter-rouge">json</code>写完之后，注意校对格式哦</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9<br/>10<br/>11<br/>12<br/>13<br/>14<br/>15<br/>16<br/>17<br/>18<br/>19<br/>20<br/>21<br/>22<br/>23<br/>24<br/>25</pre></td><td class="code"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"inbound"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"port"</span><span class="p">:</span><span class="w"> </span><span class="s2">"****"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"protocol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"vmess"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"settings"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"clients"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"***********"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"alterId"</span><span class="p">:</span><span class="w"> </span><span class="mi">64</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"streamSettings"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"network"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ws"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"wsSettings"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"outbound"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"protocol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"freedom"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"settings"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre></td></tr></tbody></table></div></div>
+
+<h2 id="之后">之后</h2>
+
+<p>去用户端里面设置吧。地址<code class="highlighter-rouge">You_Domain_Name</code>端口<code class="highlighter-rouge">443</code>，记得使用<code class="highlighter-rouge">websocket</code>与<code class="highlighter-rouge">TLS</code>。</p>
+
+<h2 id="cdn">CDN</h2>
+
+<p><code class="highlighter-rouge">CloudFlare</code></p>
+
+<p><code class="highlighter-rouge">DNS</code>中开启<code class="highlighter-rouge">websocket</code></p>
+
+<p><code class="highlighter-rouge">Crypto</code> 中<code class="highlighter-rouge">Require Modern TLS</code>关闭</p>
+
+<p><code class="highlighter-rouge">Crypto</code> 中<code class="highlighter-rouge">Authenticated Origin Pulls</code>关闭</p>
+
+<p><code class="highlighter-rouge">Crypto</code> 中<code class="highlighter-rouge">Opportunistic Encryption</code>关闭</p>
+
+<h2 id="nginx-proxy-的坑">nginx-proxy 的坑</h2>
+
+<p><code class="highlighter-rouge">nginx-proxy</code>中，设置转发时<code class="highlighter-rouge">www.www.com/path</code>无法正常解析，这个问题3年没有修复过了……</p>
+
+<p>错误重现:<code class="highlighter-rouge">vhost.d</code>下，新建<code class="highlighter-rouge">www.www.com</code>设置</p>
+
+<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9<br/>10</pre></td><td class="code"><pre class="highlight"><code>location /v2ray/ {
+  proxy_redirect off;
+  proxy_http_version 1.1;
+  proxy_set_header Upgrade $http_upgrade;
+  proxy_set_header Connection "upgrade";
+  proxy_set_header Host $http_host;
+  if ($http_upgrade = "websocket" ) {
+      proxy_pass http://v2ray:****;
+  }
+}
+</code></pre></td></tr></tbody></table></div></div>
+
+<p>于是只能使用<code class="highlighter-rouge">www.www.com_location</code>进行转发。</p>
+
+<h2 id="参考文档">参考文档</h2>
+
+<p><a href="https://www.v2ray.com/">v2ray</a></p>
+
+<p><a href="https://blog.starryvoid.com/archives/267.html">参考1</a></p>
+
+<p><a href="https://blog.birkhoff.me/use-docker-to-deploy-vmess-and-ss-using-docker/">参考2</a></p>
+
+
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/living/2018/03/01/blog/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+        
+        
+        
+        
+          <div class="post-eof"></div>
+        
+      
+    </footer>
+  </article>
+
+  
+    
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type- " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://localhost:4000/living/2018/02/26/blog/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="K11">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/assets/images/21040889_825385437640313_540035783206109184_a.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Keleven.Me">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+                
+                <a class="post-title-link" href="/living/2018/02/26/blog/" itemprop="url">
+                2018年02月26日
+              </a>
+            
+          
+        </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-26T09:00:00+08:00">
+                2018-02-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/category/#/Living" itemprop="url" rel="index">
+                    <span itemprop="name">Living</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/living/2018/02/26/blog/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="/living/2018/02/26/blog/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <h1 id="吾皇万岁万岁万万岁">吾皇万岁，万岁，万万岁</h1>
+
+
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/living/2018/02/26/blog/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+        
+        
+        
+        
+          <div class="post-eof"></div>
+        
+      
+    </footer>
+  </article>
+
+  
+    
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type- " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://localhost:4000/living/2018/02/25/blog/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="K11">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/assets/images/21040889_825385437640313_540035783206109184_a.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Keleven.Me">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+                
+                <a class="post-title-link" href="/living/2018/02/25/blog/" itemprop="url">
+                2018年02月25日
+              </a>
+            
+          
+        </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-25T09:00:00+08:00">
+                2018-02-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/category/#/Living" itemprop="url" rel="index">
+                    <span itemprop="name">Living</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/living/2018/02/25/blog/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="/living/2018/02/25/blog/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 id="小记">小记</h2>
+
+<p>网络崩溃变成了日常，每天维护网络正常2小时，每次走<code class="highlighter-rouge">ufw</code>速度比直连慢一倍。</p>
+
+<p>天上乌云密布，光又在何处。</p>
+
+<p>完蛋，很恶心。</p>
+
+
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/living/2018/02/25/blog/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+        
+        
+        
+        
+          <div class="post-eof"></div>
+        
+      
+    </footer>
+  </article>
+
+  
+    
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type- " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://localhost:4000/living/2018/02/22/blog/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="K11">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/assets/images/21040889_825385437640313_540035783206109184_a.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Keleven.Me">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+                
+                <a class="post-title-link" href="/living/2018/02/22/blog/" itemprop="url">
+                2018年02月22日
+              </a>
+            
+          
+        </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-22T09:00:00+08:00">
+                2018-02-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/category/#/Living" itemprop="url" rel="index">
+                    <span itemprop="name">Living</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/living/2018/02/22/blog/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="/living/2018/02/22/blog/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 id="小记">小记</h2>
+
+<p><code class="highlighter-rouge">quasar-cli</code>升级到了<code class="highlighter-rouge">0.15.1</code> 与之前版本不兼容……</p>
+
+<p>不支持<code class="highlighter-rouge">quasar-play</code></p>
+
+<p>目录结构有所调整，比之前清晰多了，加上一次编程构建<code class="highlighter-rouge">PWA</code>、<code class="highlighter-rouge">Cordova</code>、<code class="highlighter-rouge">Electron</code>全平台大礼包。</p>
+
+<p>和预想的一样，<code class="highlighter-rouge">android</code>就是坑多。</p>
+
+<h2 id="安装-java-8">安装 JAVA 8</h2>
+
+<p><code class="highlighter-rouge">Android Studio</code>依然不好下载。墙！墙！墙！ 略烦。</p>
+
+<p>需要<code class="highlighter-rouge">java</code>……，直接使用<code class="highlighter-rouge">brew cask install java</code>安装是<code class="highlighter-rouge">9.0+</code>版本，不兼容<code class="highlighter-rouge">Cordova</code>需要装<code class="highlighter-rouge">java8</code>,方法如下</p>
+
+<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2</pre></td><td class="code"><pre class="highlight"><code>brew tap caskroom/versions
+brew cask install java8
+</code></pre></td></tr></tbody></table></div></div>
+
+<p>使用<code class="highlighter-rouge">/usr/libexec/java_home -V</code>查看本机安装的<code class="highlighter-rouge">JDK</code></p>
+
+<p>安装<code class="highlighter-rouge">jenv</code>用于管理与切换<code class="highlighter-rouge">java</code>版本<code class="highlighter-rouge">brew install jenv</code></p>
+
+<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2</pre></td><td class="code"><pre class="highlight"><code>echo 'export PATH="$HOME/.jenv/bin:$PATH"' &gt;&gt; ~/.zshrc
+echo 'eval "$(jenv init -)"' &gt;&gt; ~/.zshrc
+</code></pre></td></tr></tbody></table></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3</pre></td><td class="code"><pre class="highlight"><code>jenv add /Library/Java/JavaVirtualMachines/jdk-9.0.4.jdk/Contents/Home
+jenv add /Library/Java/JavaVirtualMachines/jdk1.8.0_162.jdk/Contents/Home
+jenv global 1.8.0.162
+</code></pre></td></tr></tbody></table></div></div>
+
+<p>需要重启使用<code class="highlighter-rouge">java -version</code>检查设置</p>
+
+<p>其他设置方法。</p>
+
+<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2</pre></td><td class="code"><pre class="highlight"><code>jenv local 1.8.0.162
+jenv shell 1.8.0.162
+</code></pre></td></tr></tbody></table></div></div>
+
+<h2 id="安装-android-studio">安装 Android Studio</h2>
+
+<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code>brew cask install android-studio
+</code></pre></td></tr></tbody></table></div></div>
+
+<p>之后还是要等……</p>
+
+<h2 id="zshrc">zshrc</h2>
+
+<p>编辑<code class="highlighter-rouge">~/.zshrc</code>，并添加下方代码</p>
+
+<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3</pre></td><td class="code"><pre class="highlight"><code>export ANDROID_HOME="$HOME/Library/Android/sdk"
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+</code></pre></td></tr></tbody></table></div></div>
+
+<h2 id="cordova-构建需要-gradle">Cordova 构建需要 gradle</h2>
+
+<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code>brew install gradle
+</code></pre></td></tr></tbody></table></div></div>
+
+
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/living/2018/02/22/blog/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+        
+        
+        
+        
+          <div class="post-eof"></div>
+        
+      
+    </footer>
+  </article>
+
+  
+    
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type- " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://localhost:4000/living/2018/02/18/blog/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="K11">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/assets/images/21040889_825385437640313_540035783206109184_a.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Keleven.Me">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+                
+                <a class="post-title-link" href="/living/2018/02/18/blog/" itemprop="url">
+                2018年02月18日
+              </a>
+            
+          
+        </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-18T09:00:00+08:00">
+                2018-02-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/category/#/Living" itemprop="url" rel="index">
+                    <span itemprop="name">Living</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/living/2018/02/18/blog/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="/living/2018/02/18/blog/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 id="心情">心情</h2>
+
+<p>真让人恶心，自己什么都不做，却幻想着得到巨额的回报。</p>
+
+<p>不觉得中彩票的几率更大吗。</p>
+
+<p>满心的小算盘，当别人看不出来吗。</p>
+
+<p>想如愿，呵呵，等着去吧。管你是谁，都别做梦了。</p>
+
+<p>现在心情与吃了苍蝇差不多。</p>
+
+
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/living/2018/02/18/blog/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+        
+        
+        
+        
+          <div class="post-eof"></div>
+        
+      
+    </footer>
+  </article>
+
+  
+    
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type- " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://localhost:4000/living/2018/02/15/blog/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="K11">
@@ -530,7 +1733,7 @@
   
 
   <article class="post post-type- " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="/living/2018/02/13/blog/">
+    <link itemprop="mainEntityOfPage" href="http://localhost:4000/living/2018/02/13/blog/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="K11">
@@ -723,7 +1926,7 @@
   
 
   <article class="post post-type- " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="/living/2018/02/11/blog/">
+    <link itemprop="mainEntityOfPage" href="http://localhost:4000/living/2018/02/11/blog/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="K11">
@@ -946,7 +2149,7 @@
   
 
   <article class="post post-type- " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="/living/2018/02/10/blog/">
+    <link itemprop="mainEntityOfPage" href="http://localhost:4000/living/2018/02/10/blog/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="K11">
@@ -1150,7 +2353,7 @@ php artisan vendor:publish <span class="nt">--provider</span><span class="o">=</
   
 
   <article class="post post-type- " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="/living/2018/02/08/blog/">
+    <link itemprop="mainEntityOfPage" href="http://localhost:4000/living/2018/02/08/blog/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="K11">
@@ -1389,1165 +2592,6 @@ git config --local user.name "***"
         
         
         
-          <div class="post-eof"></div>
-        
-      
-    </footer>
-  </article>
-
-  
-    
-    
-
-  
-
-  
-  
-  
-
-  <article class="post post-type- " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="/living/2018/02/02/blog/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="K11">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/assets/images/21040889_825385437640313_540035783206109184_a.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Keleven.Me">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-                
-                <a class="post-title-link" href="/living/2018/02/02/blog/" itemprop="url">
-                2018年02月02日
-              </a>
-            
-          
-        </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-02T09:00:00+08:00">
-                2018-02-02
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/category/#/Living" itemprop="url" rel="index">
-                    <span itemprop="name">Living</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/living/2018/02/02/blog/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="/living/2018/02/02/blog/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-  
-  
-
-
-
-
-
-
-
-
-
-
-
-
-  <h2 id="laravel-session-使用-cache">laravel session 使用 cache</h2>
-
-<p>设置<code class="highlighter-rouge">config\database</code>。<br />
-<code class="highlighter-rouge">redis</code>下添加。</p>
-
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-</pre></td><td class="code"><pre><span class="s1">'session'</span> <span class="o">=&gt;</span> <span class="p">[</span>
-    <span class="s1">'host'</span> <span class="o">=&gt;</span> <span class="nx">env</span><span class="p">(</span><span class="s1">'REDIS_HOST'</span><span class="p">,</span> <span class="s1">'127.0.0.1'</span><span class="p">),</span>
-    <span class="s1">'password'</span> <span class="o">=&gt;</span> <span class="nx">env</span><span class="p">(</span><span class="s1">'REDIS_PASSWORD'</span><span class="p">,</span> <span class="kc">null</span><span class="p">),</span>
-    <span class="s1">'port'</span> <span class="o">=&gt;</span> <span class="nx">env</span><span class="p">(</span><span class="s1">'REDIS_PORT'</span><span class="p">,</span> <span class="mi">6379</span><span class="p">),</span>
-    <span class="s1">'database'</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
-<span class="p">],</span></pre></td></tr></tbody></table></code></pre></figure>
-
-<p>设置<code class="highlighter-rouge">config\session</code>。</p>
-
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
-</pre></td><td class="code"><pre><span class="s1">'connection'</span> <span class="o">=&gt;</span> <span class="s1">'session'</span><span class="p">,</span></pre></td></tr></tbody></table></code></pre></figure>
-
-<p>设置<code class="highlighter-rouge">config\cache</code></p>
-
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
-2
-3
-4
-</pre></td><td class="code"><pre><span class="s1">'test'</span> <span class="o">=&gt;</span> <span class="p">[</span>
-    <span class="s1">'driver'</span> <span class="o">=&gt;</span> <span class="s1">'redis'</span><span class="p">,</span>
-    <span class="s1">'connection'</span> <span class="o">=&gt;</span> <span class="s1">'test'</span><span class="p">,</span>
-<span class="p">],</span></pre></td></tr></tbody></table></code></pre></figure>
-
-<h2 id="听闻">听闻</h2>
-
-<p>听闻我朝2018年4月1日开始VPN白名单，既锁国。</p>
-
-
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/living/2018/02/02/blog/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-        
-        
-        
-        
-          <div class="post-eof"></div>
-        
-      
-    </footer>
-  </article>
-
-  
-    
-    
-
-  
-
-  
-  
-  
-
-  <article class="post post-type- " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="/living/2018/01/26/blog/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="K11">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/assets/images/21040889_825385437640313_540035783206109184_a.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Keleven.Me">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-                
-                <a class="post-title-link" href="/living/2018/01/26/blog/" itemprop="url">
-                2018年01月26日
-              </a>
-            
-          
-        </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-01-26T09:00:00+08:00">
-                2018-01-26
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/category/#/Living" itemprop="url" rel="index">
-                    <span itemprop="name">Living</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/living/2018/01/26/blog/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="/living/2018/01/26/blog/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-  
-  
-
-
-
-
-
-
-
-
-
-
-
-
-  <h2 id="小记">小记</h2>
-
-<p>天气格外的冷，心也是一样。月比往常大一些。</p>
-
-<p>略期待31日月全食。 19点30分开始。21点30分左右可以看月全食，持续38分钟。</p>
-
-<p>上次看月全食已经忘记是什么时候了。</p>
-
-<p>2018年07月28日 4点21分 月全食 21世纪最长的一次。西部地区可以看到全貌。</p>
-
-<p>是一件难得的礼物，开心的收下就好。</p>
-
-<p>80个以上的数据表在脑中翻腾。对应的方法可能更多。代码过万行应该不难吧。</p>
-
-<p>分成有效的小部分，逐一化解便好。</p>
-
-<hr />
-
-<p>人无愧于天地，便能笑着死去。</p>
-
-<p>心是什么，某一天丢了……</p>
-
-
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/living/2018/01/26/blog/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-        
-        
-        
-        
-          <div class="post-eof"></div>
-        
-      
-    </footer>
-  </article>
-
-  
-    
-    
-
-  
-
-  
-  
-  
-
-  <article class="post post-type- " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="/living/2018/01/22/blog/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="K11">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/assets/images/21040889_825385437640313_540035783206109184_a.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Keleven.Me">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-                
-                <a class="post-title-link" href="/living/2018/01/22/blog/" itemprop="url">
-                2018年01月22日
-              </a>
-            
-          
-        </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-01-22T09:00:00+08:00">
-                2018-01-22
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/category/#/Living" itemprop="url" rel="index">
-                    <span itemprop="name">Living</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/living/2018/01/22/blog/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="/living/2018/01/22/blog/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-  
-  
-
-
-
-
-
-
-
-
-
-
-
-
-  <h2 id="blog-更新">blog 更新</h2>
-
-<p><code class="highlighter-rouge">blog</code> 更新到 <code class="highlighter-rouge">NexT</code> 样式。</p>
-
-<p>使用<code class="highlighter-rouge">docker</code>挂载，上传到<code class="highlighter-rouge">github</code>快速部署。</p>
-
-<h2 id="nginx-proxy-与-letsencrypt-nginx-proxy-companion">nginx-proxy 与 letsencrypt-nginx-proxy-companion</h2>
-
-<p>用处自动反向代理与<code class="highlighter-rouge">https</code>证书申请，自动续期，二级域名，多站同机变为可能。</p>
-
-<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9<br/>10<br/>11<br/>12<br/>13<br/>14<br/>15<br/>16<br/>17<br/>18<br/>19<br/>20<br/>21<br/>22<br/>23<br/>24<br/>25</pre></td><td class="code"><pre class="highlight"><code>version: '2'
-services:
-    nginx-proxy:
-        image: jwilder/nginx-proxy:latest
-        restart: always
-        ports:
-            - "80:80"
-            - "443:443"
-        volumes:
-            - /path/to/certs:/etc/nginx/certs:ro
-            - /etc/nginx/vhost.d
-            - /usr/share/nginx/html
-            - /var/run/docker.sock:/tmp/docker.sock:ro
-        labels:
-            - "com.github.jrcs.letsencrypt_nginx_proxy_companion.nginx_proxy"
-        network_mode: "bridge"
-    letsencrypt-nginx-proxy-companion:
-        image: jrcs/letsencrypt-nginx-proxy-companion:latest
-        restart: always
-        volumes:
-            - /path/to/certs:/etc/nginx/certs:rw
-            - /var/run/docker.sock:/var/run/docker.sock:ro
-        volumes_from:
-            - nginx-proxy
-        network_mode: "bridge"
-</code></pre></td></tr></tbody></table></div></div>
-
-<h2 id="blog-挂载">blog 挂载</h2>
-
-<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9<br/>10<br/>11<br/>12</pre></td><td class="code"><pre class="highlight"><code>version: '2'
-services:
-    web:
-      image: nginx:latest
-      restart: always
-      environment:
-          - VIRTUAL_HOST=keleven.me
-          - LETSENCRYPT_HOST=keleven.me
-          - LETSENCRYPT_EMAIL=k11@keleven.me
-      volumes:
-          - $PWD/blog2:/usr/share/nginx/html:ro
-      network_mode: "bridge"
-</code></pre></td></tr></tbody></table></div></div>
-
-<h2 id="https-中的坑">https 中的坑</h2>
-
-<p><strong>问题：</strong> 在<code class="highlighter-rouge">https</code>页面中使用<code class="highlighter-rouge">http</code>链接会导致浏览器默认为不安全。</p>
-
-<p>解决：全部使用<code class="highlighter-rouge">https</code>链接可破解。</p>
-
-<h2 id="next-的坑">NexT 的坑</h2>
-
-<p><strong>问题：</strong> 部分文章在首页显示部分不能。</p>
-
-<p>解决：注意切换换行符<code class="highlighter-rouge">LF</code>不显示，<code class="highlighter-rouge">CRLF</code>显示。</p>
-
-<blockquote>
-  <p>PS：<br />
-<code class="highlighter-rouge">LF</code>为<code class="highlighter-rouge">Linux</code>与<code class="highlighter-rouge">Mac os</code>默认。<br />
-<code class="highlighter-rouge">CRLF</code>为<code class="highlighter-rouge">windows</code>默认。</p>
-</blockquote>
-
-<h2 id="以上">以上</h2>
-
-
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/living/2018/01/22/blog/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-        
-        
-        
-        
-          <div class="post-eof"></div>
-        
-      
-    </footer>
-  </article>
-
-  
-    
-    
-
-  
-
-  
-  
-  
-
-  <article class="post post-type- " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="/living/2018/01/21/blog/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="K11">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/assets/images/21040889_825385437640313_540035783206109184_a.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Keleven.Me">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-                
-                <a class="post-title-link" href="/living/2018/01/21/blog/" itemprop="url">
-                2018年01月21日
-              </a>
-            
-          
-        </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-01-21T09:00:00+08:00">
-                2018-01-21
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/category/#/Living" itemprop="url" rel="index">
-                    <span itemprop="name">Living</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/living/2018/01/21/blog/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="/living/2018/01/21/blog/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-  
-  
-
-
-
-
-
-
-
-
-
-
-
-
-  <h2 id="小记">小记</h2>
-
-<p>系统双挂 全部重装，1月多波折。虽然还有10天结束。</p>
-
-<p>新番 <code class="highlighter-rouge">DAELING in the FRANXX</code> 很好看。</p>
-
-<p><code class="highlighter-rouge">UE4 code</code> 编译需要 <code class="highlighter-rouge">win8.1 SDK</code> 有点意外。</p>
-
-<p><code class="highlighter-rouge">steam</code> 注册完了开发账号，我朝外汇管制需求想办法规避。</p>
-
-<p>U.S. 的营业税是<code class="highlighter-rouge">30%</code>，境外无任何减免。</p>
-
-<p>mac 下<code class="highlighter-rouge">brew</code> 很好用。 使用vbox要关闭SPE的网络防护，否则无法<code class="highlighter-rouge">apt update</code>。</p>
-
-<p><code class="highlighter-rouge">UE4</code> 需要编译服务端，对部署机器的性能有要求。</p>
-
-<p>想打包为<code class="highlighter-rouge">docker</code>放在<code class="highlighter-rouge">linux</code>需要实际测试。</p>
-
-<p>邮件服务器，基本稳定。<code class="highlighter-rouge">laravel</code>可以直接使用<code class="highlighter-rouge">laradock</code>部署的可能性很高。</p>
-
-<p>之后就<code class="highlighter-rouge">redis</code>与<code class="highlighter-rouge">mysql</code>主从与集群了。全世界的人可以一起玩一个游戏，想想就有趣。</p>
-
-<p>后端想做成多个扩展包的形式，方法部署。</p>
-
-<p>还有同时部署一部分的数据。</p>
-
-<p>权限，文件标记什么的。</p>
-
-
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/living/2018/01/21/blog/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-        
-        
-        
-        
-          <div class="post-eof"></div>
-        
-      
-    </footer>
-  </article>
-
-  
-    
-    
-
-  
-
-  
-  
-  
-
-  <article class="post post-type- " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="/living/2017/12/27/blog/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="K11">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/assets/images/21040889_825385437640313_540035783206109184_a.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Keleven.Me">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-                
-                <a class="post-title-link" href="/living/2017/12/27/blog/" itemprop="url">
-                2017年12月27日
-              </a>
-            
-          
-        </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-12-27T09:00:00+08:00">
-                2017-12-27
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/category/#/Living" itemprop="url" rel="index">
-                    <span itemprop="name">Living</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/living/2017/12/27/blog/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="/living/2017/12/27/blog/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-  
-  
-
-
-
-
-
-
-
-
-
-
-
-
-  <h1 id="小记">小记</h1>
-
-<p>为什么写日记，写日记可以让心情变好。</p>
-
-<p>精神上的伤害远比肉体上的猛烈！！</p>
-
-<p>失眠、疲惫、测试<code class="highlighter-rouge">bitbeans/Yubikey</code>包。</p>
-
-<p>版本年代久远，手动修改一行，成功攻略。</p>
-
-<h2 id="bitbeansyubikey的坑"><code class="highlighter-rouge">bitbeans/Yubikey</code>的坑</h2>
-
-<p><code class="highlighter-rouge">src\YubiKey.php</code>第376行。</p>
-
-<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2</pre></td><td class="code"><pre class="highlight"><code>--  while (list($key, $val) = each($rows)) {
-++  foreach($rows as $key =&gt; $val){
-</code></pre></td></tr></tbody></table></div></div>
-
-<p><code class="highlighter-rouge">app/config/yubikey.php</code>中设置<code class="highlighter-rouge">CLIENT_ID</code> 与 <code class="highlighter-rouge">SECRET_KEY</code>
-控制器中使用。
-注意：要先验证<code class="highlighter-rouge">otp</code>验证<code class="highlighter-rouge">identity</code>。
-OTP = One Time Password</p>
-
-<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8</pre></td><td class="code"><pre class="highlight"><code>use YubiKey;
-
-// 验证OTP 返回 true or false
-$yubikey_auth = Yubikey::verify(Input::get('otp'));
-// 排部 返回信息
-$yubikey_params = Yubikey::getParameters();
-// 获取返回信息中的`identity`字段，yubikey的硬件ID，通常捆绑用户名
-$yubikey_identity = Yubikey::getParameter('identity');
-</code></pre></td></tr></tbody></table></div></div>
-
-<h2 id="yubikey-是什么">yubikey 是什么</h2>
-
-<p>简单的说，不能保存文件的u盘，只用来验证身份。
-长下面的样子。</p>
-
-<p><img src="https://i.loli.net/2017/12/27/5a435d53dd617.png" alt="yubikey-4-series-sept-2017-444x444" /></p>
-
-<p>可以用来登陆电脑、提供一次性密码等等。 使用时按一下金属部分，就产生一串随机密码，30秒有效，验证窗口为1分30秒。</p>
-
-<p>结合SSH登陆服务器安全性非常高。</p>
-
-<p><strong>什么？你说windows？完全没安全性呢。</strong></p>
-
-<p>还可以用来保存加密的密钥，解密时，要求提供密钥并插入yubikey。加密过文件10年内是不太可能被破解的。</p>
-
-<p><strong>什么？yubikey丢了？嗯，放弃文件吧🤓</strong>
-这时候用2个yubikey就好了~~😂</p>
-
-<p>最后可以就来加解密电子邮件，<code class="highlighter-rouge">Edward Joseph Snowden</code>告诉我们监控无处不在，在不暴露私钥的情况下，加密过的邮件是安全的。</p>
-
-<p><code class="highlighter-rouge">yubikey</code>的私钥解密时要插入USB接口，不丢失的情况下无解。</p>
-
-<h2 id="最后">最后</h2>
-
-<p>最后放个公钥，可以用来加密给我的邮件哦~ 欢迎勾搭~</p>
-
-<p>k11@keleven.me</p>
-
-<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9<br/>10<br/>11<br/>12<br/>13<br/>14<br/>15<br/>16<br/>17<br/>18<br/>19<br/>20<br/>21<br/>22<br/>23<br/>24<br/>25<br/>26<br/>27<br/>28<br/>29<br/>30<br/>31<br/>32<br/>33<br/>34<br/>35<br/>36<br/>37<br/>38<br/>39<br/>40<br/>41<br/>42<br/>43<br/>44<br/>45<br/>46<br/>47<br/>48<br/>49<br/>50</pre></td><td class="code"><pre class="highlight"><code>-----BEGIN PGP PUBLIC KEY BLOCK-----
-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
-=7zR2
------END PGP PUBLIC KEY BLOCK-----
-</code></pre></td></tr></tbody></table></div></div>
-
-
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/living/2017/12/27/blog/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-        
-        
-        
-        
       
     </footer>
   </article>
@@ -2563,7 +2607,7 @@ kDSEWJun3tv0R0zNtv494ZfD29MmQEi1RFV1qbGEW4LlP19jnNhlr3pP2Xt18Kg=
 
 
 
-    <a class="extend prev" rel="prev" href="/page7"><i class="fa fa-angle-left"></i></a> <a class="page-number" href="/">1</a> <span class="space">&hellip;</span> <a class="page-number" href="/page7">7</a> <span class="page-number current">8</span> <a class="page-number" href="/page9">9</a> <span class="space">&hellip;</span> <a class="page-number" href="/page11">11</a> <a class="extend prev" rel="next" href="/page9"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page7"><i class="fa fa-angle-left"></i></a> <a class="page-number" href="/">1</a> <span class="space">&hellip;</span> <a class="page-number" href="/page7">7</a> <span class="page-number current">8</span> <a class="page-number" href="/page9">9</a> <span class="space">&hellip;</span> <a class="page-number" href="/page12">12</a> <a class="extend prev" rel="next" href="/page9"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -2609,7 +2653,7 @@ kDSEWJun3tv0R0zNtv494ZfD29MmQEi1RFV1qbGEW4LlP19jnNhlr3pP2Xt18Kg=
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">110</span>
+                <span class="site-state-item-count">115</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>

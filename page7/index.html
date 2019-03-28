@@ -115,7 +115,7 @@
 <meta name="keywords" content="Jekyll, NexT">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Keleven.Me">
-<meta property="og:url" content="/page7/">
+<meta property="og:url" content="http://localhost:4000/page7/">
 <meta property="og:site_name" content="Keleven.Me">
 <meta property="og:description" content="千变万化的是世界">
 <meta property="og:locale" content="en">
@@ -148,7 +148,7 @@
 
 
 
-  <link rel="canonical" href=""/>
+  <link rel="canonical" href="http://localhost:4000/"/>
 
 
 
@@ -338,7 +338,1391 @@
   
 
   <article class="post post-type- " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="/living/2018/04/11/blog/">
+    <link itemprop="mainEntityOfPage" href="http://localhost:4000/living/2018/04/27/blog/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="K11">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/assets/images/21040889_825385437640313_540035783206109184_a.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Keleven.Me">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+                
+                <a class="post-title-link" href="/living/2018/04/27/blog/" itemprop="url">
+                宫墙又高了
+              </a>
+            
+          
+        </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-27T08:01:00+08:00">
+                2018-04-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/category/#/Living" itemprop="url" rel="index">
+                    <span itemprop="name">Living</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/living/2018/04/27/blog/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="/living/2018/04/27/blog/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <h1 id="us线路丢包越发严重了-心塞">US线路丢包越发严重了…… 心塞……</h1>
+
+<p>自家web访问缓慢…… 于是使用cloudflare转发</p>
+
+<p>需要注意 更改域名解析，更改后速度提高了好多~~</p>
+
+<p>不过<code class="highlighter-rouge">iTerm2</code>使用<code class="highlighter-rouge">SSH</code>依然缓慢。</p>
+
+<p>解决方案让<code class="highlighter-rouge">SSH</code>可以使用<code class="highlighter-rouge">Socks5</code></p>
+
+<h2 id="ssh使用socks5">SSH使用Socks5</h2>
+
+<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code>ssh -o ProxyCommand='nc -x 127.0.0.1:8083 %h %p' -p 22 &lt;user&gt;@&lt;000.000.000.000&gt;
+</code></pre></td></tr></tbody></table></div></div>
+
+<p>绕一圈的速度都比直连快……我也是……醉了……</p>
+
+<p><a href="https://ieevee.com/tech/2017/10/19/ssh-over-socks5.html">参考地址</a></p>
+
+<h2 id="iterm2使用proxy-的方法">iTerm2使用proxy 的方法</h2>
+
+<p>在<code class="highlighter-rouge">.zshrc</code>中添加</p>
+
+<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2</pre></td><td class="code"><pre class="highlight"><code>alias goproxy='export http_proxy="http://127.0.0.1:8003"; export HTTP_PROXY="http://127.0.0.1:8003"; export https_proxy="http://127.0.0.1:8003"; export HTTPS_PROXY="http://127.0.0.1:8003"'
+alias disproxy='unset http_proxy HTTP_PROXY https_proxy HTTPS_PROXY'
+</code></pre></td></tr></tbody></table></div></div>
+
+<p>开启时使用<code class="highlighter-rouge">goproxy</code></p>
+
+<p>关闭时使用<code class="highlighter-rouge">disproxy</code></p>
+
+<p>从此<code class="highlighter-rouge">brew</code>、<code class="highlighter-rouge">composer</code>、<code class="highlighter-rouge">npm</code>,可以免去漫长的等待了。</p>
+
+<p>验证是否有效<code class="highlighter-rouge">curl ifconfig.me</code>返回的就是当前IP。</p>
+
+<h2 id="以上">以上</h2>
+
+
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/living/2018/04/27/blog/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+        
+        
+        
+        
+          <div class="post-eof"></div>
+        
+      
+    </footer>
+  </article>
+
+  
+    
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type- " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://localhost:4000/living/2018/04/18/blog/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="K11">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/assets/images/21040889_825385437640313_540035783206109184_a.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Keleven.Me">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+                
+                <a class="post-title-link" href="/living/2018/04/18/blog/" itemprop="url">
+                win10 关闭 windows ink 后要做事儿
+              </a>
+            
+          
+        </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-18T08:01:00+08:00">
+                2018-04-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/category/#/Living" itemprop="url" rel="index">
+                    <span itemprop="name">Living</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/living/2018/04/18/blog/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="/living/2018/04/18/blog/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <h1 id="关闭-windows-ink-后要做事儿">关闭 windows ink 后要做事儿</h1>
+
+<p>系统重装后，cintiq pro 13 的画笔有点奇怪。</p>
+
+<p>主要是PS下笔上的右键异常，影响拾取颜色，调整硬度等等。</p>
+
+<p>所以关闭 windows ink 之后……</p>
+
+<p>压力感应消失了！！！</p>
+
+<p>WTF！！</p>
+
+<p>最后发现这个问题，已经有了好几年了…… 解决方式写在下面备用</p>
+
+<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code>C:\Users\Yourname\AppData\Roaming\Adobe\Adobe Photoshop CC 2018\Adobe Photoshop CC 2018 Settings
+</code></pre></td></tr></tbody></table></div></div>
+
+<p>下建立<code class="highlighter-rouge">PSUserConfig.txt</code>文件，写入下面两行。</p>
+
+<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2</pre></td><td class="code"><pre class="highlight"><code>Use WinTab
+UseSystemStylus 0
+</code></pre></td></tr></tbody></table></div></div>
+
+<p>之后完美了~~</p>
+
+<h1 id="唠叨">唠叨</h1>
+
+<p>果然发生了，对应的事件，恐怕是知识产权方面吧……</p>
+
+<p>后果吗，按照供应与储备来说，6个月之内没什么，保守点的3个月。</p>
+
+<p>3到5年内，网络行业崩溃。生活水平会到90年代初期吧</p>
+
+<p>科学水平会止步吧…… 人才外流会加速。</p>
+
+<p>之前觉得高丽惨，现在看会比高丽更惨。</p>
+
+<p>内忧外患，加速自主研发比画个经济区重要的多的多。</p>
+
+
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/living/2018/04/18/blog/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+        
+        
+        
+        
+          <div class="post-eof"></div>
+        
+      
+    </footer>
+  </article>
+
+  
+    
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type- " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://localhost:4000/living/2018/04/15/mail/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="K11">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/assets/images/21040889_825385437640313_540035783206109184_a.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Keleven.Me">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+                
+                <a class="post-title-link" href="/living/2018/04/15/mail/" itemprop="url">
+                Dcoker 部署 mailserver
+              </a>
+            
+          
+        </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-15T08:01:00+08:00">
+                2018-04-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/category/#/Living" itemprop="url" rel="index">
+                    <span itemprop="name">Living</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/living/2018/04/15/mail/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="/living/2018/04/15/mail/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <h1 id="前言">前言</h1>
+
+<p>查找文章时没找到, 在本地发现了, 重新编辑一下, 供后来者参考。</p>
+
+<h1 id="使用dcoker-部署邮件服务">使用Dcoker 部署邮件服务</h1>
+
+<h2 id="dns-records-设置与--ptr-records">DNS records 设置与  PTR records</h2>
+
+<p>注意把bar.foo换成需要的域名</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Homename</th>
+      <th>Value</th>
+      <th>TTL</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>A</td>
+      <td>bar.foo</td>
+      <td>000.000.000.000</td>
+      <td>3600</td>
+    </tr>
+    <tr>
+      <td>A</td>
+      <td>*.bar.foo</td>
+      <td>000.000.000.000</td>
+      <td>3600</td>
+    </tr>
+    <tr>
+      <td>AAAA</td>
+      <td>bar.foo</td>
+      <td>000.000.000.000</td>
+      <td>3600</td>
+    </tr>
+    <tr>
+      <td>AAAA</td>
+      <td>*.bar.foo</td>
+      <td>000.000.000.000</td>
+      <td>3600</td>
+    </tr>
+    <tr>
+      <td>NS</td>
+      <td>bar.foo</td>
+      <td>ns1.bar.foo</td>
+      <td>1800</td>
+    </tr>
+    <tr>
+      <td>NS</td>
+      <td>bar.foo</td>
+      <td>ns2.bar.foo</td>
+      <td>1800</td>
+    </tr>
+    <tr>
+      <td>NS</td>
+      <td>bar.foo</td>
+      <td>ns3.bar.foo</td>
+      <td>1800</td>
+    </tr>
+    <tr>
+      <td>MX</td>
+      <td>bar.foo</td>
+      <td>mail.bar.foo. 【10】</td>
+      <td>14400</td>
+    </tr>
+    <tr>
+      <td>TXT</td>
+      <td>bar.foo</td>
+      <td>v=spf1 mx ~all</td>
+      <td>3600</td>
+    </tr>
+    <tr>
+      <td>TXT</td>
+      <td>_dmarc.bar.foo</td>
+      <td>v=DMARC1; p=none</td>
+      <td>3600</td>
+    </tr>
+    <tr>
+      <td>TXT</td>
+      <td>mail._domainkey.bar.foo</td>
+      <td>v=DKIM1; k=rsa; p=<em>**</em></td>
+      <td>3600</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>说明:</p>
+<ul>
+  <li>NS 为域名解析服务器</li>
+  <li>A 为IPv4 域名绑定</li>
+  <li>AAAA 为IPv6 域名绑定</li>
+  <li>MX 为 收信服务器</li>
+  <li>TXT 为 E-Mail验证与设置</li>
+  <li>将主机名改为<code class="highlighter-rouge">mail.bar.foo</code>后，可以设置<code class="highlighter-rouge">PTR records</code>。</li>
+</ul>
+
+<p>IPv6使用letsencrypt自动延期证书是会出错要注意下。</p>
+
+<p><code class="highlighter-rouge">p==***********</code>为<code class="highlighter-rouge">DKIM key</code>这里隐去了</p>
+
+<h2 id="docker-mailserver">docker-mailserver</h2>
+
+<ul>
+  <li>注意使用<code class="highlighter-rouge">ENABLE_CLAMAV=1</code>时需要<code class="highlighter-rouge">RAM≥1G</code></li>
+</ul>
+
+<p>当网站与邮件服务在同一服务器时，要使用<code class="highlighter-rouge">nginx-proxy</code></p>
+
+<h3 id="新建用户">新建用户</h3>
+
+<p><code class="highlighter-rouge">mailserver目录下</code>，可以使用docker命令添加多个用户</p>
+
+<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6</pre></td><td class="code"><pre class="highlight"><code>touch config/postfix-accounts.cf
+docker run --rm \
+  -e MAIL_USER=bar@bar.foo \
+  -e MAIL_PASS=password \
+  -ti tvial/docker-mailserver:latest \
+  /bin/sh -c 'echo "$MAIL_USER|$(doveadm pw -s SHA512-CRYPT -u $MAIL_USER -p $MAIL_PASS)"' &gt;&gt; config/postfix-accounts.cf
+</code></pre></td></tr></tbody></table></div></div>
+
+<h3 id="创建-dkim-key">创建 DKIM key</h3>
+
+<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3</pre></td><td class="code"><pre class="highlight"><code>docker run --rm \
+ -v "/root/mailserver/config":/tmp/docker-mailserver \
+ -ti tvial/docker-mailserver:latest generate-dkim-config bar.foo
+</code></pre></td></tr></tbody></table></div></div>
+
+<p>查看</p>
+
+<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code>cat /root/mailserver/config/opendkim/keys/bar.foo/mail.txt
+</code></pre></td></tr></tbody></table></div></div>
+
+<p>将DKIM1 调整后添加到域名解析<code class="highlighter-rouge">mail._domainkey</code>记录下。</p>
+
+<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code>v=DKIM1; k=rsa; p=***********
+</code></pre></td></tr></tbody></table></div></div>
+
+<p><code class="highlighter-rouge">p==***********</code>为<code class="highlighter-rouge">DKIM key</code>这里隐去了</p>
+
+<h3 id="docker-mailserver-启动">docker-mailserver 启动</h3>
+
+<p>启动 docker-proxy 【反向代理】</p>
+
+<div class="language-docker highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8</pre></td><td class="code"><pre class="highlight"><code>docker run -d -p 80:80 -p 443:443 \
+    --name nginx-proxy \
+    -v /path/to/certs:/etc/nginx/certs:ro \
+    -v /etc/nginx/vhost.d \
+    -v /usr/share/nginx/html \
+    -v /var/run/docker.sock:/tmp/docker.sock:ro \
+    --label com.github.jrcs.letsencrypt_nginx_proxy_companion.nginx_proxy \
+    jwilder/nginx-proxy
+</code></pre></td></tr></tbody></table></div></div>
+
+<p>启动 letsencrypt-nginx-proxy-companion 【挂载TLS证书】</p>
+
+<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5</pre></td><td class="code"><pre class="highlight"><code>docker run -d \
+    -v /path/to/certs:/etc/nginx/certs:rw \
+    -v /var/run/docker.sock:/var/run/docker.sock:ro \
+    --volumes-from nginx-proxy \
+    jrcs/letsencrypt-nginx-proxy-companion
+</code></pre></td></tr></tbody></table></div></div>
+
+<p>启动 library/nginx 【用于获取TLS证书， 验证时，需要<code class="highlighter-rouge">port:80</code>】
+也可以使用下方<code class="highlighter-rouge">docker-compose.yml</code></p>
+<ul>
+  <li>注意:要将<code class="highlighter-rouge">nginx</code>桥接到<code class="highlighter-rouge">nginx-proxy</code>的网络，使其可以正常解析,<code class="highlighter-rouge">LETSENCRYPT_TEST=true</code>在测试时使用，防止证书频繁申请。
+Email 必须为有效地址。</li>
+</ul>
+
+<div class="language-yml highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9<br/>10<br/>11<br/>12<br/>13<br/>14<br/>15<br/>16<br/>17<br/>18<br/>19<br/>20<br/>21<br/>22<br/>23<br/>24<br/>25<br/>26<br/>27<br/>28<br/>29<br/>30<br/>31<br/>32<br/>33<br/>34<br/>35<br/>36<br/>37<br/>38</pre></td><td class="code"><pre class="highlight"><code><span class="na">version</span><span class="pi">:</span> <span class="s1">'</span><span class="s">2'</span>
+
+<span class="na">services</span><span class="pi">:</span>
+  <span class="na">webmail</span><span class="pi">:</span>
+    <span class="na">image</span><span class="pi">:</span> <span class="s">nginx:latest</span>
+    <span class="na">restart</span><span class="pi">:</span> <span class="s">always</span>
+    <span class="na">environment</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="s">VIRTUAL_HOST=mail.bar.foo</span>
+        <span class="pi">-</span> <span class="s">LETSENCRYPT_HOST=mail.bar.foo</span>
+        <span class="pi">-</span> <span class="s">LETSENCRYPT_EMAIL=k11@bar.foo</span>
+        <span class="c1"># - LETSENCRYPT_TEST=true</span>
+    <span class="na">network_mode</span><span class="pi">:</span> <span class="s2">"</span><span class="s">bridge"</span>
+  <span class="na">mailserver</span><span class="pi">:</span>
+    <span class="na">image</span><span class="pi">:</span> <span class="s">tvial/docker-mailserver:latest</span>
+    <span class="na">hostname</span><span class="pi">:</span> <span class="s">mail</span>
+    <span class="na">domainname</span><span class="pi">:</span> <span class="s">bar.foo</span>
+    <span class="na">container_name</span><span class="pi">:</span> <span class="s">mail</span>
+    <span class="na">restart</span><span class="pi">:</span> <span class="s">always</span>
+    <span class="na">ports</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="s2">"</span><span class="s">25:25"</span>
+    <span class="pi">-</span> <span class="s2">"</span><span class="s">143:143"</span>
+    <span class="pi">-</span> <span class="s2">"</span><span class="s">587:587"</span>
+    <span class="pi">-</span> <span class="s2">"</span><span class="s">993:993"</span>
+    <span class="na">volumes</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="s">/root/mailserver/mail:/var/mail</span>
+    <span class="pi">-</span> <span class="s">/root/mailserver/mail-state:/var/mail-state</span>
+    <span class="pi">-</span> <span class="s">/root/mailserver/config/:/tmp/docker-mailserver/</span>
+    <span class="c1"># - /etc/letsencrypt:/etc/letsencrypt</span>
+    <span class="pi">-</span> <span class="s">/path/to/certs/mail.bar.foo:/etc/letsencrypt/live/mail.bar.foo</span>
+    <span class="na">environment</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="s">SSL_TYPE=letsencrypt</span>
+    <span class="pi">-</span> <span class="s">ENABLE_SPAMASSASSIN=0</span>
+    <span class="pi">-</span> <span class="s">ENABLE_CLAMAV=0</span>
+    <span class="pi">-</span> <span class="s">ENABLE_FAIL2BAN=0</span>
+    <span class="pi">-</span> <span class="s">ENABLE_POSTGREY=0</span>
+    <span class="pi">-</span> <span class="s">ONE_DIR=1</span>
+    <span class="pi">-</span> <span class="s">DMS_DEBUG=0</span>
+    <span class="pi">-</span> <span class="s">TLS_LEVEL=intermediate</span>
+</code></pre></td></tr></tbody></table></div></div>
+
+<h3 id="补充">补充</h3>
+
+<p>也可以将<code class="highlighter-rouge">nginx-proxy</code>与<code class="highlighter-rouge">letsencrypt-nginx-proxy-companion</code>写在一起，这样还可以运行其他服务</p>
+
+<p>具体可以查看<a href="https://keleven.me/living/2018/01/22/blog/">这篇</a></p>
+
+<p><code class="highlighter-rouge">letsencrypt-nginx-proxy-companion</code>可以手动更新</p>
+
+<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6</pre></td><td class="code"><pre class="highlight"><code>手动更新 或 申请证书
+docker exec letsencrypt-nginx-proxy-companion /app/force_renew
+
+
+证书状态
+docker exec letsencrypt-nginx-proxy-companion /app/cert_status
+</code></pre></td></tr></tbody></table></div></div>
+
+<h3 id="测试ssl">测试SSL</h3>
+
+<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2</pre></td><td class="code"><pre class="highlight"><code>docker exec mailserver openssl s_client -connect 0.0.0.0:587 -starttls smtp -CApath /etc/letsencrypt/
+docker exec mailserver openssl s_client -connect 0.0.0.0:993 -starttls imap -CApath /etc/letsencrypt/
+</code></pre></td></tr></tbody></table></div></div>
+
+<h2 id="其他">其他</h2>
+
+<h3 id="使用nginx-proxy">使用<code class="highlighter-rouge">nginx-proxy</code></h3>
+
+<p>一般挂载</p>
+
+<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5</pre></td><td class="code"><pre class="highlight"><code>docker run -d \
+    --name webblog \
+    --expose 80 \
+    -e "VIRTUAL_HOST=bar.foo" \
+    library/nginx
+</code></pre></td></tr></tbody></table></div></div>
+
+<p>获取证书</p>
+
+<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7</pre></td><td class="code"><pre class="highlight"><code>docker run -d \
+    --name web \
+    --expose 80 \
+    -e "VIRTUAL_HOST=mail.bar.foo" \
+    -e "LETSENCRYPT_HOST=mail.bar.foo" \
+    -e "LETSENCRYPT_EMAIL=foo@bar.com" \
+    library/nginx
+</code></pre></td></tr></tbody></table></div></div>
+
+<p>查看  域名映射</p>
+
+<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code>curl -H "Host:bar.foo" localhost
+</code></pre></td></tr></tbody></table></div></div>
+
+<p>查看 nginx 代理设置</p>
+
+<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code>docker exec nginx-proxy  cat /etc/nginx/conf.d/default.conf
+</code></pre></td></tr></tbody></table></div></div>
+
+<p>包管理</p>
+
+<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code>docker run --rm --expose 9000 -e VIRTUAL_HOST=test.bar.foo -v /var/run/docker.sock:/var/run/docker.sock portainer/portainer
+</code></pre></td></tr></tbody></table></div></div>
+
+
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/living/2018/04/15/mail/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+        
+        
+        
+        
+          <div class="post-eof"></div>
+        
+      
+    </footer>
+  </article>
+
+  
+    
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type- " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://localhost:4000/living/2018/04/15/blog/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="K11">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/assets/images/21040889_825385437640313_540035783206109184_a.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Keleven.Me">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+                
+                <a class="post-title-link" href="/living/2018/04/15/blog/" itemprop="url">
+                laravel 5.5 升级到 5.6
+              </a>
+            
+          
+        </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-15T08:01:00+08:00">
+                2018-04-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/category/#/Living" itemprop="url" rel="index">
+                    <span itemprop="name">Living</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/living/2018/04/15/blog/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="/living/2018/04/15/blog/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <h1 id="脑子混乱停一下">脑子混乱停一下</h1>
+
+<p>前后端分离与游戏部分</p>
+
+<p>admin 与 user 需要不同的入口</p>
+
+<p>数据部分有一些是通用的，分离 admin 域 与 user 域 是有必要的</p>
+
+<p>admin verify 将 config 提取出来有一定优势</p>
+
+<p>quasar还是要加强的</p>
+
+<p>码力 图力 不足…… 但是没什么用……</p>
+
+<h1 id="laravel-upgrading-to-560-from-55">laravel Upgrading To 5.6.0 From 5.5</h1>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5</pre></td><td class="code"><pre class="highlight"><code><span class="w">        </span><span class="s2">"darkaonline/l5-swagger"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5.6.*"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"fideloper/proxy"</span><span class="p">:</span><span class="w"> </span><span class="s2">"~4.0"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"laravel/framework"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5.6.*"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"laravel/passport"</span><span class="p">:</span><span class="w"> </span><span class="s2">"^5.0"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"phpunit/phpunit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"~7.0"</span><span class="w">
+</span></code></pre></td></tr></tbody></table></div></div>
+
+<p>之后会出现错误</p>
+
+<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code>Type error: Argument 2 passed to Symfony\Component\HttpFoundation\Request::setTrustedProxies() must be of the type integer, array given, called in /Users/k11/laravel/web/vendor/fideloper/proxy/src/TrustProxies.php on line 5
+</code></pre></td></tr></tbody></table></div></div>
+
+<p>对应<a href="https://laravel.com/docs/5.6/upgrade#upgrade-5.6.0">upgrade Trusted Proxies</a></p>
+
+<p><code class="highlighter-rouge">App\Http\Middleware\TrustProxies</code></p>
+
+<p>改</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7</pre></td><td class="code"><pre class="highlight"><code>    <span class="k">protected</span> <span class="nv">$headers</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="nx">Request</span><span class="o">::</span><span class="na">HEADER_FORWARDED</span> <span class="o">=&gt;</span> <span class="s1">'FORWARDED'</span><span class="p">,</span>
+        <span class="nx">Request</span><span class="o">::</span><span class="na">HEADER_X_FORWARDED_FOR</span> <span class="o">=&gt;</span> <span class="s1">'X_FORWARDED_FOR'</span><span class="p">,</span>
+        <span class="nx">Request</span><span class="o">::</span><span class="na">HEADER_X_FORWARDED_HOST</span> <span class="o">=&gt;</span> <span class="s1">'X_FORWARDED_HOST'</span><span class="p">,</span>
+        <span class="nx">Request</span><span class="o">::</span><span class="na">HEADER_X_FORWARDED_PORT</span> <span class="o">=&gt;</span> <span class="s1">'X_FORWARDED_PORT'</span><span class="p">,</span>
+        <span class="nx">Request</span><span class="o">::</span><span class="na">HEADER_X_FORWARDED_PROTO</span> <span class="o">=&gt;</span> <span class="s1">'X_FORWARDED_PROTO'</span><span class="p">,</span>
+    <span class="p">];</span>
+</code></pre></td></tr></tbody></table></div></div>
+
+<p>为</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code><span class="k">protected</span> <span class="nv">$headers</span> <span class="o">=</span> <span class="nx">Request</span><span class="o">::</span><span class="na">HEADER_X_FORWARDED_ALL</span><span class="p">;</span> 
+</code></pre></td></tr></tbody></table></div></div>
+
+<h2 id="bootstrap-4">Bootstrap 4</h2>
+
+<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2</pre></td><td class="code"><pre class="highlight"><code>npm uninstall --save-dev bootstrap-sass
+npm install bootstrap popper.js
+</code></pre></td></tr></tbody></table></div></div>
+
+<h3 id="resourcesassetsjsbootstrapjs">resources/assets/js/bootstrap.js</h3>
+
+<p>中</p>
+
+<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5</pre></td><td class="code"><pre class="highlight"><code>try {
+    window.$ = window.jQuery = require('jquery');
+
+    require('bootstrap-sass');
+} catch (e) {}
+</code></pre></td></tr></tbody></table></div></div>
+<p>改为</p>
+
+<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5</pre></td><td class="code"><pre class="highlight"><code>try {
+    window.$ = window.jQuery = require('jquery');
+
+    require('bootstrap');
+} catch (e) {}
+</code></pre></td></tr></tbody></table></div></div>
+
+<p>添加</p>
+
+<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code>window.Popper = require('popper.js').default;
+</code></pre></td></tr></tbody></table></div></div>
+
+<h3 id="resourcesassetssassappscss">resources/assets/sass/app.scss</h3>
+
+<p>中</p>
+
+<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code>@import “~bootstrap-sass/assets/stylesheets/bootstrap”
+</code></pre></td></tr></tbody></table></div></div>
+
+<p>改为</p>
+
+<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6</pre></td><td class="code"><pre class="highlight"><code>@import “~bootstrap/scss/bootstrap.scss”
+
+.navbar-laravel {
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+</code></pre></td></tr></tbody></table></div></div>
+
+<h3 id="resourcesassetssass_variablesscss">resources/assets/sass/_variables.scss</h3>
+
+<p>删除全部内容后写入</p>
+
+<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9<br/>10<br/>11<br/>12<br/>13</pre></td><td class="code"><pre class="highlight"><code>// Fonts
+@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
+
+// Variables
+@import "variables";
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+.navbar-laravel {
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+</code></pre></td></tr></tbody></table></div></div>
+
+<h3 id="方法二">方法二</h3>
+
+<p>直接复制<code class="highlighter-rouge">laravel 5.6</code> 版本的 <code class="highlighter-rouge">resources</code> <code class="highlighter-rouge">package.json</code> 到 <code class="highlighter-rouge">laravel 5.5</code>下覆盖。</p>
+
+<h2 id="swagger">swagger</h2>
+
+<p>在<code class="highlighter-rouge">config/l5-swagger</code>中设置好<code class="highlighter-rouge">passport</code>后使用下方代码引入每个请求</p>
+
+<p><code class="highlighter-rouge">l5-swagger</code>中使用的是<code class="highlighter-rouge">password</code>方式，所以不必限制请求地址</p>
+
+<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3</pre></td><td class="code"><pre class="highlight"><code>*     security={
+*         {"passport": {}}
+*     },
+</code></pre></td></tr></tbody></table></div></div>
+
+<h1 id="mailserver-修复">mailserver 修复</h1>
+
+<p>起因 mac os 上不能登录邮箱了，手机却可以。查看logs发现是错误如下</p>
+
+<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code>TLS handshaking: SSL_accept() failed 
+</code></pre></td></tr></tbody></table></div></div>
+
+<p>查找issues得知<code class="highlighter-rouge">tomav/docker-mailserver</code>更新</p>
+
+<p>增加一个新变量</p>
+
+<p><code class="highlighter-rouge">TLS_LEVEL</code> 要想兼容老 Mac OS 要设置为<code class="highlighter-rouge">intermediate</code></p>
+
+<h1 id="以上">以上</h1>
+
+
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/living/2018/04/15/blog/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+        
+        
+        
+        
+          <div class="post-eof"></div>
+        
+      
+    </footer>
+  </article>
+
+  
+    
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type- " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://localhost:4000/living/2018/04/12/blog/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="K11">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/assets/images/21040889_825385437640313_540035783206109184_a.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Keleven.Me">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+                
+                <a class="post-title-link" href="/living/2018/04/12/blog/" itemprop="url">
+                2018年04月12日
+              </a>
+            
+          
+        </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-12T08:01:00+08:00">
+                2018-04-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/category/#/Living" itemprop="url" rel="index">
+                    <span itemprop="name">Living</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/living/2018/04/12/blog/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="/living/2018/04/12/blog/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <h1>……</h1>
+
+<p>小弟走了只能自己上了，对手是说着相同语言的同胞，脑子不好吧。</p>
+
+<p>虚妄的野心只会带来毁灭……</p>
+
+
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/living/2018/04/12/blog/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+        
+        
+        
+        
+          <div class="post-eof"></div>
+        
+      
+    </footer>
+  </article>
+
+  
+    
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type- " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://localhost:4000/living/2018/04/11/blog/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="K11">
@@ -566,7 +1950,7 @@
   
 
   <article class="post post-type- " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="/living/2018/04/03/blog/">
+    <link itemprop="mainEntityOfPage" href="http://localhost:4000/living/2018/04/03/blog/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="K11">
@@ -751,7 +2135,7 @@
   
 
   <article class="post post-type- " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="/living/2018/03/28/blog/">
+    <link itemprop="mainEntityOfPage" href="http://localhost:4000/living/2018/03/28/blog/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="K11">
@@ -1231,7 +2615,7 @@ L5_SWAGGER_GENERATE_ALWAYS=true
   
 
   <article class="post post-type- " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="/living/2018/03/26/blog/">
+    <link itemprop="mainEntityOfPage" href="http://localhost:4000/living/2018/03/26/blog/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="K11">
@@ -1426,7 +2810,7 @@ L5_SWAGGER_GENERATE_ALWAYS=true
   
 
   <article class="post post-type- " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="/living/2018/03/24/blog/">
+    <link itemprop="mainEntityOfPage" href="http://localhost:4000/living/2018/03/24/blog/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="K11">
@@ -1626,1209 +3010,6 @@ L5_SWAGGER_GENERATE_ALWAYS=true
         
         
         
-          <div class="post-eof"></div>
-        
-      
-    </footer>
-  </article>
-
-  
-    
-    
-
-  
-
-  
-  
-  
-
-  <article class="post post-type- " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="/living/2018/03/01/blog/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="K11">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/assets/images/21040889_825385437640313_540035783206109184_a.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Keleven.Me">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-                
-                <a class="post-title-link" href="/living/2018/03/01/blog/" itemprop="url">
-                2018年03月01日
-              </a>
-            
-          
-        </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-01T09:00:00+08:00">
-                2018-03-01
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/category/#/Living" itemprop="url" rel="index">
-                    <span itemprop="name">Living</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/living/2018/03/01/blog/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="/living/2018/03/01/blog/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-  
-  
-
-
-
-
-
-
-
-
-
-
-
-
-  <h1 id="小记">小记</h1>
-
-<p><code class="highlighter-rouge">ssr</code>的<code class="highlighter-rouge">tls</code>被爆，大规模封禁来袭，转<code class="highlighter-rouge">v2ray</code></p>
-
-<p>直接部署非常容易，使用<code class="highlighter-rouge">docker</code>快速部署是正解，</p>
-
-<p>实现<code class="highlighter-rouge">websocket+tls+V2ray+Nginx+CDN</code></p>
-
-<p>起因，2018年2月15日开始梯子出现故障，换之。</p>
-
-<p>2018年2月25日 <code class="highlighter-rouge">戊戌复辟</code>，可笑至极，诸多词变为禁语。包括<code class="highlighter-rouge">张勋</code>、<code class="highlighter-rouge">袁世凯</code>等等。微博、微信，禁止修改头像，签名。<code class="highlighter-rouge">反对</code>等不能发表。</p>
-
-<p>马前课 第十一课 开始了……</p>
-
-<p>2月26日开始研究部署<code class="highlighter-rouge">v2ray</code>相关，其中遇坑，记录如下，供后人参考。</p>
-
-<h2 id="原理">原理</h2>
-
-<p>v2ray 使用<code class="highlighter-rouge">websocket</code>连接到<code class="highlighter-rouge">CDN</code>，对抗<code class="highlighter-rouge">DNS</code>污染，保护真实<code class="highlighter-rouge">IP</code></p>
-
-<p><code class="highlighter-rouge">CDN</code>连接在到<code class="highlighter-rouge">服务器</code>，全程通讯使用<code class="highlighter-rouge">tls</code>加密。【不是仿造，是真正的TLS】，服务器内部转发到<code class="highlighter-rouge">v2ray</code>容器。</p>
-
-<blockquote>
-  <p>Q:为什么使用<code class="highlighter-rouge">docker</code>而不是直接部署？  <br />
-A:不方便转移到其他服务器。同时不容易弄乱服务器环境  <br />
-Q:<code class="highlighter-rouge">docker</code>好处是什么  <br />
-A：不需要手动更新证书，可以使用二级域名部署其他服务。比如<code class="highlighter-rouge">web</code>、<code class="highlighter-rouge">mail</code>等等。可以随时添加。</p>
-</blockquote>
-
-<h2 id="docker">docker</h2>
-
-<p>大多数供应商都支持<code class="highlighter-rouge">docker</code>快速构建，直接选择即可。服务器多为<code class="highlighter-rouge">ubuntu</code>。</p>
-
-<p>更新各种包后，准备开始工作。</p>
-
-<p>更新命令</p>
-
-<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2</pre></td><td class="code"><pre class="highlight"><code>$ apt update
-$ apt upgrade
-</code></pre></td></tr></tbody></table></div></div>
-
-<h2 id="文件目录">文件目录</h2>
-
-<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5</pre></td><td class="code"><pre class="highlight"><code>|-- docker-compose.yml
-|-- v2ray
-|   `-- config.json
-`-- vhost.d
-    `-- ******_location
-</code></pre></td></tr></tbody></table></div></div>
-
-<h2 id="docker-composeyml">docker-compose.yml</h2>
-
-<p>说明:</p>
-
-<p><code class="highlighter-rouge">v2ray</code>下的<code class="highlighter-rouge">VIRTUAL_HOST</code>注意填写为二级域名，也可以去掉不填。</p>
-
-<p>同样<code class="highlighter-rouge">v2ray</code>下的<code class="highlighter-rouge">expose</code>与<code class="highlighter-rouge">VIRTUAL_PORT</code>为端口号，应该与<code class="highlighter-rouge">*****_location</code>中端口一致。</p>
-
-<hr />
-
-<p><code class="highlighter-rouge">web1</code>为一般web服务器，开放端口<code class="highlighter-rouge">80</code>。     <br />
-<code class="highlighter-rouge">You_Domain_Name</code> 改为你的域名  <br />
-<code class="highlighter-rouge">You_Email</code> 为邮箱，必填</p>
-
-<ul>
-  <li>VIRTUAL_HOST=<code class="highlighter-rouge">You_Domain_Name</code></li>
-  <li>VIRTUAL_PORT=<code class="highlighter-rouge">80</code></li>
-  <li>LETSENCRYPT_HOST=<code class="highlighter-rouge">You_Domain_Name</code></li>
-  <li>LETSENCRYPT_EMAIL=<code class="highlighter-rouge">You_Email</code></li>
-</ul>
-
-<hr />
-
-<p><code class="highlighter-rouge">nginx-proxy</code>如名字,详情自行<code class="highlighter-rouge">google</code>  <br />
-<code class="highlighter-rouge">letsencrypt-nginx-proxy-companion</code>如名字,详情自行<code class="highlighter-rouge">google</code></p>
-
-<hr />
-
-<div class="language-yml highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9<br/>10<br/>11<br/>12<br/>13<br/>14<br/>15<br/>16<br/>17<br/>18<br/>19<br/>20<br/>21<br/>22<br/>23<br/>24<br/>25<br/>26<br/>27<br/>28<br/>29<br/>30<br/>31<br/>32<br/>33<br/>34<br/>35<br/>36<br/>37<br/>38<br/>39<br/>40<br/>41<br/>42<br/>43<br/>44<br/>45<br/>46<br/>47<br/>48<br/>49<br/>50<br/>51</pre></td><td class="code"><pre class="highlight"><code><span class="na">version</span><span class="pi">:</span> <span class="s1">'</span><span class="s">2'</span>
-
-<span class="na">services</span><span class="pi">:</span>
-  <span class="na">v2ray</span><span class="pi">:</span>
-    <span class="na">image</span><span class="pi">:</span> <span class="s">v2ray/official</span>
-    <span class="na">container_name</span><span class="pi">:</span> <span class="s">v2ray</span>
-    <span class="na">restart</span><span class="pi">:</span> <span class="s">always</span>
-    <span class="na">expose</span><span class="pi">:</span>
-      <span class="pi">-</span> <span class="s2">"</span><span class="s">****"</span>
-    <span class="na">volumes</span><span class="pi">:</span>
-      <span class="pi">-</span> <span class="s">$PWD/v2ray:/etc/v2ray</span>
-      <span class="pi">-</span> <span class="s">$PWD/v2ray/config.json:/etc/v2ray/config.json:ro</span>
-    <span class="na">environment</span><span class="pi">:</span>
-      <span class="pi">-</span> <span class="s">VIRTUAL_HOST=****</span>
-      <span class="pi">-</span> <span class="s">VIRTUAL_PORT=****</span>
-
-  <span class="na">web1</span><span class="pi">:</span>
-    <span class="na">image</span><span class="pi">:</span> <span class="s">nginx:latest</span>
-    <span class="na">restart</span><span class="pi">:</span> <span class="s">always</span>
-    <span class="na">expose</span><span class="pi">:</span>
-      <span class="pi">-</span> <span class="s2">"</span><span class="s">80"</span>
-    <span class="na">environment</span><span class="pi">:</span>
-      <span class="pi">-</span> <span class="s">VIRTUAL_HOST=*****</span>
-      <span class="pi">-</span> <span class="s">VIRTUAL_PORT=80</span>
-      <span class="pi">-</span> <span class="s">LETSENCRYPT_HOST=*****.***</span>
-      <span class="pi">-</span> <span class="s">LETSENCRYPT_EMAIL=*****@*****.***</span>
-
-  <span class="na">nginx-proxy</span><span class="pi">:</span>
-      <span class="na">image</span><span class="pi">:</span> <span class="s">jwilder/nginx-proxy:latest</span>
-      <span class="na">restart</span><span class="pi">:</span> <span class="s">always</span>
-      <span class="na">ports</span><span class="pi">:</span>
-          <span class="pi">-</span> <span class="s2">"</span><span class="s">80:80"</span>
-          <span class="pi">-</span> <span class="s2">"</span><span class="s">443:443"</span>
-      <span class="na">volumes</span><span class="pi">:</span>
-          <span class="pi">-</span> <span class="s">/path/to/certs:/etc/nginx/certs:ro</span>
-          <span class="pi">-</span> <span class="s">$PWD/vhost.d:/etc/nginx/vhost.d:ro</span>
-          <span class="pi">-</span> <span class="s">/usr/share/nginx/html</span>
-          <span class="pi">-</span> <span class="s">/var/run/docker.sock:/tmp/docker.sock:ro</span>
-      <span class="na">labels</span><span class="pi">:</span>
-          <span class="pi">-</span> <span class="s2">"</span><span class="s">com.github.jrcs.letsencrypt_nginx_proxy_companion.nginx_proxy"</span>
-
-  <span class="na">letsencrypt-nginx-proxy-companion</span><span class="pi">:</span>
-      <span class="na">image</span><span class="pi">:</span> <span class="s">jrcs/letsencrypt-nginx-proxy-companion:latest</span>
-      <span class="na">restart</span><span class="pi">:</span> <span class="s">always</span>
-      <span class="na">volumes</span><span class="pi">:</span>
-          <span class="pi">-</span> <span class="s">/path/to/certs:/etc/nginx/certs:rw</span>
-          <span class="pi">-</span> <span class="s">$PWD/vhost.d:/etc/nginx/vhost.d:ro</span>
-          <span class="pi">-</span> <span class="s">/var/run/docker.sock:/var/run/docker.sock:ro</span>
-      <span class="na">volumes_from</span><span class="pi">:</span>
-          <span class="pi">-</span> <span class="s">nginx-proxy</span>
-
-</code></pre></td></tr></tbody></table></div></div>
-
-<h2 id="tls转发">TLS转发</h2>
-
-<p>在<code class="highlighter-rouge">dockec-compose.yml</code>下创建<code class="highlighter-rouge">vhost.d</code>文件件，</p>
-
-<p>新建文件<code class="highlighter-rouge">You_Domain_Name_location</code></p>
-
-<p>使用你的域名替换<code class="highlighter-rouge">You_Domain_Name</code>，要与<code class="highlighter-rouge">web1</code>设置的一致。</p>
-
-<p>注意<code class="highlighter-rouge">proxy_pass</code>后的端口与<code class="highlighter-rouge">v2ray</code>设置的一致。</p>
-
-<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8</pre></td><td class="code"><pre class="highlight"><code>proxy_redirect off;
-proxy_http_version 1.1;
-proxy_set_header Upgrade $http_upgrade;
-proxy_set_header Connection "upgrade";
-proxy_set_header Host $http_host;
-if ($http_upgrade = "websocket" ) {
-    proxy_pass http://v2ray:****;
-}
-</code></pre></td></tr></tbody></table></div></div>
-
-<h2 id="v2ray-设置文件configjson">v2ray 设置文件<code class="highlighter-rouge">config.json</code></h2>
-
-<p>在<code class="highlighter-rouge">dockec-compose.yml</code>下创建<code class="highlighter-rouge">v2ray</code>文件件，</p>
-
-<p>新建文件<code class="highlighter-rouge">config.json</code></p>
-
-<p><code class="highlighter-rouge">port</code>注意与<code class="highlighter-rouge">v2ray</code>设置一致</p>
-
-<p><code class="highlighter-rouge">id</code>改为<code class="highlighter-rouge">你的id</code>，可以使用<a href="https://www.uuidgenerator.net/">uuidgenerator</a>生成一个。</p>
-
-<p><code class="highlighter-rouge">json</code>写完之后，注意校对格式哦</p>
-
-<div class="language-json highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9<br/>10<br/>11<br/>12<br/>13<br/>14<br/>15<br/>16<br/>17<br/>18<br/>19<br/>20<br/>21<br/>22<br/>23<br/>24<br/>25</pre></td><td class="code"><pre class="highlight"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"inbound"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"port"</span><span class="p">:</span><span class="w"> </span><span class="s2">"****"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"protocol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"vmess"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"settings"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"clients"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-          </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"***********"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"alterId"</span><span class="p">:</span><span class="w"> </span><span class="mi">64</span><span class="w">
-        </span><span class="p">}</span><span class="w">
-      </span><span class="p">]</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="s2">"streamSettings"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"network"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ws"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"wsSettings"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/"</span><span class="w">
-      </span><span class="p">}</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="s2">"outbound"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"protocol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"freedom"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"settings"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
-
-</span></code></pre></td></tr></tbody></table></div></div>
-
-<h2 id="之后">之后</h2>
-
-<p>去用户端里面设置吧。地址<code class="highlighter-rouge">You_Domain_Name</code>端口<code class="highlighter-rouge">443</code>，记得使用<code class="highlighter-rouge">websocket</code>与<code class="highlighter-rouge">TLS</code>。</p>
-
-<h2 id="cdn">CDN</h2>
-
-<p><code class="highlighter-rouge">CloudFlare</code></p>
-
-<p><code class="highlighter-rouge">DNS</code>中开启<code class="highlighter-rouge">websocket</code></p>
-
-<p><code class="highlighter-rouge">Crypto</code> 中<code class="highlighter-rouge">Require Modern TLS</code>关闭</p>
-
-<p><code class="highlighter-rouge">Crypto</code> 中<code class="highlighter-rouge">Authenticated Origin Pulls</code>关闭</p>
-
-<p><code class="highlighter-rouge">Crypto</code> 中<code class="highlighter-rouge">Opportunistic Encryption</code>关闭</p>
-
-<h2 id="nginx-proxy-的坑">nginx-proxy 的坑</h2>
-
-<p><code class="highlighter-rouge">nginx-proxy</code>中，设置转发时<code class="highlighter-rouge">www.www.com/path</code>无法正常解析，这个问题3年没有修复过了……</p>
-
-<p>错误重现:<code class="highlighter-rouge">vhost.d</code>下，新建<code class="highlighter-rouge">www.www.com</code>设置</p>
-
-<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9<br/>10</pre></td><td class="code"><pre class="highlight"><code>location /v2ray/ {
-  proxy_redirect off;
-  proxy_http_version 1.1;
-  proxy_set_header Upgrade $http_upgrade;
-  proxy_set_header Connection "upgrade";
-  proxy_set_header Host $http_host;
-  if ($http_upgrade = "websocket" ) {
-      proxy_pass http://v2ray:****;
-  }
-}
-</code></pre></td></tr></tbody></table></div></div>
-
-<p>于是只能使用<code class="highlighter-rouge">www.www.com_location</code>进行转发。</p>
-
-<h2 id="参考文档">参考文档</h2>
-
-<p><a href="https://www.v2ray.com/">v2ray</a></p>
-
-<p><a href="https://blog.starryvoid.com/archives/267.html">参考1</a></p>
-
-<p><a href="https://blog.birkhoff.me/use-docker-to-deploy-vmess-and-ss-using-docker/">参考2</a></p>
-
-
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/living/2018/03/01/blog/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-        
-        
-        
-        
-          <div class="post-eof"></div>
-        
-      
-    </footer>
-  </article>
-
-  
-    
-    
-
-  
-
-  
-  
-  
-
-  <article class="post post-type- " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="/living/2018/02/26/blog/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="K11">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/assets/images/21040889_825385437640313_540035783206109184_a.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Keleven.Me">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-                
-                <a class="post-title-link" href="/living/2018/02/26/blog/" itemprop="url">
-                2018年02月26日
-              </a>
-            
-          
-        </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-26T09:00:00+08:00">
-                2018-02-26
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/category/#/Living" itemprop="url" rel="index">
-                    <span itemprop="name">Living</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/living/2018/02/26/blog/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="/living/2018/02/26/blog/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-  
-  
-
-
-
-
-
-
-
-
-
-
-
-
-  <h1 id="吾皇万岁万岁万万岁">吾皇万岁，万岁，万万岁</h1>
-
-
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/living/2018/02/26/blog/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-        
-        
-        
-        
-          <div class="post-eof"></div>
-        
-      
-    </footer>
-  </article>
-
-  
-    
-    
-
-  
-
-  
-  
-  
-
-  <article class="post post-type- " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="/living/2018/02/25/blog/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="K11">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/assets/images/21040889_825385437640313_540035783206109184_a.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Keleven.Me">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-                
-                <a class="post-title-link" href="/living/2018/02/25/blog/" itemprop="url">
-                2018年02月25日
-              </a>
-            
-          
-        </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-25T09:00:00+08:00">
-                2018-02-25
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/category/#/Living" itemprop="url" rel="index">
-                    <span itemprop="name">Living</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/living/2018/02/25/blog/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="/living/2018/02/25/blog/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-  
-  
-
-
-
-
-
-
-
-
-
-
-
-
-  <h2 id="小记">小记</h2>
-
-<p>网络崩溃变成了日常，每天维护网络正常2小时，每次走<code class="highlighter-rouge">ufw</code>速度比直连慢一倍。</p>
-
-<p>天上乌云密布，光又在何处。</p>
-
-<p>完蛋，很恶心。</p>
-
-
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/living/2018/02/25/blog/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-        
-        
-        
-        
-          <div class="post-eof"></div>
-        
-      
-    </footer>
-  </article>
-
-  
-    
-    
-
-  
-
-  
-  
-  
-
-  <article class="post post-type- " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="/living/2018/02/22/blog/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="K11">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/assets/images/21040889_825385437640313_540035783206109184_a.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Keleven.Me">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-                
-                <a class="post-title-link" href="/living/2018/02/22/blog/" itemprop="url">
-                2018年02月22日
-              </a>
-            
-          
-        </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-22T09:00:00+08:00">
-                2018-02-22
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/category/#/Living" itemprop="url" rel="index">
-                    <span itemprop="name">Living</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/living/2018/02/22/blog/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="/living/2018/02/22/blog/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-  
-  
-
-
-
-
-
-
-
-
-
-
-
-
-  <h2 id="小记">小记</h2>
-
-<p><code class="highlighter-rouge">quasar-cli</code>升级到了<code class="highlighter-rouge">0.15.1</code> 与之前版本不兼容……</p>
-
-<p>不支持<code class="highlighter-rouge">quasar-play</code></p>
-
-<p>目录结构有所调整，比之前清晰多了，加上一次编程构建<code class="highlighter-rouge">PWA</code>、<code class="highlighter-rouge">Cordova</code>、<code class="highlighter-rouge">Electron</code>全平台大礼包。</p>
-
-<p>和预想的一样，<code class="highlighter-rouge">android</code>就是坑多。</p>
-
-<h2 id="安装-java-8">安装 JAVA 8</h2>
-
-<p><code class="highlighter-rouge">Android Studio</code>依然不好下载。墙！墙！墙！ 略烦。</p>
-
-<p>需要<code class="highlighter-rouge">java</code>……，直接使用<code class="highlighter-rouge">brew cask install java</code>安装是<code class="highlighter-rouge">9.0+</code>版本，不兼容<code class="highlighter-rouge">Cordova</code>需要装<code class="highlighter-rouge">java8</code>,方法如下</p>
-
-<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2</pre></td><td class="code"><pre class="highlight"><code>brew tap caskroom/versions
-brew cask install java8
-</code></pre></td></tr></tbody></table></div></div>
-
-<p>使用<code class="highlighter-rouge">/usr/libexec/java_home -V</code>查看本机安装的<code class="highlighter-rouge">JDK</code></p>
-
-<p>安装<code class="highlighter-rouge">jenv</code>用于管理与切换<code class="highlighter-rouge">java</code>版本<code class="highlighter-rouge">brew install jenv</code></p>
-
-<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2</pre></td><td class="code"><pre class="highlight"><code>echo 'export PATH="$HOME/.jenv/bin:$PATH"' &gt;&gt; ~/.zshrc
-echo 'eval "$(jenv init -)"' &gt;&gt; ~/.zshrc
-</code></pre></td></tr></tbody></table></div></div>
-
-<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3</pre></td><td class="code"><pre class="highlight"><code>jenv add /Library/Java/JavaVirtualMachines/jdk-9.0.4.jdk/Contents/Home
-jenv add /Library/Java/JavaVirtualMachines/jdk1.8.0_162.jdk/Contents/Home
-jenv global 1.8.0.162
-</code></pre></td></tr></tbody></table></div></div>
-
-<p>需要重启使用<code class="highlighter-rouge">java -version</code>检查设置</p>
-
-<p>其他设置方法。</p>
-
-<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2</pre></td><td class="code"><pre class="highlight"><code>jenv local 1.8.0.162
-jenv shell 1.8.0.162
-</code></pre></td></tr></tbody></table></div></div>
-
-<h2 id="安装-android-studio">安装 Android Studio</h2>
-
-<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code>brew cask install android-studio
-</code></pre></td></tr></tbody></table></div></div>
-
-<p>之后还是要等……</p>
-
-<h2 id="zshrc">zshrc</h2>
-
-<p>编辑<code class="highlighter-rouge">~/.zshrc</code>，并添加下方代码</p>
-
-<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3</pre></td><td class="code"><pre class="highlight"><code>export ANDROID_HOME="$HOME/Library/Android/sdk"
-export PATH=$PATH:$ANDROID_HOME/tools
-export PATH=$PATH:$ANDROID_HOME/platform-tools
-</code></pre></td></tr></tbody></table></div></div>
-
-<h2 id="cordova-构建需要-gradle">Cordova 构建需要 gradle</h2>
-
-<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code>brew install gradle
-</code></pre></td></tr></tbody></table></div></div>
-
-
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/living/2018/02/22/blog/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-        
-        
-        
-        
-          <div class="post-eof"></div>
-        
-      
-    </footer>
-  </article>
-
-  
-    
-    
-
-  
-
-  
-  
-  
-
-  <article class="post post-type- " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="/living/2018/02/18/blog/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="K11">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/assets/images/21040889_825385437640313_540035783206109184_a.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Keleven.Me">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-                
-                <a class="post-title-link" href="/living/2018/02/18/blog/" itemprop="url">
-                2018年02月18日
-              </a>
-            
-          
-        </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-18T09:00:00+08:00">
-                2018-02-18
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/category/#/Living" itemprop="url" rel="index">
-                    <span itemprop="name">Living</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/living/2018/02/18/blog/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="/living/2018/02/18/blog/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-  
-  
-
-
-
-
-
-
-
-
-
-
-
-
-  <h2 id="心情">心情</h2>
-
-<p>真让人恶心，自己什么都不做，却幻想着得到巨额的回报。</p>
-
-<p>不觉得中彩票的几率更大吗。</p>
-
-<p>满心的小算盘，当别人看不出来吗。</p>
-
-<p>想如愿，呵呵，等着去吧。管你是谁，都别做梦了。</p>
-
-<p>现在心情与吃了苍蝇差不多。</p>
-
-
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/living/2018/02/18/blog/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-        
-        
-        
-        
       
     </footer>
   </article>
@@ -2844,7 +3025,7 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools
 
 
 
-    <a class="extend prev" rel="prev" href="/page6"><i class="fa fa-angle-left"></i></a> <a class="page-number" href="/">1</a> <span class="space">&hellip;</span> <a class="page-number" href="/page6">6</a> <span class="page-number current">7</span> <a class="page-number" href="/page8">8</a> <span class="space">&hellip;</span> <a class="page-number" href="/page11">11</a> <a class="extend prev" rel="next" href="/page8"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page6"><i class="fa fa-angle-left"></i></a> <a class="page-number" href="/">1</a> <span class="space">&hellip;</span> <a class="page-number" href="/page6">6</a> <span class="page-number current">7</span> <a class="page-number" href="/page8">8</a> <span class="space">&hellip;</span> <a class="page-number" href="/page12">12</a> <a class="extend prev" rel="next" href="/page8"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -2890,7 +3071,7 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">110</span>
+                <span class="site-state-item-count">115</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>

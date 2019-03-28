@@ -115,7 +115,7 @@
 <meta name="keywords" content="日记, laravel">
 <meta property="og:type" content="article">
 <meta property="og:title" content="user 使用uuid">
-<meta property="og:url" content="/living/2018/11/25/blog/">
+<meta property="og:url" content="http://localhost:4000/living/2018/11/25/blog/">
 <meta property="og:site_name" content="Keleven.Me">
 <meta property="og:description" content="25日的份 将laravel 默认的id 改为 uuid 的方法，以及passport 使用uuid user 部分 当不使用传统id时， 先在模型中写入 关闭默认排序 public $incrementing = false; 再migrate中修改 $table-&amp;gt;increments(&apos;id&apos;); 为 $table-&amp;gt;uuid(&apos;id&apos;)-&amp;gt;primary(); 随后运行la5 migrate 新建App\Traits\Uuid 内容如下 &amp;lt;?php namespace App\Traits; use Illuminate\Support\Str; trait Uuid { /** * Boot function from laravel. */ protected static function boot() { parent::boot(); static::creating(function ($model) { $model-&amp;gt;{$model-&amp;gt;getKeyName()} = (string) Str::orderedUuid(); }); } } 随后在模型中添加 use App\Traits\Uuid; use Uuid; 之后使用laravel自带的auth可以正常注册了。密码找回功能也可以使用。 参考文档 passport 部分 当 passport安装完成后 执行php artisan vendor:publish --tag=passport-migrations 复制迁移到migrate目录 修改CreateOauthClientsTable $table-&amp;gt;increments(&apos;id&apos;); $table-&amp;gt;integer(&apos;user_id&apos;)-&amp;gt;index()-&amp;gt;nullable(); // 改为 $table-&amp;gt;uuid(&apos;id&apos;)-&amp;gt;primary(); $table-&amp;gt;uuid(&apos;user_id&apos;)-&amp;gt;index()-&amp;gt;nullable(); 其他迁移将client_id与user_id 改为使用uuid App\Providers\AppServiceProvider中引入部分添加 use Laravel\Passport\Client; use Illuminate\Support\Str; boot()部分添加 Client::creating(function (Client $client) { $client-&amp;gt;incrementing = false; $client-&amp;gt;id = (string) Str::orderedUuid(); }); Client::retrieved(function (Client $client) { $client-&amp;gt;incrementing = false; }); register() 部分添加 Passport::ignoreMigrations(); 其他部分按照文档即可正常使用。 参考文档 user 路径修改 在App\Http\Controllers\Auth\RegisterController中修改 在config中的providers修改到对应路径 之后可以正常使用 laravel 包开发 包的开发非常有利于后期的维护，同时也可以有效的分配工作任务，对未来的团队工作有极大的优势。 主要是功能混在一起，找起来超级烦。 有必要将独立的功能分散出去。 参考地址 1 参考地址 2 需要说明的是 namespace与autoload超级重要">
 <meta property="og:locale" content="en">
@@ -148,7 +148,7 @@
 
 
 
-  <link rel="canonical" href=""/>
+  <link rel="canonical" href="http://localhost:4000/"/>
 
 
 
@@ -335,7 +335,7 @@
   
 
   <article class="post post-type- " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="/living/2018/11/25/blog/">
+    <link itemprop="mainEntityOfPage" href="http://localhost:4000/living/2018/11/25/blog/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="K11">
@@ -735,7 +735,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">110</span>
+                <span class="site-state-item-count">115</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
@@ -1004,7 +1004,7 @@
       
       <script type="text/javascript">
           var disqus_config = function () {
-              this.page.url = '/living/2018/11/25/blog/';
+              this.page.url = 'http://localhost:4000/living/2018/11/25/blog/';
               this.page.identifier = '/living/2018/11/25/blog/';
               this.page.title = 'user 使用uuid';
           };
