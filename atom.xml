@@ -1,4 +1,226 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="http://localhost:4000/atom.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-04-07T17:08:23+08:00</updated><id>http://localhost:4000/atom.xml</id><title type="html">Keleven.Me</title><subtitle>千变万化的是世界</subtitle><author><name>K11</name></author><entry><title type="html">日常</title><link href="http://localhost:4000/living/2019/04/07/blog/" rel="alternate" type="text/html" title="日常" /><published>2019-04-07T08:00:00+08:00</published><updated>2019-04-07T08:00:00+08:00</updated><id>http://localhost:4000/living/2019/04/07/blog</id><content type="html" xml:base="http://localhost:4000/living/2019/04/07/blog/">&lt;h1 id=&quot;github-效率感人&quot;&gt;github 效率感人&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="http://localhost:4000/atom.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-05-08T02:48:22+08:00</updated><id>http://localhost:4000/atom.xml</id><title type="html">Keleven.Me</title><subtitle>千变万化的是世界</subtitle><author><name>K11</name></author><entry><title type="html">更新了~</title><link href="http://localhost:4000/living/2019/05/07/blog/" rel="alternate" type="text/html" title="更新了~" /><published>2019-05-07T08:00:00+08:00</published><updated>2019-05-07T08:00:00+08:00</updated><id>http://localhost:4000/living/2019/05/07/blog</id><content type="html" xml:base="http://localhost:4000/living/2019/05/07/blog/">&lt;h1 id=&quot;google-cloud&quot;&gt;Google Cloud&lt;/h1&gt;
+
+&lt;p&gt;有点小问题，重启后正常……&lt;/p&gt;</content><author><name>K11</name></author><category term="日记" /><summary type="html">Google Cloud 有点小问题，重启后正常……</summary></entry><entry><title type="html">docker 与 netplan 的坑</title><link href="http://localhost:4000/living/2019/04/30/blog/" rel="alternate" type="text/html" title="docker 与 netplan 的坑" /><published>2019-04-30T08:00:00+08:00</published><updated>2019-04-30T08:00:00+08:00</updated><id>http://localhost:4000/living/2019/04/30/blog</id><content type="html" xml:base="http://localhost:4000/living/2019/04/30/blog/">&lt;h1 id=&quot;docker-与-netplan-的坑&quot;&gt;docker 与 netplan 的坑&lt;/h1&gt;
+
+&lt;p&gt;使用&lt;code class=&quot;highlighter-rouge&quot;&gt;netplan&lt;/code&gt; 设置 IP 后&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;docker&lt;/code&gt; 服务就不能正常启动了&lt;/p&gt;
+
+&lt;p&gt;怀疑是&lt;code class=&quot;highlighter-rouge&quot;&gt;netplan&lt;/code&gt;的问题&lt;/p&gt;
+
+&lt;p&gt;谷歌也没有结果……&lt;/p&gt;
+
+&lt;p&gt;无奈，退一步改项目上传地址吧~&lt;/p&gt;</content><author><name>K11</name></author><category term="日记" /><summary type="html">docker 与 netplan 的坑 使用netplan 设置 IP 后 docker 服务就不能正常启动了 怀疑是netplan的问题 谷歌也没有结果…… 无奈，退一步改项目上传地址吧~</summary></entry><entry><title type="html">gitlab 调整</title><link href="http://localhost:4000/living/2019/04/20/blog/" rel="alternate" type="text/html" title="gitlab 调整" /><published>2019-04-20T08:00:00+08:00</published><updated>2019-04-20T08:00:00+08:00</updated><id>http://localhost:4000/living/2019/04/20/blog</id><content type="html" xml:base="http://localhost:4000/living/2019/04/20/blog/">&lt;h1 id=&quot;ubuntu-分区小了&quot;&gt;Ubuntu 分区小了&lt;/h1&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;gitlab&lt;/code&gt; 镜像越来越大了，终于空间不够用了……&lt;/p&gt;
+
+&lt;h2 id=&quot;gitlab-备份&quot;&gt;gitlab 备份&lt;/h2&gt;
+
+&lt;h3 id=&quot;备份项目&quot;&gt;备份项目&lt;/h3&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker exec -t &amp;lt;container name&amp;gt; gitlab-rake gitlab:backup:create
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;注意备份&lt;code class=&quot;highlighter-rouge&quot;&gt;docker-compose.yml&lt;/code&gt; 文件&lt;/p&gt;
+
+&lt;h3 id=&quot;备份设置文件&quot;&gt;备份设置文件&lt;/h3&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker exec -t &amp;lt;your container name&amp;gt; /bin/sh -c 'umask 0077; tar cfz /secret/gitlab/backups/$(date &quot;+etc-gitlab-\%s.tgz&quot;) -C / etc/gitlab'
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;注意 &lt;code class=&quot;highlighter-rouge&quot;&gt;/secret/gitlab/backups/&lt;/code&gt; 在本地的文件挂载。&lt;/p&gt;
+
+&lt;p&gt;备份文件在&lt;code class=&quot;highlighter-rouge&quot;&gt;/var/opt/gitlab/backups&lt;/code&gt; 中 注意导出。&lt;/p&gt;
+
+&lt;p&gt;还原是注意 &lt;code class=&quot;highlighter-rouge&quot;&gt;镜像版本&lt;/code&gt; 的一致性。 不一致时有错误提示。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://docs.gitlab.com/omnibus/settings/backups.html&quot;&gt;参考文档 1&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;准备工作完成&lt;/p&gt;
+
+&lt;h2 id=&quot;重新安装-ubuntu&quot;&gt;重新安装 ubuntu&lt;/h2&gt;
+
+&lt;p&gt;下载最新&lt;code class=&quot;highlighter-rouge&quot;&gt;ubuntu&lt;/code&gt;镜像安装。&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;UI&lt;/code&gt; 比之前强点……&lt;/p&gt;
+
+&lt;p&gt;注意开启&lt;code class=&quot;highlighter-rouge&quot;&gt;openssh&lt;/code&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;设置-ssh&quot;&gt;设置 ssh&lt;/h2&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo nano /etc/ssh/sshd_config
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;修改端口&lt;code class=&quot;highlighter-rouge&quot;&gt;Port 22&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;添加-公钥&quot;&gt;添加 公钥&lt;/h3&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;mkdir .ssh
+nano authorized_keys
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;复制公钥到&lt;code class=&quot;highlighter-rouge&quot;&gt;authorized_keys&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;重启-ssh-服务&quot;&gt;重启 ssh 服务&lt;/h3&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo service sshd restart
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;安装-zsh&quot;&gt;安装 zsh&lt;/h2&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo apt install zsh
+
+chsh -s $(which zsh)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;重新登录后检测&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;echo $SHELL
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;安装-oh-my-zsh&quot;&gt;安装 oh my zsh&lt;/h3&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sh -c &quot;$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)&quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;设置zshrc&quot;&gt;设置&lt;code class=&quot;highlighter-rouge&quot;&gt;~/.zshrc&lt;/code&gt;&lt;/h3&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ZSH_THEME=&quot;agnoster&quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;安装powerline-fonts&quot;&gt;安装powerline fonts&lt;/h3&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo apt-get install fonts-powerline
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;安装-docker&quot;&gt;安装 docker&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://docs.docker.com/install/linux/docker-ce/ubuntu/&quot;&gt;参考&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;更新包资源&quot;&gt;更新包资源&lt;/h3&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo apt-get update
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;安装必要包&quot;&gt;安装必要包&lt;/h3&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo apt-get install \
+    apt-transport-https \
+    ca-certificates \
+    curl \
+    gnupg-agent \
+    software-properties-common
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;安装公钥&quot;&gt;安装公钥&lt;/h3&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;验证公钥&quot;&gt;验证公钥&lt;/h3&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo apt-key fingerprint 0EBFCD88
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;指定版本&quot;&gt;指定版本&lt;/h3&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo add-apt-repository \
+   &quot;deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+   $(lsb_release -cs) \
+   stable&quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;安装&quot;&gt;安装&lt;/h3&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo apt-get install docker-ce docker-ce-cli containerd.io
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;免去sudo&quot;&gt;免去sudo&lt;/h3&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo groupadd docker
+sudo usermod -aG docker $USER
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;安装docker-compose&quot;&gt;安装docker-compose&lt;/h3&gt;
+
+&lt;h4 id=&quot;安装-1&quot;&gt;安装&lt;/h4&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo curl -L &quot;https://github.com/docker/compose/releases/download/1.24.0/docker-compose-$(uname -s)-$(uname -m)&quot; -o /usr/local/bin/docker-compose
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;提权&quot;&gt;提权&lt;/h4&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo chmod +x /usr/local/bin/docker-compose
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;创建链接&quot;&gt;创建链接&lt;/h4&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;还原-gitlab-备份&quot;&gt;还原 gitlab 备份&lt;/h2&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker exec -it &amp;lt;container name&amp;gt; gitlab-rake gitlab:backup:restore
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;注意将文件挂载到&lt;code class=&quot;highlighter-rouge&quot;&gt;/var/opt/gitlab/backups&lt;/code&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;修改ip&quot;&gt;修改ip&lt;/h2&gt;
+
+&lt;h3 id=&quot;ip设置文件位置&quot;&gt;ip设置文件位置&lt;/h3&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ls /etc/netplan/
+cd /etc/netplan/
+sudo nano 50-cloud-init.yaml
+
+sudo nano /etc/netplan/50-cloud-init.yaml
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;修改内容&quot;&gt;修改内容&lt;/h3&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;enp0s3:
+    addresses: [192.168.13.131/24]
+    gateway4: 192.168.13.1
+    dhcp4: no
+    nameservers:
+      addresses: [1.1.1.1]
+    optional: true
+
+docker0: 
+    addresses: [172.17.0.1/16]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;原本内容&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;enp0s3:
+    dhcp4: true
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;确认更改&quot;&gt;确认更改&lt;/h3&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo netplan apply
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;其他&quot;&gt;其他&lt;/h3&gt;
+
+&lt;p&gt;确认正在使用的ip&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ip addr
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>K11</name></author><category term="日记" /><summary type="html">Ubuntu 分区小了 gitlab 镜像越来越大了，终于空间不够用了…… gitlab 备份 备份项目 docker exec -t &amp;lt;container name&amp;gt; gitlab-rake gitlab:backup:create 注意备份docker-compose.yml 文件 备份设置文件 docker exec -t &amp;lt;your container name&amp;gt; /bin/sh -c 'umask 0077; tar cfz /secret/gitlab/backups/$(date &quot;+etc-gitlab-\%s.tgz&quot;) -C / etc/gitlab' 注意 /secret/gitlab/backups/ 在本地的文件挂载。 备份文件在/var/opt/gitlab/backups 中 注意导出。 还原是注意 镜像版本 的一致性。 不一致时有错误提示。 参考文档 1 准备工作完成 重新安装 ubuntu 下载最新ubuntu镜像安装。 UI 比之前强点…… 注意开启openssh 设置 ssh sudo nano /etc/ssh/sshd_config 修改端口Port 22 添加 公钥 mkdir .ssh nano authorized_keys 复制公钥到authorized_keys 重启 ssh 服务 sudo service sshd restart 安装 zsh sudo apt install zsh chsh -s $(which zsh) 重新登录后检测 echo $SHELL 安装 oh my zsh sh -c &quot;$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)&quot; 设置~/.zshrc ZSH_THEME=&quot;agnoster&quot; 安装powerline fonts sudo apt-get install fonts-powerline 安装 docker 参考 更新包资源 sudo apt-get update 安装必要包 sudo apt-get install \ apt-transport-https \ ca-certificates \ curl \ gnupg-agent \ software-properties-common 安装公钥 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - 验证公钥 sudo apt-key fingerprint 0EBFCD88 指定版本 sudo add-apt-repository \ &quot;deb [arch=amd64] https://download.docker.com/linux/ubuntu \ $(lsb_release -cs) \ stable&quot; 安装 sudo apt-get install docker-ce docker-ce-cli containerd.io 免去sudo sudo groupadd docker sudo usermod -aG docker $USER 安装docker-compose 安装 sudo curl -L &quot;https://github.com/docker/compose/releases/download/1.24.0/docker-compose-$(uname -s)-$(uname -m)&quot; -o /usr/local/bin/docker-compose 提权 sudo chmod +x /usr/local/bin/docker-compose 创建链接 sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose 还原 gitlab 备份 docker exec -it &amp;lt;container name&amp;gt; gitlab-rake gitlab:backup:restore 注意将文件挂载到/var/opt/gitlab/backups 修改ip ip设置文件位置 ls /etc/netplan/ cd /etc/netplan/ sudo nano 50-cloud-init.yaml sudo nano /etc/netplan/50-cloud-init.yaml 修改内容 enp0s3: addresses: [192.168.13.131/24] gateway4: 192.168.13.1 dhcp4: no nameservers: addresses: [1.1.1.1] optional: true docker0: addresses: [172.17.0.1/16] 原本内容 enp0s3: dhcp4: true 确认更改 sudo netplan apply 其他 确认正在使用的ip ip addr</summary></entry><entry><title type="html">记录读取</title><link href="http://localhost:4000/living/2019/04/17/blog/" rel="alternate" type="text/html" title="记录读取" /><published>2019-04-17T08:00:00+08:00</published><updated>2019-04-17T08:00:00+08:00</updated><id>http://localhost:4000/living/2019/04/17/blog</id><content type="html" xml:base="http://localhost:4000/living/2019/04/17/blog/">&lt;h1 id=&quot;11日的份&quot;&gt;11日的份&lt;/h1&gt;
+
+&lt;h2 id=&quot;laravel-passport-scopes&quot;&gt;laravel passport scopes&lt;/h2&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;scopes&lt;/code&gt; 为单组有效模式。&lt;/p&gt;
+
+&lt;h2 id=&quot;其他&quot;&gt;其他&lt;/h2&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;github&lt;/code&gt;的 &lt;code class=&quot;highlighter-rouge&quot;&gt;2FA&lt;/code&gt; 重置了 过程 大概一周吧……&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;17日的份&quot;&gt;17日的份&lt;/h1&gt;
+
+&lt;p&gt;无事&lt;/p&gt;</content><author><name>K11</name></author><category term="日记" /><summary type="html">11日的份 laravel passport scopes scopes 为单组有效模式。 其他 github的 2FA 重置了 过程 大概一周吧…… 17日的份 无事</summary></entry><entry><title type="html">日常</title><link href="http://localhost:4000/living/2019/04/07/blog/" rel="alternate" type="text/html" title="日常" /><published>2019-04-07T08:00:00+08:00</published><updated>2019-04-07T08:00:00+08:00</updated><id>http://localhost:4000/living/2019/04/07/blog</id><content type="html" xml:base="http://localhost:4000/living/2019/04/07/blog/">&lt;h1 id=&quot;github-效率感人&quot;&gt;github 效率感人&lt;/h1&gt;
 
 &lt;p&gt;提交申请后3天后得到回复&lt;/p&gt;
 
@@ -164,194 +386,4 @@ methods: {
 }).then( response =&amp;gt; {
 		console.log(response.data)
 });
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>K11</name></author><category term="日记" /><category term="vue" /><summary type="html">vue 上传文件 在vue中确认上传的文件 input标签中设置ref &amp;lt;input type=&quot;file&quot; ref=&quot;FileUp&quot; class=&quot;custom-file-input&quot; id=&quot;customFile&quot; @change=&quot;FileUpload&quot;&amp;gt; &amp;lt;label class=&quot;custom-file-label&quot; for=&quot;customFile&quot;&amp;gt;&amp;lt;/label&amp;gt; FileUpload() { if (!this.$refs.FileUp.files.length) { this.upform.upfile = '' }else{ this.upform.upfile = this.$refs.FileUp.files[0] this.upform.name = this.$refs.FileUp.files[0].name } }, 随后文件可以正常上传。 自动获取文件名 bootstrap 4中自动载入文件名需要使用bs-custom-file-input包 npm install bs-custom-file-input --save vue 中使用 mounted() { this.getFileName() }, methods: { getFileName() { $('.custom-file-input').on('change', function() { let fileName = $(this).val().split('\\').pop(); $(this).siblings('.custom-file-label').addClass('selected').html(fileName); }); }, } 之后再选择文件后，input便签可以自动显示文件名。 axios 中上传文件方法 上传文件时，需要headers为multipart/form-data。 注意请求时使用formData不能使用form formData 中数据使用append()传入 formData.append('file', this.upform.upfile) 注意laravel中数据名称对应 axios.post('/game/json' , formData , { headers: { 'Content-Type': 'multipart/form-data' } }).then( response =&amp;gt; { console.log(response.data) });</summary></entry><entry><title type="html">日常</title><link href="http://localhost:4000/living/2019/02/28/blog/" rel="alternate" type="text/html" title="日常" /><published>2019-02-28T08:00:00+08:00</published><updated>2019-02-28T08:00:00+08:00</updated><id>http://localhost:4000/living/2019/02/28/blog</id><content type="html" xml:base="http://localhost:4000/living/2019/02/28/blog/">&lt;h1 id=&quot;19日&quot;&gt;19日&lt;/h1&gt;
-
-&lt;p&gt;顺利升级到了&lt;code class=&quot;highlighter-rouge&quot;&gt;Mojave&lt;/code&gt;~~&lt;/p&gt;
-
-&lt;p&gt;用起来还是不错的~&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h1 id=&quot;23日&quot;&gt;23日&lt;/h1&gt;
-
-&lt;p&gt;调整风扇位置改善散热&lt;/p&gt;
-
-&lt;p&gt;改水冷的方案深入心中……&lt;/p&gt;
-
-&lt;p&gt;现在的东西连螺丝的质量都严重下降……&lt;/p&gt;
-
-&lt;p&gt;稍微拧一拧就花了……&lt;/p&gt;
-
-&lt;p&gt;要是上扭力起子估计是秒蹦……&lt;/p&gt;
-
-&lt;p&gt;还有某游戏带私货也是……&lt;/p&gt;
-
-&lt;p&gt;天朝反应也是有趣…… 上行下效&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h1 id=&quot;28日&quot;&gt;28日&lt;/h1&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Mojave&lt;/code&gt;睡眠有问题，暂时没找到解决办法。&lt;/p&gt;</content><author><name>K11</name></author><category term="日记" /><summary type="html">19日 顺利升级到了Mojave~~ 用起来还是不错的~ 23日 调整风扇位置改善散热 改水冷的方案深入心中…… 现在的东西连螺丝的质量都严重下降…… 稍微拧一拧就花了…… 要是上扭力起子估计是秒蹦…… 还有某游戏带私货也是…… 天朝反应也是有趣…… 上行下效 28日 Mojave睡眠有问题，暂时没找到解决办法。</summary></entry><entry><title type="html">新机器装好了~</title><link href="http://localhost:4000/living/2019/02/16/blog/" rel="alternate" type="text/html" title="新机器装好了~" /><published>2019-02-16T08:00:00+08:00</published><updated>2019-02-16T08:00:00+08:00</updated><id>http://localhost:4000/living/2019/02/16/blog</id><content type="html" xml:base="http://localhost:4000/living/2019/02/16/blog/">&lt;h1 id=&quot;新机器装好了&quot;&gt;新机器装好了~&lt;/h1&gt;
-
-&lt;p&gt;折腾了三天，终于装好了~&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;vega 64&lt;/code&gt; 满载的声音有点大。&lt;/p&gt;
-
-&lt;p&gt;先装&lt;code class=&quot;highlighter-rouge&quot;&gt;High Sierra&lt;/code&gt;成功的几率比较大。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.tonymacx86.com/threads/success-asus-rog-maximus-hero-xi-i9-9900k-gtx-1070.267236/&quot;&gt;参考地址1&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.tonymacx86.com/threads/storks-myhero-ii-build-asus-rog-maximus-z370-hero-x-i7-8700k-amd-rx-580.245074/&quot;&gt;参考地址2&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;配置单&lt;/p&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th style=&quot;text-align: left&quot;&gt;组件&lt;/th&gt;
-      &lt;th style=&quot;text-align: left&quot;&gt;型号&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;CPU&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;intel i9-9900k&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;主板&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;华硕 ROG MAXIMUS XI HERO WIFi&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;显卡&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;华硕 AREZ-STRIX-RXVEGA64-O8G-GAMING&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;内存&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;芝奇 Trident Z RGB 16GB DDR4 3200 （ F4-3200C14D-16GTZR ）&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;ssd&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;三星 Samsung 970 pro 512G&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;电源&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;海盗船 HX850i&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;散热器&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;猫头鹰 NH D15S&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;clover efi&lt;/code&gt; 使用了最新版&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;clover configurator&lt;/code&gt; 同样使用了最新版&lt;/p&gt;
-
-&lt;h2 id=&quot;坑&quot;&gt;坑&lt;/h2&gt;
-
-&lt;h3 id=&quot;sip-权限问题&quot;&gt;SIP 权限问题&lt;/h3&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Rt Variables&lt;/code&gt; 的 &lt;code class=&quot;highlighter-rouge&quot;&gt;CsrActiveConfig&lt;/code&gt; 设置为 &lt;code class=&quot;highlighter-rouge&quot;&gt;0x67&lt;/code&gt; 关闭 &lt;code class=&quot;highlighter-rouge&quot;&gt;SIP&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;完全有效是&lt;code class=&quot;highlighter-rouge&quot;&gt;0x0&lt;/code&gt;, 部分有效是 &lt;code class=&quot;highlighter-rouge&quot;&gt;0x3&lt;/code&gt;。&lt;/p&gt;
-
-&lt;p&gt;关闭后&lt;code class=&quot;highlighter-rouge&quot;&gt;ntfs&lt;/code&gt; 可以正挂载了。&lt;/p&gt;
-
-&lt;h3 id=&quot;displayport-问题&quot;&gt;DisplayPort 问题&lt;/h3&gt;
-
-&lt;p&gt;具体原因未知，不过设置&lt;code class=&quot;highlighter-rouge&quot;&gt;Graphics&lt;/code&gt; 的 &lt;code class=&quot;highlighter-rouge&quot;&gt;Inject ATI&lt;/code&gt; 稳定了许多。&lt;/p&gt;
-
-&lt;h3 id=&quot;usb-端口不识别问题&quot;&gt;USB 端口不识别问题&lt;/h3&gt;
-
-&lt;p&gt;使用&lt;code class=&quot;highlighter-rouge&quot;&gt;MultiBeast&lt;/code&gt; 安装 &lt;code class=&quot;highlighter-rouge&quot;&gt;Remove XHCI USB Port Limit&lt;/code&gt; 后可以使用。&lt;/p&gt;
-
-&lt;p&gt;其他&lt;code class=&quot;highlighter-rouge&quot;&gt;MultiBeast&lt;/code&gt; 查看 &lt;code class=&quot;highlighter-rouge&quot;&gt;参考地址2&lt;/code&gt;。&lt;/p&gt;
-
-&lt;h3 id=&quot;关机与重启-问题&quot;&gt;关机与重启 问题&lt;/h3&gt;
-
-&lt;p&gt;关机或者重启时不能正常断电。&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Boot&lt;/code&gt; 中设置&lt;code class=&quot;highlighter-rouge&quot;&gt;slide=0&lt;/code&gt; 同时安装 &lt;code class=&quot;highlighter-rouge&quot;&gt;EmuVariableUefi-64.efi&lt;/code&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;ssd-速度修正&quot;&gt;ssd 速度修正&lt;/h3&gt;
-
-&lt;p&gt;安装&lt;code class=&quot;highlighter-rouge&quot;&gt;NvmExpressDxe-64.efi&lt;/code&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;显示卡顿问题&quot;&gt;显示卡顿问题&lt;/h3&gt;
-
-&lt;p&gt;安装&lt;code class=&quot;highlighter-rouge&quot;&gt;Lilu.kext&lt;/code&gt;与 &lt;code class=&quot;highlighter-rouge&quot;&gt;WhateverGreen.kext&lt;/code&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;使用dp线的色彩问题&quot;&gt;使用DP线的色彩问题&lt;/h3&gt;
-
-&lt;p&gt;使用&lt;code class=&quot;highlighter-rouge&quot;&gt;DisplayPort&lt;/code&gt; 色彩更冷了。有重新校色的必要&lt;/p&gt;
-
-&lt;h3 id=&quot;修复启动项&quot;&gt;修复启动项&lt;/h3&gt;
-
-&lt;p&gt;重命名&lt;code class=&quot;highlighter-rouge&quot;&gt;Microsoft\Boot\bootmgfw.efi&lt;/code&gt; 为 &lt;code class=&quot;highlighter-rouge&quot;&gt;bootmgfw-orig.efi&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;bios&lt;/code&gt;中找到&lt;code class=&quot;highlighter-rouge&quot;&gt;clover&lt;/code&gt;启动项后可以改回。&lt;/p&gt;
-
-&lt;h3 id=&quot;显卡温度感人&quot;&gt;显卡温度感人&lt;/h3&gt;
-
-&lt;p&gt;想着以后要不要换水冷~&lt;/p&gt;
-
-&lt;h2 id=&quot;暂时这些&quot;&gt;暂时这些&lt;/h2&gt;</content><author><name>K11</name></author><category term="日记" /><summary type="html">新机器装好了~ 折腾了三天，终于装好了~ vega 64 满载的声音有点大。 先装High Sierra成功的几率比较大。 参考地址1 参考地址2 配置单 组件 型号 CPU intel i9-9900k 主板 华硕 ROG MAXIMUS XI HERO WIFi 显卡 华硕 AREZ-STRIX-RXVEGA64-O8G-GAMING 内存 芝奇 Trident Z RGB 16GB DDR4 3200 （ F4-3200C14D-16GTZR ） ssd 三星 Samsung 970 pro 512G 电源 海盗船 HX850i 散热器 猫头鹰 NH D15S clover efi 使用了最新版 clover configurator 同样使用了最新版 坑 SIP 权限问题 Rt Variables 的 CsrActiveConfig 设置为 0x67 关闭 SIP 完全有效是0x0, 部分有效是 0x3。 关闭后ntfs 可以正挂载了。 DisplayPort 问题 具体原因未知，不过设置Graphics 的 Inject ATI 稳定了许多。 USB 端口不识别问题 使用MultiBeast 安装 Remove XHCI USB Port Limit 后可以使用。 其他MultiBeast 查看 参考地址2。 关机与重启 问题 关机或者重启时不能正常断电。 Boot 中设置slide=0 同时安装 EmuVariableUefi-64.efi ssd 速度修正 安装NvmExpressDxe-64.efi 显示卡顿问题 安装Lilu.kext与 WhateverGreen.kext 使用DP线的色彩问题 使用DisplayPort 色彩更冷了。有重新校色的必要 修复启动项 重命名Microsoft\Boot\bootmgfw.efi 为 bootmgfw-orig.efi bios中找到clover启动项后可以改回。 显卡温度感人 想着以后要不要换水冷~ 暂时这些</summary></entry><entry><title type="html">一些记录</title><link href="http://localhost:4000/living/2019/02/10/blog/" rel="alternate" type="text/html" title="一些记录" /><published>2019-02-10T08:00:00+08:00</published><updated>2019-02-10T08:00:00+08:00</updated><id>http://localhost:4000/living/2019/02/10/blog</id><content type="html" xml:base="http://localhost:4000/living/2019/02/10/blog/">&lt;h1 id=&quot;2月9日&quot;&gt;2月9日&lt;/h1&gt;
-
-&lt;h2 id=&quot;一些记录&quot;&gt;一些记录&lt;/h2&gt;
-
-&lt;p&gt;控制部分暂时本地化，之后开一个服务器也是必然。&lt;/p&gt;
-
-&lt;p&gt;时间早晚的问题，最重要的是稳定。&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h1 id=&quot;2月10日&quot;&gt;2月10日&lt;/h1&gt;
-
-&lt;h2 id=&quot;yubikey-otp-修正&quot;&gt;yubikey otp 修正&lt;/h2&gt;
-
-&lt;p&gt;更新&lt;code class=&quot;highlighter-rouge&quot;&gt;bitbeans/yubikey&lt;/code&gt; 到最新，&lt;code class=&quot;highlighter-rouge&quot;&gt;yubikey&lt;/code&gt;官方关闭了&lt;code class=&quot;highlighter-rouge&quot;&gt;http&lt;/code&gt;访问。&lt;/p&gt;
-
-&lt;p&gt;之后验证功能正常&lt;code class=&quot;highlighter-rouge&quot;&gt;yubikey&lt;/code&gt;的验证速度上没有&lt;code class=&quot;highlighter-rouge&quot;&gt;google 2FA&lt;/code&gt;快，也并不是墙的问题。&lt;/p&gt;
-
-&lt;p&gt;在&lt;code class=&quot;highlighter-rouge&quot;&gt;php 7.3&lt;/code&gt; 版本下 &lt;code class=&quot;highlighter-rouge&quot;&gt;HTTPS_VERIFY&lt;/code&gt; 无要求。&lt;/p&gt;
-
-&lt;p&gt;在&lt;code class=&quot;highlighter-rouge&quot;&gt;php 7.2&lt;/code&gt; 版本下 &lt;code class=&quot;highlighter-rouge&quot;&gt;HTTPS_VERIFY&lt;/code&gt; 需要设置为&lt;code class=&quot;highlighter-rouge&quot;&gt;false&lt;/code&gt; 可以正常使用。&lt;/p&gt;
-
-&lt;h2 id=&quot;修正https访问&quot;&gt;修正&lt;code class=&quot;highlighter-rouge&quot;&gt;Https&lt;/code&gt;访问&lt;/h2&gt;
-
-&lt;p&gt;修正不能使用&lt;code class=&quot;highlighter-rouge&quot;&gt;https&lt;/code&gt;的问题。&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;php 7.3&lt;/code&gt; 版本下 &lt;code class=&quot;highlighter-rouge&quot;&gt;la5 opcache:status&lt;/code&gt; 出现 &lt;code class=&quot;highlighter-rouge&quot;&gt;SSL certificate problem: unable to get local issuer certificate&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;使用&lt;code class=&quot;highlighter-rouge&quot;&gt;php --ini&lt;/code&gt; 确认&lt;code class=&quot;highlighter-rouge&quot;&gt;php.ini&lt;/code&gt; 位置后添加&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;{name}&lt;/code&gt;为当前用户 用户名&lt;/p&gt;
-
-&lt;div class=&quot;language-php highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;curl&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;cainfo&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;/Users/&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;/.config/valet/CA/LaravelValetCASelfSigned.pem&quot;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;在&lt;code class=&quot;highlighter-rouge&quot;&gt;php 7.3&lt;/code&gt;版本下 会出现&lt;code class=&quot;highlighter-rouge&quot;&gt;cURL error 77&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;切换到&lt;code class=&quot;highlighter-rouge&quot;&gt;php 7.2&lt;/code&gt; 后功能正常。&lt;/p&gt;
-
-&lt;h2 id=&quot;以上&quot;&gt;以上&lt;/h2&gt;</content><author><name>K11</name></author><category term="日记" /><summary type="html">2月9日 一些记录 控制部分暂时本地化，之后开一个服务器也是必然。 时间早晚的问题，最重要的是稳定。 2月10日 yubikey otp 修正 更新bitbeans/yubikey 到最新，yubikey官方关闭了http访问。 之后验证功能正常yubikey的验证速度上没有google 2FA快，也并不是墙的问题。 在php 7.3 版本下 HTTPS_VERIFY 无要求。 在php 7.2 版本下 HTTPS_VERIFY 需要设置为false 可以正常使用。 修正Https访问 修正不能使用https的问题。 php 7.3 版本下 la5 opcache:status 出现 SSL certificate problem: unable to get local issuer certificate 使用php --ini 确认php.ini 位置后添加 {name}为当前用户 用户名 curl.cainfo = &quot;/Users/{name}/.config/valet/CA/LaravelValetCASelfSigned.pem&quot; 在php 7.3版本下 会出现cURL error 77 切换到php 7.2 后功能正常。 以上</summary></entry><entry><title type="html">己亥年快乐~</title><link href="http://localhost:4000/living/2019/02/07/blog/" rel="alternate" type="text/html" title="己亥年快乐~" /><published>2019-02-07T08:00:00+08:00</published><updated>2019-02-07T08:00:00+08:00</updated><id>http://localhost:4000/living/2019/02/07/blog</id><content type="html" xml:base="http://localhost:4000/living/2019/02/07/blog/">&lt;h1 id=&quot;己亥年快乐&quot;&gt;己亥年快乐~&lt;/h1&gt;
-
-&lt;p&gt;虽然晚了一点&lt;/p&gt;
-
-&lt;p&gt;4号网络太慢，索性开了谷歌云，费用好贵！&lt;/p&gt;
-
-&lt;p&gt;估计用过了赠送的额度就不会再使用了！&lt;/p&gt;
-
-&lt;p&gt;没有梯子一些服务的速度会慢100倍，一点都不夸张。&lt;/p&gt;
-
-&lt;p&gt;6号 早上的梦点神奇呢~&lt;/p&gt;
-
-&lt;h1 id=&quot;新机器在路上&quot;&gt;新机器在路上&lt;/h1&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;valet&lt;/code&gt; 的 &lt;code class=&quot;highlighter-rouge&quot;&gt;https&lt;/code&gt; 问题还是没有解决……&lt;/p&gt;
-
-&lt;p&gt;过年期间太懈怠了……&lt;/p&gt;
-
-&lt;h1 id=&quot;以上-再次-新年快乐&quot;&gt;以上 再次 新年快乐&lt;/h1&gt;</content><author><name>K11</name></author><category term="日记" /><summary type="html">己亥年快乐~ 虽然晚了一点 4号网络太慢，索性开了谷歌云，费用好贵！ 估计用过了赠送的额度就不会再使用了！ 没有梯子一些服务的速度会慢100倍，一点都不夸张。 6号 早上的梦点神奇呢~ 新机器在路上 valet 的 https 问题还是没有解决…… 过年期间太懈怠了…… 以上 再次 新年快乐</summary></entry></feed>
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>K11</name></author><category term="日记" /><category term="vue" /><summary type="html">vue 上传文件 在vue中确认上传的文件 input标签中设置ref &amp;lt;input type=&quot;file&quot; ref=&quot;FileUp&quot; class=&quot;custom-file-input&quot; id=&quot;customFile&quot; @change=&quot;FileUpload&quot;&amp;gt; &amp;lt;label class=&quot;custom-file-label&quot; for=&quot;customFile&quot;&amp;gt;&amp;lt;/label&amp;gt; FileUpload() { if (!this.$refs.FileUp.files.length) { this.upform.upfile = '' }else{ this.upform.upfile = this.$refs.FileUp.files[0] this.upform.name = this.$refs.FileUp.files[0].name } }, 随后文件可以正常上传。 自动获取文件名 bootstrap 4中自动载入文件名需要使用bs-custom-file-input包 npm install bs-custom-file-input --save vue 中使用 mounted() { this.getFileName() }, methods: { getFileName() { $('.custom-file-input').on('change', function() { let fileName = $(this).val().split('\\').pop(); $(this).siblings('.custom-file-label').addClass('selected').html(fileName); }); }, } 之后再选择文件后，input便签可以自动显示文件名。 axios 中上传文件方法 上传文件时，需要headers为multipart/form-data。 注意请求时使用formData不能使用form formData 中数据使用append()传入 formData.append('file', this.upform.upfile) 注意laravel中数据名称对应 axios.post('/game/json' , formData , { headers: { 'Content-Type': 'multipart/form-data' } }).then( response =&amp;gt; { console.log(response.data) });</summary></entry></feed>
