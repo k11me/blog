@@ -1,4 +1,14 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="http://localhost:4000/atom.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-05-23T17:40:44+08:00</updated><id>http://localhost:4000/atom.xml</id><title type="html">Keleven.Me</title><subtitle>千变万化的是世界</subtitle><author><name>K11</name></author><entry><title type="html">更新了~</title><link href="http://localhost:4000/living/2019/05/23/blog/" rel="alternate" type="text/html" title="更新了~" /><published>2019-05-23T08:00:00+08:00</published><updated>2019-05-23T08:00:00+08:00</updated><id>http://localhost:4000/living/2019/05/23/blog</id><content type="html" xml:base="http://localhost:4000/living/2019/05/23/blog/">&lt;h1 id=&quot;果然发生&quot;&gt;果然发生&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="http://localhost:4000/atom.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-06-17T12:17:28+08:00</updated><id>http://localhost:4000/atom.xml</id><title type="html">Keleven.Me</title><subtitle>千变万化的是世界</subtitle><author><name>K11</name></author><entry><title type="html">日常</title><link href="http://localhost:4000/living/2019/06/17/blog/" rel="alternate" type="text/html" title="日常" /><published>2019-06-17T08:00:00+08:00</published><updated>2019-06-17T08:00:00+08:00</updated><id>http://localhost:4000/living/2019/06/17/blog</id><content type="html" xml:base="http://localhost:4000/living/2019/06/17/blog/">&lt;h1 id=&quot;日常&quot;&gt;日常&lt;/h1&gt;
+
+&lt;p&gt;HK的结果貌似不错&lt;/p&gt;</content><author><name>K11</name></author><category term="日记" /><summary type="html">日常 HK的结果貌似不错</summary></entry><entry><title type="html">HK</title><link href="http://localhost:4000/living/2019/06/13/blog/" rel="alternate" type="text/html" title="HK" /><published>2019-06-13T08:00:00+08:00</published><updated>2019-06-13T08:00:00+08:00</updated><id>http://localhost:4000/living/2019/06/13/blog</id><content type="html" xml:base="http://localhost:4000/living/2019/06/13/blog/">&lt;h1 id=&quot;祭品&quot;&gt;祭品&lt;/h1&gt;
+
+&lt;p&gt;100w+ 的祭品 看天朝如何吧&lt;/p&gt;</content><author><name>K11</name></author><category term="日记" /><summary type="html">祭品 100w+ 的祭品 看天朝如何吧</summary></entry><entry><title type="html">哎……</title><link href="http://localhost:4000/living/2019/06/05/blog/" rel="alternate" type="text/html" title="哎……" /><published>2019-06-05T08:00:00+08:00</published><updated>2019-06-05T08:00:00+08:00</updated><id>http://localhost:4000/living/2019/06/05/blog</id><content type="html" xml:base="http://localhost:4000/living/2019/06/05/blog/">&lt;h1 id=&quot;哎&quot;&gt;哎……&lt;/h1&gt;
+
+&lt;p&gt;恬不知耻 赤裸裸的威胁 估计也没什么用……&lt;/p&gt;</content><author><name>K11</name></author><category term="日记" /><summary type="html">哎…… 恬不知耻 赤裸裸的威胁 估计也没什么用……</summary></entry><entry><title type="html">30日了~</title><link href="http://localhost:4000/living/2019/05/30/blog/" rel="alternate" type="text/html" title="30日了~" /><published>2019-05-30T08:00:00+08:00</published><updated>2019-05-30T08:00:00+08:00</updated><id>http://localhost:4000/living/2019/05/30/blog</id><content type="html" xml:base="http://localhost:4000/living/2019/05/30/blog/">&lt;h1 id=&quot;更新了&quot;&gt;更新了&lt;/h1&gt;
+
+&lt;p&gt;在自动化的道路上越走越远了……&lt;/p&gt;
+
+&lt;p&gt;毕竟一个人能观察的有限……&lt;/p&gt;</content><author><name>K11</name></author><category term="日记" /><summary type="html">更新了 在自动化的道路上越走越远了…… 毕竟一个人能观察的有限……</summary></entry><entry><title type="html">更新了~</title><link href="http://localhost:4000/living/2019/05/23/blog/" rel="alternate" type="text/html" title="更新了~" /><published>2019-05-23T08:00:00+08:00</published><updated>2019-05-23T08:00:00+08:00</updated><id>http://localhost:4000/living/2019/05/23/blog</id><content type="html" xml:base="http://localhost:4000/living/2019/05/23/blog/">&lt;h1 id=&quot;果然发生&quot;&gt;果然发生&lt;/h1&gt;
 
 &lt;p&gt;💊💊💊💊💊💊&lt;/p&gt;
 
@@ -242,66 +252,4 @@ docker0:
 
 &lt;h1 id=&quot;17日的份&quot;&gt;17日的份&lt;/h1&gt;
 
-&lt;p&gt;无事&lt;/p&gt;</content><author><name>K11</name></author><category term="日记" /><summary type="html">11日的份 laravel passport scopes scopes 为单组有效模式。 其他 github的 2FA 重置了 过程 大概一周吧…… 17日的份 无事</summary></entry><entry><title type="html">日常</title><link href="http://localhost:4000/living/2019/04/07/blog/" rel="alternate" type="text/html" title="日常" /><published>2019-04-07T08:00:00+08:00</published><updated>2019-04-07T08:00:00+08:00</updated><id>http://localhost:4000/living/2019/04/07/blog</id><content type="html" xml:base="http://localhost:4000/living/2019/04/07/blog/">&lt;h1 id=&quot;github-效率感人&quot;&gt;github 效率感人&lt;/h1&gt;
-
-&lt;p&gt;提交申请后3天后得到回复&lt;/p&gt;
-
-&lt;p&gt;验证&lt;code class=&quot;highlighter-rouge&quot;&gt;token&lt;/code&gt; 是3天前提交的&lt;/p&gt;
-
-&lt;p&gt;然后就没有然后了……&lt;/p&gt;
-
-&lt;h1 id=&quot;mac-更新&quot;&gt;mac 更新&lt;/h1&gt;
-
-&lt;p&gt;每次更新mac 就像是在赌博一样…… 讨厌……&lt;/p&gt;</content><author><name>K11</name></author><category term="日记" /><summary type="html">github 效率感人 提交申请后3天后得到回复 验证token 是3天前提交的 然后就没有然后了…… mac 更新 每次更新mac 就像是在赌博一样…… 讨厌……</summary></entry><entry><title type="html">不知道</title><link href="http://localhost:4000/living/2019/04/01/blog/" rel="alternate" type="text/html" title="不知道" /><published>2019-04-01T08:00:00+08:00</published><updated>2019-04-01T08:00:00+08:00</updated><id>http://localhost:4000/living/2019/04/01/blog</id><content type="html" xml:base="http://localhost:4000/living/2019/04/01/blog/">&lt;h1 id=&quot;不知道&quot;&gt;不知道&lt;/h1&gt;
-
-&lt;p&gt;不知道……&lt;/p&gt;
-
-&lt;h1 id=&quot;随手&quot;&gt;随手&lt;/h1&gt;
-
-&lt;p&gt;直播很火…… 录屏很无聊……&lt;/p&gt;
-
-&lt;p&gt;这么想让人围观 去现场岂不是更好吗&lt;/p&gt;
-
-&lt;p&gt;比赛中有人在地图中钓鱼也是豁达&lt;/p&gt;
-
-&lt;p&gt;总之算一个彩蛋吧&lt;/p&gt;
-
-&lt;p&gt;制作道具的唯一性很重要 大家都拿着类似东西看起来就很无聊&lt;/p&gt;
-
-&lt;p&gt;反正不能刺激到我的欲望&lt;/p&gt;
-
-&lt;p&gt;重点是角色 道具 地图&lt;/p&gt;
-
-&lt;p&gt;道具的核心是平衡&lt;/p&gt;
-
-&lt;p&gt;角色的核心是自定义&lt;/p&gt;
-
-&lt;p&gt;地图的核心是变化&lt;/p&gt;
-
-&lt;p&gt;游戏模式确定了&lt;/p&gt;
-
-&lt;p&gt;社交部分反而比较麻烦&lt;/p&gt;</content><author><name>K11</name></author><category term="日记" /><summary type="html">不知道 不知道…… 随手 直播很火…… 录屏很无聊…… 这么想让人围观 去现场岂不是更好吗 比赛中有人在地图中钓鱼也是豁达 总之算一个彩蛋吧 制作道具的唯一性很重要 大家都拿着类似东西看起来就很无聊 反正不能刺激到我的欲望 重点是角色 道具 地图 道具的核心是平衡 角色的核心是自定义 地图的核心是变化 游戏模式确定了 社交部分反而比较麻烦</summary></entry><entry><title type="html">炸毛！</title><link href="http://localhost:4000/living/2019/03/28/blog/" rel="alternate" type="text/html" title="炸毛！" /><published>2019-03-28T08:00:00+08:00</published><updated>2019-03-28T08:00:00+08:00</updated><id>http://localhost:4000/living/2019/03/28/blog</id><content type="html" xml:base="http://localhost:4000/living/2019/03/28/blog/">&lt;h1 id=&quot;炸毛&quot;&gt;炸毛！&lt;/h1&gt;
-
-&lt;p&gt;系统升级后&lt;code class=&quot;highlighter-rouge&quot;&gt;usb&lt;/code&gt; 不能用了……&lt;/p&gt;
-
-&lt;p&gt;还原后发现日记忘保存了……&lt;/p&gt;
-
-&lt;p&gt;几天的份就这样消失了……&lt;/p&gt;
-
-&lt;p&gt;蠢哭😭😭😭&lt;/p&gt;
-
-&lt;h1 id=&quot;github&quot;&gt;github&lt;/h1&gt;
-
-&lt;p&gt;账号&lt;code class=&quot;highlighter-rouge&quot;&gt;2FA&lt;/code&gt; 与 &lt;code class=&quot;highlighter-rouge&quot;&gt;recovery code&lt;/code&gt; 双失效……&lt;/p&gt;
-
-&lt;p&gt;联系客服中……&lt;/p&gt;
-
-&lt;p&gt;好在公钥还在，希望能续一秒……&lt;/p&gt;
-
-&lt;p&gt;需要使用&lt;code class=&quot;highlighter-rouge&quot;&gt;ssh -T git@github.com verify&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;如果你有其他账号，需要修改为对应的&lt;code class=&quot;highlighter-rouge&quot;&gt;Host&lt;/code&gt;地址用于对应账号。&lt;/p&gt;</content><author><name>K11</name></author><category term="日记" /><summary type="html">炸毛！ 系统升级后usb 不能用了…… 还原后发现日记忘保存了…… 几天的份就这样消失了…… 蠢哭😭😭😭 github 账号2FA 与 recovery code 双失效…… 联系客服中…… 好在公钥还在，希望能续一秒…… 需要使用ssh -T git@github.com verify 如果你有其他账号，需要修改为对应的Host地址用于对应账号。</summary></entry><entry><title type="html">受风 好疼！</title><link href="http://localhost:4000/living/2019/03/12/blog/" rel="alternate" type="text/html" title="受风 好疼！" /><published>2019-03-12T08:00:00+08:00</published><updated>2019-03-12T08:00:00+08:00</updated><id>http://localhost:4000/living/2019/03/12/blog</id><content type="html" xml:base="http://localhost:4000/living/2019/03/12/blog/">&lt;h1 id=&quot;疼&quot;&gt;疼&lt;/h1&gt;
-
-&lt;p&gt;肌肉受风…… 一动就疼…… 不想动…… 不想动……&lt;/p&gt;
-
-&lt;p&gt;不过与胆结石的疼比起来也没什么。略微不适而已……&lt;/p&gt;</content><author><name>K11</name></author><category term="日记" /><summary type="html">疼 肌肉受风…… 一动就疼…… 不想动…… 不想动…… 不过与胆结石的疼比起来也没什么。略微不适而已……</summary></entry></feed>
+&lt;p&gt;无事&lt;/p&gt;</content><author><name>K11</name></author><category term="日记" /><summary type="html">11日的份 laravel passport scopes scopes 为单组有效模式。 其他 github的 2FA 重置了 过程 大概一周吧…… 17日的份 无事</summary></entry></feed>
