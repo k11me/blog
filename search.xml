@@ -2,6 +2,57 @@
 <search>
   
     <entry>
+      <title><![CDATA[不错~]]></title>
+      <url>/living/2019/07/14/blog/</url>
+      <content type="text"><![CDATA[ff14ff14 确实很有趣，不过剧情有点拖。环境也比wow 好很多，画质一般。]]></content>
+      <categories>
+        
+          <category> Living </category>
+        
+      </categories>
+      <tags>
+        
+          <tag> 日记 </tag>
+        
+      </tags>
+      <tags></tags>
+    </entry>
+  
+    <entry>
+      <title><![CDATA[双向绑定的烦恼]]></title>
+      <url>/living/2019/06/23/blog/</url>
+      <content type="text"><![CDATA[vue 中数据复制vue 中 使用 _.clone() 复制数据后，当原始数据发生变化时，克隆的数据也随之改变使用_.cloneDeep() 可以解决。减法的效果优于加法~~]]></content>
+      <categories>
+        
+          <category> Living </category>
+        
+      </categories>
+      <tags>
+        
+          <tag> 日记 </tag>
+        
+      </tags>
+      <tags></tags>
+    </entry>
+  
+    <entry>
+      <title><![CDATA[终于……]]></title>
+      <url>/living/2019/06/21/blog/</url>
+      <content type="text"><![CDATA[终于……朝廷的手，伸向了……红宝书 V2.0 来袭]]></content>
+      <categories>
+        
+          <category> Living </category>
+        
+      </categories>
+      <tags>
+        
+          <tag> 日记 </tag>
+        
+      </tags>
+      <tags></tags>
+    </entry>
+  
+    <entry>
       <title><![CDATA[日常]]></title>
       <url>/living/2019/06/17/blog/</url>
       <content type="text"><![CDATA[日常HK的结果貌似不错]]></content>
