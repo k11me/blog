@@ -2,6 +2,23 @@
 <search>
   
     <entry>
+      <title><![CDATA[手贱]]></title>
+      <url>/living/2019/07/24/blog/</url>
+      <content type="text"><![CDATA[手贱升级了docker 到 19.03 版本，因为强制使用TLS 导致 gitlab 镜像不能正常启动……各方的解决办法都不怎么样……姑且回滚到上个版本吧……哎…… 手贱是有代价的……备份太重要了！备份太重要了！备份太重要了！]]></content>
+      <categories>
+        
+          <category> Living </category>
+        
+      </categories>
+      <tags>
+        
+          <tag> 日记 </tag>
+        
+      </tags>
+      <tags></tags>
+    </entry>
+  
+    <entry>
       <title><![CDATA[不错~]]></title>
       <url>/living/2019/07/14/blog/</url>
       <content type="text"><![CDATA[ff14ff14 确实很有趣，不过剧情有点拖。环境也比wow 好很多，画质一般。]]></content>

@@ -1,4 +1,20 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="http://localhost:4000/atom.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-07-15T03:07:23+08:00</updated><id>http://localhost:4000/atom.xml</id><title type="html">Keleven.Me</title><subtitle>千变万化的是世界</subtitle><author><name>K11</name></author><entry><title type="html">不错~</title><link href="http://localhost:4000/living/2019/07/14/blog/" rel="alternate" type="text/html" title="不错~" /><published>2019-07-14T08:00:00+08:00</published><updated>2019-07-14T08:00:00+08:00</updated><id>http://localhost:4000/living/2019/07/14/blog</id><content type="html" xml:base="http://localhost:4000/living/2019/07/14/blog/">&lt;h1 id=&quot;ff14&quot;&gt;ff14&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="http://localhost:4000/atom.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-07-24T19:27:34+08:00</updated><id>http://localhost:4000/atom.xml</id><title type="html">Keleven.Me</title><subtitle>千变万化的是世界</subtitle><author><name>K11</name></author><entry><title type="html">手贱</title><link href="http://localhost:4000/living/2019/07/24/blog/" rel="alternate" type="text/html" title="手贱" /><published>2019-07-24T08:00:00+08:00</published><updated>2019-07-24T08:00:00+08:00</updated><id>http://localhost:4000/living/2019/07/24/blog</id><content type="html" xml:base="http://localhost:4000/living/2019/07/24/blog/">&lt;h1 id=&quot;手贱&quot;&gt;手贱&lt;/h1&gt;
+
+&lt;p&gt;升级了docker 到 &lt;code class=&quot;highlighter-rouge&quot;&gt;19.03&lt;/code&gt; 版本，&lt;/p&gt;
+
+&lt;p&gt;因为强制使用&lt;code class=&quot;highlighter-rouge&quot;&gt;TLS&lt;/code&gt; 导致 &lt;code class=&quot;highlighter-rouge&quot;&gt;gitlab&lt;/code&gt; 镜像不能正常启动……&lt;/p&gt;
+
+&lt;p&gt;各方的解决办法都不怎么样……&lt;/p&gt;
+
+&lt;p&gt;姑且回滚到上个版本吧……&lt;/p&gt;
+
+&lt;p&gt;哎…… 手贱是有代价的……&lt;/p&gt;
+
+&lt;p&gt;备份太重要了！&lt;/p&gt;
+
+&lt;p&gt;备份太重要了！&lt;/p&gt;
+
+&lt;p&gt;备份太重要了！&lt;/p&gt;</content><author><name>K11</name></author><category term="日记" /><summary type="html">手贱 升级了docker 到 19.03 版本， 因为强制使用TLS 导致 gitlab 镜像不能正常启动…… 各方的解决办法都不怎么样…… 姑且回滚到上个版本吧…… 哎…… 手贱是有代价的…… 备份太重要了！ 备份太重要了！ 备份太重要了！</summary></entry><entry><title type="html">不错~</title><link href="http://localhost:4000/living/2019/07/14/blog/" rel="alternate" type="text/html" title="不错~" /><published>2019-07-14T08:00:00+08:00</published><updated>2019-07-14T08:00:00+08:00</updated><id>http://localhost:4000/living/2019/07/14/blog</id><content type="html" xml:base="http://localhost:4000/living/2019/07/14/blog/">&lt;h1 id=&quot;ff14&quot;&gt;ff14&lt;/h1&gt;
 
 &lt;p&gt;ff14 确实很有趣，不过剧情有点拖。&lt;/p&gt;
 
@@ -44,6 +60,4 @@
 
 &lt;p&gt;脖子右边疼 也不知道是怎么了…… 好几天了……&lt;/p&gt;</content><author><name>K11</name></author><category term="日记" /><summary type="html">果然发生 💊💊💊💊💊💊 车门被划 不知道什么用钥匙划了车门…… 要自己补漆了…… 等工具中…… 效果未知…… 人言 不论是说出口的 还是写下来的 都会在不知道的情况产出影响…… 然而大多数人不知道这点…… 脖子疼 脖子右边疼 也不知道是怎么了…… 好几天了……</summary></entry><entry><title type="html">呵呵</title><link href="http://localhost:4000/living/2019/05/17/blog/" rel="alternate" type="text/html" title="呵呵" /><published>2019-05-17T08:00:00+08:00</published><updated>2019-05-17T08:00:00+08:00</updated><id>http://localhost:4000/living/2019/05/17/blog</id><content type="html" xml:base="http://localhost:4000/living/2019/05/17/blog/">&lt;h1 id=&quot;呵呵呵&quot;&gt;呵呵呵&lt;/h1&gt;
 
-&lt;p&gt;从今天开始只对自己负责&lt;/p&gt;</content><author><name>K11</name></author><category term="日记" /><summary type="html">呵呵呵 从今天开始只对自己负责</summary></entry><entry><title type="html">更新了~</title><link href="http://localhost:4000/living/2019/05/07/blog/" rel="alternate" type="text/html" title="更新了~" /><published>2019-05-07T08:00:00+08:00</published><updated>2019-05-07T08:00:00+08:00</updated><id>http://localhost:4000/living/2019/05/07/blog</id><content type="html" xml:base="http://localhost:4000/living/2019/05/07/blog/">&lt;h1 id=&quot;google-cloud&quot;&gt;Google Cloud&lt;/h1&gt;
-
-&lt;p&gt;有点小问题，重启后正常……&lt;/p&gt;</content><author><name>K11</name></author><category term="日记" /><summary type="html">Google Cloud 有点小问题，重启后正常……</summary></entry></feed>
+&lt;p&gt;从今天开始只对自己负责&lt;/p&gt;</content><author><name>K11</name></author><category term="日记" /><summary type="html">呵呵呵 从今天开始只对自己负责</summary></entry></feed>
