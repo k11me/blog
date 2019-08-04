@@ -1,4 +1,48 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="http://localhost:4000/atom.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-07-24T19:27:34+08:00</updated><id>http://localhost:4000/atom.xml</id><title type="html">Keleven.Me</title><subtitle>千变万化的是世界</subtitle><author><name>K11</name></author><entry><title type="html">手贱</title><link href="http://localhost:4000/living/2019/07/24/blog/" rel="alternate" type="text/html" title="手贱" /><published>2019-07-24T08:00:00+08:00</published><updated>2019-07-24T08:00:00+08:00</updated><id>http://localhost:4000/living/2019/07/24/blog</id><content type="html" xml:base="http://localhost:4000/living/2019/07/24/blog/">&lt;h1 id=&quot;手贱&quot;&gt;手贱&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="http://localhost:4000/atom.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-08-05T02:06:40+08:00</updated><id>http://localhost:4000/atom.xml</id><title type="html">Keleven.Me</title><subtitle>千变万化的是世界</subtitle><author><name>K11</name></author><entry><title type="html">真是……</title><link href="http://localhost:4000/living/2019/08/04/blog/" rel="alternate" type="text/html" title="真是……" /><published>2019-08-04T08:00:00+08:00</published><updated>2019-08-04T08:00:00+08:00</updated><id>http://localhost:4000/living/2019/08/04/blog</id><content type="html" xml:base="http://localhost:4000/living/2019/08/04/blog/">&lt;h1 id=&quot;大枪&quot;&gt;大枪&lt;/h1&gt;
+
+&lt;p&gt;最后谁的枪大，谁赢……&lt;/p&gt;
+
+&lt;p&gt;一点都不觉得羞愧吗……&lt;/p&gt;
+
+&lt;p&gt;绑架人口有意思吗……&lt;/p&gt;
+
+&lt;p&gt;沟通是无用的…… 重要的一课……&lt;/p&gt;
+
+&lt;h1 id=&quot;其他&quot;&gt;其他&lt;/h1&gt;
+
+&lt;p&gt;最近晚上梦都好奇怪……&lt;/p&gt;</content><author><name>K11</name></author><category term="日记" /><summary type="html">大枪 最后谁的枪大，谁赢…… 一点都不觉得羞愧吗…… 绑架人口有意思吗…… 沟通是无用的…… 重要的一课…… 其他 最近晚上梦都好奇怪……</summary></entry><entry><title type="html">无事儿~</title><link href="http://localhost:4000/living/2019/07/31/blog/" rel="alternate" type="text/html" title="无事儿~" /><published>2019-07-31T08:00:00+08:00</published><updated>2019-07-31T08:00:00+08:00</updated><id>http://localhost:4000/living/2019/07/31/blog</id><content type="html" xml:base="http://localhost:4000/living/2019/07/31/blog/">&lt;h1 id=&quot;日常&quot;&gt;日常&lt;/h1&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Vega 64&lt;/code&gt; 使用 &lt;code class=&quot;highlighter-rouge&quot;&gt;maya&lt;/code&gt; 时有不能跨屏幕的&lt;code class=&quot;highlighter-rouge&quot;&gt;bug&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;在&lt;code class=&quot;highlighter-rouge&quot;&gt;display&lt;/code&gt; 中设置 &lt;code class=&quot;highlighter-rouge&quot;&gt;DX11&lt;/code&gt; 可修复&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;AMD&lt;/code&gt;的东西稳定性是真的不好&lt;/p&gt;
+
+&lt;p&gt;之后要尽力避免使用……&lt;/p&gt;
+
+&lt;h1 id=&quot;生日也无事&quot;&gt;生日也无事&lt;/h1&gt;
+
+&lt;p&gt;生日无事，不知道送自己什么好……&lt;/p&gt;
+
+&lt;p&gt;平淡的过了……&lt;/p&gt;
+
+&lt;h1 id=&quot;其他&quot;&gt;其他&lt;/h1&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;algolia&lt;/code&gt; 发来邮件才知道全局搜索没关。&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;google cloud&lt;/code&gt; 的计费方式很奇怪，&lt;code class=&quot;highlighter-rouge&quot;&gt;300 USD&lt;/code&gt;的额度应该可以使用&lt;code class=&quot;highlighter-rouge&quot;&gt;8个月&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;实际上只有&lt;code class=&quot;highlighter-rouge&quot;&gt;6个月&lt;/code&gt;不到。 当使用服务数量变大时，费用恐怕难以进行预估……&lt;/p&gt;
+
+&lt;p&gt;这是个大问题！&lt;/p&gt;
+
+&lt;p&gt;十万人在线一个月的费用都将出现巨大偏差…… 心塞……&lt;/p&gt;
+
+&lt;p&gt;历史账单还查不到！神烦！&lt;/p&gt;
+
+&lt;p&gt;平衡负载时，自动对服务器数量扩充，注销等等，操作没有详细的记录，也是难以接受的！&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;laravel Scout&lt;/code&gt; 拖慢速度元凶！&lt;/p&gt;</content><author><name>K11</name></author><category term="日记" /><summary type="html">日常 Vega 64 使用 maya 时有不能跨屏幕的bug 在display 中设置 DX11 可修复 AMD的东西稳定性是真的不好 之后要尽力避免使用…… 生日也无事 生日无事，不知道送自己什么好…… 平淡的过了…… 其他 algolia 发来邮件才知道全局搜索没关。 google cloud 的计费方式很奇怪，300 USD的额度应该可以使用8个月 实际上只有6个月不到。 当使用服务数量变大时，费用恐怕难以进行预估…… 这是个大问题！ 十万人在线一个月的费用都将出现巨大偏差…… 心塞…… 历史账单还查不到！神烦！ 平衡负载时，自动对服务器数量扩充，注销等等，操作没有详细的记录，也是难以接受的！ laravel Scout 拖慢速度元凶！</summary></entry><entry><title type="html">手贱</title><link href="http://localhost:4000/living/2019/07/24/blog/" rel="alternate" type="text/html" title="手贱" /><published>2019-07-24T08:00:00+08:00</published><updated>2019-07-24T08:00:00+08:00</updated><id>http://localhost:4000/living/2019/07/24/blog</id><content type="html" xml:base="http://localhost:4000/living/2019/07/24/blog/">&lt;h1 id=&quot;手贱&quot;&gt;手贱&lt;/h1&gt;
 
 &lt;p&gt;升级了docker 到 &lt;code class=&quot;highlighter-rouge&quot;&gt;19.03&lt;/code&gt; 版本，&lt;/p&gt;
 
@@ -38,26 +82,4 @@
 
 &lt;p&gt;在自动化的道路上越走越远了……&lt;/p&gt;
 
-&lt;p&gt;毕竟一个人能观察的有限……&lt;/p&gt;</content><author><name>K11</name></author><category term="日记" /><summary type="html">更新了 在自动化的道路上越走越远了…… 毕竟一个人能观察的有限……</summary></entry><entry><title type="html">更新了~</title><link href="http://localhost:4000/living/2019/05/23/blog/" rel="alternate" type="text/html" title="更新了~" /><published>2019-05-23T08:00:00+08:00</published><updated>2019-05-23T08:00:00+08:00</updated><id>http://localhost:4000/living/2019/05/23/blog</id><content type="html" xml:base="http://localhost:4000/living/2019/05/23/blog/">&lt;h1 id=&quot;果然发生&quot;&gt;果然发生&lt;/h1&gt;
-
-&lt;p&gt;💊💊💊💊💊💊&lt;/p&gt;
-
-&lt;h1 id=&quot;车门被划&quot;&gt;车门被划&lt;/h1&gt;
-
-&lt;p&gt;不知道什么用钥匙划了车门……&lt;/p&gt;
-
-&lt;p&gt;要自己补漆了…… 等工具中…… 效果未知……&lt;/p&gt;
-
-&lt;h1 id=&quot;人言&quot;&gt;人言&lt;/h1&gt;
-
-&lt;p&gt;不论是说出口的 还是写下来的&lt;/p&gt;
-
-&lt;p&gt;都会在不知道的情况产出影响……&lt;/p&gt;
-
-&lt;p&gt;然而大多数人不知道这点……&lt;/p&gt;
-
-&lt;h1 id=&quot;脖子疼&quot;&gt;脖子疼&lt;/h1&gt;
-
-&lt;p&gt;脖子右边疼 也不知道是怎么了…… 好几天了……&lt;/p&gt;</content><author><name>K11</name></author><category term="日记" /><summary type="html">果然发生 💊💊💊💊💊💊 车门被划 不知道什么用钥匙划了车门…… 要自己补漆了…… 等工具中…… 效果未知…… 人言 不论是说出口的 还是写下来的 都会在不知道的情况产出影响…… 然而大多数人不知道这点…… 脖子疼 脖子右边疼 也不知道是怎么了…… 好几天了……</summary></entry><entry><title type="html">呵呵</title><link href="http://localhost:4000/living/2019/05/17/blog/" rel="alternate" type="text/html" title="呵呵" /><published>2019-05-17T08:00:00+08:00</published><updated>2019-05-17T08:00:00+08:00</updated><id>http://localhost:4000/living/2019/05/17/blog</id><content type="html" xml:base="http://localhost:4000/living/2019/05/17/blog/">&lt;h1 id=&quot;呵呵呵&quot;&gt;呵呵呵&lt;/h1&gt;
-
-&lt;p&gt;从今天开始只对自己负责&lt;/p&gt;</content><author><name>K11</name></author><category term="日记" /><summary type="html">呵呵呵 从今天开始只对自己负责</summary></entry></feed>
+&lt;p&gt;毕竟一个人能观察的有限……&lt;/p&gt;</content><author><name>K11</name></author><category term="日记" /><summary type="html">更新了 在自动化的道路上越走越远了…… 毕竟一个人能观察的有限……</summary></entry></feed>

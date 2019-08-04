@@ -2,6 +2,40 @@
 <search>
   
     <entry>
+      <title><![CDATA[真是……]]></title>
+      <url>/living/2019/08/04/blog/</url>
+      <content type="text"><![CDATA[大枪最后谁的枪大，谁赢……一点都不觉得羞愧吗……绑架人口有意思吗……沟通是无用的…… 重要的一课……其他最近晚上梦都好奇怪……]]></content>
+      <categories>
+        
+          <category> Living </category>
+        
+      </categories>
+      <tags>
+        
+          <tag> 日记 </tag>
+        
+      </tags>
+      <tags></tags>
+    </entry>
+  
+    <entry>
+      <title><![CDATA[无事儿~]]></title>
+      <url>/living/2019/07/31/blog/</url>
+      <content type="text"><![CDATA[日常Vega 64 使用 maya 时有不能跨屏幕的bug在display 中设置 DX11 可修复AMD的东西稳定性是真的不好之后要尽力避免使用……生日也无事生日无事，不知道送自己什么好……平淡的过了……其他algolia 发来邮件才知道全局搜索没关。google cloud 的计费方式很奇怪，300 USD的额度应该可以使用8个月实际上只有6个月不到。 当使用服务数量变大时，费用恐怕难以进行预估……这是个大问题！十万人在线一个月的费用都将出现巨大偏差…… 心塞……历史账单还查不到！神烦！平衡负载时，自动对服务器数量扩充，注销等等，操作没有详细的记录，也是难以接受的！laravel Scout 拖慢速度元凶！]]></content>
+      <categories>
+        
+          <category> Living </category>
+        
+      </categories>
+      <tags>
+        
+          <tag> 日记 </tag>
+        
+      </tags>
+      <tags></tags>
+    </entry>
+  
+    <entry>
       <title><![CDATA[手贱]]></title>
       <url>/living/2019/07/24/blog/</url>
       <content type="text"><![CDATA[手贱升级了docker 到 19.03 版本，因为强制使用TLS 导致 gitlab 镜像不能正常启动……各方的解决办法都不怎么样……姑且回滚到上个版本吧……哎…… 手贱是有代价的……备份太重要了！备份太重要了！备份太重要了！]]></content>
